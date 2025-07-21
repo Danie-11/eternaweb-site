@@ -1,0 +1,96 @@
+/* STYLE.CSS POUR ETERNAWEB */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-image: url("eternaweb-fond.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #3e3e3e;
+  padding: 60px 20px;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.85);
+  max-width: 700px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #7a5c45;
+  font-size: 2.4em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #5e4b3c;
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+li {
+  margin: 12px 0;
+  font-size: 1.05em;
+}
+
+.button {
+  display: inline-block;
+  background-color: #dab49d;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #b38a6b;
+  cursor: pointer;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.whatsapp:hover {
+  background-color: #1ebe57;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #6e6e6e;
+}
+
+.avenir {
+  margin-top: 40px;
+  font-style: italic;
+  color: #666;
+}
