@@ -163,4 +163,11 @@ footer {
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
+.hero-banner img {
+  display: block;
+  max-width: 100%;
+  margin-left: 0; /* aligne à gauche */
+  margin-right: auto; /* évite de centrer automatiquement */
+  border-radius: 10px;
+}
 
