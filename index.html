@@ -1,142 +1,77 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background-image: url('eternaweb-fond.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 60px 20px;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <div class="header">
+  <div class="header-logo">
+    <img src="eternaweb-logo.png" alt="Logo EternaWeb">
+  </div>
+  <nav class="nav-links">
+    <a href="#">CV</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Vitrine</a>
+    <a href="#" onclick="togglePopup()">Autres</a>
+  </nav>
+</div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EternaWeb - CV & vitrines express</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="eternaweb-banniere.png" alt="Bannière EternaWeb" class="banner"/>
+    <img src="eternaweb-logo.png" alt="Logo EternaWeb" class="logo"/>
+    <h1>EternaWeb</h1>
+    <h2>CV & vitrines express — en ligne en 1 journée</h2>
+    <p>✨ Création de mini-sites pros pour :</p>
+    <ul>
+      <li>• Présenter vos créations (artisanat, soins, coaching...)</li>
+      <li>• Héberger un CV moderne ou un portfolio</li>
+      <li>• Intégrer WhatsApp, PayPal ou SumUp</li>
+    </ul>
+    <div class="cta-buttons">
+      <a href="https://wa.me/33749461434" class="btn-icon btn-whatsapp" target="_blank">WhatsApp</a>
+      <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" class="btn-icon btn-paypal" target="_blank">PayPal</a>
+    </div>
+    <div class="avenir">📢 Prochainement : galerie de sites, témoignages & tarifs.</div>
+    <footer>Vos créations par Danielle ✨ - Service express & humain</footer>
+  </div>
 
-.container {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: #3a2f25;
-  max-width: 580px;
-  margin: auto;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+  <div class="footer-band">
+    <div class="footer-column">
+      <h4>Infos utiles</h4>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="faq.html">📚 En savoir plus</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a></li>
+        <li><a href="https://wa.me/33749461434" target="_blank">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/eternaweb.pro" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
 
-.banner {
-  max-width: 100%;
+  <div class="copyright">
+    © 2025 Danielle Kabongo – Tous droits réservés
+  </div>
+  <div id="popup" style="display:none; position:fixed; top:80px; right:30px; background: #fffaf7; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding: 20px; z-index: 999;">
+  <h4>Intégrations disponibles</h4>
+  <ul style="list-style:none; padding:0;">
+    <li><a href="#">💬 WhatsApp</a></li>
+    <li><a href="#">💰 PayPal</a></li>
+    <li><a href="#">💳 SumUp</a></li>
+    <li><a href="#">📘 Facebook</a></li>
+  </ul>
+</div>
+  <script>
+function togglePopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = popup.style.display === "none" ? "block" : "none";
 }
-
-.logo {
-  max-width: 150px;
-  margin-bottom: 20px;
-}
-
-h1 {
-  color: #7a5c45;
-  font-size: 2.4em;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 1.4em;
-  color: #5e4b3c;
-  margin-bottom: 30px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-li {
-  margin: 12px 0;
-  font-size: 1.05em;
-}
-
-.cta-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.btn-icon {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.btn-whatsapp {
-  background-color: #25D366;
-  color: white;
-}
-
-.btn-paypal {
-  background-color: #ffc439;
-  color: black;
-}
-
-footer {
-  margin-top: 40px;
-  font-size: 0.9em;
-  color: #6e6e6e;
-}
-
-.avenir {
-  margin-top: 40px;
-  font-style: italic;
-  color: #666;
-}
-
-.footer-band {
-  background-color: #5a3b2c;
-  color: #f5f5f5;
-  padding: 40px 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.footer-column {
-  flex: 1 1 200px;
-  padding: 10px 20px;
-  min-width: 200px;
-}
-
-.footer-column h4 {
-  font-size: 1em;
-  color: #ffd8aa;
-  margin-bottom: 15px;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column li {
-  margin-bottom: 10px;
-}
-
-.footer-column a {
-  color: #fff5e5;
-  text-decoration: none;
-}
-
-.footer-column a:hover {
-  text-decoration: underline;
-}
-
-.copyright {
-  text-align: center;
-  font-size: 0.85em;
-  color: #888;
-  margin-top: 10px;
-  padding-bottom: 20px;
-}
+</script>
+</body>
+</html>
