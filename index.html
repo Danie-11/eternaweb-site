@@ -28,7 +28,24 @@
   <main class="container">
     <h1>Bienvenue sur EternaWeb</h1>
     <p>✨ Sites en ligne en 1 journée pour créateurs, indépendants et artisans</p>
+     <p>✨ Création de mini-sites pros pour :</p>
+      <ul>
+        <li>• Présenter vos créations (artisanat, soins, coaching...)</li>
+        <li>• Héberger un CV moderne ou un portfolio</li>
+        <li>• Intégrer WhatsApp, PayPal ou SumUp</li>
+      </ul>
     <p>Choisissez votre besoin ci-dessus pour découvrir les options intégrées : WhatsApp, PayPal, SumUp, Facebook…</p>
+    
+      <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://wa.me/33749461434" class="btn-icon btn-whatsapp" target="_blank" aria-label="Contacter sur WhatsApp">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="height: 20px;">
+          WhatsApp
+        </a>
+        <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" class="btn-icon btn-paypal" target="_blank" aria-label="Payer via PayPal">
+          <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal" style="height: 20px;">
+          PayPal
+        </a>
+      </div>
   </main>
 
   <!-- Footer -->
@@ -36,6 +53,9 @@
     <div class="footer-columns">
       <div>
         <h4>Infos utiles</h4>
+        <li><a href="code-conduite.html">🧭 Code de conduite</a></li>
+<li><a href="securite.html">🔒 Politique de sécurité</a></li>
+<li><a href="confidentialite.html">📄 Confidentialité</a></li>
         <ul>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="faq.html">📚 FAQ</a></li>
@@ -51,6 +71,20 @@
     </div>
     <p class="copyright">© 2025 Danielle Kabongo – Tous droits réservés</p>
   </footer>
-
+  <div id="popup" style="display:none; position:fixed; top:80px; right:30px; background: #fffaf7; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding: 20px; z-index: 999;">
+  <h4>Intégrations disponibles</h4>
+  <ul style="list-style:none; padding:0;">
+    <li><a href="#">💬 WhatsApp</a></li>
+    <li><a href="#">💰 PayPal</a></li>
+    <li><a href="#">💳 SumUp</a></li>
+    <li><a href="#">📘 Facebook</a></li>
+  </ul>
+  </div>
+<script>
+function togglePopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = popup.style.display === "none" ? "block" : "none";
+}
+</script>
 </body>
 </html>
