@@ -1,4 +1,4 @@
-/* STYLE.CSS POUR ETERNAWEB */
+ /* STYLE.CSS POUR ETERNAWEB */
 
 body {
   margin: 0;
@@ -207,7 +207,7 @@ footer {
   color: #aaa;
 }
 .footer-band {
-  background-color: #5a3b2c; /* marron doux */
+  background-color: #5a3b2c;
   color: #f8f1ea;
   width: 100%;
   padding: 40px 10px 30px;
