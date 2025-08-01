@@ -98,3 +98,14 @@ body {
   background-attachment: fixed;
   padding: 60px 20px;
 }
+.footer-card-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.footer-card-left img {
+  max-width: 220px;
+  opacity: 0.9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
