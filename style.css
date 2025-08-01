@@ -89,13 +89,14 @@ body {
   font-size: 14px;
   opacity: 0.7;
 }
-{
+body {
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
   background-image: url('eternaweb-fond.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  color: #2d1e15;
   padding: 60px 20px;
 }
 .footer-card-left {
@@ -104,8 +105,24 @@ body {
 }
 
 .footer-card-left img {
+  width: 100%;
   max-width: 220px;
   opacity: 0.9;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+@media (max-width: 600px) {
+  .footer-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .banner img {
+  width: 100%;
+  display: block;
+  opacity: 0.70;
+  }
