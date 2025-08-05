@@ -34,12 +34,12 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 680px;
   width: 90%;
-  margin: 60px auto;
-  padding: 20px;
+  margin: auto;
+  padding: 35px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
@@ -100,7 +100,7 @@ body {
 
 .footer-card-left img {
   width: 100%;
-  max-width: 220px;
+  max-width: 120px;
   opacity: 0.9;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
