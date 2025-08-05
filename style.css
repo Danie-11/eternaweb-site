@@ -1,8 +1,16 @@
+ /* STYLE GLOBAL */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background: #fdfaf6;
-  
+  padding: 60px 20px;
+  background-image: url('eternaweb-fond.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #2d1e15;
+}
+
+/* MENU NAVIGATION */
 .menu {
   background: linear-gradient(to right, #f0e8da, #6b4b3e);
   padding: 10px 0;
@@ -33,6 +41,7 @@ body {
   color: #ffe7c1;
 }
 
+/* CONTENEUR PRINCIPAL */
 .container {
   max-width: 680px;
   width: 90%;
@@ -44,6 +53,7 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* FOOTER */
 .footer {
   background-color: #3b2a22;
   color: #eee;
@@ -83,16 +93,8 @@ body {
   font-size: 14px;
   opacity: 0.7;
 }
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background-image: url('eternaweb-fond.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #2d1e15;
-  padding: 60px 20px;
-}
+
+/* IMAGE DE LA CARTE DANS LE FOOTER */
 .footer-card-left {
   flex: 1;
   padding-right: 20px;
@@ -105,6 +107,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* VERSION MOBILE */
 @media (max-width: 600px) {
   .footer-columns {
     flex-direction: column;
@@ -116,7 +120,6 @@ body {
     gap: 15px;
   }
 
-@media screen and (max-width: 600px) {
   h1 {
     font-size: 1.8em;
   }
@@ -125,26 +128,12 @@ body {
     font-size: 1.2em;
   }
 
-  .footer-columns {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
   .footer-card-left img {
     max-width: 90%;
   }
-}.logo-container {
-  text-align: center;
-  padding: 30px 0 10px;
 }
 
-.logo-simple {
-  max-width: 180px;
-  height: auto;
-  opacity: 0.95;
-}
-background-image: url("eternaglow-fond-1000px.jpg");
+/* BLOC CARTE + TEXTE SUPERPOSÉ (footer) */
 .footer-card-with-text {
   position: relative;
   display: inline-block;
