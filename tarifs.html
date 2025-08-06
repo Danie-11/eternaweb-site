@@ -1,49 +1,110 @@
-<section id="tarifs-eternaweb" style="padding: 40px 20px; background: linear-gradient(to right, #f5efe4, #d5bba5); color: #3e2f24; font-family: 'Segoe UI', sans-serif;">
-  <h2 style="text-align: center; color: #6b4b3e; font-size: 2em; margin-bottom: 30px;">🧾 Carte de prix — EternaWeb</h2>
-  <p style="text-align: center; font-size: 1.2em; margin-bottom: 40px;">CV & mini-sites vitrines express</p>  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-    <!-- Pack Essentiel -->
-    <div style="background: #fffaf7; border: 2px solid #c5a88f; border-radius: 16px; width: 300px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <h3 style="color: #7a5c45; text-align: center;">🌿 Pack Essentiel – 49 €</h3>
-      <ul style="list-style: none; padding: 0;">
-        <li>🔹 CV en ligne simple (1 page)</li>
-        <li>🔹 Personnalisation avec tes infos + photo</li>
-        <li>🔹 Design élégant & responsive</li>
-        <li>🔹 Hébergement sur GitHub inclus</li>
-        <li>🔹 Livraison sous 48h</li>
-      </ul>
-      <p style="margin-top: 15px; font-style: italic; font-size: 0.95em; text-align: center;">➡️ Idéal pour : candidatures, recherche d’emploi, alternance.</p>
-    </div><!-- Pack Vitrine Pro -->
-<div style="background: #fffaf7; border: 2px solid #c5a88f; border-radius: 16px; width: 300px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-  <h3 style="color: #7a5c45; text-align: center;">✨ Pack Vitrine Pro – 89 €</h3>
-  <ul style="list-style: none; padding: 0;">
-    <li>🔸 Mini-site vitrine 2 à 3 pages</li>
-    <li>🔸 Page d’accueil + vitrine produits/services</li>
-    <li>🔸 Ajout de boutons WhatsApp, PayPal ou réseaux</li>
-    <li>🔸 Design harmonieux et responsive</li>
-    <li>🔸 Hébergement GitHub inclus</li>
+<!DOCTYPE html><html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EternaWeb - CV & vitrines express</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .pricing-section {
+      background: linear-gradient(to right, #f5ede2, #e6d6c3);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .pricing-section h2 {
+      font-size: 2em;
+      color: #6b4b3e;
+      margin-bottom: 20px;
+    }
+    .pricing-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #fffaf7;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 280px;
+      text-align: left;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.3em;
+      color: #7a5c45;
+    }
+    .card ul {
+      padding-left: 1em;
+      list-style-type: "🔹 ";
+      margin: 10px 0;
+    }
+    .card ul li {
+      margin-bottom: 8px;
+    }
+    .tarif-note {
+      font-size: 0.9em;
+      color: #333;
+      margin-top: 10px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body><!-- MENU NAVIGATION EXISTANT --><nav class="menu">
+  <ul>
+    <li><a href="#">CV</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Vitrine</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#" onclick="togglePopup()">Autres ▾</a></li>
   </ul>
-  <p style="margin-top: 15px; font-style: italic; font-size: 0.95em; text-align: center;">➡️ Idéal pour : artisans, freelances, coachs.</p>
+</nav><!-- SECTION TARIFS --><section class="pricing-section" id="tarifs">
+  <h2>🧾 Formules EternaWeb</h2>
+  <p>CV & mini-sites vitrines express — hébergement inclus</p>
+  <div class="pricing-cards"><div class="card" onclick="window.location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Essentiel%20EternaWeb.'">
+  <h3>🌿 Pack Essentiel – 49 €</h3>
+  <ul>
+    <li>CV en ligne simple (1 page)</li>
+    <li>Personnalisation avec infos + photo</li>
+    <li>Design élégant & responsive</li>
+    <li>Livraison sous 48h</li>
+  </ul>
+  <div class="tarif-note">Idéal pour : candidatures, recherche d’emploi</div>
 </div>
 
-<!-- Pack Premium -->
-<div style="background: #fffaf7; border: 2px solid #c5a88f; border-radius: 16px; width: 300px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-  <h3 style="color: #7a5c45; text-align: center;">💎 Pack Premium – 129 €</h3>
-  <ul style="list-style: none; padding: 0;">
-    <li>🌟 Tout le pack vitrine +</li>
-    <li>🔸 Création ou refonte logo (simple)</li>
-    <li>🔸 Conseils branding (polices, couleurs)</li>
-    <li>🔸 Optimisation SEO de base</li>
-    <li>🔸 Intégration d’une galerie, FAQ, ou portfolio</li>
+<div class="card" onclick="window.location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Vitrine%20Pro%20EternaWeb.'">
+  <h3>✨ Pack Vitrine – 89 €</h3>
+  <ul>
+    <li>Mini-site vitrine (2-3 pages)</li>
+    <li>Accueil + présentation produits/services</li>
+    <li>Boutons WhatsApp, PayPal, réseaux</li>
+    <li>Design harmonieux & responsive</li>
   </ul>
-  <p style="margin-top: 15px; font-style: italic; font-size: 0.95em; text-align: center;">➡️ Idéal pour : lancement professionnel complet.</p>
+  <div class="tarif-note">Idéal pour : artisans, freelances, coachs</div>
 </div>
 
-  </div>  <!-- Options à la carte -->  <div style="max-width: 700px; margin: 50px auto 0; padding-top: 30px; border-top: 2px solid #c5a88f;">
-    <h3 style="text-align: center; color: #6b4b3e;">🧩 Options à la carte</h3>
-    <ul style="list-style: none; padding: 0; text-align: center;">
-      <li>🌐 Ajout nom de domaine personnalisé : <strong>20 €</strong></li>
-      <li>🛒 Intégration d’un bouton de paiement : <strong>gratuit</strong></li>
-      <li>✏️ Retouches/modifs après livraison : <strong>à partir de 10 €</strong></li>
-    </ul>
+<div class="card" onclick="window.location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Premium%20EternaWeb.'">
+  <h3>💎 Pack Premium – 129 €</h3>
+  <ul>
+    <li>Tout le Pack Vitrine</li>
+    <li>Création/refonte logo (simple)</li>
+    <li>Conseils branding (polices/couleurs)</li>
+    <li>SEO de base + Galerie/FAQ</li>
+  </ul>
+  <div class="tarif-note">Idéal pour : lancement professionnel complet</div>
+</div>
+
   </div>
-</section>
+</section><!-- RESTE DU SITE + FOOTER --></body>
+</html>
