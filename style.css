@@ -166,4 +166,67 @@ body {
   opacity: 1; /* 1 = 100% visible */
   filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3)); /* optionnel : petite ombre pour le contraste */
 }
+.galerie-section {
+  background-color: #fffaf7;
+  padding: 60px 20px;
+  text-align: center;
+}
 
+.galerie-section h2 {
+  color: #6b4b3e;
+  margin-bottom: 30px;
+}
+
+.galerie-grille {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.carte-galerie {
+  background-color: #f8eee4;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  max-width: 250px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.carte-galerie:hover {
+  transform: translateY(-5px);
+}
+
+.image-galerie {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.carte-galerie h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1em;
+  color: #7a5c45;
+}
+
+.carte-galerie p {
+  font-size: 0.95em;
+  color: #4a3c33;
+  margin-bottom: 10px;
+}
+
+.carte-galerie button {
+  background-color: #d4af37;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.carte-galerie button:hover {
+  background-color: #c89e2a;
+}
