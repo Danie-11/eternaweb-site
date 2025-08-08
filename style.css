@@ -8,11 +8,48 @@ w/* ====== Base ====== */
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 body{
+  /* ===== Fond image pampas + voile sombre ===== */
+body{
   font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
   color:var(--ink);
-  background: linear-gradient(135deg, #5c4033, #f5e6ca);
-  background-size:cover; background-position:center; background-attachment:fixed;
+  /* Voile sombre en premier, image en second */
+  background-image:
+    linear-gradient(rgba(24,16,12,.22), rgba(24,16,12,.22)),
+    url('assets/bg-pampas.webp'); /* Fallback plus bas */
+  background-size: cover;
+  background-position: 15% center;    /* Mobile : pampas bien cadrées à gauche */
+  background-repeat: no-repeat;
+  background-attachment: scroll;      /* Mobile : plus fluide */
   padding:60px 20px 0;
+}
+
+/* Fallback JPG si WebP non supporté */
+@supports not (background-image: url("assets/bg-pampas.webp")){
+  body{ background-image:
+    linear-gradient(rgba(24,16,12,.22), rgba(24,16,12,.22)),
+    url('assets/bg-pampas.jpg'); }
+}
+
+/* Version bureau : plus centrée, voile plus foncé, effet parallax */
+@media (min-width: 992px){
+  body{
+    background-image:
+      linear-gradient(rgba(24,16,12,.28), rgba(24,16,12,.28)),
+      url('assets/bg-pampas.webp');
+    background-position: 35% center;  /* espace vide à droite pour le texte */
+    background-attachment: fixed;     /* Effet élégant sur desktop */
+  }
+}
+
+/* Logo lisible sans fond sombre */
+.logo-badge{
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.logo-simple{
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  opacity: .98;
 }
 a{ color:inherit; }
 
