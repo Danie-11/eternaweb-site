@@ -223,3 +223,54 @@ blockquote cite{ display:block; margin-top:10px; font-style:normal; color:#5e4b3
   text-decoration: underline;
 }
 .back-link:hover{ text-decoration: none; }
+
+/* --- FOOTER + ESPACE CLAIR EN BAS + VERSION COMPACTE --- */
+
+/* bloc footer (marron) */
+.footer{
+  background: linear-gradient(to bottom, #4e342e 0 92%, rgba(78,52,46,0) 100%); /* dégradé doux */
+  padding: 20px 16px;                 /* plus compact */
+  margin: 0 auto 36px;                /* espace clair avant le bas de page */
+  border-radius: 16px;                /* arrondi propre */
+}
+
+/* largeur raisonnable + centrage du contenu */
+.footer-columns{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;                          /* un peu moins d’espace qu’avant */
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* colonne gauche (carte) un poil plus petite */
+.footer-logo-block{
+  max-width: 320px;
+}
+
+/* textes + liens plus serrés */
+.footer h4{ margin: 10px 0 8px; }
+.footer ul{ margin: 0; }
+.footer a, .footer p{ line-height: 1.4; }
+
+/* copyright en-dessous, hors bloc marron */
+.copyright{
+  text-align: center;
+  font-size: 14px;
+  opacity: .75;
+  margin: -8px 0 28px; /* remonte un peu pour rapprocher visuellement, et garde un espace final */
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px){
+  .footer-columns{
+    flex-direction: column;      /* tout passe en colonne */
+    align-items: center;         /* CENTRER le bloc texte sous l’image */
+    gap: 14px;
+  }
+  .footer-logo-block{ margin-bottom: 8px; }
+}
+
+/* Option : si tu préfères SANS dégradé et juste un espace clair en bas,
+   remplace le background ci-dessus par background:#4e342e; et garde margin-bottom. */
