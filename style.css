@@ -318,5 +318,6 @@ body::before{
 }
 
 /* 5) (option) Enlever toute teinte sombre résiduelle autour du logo si ancienne règle */
-.logo-container{ background: transparent !important; }
+.logo-container{ background: transparent !important; 
+}
 
