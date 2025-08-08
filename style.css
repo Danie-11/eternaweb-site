@@ -10,7 +10,7 @@ html,body{ margin:0; padding:0; }
 body{
   font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
   color:var(--ink);
-  background-image:url('eternaweb-fond.jpg');
+  background: linear-gradient(135deg, #4a2c23, #d4af37);
   background-size:cover; background-position:center; background-attachment:fixed;
   padding:60px 20px 0;
 }
@@ -314,7 +314,7 @@ body::before{
   position: sticky; top: 8px; z-index: 3;   /* reste en haut au scroll */
 }
 @media (min-width: 992px){
-  .menu-toggle{ display:none; }             /* pas de bouton sur desktop */
+  .menu-toggle{ display:none;          /* pas de bouton sur desktop */
 }
 
 /* 5) (option) Enlever toute teinte sombre résiduelle autour du logo si ancienne règle */
