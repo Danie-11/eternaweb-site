@@ -1,129 +1,70 @@
-w/* ====== Base ====== */
+/* ====== Base ====== */
 :root{
   --brown:#6b4b3e;
   --brown-dark:#3b2a22;
   --cream:#fffaf7;
   --ink:#2d1e15;
 }
-*{ box-sizing:border-box; }
+*{ box-sizing: border-box; }
 html,body{ margin:0; padding:0; }
 body{
-  /* ===== Fond image pampas + voile sombre ===== */
-body{
-  font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
-  color:var(--ink);
-  /* Voile sombre en premier, image en second */
-  background-image:
-    linear-gradient(rgba(24,16,12,.22), rgba(24,16,12,.22)),
-    url('assets/bg-pampas.webp'); /* Fallback plus bas */
-  background-size: cover;
-  background-position: 15% center;    /* Mobile : pampas bien cadrées à gauche */
-  background-repeat: no-repeat;
-  background-attachment: scroll;      /* Mobile : plus fluide */
-  padding:60px 20px 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(135deg, #5c4033, #f5e6ca);
+  background-attachment: fixed;
+  padding: 60px 20px 0;
 }
-
-/* Fallback JPG si WebP non supporté */
-@supports not (background-image: url("assets/bg-pampas.webp")){
-  body{ background-image:
-    linear-gradient(rgba(24,16,12,.22), rgba(24,16,12,.22)),
-    url('assets/bg-pampas.jpg'); }
-}
-
-/* Version bureau : plus centrée, voile plus foncé, effet parallax */
-@media (min-width: 992px){
-  body{
-    background-image:
-      linear-gradient(rgba(24,16,12,.28), rgba(24,16,12,.28)),
-      url('assets/bg-pampas.webp');
-    background-position: 35% center;  /* espace vide à droite pour le texte */
-    background-attachment: fixed;     /* Effet élégant sur desktop */
-  }
-}
-
-/* Logo lisible sans fond sombre */
-.logo-badge{
-  background: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
-.logo-simple{
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
-  opacity: .98;
-}
-a{ color:inherit; }
+a{ color: inherit; }
 
 /* ====== Logo ====== */
-.logo-container{ text-align:center; margin:6px 0 10px; }
-.logo-badge{
-  display:inline-block; padding:8px 14px; border-radius:14px;
-  background:rgba(0,0,0,.18); backdrop-filter:blur(2px);
-}
+.logo-container{ text-align:center; margin: 6px 0 10px; }
+.logo-badge{ display:inline-block; padding:8px 14px; border-radius:14px; background: transparent; }
 .logo-simple{
-  max-width:180px; height:auto;
-  filter:drop-shadow(0 2px 4px rgba(0,0,0,.35)) contrast(1.15) brightness(.9);
+  max-width: 200px; height:auto;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  opacity:.98;
 }
 
 /* ====== Menu button ====== */
-.menu-toggle {
-  position: sticky; /* reste en haut quand on scroll */
-  top: 0; /* collé en haut */
-  background-color: #5a3a2f;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 0 0 12px 12px; /* arrondi seulement en bas */
-  font-size: 16px;
-  cursor: pointer;
-  width: 100%; /* prend toute la largeur sur mobile */
-  z-index: 10;
+.menu-toggle{
+  position: sticky; top: 8px; z-index: 5;
+  background-color: #5a3a2f; color: #fff;
+  padding: 10px 15px; border: none; border-radius: 12px;
+  font-size: 16px; cursor: pointer; width: 100%;
 }
+@media (min-width: 1024px){ .menu-toggle{ display:none; } }
 
-@media (min-width: 1024px) {
-  .menu-toggle {
-    display: none;
-  }
-}
 /* ====== Nav ====== */
 .menu{
   display:none; position:relative;
-  background:linear-gradient(to right, #f0e8da, var(--brown));
+  background: linear-gradient(to right, #f0e8da, var(--brown));
   padding:10px 0; text-align:center; border-radius:14px; margin-top:8px;
 }
 .menu.show{ display:block; }
-.menu ul{ list-style:none; margin:0; padding:0; display:flex; gap:30px; justify-content:center; flex-wrap:wrap; }
+.menu ul{
+  list-style:none; margin:0; padding:0;
+  display:flex; gap:30px; justify-content:center; flex-wrap:wrap;
+}
 .menu a{
   text-decoration:none; color:#fff; padding:10px 15px; border-radius:12px;
-  transition:.25s; backdrop-filter:blur(3px);
+  transition:.25s; backdrop-filter: blur(3px);
 }
-.menu a:hover{ background:rgba(255,223,174,.3); box-shadow:0 0 8px rgba(255,190,95,.5); color:#ffe7c1; }
-@media (min-width:769px){
-  .menu{ display:block; position:relative; margin:14px auto 0; max-width:980px; }
+.menu a:hover{ background: rgba(255,223,174,.3); box-shadow:0 0 8px rgba(255,190,95,.5); color:#ffe7c1; }
+@media (min-width: 769px){
+  .menu{ display:block; position:relative; margin:14px auto 0; max-width: 980px; }
 }
-
-/* ====== Popup "Autres" ====== */
-.popup{
-  display:none; position:absolute; left:30px; top:80px; z-index:999;
-  background:var(--cream); border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,.18);
-  padding:16px 18px; min-width:220px;
-}
-.popup h4{ margin:0 0 10px; color:#5e4b3c; }
-.popup ul{ list-style:none; padding:0; margin:0; }
-.popup a{ text-decoration:none; color:var(--brown); display:block; padding:6px 0; }
-.popup a:hover{ text-decoration:underline; }
 
 /* ====== Containers ====== */
 .container{
-  background-color:rgba(255,255,255,.85);
-  max-width:700px; margin:18px auto; padding:40px; border-radius:16px;
-  box-shadow:0 4px 10px rgba(0,0,0,.1); text-align:center;
+  background-color: rgba(255,255,255,.9);
+  max-width: 700px; margin: 18px auto; padding: 40px;
+  border-radius: 16px; text-align:center;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
 }
 h1{ color:#7a5c45; font-size:1.9rem; margin:0 0 6px; }
 h2{ color:#5e4b3c; font-size:1.4rem; margin:0 0 12px; }
 ul{ list-style:none; padding:0; margin:20px 0; }
-li{ margin:12px 0; font-size:1.05em; }
-
-.avenir{ margin-top:6px; opacity:.9; }
+ul.bullets{ list-style: "•  "; padding-left: 1em; text-align:left; }
 
 /* CTA row */
 .cta-row{
@@ -137,38 +78,79 @@ li{ margin:12px 0; font-size:1.05em; }
 .btn-ico{ height:20px; }
 .btn-wa{ background:#25D366; color:#fff; }
 .btn-pp{ background:#ffc439; color:#000; }
+.btn-primary{ background:#6b4b3e; color:#fff; }
+
+/* ====== Info banner ====== */
+.info-banner{
+  max-width: 900px; margin: 8px auto 18px;
+  background: #fff5e6; color:#63402f; border: 1px dashed #e5c39d;
+  padding: 10px 14px; border-radius: 10px; text-align: center;
+}
+.info-banner a{ text-decoration: underline; }
+
+/* ====== Devis Express ====== */
+.page-card{
+  max-width: 900px; margin: 20px auto 40px;
+  background: rgba(255,255,255,.95);
+  border-radius: 20px; padding: 24px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+.page-card h2{ text-align:center; margin-top:0; }
+.page-card .sub{ text-align:center; opacity:.85; margin-bottom: 14px; }
+
+.devis-grid{
+  display:grid; gap:14px;
+  grid-template-columns: 1fr 1fr;
+}
+.devis-grid .full{ grid-column: 1 / -1; }
+.devis-grid .grid-2{ grid-column: 1 / -1; display:grid; gap:14px; grid-template-columns: 1fr 1fr; }
+
+label, fieldset{ display:block; }
+label input, label select, textarea{
+  width:100%; padding:10px 12px; border-radius:10px; border:1px solid #e5d7cd;
+  background:#fff; color:#2d1e15; font-size: 15px;
+}
+fieldset{ border:1px solid #e5d7cd; border-radius:10px; padding:12px; }
+legend{ padding:0 6px; color:#5e4b3c; }
+fieldset label{ display:inline-flex; gap:8px; align-items:center; margin:6px 12px 6px 0; }
+.tiny{ font-size: 12px; opacity:.8; margin-top:6px; }
+
+@media (max-width: 768px){
+  .devis-grid{ grid-template-columns: 1fr; }
+  .devis-grid .grid-2{ grid-template-columns: 1fr; }
+}
 
 /* ====== Pricing ====== */
 .pricing-section{
-  background:linear-gradient(to right, #f5ede2, #e6d6c3);
-  padding:40px 20px; text-align:center; margin-top:24px;
+  background: linear-gradient(to right, #f5ede2, #e6d6c3);
+  padding: 40px 20px; text-align: center; margin-top: 24px;
 }
-.pricing-section h2{ font-size:2rem; text-align:center; }
+.pricing-section h2{ font-size: 2rem; text-align:center; }
 .pricing-cards{
   display:flex; justify-content:center; flex-wrap:wrap; gap:30px; margin-top:20px;
 }
 .card{
   background:#fffaf7; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,.1);
-  padding:30px; max-width:280px; text-align:left; position:relative; cursor:pointer;
-  transition:transform .3s ease, box-shadow .3s ease;
+  padding:30px; max-width:280px; text-align:left; cursor:pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
-.card:hover{ transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,.2); }
+.card:hover{ transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,.2); }
 .card h3{ margin-top:0; font-size:1.3em; color:#7a5c45; }
-.card ul{ padding-left:1em; list-style-type:"🔹 "; margin:10px 0; }
+.card ul{ padding-left: 1em; list-style: "🔹  "; margin:10px 0; }
 .card ul li{ margin-bottom:8px; }
 .tarif-note{ font-size:.9em; color:#333; margin-top:10px; font-style:italic; }
 
-/* ====== Testimonials (hidden until target) ====== */
+/* ====== Testimonials ====== */
 #temoignages{ display:none; }
 :target#temoignages{ display:block; }
 .testimonials{
-  max-width:980px; margin:28px auto; background:rgba(255,255,255,.85);
-  padding:30px 20px; border-radius:16px;
+  max-width: 980px; margin: 28px auto;
+  background: rgba(255,255,255,.92); padding: 30px 20px; border-radius: 16px;
 }
 .testimonials h2{ text-align:center; margin-top:0; }
 .t-grid{
   display:grid; gap:16px;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
 }
 blockquote{
   margin:0; padding:18px; background:#f9efe7; border-radius:14px;
@@ -176,185 +158,34 @@ blockquote{
 }
 blockquote cite{ display:block; margin-top:10px; font-style:normal; color:#5e4b3c; }
 
-/* ====== Footer ====== */
+/* ====== Footer compact + espace clair en bas ====== */
 .footer{
-  background:var(--brown-dark); color:#eee; padding:34px 20px 20px; margin-top:40px;
+  background: linear-gradient(to bottom, #4e342e 0 92%, rgba(78,52,46,0) 100%);
+  color:#eee; padding: 20px 16px; margin: 0 auto 36px; border-radius: 16px;
 }
 .footer-columns{
-  display:flex; gap:40px; align-items:flex-start; justify-content:center;
-  flex-wrap:wrap; max-width:1100px; margin:0 auto;
+  max-width: 1100px; margin: 0 auto;
+  display: flex; gap: 24px; align-items: flex-start; justify-content: space-between;
 }
-.footer-card{ flex:0 0 auto; }
-.footer-logo{ max-width:220px; width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95; }
+.footer-card{ max-width: 320px; }
+.footer-logo{ max-width: 220px; width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); }
 
 .footer-info{
   display:flex; gap:40px; flex-wrap:wrap; align-items:flex-start; justify-content:center;
-  max-width:520px;
+  max-width: 520px;
 }
-.footer-block h4{ margin:10px 0; color:#ffe9d0; }
-.footer-block ul{ list-style:none; padding:0; margin:0; }
-.footer-block li{ margin:8px 0; }
+.footer h4{ margin: 10px 0 8px; color:#ffe9d0; }
+.footer ul{ list-style:none; padding:0; margin:0; }
+.footer li{ margin:8px 0; }
 .footer a{ color:#fff0e6; text-decoration:none; }
-.footer a:hover{ text-decoration:underline; }
+.footer a:hover{ text-decoration: underline; }
 
-.copyright{ text-align:center; margin-top:20px; font-size:14px; opacity:.8; }
+.copyright{ text-align:center; font-size: 14px; opacity:.8; margin-top: 10px; }
 
-/* Mobile: footer stacked + centered */
-@media (max-width:768px){
-  .footer-columns{ flex-direction:column; align-items:center; text-align:center; }
-  .footer-info{ justify-content:center; }
-}
-/* ---- Carte de page, comme sécurité ---- */
-.page-card{
-  max-width: 900px;
-  margin: 20px auto 40px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(6px);
-  border-radius: 20px;
-  padding: 28px 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* Titre + icône */
-.testimonials h2{
-  text-align: center;
-  color: #6b4b3e;
-  font-size: 2rem;
-  margin: 0 0 18px;
-}
-.testimonials .ico{
-  margin-right: .4rem;
-}
-
-/* Grille de témoignages */
-.t-grid{
-  display: grid;
-  gap: 16px;
-}
-@media (min-width: 720px){
-  .t-grid{ grid-template-columns: repeat(3, 1fr); }
-}
-
-/* Blockquotes jolis */
-.testimonials blockquote{
-  background: #fffaf7;
-  border-radius: 16px;
-  padding: 18px 16px;
-  font-style: italic;
-  line-height: 1.55;
-  color: #3b2a22;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-}
-.testimonials blockquote cite{
-  display:block;
-  margin-top:10px;
-  font-style: normal;
-  color:#6b4b3e;
-  font-weight:600;
-}
-
-/* Lien retour */
-.back-link-wrap{ text-align:center; margin-top: 18px; }
-.back-link{
-  color:#6b4b3e;
-  text-decoration: underline;
-}
-.back-link:hover{ text-decoration: none; }
-
-/* --- FOOTER + ESPACE CLAIR EN BAS + VERSION COMPACTE --- */
-
-/* bloc footer (marron) */
-.footer{
-  background: linear-gradient(to bottom, #4e342e 0 92%, rgba(78,52,46,0) 100%); /* dégradé doux */
-  padding: 20px 16px;                 /* plus compact */
-  margin: 0 auto 36px;                /* espace clair avant le bas de page */
-  border-radius: 16px;                /* arrondi propre */
-}
-
-/* largeur raisonnable + centrage du contenu */
-.footer-columns{
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  gap: 24px;                          /* un peu moins d’espace qu’avant */
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-/* colonne gauche (carte) un poil plus petite */
-.footer-logo-block{
-  max-width: 320px;
-}
-
-/* textes + liens plus serrés */
-.footer h4{ margin: 10px 0 8px; }
-.footer ul{ margin: 0; }
-.footer a, .footer p{ line-height: 1.4; }
-
-/* copyright en-dessous, hors bloc marron */
-.copyright{
-  text-align: center;
-  font-size: 14px;
-  opacity: .75;
-  margin: -8px 0 28px; /* remonte un peu pour rapprocher visuellement, et garde un espace final */
-}
-
-/* --- Responsive --- */
+/* Mobile footer */
 @media (max-width: 768px){
-  .footer-columns{
-    flex-direction: column;      /* tout passe en colonne */
-    align-items: center;         /* CENTRER le bloc texte sous l’image */
-    gap: 14px;
-  }
-  .footer-logo-block{ margin-bottom: 8px; }
-}
-/* ===== Fond plus sombre + logo lisible (met à la FIN du fichier) ===== */
-
-/* 1) Superposition sombre globale (desktop fort, mobile léger) */
-body { position: relative; }
-body::before{
-  content:"";
-  position: fixed; inset: 0;
-  pointer-events: none; /* ne bloque pas les clics */
-  background: rgba(0,0,0,.14);              /* mobile par défaut */
-  z-index: 0;
-}
-/* Desktop : un peu plus sombre pour faire ressortir le contenu et le logo */
-@media (min-width: 992px){
-  body::before{ background: rgba(0,0,0,.22); }
+  .footer-columns{ flex-direction: column; align-items:center; text-align:center; gap:14px; }
 }
 
-/* 2) Le contenu passe au‑dessus de l’overlay */
-.logo-container, .menu, .container, .pricing-section, .testimonials, .footer {
-  position: relative; z-index: 1;
-}
-
-/* 3) Logo : enlever le fond foncé du badge + donner du peps au doré */
-.logo-badge{
-  background: transparent !important;      /* retire le carré sombre */
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
-.logo-simple{
-  max-width: 340px; width: 80%; height: auto;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); /* contraste doux */
-  opacity: .98;
-}
-/* Mobile : un tout petit peu moins lumineux comme demandé */
-@media (max-width: 480px){
-  body::before{ background: rgba(0,0,0,.18); }
-  .logo-simple{ filter: drop-shadow(0 1px 5px rgba(0,0,0,.4)); }
-}
-
-/* 4) Menu mobile : fixe SOUS le logo, sans passer devant le reste */
-.menu-toggle{
-  position: sticky; top: 8px; z-index: 3;   /* reste en haut au scroll */
-}
-@media (min-width: 992px){
-  .menu-toggle{ display:none;          /* pas de bouton sur desktop */
-}
-
-/* 5) (option) Enlever toute teinte sombre résiduelle autour du logo si ancienne règle */
-.logo-container{ background: transparent !important; 
-}
-
+/* Small tweaks */
+.avenir{ margin-top: 6px; opacity: .9; }
