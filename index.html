@@ -2,26 +2,27 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EternaWeb - CV & vitrines express</title>
 
   <!-- Favicons -->
   <link rel="icon" href="favicon-ew-32x32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon-ew-64x64.png" type="image/png" sizes="64x64">
 
-  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Logo -->
   <div class="logo-container">
-    <img src="eternaweb-logo.png" alt="EternaWeb Logo" class="logo-simple">
+    <div class="logo-badge">
+      <img src="eternaweb-logo.png" alt="EternaWeb" class="logo-simple">
+    </div>
   </div>
 
   <!-- Menu -->
-  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
-  <nav id="mainMenu" class="menu">
+  <button class="menu-toggle" id="menuBtn" aria-expanded="false">☰ Menu</button>
+  <nav id="mainMenu" class="menu" aria-label="Navigation principale">
     <ul>
       <li><a href="#cv">CV</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
@@ -31,31 +32,37 @@
     </ul>
   </nav>
 
+  <!-- Popup "Autres" -->
+  <div id="popup" class="popup" role="dialog" aria-label="Intégrations disponibles">
+    <h4>Intégrations disponibles</h4>
+    <ul>
+      <li><a href="#">💬 WhatsApp</a></li>
+      <li><a href="#">💰 PayPal</a></li>
+      <li><a href="#">💳 SumUp</a></li>
+      <li><a href="#">📘 Facebook</a></li>
+    </ul>
+  </div>
+
   <!-- Intro -->
   <div class="container" id="cv">
     <h1>EternaWeb</h1>
     <h2>CV & vitrines express — en ligne en 1 heure</h2>
+
     <p>✨ Création de mini-sites pros pour :</p>
     <ul>
       <li>• Présenter vos créations (artisanat, soins, coaching...)</li>
       <li>• Héberger un CV moderne ou un portfolio</li>
       <li>• Intégrer WhatsApp, PayPal ou SumUp</li>
     </ul>
-    <div class="avenir">
-      📢 Prochainement : galerie de sites & témoignages.
-    </div>
-    <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-      <a href="https://wa.me/33749461434" target="_blank" style="text-decoration: none;">
-        <button style="background-color: #25D366; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="height: 20px;">
-          WhatsApp
-        </button>
+
+    <div class="avenir">📢 Prochainement : galerie de sites & témoignages.</div>
+
+    <div class="cta-row">
+      <a href="https://wa.me/33749461434" target="_blank" class="btn btn-wa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico"> WhatsApp
       </a>
-      <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" target="_blank" style="text-decoration: none;">
-        <button style="background-color: #ffc439; color: black; border: none; padding: 12px 20px; font-size: 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
-          <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal" style="height: 20px;">
-          PayPal
-        </button>
+      <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" target="_blank" class="btn btn-pp">
+        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico"> PayPal
       </a>
     </div>
   </div>
@@ -64,8 +71,9 @@
   <section class="pricing-section" id="tarifs">
     <h2>🧾 Formules EternaWeb</h2>
     <p>CV & mini-sites vitrines express — hébergement inclus</p>
+
     <div class="pricing-cards">
-      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20veux%20le%20Pack%20Essentiel%20EternaWeb.'">
+      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Essentiel%20EternaWeb.'">
         <h3>🌿 Pack Essentiel – 49 €</h3>
         <ul>
           <li>CV en ligne simple (1 page)</li>
@@ -75,7 +83,8 @@
         </ul>
         <div class="tarif-note">Idéal pour : candidatures</div>
       </div>
-      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20veux%20le%20Pack%20Vitrine%20EternaWeb.'">
+
+      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Vitrine%20Pro%20EternaWeb.'">
         <h3>✨ Pack Vitrine – 89 €</h3>
         <ul>
           <li>Mini-site vitrine (2-3 pages)</li>
@@ -85,7 +94,8 @@
         </ul>
         <div class="tarif-note">Idéal pour : artisans, freelances</div>
       </div>
-      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20veux%20le%20Pack%20Premium%20EternaWeb.'">
+
+      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Premium%20EternaWeb.'">
         <h3>💎 Pack Premium – 129 €</h3>
         <ul>
           <li>Tout le Pack Vitrine</li>
@@ -98,8 +108,8 @@
     </div>
   </section>
 
-  <!-- Témoignages -->
-  <section class="testimonials" id="temoignages">
+  <!-- Témoignages (caché par défaut, visible via #temoignages) -->
+  <section id="temoignages" class="testimonials">
     <h2>💬 Témoignages</h2>
     <div class="t-grid">
       <blockquote>
@@ -111,8 +121,8 @@
         <cite>— Malik T.</cite>
       </blockquote>
       <blockquote>
-        “Rapide, efficace, et très à l’écoute ! Je recommande à 100 %.”
-        <cite>— Sonia L.</cite>
+        “Excellent rapport qualité/prix. Je recommande à 100 %.”
+        <cite>— Sofia M.</cite>
       </blockquote>
     </div>
   </section>
@@ -120,66 +130,59 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-columns">
-      <div>
-        <div class="footer-logo-block">
-          <img src="carte-eternaweb-footer.png" alt="EternaWeb contact" class="footer-logo">
-        </div>
-        <h4>Infos utiles</h4>
-        <ul>
-          <li><a href="a-propos.html">ℹ️ À propos</a></li>
-          <li><a href="confidentialite.html">📄 Confidentialité</a></li>
-          <li><a href="securite.html">🔒 Sécurité</a></li>
-          <li><a href="#temoignages">💬 Témoignages</a></li>
-          <li><a href="faq.html">📚 FAQ</a></li>
-        </ul>
+      <div class="footer-card">
+        <img src="carte-eternaweb-footer.png" alt="EternaWeb contact" class="footer-logo">
       </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="https://wa.me/33749461434">WhatsApp</a></li>
-          <li><a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a></li>
-        </ul>
+
+      <div class="footer-info">
+        <div class="footer-block">
+          <h4>Infos utiles</h4>
+          <ul>
+            <li><a href="#a-propos">ℹ️ À propos</a></li>
+            <li><a href="confidentialite.html">📄 Confidentialité</a></li>
+            <li><a href="securite.html">🔒 Sécurité</a></li>
+            <li><a href="#temoignages">💬 Témoignages</a></li>
+            <li><a href="faq.html">📚 FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-block">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://wa.me/33749461434">WhatsApp</a></li>
+            <li><a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <p class="copyright">© 2025 Danielle Kabongo – Tous droits réservés</p>
   </footer>
 
-  <!-- Popup Autres -->
-  <div id="popup" class="popup">
-    <h4>Intégrations disponibles</h4>
-    <ul>
-      <li><a href="#">💬 WhatsApp</a></li>
-      <li><a href="#">💰 PayPal</a></li>
-      <li><a href="#">💳 SumUp</a></li>
-      <li><a href="#">📘 Facebook</a></li>
-    </ul>
-  </div>
-
-  <!-- JS -->
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mainMenu');
-      menu.classList.toggle('show');
-    }
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mainMenu = document.getElementById('mainMenu');
+    menuBtn.addEventListener('click', () => {
+      mainMenu.classList.toggle('show');
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', (!expanded).toString());
+    });
+
+    // Popup "Autres"
     const popup = document.getElementById('popup');
     const autresBtn = document.getElementById('autresBtn');
-
-    autresBtn.addEventListener('click', (e) => {
+    autresBtn.addEventListener('click', (e)=>{
       e.preventDefault();
-      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-      const rect = autresBtn.getBoundingClientRect();
-      popup.style.top = rect.bottom + window.scrollY + 'px';
-      popup.style.left = rect.left + 'px';
+      const r = autresBtn.getBoundingClientRect();
+      popup.style.left = (r.left) + 'px';
+      popup.style.top  = (r.bottom + window.scrollY + 8) + 'px';
+      popup.style.display = (popup.style.display==='block' ? 'none' : 'block');
     });
-
-    document.addEventListener('click', (e) => {
-      if (!popup.contains(e.target) && e.target !== autresBtn) {
-        popup.style.display = 'none';
+    document.addEventListener('click', (e)=>{
+      if(!popup.contains(e.target) && e.target !== autresBtn){
+        popup.style.display='none';
       }
     });
-
-    window.addEventListener('scroll', () => { popup.style.display = 'none'; });
+    window.addEventListener('scroll', ()=> popup.style.display='none');
   </script>
-
 </body>
 </html>
