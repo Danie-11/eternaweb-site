@@ -28,18 +28,25 @@ a{ color:inherit; }
 }
 
 /* ====== Menu button ====== */
-.menu-toggle{
-  position:fixed; top:16px; left:16px; z-index:1000;
-  background:var(--brown); color:#fff; border:0; padding:10px 16px;
-  border-radius:14px; font-size:1.1rem;
-  box-shadow:0 6px 18px rgba(0,0,0,.18);
-}
-@media (max-width:768px){
-  .menu-toggle{
-    position:sticky; top:8px; margin:10px auto 0; display:block; left:auto; right:auto;
-  }
+.menu-toggle {
+  position: sticky; /* reste en haut quand on scroll */
+  top: 0; /* collé en haut */
+  background-color: #5a3a2f;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 0 0 12px 12px; /* arrondi seulement en bas */
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%; /* prend toute la largeur sur mobile */
+  z-index: 10;
 }
 
+@media (min-width: 1024px) {
+  .menu-toggle {
+    display: none;
+  }
+}
 /* ====== Nav ====== */
 .menu{
   display:none; position:relative;
