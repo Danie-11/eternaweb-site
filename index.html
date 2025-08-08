@@ -21,181 +21,174 @@
     </div>
   </div>
 
-  <!-- Menu -->
+  <!-- Bouton menu mobile -->
   <button class="menu-toggle" id="menuBtn" aria-expanded="false">☰ Menu</button>
+
+  <!-- Menu principal + switch langue -->
   <nav id="mainMenu" class="menu" aria-label="Navigation principale">
     <ul>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#vitrine">Vitrine</a></li>
-      <li><a href="#devis">Devis express</a></li>
-      <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#temoignages">Témoignages</a></li>
+      <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
+      <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+      <li><a href="#vitrine" data-i18n="nav.vitrine">Vitrine</a></li>
+      <li><a href="#devis" data-i18n="nav.devis">Devis express</a></li>
+      <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
+      <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
     </ul>
+    <div class="lang-switch">
+      <button type="button" data-lang="fr" class="lang active">FR</button>
+      <button type="button" data-lang="en" class="lang">EN</button>
+    </div>
   </nav>
-<nav id="mainMenu" class="menu" aria-label="Navigation principale">
-  <ul>
-    <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
-    <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
-    <li><a href="#vitrine" data-i18n="nav.vitrine">Vitrine</a></li>
-    <li><a href="#devis" data-i18n="nav.devis">Devis express</a></li>
-    <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
-    <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
-  </ul>
 
-  <!-- Sélecteur de langue -->
-  <div class="lang-switch">
-    <button type="button" data-lang="fr" class="lang active">FR</button>
-    <button type="button" data-lang="en" class="lang">EN</button>
-  </div>
-</nav>
   <!-- Intro -->
   <div class="container" id="cv">
-    <h1>EternaWeb</h1>
-    <h2>CV & vitrines express — en ligne en 48 heures</h2>
+    <h1 data-i18n="hero.title">EternaWeb</h1>
+    <h2 data-i18n="hero.subtitle">CV & vitrines express — en ligne en 48 heures</h2>
 
-    <p>✨ Création de mini‑sites pros pour :</p>
+    <p data-i18n="hero.lead">✨ Création de mini‑sites pros pour :</p>
     <ul class="bullets">
-      <li>Présenter vos créations (artisanat, soins, coaching…)</li>
-      <li>Héberger un CV moderne ou un portfolio</li>
-      <li>Intégrer WhatsApp, PayPal ou SumUp</li>
+      <li data-i18n="hero.li1">Présenter vos créations (artisanat, soins, coaching…)</li>
+      <li data-i18n="hero.li2">Héberger un CV moderne ou un portfolio</li>
+      <li data-i18n="hero.li3">Intégrer WhatsApp, PayPal ou SumUp</li>
     </ul>
 
-    <div class="avenir">📢 Prochainement : galerie de sites & témoignages.</div>
+    <div class="avenir" data-i18n="hero.soon">📢 Prochainement : galerie de sites & témoignages.</div>
 
     <div class="cta-row">
       <a href="https://wa.me/33749461434" target="_blank" class="btn btn-wa">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico"> WhatsApp
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico">
+        <span data-i18n="cta.whatsapp">WhatsApp</span>
       </a>
       <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" target="_blank" class="btn btn-pp">
-        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico"> PayPal
+        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico">
+        <span data-i18n="cta.paypal">PayPal</span>
       </a>
     </div>
   </div>
 
-  <!-- Bande info (flash) -->
-  <div class="info-banner" role="status">
+  <!-- Bande info -->
+  <div class="info-banner" role="status" data-i18n="banner.tip">
     💡 Astuce : remplissez le <a href="#devis">Devis Express</a> — je reçois tout sur WhatsApp et je démarre direct.
   </div>
 
   <!-- Devis express -->
   <section id="devis" class="page-card">
-    <h2>📝 Devis express</h2>
-    <p class="sub">Choisissez, décrivez, envoyez — je reçois automatiquement sur WhatsApp.</p>
+    <h2 data-i18n="devis.h2">📝 Devis express</h2>
+    <p class="sub" data-i18n="devis.sub">Choisissez, décrivez, envoyez — je reçois automatiquement sur WhatsApp.</p>
 
     <form id="devisForm" class="devis-grid">
       <label>
-        Type de site
+        <span data-i18n="devis.type">Type de site</span>
         <select name="type" required>
-          <option value="CV">CV</option>
-          <option value="Vitrine">Vitrine</option>
-          <option value="Portfolio">Portfolio</option>
-          <option value="Autre">Autre</option>
+          <option value="CV" data-i18n="devis.opt.cv">CV</option>
+          <option value="Vitrine" data-i18n="devis.opt.vitrine">Vitrine</option>
+          <option value="Portfolio" data-i18n="devis.opt.portfolio">Portfolio</option>
+          <option value="Autre" data-i18n="devis.opt.other">Autre</option>
         </select>
       </label>
 
       <label>
-        Palette / couleurs
+        <span data-i18n="devis.colors">Palette / couleurs</span>
         <input name="couleurs" type="text" placeholder="Ex. beige & doré, brun café…">
       </label>
 
       <label>
-        Style visuel
+        <span data-i18n="devis.style">Style visuel</span>
         <select name="style">
-          <option>Sobre & élégant</option>
-          <option>Créatif & coloré</option>
-          <option>Minimal & pro</option>
-          <option>Nature & doux</option>
+          <option data-i18n="devis.style1">Sobre & élégant</option>
+          <option data-i18n="devis.style2">Créatif & coloré</option>
+          <option data-i18n="devis.style3">Minimal & pro</option>
+          <option data-i18n="devis.style4">Nature & doux</option>
         </select>
       </label>
 
       <fieldset class="full">
-        <legend>Intégrations souhaitées</legend>
+        <legend data-i18n="devis.integrations">Intégrations souhaitées</legend>
         <label><input type="checkbox" name="int" value="WhatsApp"> WhatsApp</label>
         <label><input type="checkbox" name="int" value="PayPal"> PayPal</label>
         <label><input type="checkbox" name="int" value="SumUp"> SumUp</label>
-        <label><input type="checkbox" name="int" value="Formulaire contact"> Formulaire contact</label>
-        <label><input type="checkbox" name="int" value="Réseaux sociaux"> Réseaux sociaux</label>
-        <label><input type="checkbox" name="int" value="Galerie"> Galerie</label>
+        <label><input type="checkbox" name="int" value="Formulaire contact" data-i18n="devis.int.form"> Formulaire contact</label>
+        <label><input type="checkbox" name="int" value="Réseaux sociaux" data-i18n="devis.int.social"> Réseaux sociaux</label>
+        <label><input type="checkbox" name="int" value="Galerie" data-i18n="devis.int.gallery"> Galerie</label>
       </fieldset>
 
       <label class="full">
-        Contenu fourni (textes, images, logo…)
+        <span data-i18n="devis.content">Contenu fourni (textes, images, logo…)</span>
         <textarea name="contenu" rows="3" placeholder="Ce que vous avez déjà / liens drive / consignes…"></textarea>
       </label>
 
       <div class="grid-2">
         <label>
-          Prénom / Nom
+          <span data-i18n="devis.name">Prénom / Nom</span>
           <input name="nom" type="text" placeholder="Votre nom">
         </label>
         <label>
-          Email
+          <span data-i18n="devis.email">Email</span>
           <input name="email" type="email" placeholder="vous@exemple.com">
         </label>
       </div>
 
-      <button type="button" id="sendWA" class="btn btn-primary">Préparer l’envoi WhatsApp</button>
-      <p class="tiny">Aucun envoi serveur — vous validez dans WhatsApp avant d’envoyer.</p>
+      <button type="button" id="sendWA" class="btn btn-primary" data-i18n="devis.send">Préparer l’envoi WhatsApp</button>
+      <p class="tiny" data-i18n="devis.note">Aucun envoi serveur — vous validez dans WhatsApp avant d’envoyer.</p>
     </form>
   </section>
 
   <!-- Tarifs -->
   <section class="pricing-section" id="tarifs">
-    <h2>🧾 Formules EternaWeb</h2>
-    <p>CV & mini‑sites vitrines express — hébergement inclus</p>
+    <h2 data-i18n="pricing.h2">🧾 Formules EternaWeb</h2>
+    <p data-i18n="pricing.sub">CV & mini‑sites vitrines express — hébergement inclus</p>
 
     <div class="pricing-cards">
       <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Essentiel%20EternaWeb.'">
-        <h3>🌿 Pack Essentiel – 49 €</h3>
+        <h3 data-i18n="pricing.card1.title">🌿 Pack Essentiel – 49 €</h3>
         <ul>
-          <li>CV en ligne simple (1 page)</li>
-          <li>Personnalisation avec infos + photo</li>
-          <li>Design élégant & responsive</li>
-          <li>Livraison sous 48h</li>
+          <li data-i18n="pricing.card1.li1">CV en ligne simple (1 page)</li>
+          <li data-i18n="pricing.card1.li2">Personnalisation avec infos + photo</li>
+          <li data-i18n="pricing.card1.li3">Design élégant & responsive</li>
+          <li data-i18n="pricing.card1.li4">Livraison sous 48h</li>
         </ul>
-        <div class="tarif-note">Idéal pour : candidatures</div>
+        <div class="tarif-note" data-i18n="pricing.card1.note">Idéal pour : candidatures</div>
       </div>
 
       <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Vitrine%20Pro%20EternaWeb.'">
-        <h3>✨ Pack Vitrine – 89 €</h3>
+        <h3 data-i18n="pricing.card2.title">✨ Pack Vitrine – 89 €</h3>
         <ul>
-          <li>Mini‑site vitrine (2–3 pages)</li>
-          <li>Accueil + présentation produits/services</li>
-          <li>Boutons WhatsApp, PayPal, réseaux</li>
-          <li>Design harmonieux & responsive</li>
+          <li data-i18n="pricing.card2.li1">Mini‑site vitrine (2–3 pages)</li>
+          <li data-i18n="pricing.card2.li2">Accueil + présentation produits/services</li>
+          <li data-i18n="pricing.card2.li3">Boutons WhatsApp, PayPal, réseaux</li>
+          <li data-i18n="pricing.card2.li4">Design harmonieux & responsive</li>
         </ul>
-        <div class="tarif-note">Idéal pour : artisans, freelances</div>
+        <div class="tarif-note" data-i18n="pricing.card2.note">Idéal pour : artisans, freelances</div>
       </div>
 
       <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Premium%20EternaWeb.'">
-        <h3>💎 Pack Premium – 129 €</h3>
+        <h3 data-i18n="pricing.card3.title">💎 Pack Premium – 129 €</h3>
         <ul>
-          <li>Tout le Pack Vitrine</li>
-          <li>Création/refonte logo</li>
-          <li>Conseils branding</li>
-          <li>SEO de base + Galerie/FAQ</li>
+          <li data-i18n="pricing.card3.li1">Tout le Pack Vitrine</li>
+          <li data-i18n="pricing.card3.li2">Création/refonte logo</li>
+          <li data-i18n="pricing.card3.li3">Conseils branding</li>
+          <li data-i18n="pricing.card3.li4">SEO de base + Galerie/FAQ</li>
         </ul>
-        <div class="tarif-note">Idéal pour : lancement complet</div>
+        <div class="tarif-note" data-i18n="pricing.card3.note">Idéal pour : lancement complet</div>
       </div>
     </div>
   </section>
 
-  <!-- Témoignages (affiché quand #temoignages dans l’URL) -->
+  <!-- Témoignages -->
   <section id="temoignages" class="testimonials">
-    <h2>💬 Témoignages</h2>
+    <h2 data-i18n="testi.h2">💬 Témoignages</h2>
     <div class="t-grid">
       <blockquote>
-        “Super réactive et professionnelle, mon site a été en ligne le jour même !”
-        <cite>— Claire B.</cite>
+        <span data-i18n="testi.t1">“Super réactive et professionnelle, mon site a été en ligne le jour même !”</span>
+        <cite data-i18n="testi.c1">— Claire B.</cite>
       </blockquote>
       <blockquote>
-        “Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”
-        <cite>— Malik T.</cite>
+        <span data-i18n="testi.t2">“Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”</span>
+        <cite data-i18n="testi.c2">— Malik T.</cite>
       </blockquote>
       <blockquote>
-        “Excellent rapport qualité/prix. Je recommande à 100 %.”
-        <cite>— Sofia M.</cite>
+        <span data-i18n="testi.t3">“Excellent rapport qualité/prix. Je recommande à 100 %.”</span>
+        <cite data-i18n="testi.c3">— Sofia M.</cite>
       </blockquote>
     </div>
   </section>
@@ -209,17 +202,17 @@
 
       <div class="footer-info">
         <div class="footer-block">
-          <h4>Infos utiles</h4>
+          <h4 data-i18n="footer.info">Infos utiles</h4>
           <ul>
-            <li><a href="a-propos">À propos</a></li>
-            <li><a href="confidentialite.html">Confidentialité</a></li>
-            <li><a href="securite.html">Sécurité</a></li>
-            <li><a href="#temoignages">Témoignages</a></li>
-            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="a-propos" data-i18n="footer.about">À propos</a></li>
+            <li><a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a></li>
+            <li><a href="securite.html" data-i18n="footer.security">Sécurité</a></li>
+            <li><a href="#temoignages" data-i18n="footer.testi">Témoignages</a></li>
+            <li><a href="faq.html" data-i18n="footer.faq">FAQ</a></li>
           </ul>
         </div>
         <div class="footer-block">
-          <h4>Contact</h4>
+          <h4 data-i18n="footer.contact">Contact</h4>
           <ul>
             <li><a href="https://wa.me/33749461434">WhatsApp</a></li>
             <li><a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a></li>
@@ -232,40 +225,7 @@
 
   <!-- JS -->
   <script>
-    // Menu mobile
-    const menuBtn = document.getElementById('menuBtn');
-    const mainMenu = document.getElementById('mainMenu');
-    menuBtn.addEventListener('click', () => {
-      mainMenu.classList.toggle('show');
-      menuBtn.setAttribute('aria-expanded', mainMenu.classList.contains('show'));
-    });
-
-    // Devis -> WhatsApp
-    const sendWA = document.getElementById('sendWA');
-    sendWA.addEventListener('click', () => {
-      const f = document.getElementById('devisForm');
-      const get = (name) => f.querySelector(`[name="${name}"]`)?.value?.trim() || '';
-      const checks = [...f.querySelectorAll('input[name="int"]:checked')].map(i=>i.value).join(', ') || '—';
-
-      const lignes = [
-        'Devis Express – EternaWeb',
-        '---------------------------',
-        `Type : ${get('type') || '—'}`,
-        `Couleurs : ${get('couleurs') || '—'}`,
-        `Style : ${get('style') || '—'}`,
-        `Intégrations : ${checks}`,
-        `Contenu fourni : ${get('contenu') || '—'}`,
-        `Nom : ${get('nom') || '—'}`,
-        `Email : ${get('email') || '—'}`
-      ];
-
-      const msg = encodeURIComponent(lignes.join('\n'));
-      window.open(`https://wa.me/33749461434?text=${msg}`, '_blank');
-    });
-  </script>
-</body>
-
-  <script>
+  // ===== i18n dictionnaires =====
   const I18N = {
     fr: {
       "nav.cv":"CV","nav.portfolio":"Portfolio","nav.vitrine":"Vitrine",
@@ -277,14 +237,48 @@
       "hero.li1":"Présenter vos créations (artisanat, soins, coaching…)",
       "hero.li2":"Héberger un CV moderne ou un portfolio",
       "hero.li3":"Intégrer WhatsApp, PayPal ou SumUp",
+      "hero.soon":"📢 Prochainement : galerie de sites & témoignages.",
+
+      "cta.whatsapp":"WhatsApp","cta.paypal":"PayPal",
 
       "banner.tip":"💡 Astuce : remplissez le <a href=\"#devis\">Devis Express</a> — je reçois tout sur WhatsApp et je démarre direct.",
 
       "devis.h2":"📝 Devis express",
       "devis.sub":"Choisissez, décrivez, envoyez — je reçois automatiquement sur WhatsApp.",
+      "devis.type":"Type de site",
+      "devis.opt.cv":"CV","devis.opt.vitrine":"Vitrine","devis.opt.portfolio":"Portfolio","devis.opt.other":"Autre",
+      "devis.colors":"Palette / couleurs",
+      "devis.style":"Style visuel",
+      "devis.style1":"Sobre & élégant","devis.style2":"Créatif & coloré","devis.style3":"Minimal & pro","devis.style4":"Nature & doux",
+      "devis.integrations":"Intégrations souhaitées",
+      "devis.int.form":"Formulaire contact","devis.int.social":"Réseaux sociaux","devis.int.gallery":"Galerie",
+      "devis.content":"Contenu fourni (textes, images, logo…)",
+      "devis.name":"Prénom / Nom","devis.email":"Email",
+      "devis.send":"Préparer l’envoi WhatsApp",
+      "devis.note":"Aucun envoi serveur — vous validez dans WhatsApp avant d’envoyer.",
 
       "pricing.h2":"🧾 Formules EternaWeb",
       "pricing.sub":"CV & mini‑sites vitrines express — hébergement inclus",
+      "pricing.card1.title":"🌿 Pack Essentiel – 49 €",
+      "pricing.card1.li1":"CV en ligne simple (1 page)",
+      "pricing.card1.li2":"Personnalisation avec infos + photo",
+      "pricing.card1.li3":"Design élégant & responsive",
+      "pricing.card1.li4":"Livraison sous 48h",
+      "pricing.card1.note":"Idéal pour : candidatures",
+
+      "pricing.card2.title":"✨ Pack Vitrine – 89 €",
+      "pricing.card2.li1":"Mini‑site vitrine (2–3 pages)",
+      "pricing.card2.li2":"Accueil + présentation produits/services",
+      "pricing.card2.li3":"Boutons WhatsApp, PayPal, réseaux",
+      "pricing.card2.li4":"Design harmonieux & responsive",
+      "pricing.card2.note":"Idéal pour : artisans, freelances",
+
+      "pricing.card3.title":"💎 Pack Premium – 129 €",
+      "pricing.card3.li1":"Tout le Pack Vitrine",
+      "pricing.card3.li2":"Création/refonte logo",
+      "pricing.card3.li3":"Conseils branding",
+      "pricing.card3.li4":"SEO de base + Galerie/FAQ",
+      "pricing.card3.note":"Idéal pour : lancement complet",
 
       "testi.h2":"💬 Témoignages",
       "testi.t1":"“Super réactive et professionnelle, mon site a été en ligne le jour même !”",
@@ -294,13 +288,8 @@
       "testi.t3":"“Excellent rapport qualité/prix. Je recommande à 100 %.”",
       "testi.c3":"— Sofia M.",
 
-      "footer.info":"Infos utiles",
-      "footer.about":"À propos",
-      "footer.privacy":"Confidentialité",
-      "footer.security":"Sécurité",
-      "footer.testi":"Témoignages",
-      "footer.faq":"FAQ",
-      "footer.contact":"Contact"
+      "footer.info":"Infos utiles","footer.about":"À propos","footer.privacy":"Confidentialité",
+      "footer.security":"Sécurité","footer.testi":"Témoignages","footer.faq":"FAQ","footer.contact":"Contact"
     },
     en: {
       "nav.cv":"Resume","nav.portfolio":"Portfolio","nav.vitrine":"Showcase",
@@ -312,14 +301,48 @@
       "hero.li1":"Showcasing your work (crafts, wellness, coaching…)",
       "hero.li2":"Hosting a modern resume or portfolio",
       "hero.li3":"Integrating WhatsApp, PayPal or SumUp",
+      "hero.soon":"📢 Coming soon: gallery & testimonials.",
+
+      "cta.whatsapp":"WhatsApp","cta.paypal":"PayPal",
 
       "banner.tip":"💡 Tip: fill the <a href=\"#devis\">Instant Quote</a> — I receive it on WhatsApp and start right away.",
 
       "devis.h2":"📝 Instant quote",
       "devis.sub":"Pick, describe, send — I receive everything on WhatsApp.",
+      "devis.type":"Site type",
+      "devis.opt.cv":"Resume","devis.opt.vitrine":"Showcase","devis.opt.portfolio":"Portfolio","devis.opt.other":"Other",
+      "devis.colors":"Palette / colors",
+      "devis.style":"Visual style",
+      "devis.style1":"Clean & elegant","devis.style2":"Creative & colorful","devis.style3":"Minimal & pro","devis.style4":"Natural & soft",
+      "devis.integrations":"Desired integrations",
+      "devis.int.form":"Contact form","devis.int.social":"Social links","devis.int.gallery":"Gallery",
+      "devis.content":"Provided content (texts, images, logo…)",
+      "devis.name":"First / Last name","devis.email":"Email",
+      "devis.send":"Prepare WhatsApp message",
+      "devis.note":"No server send — you confirm in WhatsApp before sending.",
 
       "pricing.h2":"🧾 EternaWeb Plans",
       "pricing.sub":"Express resumes & mini showcase sites — hosting included",
+      "pricing.card1.title":"🌿 Essential – €49",
+      "pricing.card1.li1":"Simple online resume (1 page)",
+      "pricing.card1.li2":"Personalization (data + photo)",
+      "pricing.card1.li3":"Elegant & responsive design",
+      "pricing.card1.li4":"Delivery within 48h",
+      "pricing.card1.note":"Great for applications",
+
+      "pricing.card2.title":"✨ Showcase – €89",
+      "pricing.card2.li1":"Mini showcase site (2–3 pages)",
+      "pricing.card2.li2":"Home + products/services",
+      "pricing.card2.li3":"Buttons: WhatsApp, PayPal, socials",
+      "pricing.card2.li4":"Harmonious & responsive design",
+      "pricing.card2.note":"Great for artisans, freelancers",
+
+      "pricing.card3.title":"💎 Premium – €129",
+      "pricing.card3.li1":"Everything in Showcase",
+      "pricing.card3.li2":"Logo creation/refresh",
+      "pricing.card3.li3":"Branding advice",
+      "pricing.card3.li4":"Basic SEO + Gallery/FAQ",
+      "pricing.card3.note":"Great for full launch",
 
       "testi.h2":"💬 Testimonials",
       "testi.t1":"“Super responsive and professional — my site was live the same day!”",
@@ -329,13 +352,8 @@
       "testi.t3":"“Great value for money. 100% recommended.”",
       "testi.c3":"— Sofia M.",
 
-      "footer.info":"Useful info",
-      "footer.about":"About",
-      "footer.privacy":"Privacy",
-      "footer.security":"Security",
-      "footer.testi":"Testimonials",
-      "footer.faq":"FAQ",
-      "footer.contact":"Contact"
+      "footer.info":"Useful info","footer.about":"About","footer.privacy":"Privacy",
+      "footer.security":"Security","footer.testi":"Testimonials","footer.faq":"FAQ","footer.contact":"Contact"
     }
   };
 
@@ -344,11 +362,10 @@
     document.querySelectorAll('[data-i18n]').forEach(el=>{
       const key = el.getAttribute('data-i18n');
       if(!dict[key]) return;
-      // Supporte HTML (pour le lien dans la bannière)
-      if(dict[key].includes('<')) el.innerHTML = dict[key];
+      // Permet du HTML (pour la bannière)
+      if (dict[key].includes('<')) el.innerHTML = dict[key];
       else el.textContent = dict[key];
     });
-    // UI active
     document.querySelectorAll('.lang-switch .lang').forEach(b=>{
       b.classList.toggle('active', b.dataset.lang===lang);
     });
@@ -356,14 +373,43 @@
     document.documentElement.setAttribute('lang', lang);
   }
 
-  // Init
+  // ===== Menu mobile =====
+  const menuBtn = document.getElementById('menuBtn');
+  const mainMenu = document.getElementById('mainMenu');
+  menuBtn.addEventListener('click', () => {
+    mainMenu.classList.toggle('show');
+    menuBtn.setAttribute('aria-expanded', mainMenu.classList.contains('show'));
+  });
+
+  // ===== Devis -> WhatsApp =====
+  const sendWA = document.getElementById('sendWA');
+  sendWA.addEventListener('click', () => {
+    const f = document.getElementById('devisForm');
+    const get = (name) => f.querySelector(`[name="${name}"]`)?.value?.trim() || '';
+    const checks = [...f.querySelectorAll('input[name="int"]:checked')].map(i=>i.value).join(', ') || '—';
+
+    const lignes = [
+      'Devis Express – EternaWeb',
+      '---------------------------',
+      `Type : ${get('type') || '—'}`,
+      `Couleurs : ${get('couleurs') || '—'}`,
+      `Style : ${get('style') || '—'}`,
+      `Intégrations : ${checks}`,
+      `Contenu fourni : ${get('contenu') || '—'}`,
+      `Nom : ${get('nom') || '—'}`,
+      `Email : ${get('email') || '—'}`
+    ];
+
+    const msg = encodeURIComponent(lignes.join('\n'));
+    window.open(`https://wa.me/33749461434?text=${msg}`, '_blank');
+  });
+
+  // ===== i18n init + écouteurs =====
   const saved = localStorage.getItem('lang') || 'fr';
   applyLang(saved);
-
-  // Click handlers
   document.querySelectorAll('.lang-switch .lang').forEach(btn=>{
     btn.addEventListener('click', ()=> applyLang(btn.dataset.lang));
   });
   </script>
-  
+</body>
 </html>
