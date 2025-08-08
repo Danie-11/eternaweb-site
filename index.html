@@ -6,64 +6,74 @@
   <title>EternaWeb - CV & vitrines express</title>
 
   <!-- Favicons -->
-  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="favicon-64x64.png" type="image/png" sizes="64x64"> 
-  <link rel="preload" as="image" href="assets/bg-pampas.jpg" imagesrcset="assets/bg-pampas.jpg" imagesizes="100vw">
+  <link rel="icon" href="favicon-ew-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="favicon-ew-64x64.png" type="image/png" sizes="64x64">
+
+  <!-- Ton CSS existant -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- CSS AJOUTS (banner + devis + tweaks) -->
   <style>
-<style>
-/* --- FOOTER + ESPACE CLAIR EN BAS + VERSION COMPACTE (marron foncé) --- */
-.footer {
-  background: linear-gradient(to bottom, #3f2c26 0 92%, rgba(63,44,38,0) 100%);
-  padding: 20px 16px;
-  margin: 0 auto 36px;
-  border-radius: 16px;
-}
+    /* ===== Bande info collante ===== */
+    .info-banner{
+      position: sticky; top: 8px; z-index: 5;
+      background: #fff7ea; border: 1px solid #f2d7a6;
+      color: #6a4a3b; padding: 10px 14px; margin: 16px auto; max-width: 980px;
+      border-radius: 10px; display: flex; gap: 10px; align-items: center; justify-content: center;
+    }
+    .info-banner .info-cta{
+      background: #6b4b3e; color: #fff; padding: 6px 10px; border-radius: 8px; text-decoration: none;
+    }
+    .info-banner .info-cta:hover{ opacity:.9; }
+    .info-banner .info-close{
+      margin-left: auto; border: 0; background: transparent; font-size: 18px; cursor: pointer; color:#6a4a3b;
+      line-height: 1;
+    }
 
-.footer-columns {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  justify-content: space-between;
-}
+    /* ===== Devis express ===== */
+    .devis-section{
+      background: rgba(255,255,255,0.9);
+      max-width: 980px; margin: 28px auto; padding: 24px; border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+    .devis-section h2{ text-align:center; margin-top:0; color:#6b4b3e; }
 
-.footer-card {
-  max-width: 320px;
-}
+    #devisForm{ display: grid; gap: 14px; }
+    #devisForm label{ display:block; }
+    #devisForm input, #devisForm select, #devisForm textarea{
+      width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #e2d6cd;
+      background: #fff; color: #2d1e15;
+    }
+    .grid-two{ display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 720px){ .grid-two{ grid-template-columns: 1fr 1fr; } }
 
-.footer h4 {
-  margin: 10px 0 8px;
-}
-.footer ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.footer a, .footer p {
-  line-height: 1.4;
-}
+    .chk-wrap{ border: 1px dashed #e2d6cd; padding: 10px 12px; border-radius: 12px; }
+    .chk-wrap legend{ padding:0 6px; color:#6b4b3e; font-weight:600; }
+    .chk-wrap label{ margin-right: 12px; display: inline-flex; gap: 6px; align-items:center; }
 
-.copyright {
-  text-align: center;
-  font-size: 14px;
-  opacity: .75;
-  margin: -8px 0 28px;
-}
+    .actions{ display:flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
+    .small-note{ font-size: .9rem; opacity: .8; text-align: center; margin: 6px 0 0; }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  .footer-columns {
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-  .footer-card {
-    margin-bottom: 8px;
-  }
-}
-    
+    /* Estimation bloc */
+    .estimate{
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      background:#fff7f1; border:1px solid #f2ddc9; color:#6b4b3e;
+      margin-top: 6px; padding:10px 12px; border-radius:10px;
+      font-weight: 600;
+    }
+    .estimate .price{ font-size:1.1rem; }
+
+    /* Bouton loader state */
+    .btn[aria-busy="true"]{
+      position: relative; pointer-events:none; opacity:.85;
+    }
+    .btn[aria-busy="true"]::after{
+      content:""; width:16px; height:16px; border-radius:50%;
+      border:2px solid rgba(255,255,255,.6); border-top-color:transparent;
+      position:absolute; right:12px; top:50%; transform:translateY(-50%);
+      animation: spin .9s linear infinite;
+    }
+    @keyframes spin{ to{ transform:translateY(-50%) rotate(360deg);} }
   </style>
 </head>
 <body>
@@ -81,14 +91,14 @@
     <ul>
       <li><a href="#cv">CV</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="vitrine">Vitrine</a></li>
+      <li><a href="#vitrine">Vitrine</a></li>
       <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#" id="autresBtn">Autres ▾</a></li>
+      <li><a href="#devis">Devis</a></li>
     </ul>
   </nav>
 
-  <!-- Popup "Autres" -->
-  <div id="popup" class="popup" role="dialog" aria-label="Intégrations disponibles">
+  <!-- Popup "Autres" (désactivé si tu ne l'utilises pas)
+  <div id="popup" class="popup" role="dialog" aria-label="Intégrations disponibles" style="display:none">
     <h4>Intégrations disponibles</h4>
     <ul>
       <li><a href="#">💬 WhatsApp</a></li>
@@ -96,12 +106,12 @@
       <li><a href="#">💳 SumUp</a></li>
       <li><a href="#">📘 Facebook</a></li>
     </ul>
-  </div>
+  </div> -->
 
   <!-- Intro -->
   <div class="container" id="cv">
     <h1>EternaWeb</h1>
-    <h2>CV & vitrines express — en ligne en 48 heure</h2>
+    <h2>CV & vitrines express — en ligne en 48 heures</h2>
 
     <p>✨ Création de mini-sites pros pour :</p>
     <ul>
@@ -121,6 +131,118 @@
       </a>
     </div>
   </div>
+
+  <!-- Bande d’info -->
+  <div class="info-banner" id="infoBanner">
+    <span>🚀 Nouveau : remplis le <strong>Devis express</strong>, choisis ta formule et envoie tout sur WhatsApp.</span>
+    <a href="#devis" class="info-cta">Aller au devis</a>
+    <button class="info-close" aria-label="Fermer">×</button>
+  </div>
+
+  <!-- Devis express -->
+  <section id="devis" class="devis-section">
+    <h2>📝 Devis express</h2>
+
+    <!-- Estimation live -->
+    <div class="estimate">Estimation : <span class="price" id="estPrice">—</span></div>
+
+    <form id="devisForm" autocomplete="on">
+      <div class="grid-two">
+        <label>Nom & Prénom*<br>
+          <input type="text" name="nom" required>
+        </label>
+        <label>Téléphone WhatsApp*<br>
+          <input type="tel" name="whatsapp" placeholder="+33..." required>
+        </label>
+      </div>
+
+      <div class="grid-two">
+        <label>Email (optionnel)<br>
+          <input type="email" name="email" placeholder="ex: nom@domaine.fr">
+        </label>
+        <label>Deadline (optionnel)<br>
+          <input type="date" name="deadline">
+        </label>
+      </div>
+
+      <div class="grid-two">
+        <label>Type de site*<br>
+          <select name="type" required>
+            <option value="">— Choisir —</option>
+            <option>CV</option>
+            <option>Portfolio</option>
+            <option>Vitrine</option>
+          </select>
+        </label>
+        <label>Pack choisi*<br>
+          <select name="pack" id="packSelect" required>
+            <option value="">— Choisir —</option>
+            <option value="49">Essentiel – 49 €</option>
+            <option value="89">Vitrine – 89 €</option>
+            <option value="129">Premium – 129 €</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="grid-two">
+        <label>Palette / couleurs souhaitées<br>
+          <input type="text" name="couleurs" placeholder="Ex: #5c4033 (brun), beige, doré…">
+        </label>
+        <label>Style visuel<br>
+          <select name="style">
+            <option value="">— Au choix —</option>
+            <option>Sober / Minimal</option>
+            <option>Moderne</option>
+            <option>Luxueux</option>
+            <option>Nature / Organique</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="grid-two">
+        <label>Fond<br>
+          <select name="fond">
+            <option value="">— Au choix —</option>
+            <option>Uni</option>
+            <option>Dégradé</option>
+            <option>Image</option>
+          </select>
+        </label>
+        <label>Police(s) préférée(s)<br>
+          <input type="text" name="polices" placeholder="Ex: Playfair Display, Inter…">
+        </label>
+      </div>
+
+      <label>Catégorie (activité)<br>
+        <input type="text" name="categorie" placeholder="Coaching, artisanat, soins, restauration…">
+      </label>
+
+      <fieldset class="chk-wrap">
+        <legend>Contenus à fournir</legend>
+        <label><input type="checkbox" name="contenus" value="Logo"> Logo</label>
+        <label><input type="checkbox" name="contenus" value="Photos"> Photos</label>
+        <label><input type="checkbox" name="contenus" value="Textes"> Textes</label>
+        <label><input type="checkbox" name="contenus" value="Tarifs"> Tarifs</label>
+        <label><input type="checkbox" name="contenus" value="Réseaux"> Réseaux sociaux</label>
+      </fieldset>
+
+      <label>Liens d'inspiration / modèles (Drive, sites, Instagram…)<br>
+        <textarea name="inspirations" rows="2" placeholder="Colle tes liens ici"></textarea>
+      </label>
+
+      <label>Notes & besoins spécifiques<br>
+        <textarea name="notes" rows="3" placeholder="Ex: sections souhaitées, fonctionnalités, langue…"></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-wa" id="sendBtn">Envoyer sur WhatsApp</button>
+        <a id="emailFallback" class="btn btn-pp" href="#">Ou envoyer par email</a>
+      </div>
+
+      <p class="small-note">⚠️ Les fichiers (images/logo) ne peuvent pas être joints via ce formulaire WhatsApp.
+        Ajoute un lien (Google Drive/Dropbox) ou envoie-les ensuite directement par WhatsApp.</p>
+    </form>
+  </section>
 
   <!-- Tarifs -->
   <section class="pricing-section" id="tarifs">
@@ -163,7 +285,7 @@
     </div>
   </section>
 
-  <!-- Témoignages (caché par défaut, visible via #temoignages) -->
+  <!-- Témoignages (affiché via #temoignages si besoin) -->
   <section id="temoignages" class="testimonials">
     <h2>💬 Témoignages</h2>
     <div class="t-grid">
@@ -196,7 +318,7 @@
             <li><a href="a-propos">ℹ️ À propos</a></li>
             <li><a href="confidentialite.html">📄 Confidentialité</a></li>
             <li><a href="securite.html">🔒 Sécurité</a></li>
-            <li><a href="temoignages">💬 Témoignages</a></li>
+            <li><a href="#temoignages">💬 Témoignages</a></li>
             <li><a href="faq.html">📚 FAQ</a></li>
           </ul>
         </div>
@@ -212,32 +334,150 @@
     <p class="copyright">© 2025 Danielle Kabongo – Tous droits réservés</p>
   </footer>
 
+  <!-- JS -->
   <script>
-    // Mobile menu toggle
+    /* ===== Menu mobile ===== */
     const menuBtn = document.getElementById('menuBtn');
     const mainMenu = document.getElementById('mainMenu');
-    menuBtn.addEventListener('click', () => {
-      mainMenu.classList.toggle('show');
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', (!expanded).toString());
-    });
+    if (menuBtn && mainMenu){
+      menuBtn.addEventListener('click', () => {
+        mainMenu.classList.toggle('show');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', (!expanded).toString());
+      });
+    }
 
-    // Popup "Autres"
-    const popup = document.getElementById('popup');
-    const autresBtn = document.getElementById('autresBtn');
-    autresBtn.addEventListener('click', (e)=>{
-      e.preventDefault();
-      const r = autresBtn.getBoundingClientRect();
-      popup.style.left = (r.left) + 'px';
-      popup.style.top  = (r.bottom + window.scrollY + 8) + 'px';
-      popup.style.display = (popup.style.display==='block' ? 'none' : 'block');
-    });
-    document.addEventListener('click', (e)=>{
-      if(!popup.contains(e.target) && e.target !== autresBtn){
-        popup.style.display='none';
-      }
-    });
-    window.addEventListener('scroll', ()=> popup.style.display='none');
+    /* ===== Fermer la bannière info ===== */
+    const infoBanner = document.getElementById('infoBanner');
+    if (infoBanner){
+      const closeBtn = infoBanner.querySelector('.info-close');
+      closeBtn.addEventListener('click', ()=> infoBanner.style.display='none');
+    }
+
+    /* ===== Devis -> WhatsApp ===== */
+    const devisForm = document.getElementById('devisForm');
+    const emailFallback = document.getElementById('emailFallback');
+    const packSelect = document.getElementById('packSelect');
+    const estPrice = document.getElementById('estPrice');
+    const sendBtn = document.getElementById('sendBtn');
+
+    // Estimation simple sur base du pack
+    function updateEstimate(){
+      const v = Number(packSelect?.value || 0);
+      estPrice.textContent = v ? `${v} €` : '—';
+    }
+    if (packSelect){ packSelect.addEventListener('change', updateEstimate); updateEstimate(); }
+
+    // Helpers
+    const LS_KEY = 'ew_devis_v1';
+    function clean(val){ return (val || '').toString().trim(); }
+    function saveDraft(){
+      if (!devisForm) return;
+      const form = new FormData(devisForm);
+      const data = Object.fromEntries(form.entries());
+      data.contenus = [...devisForm.querySelectorAll('input[name="contenus"]:checked')].map(x=>x.value);
+      localStorage.setItem(LS_KEY, JSON.stringify(data));
+    }
+    function loadDraft(){
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw || !devisForm) return;
+      try{
+        const data = JSON.parse(raw);
+        for (const [k,v] of Object.entries(data)){
+          const el = devisForm.querySelector(`[name="${k}"]`);
+          if (!el) continue;
+          if (el.tagName === 'SELECT' || el.tagName === 'TEXTAREA' || el.type === 'text' || el.type === 'email' || el.type === 'date' || el.type === 'tel'){
+            el.value = v;
+          }
+        }
+        // contenus (checkboxes)
+        if (Array.isArray(data.contenus)){
+          devisForm.querySelectorAll('input[name="contenus"]').forEach(cb=>{
+            cb.checked = data.contenus.includes(cb.value);
+          });
+        }
+        updateEstimate();
+      }catch(e){}
+    }
+    // auto-save brouillon
+    if (devisForm){
+      devisForm.addEventListener('input', saveDraft);
+      loadDraft();
+    }
+
+    // Compose le message
+    function buildMessage(data){
+      const blocs = [];
+      blocs.push(`DEMANDE DE DEVIS – EternaWeb`);
+      blocs.push(`Nom: ${data.nom}`);
+      if (data.email) blocs.push(`Email: ${data.email}`);
+      blocs.push(`WhatsApp: ${data.whatsapp}`);
+      if (data.deadline) blocs.push(`Deadline: ${data.deadline}`);
+      blocs.push(`Type de site: ${data.type}`);
+      blocs.push(`Pack: ${data.packLabel} (${data.pack} €)`);
+      if (data.couleurs) blocs.push(`Couleurs: ${data.couleurs}`);
+      if (data.style) blocs.push(`Style: ${data.style}`);
+      if (data.fond) blocs.push(`Fond: ${data.fond}`);
+      if (data.polices) blocs.push(`Polices: ${data.polices}`);
+      if (data.categorie) blocs.push(`Catégorie: ${data.categorie}`);
+      if (data.contenus?.length) blocs.push(`Contenus fournis: ${data.contenus.join(', ')}`);
+      if (data.inspirations) blocs.push(`Inspirations: ${data.inspirations}`);
+      if (data.notes) blocs.push(`Notes: ${data.notes}`);
+      blocs.push(`\nEstimation indicatrice: ${data.pack ? data.pack + ' €' : '—'}`);
+      return blocs.join('\n');
+    }
+
+    if (devisForm){
+      devisForm.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        if (!sendBtn) return;
+
+        const form = new FormData(devisForm);
+        const data = {
+          nom: clean(form.get('nom')),
+          whatsapp: clean(form.get('whatsapp')),
+          email: clean(form.get('email')),
+          deadline: clean(form.get('deadline')),
+          type: clean(form.get('type')),
+          pack: clean(form.get('pack')),
+          packLabel: (devisForm.querySelector('#packSelect option:checked')?.textContent || '').trim(),
+          couleurs: clean(form.get('couleurs')),
+          style: clean(form.get('style')),
+          fond: clean(form.get('fond')),
+          polices: clean(form.get('polices')),
+          categorie: clean(form.get('categorie')),
+          inspirations: clean(form.get('inspirations')),
+          notes: clean(form.get('notes')),
+          contenus: [...devisForm.querySelectorAll('input[name="contenus"]:checked')].map(x=>x.value)
+        };
+
+        // Vérifs minimales
+        if (!data.nom || !data.whatsapp || !data.type || !data.pack){
+          alert('Merci de remplir au moins : Nom, WhatsApp, Type de site et Pack choisi.');
+          return;
+        }
+
+        // Loader on
+        sendBtn.setAttribute('aria-busy','true');
+        sendBtn.textContent = 'Préparation…';
+
+        const msg = buildMessage(data);
+        const phone = '33749461434'; // Ton numéro WhatsApp
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+
+        // Fallback mail prêt
+        const mailto = `mailto:contact@eternaweb.fr?subject=${encodeURIComponent('Devis EternaWeb')}&body=${encodeURIComponent(msg)}`;
+        emailFallback.setAttribute('href', mailto);
+
+        // Ouvre WhatsApp
+        setTimeout(()=>{
+          window.open(url, '_blank');
+          // Remet le bouton clean
+          sendBtn.removeAttribute('aria-busy');
+          sendBtn.textContent = 'Envoyer sur WhatsApp';
+        }, 500);
+      });
+    }
   </script>
 </body>
 </html>
