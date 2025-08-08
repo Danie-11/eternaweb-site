@@ -1,27 +1,46 @@
-<section id="temoignages" class="testimonials">
-  <h2>
-    <svg class="ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-      <path fill="currentColor" d="M9 11H5V5h10v6H9l-2 3V11zm10 0h-4V9h4V5h-6v10h2l-2 3v1h6V11z"/>
-    </svg>
-    Témoignages
-  </h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Témoignages – EternaWeb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <div class="t-grid">
-    <blockquote>
-      <p>“Ultra rapide, mon mini‑site était en ligne l’après‑midi. Parfait pour mes prestations.”</p>
-      <footer>— Aïcha, coach</footer>
-    </blockquote>
-
-    <blockquote>
-      <p>“J’ai un CV web propre, j’ai déjà eu deux retours recruteurs. Merci !”</p>
-      <footer>— Marco, dev junior</footer>
-    </blockquote>
-
-    <blockquote>
-      <p>“La vitrine + Paiement PayPal m’ont fait gagner un temps fou.”</p>
-      <footer>— Léa, artisan</footer>
-    </blockquote>
+  <!-- même en-tête simple que sécurité (facultatif si tu n'en as pas) -->
+  <div class="logo-container" style="text-align:center; margin:20px 0 10px;">
+    <img src="eternaweb-logo.png" alt="EternaWeb" class="logo-simple">
   </div>
-</section>
 
-<a class="back-link" href="index.html">← Retour à l’accueil</a>
+  <!-- CARTE PAGE, identique à Sécurité -->
+  <div class="page-card container">
+    <section id="temoignages" class="testimonials">
+      <h2>
+        <span class="ico" aria-hidden="true">💬</span>
+        Témoignages
+      </h2>
+
+      <div class="t-grid">
+        <blockquote>
+          “Ultra rapide, mon mini‑site était en ligne l’après‑midi. Parfait pour mes prestations.”
+          <cite>— Aïcha, coach</cite>
+        </blockquote>
+        <blockquote>
+          “J’ai un CV web propre, j’ai déjà eu deux retours recruteurs. Merci !”
+          <cite>— Marco, dev junior</cite>
+        </blockquote>
+        <blockquote>
+          “La vitrine + paiement PayPal m’ont fait gagner un temps fou.”
+          <cite>— Léa, artisan</cite>
+        </blockquote>
+      </div>
+
+      <p class="back-link-wrap">
+        <a class="back-link" href="index.html">← Retour à l’accueil</a>
+      </p>
+    </section>
+  </div>
+
+</body>
+</html>
