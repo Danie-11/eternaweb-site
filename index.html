@@ -9,7 +9,7 @@
   <link rel="icon" href="favicon-ew-32x32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon-ew-64x64.png" type="image/png" sizes="64x64">
 
-  <!-- Your main CSS -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#vitrine">Vitrine</a></li>
       <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#" onclick="togglePopup()">Autres ▾</a></li>
+      <li><a href="#" id="autresBtn">Autres ▾</a></li>
     </ul>
   </nav>
 
@@ -35,18 +35,15 @@
   <div class="container" id="cv">
     <h1>EternaWeb</h1>
     <h2>CV & vitrines express — en ligne en 1 heure</h2>
-
     <p>✨ Création de mini-sites pros pour :</p>
     <ul>
       <li>• Présenter vos créations (artisanat, soins, coaching...)</li>
       <li>• Héberger un CV moderne ou un portfolio</li>
       <li>• Intégrer WhatsApp, PayPal ou SumUp</li>
     </ul>
-
     <div class="avenir">
       📢 Prochainement : galerie de sites & témoignages.
     </div>
-
     <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
       <a href="https://wa.me/33749461434" target="_blank" style="text-decoration: none;">
         <button style="background-color: #25D366; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
@@ -67,9 +64,8 @@
   <section class="pricing-section" id="tarifs">
     <h2>🧾 Formules EternaWeb</h2>
     <p>CV & mini-sites vitrines express — hébergement inclus</p>
-
     <div class="pricing-cards">
-      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Essentiel%20EternaWeb.'">
+      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20veux%20le%20Pack%20Essentiel%20EternaWeb.'">
         <h3>🌿 Pack Essentiel – 49 €</h3>
         <ul>
           <li>CV en ligne simple (1 page)</li>
@@ -79,8 +75,7 @@
         </ul>
         <div class="tarif-note">Idéal pour : candidatures</div>
       </div>
-
-      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Vitrine%20Pro%20EternaWeb.'">
+      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20veux%20le%20Pack%20Vitrine%20EternaWeb.'">
         <h3>✨ Pack Vitrine – 89 €</h3>
         <ul>
           <li>Mini-site vitrine (2-3 pages)</li>
@@ -90,8 +85,7 @@
         </ul>
         <div class="tarif-note">Idéal pour : artisans, freelances</div>
       </div>
-
-      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Premium%20EternaWeb.'">
+      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Je%20veux%20le%20Pack%20Premium%20EternaWeb.'">
         <h3>💎 Pack Premium – 129 €</h3>
         <ul>
           <li>Tout le Pack Vitrine</li>
@@ -104,6 +98,25 @@
     </div>
   </section>
 
+  <!-- Témoignages -->
+  <section class="testimonials" id="temoignages">
+    <h2>💬 Témoignages</h2>
+    <div class="t-grid">
+      <blockquote>
+        “Super réactive et professionnelle, mon site a été en ligne le jour même !”
+        <cite>— Claire B.</cite>
+      </blockquote>
+      <blockquote>
+        “Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”
+        <cite>— Malik T.</cite>
+      </blockquote>
+      <blockquote>
+        “Rapide, efficace, et très à l’écoute ! Je recommande à 100 %.”
+        <cite>— Sonia L.</cite>
+      </blockquote>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-columns">
@@ -113,10 +126,10 @@
         </div>
         <h4>Infos utiles</h4>
         <ul>
-          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="a-propos.html">ℹ️ À propos</a></li>
           <li><a href="confidentialite.html">📄 Confidentialité</a></li>
           <li><a href="securite.html">🔒 Sécurité</a></li>
-          <li><a href="temoignages.html">Témoignages</a></li>
+          <li><a href="#temoignages">💬 Témoignages</a></li>
           <li><a href="faq.html">📚 FAQ</a></li>
         </ul>
       </div>
@@ -131,10 +144,10 @@
     <p class="copyright">© 2025 Danielle Kabongo – Tous droits réservés</p>
   </footer>
 
-  <!-- Popup -->
-  <div id="popup" style="display:none; position:fixed; top:80px; right:30px; background:#fffaf7; border-radius:16px; box-shadow:0 4px 10px rgba(0,0,0,.2); padding:20px; z-index:999;">
+  <!-- Popup Autres -->
+  <div id="popup" class="popup">
     <h4>Intégrations disponibles</h4>
-    <ul style="list-style:none; padding:0; margin:0;">
+    <ul>
       <li><a href="#">💬 WhatsApp</a></li>
       <li><a href="#">💰 PayPal</a></li>
       <li><a href="#">💳 SumUp</a></li>
@@ -148,10 +161,25 @@
       const menu = document.getElementById('mainMenu');
       menu.classList.toggle('show');
     }
-    function togglePopup() {
-      const popup = document.getElementById('popup');
-      popup.style.display = (popup.style.display === 'none' || !popup.style.display) ? 'block' : 'none';
-    }
+    const popup = document.getElementById('popup');
+    const autresBtn = document.getElementById('autresBtn');
+
+    autresBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+      const rect = autresBtn.getBoundingClientRect();
+      popup.style.top = rect.bottom + window.scrollY + 'px';
+      popup.style.left = rect.left + 'px';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!popup.contains(e.target) && e.target !== autresBtn) {
+        popup.style.display = 'none';
+      }
+    });
+
+    window.addEventListener('scroll', () => { popup.style.display = 'none'; });
   </script>
+
 </body>
 </html>
