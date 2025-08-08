@@ -15,7 +15,30 @@
       background-attachment: fixed;
       color: #2d1e15;
       padding: 60px 20px;
-    }.logo-container {
+    }
+    <header class="ew-header">
+  <div class="ew-bar">
+    <a class="ew-logo" href="/">
+      <img src="eternaweb-logo.png" alt="EternaWeb">
+      <span>EternaWeb</span>
+    </a>
+
+    <nav id="ewMenu" class="ew-nav">
+      <a href="#cv" class="is-active">CV</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#vitrine">Vitrine</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="ew-cta">
+      <a class="ew-btn" href="https://wa.me/33749461434">WhatsApp</a>
+    </div>
+
+    <button class="ew-burger" aria-label="Ouvrir le menu" onclick="document.getElementById('ewMenu').classList.toggle('show')">☰</button>
+  </div>
+</header>
+    .logo-container {
   text-align: center;
   margin-bottom: 10px;
 }
