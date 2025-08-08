@@ -167,3 +167,59 @@ blockquote cite{ display:block; margin-top:10px; font-style:normal; color:#5e4b3
   .footer-columns{ flex-direction:column; align-items:center; text-align:center; }
   .footer-info{ justify-content:center; }
 }
+/* ---- Carte de page, comme sécurité ---- */
+.page-card{
+  max-width: 900px;
+  margin: 20px auto 40px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 28px 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Titre + icône */
+.testimonials h2{
+  text-align: center;
+  color: #6b4b3e;
+  font-size: 2rem;
+  margin: 0 0 18px;
+}
+.testimonials .ico{
+  margin-right: .4rem;
+}
+
+/* Grille de témoignages */
+.t-grid{
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 720px){
+  .t-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Blockquotes jolis */
+.testimonials blockquote{
+  background: #fffaf7;
+  border-radius: 16px;
+  padding: 18px 16px;
+  font-style: italic;
+  line-height: 1.55;
+  color: #3b2a22;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+.testimonials blockquote cite{
+  display:block;
+  margin-top:10px;
+  font-style: normal;
+  color:#6b4b3e;
+  font-weight:600;
+}
+
+/* Lien retour */
+.back-link-wrap{ text-align:center; margin-top: 18px; }
+.back-link{
+  color:#6b4b3e;
+  text-decoration: underline;
+}
+.back-link:hover{ text-decoration: none; }
