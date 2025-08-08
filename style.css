@@ -271,6 +271,52 @@ blockquote cite{ display:block; margin-top:10px; font-style:normal; color:#5e4b3
   }
   .footer-logo-block{ margin-bottom: 8px; }
 }
+/* ===== Fond plus sombre + logo lisible (met à la FIN du fichier) ===== */
 
-/* Option : si tu préfères SANS dégradé et juste un espace clair en bas,
-   remplace le background ci-dessus par background:#4e342e; et garde margin-bottom. */
+/* 1) Superposition sombre globale (desktop fort, mobile léger) */
+body { position: relative; }
+body::before{
+  content:"";
+  position: fixed; inset: 0;
+  pointer-events: none; /* ne bloque pas les clics */
+  background: rgba(0,0,0,.14);              /* mobile par défaut */
+  z-index: 0;
+}
+/* Desktop : un peu plus sombre pour faire ressortir le contenu et le logo */
+@media (min-width: 992px){
+  body::before{ background: rgba(0,0,0,.22); }
+}
+
+/* 2) Le contenu passe au‑dessus de l’overlay */
+.logo-container, .menu, .container, .pricing-section, .testimonials, .footer {
+  position: relative; z-index: 1;
+}
+
+/* 3) Logo : enlever le fond foncé du badge + donner du peps au doré */
+.logo-badge{
+  background: transparent !important;      /* retire le carré sombre */
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.logo-simple{
+  max-width: 340px; width: 80%; height: auto;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); /* contraste doux */
+  opacity: .98;
+}
+/* Mobile : un tout petit peu moins lumineux comme demandé */
+@media (max-width: 480px){
+  body::before{ background: rgba(0,0,0,.18); }
+  .logo-simple{ filter: drop-shadow(0 1px 5px rgba(0,0,0,.4)); }
+}
+
+/* 4) Menu mobile : fixe SOUS le logo, sans passer devant le reste */
+.menu-toggle{
+  position: sticky; top: 8px; z-index: 3;   /* reste en haut au scroll */
+}
+@media (min-width: 992px){
+  .menu-toggle{ display:none; }             /* pas de bouton sur desktop */
+}
+
+/* 5) (option) Enlever toute teinte sombre résiduelle autour du logo si ancienne règle */
+.logo-container{ background: transparent !important; }
+
