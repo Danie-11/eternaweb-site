@@ -5,41 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Témoignages – EternaWeb</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Styles locaux garantis pour cette page -->
+  <style>
+    /* carte identique à sécurité */
+    .page-card{
+      max-width: 900px;
+      margin: 20px auto 40px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      border-radius: 22px;
+      padding: 28px 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      color:#3b2a22; /* force une couleur de texte visible */
+    }
+    .t-title{
+      text-align:center;
+      color:#6b4b3e;
+      font-size:2rem;
+      margin:0 0 18px;
+      line-height:1.2;
+    }
+    .t-grid{
+      display:grid;
+      gap:16px;
+    }
+    @media (min-width:720px){ .t-grid{ grid-template-columns:repeat(3,1fr); } }
+    .t-item{
+      background:#fffaf7;
+      border-radius:16px;
+      padding:18px 16px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.08);
+      font-style:italic;
+      line-height:1.55;
+    }
+    .t-item cite{
+      display:block; margin-top:10px; font-style:normal; color:#6b4b3e; font-weight:600;
+    }
+    .back-link-wrap{ text-align:center; margin-top:18px; }
+    .back-link{ color:#6b4b3e; text-decoration:underline; }
+    .back-link:hover{ text-decoration:none; }
+  </style>
 </head>
 <body>
 
-  <!-- même en-tête simple que sécurité (facultatif si tu n'en as pas) -->
   <div class="logo-container" style="text-align:center; margin:20px 0 10px;">
     <img src="eternaweb-logo.png" alt="EternaWeb" class="logo-simple">
   </div>
 
-  <!-- CARTE PAGE, identique à Sécurité -->
-  <div class="page-card container">
-    <section id="temoignages" class="testimonials">
-      <h2>
-        <span class="ico" aria-hidden="true">💬</span>
-        Témoignages
-      </h2>
+  <div class="page-card">
+    <h2 class="t-title">💬 Témoignages</h2>
 
-      <div class="t-grid">
-        <blockquote>
-          “Ultra rapide, mon mini‑site était en ligne l’après‑midi. Parfait pour mes prestations.”
-          <cite>— Aïcha, coach</cite>
-        </blockquote>
-        <blockquote>
-          “J’ai un CV web propre, j’ai déjà eu deux retours recruteurs. Merci !”
-          <cite>— Marco, dev junior</cite>
-        </blockquote>
-        <blockquote>
-          “La vitrine + paiement PayPal m’ont fait gagner un temps fou.”
-          <cite>— Léa, artisan</cite>
-        </blockquote>
-      </div>
+    <div class="t-grid">
+      <blockquote class="t-item">
+        “Ultra rapide, mon mini‑site était en ligne l’après‑midi. Parfait pour mes prestations.”
+        <cite>— Aïcha, coach</cite>
+      </blockquote>
 
-      <p class="back-link-wrap">
-        <a class="back-link" href="index.html">← Retour à l’accueil</a>
-      </p>
-    </section>
+      <blockquote class="t-item">
+        “J’ai un CV web propre, j’ai déjà eu deux retours recruteurs. Merci !”
+        <cite>— Marco, dev junior</cite>
+      </blockquote>
+
+      <blockquote class="t-item">
+        “La vitrine + paiement PayPal m’ont fait gagner un temps fou.”
+        <cite>— Léa, artisan</cite>
+      </blockquote>
+    </div>
+
+    <p class="back-link-wrap">
+      <a class="back-link" href="index.html">← Retour à l’accueil</a>
+    </p>
   </div>
 
 </body>
