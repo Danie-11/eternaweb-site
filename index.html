@@ -26,18 +26,20 @@
 
   <!-- Menu principal + switch langue -->
   <nav id="mainMenu" class="menu" aria-label="Navigation principale">
-    <ul>
-      <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
-      <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
-      <li><a href="#vitrine" data-i18n="nav.vitrine">Vitrine</a></li>
-      <li><a href="#devis" data-i18n="nav.devis">Devis express</a></li>
-      <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
-      <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
-    </ul>
-    <div class="lang-switch">
-      <button type="button" data-lang="fr" class="lang active">FR</button>
-      <button type="button" data-lang="en" class="lang">EN</button>
-    </div>
+  <ul>
+    <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
+    <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+    <li><a href="#vitrine" data-i18n="nav.vitrine">Vitrine</a></li>
+    <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
+    <li><a href="#devis" data-i18n="nav.devis">Vos consignes</a></li>
+    <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
+  </ul>
+
+  <!-- Sélecteur de langue (drapeaux) -->
+  <div class="lang-switch">
+<button type="button" data-lang="fr" class="lang active" aria-label="Français">🇫🇷</button>
+    <button type="button" data-lang="en" class="lang" aria-label="English">🇬🇧</button>
+  </div>
   </nav>
 
   <!-- Intro -->
@@ -147,10 +149,12 @@
           <li data-i18n="pricing.card1.li3">Design élégant & responsive</li>
           <li data-i18n="pricing.card1.li4">Livraison sous 48h</li>
         </ul>
+
+        <button class="btn choose-plan" data-plan="Essentiel">Je choisis cette formule</button>
         <div class="tarif-note" data-i18n="pricing.card1.note">Idéal pour : candidatures</div>
       </div>
 
-      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Vitrine%20Pro%20EternaWeb.'">
+      <div class="card" onclick="location.href='https://wa.me/33749723434?text=Bonjour%20!%20Int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Vitrine%20Pro%20EternaWeb.'">
         <h3 data-i18n="pricing.card2.title">✨ Pack Vitrine – 89 €</h3>
         <ul>
           <li data-i18n="pricing.card2.li1">Mini‑site vitrine (2–3 pages)</li>
@@ -158,10 +162,12 @@
           <li data-i18n="pricing.card2.li3">Boutons WhatsApp, PayPal, réseaux</li>
           <li data-i18n="pricing.card2.li4">Design harmonieux & responsive</li>
         </ul>
+
+        <button class="btn choose-plan" data-plan="Essentiel">Je choisis cette formule</button>
         <div class="tarif-note" data-i18n="pricing.card2.note">Idéal pour : artisans, freelances</div>
       </div>
 
-      <div class="card" onclick="location.href='https://wa.me/33749461434?text=Bonjour%20!%20Int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Premium%20EternaWeb.'">
+      <div class="card" onclick="location.href='https://wa.me/33749723434?text=Bonjour%20!%20Int%C3%A9ress%C3%A9(e)%20par%20le%20Pack%20Premium%20EternaWeb.'">
         <h3 data-i18n="pricing.card3.title">💎 Pack Premium – 129 €</h3>
         <ul>
           <li data-i18n="pricing.card3.li1">Tout le Pack Vitrine</li>
@@ -169,6 +175,8 @@
           <li data-i18n="pricing.card3.li3">Conseils branding</li>
           <li data-i18n="pricing.card3.li4">SEO de base + Galerie/FAQ</li>
         </ul>
+
+        <button class="btn choose-plan" data-plan="Essentiel">Je choisis cette formule</button>
         <div class="tarif-note" data-i18n="pricing.card3.note">Idéal pour : lancement complet</div>
       </div>
     </div>
@@ -223,136 +231,91 @@
   </footer>
 
   <!-- JS -->
-  <script>
-  // ===== i18n dictionnaires =====
+    <script>
+  // Menu mobile
+  const menuBtn = document.getElementById('menuBtn');
+  const mainMenu = document.getElementById('mainMenu');
+  if (menuBtn && mainMenu) {
+    menuBtn.addEventListener('click', () => {
+      mainMenu.classList.toggle('show');
+      menuBtn.setAttribute('aria-expanded', mainMenu.classList.contains('show'));
+    });
+  }
+
+  // Choix de plan → préremplir, scroller, alerte WhatsApp
+  document.querySelectorAll('.choose-plan').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // évite le onclick du parent .card
+      const plan = btn.dataset.plan || '';
+      const select = document.querySelector('#devisForm select[name="type"]');
+      if (select) {
+        // si le libellé diffère, on mappe ici (ex : Essentiel -> CV, Vitrine -> Vitrine, Premium -> Vitrine)
+        const map = { 'Essentiel':'CV', 'Vitrine':'Vitrine', 'Premium':'Vitrine' };
+        const value = map[plan] || plan;
+        select.value = value;
+      }
+      // Scroll doux vers la section devis
+      const target = document.getElementById('devis');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Alerte WhatsApp (nouvel onglet) — discrète, juste une notif
+      const note = encodeURIComponent(`(Alerte) Un visiteur a cliqué "Je choisis cette formule" : ${plan}`);
+      window.open(`https://wa.me/33749461434?text=${note}`, '_blank');
+    });
+  });
+
+  // Devis -> E-mail (mailto)
+  const sendEmail = document.getElementById('sendEmail');
+  if (sendEmail) {
+    sendEmail.addEventListener('click', () => {
+      const f = document.getElementById('devisForm');
+      const get = (name) => f.querySelector(`[name="${name}"]`)?.value?.trim() || '';
+      const checks = [...f.querySelectorAll('input[name="int"]:checked')].map(i=>i.value).join(', ') || '—';
+
+      const subject = encodeURIComponent(`EternaWeb – Vos consignes (${get('type') || '—'})`);
+      const body = encodeURIComponent(
+        [
+          `Type : ${get('type') || '—'}`,
+          `Couleurs : ${get('couleurs') || '—'}`,
+          `Style : ${get('style') || '—'}`,
+          `Intégrations : ${checks}`,
+          `Autres demandes : ${get('contenu') || '—'}`,
+          `Nom : ${get('nom') || '—'}`,
+          `Email : ${get('email') || '—'}`
+        ].join('\n')
+      );
+
+      // Remets ici TON adresse de réception
+      const to = 'contact@eternaweb.fr';
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+  }
+
+  // --- i18n ---
   const I18N = {
     fr: {
       "nav.cv":"CV","nav.portfolio":"Portfolio","nav.vitrine":"Vitrine",
-      "nav.devis":"Devis express","nav.tarifs":"Tarifs","nav.temoignages":"Témoignages",
+      "nav.devis":"Vos consignes","nav.tarifs":"Tarifs","nav.temoignages":"Témoignages",
 
-      "hero.title":"EternaWeb",
-      "hero.subtitle":"CV & vitrines express — en ligne en 48 heures",
-      "hero.lead":"✨ Création de mini‑sites pros pour :",
-      "hero.li1":"Présenter vos créations (artisanat, soins, coaching…)",
-      "hero.li2":"Héberger un CV moderne ou un portfolio",
-      "hero.li3":"Intégrer WhatsApp, PayPal ou SumUp",
-      "hero.soon":"📢 Prochainement : galerie de sites & témoignages.",
+      "devis.h2":"📝 Vos consignes",
+      "devis.sub":"Choisissez, décrivez, envoyez — je reçois vos consignes.",
+      "devis.other":"Autres demandes",
+      "devis.note":"Aucun envoi serveur : votre logiciel e‑mail s’ouvre avec le message prérempli.",
 
-      "cta.whatsapp":"WhatsApp","cta.paypal":"PayPal",
-
-      "banner.tip":"💡 Astuce : remplissez le <a href=\"#devis\">Devis Express</a> — je reçois tout sur WhatsApp et je démarre direct.",
-
-      "devis.h2":"📝 Devis express",
-      "devis.sub":"Choisissez, décrivez, envoyez — je reçois automatiquement sur WhatsApp.",
-      "devis.type":"Type de site",
-      "devis.opt.cv":"CV","devis.opt.vitrine":"Vitrine","devis.opt.portfolio":"Portfolio","devis.opt.other":"Autre",
-      "devis.colors":"Palette / couleurs",
-      "devis.style":"Style visuel",
-      "devis.style1":"Sobre & élégant","devis.style2":"Créatif & coloré","devis.style3":"Minimal & pro","devis.style4":"Nature & doux",
-      "devis.integrations":"Intégrations souhaitées",
-      "devis.int.form":"Formulaire contact","devis.int.social":"Réseaux sociaux","devis.int.gallery":"Galerie",
-      "devis.content":"Contenu fourni (textes, images, logo…)",
-      "devis.name":"Prénom / Nom","devis.email":"Email",
-      "devis.send":"Préparer l’envoi WhatsApp",
-      "devis.note":"Aucun envoi serveur — vous validez dans WhatsApp avant d’envoyer.",
-
-      "pricing.h2":"🧾 Formules EternaWeb",
-      "pricing.sub":"CV & mini‑sites vitrines express — hébergement inclus",
-      "pricing.card1.title":"🌿 Pack Essentiel – 49 €",
-      "pricing.card1.li1":"CV en ligne simple (1 page)",
-      "pricing.card1.li2":"Personnalisation avec infos + photo",
-      "pricing.card1.li3":"Design élégant & responsive",
-      "pricing.card1.li4":"Livraison sous 48h",
-      "pricing.card1.note":"Idéal pour : candidatures",
-
-      "pricing.card2.title":"✨ Pack Vitrine – 89 €",
-      "pricing.card2.li1":"Mini‑site vitrine (2–3 pages)",
-      "pricing.card2.li2":"Accueil + présentation produits/services",
-      "pricing.card2.li3":"Boutons WhatsApp, PayPal, réseaux",
-      "pricing.card2.li4":"Design harmonieux & responsive",
-      "pricing.card2.note":"Idéal pour : artisans, freelances",
-
-      "pricing.card3.title":"💎 Pack Premium – 129 €",
-      "pricing.card3.li1":"Tout le Pack Vitrine",
-      "pricing.card3.li2":"Création/refonte logo",
-      "pricing.card3.li3":"Conseils branding",
-      "pricing.card3.li4":"SEO de base + Galerie/FAQ",
-      "pricing.card3.note":"Idéal pour : lancement complet",
-
-      "testi.h2":"💬 Témoignages",
-      "testi.t1":"“Super réactive et professionnelle, mon site a été en ligne le jour même !”",
-      "testi.c1":"— Claire B.",
-      "testi.t2":"“Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”",
-      "testi.c2":"— Malik T.",
-      "testi.t3":"“Excellent rapport qualité/prix. Je recommande à 100 %.”",
-      "testi.c3":"— Sofia M.",
-
-      "footer.info":"Infos utiles","footer.about":"À propos","footer.security":"Sécurité","footer.privacy":"Confidentialité",
-      ,"footer.code of conduct":"Code de conduite","footer.faq":"FAQ","footer.contact":"Contact"
-    }
+      "btn.choose":"Je choisis cette formule",
+      "btn.send":"Envoyer"
+    },
     en: {
       "nav.cv":"Resume","nav.portfolio":"Portfolio","nav.vitrine":"Showcase",
-      "nav.devis":"Instant quote","nav.tarifs":"Pricing","nav.testimonials":"Testimonials",
+      "nav.devis":"Your brief","nav.tarifs":"Pricing","nav.temoignages":"Testimonials",
 
-      "hero.title":"EternaWeb",
-      "hero.subtitle":"Express resumes & sites — online within 48 hours",
-      "hero.lead":"✨ I build mini professional sites for:",
-      "hero.li1":"Showcasing your work (crafts, wellness, coaching…)",
-      "hero.li2":"Hosting a modern resume or portfolio",
-      "hero.li3":"Integrating WhatsApp, PayPal or SumUp",
-      "hero.soon":"📢 Coming soon: gallery & testimonials.",
+      "devis.h2":"📝 Your brief",
+      "devis.sub":"Pick, describe, send — I receive your brief.",
+      "devis.other":"Other requests",
+      "devis.note":"No server submit: your mail app opens with a prefilled message.",
 
-      "cta.whatsapp":"WhatsApp","cta.paypal":"PayPal",
-
-      "banner.tip":"💡 Tip: fill the <a href=\"#devis\">Instant Quote</a> — I receive it on WhatsApp and start right away.",
-
-      "devis.h2":"📝 Instant quote",
-      "devis.sub":"Pick, describe, send — I receive everything on WhatsApp.",
-      "devis.type":"Site type",
-      "devis.opt.cv":"Resume","devis.opt.vitrine":"Showcase","devis.opt.portfolio":"Portfolio","devis.opt.other":"Other",
-      "devis.colors":"Palette / colors",
-      "devis.style":"Visual style",
-      "devis.style1":"Clean & elegant","devis.style2":"Creative & colorful","devis.style3":"Minimal & pro","devis.style4":"Natural & soft",
-      "devis.integrations":"Desired integrations",
-      "devis.int.form":"Contact form","devis.int.social":"Social links","devis.int.gallery":"Gallery",
-      "devis.content":"Provided content (texts, images, logo…)",
-      "devis.name":"First / Last name","devis.email":"Email",
-      "devis.send":"Prepare WhatsApp message",
-      "devis.note":"No server send — you confirm in WhatsApp before sending.",
-
-      "pricing.h2":"🧾 EternaWeb Plans",
-      "pricing.sub":"Express resumes & mini showcase sites — hosting included",
-      "pricing.card1.title":"🌿 Essential – €49",
-      "pricing.card1.li1":"Simple online resume (1 page)",
-      "pricing.card1.li2":"Personalization (data + photo)",
-      "pricing.card1.li3":"Elegant & responsive design",
-      "pricing.card1.li4":"Delivery within 48h",
-      "pricing.card1.note":"Great for applications",
-
-      "pricing.card2.title":"✨ Showcase – €89",
-      "pricing.card2.li1":"Mini showcase site (2–3 pages)",
-      "pricing.card2.li2":"Home + products/services",
-      "pricing.card2.li3":"Buttons: WhatsApp, PayPal, socials",
-      "pricing.card2.li4":"Harmonious & responsive design",
-      "pricing.card2.note":"Great for artisans, freelancers",
-
-      "pricing.card3.title":"💎 Premium – €129",
-      "pricing.card3.li1":"Everything in Showcase",
-      "pricing.card3.li2":"Logo creation/refresh",
-      "pricing.card3.li3":"Branding advice",
-      "pricing.card3.li4":"Basic SEO + Gallery/FAQ",
-      "pricing.card3.note":"Great for full launch",
-
-      "testi.h2":"💬 Testimonials",
-      "testi.t1":"“Super responsive and professional — my site was live the same day!”",
-      "testi.c1":"— Claire B.",
-      "testi.t2":"“Clean, elegant design — clients contact me directly via WhatsApp!”",
-      "testi.c2":"— Malik T.",
-      "testi.t3":"“Great value for money. 100% recommended.”",
-      "testi.c3":"— Sofia M.",
-
-      "footer.info":"Useful info","footer.about":"About","footer.privacy":"Privacy",
-      "footer.security":"Security","footer.code of conduct":"Code of conduct","footer.faq":"FAQ","footer.contact":"Contact"
+      "btn.choose":"I choose this plan",
+      "btn.send":"Send"
     }
   };
 
@@ -360,8 +323,7 @@
     const dict = I18N[lang] || I18N.fr;
     document.querySelectorAll('[data-i18n]').forEach(el=>{
       const key = el.getAttribute('data-i18n');
-      if(!dict[key]) return;
-      // Permet du HTML (pour la bannière)
+      if (!dict[key]) return;
       if (dict[key].includes('<')) el.innerHTML = dict[key];
       else el.textContent = dict[key];
     });
@@ -372,43 +334,93 @@
     document.documentElement.setAttribute('lang', lang);
   }
 
-  // ===== Menu mobile =====
-  const menuBtn = document.getElementById('menuBtn');
-  const mainMenu = document.getElementById('mainMenu');
-  menuBtn.addEventListener('click', () => {
-    mainMenu.classList.toggle('show');
-    menuBtn.setAttribute('aria-expanded', mainMenu.classList.contains('show'));
-  });
-
-  // ===== Devis -> WhatsApp =====
-  const sendWA = document.getElementById('sendWA');
-  sendWA.addEventListener('click', () => {
-    const f = document.getElementById('devisForm');
-    const get = (name) => f.querySelector(`[name="${name}"]`)?.value?.trim() || '';
-    const checks = [...f.querySelectorAll('input[name="int"]:checked')].map(i=>i.value).join(', ') || '—';
-
-    const lignes = [
-      'Devis Express – EternaWeb',
-      '---------------------------',
-      `Type : ${get('type') || '—'}`,
-      `Couleurs : ${get('couleurs') || '—'}`,
-      `Style : ${get('style') || '—'}`,
-      `Intégrations : ${checks}`,
-      `Contenu fourni : ${get('contenu') || '—'}`,
-      `Nom : ${get('nom') || '—'}`,
-      `Email : ${get('email') || '—'}`
-    ];
-
-    const msg = encodeURIComponent(lignes.join('\n'));
-    window.open(`https://wa.me/33749461434?text=${msg}`, '_blank');
-  });
-
-  // ===== i18n init + écouteurs =====
+  // init langue
   const saved = localStorage.getItem('lang') || 'fr';
   applyLang(saved);
   document.querySelectorAll('.lang-switch .lang').forEach(btn=>{
     btn.addEventListener('click', ()=> applyLang(btn.dataset.lang));
+  }
+  // ====== Config ======
+  const WA_NUMBER = '33749461434';                 // ton numéro WhatsApp (sans +)
+  const MAIL_TO   = 'contact@eternaweb.fr';        // ton email de réception
+
+  // ====== Utils ======
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+  }
+
+  // ====== 1) Boutons "Je choisis cette formule" ======
+  const planInput = document.getElementById('planInput');
+
+  document.querySelectorAll('.choose-plan').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const plan = btn.dataset.plan || '';
+      // Mémorise et pré-remplis
+      localStorage.setItem('ew_selected_plan', plan);
+      if (planInput) planInput.value = plan;
+
+      // Ping WhatsApp "Devis" (mobile uniquement)
+      if (isMobile()) {
+        const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
+        window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
+      }
+
+      // Scroll vers le formulaire
+      location.hash = '#devis';
+    });
   });
-  </script>
+
+  // Pré-remplir si déjà sélectionné
+  const savedPlan = localStorage.getItem('ew_selected_plan');
+  if (savedPlan && planInput) planInput.value = savedPlan;
+
+  // ====== 2) Envoi du formulaire -> email + (option) ping WhatsApp ======
+  const devisForm = document.getElementById('devisForm');
+  const sendForm  = document.getElementById('sendForm');
+
+  if (devisForm && sendForm) {
+    sendForm.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const get = (name) => devisForm.querySelector(`[name="${name}"]`)?.value?.trim() || '—';
+      const checks = [...devisForm.querySelectorAll('input[name="int"]:checked')].map(i => i.value).join(', ') || '—';
+
+      const lignes = [
+        'Devis EternaWeb',
+        '---------------------------',
+        `Formule : ${get('plan')}`,
+        `Type de site : ${get('type')}`,
+        `Couleurs : ${get('couleurs')}`,
+        `Style : ${get('style')}`,
+        `Intégrations : ${checks}`,
+        `Autres demandes : ${get('contenu')}`,
+        `Nom : ${get('nom')}`,
+        `Email : ${get('email')}`,
+      ];
+
+      const subject = `EternaWeb – Devis ${get('plan')}`;
+      const body    = encodeURIComponent(lignes.join('\n'));
+
+      // Ouvre le client mail de la personne (ils valident l’envoi)
+      window.location.href = `mailto:${MAIL_TO}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+      // Petit délai, puis ping WhatsApp "Devis complété" (mobile uniquement)
+      if (isMobile()) {
+        const t2 = encodeURIComponent(`Devis complété – ${get('plan')} – ${get('nom')}`);
+        setTimeout(() => {
+          window.open(`https://wa.me/${WA_NUMBER}?text=${t2}`, '_blank');
+        }, 400);
+      }
+
+      // Affiche une checklist à l’écran (facultatif)
+      alert(
+        "✅ Presque terminé !\n\n" +
+        "1) Vérifie et ENVOIE l'email qui vient de s'ouvrir (ton client mail).\n" +
+        "2) Tu recevras ma réponse avec la checklist à fournir (textes, images, logo, accès, etc.).\n\n" +
+        "Merci !"
+      );
+    });
+  }
+  <script>
 </body>
 </html>
