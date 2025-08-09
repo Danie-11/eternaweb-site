@@ -194,3 +194,33 @@ body.lite .footer {                              /* footer plus net */
 .btn:hover {
   background: #a06b44;
 }
+/* --- Lang switch globe --- */
+.lang-group{ position: relative; margin-left: auto; }
+.lang-trigger{
+  background:#ffffff22; border:1px solid #ffffff40; color:#fff;
+  padding:.4rem .6rem; border-radius:999px; cursor:pointer;
+}
+.lang-menu{
+  position:absolute; right:0; top:110%; background:#fff; color:#333;
+  border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.15);
+  padding:.35rem; display:none; min-width:140px; z-index:5;
+}
+.lang-menu.show{ display:block; }
+.lang-menu .lang{
+  width:100%; text-align:left; border:0; background:transparent; cursor:pointer;
+  padding:.45rem .6rem; border-radius:8px; font-weight:600;
+}
+.lang-menu .lang:hover{ background:#f5f5f7; }
+
+/* --- Bouton flottant FAQ --- */
+.fab-faq{
+  position:fixed; right:16px; bottom:16px; z-index:10;
+  width:52px; height:52px; border-radius:50%;
+  display:grid; place-items:center;
+  background:#6b4b3e; color:#fff; text-decoration:none;
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
+  font-size:22px;
+}
+.fab-faq:hover{ filter:brightness(1.08); }
+
+/* (garde tes styles existants : menu, sections, footer, etc.) */
