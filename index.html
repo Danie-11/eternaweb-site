@@ -8,11 +8,9 @@
   <link rel="icon" href="favicon-ew-64x64.png" sizes="64x64" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <body class="lite">
+<body class="lite">
   <!-- Bande annonce -->
- 
-    <div class="topnote">
+  <div class="topnote">
     🚀 <span data-i18n="note">Site livré en 48h · Paiement simple · Support WhatsApp</span>
   </div>
 
@@ -20,18 +18,14 @@
   <div class="floating-tools" aria-label="Outils rapides">
     <!-- Lang globe -->
     <div class="lang-wrap">
-      <button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">
-        🌎
-      </button>
+      <button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button>
       <div class="lang-menu" id="langMenu" role="menu">
         <button class="lang-item" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
         <button class="lang-item" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
       </div>
     </div>
     <!-- FAQ -->
-    <button class="fab faq" id="faqBtn" aria-controls="faqPanel" aria-expanded="false" aria-label="FAQ">
-      ❓
-    </button>
+    <button class="fab faq" id="faqBtn" aria-controls="faqPanel" aria-expanded="false" aria-label="FAQ">❓</button>
   </div>
 
   <!-- Logo -->
@@ -67,19 +61,17 @@
 
     <div class="cta-row">
       <a href="https://wa.me/33749723434" target="_blank" class="btn btn-wa">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico">
-        <span>WhatsApp</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico"><span>WhatsApp</span>
       </a>
       <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" target="_blank" class="btn btn-pp">
-        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico">
-        <span>PayPal</span>
+        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico"><span>PayPal</span>
       </a>
     </div>
   </div>
 
   <!-- Bande info -->
   <div class="info-banner" role="status" data-i18n="banner.tip">
-    💡 Astuce : remplissez <a href="#devis" class="btn btn-primary">Vos consignes</a>Vos consignes</a> — je reçois tout et je démarre direct.
+    💡 Astuce : <a href="#devis" class="btn btn-primary">Vos consignes</a> — je reçois tout et je démarre direct.
   </div>
 
   <!-- Tarifs -->
@@ -133,6 +125,7 @@
 
     <form id="devisForm" class="devis-grid">
       <input type="hidden" name="plan" id="planInput" value="">
+
       <label>
         <span data-i18n="devis.type">Type de site</span>
         <select name="type" required>
@@ -176,8 +169,7 @@
       <div class="grid-2">
         <label><span data-i18n="devis.name">Prénom / Nom</span><input name="nom" type="text" placeholder="Votre nom"></label>
         <label><span data-i18n="devis.email">Email</span><input name="email" type="email" placeholder="vous@exemple.com"></label>
-        <label><span data-i18n="devis.company">Raison sociale</span><input name="company" type="text" placeholder="Votre raison sociale">
-        </label>
+        <label class="full"><span data-i18n="devis.company">Raison sociale</span><input name="company" type="text" placeholder="Votre raison sociale"></label>
       </div>
 
       <button type="button" id="sendForm" class="btn btn-primary" data-i18n="btn.send">Envoyer</button>
@@ -215,7 +207,7 @@
     </ol>
   </section>
 
-  <!-- Panneau FAQ (caché, s’ouvre via le bouton ❓) -->
+  <!-- Panneau FAQ -->
   <aside id="faqPanel" class="faq-panel" aria-hidden="true">
     <div class="faq-inner">
       <button class="faq-close" id="faqClose" aria-label="Fermer">✖</button>
@@ -271,41 +263,45 @@
     <p class="copyright">© 2025 Danielle Kabongo – Tous droits réservés</p>
   </footer>
 
-  <!-- JS minimal (menu, langues, i18n, “je choisis”, FAQ, envoi mail) -->
+  <!-- JS -->
   <script>
+  // ====== Config ======
   const WA_NUMBER='33749723434', MAIL_TO='contact@eternaweb.fr';
+
+  // ====== Menu mobile ======
   const menuBtn=document.getElementById('menuBtn'), mainMenu=document.getElementById('mainMenu');
   menuBtn?.addEventListener('click',()=>{mainMenu.classList.toggle('show');menuBtn.setAttribute('aria-expanded',mainMenu.classList.contains('show'))});
 
-  // i18n simple
+  // ====== i18n ======
   const I18N={
     fr:{'nav.menu':'Menu','note':'Site livré en 48h · Paiement simple · Support WhatsApp','btn.choose':'Je choisis cette formule','btn.send':'Envoyer',
-      'hero.title':'EternaWeb','hero.subtitle':'CV & vitrines express — en ligne en 48 heures','hero.lead':'✨ Création de mini‑sites pros pour :',
-      'banner.tip':'💡 Astuce : remplissez <a href="#devis">Vos consignes</a> — je reçois tout et je démarre direct.',
+      'hero.title':'EternaWeb','hero.subtitle':'CV & vitrines express — en ligne en 48 heures','hero.lead':'✨ Création de mini‑sites pros pour:',
+      'banner.tip':'💡 Astuce : <a href="#devis" class="btn btn-primary">Vos consignes</a> — je reçois tout et je démarre direct.',
       'pricing.h2':'🧾 Formules EternaWeb','pricing.sub':'CV & mini‑sites vitrines express — hébergement inclus',
       'devis.h2':'📝 Vos consignes','devis.sub':'Choisissez, décrivez, envoyez — je reçois vos consignes.',
       'devis.type':'Type de site','devis.colors':'Palette / couleurs','devis.style':'Style visuel','devis.other':'Autres demandes',
-      'devis.name':'Prénom / Nom','devis.email':'Email','devis.note':'Aucun envoi serveur : votre logiciel e‑mail s’ouvre avec le message prérempli.',
+      'devis.name':'Prénom / Nom','devis.email':'Email','devis.company':'Raison sociale',
+      'devis.note':'Aucun envoi serveur : votre logiciel e‑mail s’ouvre avec le message prérempli.',
       'nav.cv':'CV','nav.portfolio':'Portfolio','nav.vitrine':'Vitrine','nav.tarifs':'Tarifs','nav.devis':'Vos consignes'},
     en:{'nav.menu':'Menu','note':'Live in 48h · Easy payment · WhatsApp support','btn.choose':'I choose this plan','btn.send':'Send',
       'hero.title':'EternaWeb','hero.subtitle':'Express resumes & showcases — online within 48 hours','hero.lead':'✨ I build mini professional sites for:',
-      'banner.tip':'💡 Tip: fill <a href="#devis">Your brief</a> — I get it and start right away.',
+      'banner.tip':'💡 Tip: <a href="#devis" class="btn btn-primary">Your brief</a> — I get it and start right away.',
       'pricing.h2':'🧾 EternaWeb Plans','pricing.sub':'Express resumes & mini showcase sites — hosting included',
       'devis.h2':'📝 Your brief','devis.sub':'Pick, describe, send — I receive your brief.',
       'devis.type':'Site type','devis.colors':'Palette / colors','devis.style':'Visual style','devis.other':'Other requests',
-      'devis.name':'First / Last name','devis.email':'Email','devis.note':'No server submit: your mail app opens with a prefilled message.',
+      'devis.name':'First / Last name','devis.email':'Email','devis.company':'Company',
+      'devis.note':'No server submit: your mail app opens with a prefilled message.',
       'nav.cv':'Resume','nav.portfolio':'Portfolio','nav.vitrine':'Showcase','nav.tarifs':'Pricing','nav.devis':'Your brief'}
   };
   function applyLang(l){const d=I18N[l]||I18N.fr;document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(!d[k])return;(d[k].includes('<'))?el.innerHTML=d[k]:el.textContent=d[k];});localStorage.setItem('lang',l);document.documentElement.lang=l;}
   applyLang(localStorage.getItem('lang')||'fr');
-  // globe menu
+
+  // Globe langues
   const langBtn=document.getElementById('langBtn'),langMenu=document.getElementById('langMenu');
   langBtn.addEventListener('click',e=>{e.stopPropagation();langMenu.classList.toggle('show');langBtn.setAttribute('aria-expanded',langMenu.classList.contains('show'))});
   langMenu.querySelectorAll('.lang-item').forEach(b=>b.addEventListener('click',()=>{applyLang(b.dataset.lang);langMenu.classList.remove('show');langBtn.setAttribute('aria-expanded','false');}));
   document.addEventListener('click',e=>{if(!langMenu.contains(e.target)&&e.target!==langBtn){langMenu.classList.remove('show');langBtn.setAttribute('aria-expanded','false');}});
 
-    <li><a href="#" id="toggleLite">Mode épuré</a></li>
-      
   // “Je choisis cette formule” -> préremplit + notif WA mobile + scroll
   const planInput=document.getElementById('planInput');
   document.querySelectorAll('.choose-plan').forEach(btn=>btn.addEventListener('click',()=>{
@@ -325,7 +321,8 @@
     const lines=[
       'Devis EternaWeb','---------------------------',
       `Formule : ${get('plan')}`,`Type : ${get('type')}`,`Couleurs : ${get('couleurs')}`,`Style : ${get('style')}`,
-      `Intégrations : ${checks}`,`Autres demandes : ${get('contenu')}`,`Nom : ${get('nom')}`,`Email : ${get('email')}`
+      `Intégrations : ${checks}`,`Autres demandes : ${get('contenu')}`,
+      `Nom : ${get('nom')}`,`Email : ${get('email')}`,`Raison sociale : ${get('company')}`
     ];
     const subject=encodeURIComponent(`EternaWeb – Devis ${get('plan')}`), body=encodeURIComponent(lines.join('\n'));
     window.location.href=`mailto:${MAIL_TO}?subject=${subject}&body=${body}`;
@@ -341,16 +338,6 @@
   faqBtn.addEventListener('click',openFaq); faqClose.addEventListener('click',closeFaq);
   document.getElementById('footerFaqLink')?.addEventListener('click',e=>{e.preventDefault();openFaq();});
   faqPanel.addEventListener('click',e=>{if(e.target===faqPanel) closeFaq();});
-
-  const tLite = document.getElementById('toggleLite');
-  if (tLite) {
-    tLite.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.body.classList.toggle('lite');
-      localStorage.setItem('ew_lite', document.body.classList.contains('lite') ? '1' : '0');
-    });
-    if (localStorage.getItem('ew_lite') === '1') document.body.classList.add('lite');
-  }
-</script>
+  </script>
 </body>
 </html>
