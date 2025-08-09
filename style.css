@@ -139,3 +139,58 @@ input,select,textarea{border:1px solid #e7ded6; border-radius:10px; padding:10px
 .footer a:hover{text-decoration:underline}
 .copyright{text-align:center; font-size:14px; opacity:.8; margin-top:14px}
 @media(max-width:768px){.footer-columns{flex-direction:column; align-items:center; text-align:center}}
+
+/* ==== MODE EPURE (body.lite) ==== */
+body.lite .topnote,
+body.lite .gallery,
+body.lite .why { display:none; }                 /* cache les sections “annexe” */
+
+body.lite .container {                           /* hero plus compact */
+  padding: 22px 18px;
+}
+body.lite h1 { font-size: 1.6rem; margin-bottom: 4px; }
+body.lite h2 { font-size: 1.1rem; opacity: .95; }
+
+body.lite .bullets { margin-top: 8px; }
+body.lite .bullets li { margin: 4px 0; }
+
+body.lite .pricing-section {                     /* tarifs plus sobres */
+  background: rgba(255,255,255,.85);
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  border-radius: 16px;
+  max-width: 900px;
+  padding: 18px 12px;
+}
+body.lite .pricing-cards { gap: 12px; }
+body.lite .card {
+  padding: 16px;
+  max-width: 260px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+body.lite .card ul { display:none; }             /* cache la liste détaillée */
+body.lite .card .tarif-note { display:none; }
+body.lite .card h3 { margin: 0 0 10px; font-size: 1rem; }
+body.lite .card .btn { width:100%; justify-content:center; }
+
+body.lite #devis.page-card {                     /* formulaire raccourci visuel */
+  padding: 18px 14px;
+}
+body.lite .devis-grid { gap: 10px; }
+body.lite .tiny { display:none; }
+
+body.lite .footer {                              /* footer plus net */
+  background: #4e342e; border-radius: 14px;
+}
+.btn {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background: #8b5e3c;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #a06b44;
+}
