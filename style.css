@@ -223,4 +223,54 @@ body.lite .footer {                              /* footer plus net */
 }
 .fab-faq:hover{ filter:brightness(1.08); }
 
-/* (garde tes styles existants : menu, sections, footer, etc.) */
+.brief-hero.compact { padding: 1.25rem 1rem; }
+.brief-hero h2 { margin: 0 0 .5rem; font-size: 1.35rem; }
+.brief-points { margin: .25rem 0 1rem; padding-left: 1.1rem; }
+.brief-points li { margin: .25rem 0; }
+.btn-large { font-size: 1.05rem; padding: .85rem 1.2rem; border-radius: 12px; }
+
+.footer-columns{
+  display:flex; gap: 24px; align-items:flex-start; justify-content:space-between;
+}
+.footer-card, .footer-info{ flex:1 1 0; }
+.footer-block ul{ list-style: disc; padding-left: 1.1rem; margin:.25rem 0 0; }
+.footer-block li{ margin:.25rem 0; }
+
+@media (max-width: 560px){
+  .footer-columns{ flex-direction: column; gap: 16px; }
+  .footer-card, .footer-info{ width:100%; }
+  .footer-block h4{ margin-bottom:.25rem; }
+  .footer{ text-align:left; }
+}
+.testimonials{ padding: 1.25rem; }
+.testimonials h2{ margin-bottom:.5rem; }
+.t-grid blockquote{
+  margin:.75rem 0; padding:.25rem 0;
+  font-size:1.05rem; line-height:1.6;
+}
+.t-grid cite{ display:block; margin-top:.15rem; font-style:italic; opacity:.85; }
+.info-banner{
+  position: sticky; top: 0;
+  z-index: 50;                /* au‑dessus du contenu */
+  display: block;
+  padding: .65rem .9rem;
+  background: #fff8e6;
+  border: 1px solid #f2e3bd;
+  border-radius: 10px;
+  margin: .75rem auto 1rem;
+  max-width: 900px;
+}
+.info-banner a{ text-decoration: underline; }
+.devis-intro{
+  margin: 6px 0 18px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 14px;
+  text-align: center;
+}
+.devis-intro p{
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+.devis-intro .btn{ min-width: 240px; }
