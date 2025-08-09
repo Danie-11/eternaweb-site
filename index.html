@@ -13,7 +13,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Barre annonce (top) -->
+<div class="topbar">
+  🚀 Site livré en 48h • Paiement simple • Support WhatsApp
+</div>
 
+<!-- Bulle langues (groupe) -->
+<div class="lang-bubble" id="langBubble" aria-label="Changer de langue">
+  <button class="lang-toggle" aria-haspopup="true" aria-expanded="false">🌐</button>
+  <div class="lang-panel" role="menu">
+    <button type="button" data-lang="fr" class="lang-item">🇫🇷 Français</button>
+    <button type="button" data-lang="en" class="lang-item">🇬🇧 English</button>
+  </div>
+</div>
+
+<!-- Bouton contact flottant -->
+<div class="fab" id="fab">
+  <button class="fab-main" aria-label="Contact rapide">✉️</button>
+  <a class="fab-item" href="https://wa.me/33749723434" target="_blank" aria-label="WhatsApp">🟢</a>
+  <a class="fab-item" href="mailto:contact@eternaweb.fr" aria-label="E‑mail">📧</a>
+  <a class="fab-item" href="#devis" aria-label="Devis">📝</a>
+</div>
   <!-- Logo -->
   <div class="logo-container">
     <div class="logo-badge">
@@ -179,8 +199,71 @@
         <button class="btn choose-plan" data-plan="Essentiel">Je choisis cette formule</button>
         <div class="tarif-note" data-i18n="pricing.card3.note">Idéal pour : lancement complet</div>
       </div>
-    </div>
+      </div>
   </section>
+      <!-- Galerie Projets -->
+<section id="galerie" class="section reveal">
+  <h2>🖼️ Projets récents</h2>
+  <p class="sub">Un aperçu des styles possibles. (Démo)</p>
+  <div class="gallery">
+    <figure><img src="img/projet1.jpg" alt="Vitrine artisanat"><figcaption>Vitrine – Artisanat</figcaption></figure>
+    <figure><img src="img/projet2.jpg" alt="CV moderne"><figcaption>CV – Moderne</figcaption></figure>
+    <figure><img src="img/projet3.jpg" alt="Coach & bien‑être"><figcaption>Coach & Bien‑être</figcaption></figure>
+    <figure><img src="img/projet4.jpg" alt="Portfolio créatif"><figcaption>Portfolio – Créatif</figcaption></figure>
+    <figure><img src="img/projet5.jpg" alt="Vitrine services"><figcaption>Vitrine – Services</figcaption></figure>
+    <figure><img src="img/projet6.jpg" alt="Bouton contact intégré"><figcaption>CTA & Intégrations</figcaption></figure>
+  </div>
+</section>
+
+<!-- Pourquoi nous choisir -->
+<section id="benefices" class="section reveal">
+  <h2>🌟 Pourquoi EternaWeb ?</h2>
+  <div class="benefits">
+    <article class="b-card">
+      <h3>Rapidité</h3><p>En ligne en 48h, sans stress.</p>
+    </article>
+    <article class="b-card">
+      <h3>Design sur‑mesure</h3><p>Ambiance élégante, lisible et cohérente.</p>
+    </article>
+    <article class="b-card">
+      <h3>Intégrations</h3><p>WhatsApp, PayPal, SumUp, réseaux…</p>
+    </article>
+    <article class="b-card">
+      <h3>Prix clair</h3><p>Formules simples + devis guidé.</p>
+    </article>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="section reveal">
+  <h2>🧭 Comment ça se passe ?</h2>
+  <ol class="steps">
+    <li><strong>Choix de la formule</strong> • tu cliques, je suis notifiée</li>
+    <li><strong>Brief rapide</strong> • via “Vos consignes”</li>
+    <li><strong>Création</strong> • maquette + ajustements</li>
+    <li><strong>Mise en ligne</strong> • et remise des accès</li>
+  </ol>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section reveal">
+  <h2>❓ FAQ</h2>
+  <div class="faq">
+    <details>
+      <summary>Que dois‑je fournir pour démarrer ?</summary>
+      <p>Votre texte de présentation, vos images/logo (si dispo), et les liens à intégrer (WhatsApp, réseaux…).</p>
+    </details>
+    <details>
+      <summary>Puis‑je changer les couleurs et la mise en page ?</summary>
+      <p>Oui, tout est personnalisable. Je propose 1‑2 allers/retours inclus selon la formule.</p>
+    </details>
+    <details>
+      <summary>Proposez‑vous l’hébergement ?</summary>
+      <p>Oui, hébergement inclus avec les formules. Possibilité d’utiliser votre domaine.</p>
+    </details>
+  </div>
+</section>
+    
 
   <!-- Témoignages -->
   <section id="temoignages" class="testimonials">
@@ -421,6 +504,50 @@
       );
     });
   }
+    // ===== Bulle langues
+(()=>{
+  const bubble = document.getElementById('langBubble');
+  const toggle = bubble?.querySelector('.lang-toggle');
+  const panel  = bubble?.querySelector('.lang-panel');
+
+  toggle?.addEventListener('click', ()=>{
+    const open = panel.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', e=>{
+    if(!bubble.contains(e.target)) panel?.classList.remove('show');
+  });
+  // branche sur ton système i18n existant si besoin :
+  panel?.querySelectorAll('[data-lang]').forEach(btn=>{
+    btn.addEventListener('click', ()=> {
+      const lang = btn.dataset.lang;
+      if(typeof applyLang === 'function') applyLang(lang);
+      panel.classList.remove('show');
+    });
+  });
+})();
+
+// ===== FAB contact
+(()=>{
+  const fab = document.getElementById('fab');
+  fab?.querySelector('.fab-main')?.addEventListener('click', ()=>{
+    fab.classList.toggle('open');
+  });
+  document.addEventListener('click', e=>{
+    if(!fab.contains(e.target)) fab.classList.remove('open');
+  });
+})();
+
+// ===== Révélation au scroll
+(()=>{
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }
+    });
+  },{threshold:.15});
+  els.forEach(el=> io.observe(el));
+})();
   <script>
 </body>
 </html>
