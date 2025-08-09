@@ -22,9 +22,7 @@
   </div>
 
   <!-- Bouton menu mobile -->
-  <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="mainMenu">☰ Menu</button>
-
-  <!-- Menu principal + sélecteur de langue -->
+  <button class="menu-toggle" id="menuBtn" aria-expanded="false">☰ <span data-i18n="nav.menu">Menu</span></button>
   <nav id="mainMenu" class="menu" aria-label="Navigation principale">
     <ul>
       <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
@@ -32,18 +30,27 @@
       <li><a href="#vitrine" data-i18n="nav.vitrine">Vitrine</a></li>
       <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
       <li><a href="#devis" data-i18n="nav.devis">Vos consignes</a></li>
-      <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
     </ul>
+  </nav>
 
     <!-- Sélecteur langues dans un globe -->
-    <div class="lang-group" id="langGroup">
-      <button class="lang-trigger" id="langTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Changer de langue">🌍</button>
+    <div class="floating-tools" aria-label="Outils rapides">
+    <!-- Lang globe -->
+    <div class="lang-wrap">
+      <button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">
+        🌎
+      </button>
       <div class="lang-menu" id="langMenu" role="menu">
-        <button class="lang" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 FR</button>
-        <button class="lang" data-lang="en" role="menuitem" aria-label="English">🇬🇧 EN</button>
+        <button class="lang-item" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
+        <button class="lang-item" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
       </div>
     </div>
-  </nav>
+    <!-- FAQ -->
+    <button class="fab faq" id="faqBtn" aria-controls="faqPanel" aria-expanded="false" aria-label="FAQ">
+      ❓
+    </button>
+    </div>
+    
 
   <!-- Intro -->
   <div class="container" id="cv">
@@ -73,7 +80,7 @@
 
   <!-- Bande info -->
   <div class="info-banner" role="status" data-i18n="banner.tip">
-    💡 Astuce : remplissez le <a href="#devis">Devis Express</a> — je reçois tout sur WhatsApp et je démarre direct.
+    💡 Astuce : remplissez le <a href="#devis" class="btn btn-primary">Vos consignes</a>Devis Express</a> — je reçois tout sur WhatsApp et je démarre direct.
   </div>
 
   <!-- Vos consignes (devis) -->
@@ -231,249 +238,6 @@
     </div>
     <p class="copyright">© 2025 Danielle Kabongo – Tous droits réservés</p>
   </footer>
-
-  <!-- Bouton flottant FAQ -->
-  <a href="faq.html" class="fab-faq" aria-label="FAQ">❓</a>
-
-  <!-- JS -->
-  <script src="app.js" defer></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EternaWeb – CV & vitrines express</title>
-
-  <!-- Favicons -->
-  <link rel="icon" href="favicon-ew-32x32.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="favicon-ew-64x64.png" type="image/png" sizes="64x64">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- Logo -->
-  <div class="logo-container">
-    <div class="logo-badge">
-      <img src="eternaweb-logo.png" alt="EternaWeb" class="logo-simple">
-    </div>
-  </div>
-
-  <!-- Bouton menu mobile -->
-  <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="mainMenu">☰ Menu</button>
-
-  <!-- Menu principal + sélecteur de langue -->
-  <nav id="mainMenu" class="menu" aria-label="Navigation principale">
-    <ul>
-      <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
-      <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
-      <li><a href="#vitrine" data-i18n="nav.vitrine">Vitrine</a></li>
-      <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
-      <li><a href="#devis" data-i18n="nav.devis">Vos consignes</a></li>
-      <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
-    </ul>
-
-    <!-- Sélecteur langues dans un globe -->
-    <div class="lang-group" id="langGroup">
-      <button class="lang-trigger" id="langTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Changer de langue">🌍</button>
-      <div class="lang-menu" id="langMenu" role="menu">
-        <button class="lang" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 FR</button>
-        <button class="lang" data-lang="en" role="menuitem" aria-label="English">🇬🇧 EN</button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Intro -->
-  <div class="container" id="cv">
-    <h1 data-i18n="hero.title">EternaWeb</h1>
-    <h2 data-i18n="hero.subtitle">CV & vitrines express — en ligne en 48 heures</h2>
-
-    <p data-i18n="hero.lead">✨ Création de mini‑sites pros pour :</p>
-    <ul class="bullets">
-      <li data-i18n="hero.li1">Présenter vos créations (artisanat, soins, coaching…)</li>
-      <li data-i18n="hero.li2">Héberger un CV moderne ou un portfolio</li>
-      <li data-i18n="hero.li3">Intégrer WhatsApp, PayPal ou SumUp</li>
-    </ul>
-
-    <div class="avenir" data-i18n="hero.soon">📢 Prochainement : galerie de sites & témoignages.</div>
-
-    <div class="cta-row">
-      <a href="https://wa.me/33749723434" target="_blank" class="btn btn-wa">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico">
-        <span data-i18n="cta.whatsapp">WhatsApp</span>
-      </a>
-      <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" target="_blank" class="btn btn-pp">
-        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico">
-        <span data-i18n="cta.paypal">PayPal</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Bande info -->
-  <div class="info-banner" role="status" data-i18n="banner.tip">
-    💡 Astuce : remplissez le <a href="#devis">Devis Express</a> — je reçois tout sur WhatsApp et je démarre direct.
-  </div>
-
-  <!-- Vos consignes (devis) -->
-  <section id="devis" class="page-card">
-    <h2 data-i18n="devis.h2">📝 Vos consignes</h2>
-    <p class="sub" data-i18n="devis.sub">Choisissez, décrivez, envoyez — je reçois vos consignes.</p>
-
-    <form id="devisForm" class="devis-grid">
-      <input type="hidden" name="plan" id="planInput" value="">
-
-      <label>
-        <span data-i18n="devis.type">Type de site</span>
-        <select name="type" required>
-          <option value="CV" data-i18n="devis.opt.cv">CV</option>
-          <option value="Vitrine" data-i18n="devis.opt.vitrine">Vitrine</option>
-          <option value="Portfolio" data-i18n="devis.opt.portfolio">Portfolio</option>
-          <option value="Autre" data-i18n="devis.opt.other">Autre</option>
-        </select>
-      </label>
-
-      <label>
-        <span data-i18n="devis.colors">Palette / couleurs</span>
-        <input name="couleurs" type="text" placeholder="Ex. beige & doré, brun café…">
-      </label>
-
-      <label>
-        <span data-i18n="devis.style">Style visuel</span>
-        <select name="style">
-          <option data-i18n="devis.style1">Sobre & élégant</option>
-          <option data-i18n="devis.style2">Créatif & coloré</option>
-          <option data-i18n="devis.style3">Minimal & pro</option>
-          <option data-i18n="devis.style4">Nature & doux</option>
-        </select>
-      </label>
-
-      <fieldset class="full">
-        <legend data-i18n="devis.integrations">Intégrations souhaitées</legend>
-        <label><input type="checkbox" name="int" value="WhatsApp"> WhatsApp</label>
-        <label><input type="checkbox" name="int" value="PayPal"> PayPal</label>
-        <label><input type="checkbox" name="int" value="SumUp"> SumUp</label>
-        <label><input type="checkbox" name="int" value="Formulaire contact" data-i18n="devis.int.form"> Formulaire contact</label>
-        <label><input type="checkbox" name="int" value="Réseaux sociaux" data-i18n="devis.int.social"> Réseaux sociaux</label>
-        <label><input type="checkbox" name="int" value="Galerie" data-i18n="devis.int.gallery"> Galerie</label>
-      </fieldset>
-
-      <label class="full">
-        <span data-i18n="devis.other">Autres demandes</span>
-        <textarea name="contenu" rows="3" placeholder="Ce que vous avez déjà / liens drive / consignes…"></textarea>
-      </label>
-
-      <div class="grid-2">
-        <label>
-          <span data-i18n="devis.name">Prénom / Nom</span>
-          <input name="nom" type="text" placeholder="Votre nom">
-        </label>
-        <label>
-          <span data-i18n="devis.email">Email</span>
-          <input name="email" type="email" placeholder="vous@exemple.com">
-        </label>
-      </div>
-
-      <button type="button" id="sendForm" class="btn btn-primary" data-i18n="btn.send">Envoyer</button>
-      <p class="tiny" data-i18n="devis.note">Aucun envoi serveur : votre logiciel e‑mail s’ouvre avec le message prérempli.</p>
-    </form>
-  </section>
-
-  <!-- Tarifs -->
-  <section class="pricing-section" id="tarifs">
-    <h2 data-i18n="pricing.h2">🧾 Formules EternaWeb</h2>
-    <p data-i18n="pricing.sub">CV & mini‑sites vitrines express — hébergement inclus</p>
-
-    <div class="pricing-cards">
-      <div class="card">
-        <h3 data-i18n="pricing.card1.title">🌿 Pack Essentiel – 49 €</h3>
-        <ul>
-          <li data-i18n="pricing.card1.li1">CV en ligne simple (1 page)</li>
-          <li data-i18n="pricing.card1.li2">Personnalisation avec infos + photo</li>
-          <li data-i18n="pricing.card1.li3">Design élégant & responsive</li>
-          <li data-i18n="pricing.card1.li4">Livraison sous 48h</li>
-        </ul>
-        <button class="btn choose-plan" data-plan="Essentiel" data-i18n="btn.choose">Je choisis cette formule</button>
-        <div class="tarif-note" data-i18n="pricing.card1.note">Idéal pour : candidatures</div>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="pricing.card2.title">✨ Pack Vitrine – 89 €</h3>
-        <ul>
-          <li data-i18n="pricing.card2.li1">Mini‑site vitrine (2–3 pages)</li>
-          <li data-i18n="pricing.card2.li2">Accueil + présentation produits/services</li>
-          <li data-i18n="pricing.card2.li3">Boutons WhatsApp, PayPal, réseaux</li>
-          <li data-i18n="pricing.card2.li4">Design harmonieux & responsive</li>
-        </ul>
-        <button class="btn choose-plan" data-plan="Vitrine" data-i18n="btn.choose">Je choisis cette formule</button>
-        <div class="tarif-note" data-i18n="pricing.card2.note">Idéal pour : artisans, freelances</div>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="pricing.card3.title">💎 Pack Premium – 129 €</h3>
-        <ul>
-          <li data-i18n="pricing.card3.li1">Tout le Pack Vitrine</li>
-          <li data-i18n="pricing.card3.li2">Création/refonte logo</li>
-          <li data-i18n="pricing.card3.li3">Conseils branding</li>
-          <li data-i18n="pricing.card3.li4">SEO de base + Galerie/FAQ</li>
-        </ul>
-        <button class="btn choose-plan" data-plan="Premium" data-i18n="btn.choose">Je choisis cette formule</button>
-        <div class="tarif-note" data-i18n="pricing.card3.note">Idéal pour : lancement complet</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Témoignages -->
-  <section id="temoignages" class="testimonials">
-    <h2 data-i18n="testi.h2">💬 Témoignages</h2>
-    <div class="t-grid">
-      <blockquote>
-        <span data-i18n="testi.t1">“Super réactive et professionnelle, mon site a été en ligne le jour même !”</span>
-        <cite data-i18n="testi.c1">— Claire B.</cite>
-      </blockquote>
-      <blockquote>
-        <span data-i18n="testi.t2">“Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”</span>
-        <cite data-i18n="testi.c2">— Malik T.</cite>
-      </blockquote>
-      <blockquote>
-        <span data-i18n="testi.t3">“Excellent rapport qualité/prix. Je recommande à 100 %.”</span>
-        <cite data-i18n="testi.c3">— Sofia M.</cite>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-columns">
-      <div class="footer-card">
-        <img src="carte-eternaweb-footer.png" alt="EternaWeb contact" class="footer-logo">
-      </div>
-      <div class="footer-info">
-        <div class="footer-block">
-          <h4 data-i18n="footer.info">Infos utiles</h4>
-          <ul>
-            <li><a href="a-propos" data-i18n="footer.about">À propos</a></li>
-            <li><a href="securite.html" data-i18n="footer.security">Sécurité</a></li>
-            <li><a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a></li>
-            <li><a href="code-de-conduite.html" data-i18n="footer.code">Code de conduite</a></li>
-            <li><a href="faq.html" data-i18n="footer.faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <h4 data-i18n="footer.contact">Contact</h4>
-          <ul>
-            <li><a href="https://wa.me/33749723434">WhatsApp</a></li>
-            <li><a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <p class="copyright">© 2025 Danielle Kabongo – Tous droits réservés</p>
-  </footer>
-
-  <!-- Bouton flottant FAQ -->
-  <a href="faq.html" class="fab-faq" aria-label="FAQ">❓</a>
 
   <!-- JS -->
   <script src="app.js" defer></script>
