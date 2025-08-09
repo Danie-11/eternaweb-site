@@ -197,5 +197,10 @@ if (devisForm && sendForm) {
     }
 
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
-  });
+ // Scroll doux depuis le bloc "Vos consignes"
+document.getElementById('goBrief')?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  document.getElementById('devis')?.scrollIntoView({behavior:'smooth', block:'start'});
+});
+  
 }
