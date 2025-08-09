@@ -21,4 +21,4 @@ Toute reproduction, diffusion ou modification non autorisée est interdite.
 ---
 
 ## 📬 Contact
-Pour toute question ou demande : [eternaweb.contact@gmail.com](mailto:eternaweb.contact@gmail.com)
+Pour toute question ou demande : [contact@eternaweb.fr](mailto:contact@eternaweb.fr)
