@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <body class="lite">
   <!-- Bande annonce -->
-  <div class="topnote">
+ 
+    <div class="topnote">
     🚀 <span data-i18n="note">Site livré en 48h · Paiement simple · Support WhatsApp</span>
   </div>
 
@@ -77,7 +79,7 @@
 
   <!-- Bande info -->
   <div class="info-banner" role="status" data-i18n="banner.tip">
-    💡 Astuce : remplissez <a href="#devis">Vos consignes</a> — je reçois tout et je démarre direct.
+    💡 Astuce : remplissez <a href="#devis" class="btn btn-primary">Vos consignes</a>Vos consignes</a> — je reçois tout et je démarre direct.
   </div>
 
   <!-- Tarifs -->
@@ -174,6 +176,8 @@
       <div class="grid-2">
         <label><span data-i18n="devis.name">Prénom / Nom</span><input name="nom" type="text" placeholder="Votre nom"></label>
         <label><span data-i18n="devis.email">Email</span><input name="email" type="email" placeholder="vous@exemple.com"></label>
+        <label><span data-i18n="devis.company">Raison sociale</span><input name="company" type="text" placeholder="Votre raison sociale">
+        </label>
       </div>
 
       <button type="button" id="sendForm" class="btn btn-primary" data-i18n="btn.send">Envoyer</button>
@@ -300,6 +304,8 @@
   langMenu.querySelectorAll('.lang-item').forEach(b=>b.addEventListener('click',()=>{applyLang(b.dataset.lang);langMenu.classList.remove('show');langBtn.setAttribute('aria-expanded','false');}));
   document.addEventListener('click',e=>{if(!langMenu.contains(e.target)&&e.target!==langBtn){langMenu.classList.remove('show');langBtn.setAttribute('aria-expanded','false');}});
 
+    <li><a href="#" id="toggleLite">Mode épuré</a></li>
+      
   // “Je choisis cette formule” -> préremplit + notif WA mobile + scroll
   const planInput=document.getElementById('planInput');
   document.querySelectorAll('.choose-plan').forEach(btn=>btn.addEventListener('click',()=>{
@@ -335,6 +341,16 @@
   faqBtn.addEventListener('click',openFaq); faqClose.addEventListener('click',closeFaq);
   document.getElementById('footerFaqLink')?.addEventListener('click',e=>{e.preventDefault();openFaq();});
   faqPanel.addEventListener('click',e=>{if(e.target===faqPanel) closeFaq();});
-  </script>
+
+  const tLite = document.getElementById('toggleLite');
+  if (tLite) {
+    tLite.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.body.classList.toggle('lite');
+      localStorage.setItem('ew_lite', document.body.classList.contains('lite') ? '1' : '0');
+    });
+    if (localStorage.getItem('ew_lite') === '1') document.body.classList.add('lite');
+  }
+</script>
 </body>
 </html>
