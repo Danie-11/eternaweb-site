@@ -213,3 +213,19 @@ if (devisForm && sendForm){
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
   });
 }
+// Scroll doux vers le formulaire depuis la bannière
+document.getElementById('goDevis')?.addEventListener('click', () => {
+  document.getElementById('devis')?.scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+// Scroll doux depuis le bloc "3 étapes"
+document.getElementById('goBrief')?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  document.getElementById('devis')?.scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+// Si la page a été ouverte avec #devis, on enlève le hash et on remonte
+if (location.hash === '#devis') {
+  history.replaceState(null, '', location.pathname + location.search);
+  window.scrollTo({top: 0, behavior: 'instant'});
+}
