@@ -134,7 +134,7 @@ input,select,textarea{border:1px solid #e7ded6; border-radius:10px; padding:10px
 #devis.show{ display:block; }
 /* --- Annonce top --- */
 .announce-bar{
-  position: sticky;           /* reste en haut au scroll */
+  position: fixed;           /* reste en haut au scroll */
   top: 0;
   z-index: 60;
   max-width: 980px;           /* aligne avec le contenu */
