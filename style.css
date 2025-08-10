@@ -212,3 +212,4 @@ body.lite .announce-bar{ display: none; }
     top: 6px;
   }
 }
+.fab, .fab * { text-decoration: none !important; }
