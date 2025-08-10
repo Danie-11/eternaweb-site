@@ -69,7 +69,14 @@ const I18N = {
     "devis.name":"Prénom / Nom","devis.email":"Email",
     "btn.send":"Envoyer",
     "devis.note":"Aucun envoi serveur : votre logiciel e‑mail s’ouvre avec le message prérempli.",
-
+     devis: {
+  // ...tes clés existantes
+  intro: "En quelques minutes, décrivez votre projet. Vous recevrez directement mes recommandations et un plan de création personnalisé."
+},
+btn: {
+  // ...tes clés existantes
+  fill: "✍️ Remplir vos consignes"
+}
     "pricing.h2":"🧾 Formules EternaWeb","pricing.sub":"CV & mini‑sites vitrines express — hébergement inclus",
     "btn.choose":"Je choisis cette formule",
 
@@ -108,7 +115,14 @@ const I18N = {
     "devis.name":"First / Last name","devis.email":"Email",
     "btn.send":"Send",
     "devis.note":"No server submit: your mail app opens with a prefilled message.",
-
+devis: {
+  // ...your existing keys
+  intro: "In a few minutes, describe your project. You’ll immediately receive my recommendations and a tailored creation plan."
+},
+btn: {
+  // ...your existing keys
+  fill: "✍️ Fill your brief"
+}
     "pricing.h2":"🧾 EternaWeb Plans","pricing.sub":"Express resumes & mini showcase sites — hosting included",
     "btn.choose":"I choose this plan",
 
