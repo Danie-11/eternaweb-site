@@ -166,7 +166,7 @@ body.lite .announce-bar{ display: none; }
   display: flex;
   flex-direction: column;             /* pile tout proprement */
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 
 .footer-info{
