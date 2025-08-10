@@ -70,14 +70,23 @@ h2{margin:0 0 12px; font-size:1.5rem; color:#5e4b3c}
 
 /* ===== Bande info ===== */
 .info-banner{
-  position: flex; top: 0; z-index: 50;
-  max-width:1000px; margin:.75rem auto 1rem;
-  padding:.65rem .9rem; background:#fff8e6; border:1px solid #f2e3bd; border-radius:10px;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 14px;
+  background: #fff8e6;
+  border: 2px solid var(--gold); /* contour doré */
+  border-radius: 10px;
+  font-size: .95rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,.08);
 }
-.info-banner a{text-decoration:underline}
-/* bouton compact juste dans l’info-banner */
-.info-banner .btn-compact{ padding:6px 12px; font-size:.9rem; border-radius:8px; }
 
+body {
+  padding-top: 70px; /* pour éviter que le contenu monte sous la bannière */
+}
 /* ===== Brief hero ===== */
 .brief-hero.compact { max-width:920px; margin:24px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:18px 16px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
 .brief-hero h2 { margin:0 0 .5rem; font-size:1.35rem; }
