@@ -1,3 +1,25 @@
+.fab.faq { z-index: 1001; }
+.faq-panel{
+  position: fixed; inset: 0;
+  display: none; z-index: 1000;
+  background: rgba(0,0,0,.4);
+}
+.faq-panel.open{ display: block; }
+.faq-inner{
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: min(92vw, 720px);
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.25);
+}
+.faq-close{
+  position:absolute; top:10px; right:10px;
+  border:0; background:#f3f0ec;
+  border-radius:8px; padding:6px 8px;
+  cursor:pointer;
+}
 // ===== Config =====
 const WA_NUMBER = '33749723434';                 // WhatsApp (sans +)
 const MAIL_TO   = 'contact@eternaweb.fr';
