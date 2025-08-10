@@ -154,3 +154,36 @@ input,select,textarea{border:1px solid #e7ded6; border-radius:10px; padding:10px
 
 /* si tu veux qu’elle disparaisse en mode “lite” */
 body.lite .announce-bar{ display: none; }
+/* === Footer tweaks === */
+.footer{
+  padding: 18px 16px;                 /* moins haut */
+  max-width: 920px;                   /* plus compact au centre */
+  margin: 28px auto;                  /* espace autour */
+  text-align: center;                 /* titres + liens centrés */
+}
+
+.footer-columns{
+  display: flex;
+  flex-direction: column;             /* pile tout proprement */
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-info{
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-block ul{
+  list-style: none;                   /* enlève les puces */
+  padding-left: 0;
+  margin: .25rem 0 0;
+}
+.footer-block li{ margin: .25rem 0; }
+
+.footer a,
+.footer a:visited{
+  text-decoration: none;              /* aucun soulignement/trait */
+}
