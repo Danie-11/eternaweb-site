@@ -12,7 +12,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
-  <body>
+<body>
 
   <!-- Logo -->
   <div class="logo-container">
@@ -23,6 +23,8 @@
 
   <!-- Bouton menu mobile -->
   <button class="menu-toggle" id="menuBtn" aria-expanded="false">☰ <span data-i18n="nav.menu">Menu</span></button>
+
+  <!-- Menu principal -->
   <nav id="mainMenu" class="menu" aria-label="Navigation principale">
     <ul>
       <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
@@ -30,27 +32,21 @@
       <li><a href="#vitrine" data-i18n="nav.vitrine">Vitrine</a></li>
       <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
       <li><a href="#devis" data-i18n="nav.devis">Vos consignes</a></li>
+      <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
     </ul>
   </nav>
 
-    <!-- Sélecteur langues dans un globe -->
-    <div class="floating-tools" aria-label="Outils rapides">
-    <!-- Lang globe -->
+  <!-- Outils flottants (globe langues + FAQ) -->
+  <div class="floating-tools" aria-label="Outils rapides">
     <div class="lang-wrap">
-      <button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">
-        🌎
-      </button>
+      <button class="fab" id="langTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button>
       <div class="lang-menu" id="langMenu" role="menu">
-        <button class="lang-item" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
-        <button class="lang-item" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
+        <button class="lang" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
+        <button class="lang" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
       </div>
     </div>
-    <!-- FAQ -->
-    <button class="fab faq" id="faqBtn" aria-controls="faqPanel" aria-expanded="false" aria-label="FAQ">
-      ❓
-    </button>
-    </div>
-    
+    <a href="#faq" class="fab faq" aria-label="FAQ">❓</a>
+  </div>
 
   <!-- Intro -->
   <div class="container" id="cv">
@@ -78,19 +74,25 @@
     </div>
   </div>
 
-  <!-- Bande info -->
+  <!-- Bande info (avec bouton compact) -->
   <div class="info-banner" role="status" data-i18n="banner.tip">
-    💡 Astuce : remplissez le <a href="#devis" class="btn btn-primary">Vos consignes</a>Devis Express</a> — je reçois tout sur WhatsApp et je démarre direct.
+    💡 Astuce : remplissez le
+    <a href="#devis" class="btn btn-primary btn-compact">Vos consignes</a>
+    — je reçois tout sur WhatsApp et je démarre direct.
   </div>
-<!-- Vos consignes (devis) -->
+
+  <!-- Bloc d’intro au devis -->
   <section class="brief-hero page-card compact" id="brief">
-  <h2>Votre site en 3 étapes</h2>
-  <ul class="brief-points">
-    <li>Choisissez une formule.</li>
-    <li>Indiquez vos préférences (couleurs, style, intégrations).</li>
-    <li>Je lance la création et vous envoie une maquette.</li>
-  </ul>
-  <a href="#devis" id="goBrief" class="btn btn-primary btn-large">Vos consignes</a>
+    <h2 data-i18n="brief.h2">Votre site en 3 étapes</h2>
+    <ul class="brief-points">
+      <li data-i18n="brief.li1">Choisissez une formule.</li>
+      <li data-i18n="brief.li2">Indiquez vos préférences (couleurs, style, intégrations).</li>
+      <li data-i18n="brief.li3">Je lance la création et vous envoie une maquette.</li>
+    </ul>
+    <a href="#devis" id="goBrief" class="btn btn-primary btn-large" data-i18n="btn.fill">Vos consignes</a>
+  </section>
+
+  <!-- Vos consignes (devis) -->
   <section id="devis" class="page-card">
     <h2 data-i18n="devis.h2">📝 Vos consignes</h2>
     <p class="sub" data-i18n="devis.sub">Choisissez, décrivez, envoyez — je reçois vos consignes.</p>
