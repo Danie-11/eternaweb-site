@@ -1,47 +1,46 @@
-// ====== Config ======
-const WA_NUMBER = '33749723434';        // Ton WhatsApp (sans +)
+// ===== Config =====
+const WA_NUMBER = '33749723434';                 // WhatsApp (sans +)
 const MAIL_TO   = 'contact@eternaweb.fr';
 
-// ====== Utils ======
-const $ = (sel, root = document) => root.querySelector(sel);
-const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
-const isMobile = () => /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+// ===== Helpers =====
+const $  = (s, r=document)=>r.querySelector(s);
+const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
+const isMobile = ()=>/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
 
-// ====== Menu mobile ======
+// ===== Menu mobile =====
 const menuBtn  = $('#menuBtn');
 const mainMenu = $('#mainMenu');
-if (menuBtn && mainMenu) {
-  menuBtn.addEventListener('click', () => {
+if (menuBtn && mainMenu){
+  menuBtn.addEventListener('click', ()=>{
     mainMenu.classList.toggle('show');
     menuBtn.setAttribute('aria-expanded', mainMenu.classList.contains('show'));
   });
 }
 
-// ====== Sélecteur de langue (globe) ======
+// ===== Lang switch (globe) =====
 const langTrigger = $('#langTrigger');
 const langMenu    = $('#langMenu');
-
-if (langTrigger && langMenu) {
-  langTrigger.addEventListener('click', () => {
+if (langTrigger && langMenu){
+  langTrigger.addEventListener('click', ()=>{
     const open = langMenu.classList.toggle('show');
     langTrigger.setAttribute('aria-expanded', open);
   });
-  // fermer au clic extérieur / scroll
-  document.addEventListener('click', (e) => {
-    if (!langMenu.contains(e.target) && e.target !== langTrigger) {
+  document.addEventListener('click', (e)=>{
+    if (!langMenu.contains(e.target) && e.target !== langTrigger){
       langMenu.classList.remove('show');
-      langTrigger.setAttribute('aria-expanded', 'false');
+      langTrigger.setAttribute('aria-expanded','false');
     }
   });
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', ()=>{
     langMenu.classList.remove('show');
-    langTrigger.setAttribute('aria-expanded', 'false');
+    langTrigger.setAttribute('aria-expanded','false');
   });
 }
 
-// ====== i18n (FR/EN) ======
+// ===== i18n =====
 const I18N = {
   fr: {
+    "nav.menu":"Menu",
     "nav.cv":"CV","nav.portfolio":"Portfolio","nav.vitrine":"Vitrine",
     "nav.devis":"Vos consignes","nav.tarifs":"Tarifs","nav.temoignages":"Témoignages",
 
@@ -54,7 +53,13 @@ const I18N = {
     "hero.soon":"📢 Prochainement : galerie de sites & témoignages.",
     "cta.whatsapp":"WhatsApp","cta.paypal":"PayPal",
 
-    "banner.tip":"💡 Astuce : remplissez le <a href=\"#devis\">Devis Express</a> — je reçois tout sur WhatsApp et je démarre direct.",
+    "banner.tip":"💡 Astuce : remplissez le <a href=\"#devis\" class=\"btn btn-primary btn-compact\">Vos consignes</a> — je reçois tout sur WhatsApp et je démarre direct.",
+
+    "brief.h2":"Votre site en 3 étapes",
+    "brief.li1":"Choisissez une formule.",
+    "brief.li2":"Indiquez vos préférences (couleurs, style, intégrations).",
+    "brief.li3":"Je lance la création et vous envoie une maquette.",
+    "btn.fill":"Vos consignes",
 
     "devis.h2":"📝 Vos consignes",
     "devis.sub":"Choisissez, décrivez, envoyez — je reçois vos consignes.",
@@ -69,14 +74,7 @@ const I18N = {
     "devis.name":"Prénom / Nom","devis.email":"Email",
     "btn.send":"Envoyer",
     "devis.note":"Aucun envoi serveur : votre logiciel e‑mail s’ouvre avec le message prérempli.",
-     devis: {
-  // ...tes clés existantes
-  intro: "En quelques minutes, décrivez votre projet. Vous recevrez directement mes recommandations et un plan de création personnalisé."
-},
-btn: {
-  // ...tes clés existantes
-  fill: "✍️ Remplir vos consignes"
-}
+
     "pricing.h2":"🧾 Formules EternaWeb","pricing.sub":"CV & mini‑sites vitrines express — hébergement inclus",
     "btn.choose":"Je choisis cette formule",
 
@@ -88,6 +86,7 @@ btn: {
     "footer.info":"Infos utiles","footer.about":"À propos","footer.security":"Sécurité","footer.privacy":"Confidentialité","footer.code":"Code de conduite","footer.faq":"FAQ","footer.contact":"Contact"
   },
   en: {
+    "nav.menu":"Menu",
     "nav.cv":"Resume","nav.portfolio":"Portfolio","nav.vitrine":"Showcase",
     "nav.devis":"Your brief","nav.tarifs":"Pricing","nav.temoignages":"Testimonials",
 
@@ -100,7 +99,13 @@ btn: {
     "hero.soon":"📢 Coming soon: site gallery & testimonials.",
     "cta.whatsapp":"WhatsApp","cta.paypal":"PayPal",
 
-    "banner.tip":"💡 Tip: fill the <a href=\"#devis\">Instant Brief</a> — I get it on WhatsApp and start right away.",
+    "banner.tip":"💡 Tip: fill the <a href=\"#devis\" class=\"btn btn-primary btn-compact\">Your brief</a> — I get it on WhatsApp and start right away.",
+
+    "brief.h2":"Your site in 3 steps",
+    "brief.li1":"Choose a plan.",
+    "brief.li2":"Share your preferences (colors, style, integrations).",
+    "brief.li3":"I start building and send you a mockup.",
+    "btn.fill":"Your brief",
 
     "devis.h2":"📝 Your brief",
     "devis.sub":"Pick, describe, send — I receive your brief.",
@@ -115,14 +120,7 @@ btn: {
     "devis.name":"First / Last name","devis.email":"Email",
     "btn.send":"Send",
     "devis.note":"No server submit: your mail app opens with a prefilled message.",
-devis: {
-  // ...your existing keys
-  intro: "In a few minutes, describe your project. You’ll immediately receive my recommendations and a tailored creation plan."
-},
-btn: {
-  // ...your existing keys
-  fill: "✍️ Fill your brief"
-}
+
     "pricing.h2":"🧾 EternaWeb Plans","pricing.sub":"Express resumes & mini showcase sites — hosting included",
     "btn.choose":"I choose this plan",
 
@@ -136,57 +134,59 @@ btn: {
 };
 
 function applyLang(lang){
-  const dict = I18N[lang] || I18N.fr;
+  const d = I18N[lang] || I18N.fr;
   $$('[data-i18n]').forEach(el=>{
-    const key = el.getAttribute('data-i18n');
-    if (!dict[key]) return;
-    if (dict[key].includes('<')) el.innerHTML = dict[key];
-    else el.textContent = dict[key];
+    const k = el.getAttribute('data-i18n');
+    if (!d[k]) return;
+    if (typeof d[k] === 'string' && d[k].includes('<')) el.innerHTML = d[k];
+    else el.textContent = d[k];
   });
   localStorage.setItem('lang', lang);
   document.documentElement.setAttribute('lang', lang);
 }
 
-// init langue + handlers
+// init + handlers langue
 applyLang(localStorage.getItem('lang') || 'fr');
-$$('.lang-menu .lang').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    applyLang(btn.dataset.lang);
+$$('#langMenu .lang').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    applyLang(b.dataset.lang);
     langMenu.classList.remove('show');
     langTrigger.setAttribute('aria-expanded','false');
   });
 });
 
-// ====== Boutons "Je choisis cette formule" ======
+// ===== Scroll depuis le bouton d’intro =====
+$('#goBrief')?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  $('#devis')?.scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+// ===== Choix de plan -> préremplir + ping WhatsApp (mobile) =====
 const planInput = $('#planInput');
-$$('.choose-plan').forEach(btn => {
-  btn.addEventListener('click', () => {
+$$('.choose-plan').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
     const plan = btn.dataset.plan || '';
     localStorage.setItem('ew_selected_plan', plan);
     if (planInput) planInput.value = plan;
 
-    if (isMobile()) {
+    if (isMobile()){
       const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
       window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
     }
-    // Aller au formulaire
     $('#devis')?.scrollIntoView({behavior:'smooth', block:'start'});
   });
 });
-
-// Pré-remplir si retour
 const savedPlan = localStorage.getItem('ew_selected_plan');
 if (savedPlan && planInput) planInput.value = savedPlan;
 
-// ====== Envoi du formulaire -> e‑mail + (option) ping WhatsApp ======
+// ===== Envoi du formulaire -> mailto + (option) ping WhatsApp =====
 const devisForm = $('#devisForm');
 const sendForm  = $('#sendForm');
-
-if (devisForm && sendForm) {
-  sendForm.addEventListener('click', (e) => {
+if (devisForm && sendForm){
+  sendForm.addEventListener('click', (e)=>{
     e.preventDefault();
-    const get = (name) => devisForm.querySelector(`[name="${name}"]`)?.value?.trim() || '—';
-    const checks = [...devisForm.querySelectorAll('input[name="int"]:checked')].map(i => i.value).join(', ') || '—';
+    const get = (n)=>devisForm.querySelector(`[name="${n}"]`)?.value?.trim() || '—';
+    const checks = [...devisForm.querySelectorAll('input[name="int"]:checked')].map(i=>i.value).join(', ') || '—';
 
     const lignes = [
       'Devis EternaWeb',
@@ -205,16 +205,11 @@ if (devisForm && sendForm) {
     const body    = encodeURIComponent(lignes.join('\n'));
     window.location.href = `mailto:${MAIL_TO}?subject=${encodeURIComponent(subject)}&body=${body}`;
 
-    if (isMobile()) {
+    if (isMobile()){
       const t2 = encodeURIComponent(`Devis complété – ${get('plan')} – ${get('nom')}`);
-      setTimeout(() => window.open(`https://wa.me/${WA_NUMBER}?text=${t2}`, '_blank'), 400);
+      setTimeout(()=>window.open(`https://wa.me/${WA_NUMBER}?text=${t2}`,'_blank'),400);
     }
 
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
- // Scroll doux depuis le bloc "Vos consignes"
-document.getElementById('goBrief')?.addEventListener('click', (e)=>{
-  e.preventDefault();
-  document.getElementById('devis')?.scrollIntoView({behavior:'smooth', block:'start'});
-});
-  
+  });
 }
