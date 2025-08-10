@@ -73,11 +73,11 @@ h2{margin:0 0 12px; font-size:1.5rem; color:#5e4b3c}
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  display: none; align-items: center; justify-content: center; gap: .5rem;
-  max-width: 900px;
+  display: none; align-items: left; justify-content: center; gap: .5rem;
+  max-width: 800px;
   margin: 0 auto;
   padding: 10px 14px;
-  background: #fff8e6;
+  background: translucide;
   border: 2px solid var(--gold); /* contour doré */
   border-radius: 10px;
   font-size: .95rem;
@@ -125,7 +125,7 @@ input,select,textarea{border:1px solid #e7ded6; border-radius:10px; padding:10px
 .footer a{color:#fff0e6; text-decoration:none}
 .footer a:hover{text-decoration:underline}
 .copyright{text-align:center; font-size:14px; opacity:.8; margin-top:14px}
-@media(max-width:768px){
+@media(max-width:750px){
   .footer-columns{flex-direction:column; align-items:center; text-align:center}
   .footer-info{justify-content:center}
 }
@@ -143,7 +143,7 @@ input,select,textarea{border:1px solid #e7ded6; border-radius:10px; padding:10px
   font-size: 15px;
   line-height: 1.35;
   color: #2d1e15;
-  background: #fff9f0;        /* clair, lisible */
+  background: translucide;        /* clair, lisible */
   border: 1px solid #d9c48a;  /* contour doré doux */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,.06);
@@ -186,4 +186,29 @@ body.lite .announce-bar{ display: none; }
 .footer a,
 .footer a:visited{
   text-decoration: none;              /* aucun soulignement/trait */
+}
+.announce-bar{
+  position: fixed;
+  top: 8px;                      /* laisse respirer le haut */
+  left: 50%;
+  transform: translateX(-50%);   /* centre horizontalement */
+  z-index: 60;
+  max-width: 90%;                /* ne prend pas tout l'écran */
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #2d1e15;
+  background: rgba(255,255,255,0.6); /* translucide */
+  backdrop-filter: blur(4px);
+  border: 1px solid #d9c48a;     /* contour doré */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
+@media (max-width: 560px){
+  .announce-bar{
+    font-size: 13px;
+    padding: 4px 8px;
+    top: 6px;
+  }
 }
