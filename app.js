@@ -260,3 +260,23 @@ document.querySelectorAll('.choose-plan').forEach(btn=>{
 if (location.hash === '#devis') {
   openDevis();
 }
+// FAQ open/close
+const faqBtn   = document.getElementById('faqBtn');
+const faqPanel = document.getElementById('faqPanel');
+const faqClose = faqPanel?.querySelector('.faq-close');
+
+faqBtn?.addEventListener('click', () => {
+  faqPanel.hidden = false;
+  faqPanel.classList.add('open');
+  faqBtn.setAttribute('aria-expanded', 'true');
+});
+
+faqClose?.addEventListener('click', () => {
+  faqPanel.classList.remove('open');
+  faqPanel.hidden = true;
+  faqBtn.setAttribute('aria-expanded', 'false');
+});
+
+faqPanel?.addEventListener('click', (e) => {
+  if (e.target === faqPanel) faqClose.click();   // clic hors bloc = fermer
+});
