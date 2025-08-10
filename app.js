@@ -229,3 +229,34 @@ if (location.hash === '#devis') {
   history.replaceState(null, '', location.pathname + location.search);
   window.scrollTo({top: 0, behavior: 'instant'});
 }
+const devisSection = document.getElementById('devis');
+
+function openDevis(){
+  if(!devisSection) return;
+  devisSection.classList.add('show');
+  devisSection.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// Bannière “Vos consignes”
+document.getElementById('goDevis')?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  openDevis();
+});
+
+// Bloc “3 étapes” → “Vos consignes”
+document.getElementById('goBrief')?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  openDevis();
+});
+
+// Boutons “Je choisis cette formule”
+document.querySelectorAll('.choose-plan').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    openDevis();
+  });
+});
+
+// Si on arrive avec l’ancre #devis, on ouvre directement
+if (location.hash === '#devis') {
+  openDevis();
+}
