@@ -9,7 +9,7 @@ body{
   color:var(--ink);
   background: linear-gradient(135deg,#5c4033,#f5e6ca);
   background-attachment: fixed; background-size: cover;
-  padding:58px 16px 0;
+  padding:70px 20px 0;
 }
 a{color:inherit}
 
@@ -70,8 +70,8 @@ h2{margin:0 0 12px; font-size:1.5rem; color:#5e4b3c}
 
 /* ===== Bande info ===== */
 .info-banner{
-  position: sticky; top: 0; z-index: 50;
-  max-width:900px; margin:.75rem auto 1rem;
+  position: flex; top: 0; z-index: 50;
+  max-width:1000px; margin:.75rem auto 1rem;
   padding:.65rem .9rem; background:#fff8e6; border:1px solid #f2e3bd; border-radius:10px;
 }
 .info-banner a{text-decoration:underline}
