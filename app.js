@@ -299,6 +299,4 @@ faqClose?.addEventListener('click', () => {
   faqBtn.setAttribute('aria-expanded', 'false');
 });
 
-faqPanel?.addEventListener('click', (e) => {
-  if (e.target === faqPanel) faqClose.click();   // clic hors bloc = fermer
-});
+
