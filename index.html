@@ -57,22 +57,22 @@
       <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
       <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
       <li><a href="#vitrine" data-i18n="nav.vitrine">Vitrine</a></li>
-      <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
-      <li><a href="#devis" data-i18n="nav.devis">Vos consignes</a></li>
-      <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
+      <li><a href="tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
+      <li><a href="devis" data-i18n="nav.devis">Vos consignes</a></li>
+      <li><a href="temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
     </ul>
   </nav>
 
   <!-- Outils flottants (globe langues + FAQ) -->
   <div class="floating-tools" aria-label="Outils rapides">
     <div class="lang-wrap">
-      <button class="fab" id="langTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button>
+      <button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button>
       <div class="lang-menu" id="langMenu" role="menu">
         <button class="lang" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
         <button class="lang" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
       </div>
     </div>
-    <a href="#faq" class="fab faq" aria-label="FAQ">❓</a>
+    <a href="faq" class="fab faq" aria-label="FAQ">❓</a>
   </div>
 
   <!-- Intro -->
@@ -112,7 +112,7 @@
       <li data-i18n="brief.li2">Indiquez vos préférences (couleurs, style, intégrations).</li>
       <li data-i18n="brief.li3">Je lance la création et vous envoie une maquette.</li>
     </ul>
-    <a href="#devis" id="goBrief" class="btn btn-primary btn-large" data-i18n="btn.fill">Vos consignes</a>
+    <a href="devis" id="goBrief" class="btn btn-primary btn-large" data-i18n="btn.fill">Vos consignes</a>
   </section>
 
   <!-- Vos consignes (devis) -->
@@ -120,7 +120,7 @@
     <h2 data-i18n="devis.h2">📝 Vos consignes</h2>
     <p class="sub" data-i18n="devis.sub">Choisissez, décrivez, envoyez — je reçois vos consignes.</p>
 
-    <form id="#devisForm" class="devis-grid">
+    <form id="devisForm" class="devis-grid">
       <input type="hidden" name="plan" id="planInput" value="">
 
       <label>
