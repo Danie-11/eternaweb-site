@@ -12,35 +12,37 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
-
-  <!-- Panneau FAQ -->
-<div id="faqPanel" class="faq-panel" hidden>
-  <div class="faq-inner">
-    <button class="faq-close" aria-label="Fermer">✕</button>
-    <h3>FAQ</h3>
-
-    <details open>
-      <summary>Que dois‑je fournir pour démarrer ?</summary>
-      <p>Textes (ou points clés), 3–5 photos/logo, palette de couleurs, liens utiles (réseaux, Drive).</p>
-    </details>
-
-    <details>
-      <summary>Puis‑je changer les couleurs et la mise en page ?</summary>
-      <p>Oui, plusieurs allers‑retours inclus pour ajuster style, couleurs et sections.</p>
-    </details>
-
-    <details>
-      <summary>Proposez‑vous l’hébergement ?</summary>
-      <p>Oui, hébergement inclus dans les formules (vitrine & premium). Migration possible.</p>
-    </details>
-
-    <p class="faq-contact">Besoin d’aide ? <a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a></p>
-  </div>
-</div>
 <body>
-<div class="announce-bar" role="status" aria-label="Annonce">
-  🚀 Site livré en 48h • <strong>Paiement sécurisé</strong> • Support WhatsApp
-</div>
+  <!-- Panneau FAQ (DOIT être dans <body>) -->
+  <div id="faqPanel" class="faq-panel" hidden>
+    <div class="faq-inner">
+      <button class="faq-close" aria-label="Fermer">✕</button>
+      <h3>FAQ</h3>
+
+      <details open>
+        <summary>Que dois‑je fournir pour démarrer ?</summary>
+        <p>Textes (ou points clés), 3–5 photos/logo, palette de couleurs, liens utiles (réseaux, Drive).</p>
+      </details>
+
+      <details>
+        <summary>Puis‑je changer les couleurs et la mise en page ?</summary>
+        <p>Oui, plusieurs allers‑retours inclus pour ajuster style, couleurs et sections.</p>
+      </details>
+
+      <details>
+        <summary>Proposez‑vous l’hébergement ?</summary>
+        <p>Oui, hébergement inclus dans les formules (vitrine & premium). Migration possible.</p>
+      </details>
+
+      <p class="faq-contact">Besoin d’aide ? <a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a></p>
+    </div>
+  </div>
+
+  <!-- Barre d’annonce -->
+  <div class="announce-bar" role="status" aria-label="Annonce">
+    🚀 Site livré en 48h • <strong>Paiement sécurisé</strong> • Support WhatsApp
+  </div>
+
   <!-- Logo -->
   <div class="logo-container">
     <div class="logo-badge">
@@ -49,7 +51,9 @@
   </div>
 
   <!-- Bouton menu mobile -->
-  <button class="menu-toggle" id="#menuBtn" aria-expanded="false">☰ <span data-i18n="nav.menu">Menu</span></button>
+  <button class="menu-toggle" id="menuBtn" aria-expanded="false">
+    ☰ <span data-i18n="nav.menu">Menu</span>
+  </button>
 
   <!-- Menu principal -->
   <nav id="mainMenu" class="menu" aria-label="Navigation principale">
@@ -57,9 +61,9 @@
       <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
       <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
       <li><a href="#vitrine" data-i18n="nav.vitrine">Vitrine</a></li>
-      <li><a href="tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
-      <li><a href="devis" data-i18n="nav.devis">Vos consignes</a></li>
-      <li><a href="temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
+      <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
+      <li><a href="#devis" data-i18n="nav.devis">Vos consignes</a></li>
+      <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
     </ul>
   </nav>
 
@@ -68,11 +72,11 @@
     <div class="lang-wrap">
       <button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button>
       <div class="lang-menu" id="langMenu" role="menu">
-        <button class="lang" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
-        <button class="lang" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
+        <button class="lang-item" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
+        <button class="lang-item" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
       </div>
     </div>
-    <a href="faq" class="fab faq" aria-label="FAQ">❓</a>
+    <button class="fab faq" id="faqBtn" aria-controls="faqPanel" aria-expanded="false" aria-label="FAQ">❓</button>
   </div>
 
   <!-- Intro -->
@@ -101,9 +105,6 @@
     </div>
   </div>
 
-  <!-- Bande info (avec bouton compact) -->
-  
-
   <!-- Bloc d’intro au devis -->
   <section class="brief-hero page-card compact" id="brief">
     <h2 data-i18n="brief.h2">Votre site en 3 étapes</h2>
@@ -112,7 +113,7 @@
       <li data-i18n="brief.li2">Indiquez vos préférences (couleurs, style, intégrations).</li>
       <li data-i18n="brief.li3">Je lance la création et vous envoie une maquette.</li>
     </ul>
-    <a href="devis" id="goBrief" class="btn btn-primary btn-large" data-i18n="btn.fill">Vos consignes</a>
+    <a href="#devis" id="goBrief" class="btn btn-primary btn-large" data-i18n="btn.fill">Vos consignes</a>
   </section>
 
   <!-- Vos consignes (devis) -->
@@ -248,6 +249,7 @@
       <div class="footer-card">
         <img src="carte-eternaweb-footer.png" alt="EternaWeb contact" class="footer-logo">
       </div>
+
       <div class="footer-info">
         <div class="footer-block">
           <h4 data-i18n="footer.info">Infos utiles</h4>
@@ -258,16 +260,22 @@
             <li><a href="code-de-conduite.html" data-i18n="footer.code">Code de conduite</a></li>
             <li><a href="faq.html" data-i18n="footer.faq">FAQ</a></li>
           </ul>
+        </div>
+
+        <div class="footer-block">
           <h4 data-i18n="footer.contact">Contact</h4>
           <ul>
             <li><a href="https://wa.me/33749723434">WhatsApp</a></li>
             <li><a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a></li>
           </ul>
+        </div>
       </div>
+    </div>
+
     <p class="copyright">© 2025 Danielle Kabongo – Tous droits réservés</p>
   </footer>
 
   <!-- JS -->
   <script src="app.js" defer></script>
 </body>
-</html>
+  </html>
