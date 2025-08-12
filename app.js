@@ -30,14 +30,13 @@ const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
 const isMobile = ()=>/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
 
 // ===== Menu mobile =====
+/* MENU */
 const menuBtn  = $('#menuBtn');
 const mainMenu = $('#mainMenu');
-if (menuBtn && mainMenu){
-  menuBtn.addEventListener('click', ()=>{
-    mainMenu.classList.toggle('show');
-    menuBtn.setAttribute('aria-expanded', mainMenu.classList.contains('show'));
-  });
-}
+menuBtn?.addEventListener('click', ()=>{
+  mainMenu?.classList.toggle('show');
+  menuBtn.setAttribute('aria-expanded', mainMenu?.classList.contains('show') ? 'true' : 'false');
+});
 
 // ===== Lang switch (globe) =====
 const langBtn = $('#langBtn');
@@ -55,7 +54,7 @@ if (langBtn && langMenu){
   });
   window.addEventListener('scroll', ()=>{
     langMenu.classList.remove('show');
-    langTrigger.setAttribute('aria-expanded','false');
+    langBtn.setAttribute('aria-expanded','false');
   });
 }
 
@@ -282,21 +281,20 @@ document.querySelectorAll('.choose-plan').forEach(btn=>{
 if (location.hash === '#devis') {
   openDevis();
 }
-// FAQ open/close
-const faqBtn   = $('faqBtn');
-const faqPanel = $('faqPanel');
+/* FAQ */
+const faqBtn   = $('#faqBtn');
+const faqPanel = $('#faqPanel');
 const faqClose = faqPanel?.querySelector('.faq-close');
-
-faqBtn?.addEventListener('click', () => {
-  faqPanel.hidden = (hidden');
-  faqPanel.classList.add('open');
-  faqBtn.setAttribute('aria-expanded', 'true');
+faqBtn?.addEventListener('click', ()=>{
+  faqPanel?.classList.add('open');
+  faqPanel?.removeAttribute('hidden');
+  faqBtn.setAttribute('aria-expanded','true');
 });
-
-faqClose?.addEventListener('click', () => {
-  faqPanel.classList.remove('open');
-  faqPanel.hidden = true;
-  faqBtn.setAttribute('aria-expanded', 'false');
+faqClose?.addEventListener('click', ()=>{
+  faqPanel?.classList.remove('open');
+  faqPanel?.setAttribute('hidden','');
+  faqBtn?.setAttribute('aria-expanded','false');
 });
-
-
+faqPanel?.addEventListener('click', (e)=>{
+  if (e.target === faqPanel) faqClose?.click();
+});
