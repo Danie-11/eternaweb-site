@@ -31,16 +31,16 @@ const isMobile = ()=>/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.us
 
 // ===== Menu mobile =====
 /* MENU */
-const menuBtn  = $('#menuBtn');
-const mainMenu = $('#mainMenu');
+const menuBtn  = $('menuBtn');
+const mainMenu = $('mainMenu');
 menuBtn?.addEventListener('click', ()=>{
   mainMenu?.classList.toggle('show');
   menuBtn.setAttribute('aria-expanded', mainMenu?.classList.contains('show') ? 'true' : 'false');
 });
 
 // ===== Lang switch (globe) =====
-const langBtn = $('#langBtn');
-const langMenu    = $('#langMenu');
+const langBtn = $('langBtn');
+const langMenu    = $('langMenu');
 if (langBtn && langMenu){
   langBtn.addEventListener('click', ()=>{
     const open = langMenu.classList.toggle('show');
