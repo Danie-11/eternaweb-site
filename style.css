@@ -7,14 +7,14 @@ html,body{margin:0;padding:0}
 body{
   font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--ink);
-  background: linear-gradient(135deg,#5c4033,#f5e6ca);
+  background: url("eternenaweb-fond.jpg");
   background-attachment: fixed; background-size: cover;
   padding:70px 20px 0;
 }
 a{color:inherit}
 
 /* ===== Outils flottants ===== */
-.floating-tools{position:fixed; top:10px; right:10px; display:center; gap:8px; z-index:10;}
+.floating-tools{position:fixed; top:10px; right:10px; display:center; gap:8px; z-index:1200;}
 .fab{
   width:42px;height:42px;border:none;cursor:pointer;border-radius:50%;
   background:rgba(255,255,255,.9); box-shadow:0 4px 12px rgba(0,0,0,.15);
@@ -192,7 +192,7 @@ body.lite .announce-bar{ display: none; }
   top: 8px;                      /* laisse respirer le haut */
   left: 50%;
   transform: translateX(-50%);   /* centre horizontalement */
-  z-index: 60;
+  z-index: 1100;
   max-width: 90%;                /* ne prend pas tout l'écran */
   padding: 5px 10px;
   font-size: 14px;
@@ -221,7 +221,7 @@ body.lite .announce-bar{ display: none; }
 
 /* Boutons flottants au-dessus de tout */
 .floating-tools { position: fixed; top: 60px; right: 10px; z-index: 1002; }
-.fab.faq { z-index: 1003; }
+.fab.faq { z-index: 1201; }
 
 /* Panneau FAQ au-dessus aussi */
 .faq-panel { position: fixed; inset: 0; z-index: 1100; }
