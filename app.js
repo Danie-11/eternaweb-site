@@ -40,17 +40,17 @@ if (menuBtn && mainMenu){
 }
 
 // ===== Lang switch (globe) =====
-const langTrigger = $('#langTrigger');
+const langBtn = $('#langBtn');
 const langMenu    = $('#langMenu');
-if (langTrigger && langMenu){
-  langTrigger.addEventListener('click', ()=>{
+if (langBtn && langMenu){
+  langBtn.addEventListener('click', ()=>{
     const open = langMenu.classList.toggle('show');
-    langTrigger.setAttribute('aria-expanded', open);
+    langBtn.setAttribute('aria-expanded', open);
   });
   document.addEventListener('click', (e)=>{
-    if (!langMenu.contains(e.target) && e.target !== langTrigger){
+    if (!langMenu.contains(e.target) && e.target !== langBtn){
       langMenu.classList.remove('show');
-      langTrigger.setAttribute('aria-expanded','false');
+      langBtn.setAttribute('aria-expanded','false');
     }
   });
   window.addEventListener('scroll', ()=>{
@@ -283,12 +283,12 @@ if (location.hash === '#devis') {
   openDevis();
 }
 // FAQ open/close
-const faqBtn   = document.getElementById('faqBtn');
-const faqPanel = document.getElementById('faqPanel');
+const faqBtn   = $('faqBtn');
+const faqPanel = $('faqPanel');
 const faqClose = faqPanel?.querySelector('.faq-close');
 
 faqBtn?.addEventListener('click', () => {
-  faqPanel.hidden = false;
+  faqPanel.hidden = (hidden');
   faqPanel.classList.add('open');
   faqBtn.setAttribute('aria-expanded', 'true');
 });
