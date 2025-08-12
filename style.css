@@ -212,4 +212,16 @@ body.lite .announce-bar{ display: none; }
     top: 6px;
   }
 }
-.fab, .fab * { text-decoration: none !important; }
+.fab, .fab * { text-decoration: none !important; 
+}
+
+/* Bannière d’annonce — laisse passer les clics derrière sauf sur les liens */
+.announce-bar { pointer-events: none; z-index: 60; }
+.announce-bar a, .announce-bar button { pointer-events: auto; }
+
+/* Boutons flottants au-dessus de tout */
+.floating-tools { position: fixed; top: 60px; right: 10px; z-index: 1002; }
+.fab.faq { z-index: 1003; }
+
+/* Panneau FAQ au-dessus aussi */
+.faq-panel { position: fixed; inset: 0; z-index: 1100; }
