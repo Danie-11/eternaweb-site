@@ -155,3 +155,9 @@ faqClose?.addEventListener('click', ()=>{
 faqPanel?.addEventListener('click', (e)=>{
   if (e.target === faqPanel) faqClose?.click();
 });
+function openDevis(){
+  const d = $('#devis');
+  if (!d) return;
+  d.classList.add('show');            // <— important
+  d.scrollIntoView({behavior:'smooth', block:'start'});
+}
