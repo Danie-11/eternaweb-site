@@ -14,7 +14,15 @@
 </head>
 <body>
   <!-- Panneau FAQ (DOIT être dans <body>) -->
-  <div <a href="#footerFAQ" id="faqBtn" class="fab" aria-label="FAQ">❓</a>
+  <div id="faqPanel" class="faq-panel" hidden>
+  <div class="faq-inner">
+    <button class="faq-close" aria-label="Fermer">✕</button>
+    <h3>FAQ</h3>
+    <div id="faqBody"><!-- contenu chargé dynamiquement --></div>
+    <p style="margin-top:12px">
+      <a class="btn btn-primary" href="faq.html">Voir la page FAQ complète</a>
+    </p>
+  </div>
   </div>
 
   <!-- Barre d’annonce -->
@@ -55,7 +63,7 @@
         <button class="lang-item" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
       </div>
     </div>
-    <button class="fab faq" id="faqBtn" aria-controls="faqPanel" aria-expanded="false" aria-label="FAQ">❓</button>
+    <button id="faqBtn" class="fab faq" aria-controls="faqPanel" aria-expanded="false" aria-label="FAQ">❓</button>
   </div>
 
   <!-- Intro -->
