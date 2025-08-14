@@ -161,3 +161,47 @@ function openDevis(){
   d.classList.add('show');            // <— important
   d.scrollIntoView({behavior:'smooth', block:'start'});
 }
+// Cloner le contenu du template dans footer + modal
+(function(){
+  const tpl = document.querySelector('#faq-template')?.content;
+  if (!tpl) return;
+
+  const footerTarget = document.querySelector('#faq-footer');
+  const modalTarget  = document.querySelector('#faq-modal');
+
+  footerTarget?.appendChild(tpl.cloneNode(true));       // 1er clone
+  modalTarget?.appendChild(document.querySelector('#faq-template').content.cloneNode(true)); // 2e clone
+})();
+
+// Helpers
+const isMobile = () => /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+// Bouton ❓
+const faqBtn   = document.querySelector('#faqBtn');
+const faqPanel = document.querySelector('#faqPanel');
+const faqClose = faqPanel?.querySelector('.faq-close');
+const faqSec   = document.querySelector('#faq');
+
+faqBtn?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  if (isMobile()){
+    // Mobile : on scrolle vers la FAQ du footer
+    faqSec?.querySelectorAll('details').forEach(d=>d.open=true);
+    faqSec?.scrollIntoView({behavior:'smooth', block:'start'});
+  } else {
+    // Desktop : on ouvre le modal
+    faqPanel?.classList.add('open');
+    faqPanel?.removeAttribute('hidden');
+    faqBtn?.setAttribute('aria-expanded','true');
+  }
+});
+
+faqClose?.addEventListener('click', ()=>{
+  faqPanel?.classList.remove('open');
+  faqPanel?.setAttribute('hidden','');
+  faqBtn?.setAttribute('aria-expanded','false');
+});
+
+faqPanel?.addEventListener('click', (e)=>{
+  if (e.target === faqPanel) faqClose?.click();
+});
