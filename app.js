@@ -161,36 +161,3 @@ function openDevis(){
   d.classList.add('show');            // <— important
   d.scrollIntoView({behavior:'smooth', block:'start'});
 }
-<script defer>
-  // charge le fragment une seule fois
-  let faqLoaded = false;
-  function loadFAQOnce(){
-    if (faqLoaded) return;
-    fetch('faq-content.html')
-      .then(r => r.text())
-      .then(html => { document.getElementById('faqBody').innerHTML = html; faqLoaded = true; })
-      .catch(() => { document.getElementById('faqBody').innerHTML = '<p>Impossible de charger la FAQ.</p>'; });
-  }
-
-  // open/close du pop-up (garde tes styles et z-index actuels)
-  const faqBtn   = document.getElementById('faqBtn');
-  const faqPanel = document.getElementById('faqPanel');
-  const faqClose = faqPanel?.querySelector('.faq-close');
-
-  faqBtn?.addEventListener('click', () => {
-    loadFAQOnce();
-    faqPanel.hidden = false;
-    faqPanel.classList.add('open');
-    faqBtn.setAttribute('aria-expanded','true');
-  });
-
-  faqClose?.addEventListener('click', () => {
-    faqPanel.classList.remove('open');
-    faqPanel.hidden = true;
-    faqBtn.setAttribute('aria-expanded','false');
-  });
-
-  faqPanel?.addEventListener('click', (e) => {
-    if (e.target === faqPanel) faqClose?.click();
-  });
-</script>
