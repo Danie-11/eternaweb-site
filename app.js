@@ -134,27 +134,6 @@ if (devisForm && sendForm){
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
   });
 }
-
-// ===== FAQ =====
-const faqBtn   = $('#faqBtn');
-const faqPanel = $('#faqPanel');
-const faqClose = faqPanel?.querySelector('.faq-close');
-
-faqBtn?.addEventListener('click', ()=>{
-  faqPanel?.classList.add('open');
-  faqPanel?.removeAttribute('hidden');
-  faqBtn.setAttribute('aria-expanded','true');
-});
-
-faqClose?.addEventListener('click', ()=>{
-  faqPanel?.classList.remove('open');
-  faqPanel?.setAttribute('hidden','');
-  faqBtn?.setAttribute('aria-expanded','false');
-});
-
-faqPanel?.addEventListener('click', (e)=>{
-  if (e.target === faqPanel) faqClose?.click();
-});
 function openDevis(){
   const d = $('#devis');
   if (!d) return;
