@@ -287,3 +287,18 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .hero-mockup .phone .phone-screen{
   background: #fff url("captures/site mobile.jpg") top center/cover no-repeat;
 }
+body {
+  color: #6b4b3e; /* marron doré */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #6b4b3e;
+}
+
+a {
+  color: #8b6b4a;
+}
+
+a:hover {
+  color: #a8835b;
+}
