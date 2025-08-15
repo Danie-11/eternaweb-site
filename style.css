@@ -242,3 +242,48 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   .hero-wrap{ grid-template-columns: 1fr; }
   .hero-mockup{ order:-1; height: 300px; }
 }
+/* Assombrir très léger en haut pour que le logo ressorte */
+.hero-gold{
+  position: relative;
+  overflow: clip;
+}
+.hero-gold::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,0) 26%);
+  pointer-events:none;
+  z-index:0;
+}
+.hero-wrap{ position:relative; z-index:1; }
+
+
+/* Taille par défaut (desktop/tablette) déjà OK */
+.hero-mockup{ transform-origin: top right; }
+
+/* Mobile : réduction et plus d’air sous le bandeau */
+@media (max-width: 640px){
+  .hero-gold{ padding-top: 60px; }        /* espace sous l’annonce */
+  .hero-mockup{ transform: scale(.82); }  /* réduit le mockup */
+  .gold-title{ font-size: clamp(26px, 7.2vw, 34px); }
+  .gold-sub{   font-size: clamp(16px, 5.4vw, 20px); }
+  .cta-row{ gap:10px; }
+  .btn{ padding: 11px 16px; }
+}
+
+/* Desktop large : on redonne un peu de présence au mockup */
+@media (min-width: 1200px){
+  .hero-mockup{ transform: scale(1.06); }
+}
+.btn{ border-radius:12px; font-weight:700; }
+.btn-wa, .btn-pp{ box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+.btn-wa:hover, .btn-pp:hover{ transform: translateY(-1px); }
+
+/* Remplacer le contenu de l’écran “desktop” par une capture */
+.hero-mockup .browser .screen{
+  background: #fff url("captures/site desktop.jpg") center/cover no-repeat;
+}
+
+/* Remplacer l’écran téléphone par une capture mobile */
+.hero-mockup .phone .phone-screen{
+  background: #fff url("captures/site mobile.jpg") top center/cover no-repeat;
+}
