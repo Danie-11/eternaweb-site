@@ -56,7 +56,26 @@ $$('#langMenu .lang-item').forEach(b=>{
     langBtn.setAttribute('aria-expanded','false');
   });
 });
+// Extrait : suppose que I18N.fr et I18N.en existent déjà
+I18N.nl = {
+  ...I18N.fr, // hérite des libellés FR pour tout le reste
+  'hero.subtitle': 'CV- en vitrinesites — online binnen 48 uur',
+  'hero.lead'    : '✨ Professionele minisites maken voor:',
+  'btn.fill'     : 'Uw briefing',        // ton bouton "Vos consignes"
+  // (ex. nav si tu veux aussi) :
+  // 'nav.cv': 'CV', 'nav.portfolio': 'Portfolio', 'nav.vitrine': 'Vitrine',
+  // 'nav.tarifs': 'Tarieven', 'nav.devis': 'Uw briefing', 'nav.temoignages': 'Getuigenissen'
+};
 
+I18N.ru = {
+  ...I18N.fr,
+  'hero.subtitle': 'Резюме и витринные сайты — онлайн за 48 часов',
+  'hero.lead'    : '✨ Создание профессиональных мини‑сайтов для:',
+  'btn.fill'     : 'Ваши пожелания',
+  // Éventuels nav :
+  // 'nav.cv': 'Резюме', 'nav.portfolio': 'Портфолио', 'nav.vitrine': 'Витрина',
+  // 'nav.tarifs': 'Тарифы', 'nav.devis': 'Ваши пожелания', 'nav.temoignages': 'Отзывы'
+};
 // ===== Scroll vers #devis =====
 function openDevis(){
   const d = $('#devis');
@@ -125,3 +144,15 @@ if (devisForm && sendForm){
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
   });
 }
+nl: {
+    'hero.title': 'EternaWeb',
+    'hero.subtitle': 'CV- en vitrinesites — online binnen 48 uur',
+    'hero.lead': '✨ Professionele minisites maken voor:',
+    'btn.fill': 'Uw briefing'
+  },
+  ru: {
+    'hero.title': 'EternaWeb',
+    'hero.subtitle': 'Резюме и витринные сайты — онлайн за 48 часов',
+    'hero.lead': '✨ Создание профессиональных мини-сайтов для:',
+    'btn.fill': 'Ваши пожелания'
+  }
