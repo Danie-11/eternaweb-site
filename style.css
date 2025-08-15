@@ -195,7 +195,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
    — utilise le bloc <section class="hero-gold" id="cv"> … </section>
 ================================= */
 .hero-gold{
-  max-width: 1100px; margin: 18px auto; padding: 28px 18px;
+  max-width: 1000px; margin: 18px auto; padding: 28px 18px;
   background: rgba(255,255,255,.10);
   border: 1px solid rgba(203,178,122,.35);
   border-radius: 18px;
@@ -211,34 +211,27 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .gold-sub{ font-size: clamp(18px, 2.2vw, 26px); color:#5e4b3c; margin:0 0 .75rem; }
 .gold-lead{ font-size: clamp(15px, 1.6vw, 18px); opacity:.95; margin:0 0 1rem; }
 
-/* mockup navigateur */
-.hero-mockup{ position: relative; height: min(52vw, 380px); }
-.browser{
-  position:absolute; left:0; right:12%; top:0;
-  background:#fff; border-radius:14px; box-shadow:0 16px 40px rgba(0,0,0,.18);
-  overflow:hidden; border:1px solid #efdcc2;
-}
-.browser .dots{ display:flex; gap:6px; padding:10px 12px; background:#f7efe5; }
-.browser .dots span{ width:10px; height:10px; border-radius:50%; background:#e0c9a1; display:inline-block; }
-.browser .screen{ padding:16px 18px 22px; }
-.browser .line{ height:12px; background:#f0e4d3; border-radius:6px; margin:10px 0; }
-.browser .line.lg{ width:80%; } .browser .line.md{ width:55%; } .browser .line.sm{ width:35%; }
-.browser .btn-row{ display:flex; gap:8px; margin-top:16px; }
-.browser .pill{ height:10px; width:70px; background:#e9d7bd; border-radius:999px; display:inline-block; }
-
-/* mockup téléphone */
-.phone{
-  position:absolute; right:0; bottom:-10px; width:min(32vw,180px); aspect-ratio:9/19;
-  background:#fff; border:1px solid #efdcc2; border-radius:26px; box-shadow:0 18px 40px rgba(0,0,0,.16);
-  overflow:hidden;
-}
-.phone .cam{ height:20px; margin:6px auto 0; width:40%; background:#000; border-radius:0 0 10px 10px; opacity:.06; }
-.phone-screen{ padding:12px 12px 16px; }
-.p-line.lg{ height:10px; width:82%; background:#f0e4d3; border-radius:6px; margin:10px 0; }
-.p-line.sm{ height:10px; width:56%; background:#f0e4d3; border-radius:6px; margin:10px 0; }
-.p-cta{ height:34px; width:70%; background:#e9d7bd; border-radius:10px; margin-top:14px; }
-
 @media (max-width: 920px){
   .hero-wrap{ grid-template-columns: 1fr; }
-  .hero-mockup{ order:-1; height: 300px; }
+}
+.hero-logo{
+  width:100px;         /* ajuste 100–160px selon ton goût */
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.25));
+  opacity: .95;
+}
+body {
+  color: #6b4b3e; /* marron doré */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #6b4b3e;
+}
+
+a {
+  color: #8b6b4a;
+}
+
+a:hover {
+  color: #a8835b;
 }
