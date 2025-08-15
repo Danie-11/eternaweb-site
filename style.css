@@ -400,16 +400,29 @@ function applyLang(lang){
   localStorage.setItem('lang', lang);
   document.documentElement.setAttribute('lang', lang);
 }
+/* Pas de scroll horizontal */
+html, body { overflow-x: hidden; width: 100%; }
 
-// click on a language option
-document.querySelectorAll('#langMenu .lang-item').forEach(btn=>{
-  btn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    applyLang(btn.dataset.lang);
-    langMenu.classList.remove('show');
-    langBtn.setAttribute('aria-expanded', 'false');
-  });
-});
+/* Médias fluides */
+img, svg, video, canvas { max-width: 100%; height: auto; display: block; }
 
-// init
-applyLang(localStorage.getItem('lang') || 'fr');
+/* Sections larges bien clampées à l'écran */
+.hero-gold,
+.pricing-section,
+.testimonials,
+.page-card,
+.footer {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+/* Menu langues : ne dépasse jamais l'écran */
+#langMenu {
+  right: 0; left: auto;
+  max-width: calc(100vw - 20px);
+  overflow-wrap: anywhere;
+}
