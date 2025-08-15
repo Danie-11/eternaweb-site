@@ -1,5 +1,5 @@
 // ===== Config =====
-const WA_NUMBER = '33749723434';          // WhatsApp (sans +)
+const WA_NUMBER = '33749723434';
 const MAIL_TO   = 'contact@eternaweb.fr';
 
 // ===== Helpers =====
@@ -16,10 +16,8 @@ menuBtn?.addEventListener('click', ()=>{
 });
 
 // ===== Lang switch (globe) =====
-// Important: utilise #langBtn et .lang-item (aligne ça aussi dans ton HTML)
 const langBtn  = $('#langBtn');
 const langMenu = $('#langMenu');
-
 if (langBtn && langMenu){
   langBtn.addEventListener('click', ()=>{
     const open = langMenu.classList.toggle('show');
@@ -37,12 +35,8 @@ if (langBtn && langMenu){
   });
 }
 
-// ===== i18n =====
-const I18N = {
-  fr: { /* ... ton objet fr identique ... */ },
-  en: { /* ... ton objet en identique ... */ }
-};
-
+// ===== i18n (tu pourras remplir ton objet I18N ensuite) =====
+const I18N = { fr:{}, en:{} };
 function applyLang(lang){
   const d = I18N[lang] || I18N.fr;
   $$('[data-i18n]').forEach(el=>{
@@ -54,8 +48,6 @@ function applyLang(lang){
   localStorage.setItem('lang', lang);
   document.documentElement.setAttribute('lang', lang);
 }
-
-// init + handlers langue (note: .lang-item)
 applyLang(localStorage.getItem('lang') || 'fr');
 $$('#langMenu .lang-item').forEach(b=>{
   b.addEventListener('click', ()=>{
@@ -69,15 +61,13 @@ $$('#langMenu .lang-item').forEach(b=>{
 function openDevis(){
   const d = $('#devis');
   if (!d) return;
-  d.classList.add('show'); // au cas où tu styles .show
+  d.classList.add('show');
   d.scrollIntoView({ behavior:'smooth', block:'start' });
 }
-
 $('#goDevis')?.addEventListener('click', (e)=>{ e.preventDefault(); openDevis(); });
 $('#goBrief')?.addEventListener('click', (e)=>{ e.preventDefault(); openDevis(); });
 
 if (location.hash === '#devis') {
-  // ouvre directement si l’ancre est présente
   openDevis();
   history.replaceState(null, '', location.pathname + location.search);
 }
@@ -120,6 +110,7 @@ if (devisForm && sendForm){
       `Autres demandes : ${get('contenu')}`,
       `Nom : ${get('nom')}`,
       `Email : ${get('email')}`,
+      `Raison sociale : ${get('raison_sociale')}`,
     ];
 
     const subject = `EternaWeb – Devis ${get('plan')}`;
@@ -133,10 +124,4 @@ if (devisForm && sendForm){
 
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
   });
-}
-function openDevis(){
-  const d = $('#devis');
-  if (!d) return;
-  d.classList.add('show');            // <— important
-  d.scrollIntoView({behavior:'smooth', block:'start'});
 }
