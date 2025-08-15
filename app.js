@@ -357,36 +357,37 @@ const I18N = {
 };
 
 // Héritages simples depuis FR pour compléter NL/RU
-I18N.nl = {
-  ...I18N.fr,
-  'nav.vitrine':'Vitrine', // tu peux traduire si tu veux
-  'nav.tarifs':'Tarieven',
-  'nav.devis':'Uw instructies',
-  'nav.temoignages':'Getuigenissen',
+// --- i18n
+const I18N = {
+  fr: {
+    'hero.title'    : 'EternaWeb',
+    'hero.subtitle' : 'CV & vitrines express — en ligne en 48 heures',
+    'hero.lead'     : '✨ Un design premium, des intégrations rapides et un rendu clé en main.',
+    'cta.whatsapp'  : 'WhatsApp',
+    'cta.paypal'    : 'PayPal',
+    'btn.fill'      : 'Vos consignes'
+  },
 
-  'hero.subtitle': 'CV- en vitrinesites — online binnen 48 uur',
-  'hero.lead'    : '✨ Professionele minisites maken voor:',
-  'btn.fill'     : 'Uw instructies',
-  'btn.send'     : 'Verzenden',
+  en: {
+    ...this.fr, // si ton linter râle, remplace par une copie manuelle
+    'hero.subtitle' : 'CV & showcase sites — online in 48 hours',
+    'hero.lead'     : '✨ Premium design, fast integrations and a turnkey result.',
+    'btn.fill'      : 'Your brief'
+  },
 
-  'pricing.h2': '🧾 EternaWeb‑pakketten',
-  'pricing.sub': 'CV & vitrinesites — hosting inbegrepen',
-};
+  nl: {
+    ...this.fr,
+    'hero.subtitle' : 'CV & vitrinesites — online binnen 48 uur',
+    'hero.lead'     : '✨ Premium ontwerp, snelle integraties en een kant‑en‑klaar resultaat.',
+    'btn.fill'      : 'Uw briefing'
+  },
 
-I18N.ru = {
-  ...I18N.fr,
-  'nav.vitrine':'Витрина',
-  'nav.tarifs':'Тарифы',
-  'nav.devis':'Ваши пожелания',
-  'nav.temoignages':'Отзывы',
-
-  'hero.subtitle': 'Резюме и витринные сайты — онлайн за 48 часов',
-  'hero.lead'    : '✨ Создание профессиональных мини‑сайтов для:',
-  'btn.fill'     : 'Ваши пожелания',
-  'btn.send'     : 'Отправить',
-
-  'pricing.h2': '🧾 Тарифы EternaWeb',
-  'pricing.sub': 'CV и мини‑сайты‑витрины — хостинг включён',
+  ru: {
+    ...this.fr,
+    'hero.subtitle' : 'CV и витринные сайты — онлайн за 48 часов',
+    'hero.lead'     : '✨ Премиальный дизайн, быстрые интеграции и результат «под ключ».',
+    'btn.fill'      : 'Ваши пожелания'
+  }
 };
 
 // Appliquer la langue
