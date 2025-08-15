@@ -211,6 +211,36 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .gold-sub{ font-size: clamp(18px, 2.2vw, 26px); color:#5e4b3c; margin:0 0 .75rem; }
 .gold-lead{ font-size: clamp(15px, 1.6vw, 18px); opacity:.95; margin:0 0 1rem; }
 
+/* mockup navigateur */
+.hero-mockup{ position: relative; height: min(52vw, 380px); }
+.browser{
+  position:absolute; left:0; right:12%; top:0;
+  background:#fff; border-radius:14px; box-shadow:0 16px 40px rgba(0,0,0,.18);
+  overflow:hidden; border:1px solid #efdcc2;
+}
+.browser .dots{ display:flex; gap:6px; padding:10px 12px; background:#f7efe5; }
+.browser .dots span{ width:10px; height:10px; border-radius:50%; background:#e0c9a1; display:inline-block; }
+.browser .screen{ padding:16px 18px 22px; }
+.browser .line{ height:12px; background:#f0e4d3; border-radius:6px; margin:10px 0; }
+.browser .line.lg{ width:80%; } .browser .line.md{ width:55%; } .browser .line.sm{ width:35%; }
+.browser .btn-row{ display:flex; gap:8px; margin-top:16px; }
+.browser .pill{ height:10px; width:70px; background:#e9d7bd; border-radius:999px; display:inline-block; }
+
+/* mockup téléphone */
+.phone{
+  position:absolute; right:0; bottom:-10px; width:min(32vw,180px); aspect-ratio:9/19;
+  background:#fff; border:1px solid #efdcc2; border-radius:26px; box-shadow:0 18px 40px rgba(0,0,0,.16);
+  overflow:hidden;
+}
+.phone .cam{ height:20px; margin:6px auto 0; width:40%; background:#000; border-radius:0 0 10px 10px; opacity:.06; }
+.phone-screen{ padding:12px 12px 16px; }
+.p-line.lg{ height:10px; width:82%; background:#f0e4d3; border-radius:6px; margin:10px 0; }
+.p-line.sm{ height:10px; width:56%; background:#f0e4d3; border-radius:6px; margin:10px 0; }
+.p-cta{ height:34px; width:70%; background:#e9d7bd; border-radius:10px; margin-top:14px; }
+
+@media (max-width: 920px){
+  .hero-wrap{ grid-template-columns: 1fr; }
+  .hero-mockup{ order:-1; height: 300px; }
 }
 /* Assombrir très léger en haut pour que le logo ressorte */
 .hero-gold{
@@ -240,6 +270,23 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   .btn{ padding: 11px 16px; }
 }
 
+/* Desktop large : on redonne un peu de présence au mockup */
+@media (min-width: 1200px){
+  .hero-mockup{ transform: scale(1.06); }
+}
+.btn{ border-radius:12px; font-weight:700; }
+.btn-wa, .btn-pp{ box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+.btn-wa:hover, .btn-pp:hover{ transform: translateY(-1px); }
+
+/* Remplacer le contenu de l’écran “desktop” par une capture */
+.hero-mockup .browser .screen{
+  background: #fff url("captures/site desktop.jpg") center/cover no-repeat;
+}
+
+/* Remplacer l’écran téléphone par une capture mobile */
+.hero-mockup .phone .phone-screen{
+  background: #fff url("captures/site mobile.jpg") top center/cover no-repeat;
+}
 body {
   color: #6b4b3e; /* marron doré */
 }
@@ -289,155 +336,4 @@ img { max-width: 100%; height: auto; display: block; }
   .page-card,
   .pricing-section,
   .testimonials { padding: 18px 12px; }
-}
-// === Globe languages: open/close ===
-const langBtn  = document.getElementById('langBtn');
-const langMenu = document.getElementById('langMenu');
-
-langBtn?.addEventListener('click', () => {
-  const open = langMenu.classList.toggle('show');
-  langBtn.setAttribute('aria-expanded', String(open));
-});
-document.addEventListener('click', (e) => {
-  if (!langMenu.contains(e.target) && e.target !== langBtn) {
-    langMenu.classList.remove('show');
-    langBtn.setAttribute('aria-expanded', 'false');
-  }
-});
-
-// === i18n ===
-const I18N = {
-  fr: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV & vitrines express — en ligne en 48 heures',
-    'hero.lead': '✨ Création de mini‑sites pros pour :',
-    'btn.fill': 'Vos consignes',
-    'pricing.h2': '🧾 Formules EternaWeb',
-    'pricing.sub': 'CV & mini‑sites vitrines express — hébergement inclus',
-  },
-  en: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV & showcase sites — online in 48 hours',
-    'hero.lead': '✨ Create a professional mini‑site for:',
-    'btn.fill': 'Your brief',
-    'pricing.h2': '🧾 EternaWeb Plans',
-    'pricing.sub': 'CV & mini showcase sites — hosting included',
-  },
-  nl: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV & vitrinesites — online binnen 48 uur',
-    'hero.lead': '✨ Maak snel een professionele minisite:',
-    'btn.fill': 'Uw instructies',
-    'pricing.h2': '🧾 EternaWeb‑pakketten',
-    'pricing.sub': 'CV & vitrinesites — hosting inbegrepen',
-  },
-  ru: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV и витринные сайты — онлайн за 48 часов',
-    'hero.lead': '✨ Быстрая разработка мини‑сайта для:',
-    'btn.fill': 'Ваши пожелания',
-    'pricing.h2': '🧾 Тарифы EternaWeb',
-    'pricing.sub': 'CV и мини‑сайты‑витрины — хостинг включён',
-  }
-};
-
-function applyLang(lang){
-  const dict = I18N[lang] || I18N.fr;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key = el.getAttribute('data-i18n');
-    const val = dict[key];
-    if (val == null) return;
-    if (/<[a-z][\s\S]*>/i.test(val)) el.innerHTML = val;
-    else el.textContent = val;
-  });
-  localStorage.setItem('lang', lang);
-  document.documentElement.setAttribute('lang', lang);
-}
-
-document.querySelectorAll('#langMenu .lang-item').forEach(btn=>{
-  btn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    applyLang(btn.dataset.lang);
-    langMenu.classList.remove('show');
-    langBtn.setAttribute('aria-expanded', 'false');
-  });
-});
-
-// Init
-applyLang(localStorage.getItem('lang') || 'fr');
-});
-
-// === Minimal i18n dictionaries (add more keys as needed) ===
-const I18N = {
-  fr: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV & vitrines express — en ligne en 48 heures',
-    'hero.lead': '✨ Création de mini‑sites pros pour :',
-    'btn.fill': 'Vos consignes',
-    'pricing.h2': '🧾 Formules EternaWeb',
-    'pricing.sub': 'CV & mini‑sites vitrines express — hébergement inclus',
-  },
-  en: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV & showcase sites — online in 48 hours',
-    'hero.lead': '✨ Create a professional mini‑site for:',
-    'btn.fill': 'Your brief',
-    'pricing.h2': '🧾 EternaWeb Plans',
-    'pricing.sub': 'CV & mini showcase sites — hosting included',
-  },
-  nl: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV & vitrinesites — online binnen 48 uur',
-    'hero.lead': '✨ Maak snel een professionele minisite:',
-    'btn.fill': 'Uw instructies',
-    'pricing.h2': '🧾 EternaWeb‑pakketten',
-    'pricing.sub': 'CV & vitrinesites — hosting inbegrepen',
-  },
-  ru: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV и витринные сайты — онлайн за 48 часов',
-    'hero.lead': '✨ Быстрая разработка мини‑сайта для:',
-    'btn.fill': 'Ваши пожелания',
-    'pricing.h2': '🧾 Тарифы EternaWeb',
-    'pricing.sub': 'CV и мини‑сайты‑витрины — хостинг включён',
-  }
-};
-
-function applyLang(lang){
-  const dict = I18N[lang] || I18N.fr;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key = el.getAttribute('data-i18n');
-    const val = dict[key];
-    if (val == null) return;
-    if (/<[a-z][\s\S]*>/i.test(val)) el.innerHTML = val;
-    else el.textContent = val;
-  });
-  localStorage.setItem('lang', lang);
-  document.documentElement.setAttribute('lang', lang);
-}
-/* Pas de scroll horizontal */
-html, body { overflow-x: hidden; width: 100%; }
-
-/* Médias fluides */
-img, svg, video, canvas { max-width: 100%; height: auto; display: block; }
-
-/* Sections larges bien clampées à l'écran */
-.hero-gold,
-.pricing-section,
-.testimonials,
-.page-card,
-.footer {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
-  box-sizing: border-box;
-}
-
-/* Menu langues : ne dépasse jamais l'écran */
-#langMenu {
-  right: 0; left: auto;
-  max-width: calc(100vw - 20px);
-  overflow-wrap: anywhere;
 }
