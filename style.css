@@ -211,3 +211,86 @@ body.lite .announce-bar{ display: none; }
     padding: 4px 8px;
     top: 6px;
   }
+/* ===== Lingot d’or — palette & typos ===== */
+:root{
+  --ink:#2D1E15;
+  --choco:#4b332a;
+  --choco-700:#3b271f;
+  --cream:#FFF7EE;
+  --paper:#FFF9F3;
+  --gold:#CBB27A;
+  --gold-600:#AE945E;
+}
+
+/* Fond plus premium (dégradé or) */
+body{
+  background: radial-gradient(1200px 800px at 10% 10%, #f0e6d2 0%, #e6d2b0 35%, #e0c896 55%, #d3b076 75%, #b89257 100%) fixed;
+  color: var(--ink);
+}
+
+/* Titres avec Playfair */
+h1,h2,h3,.gold-title,.gold-sub{ font-family:"Playfair Display", serif; letter-spacing:.2px; }
+.gold-title{ font-size: clamp(30px, 5vw, 42px); margin: 0 0 .35rem; }
+.gold-sub{   font-size: clamp(18px, 3vw, 24px); opacity:.95; margin: 0 0 .75rem; }
+
+/* Carte principale un peu plus crème */
+.container, .page-card, .testimonials .t-grid blockquote, .card{
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  border-radius: 16px;
+}
+
+/* Boutons or */
+.btn-primary{
+  background: linear-gradient(180deg, #d9be85, #b9935a);
+  color:#2b1f18;
+  font-weight:800;
+  border:0;
+  box-shadow:0 12px 24px rgba(0,0,0,.18);
+  transition: transform .18s ease, filter .2s;
+}
+.btn-primary:hover{ transform: translateY(-2px); filter: brightness(1.05); }
+
+/* Bande d’annonce, plus légère + centrée */
+.announce-bar{
+  position: fixed;
+  top: 8px;
+  left: 50%; transform: translateX(-50%);
+  z-index: 1100;
+  max-width: 90%;
+  padding: 6px 10px;
+  font-size: 14px; line-height: 1.35;
+  color: #2d1e15;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+@media (max-width: 560px){ .announce-bar{ font-size: 13px; padding: 4px 8px; top: 6px; }}
+
+/* Menu dégradé chocolat vers crème + hover doux */
+.menu{ background: linear-gradient(90deg,#f0e8da,var(--choco)); }
+.menu a:hover{ background: rgba(255,223,174,.3); color: #2b1f18; }
+
+/* Cartes prix (liseré discret) */
+.pricing-cards .card{ background: var(--paper); outline: 1px solid #00000010; }
+.pricing-cards .card h3{ color:#5d3f2d; }
+
+/* Footer plus clean et centré */
+.footer{
+  background: linear-gradient(to bottom,#4b332a 0 92%, rgba(75,51,42,0) 100%);
+  color:#eee; text-align:center; padding: 22px 16px; margin: 34px auto;
+  border-radius: 16px; max-width: 960px;
+}
+.footer a{ color:#fff0e6; }
+.footer-columns{ flex-direction: column; gap: 10px; align-items: center; }
+.footer-info{ justify-content: center; gap:28px; }
+
+/* Liens sans puces */
+.footer-block ul{ list-style: none; margin:.25rem 0 0; padding:0; }
+
+/* Petits raffinements */
+.btn{ border-radius: 12px; }
+.btn-wa{ filter: saturate(1.05); }
+.btn-pp{ filter: contrast(1.05); }
