@@ -211,8 +211,3 @@ body.lite .announce-bar{ display: none; }
     padding: 4px 8px;
     top: 6px;
   }
-}
-.fab, .fab * { text-decoration: none !important; 
-}
-/* Panneau FAQ au-dessus aussi */
-.faq-panel { position: fixed; inset: 0; z-index: 1100; }
