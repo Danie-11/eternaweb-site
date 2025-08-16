@@ -248,6 +248,12 @@ if (location.hash === '#devis') {
 
 // ===== Choix de plan =====
 const planInput = $('#planInput');
+// Ouvre le bloc devis pour n'importe quel lien vers #devis
+document.querySelectorAll('a[href="#devis"]').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    e.preventDefault();
+    openDevis();
+  });
 $$('.choose-plan').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const plan = btn.dataset.plan || '';
