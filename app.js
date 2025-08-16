@@ -212,12 +212,20 @@ document.querySelectorAll('a[href="#devis"]').forEach(a=>{
 
 // ===== Fermeture automatique du bloc devis quand on clique à l'extérieur =====
 document.addEventListener('click', (e)=>{
-  const devis = $('#devis'); // ton bloc
+  const devis = $('#devis');
   if (!devis) return;
-  const isClickInside = devis.contains(e.target) || e.target.closest('a[href="#devis"]');
-  if (!isClickInside) {
-    devis.classList.remove('show');
+
+  // si on clique dans #devis, ou sur un lien/bouton qui ouvre le devis → on ignore
+  if (
+    devis.contains(e.target) || 
+    e.target.closest('a[href="#devis"]') || 
+    e.target.closest('.choose-plan')
+  ) {
+    return;
   }
+
+  // sinon on ferme
+  devis.classList.remove('show');
 });
 
 $$('.choose-plan').forEach(btn=>{
