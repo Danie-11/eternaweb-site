@@ -104,3 +104,39 @@ body { padding:58px 12px 0; }
 
 .footer{ margin:26px auto; padding:18px 12px; }
 .footer-columns{ gap:12px; }
+/* CTA: boutons compacts qui s'adaptent au texte */
+.cta-row { 
+  display: flex; 
+  gap: 10px; 
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+
+/* annule toute largeur fixe/max-width précédente */
+.btn,
+.btn-wa,
+.btn-pp,
+.btn-primary {
+  width: auto !important;
+  max-width: none !important;
+  margin: 6px auto;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 12px;
+  white-space: nowrap;       /* pas de retour à la ligne dans le libellé */
+}
+
+/* icônes un peu plus petites */
+.btn-ico { 
+  height: 16px; 
+  width: auto; 
+}
+
+/* optionnel : léger resserrement sur écrans très étroits */
+@media (max-width: 360px){
+  .btn, .btn-wa, .btn-pp, .btn-primary {
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+}
