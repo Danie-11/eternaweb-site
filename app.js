@@ -254,6 +254,8 @@ document.querySelectorAll('a[href="#devis"]').forEach(a=>{
     e.preventDefault();
     openDevis();
   });
+});
+
 $$('.choose-plan').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const plan = btn.dataset.plan || '';
