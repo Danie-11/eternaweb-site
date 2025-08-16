@@ -156,52 +156,7 @@ const I18N = {
   }
 };
 
-// Héritages simples depuis FR pour compléter NL/RU
-// --- i18n
-  const I18N = {
-  fr: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV & vitrines express — en ligne en 48 heures',
-    'hero.lead': '✨ Un design premium, des intégrations rapides et un rendu clé en main.',
-    'btn.fill': 'Vos consignes'
-  },
-  en: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV & showcase sites — online in 48 hours',
-    'hero.lead': '✨ Premium design, fast integrations, and a turnkey result.',
-    'btn.fill': 'Your brief'
-  },
-  nl: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV’s en vitrinesites — online binnen 48 uur',
-    'hero.lead': '✨ Premium ontwerp, snelle integraties en een kant-en-klaar resultaat.',
-    'btn.fill': 'Uw briefing'
-  },
-  ru: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'Резюме и витринные сайты — онлайн за 48 часов',
-    'hero.lead': '✨ Премиум-дизайн, быстрая интеграция и готовый результат.',
-    'btn.fill': 'Ваши пожелания'
-  },
-  de: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'Lebensläufe & Schaufensterseiten — online in 48 Stunden',
-    'hero.lead': '✨ Premium-Design, schnelle Integrationen und ein schlüsselfertiges Ergebnis.',
-    'btn.fill': 'Ihre Angaben'
-  },
-  es: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV y sitios escaparate — en línea en 48 horas',
-    'hero.lead': '✨ Un diseño premium, integraciones rápidas y un resultado llave en mano.',
-    'btn.fill': 'Sus indicaciones'
-  },
-  it: {
-    'hero.title': 'EternaWeb',
-    'hero.subtitle': 'CV e siti vetrina — online in 48 ore',
-    'hero.lead': '✨ Un design premium, integrazioni rapide e un risultato chiavi in mano.',
-    'btn.fill': 'Le tue indicazioni'
-  }
-};
+
 
 // Appliquer la langue
 function applyLang(lang){
