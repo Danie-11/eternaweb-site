@@ -111,22 +111,6 @@ body { padding:58px 12px 0; }
   justify-content: center; 
   flex-wrap: wrap;
 }
-
-/* annule toute largeur fixe/max-width précédente */
-.btn,
-.btn-wa,
-.btn-pp,
-.btn-primary {
-  width: auto !important;
-  max-width: none !important;
-  margin: 6px auto;
-  padding: 8px 12px;
-  font-size: 14px;
-  line-height: 1;
-  border-radius: 12px;
-  white-space: nowrap;       /* pas de retour à la ligne dans le libellé */
-}
-
 /* icônes un peu plus petites */
 .btn-ico { 
   height: 16px; 
@@ -160,4 +144,17 @@ body { padding:58px 12px 0; }
   height: auto;
   margin: 6px auto 2px;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-rotate(12deg);
+}
+/* Boutons CTA : bien proportionnés sur mobile */
+.cta-row {
+  flex-direction: column;   /* un en dessous de l’autre */
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-row .btn {
+  max-width: 75%;   /* largeur max = 75% de l’écran */
+  width: 100%;      /* mais prend toute la place dispo */
+  font-size: 15px;
+  padding: 10px 14px;
 }
