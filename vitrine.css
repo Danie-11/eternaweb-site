@@ -1,0 +1,17 @@
+/* Look corporate doux, sections cartonnées */
+body.tpl-vitrine{ background: linear-gradient(180deg,#fbf7f1,#efe3d5); }
+body.tpl-vitrine::before{ display:none; }
+
+.vit-hero{ padding:40px 0 10px; text-align:center; }
+.vit-sections h2{ color:#5d4a3a; text-align:center; }
+
+.vit-cards{
+  display:grid; gap:14px; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  margin-top:10px;
+}
+.vit-cards article{
+  background:#fff; border:1px solid #f0e6d8; border-radius:14px; padding:18px;
+  box-shadow:0 8px 18px #0001;
+}
+.vit-proof blockquote{ text-align:center; margin:.8rem auto; font-size:1.05rem; }
+.vit-contact{ text-align:center; }
