@@ -210,6 +210,16 @@ document.querySelectorAll('a[href="#devis"]').forEach(a=>{
   });
 });
 
+// ===== Fermeture automatique du bloc devis quand on clique à l'extérieur =====
+document.addEventListener('click', (e)=>{
+  const devis = $('#devis'); // ton bloc
+  if (!devis) return;
+  const isClickInside = devis.contains(e.target) || e.target.closest('a[href="#devis"]');
+  if (!isClickInside) {
+    devis.classList.remove('show');
+  }
+});
+
 $$('.choose-plan').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const plan = btn.dataset.plan || '';
