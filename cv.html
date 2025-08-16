@@ -1,43 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="hero.title">EternaWeb</title>
-  <link rel="stylesheet" href="style-desktop.css" media="(min-width: 601px)">
-  <link rel="stylesheet" href="style-mobile.css"  media="(max-width: 600px)">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Modèle CV – EternaWeb</title>
+
+  <!-- commun -->
+  <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
+  <link rel="stylesheet" href="style-mobile.css"  media="(max-width:600px)">
+  <!-- spécifique -->
+  <link rel="stylesheet" href="cv.css">
 </head>
-<body>
-  <!-- Hero -->
-  <section class="container">
-    <h1>Prénom Nom</h1>
-    <p class="gold-lead" data-i18n="cv.tagline">Poste / Spécialité • Ville</p>
+<body class="tpl-cv">
+  <header class="cv-hero container">
+    <img class="cv-photo" src="images/demo-photo.jpg" alt="Photo du candidat">
+    <h1>Danielle Kabongo</h1>
+    <p class="cv-role">Cheffe de projet digital</p>
+    <ul class="cv-infos">
+      <li>📍 Paris</li><li>✉️ contact@exemple.com</li><li>🔗 linkedin.com/in/exemple</li>
+    </ul>
     <div class="cta-row">
       <a class="btn btn-wa" href="https://wa.me/33749723434">WhatsApp</a>
-      <a class="btn btn-primary" href="#contact" data-i18n="btn.fill">Vos consignes</a>
+      <a class="btn btn-primary" href="#contact">Me contacter</a>
     </div>
-  </section>
+  </header>
 
-  <!-- Compétences -->
-  <section class="page-card">
-    <h2 data-i18n="cv.skills">Compétences</h2>
-    <ul class="bullets">
-      <li>Compétence A</li><li>Compétence B</li><li>Compétence C</li>
-    </ul>
-  </section>
+  <main class="container cv-grid">
+    <section>
+      <h2>Profil</h2>
+      <p>10 ans d’expérience en gestion de projets web, pilotage d’équipes, KPI et parcours clients.</p>
+    </section>
 
-  <!-- Expériences -->
-  <section class="page-card">
-    <h2 data-i18n="cv.exp">Expériences</h2>
-    <div class="grid-2">
-      <div><strong>Entreprise</strong><br>Intitulé – Dates<br>Résumé…</div>
-      <div><strong>Entreprise</strong><br>Intitulé – Dates<br>Résumé…</div>
-    </div>
-  </section>
+    <section>
+      <h2>Compétences</h2>
+      <ul class="cv-tags">
+        <li>Gestion de projet</li><li>UX</li><li>SEO</li><li>No-code</li><li>Analytics</li>
+      </ul>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="page-card">
-    <h2 data-i18n="cv.contact">Contact</h2>
-    <p>email@exemple.com · +33 6 …</p>
-  </section>
+    <section>
+      <h2>Expériences</h2>
+      <article class="cv-job">
+        <h3>Responsable digital – Studio X</h3>
+        <small>2021–2025</small>
+        <p>Refonte e-commerce, +38% conv., mise en place CRM et automatisations.</p>
+      </article>
+      <article class="cv-job">
+        <h3>Chef de projet – Agence Y</h3>
+        <small>2018–2021</small>
+        <p>Conduite de 20+ sites vitrines/portfolio, TMA et A/B testing.</p>
+      </article>
+    </section>
 
-  <script src="app.js" defer></script>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Disponible sous 48h pour entretien.</p>
+      <a class="btn btn-pp" href="https://paypal.me/votrecompte">Soutenir / Réserver</a>
+    </section>
+  </main>
 </body>
+</html>
