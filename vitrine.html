@@ -1,33 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="hero.title">EternaWeb</title>
-  <link rel="stylesheet" href="style-desktop.css" media="(min-width: 601px)">
-  <link rel="stylesheet" href="style-mobile.css"  media="(max-width: 600px)">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Modèle Vitrine – EternaWeb</title>
+
+  <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
+  <link rel="stylesheet" href="style-mobile.css"  media="(max-width:600px)">
+  <link rel="stylesheet" href="vitrine.css">
 </head>
-<body>
-  <section class="container">
-    <h1>Nom de l’entreprise</h1>
-    <p class="gold-lead" data-i18n="vit.tagline">Slogan clair de 1–2 lignes</p>
-    <div class="cta-row">
-      <a class="btn btn-wa" href="https://wa.me/33749723434">WhatsApp</a>
-      <a class="btn btn-pp" href="https://paypal.me/...">PayPal</a>
+<body class="tpl-vitrine">
+  <header class="vit-hero">
+    <div class="container">
+      <h1>Cabinet Or & Co</h1>
+      <p>Conseil, expertise, accompagnement PME.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Prendre RDV</a>
+        <a class="btn btn-wa" href="https://wa.me/33749723434">WhatsApp</a>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <section class="page-card">
-    <h2 data-i18n="vit.services">Services</h2>
-    <div class="grid-2">
-      <div class="card"><h3>Service A</h3><p>…</p></div>
-      <div class="card"><h3>Service B</h3><p>…</p></div>
-    </div>
-  </section>
+  <main class="container vit-sections">
+    <section class="vit-services">
+      <h2>Nos services</h2>
+      <div class="vit-cards">
+        <article><h3>Audit</h3><p>Analyse flash et plan d’action.</p></article>
+        <article><h3>Conseil</h3><p>Stratégie & organisation.</p></article>
+        <article><h3>Formation</h3><p>Ateliers sur mesure.</p></article>
+      </div>
+    </section>
 
-  <section class="page-card">
-    <h2 data-i18n="vit.contact">Demande de devis</h2>
-    <!-- tu peux réutiliser ton formulaire #devis directement ici -->
-    <a class="btn btn-primary" href="#devis" data-i18n="btn.fill">Vos consignes</a>
-  </section>
+    <section class="vit-proof">
+      <h2>Témoignages</h2>
+      <blockquote>“Equipe réactive, résultats concrets.” <cite>— Claire B.</cite></blockquote>
+    </section>
 
-  <script src="app.js" defer></script>
+    <section id="contact" class="vit-contact">
+      <h2>Contact</h2>
+      <p>Réponse sous 24–48h.</p>
+      <a class="btn btn-pp" href="mailto:contact@exemple.com">contact@exemple.com</a>
+    </section>
+  </main>
 </body>
+</html>
