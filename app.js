@@ -154,8 +154,65 @@ const I18N = {
     'testi.h2':'💬 Testimonianze','testi.t1':'“Super reattiva e professionale — il mio sito era online lo stesso giorno!”','testi.c1':'— Claire B.','testi.t2':'“Design elegante e chiaro; i clienti mi scrivono direttamente su WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Ottimo rapporto qualità‑prezzo. Consigliatissimo.”','testi.c3':'— Sofia M.',
     'footer.info':'Info utili','footer.contact':'Contatti','footer.about':'Chi siamo','footer.security':'Sicurezza','footer.privacy':'Privacy','footer.code':'Codice di condotta','footer.faq':'FAQ'
   }
-};
+// --- NAV / section modèles
+I18N.fr['nav.modeles']    = 'Modèles';
+I18N.en['nav.modeles']    = 'Templates';
 
+I18N.fr['models.h2']      = '🎨 Modèles prêts';
+I18N.en['models.h2']      = '🎨 Ready-made templates';
+I18N.fr['models.sub']     = 'Choisis un style, ouvre la démo, et dis-moi lequel tu veux.';
+I18N.en['models.sub']     = 'Pick a style, open the demo, and tell me which you want.';
+I18N.fr['models.demo']    = 'Voir le modèle';
+I18N.en['models.demo']    = 'View template';
+
+I18N.fr['models.cv.title']='CV — sobre & pro';
+I18N.en['models.cv.title']='CV — clean & pro';
+I18N.fr['models.cv.desc'] ='Idéal candidature ou profil pro.';
+I18N.en['models.cv.desc'] ='Great for job applications.';
+
+I18N.fr['models.port.title']='Portfolio — créatif';
+I18N.en['models.port.title']='Portfolio — creative';
+I18N.fr['models.port.desc'] ='Parfait artistes & designers.';
+I18N.en['models.port.desc'] ='Perfect for artists & designers.';
+
+I18N.fr['models.vit.title']='Vitrine — business';
+I18N.en['models.vit.title']='Showcase — business';
+I18N.fr['models.vit.desc'] ='Entreprises & indépendants.';
+I18N.en['models.vit.desc'] ='For businesses & freelancers.';
+
+// --- Contenu pages CV
+I18N.fr['cv.h1']='Danielle Kabongo';
+I18N.en['cv.h1']='Danielle Kabongo';
+I18N.fr['cv.role']='Cheffe de projet digital';
+I18N.en['cv.role']='Digital Project Lead';
+I18N.fr['cv.profil']='Profil';
+I18N.en['cv.profil']='Profile';
+I18N.fr['cv.skills']='Compétences';
+I18N.en['cv.skills']='Skills';
+I18N.fr['cv.exp']='Expériences';
+I18N.en['cv.exp']='Experience';
+I18N.fr['cv.contact']='Contact';
+I18N.en['cv.contact']='Contact';
+
+// --- Portfolio
+I18N.fr['port.h1']='Studio Eterna';
+I18N.en['port.h1']='Studio Eterna';
+I18N.fr['port.tag']='Identités visuelles, UI, sites élégants.';
+I18N.en['port.tag']='Visual identities, UI, elegant sites.';
+I18N.fr['port.about']='À propos';
+I18N.en['port.about']='About';
+
+// --- Vitrine
+I18N.fr['vit.h1']='Cabinet Or & Co';
+I18N.en['vit.h1']='Or & Co Consulting';
+I18N.fr['vit.tag']='Conseil, expertise, accompagnement PME.';
+I18N.en['vit.tag']='Consulting, expertise, SME support.';
+I18N.fr['vit.services']='Nos services';
+I18N.en['vit.services']='Our services';
+I18N.fr['vit.testi']='Témoignages';
+I18N.en['vit.testi']='Testimonials';
+I18N.fr['vit.contact']='Contact';
+I18N.en['vit.contact']='Contact';
 
 
 // Appliquer la langue
