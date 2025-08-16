@@ -2,18 +2,15 @@
    Variables & base
 ================================= */
 :root{
-  /* palette d’origine */
   --brown:#6b4b3e; 
   --brown-dark:#3b2a22; 
   --ink:#2d1e15;
 
-  /* tons crème & or */
   --cream:#fffaf7;
   --paper:#FFF9F3;
   --gold:#CBB27A; 
   --gold-600:#AE945E;
 
-  /* chocolat pour les dégradés menu/footer */
   --choco:#4b332a;
 }
 
@@ -21,11 +18,9 @@
 html,body{ margin:0; padding:0 }
 
 body{
-  /* typo UI */
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color:var(--ink);
 
-  /* fond premium or/chocolat */
   background: radial-gradient(1200px 800px at 10% 10%, #f0e6d2 0%, #e6d2b0 35%, #e0c896 55%, #d3b076 75%, #b89257 100%) fixed;
   background-attachment: fixed;
   background-size: cover;
@@ -33,7 +28,6 @@ body{
   padding:70px 20px 0;
 }
 
-/* overlay pour contraste du haut (logo/titres lisibles) */
 body::before{
   content:"";
   position:fixed; inset:0 0 auto 0; height:45vh; pointer-events:none;
@@ -42,7 +36,7 @@ body::before{
 }
 body > *{ position:relative; z-index:1; }
 
-/* titraille Playfair */
+/* titres */
 h1,h2,h3,.gold-title,.gold-sub{ font-family:"Playfair Display", serif; letter-spacing:.2px; }
 h1{ margin:0 0 6px; font-size:2rem; color:#7a5c45 }
 h2{ margin:0 0 12px; font-size:1.5rem; color:#5e4b3c }
@@ -121,7 +115,7 @@ h2{ margin:0 0 12px; font-size:1.5rem; color:#5e4b3c }
 .btn-primary:hover{ transform: translateY(-2px); filter: brightness(1.05); }
 
 /* ===============================
-   Annonce (une seule version)
+   Annonce
 ================================= */
 .announce-bar{
   position: fixed; top: 8px; left: 50%; transform: translateX(-50%);
@@ -132,7 +126,6 @@ h2{ margin:0 0 12px; font-size:1.5rem; color:#5e4b3c }
   border: 1px solid var(--gold); border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,.06);
 }
-@media (max-width: 560px){ .announce-bar{ font-size:13px; padding:4px 8px; top:6px; } }
 body.lite .announce-bar{ display:none }
 
 /* ===============================
@@ -151,7 +144,6 @@ body.lite .announce-bar{ display:none }
 .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:14px }
 input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10px 12px; background:#fff }
 .tiny{ opacity:.8; font-size:.9rem; margin:8px 0 0 }
-@media(max-width:720px){ .devis-grid,.grid-2{ grid-template-columns:1fr } }
 
 /* Devis fermé par défaut */
 #devis{ display:none }
@@ -191,8 +183,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .copyright{ text-align:center; font-size:14px; opacity:.8; margin-top:14px }
 
 /* ===============================
-   Hero “Lingot d’or” (mockup)
-   — utilise le bloc <section class="hero-gold" id="cv"> … </section>
+   Hero gold
 ================================= */
 .hero-gold{
   max-width: 1000px; margin: 18px auto; padding: 28px 18px;
@@ -211,58 +202,30 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .gold-sub{ font-size: clamp(18px, 2.2vw, 26px); color:#5e4b3c; margin:0 0 .75rem; }
 .gold-lead{ font-size: clamp(15px, 1.6vw, 18px); opacity:.95; margin:0 0 1rem; }
 
-@media (max-width: 920px){
-  .hero-wrap{ grid-template-columns: 1fr; }
-}
 .hero-logo{
-  width:100px;         /* ajuste 100–160px selon ton goût */
+  width:100px;
   height: auto;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,.25));
   opacity: .95;
 }
-body {
-  color: #6b4b3e; /* marron doré */
-}
 
-h1, h2, h3, h4, h5, h6 {
-  color: #6b4b3e;
-}
-
-a {
-  color: #8b6b4a;
-}
-
-a:hover {
-  color: #a8835b;
-}
 /* Logo marron du hero */
 .hero-gold img {
-  width: 80px;       /* réduit la taille (avant probablement 120px ou plus) */
+  width: 80px;
   height: auto;
-  opacity: 0.9;      /* léger adoucissement */
-  margin: 10px auto; /* espace autour pour respirer */
+  opacity: 0.9;
+  margin: 10px auto;
   display: block;
-}
-.hero-gold img {
   filter: brightness(1.1) sepia(0.3) hue-rotate(15deg);
 }
-/* Boutons CTA (WhatsApp, PayPal, Vos consignes) */
+
+/* CTA boutons */
 .cta-buttons button,
 .cta-buttons a {
-  max-width: 220px;   /* limite leur largeur */
-  width: 90%;         /* un peu flexible mais pas énorme */
-  margin: 8px auto;   /* centrés */
-  font-size: 16px;    /* texte lisible sans être énorme */
-  padding: 10px 14px; /* moins "coussinés" */
+  max-width: 220px;
+  width: 90%;
+  margin: 8px auto;
+  font-size: 16px;
+  padding: 10px 14px;
   border-radius: 10px;
-}
-
-/* Version mobile */
-@media (max-width: 600px) {
-  .cta-buttons button,
-  .cta-buttons a {
-    max-width: 160px;
-    font-size: 14px;
-    padding: 5px 10px;
-  }
 }
