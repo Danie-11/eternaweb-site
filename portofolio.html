@@ -1,22 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="hero.title">EternaWeb</title>
-  <link rel="stylesheet" href="style-desktop.css" media="(min-width: 601px)">
-  <link rel="stylesheet" href="style-mobile.css"  media="(max-width: 600px)">
-</head><body>
-  <section class="container">
-    <h1 data-i18n="port.title">Portfolio</h1>
-    <p class="gold-lead" data-i18n="port.sub">Sélection de projets récents</p>
-  </section>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Modèle Portfolio – EternaWeb</title>
 
-  <section class="page-card">
-    <div class="pricing-cards"> <!-- grille réutilisée -->
-      <a class="card" href="#p1"><h3>Projet 1</h3><p>Catégorie • 2025</p></a>
-      <a class="card" href="#p2"><h3>Projet 2</h3><p>Catégorie • 2025</p></a>
-      <a class="card" href="#p3"><h3>Projet 3</h3><p>Catégorie • 2024</p></a>
+  <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
+  <link rel="stylesheet" href="style-mobile.css"  media="(max-width:600px)">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body class="tpl-portfolio">
+  <header class="port-hero">
+    <div class="port-inner">
+      <h1>Studio Eterna</h1>
+      <p>Identités visuelles, UI, sites élégants.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#works">Voir mes projets</a>
+        <a class="btn btn-wa" href="https://wa.me/33749723434">WhatsApp</a>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <script src="app.js" defer></script>
+  <main id="works" class="port-grid">
+    <!-- 6 tuiles de travaux -->
+    <a class="work" href="#"><img src="images/folio1.jpg" alt=""><span>Branding Café</span></a>
+    <a class="work" href="#"><img src="images/folio2.jpg" alt=""><span>Site artisan</span></a>
+    <a class="work" href="#"><img src="images/folio3.jpg" alt=""><span>Landing SaaS</span></a>
+    <a class="work" href="#"><img src="images/folio4.jpg" alt=""><span>Portfolio photo</span></a>
+    <a class="work" href="#"><img src="images/folio5.jpg" alt=""><span>Événementiel</span></a>
+    <a class="work" href="#"><img src="images/folio6.jpg" alt=""><span>Restau chic</span></a>
+  </main>
+
+  <section class="container port-about">
+    <h2>À propos</h2>
+    <p>Je crée des expériences web simples, raffinées et performantes. Disponible freelance.</p>
+  </section>
 </body>
+</html>
