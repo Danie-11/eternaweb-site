@@ -158,7 +158,6 @@ const I18N = {
 
 // Héritages simples depuis FR pour compléter NL/RU
 // --- i18n
-const I18N = {
   const I18N = {
   fr: {
     'hero.title': 'EternaWeb',
