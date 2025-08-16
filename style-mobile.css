@@ -148,24 +148,6 @@ body { padding:58px 12px 0; }
   gap: 10px;
 }
 
-/* Boutons plus petits, auto-sizing */
-.btn,
-.btn-wa,
-.btn-pp,
-.btn-primary {
-  width: auto !important;       /* casse le 88% */
-  max-width: 180px !important;  /* limite */
-  margin: 6px auto !important;
-  padding: 8px 14px !important;
-  font-size: 14px !important;
-  line-height: 1.2;
-  border-radius: 10px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-}
-
 /* Icônes plus petites */
 .btn-ico { 
   height: 16px !important; 
