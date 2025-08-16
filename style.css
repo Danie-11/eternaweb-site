@@ -235,3 +235,14 @@ a {
 a:hover {
   color: #a8835b;
 }
+/* Logo marron du hero */
+.hero-gold img {
+  width: 80px;       /* réduit la taille (avant probablement 120px ou plus) */
+  height: auto;
+  opacity: 0.9;      /* léger adoucissement */
+  margin: 10px auto; /* espace autour pour respirer */
+  display: block;
+}
+.hero-gold img {
+  filter: brightness(1.1) sepia(0.3) hue-rotate(15deg);
+}
