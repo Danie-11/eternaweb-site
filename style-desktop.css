@@ -236,3 +236,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   filter: drop-shadow(0 2px 4px rgba(0,0,0,.25));
   opacity: .95;
 }
+.models-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.model-card{max-width:290px;text-decoration:none;color:inherit}
+.model-card img{width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:10px;box-shadow:0 8px 18px #0001}
+.model-card .btn{display:inline-block;margin-top:8px}
