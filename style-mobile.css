@@ -92,7 +92,7 @@ body { padding:58px 12px 0; }
 .cta-row{ gap:10px; justify-content:center; }
 .btn{ padding:10px 14px; border-radius:12px; font-weight:700; }
 .btn-ico{ height:18px; }
-.btn-wa,.btn-pp,.btn-primary{ max-width:220px; width:88%; margin:0 auto; font-size:14px; }
+.btn-wa,.btn-pp,.btn-primary{ max-width:160px; width:88%; margin:6px auto; font-size:13px; }
 
 .menu-toggle{ padding:10px 12px; border-radius:12px; }
 .announce-bar{ font-size:13px; padding:4px 8px; top:6px; }
