@@ -5,30 +5,28 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Modèle Portfolio – EternaWeb</title>
 
+  <!-- CSS communs -->
   <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
   <link rel="stylesheet" href="style-mobile.css"  media="(max-width:600px)">
+  <!-- Spécifique au template portfolio -->
   <link rel="stylesheet" href="portfolio.css">
 </head>
 <body class="tpl-portfolio">
-  <header class="port-hero">
-  <div class="port-inner">
-    <h1 data-i18n="port.h1">Studio Eterna</h1>
-    <p data-i18n="port.tag">Identités visuelles, UI, sites élégants.</p>
-    ...
-  </div>
-  </header>
+  <!-- Hero -->
   <header class="port-hero">
     <div class="port-inner">
-      <h1>Studio Eterna</h1>
-      <p>Identités visuelles, UI, sites élégants.</p>
+      <h1 data-i18n="port.h1">Studio Eterna</h1>
+      <p data-i18n="port.tag">Identités visuelles, UI, sites élégants.</p>
+
       <div class="cta-row">
-        <a class="btn btn-primary" href="#works">Voir mes projets</a>
+        <a class="btn btn-primary" href="#works" data-i18n="port.cta.works">Voir mes projets</a>
         <a class="btn btn-wa" href="https://wa.me/33749723434">WhatsApp</a>
       </div>
     </div>
   </header>
- <main id="works" class="port-grid">
-    <!-- 6 tuiles de travaux -->
+
+  <!-- Grille projets -->
+  <main id="works" class="port-grid">
     <a class="work" href="#"><img src="images/folio1.jpg" alt=""><span>Branding Café</span></a>
     <a class="work" href="#"><img src="images/folio2.jpg" alt=""><span>Site artisan</span></a>
     <a class="work" href="#"><img src="images/folio3.jpg" alt=""><span>Landing SaaS</span></a>
@@ -37,10 +35,13 @@
     <a class="work" href="#"><img src="images/folio6.jpg" alt=""><span>Restau chic</span></a>
   </main>
 
+  <!-- À propos -->
   <section class="container port-about">
-    <h2>À propos</h2>
-    <p>Je crée des expériences web simples, raffinées et performantes. Disponible freelance.</p>
+    <h2 data-i18n="port.about.h2">À propos</h2>
+    <p data-i18n="port.about.p">Je crée des expériences web simples, raffinées et performantes. Disponible freelance.</p>
   </section>
+
+  <!-- JS -->
+  <script src="app.js" defer></script>
 </body>
 </html>
-<script src="app.js" defer></script>
