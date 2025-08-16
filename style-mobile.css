@@ -92,7 +92,7 @@ body { padding:58px 12px 0; }
 .cta-row{ gap:10px; justify-content:center; }
 .btn{ padding:10px 14px; border-radius:12px; font-weight:700; }
 .btn-ico{ height:18px; }
-.btn-wa,.btn-pp,.btn-primary{ max-width:140px; width:50%; margin:6px auto; font-size:13px; }
+.btn-wa,.btn-pp,.btn-primary{ max-width:160px; width:40%; margin:6px auto; font-size:13px; }
 
 .menu-toggle{ padding:10px 12px; border-radius:12px; }
 .announce-bar{ font-size:13px; padding:4px 8px; top:6px; }
@@ -170,4 +170,12 @@ body { padding:58px 12px 0; }
 .btn-ico { 
   height: 16px !important; 
   width: auto; 
+}
+
+/* mobile.css */
+.hero-logo{
+  width: 64px;
+  height: auto;
+  margin: 6px auto 2px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-rotate(12deg);
 }
