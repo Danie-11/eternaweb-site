@@ -1,0 +1,46 @@
+/* ========= Overrides MOBILE (<=600px) ========= */
+
+/* confort global */
+html, body { overflow-x:hidden; }
+body { padding: 58px 12px 0; }
+
+/* bloc hero plus compact */
+.hero-gold       { max-width: 100%; padding: 18px 12px; }
+.hero-wrap       { display:block; }                /* 1 colonne */
+.hero-copy       { padding: 4px 6px; }
+.gold-title      { font-size: clamp(26px, 7vw, 34px); margin: 4px 0 6px; }
+.gold-sub        { font-size: clamp(16px, 5vw, 20px); }
+.gold-lead       { font-size: clamp(14px, 4.2vw, 18px); }
+
+/* petit globe au-dessus du titre */
+.hero-gold img   { width: 64px; height:auto; margin: 6px auto 2px; filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-rotate(12deg); }
+
+/* conteneurs */
+.container, .page-card, .pricing-section, .testimonials, .footer {
+  max-width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* CTA plus petits (WhatsApp / PayPal / Vos consignes) */
+.cta-row       { gap: 10px; justify-content:center; }
+.btn           { padding: 10px 14px; font-weight: 700; border-radius: 12px; }
+.btn-ico       { height: 18px; }
+.btn-wa,
+.btn-pp,
+.btn-primary   { max-width: 220px; width: 88%; margin: 0 auto; font-size: 14px; }
+
+/* menu & bandeau */
+.menu-toggle   { padding: 10px 12px; border-radius: 12px; }
+.announce-bar  { font-size: 13px; padding: 4px 8px; top: 6px; }
+
+/* grille devis en 1 colonne */
+.devis-grid, .grid-2 { grid-template-columns: 1fr; gap: 12px; }
+
+/* cartes tarifs : resserrer */
+.pricing-cards { gap: 14px; }
+.card          { max-width: 310px; padding: 18px; }
+
+/* footer : respirer et 1 colonne */
+.footer        { margin: 26px auto; padding: 18px 12px; }
+.footer-columns{ gap: 12px; }
