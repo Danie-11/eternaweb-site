@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url('background.png'); /* image de fond */
+      background-image: url('images.png'); /* image de fond */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -17,13 +17,14 @@
       backdrop-filter: blur(4px);
     }
     .container {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      max-width: 800px;
-      margin: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+  background-color: #fdfaf5; /* blanc cassé parchemin */
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+    
     h1 {
       font-size: 2.5em;
       margin-bottom: 0.3em;
@@ -37,21 +38,21 @@
       margin: 1em 0;
     }
     .btn-cv {
-      display: inline-block;
-      background-color: #8c6239; /* Marron doux */
-      color: #fff;
-      padding: 12px 18px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-top: 1em;
-      transition: 0.3s;
-    }
+  display: inline-block;
+  background-color: #5a8bb0; /* bleu doux */
+  color: #fff;
+  padding: 12px 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 1em;
+  transition: 0.3s;
+}
     .btn-cv:hover {
-      background-color: #c4a67a; /* Marron clair doré */
-      color: #fff;
-      cursor: pointer;
-    }
+  background-color: #7aa6c6; /* bleu un peu plus clair */
+  cursor: pointer;
+}
+
     .section {
       margin-top: 2em;
     }
@@ -61,37 +62,138 @@
   </style>
 </head>
 <body>
-  <div class="container">
+    <!-- HERO -->
+  <header class="cv-hero container">
+    <img class="cv-photo" src="images/photoprofil.png" alt="Photo de profil de Marie Dupont">
     <h1>Marie Dupont</h1>
-    <h2>Assistante clientèle · Assurance · Gestion administrative</h2>
-    
-    <div class="contact">
-      📞 06 50 00 00 00 · 📧 marie.dupont@example.com · 📍 lille (59)
+    <p class="cv-role">Cheffe de projet digital</p>
+
+    <ul class="cv-infos" aria-label="Coordonnées">
+      <li>📍 Paris (hybride / télétravail)</li>
+      <li>✉️ <a href="mailto:marie.dupont@example.com">marie.dupont@example.com</a></li>
+      <li>🔗 <a href="https://www.linkedin.com/in/mariedupont" target="_blank" rel="noopener">linkedin.com/in/mariedupont</a></li>
+      <li>📞 <a href="tel:+33601020304">06 01 02 03 04</a></li>
+    </ul>
+
+    <div class="cta-row">
+      <a class="btn btn-wa" href="https://wa.me/33601020304" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-primary" href="#contact">Me contacter</a>
+      <a class="btn" href="cv-marie-dupont.pdf" target="_blank" rel="noopener">Télécharger mon CV (PDF)</a>
     </div>
+  </header
+      <!-- CONTENU -->
+  <main class="container cv-grid">
 
-    <a href="marie-dupont-cv.pdf" download class="btn-cv">📄 Télécharger mon CV (PDF)</a>
-
-    <div class="section">
-      <h3>🎯 Objectif</h3>
+    <!-- Profil -->
+    <section aria-labelledby="cv-profil">
+      <h2 id="cv-profil">Profil</h2>
       <p>
-        Intégrer une entreprise en télétravail pour apporter mes compétences en gestion client et administrative,
-        tout en développant de nouvelles expertises.
+        8+ ans d’expérience en gestion de projets web et produits numériques.
+        Pilotage de refontes (vitrines & e-commerce), amélioration des parcours
+        clients et mise en place d’outils no-code. Orientée résultats (KPI, conversion,
+        SEO/UX) et coordination d’équipes pluridisciplinaires (design, contenu, dev).
       </p>
-    </div>
+    </section>
 
-    <div class="section">
-      <h3>💼 Expérience professionnelle</h3>
-      <ul>
-        <li><strong>Go Assurance – 2025</strong> : accompagnement des assurés, gestion des sinistres, édition de devis, CRM.</li>
-        <li><strong>Allcall – 2022-2024</strong> : recouvrement de créances, relation BtoB, service client.</li>
-        <li><strong>Divine Clothes – 2020-2021</strong> : conseillère client à distance, gestion des comptes.</li>
+    <!-- Compétences -->
+    <section aria-labelledby="cv-competences">
+      <h2 id="cv-competences">Compétences</h2>
+      <ul class="cv-tags">
+        <li>Gestion de projet</li>
+        <li>Product / UX</li>
+        <li>SEO on-page</li>
+        <li>No-code (Webflow, Notion)</li>
+        <li>Analytics (GA4)</li>
+        <li>Conversion (A/B test)</li>
+        <li>CMS (WordPress)</li>
+        <li>Intégrations (WhatsApp, PayPal)</li>
       </ul>
-    </div>
+       </section>
 
-    <div class="section">
-      <h3>🎓 Formation</h3>
-      <p>Master2 en ......</p>
-    </div>
-  </div>
+    <!-- Expériences -->
+    <section aria-labelledby="cv-experiences">
+      <h2 id="cv-experiences">Expériences</h2>
+
+      <article class="cv-job">
+        <header>
+          <h3>Cheffe de projet digital – Studio Eterna</h3>
+          <small>2022 – 2025 · Paris</small>
+        </header>
+        <ul>
+          <li>Gestion de 30+ mini-sites vitrines & portfolios (PME, freelances).</li>
+          <li>+35% de conversion moyenne via optimisation UX & leads WhatsApp.</li>
+          <li>Standardisation des modèles & process (time-to-deliver &lt; 48h).</li>
+        </ul>
+      </article>
+
+      <article class="cv-job">
+        <header>
+          <h3>Chef de projet – Agence Nova</h3>
+          <small>2019 – 2022 · Lille</small>
+        </header>
+        <ul>
+          <li>Refontes WordPress & tunnels d’acquisition pour 12 clients B2B.</li>
+            <li>Mise en place GA4, tableaux de bord KPI, suivi SEO technique.</li>
+          <li>Coordination équipe (2 designers, 3 devs, 1 rédacteur).</li>
+        </ul>
+      </article>
+
+      <article class="cv-job">
+        <header>
+          <h3>Assistante webmarketing – Startup SaaS</h3>
+          <small>2017 – 2019 · Remote</small>
+        </header>
+        <ul>
+          <li>Campagnes emailing, landing pages et tests A/B (inscriptions +22%).</li>
+          <li>Production de contenus & SEO on-page.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Réalisations -->
+    <section aria-labelledby="cv-realisations">
+      <h2 id="cv-realisations">Réalisations</h2>
+      <ul>
+        <li><strong>Portfolio « Studio Eterna »</strong> — galerie projets + CTAs WhatsApp/Devis.</li>
+        <li><strong>Mini-site « Brun & Grains »</strong> — branding café, menu en ligne, commandes WA.</li>
+        <li><strong>Vitrine « Évenosa »</strong> — évènementiel, catalogue services & prise de RDV.</li>
+            </ul>
+    </section>
+
+    <!-- Outils -->
+    <section aria-labelledby="cv-outils">
+      <h2 id="cv-outils">Outils</h2>
+      <p>Figma, Notion, Trello, Google Analytics 4, Google Tag Manager, Webflow, WordPress, MailerLite, Stripe/PayPal.</p>
+    </section>
+
+    <!-- Formation -->
+    <section aria-labelledby="cv-formation">
+      <h2 id="cv-formation">Formation</h2>
+      <ul>
+        <li>Master Marketing Digital – Université de Lille (2017)</li>
+        <li>Certifications : GA4 (Analytics), SEO on-page (OpenClassrooms)</li>
+      </ul>
+    </section>
+
+    <!-- Langues -->
+    <section aria-labelledby="cv-langues">
+      <h2 id="cv-langues">Langues</h2>
+      <p>Français (natif), Anglais (professionnel), Espagnol (intermédiaire).</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="cv-contact">
+      <h2 id="cv-contact">Contact</h2>
+      <p>Disponible rapidement pour échange et démarrage de mission.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" href="https://wa.me/33601020304" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <a class="btn btn-primary" href="mailto:marie.dupont@example.com">Envoyer un e-mail</a>
+        <a class="btn" href="cv-marie-dupont.pdf" target="_blank" rel="noopener">Télécharger le PDF</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script defer src="app.js"></script>
 </body>
 </html>
