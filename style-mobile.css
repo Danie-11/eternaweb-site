@@ -129,10 +129,10 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   display: flex;
   flex-direction: column;   /* aligne verticalement sur mobile */
   align-items: center;      /* centre horizontalement */
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .cv-gallery .card {
-  width: 90%;          /* prend 90% de la largeur de l’écran */
-  max-width: 360px;    /* mais jamais plus large qu’un cadre sympa */
+  width: 70%;          /* prend 90% de la largeur de l’écran */
+  max-width: 260px;    /* mais jamais plus large qu’un cadre sympa */
 }
