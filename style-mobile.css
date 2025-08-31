@@ -127,12 +127,12 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
 .cv-gallery {
   display: flex;
-  flex-wrap: wrap;      /* permet de passer à la ligne quand l’écran est étroit */
-  justify-content: center;
-  gap: 1rem;
+  flex-direction: column;   /* aligne verticalement sur mobile */
+  align-items: center;      /* centre horizontalement */
+  gap: 1.2rem;
 }
 
 .cv-gallery .card {
-  flex: 1 1 300px;      /* largeur minimale de 300px */
-  max-width: 90%;       /* évite de dépasser sur mobile */
+  width: 90%;          /* prend 90% de la largeur de l’écran */
+  max-width: 360px;    /* mais jamais plus large qu’un cadre sympa */
 }
