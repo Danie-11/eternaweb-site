@@ -125,16 +125,3 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .footer-info{ display:flex; gap:22px; flex-wrap:wrap; justify-content:center }
 .footer-logo{ max-width:180px; width:78%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95 }
 .footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
-.cv-gallery {
-  display: flex;
-  justify-content: center;   /* centre les cartes */
-  gap: 2rem;                 /* espace entre elles */
-  margin: 2rem auto;         /* espace autour */
-  max-width: 900px;          /* largeur max de la galerie */
-}
-
-.cv-gallery .card {
-  flex: 1 1 300px;           /* largeur mini 300px */
-  max-width: 350px;          /* largeur max d’une carte */
-  text-align: center;
-}
