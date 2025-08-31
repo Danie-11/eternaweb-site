@@ -125,3 +125,14 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .footer-info{ display:flex; gap:22px; flex-wrap:wrap; justify-content:center }
 .footer-logo{ max-width:180px; width:78%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95 }
 .footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
+.cv-gallery {
+  display: flex;
+  flex-direction: column;   /* Les cartes s’empilent en colonne */
+  align-items: center;      /* Les cartes restent centrées */
+  gap: 1rem;                /* Espace entre les cartes */
+}
+
+.cv-gallery .card {
+  width: 90%;              /* Largeur adaptée écran mobile */
+  max-width: 350px;
+}
