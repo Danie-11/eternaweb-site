@@ -8,23 +8,27 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url('images.png'); /* image de fond */
+
+      /* 👉 Image de fond */
+      background-image: url('images/images.png');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
+
       color: #333;
       padding: 40px;
       backdrop-filter: blur(4px);
     }
+
     .container {
-  background-color: #fdfaf5; /* blanc cassé parchemin */
-  padding: 30px;
-  max-width: 800px;
-  margin: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-    
+      background-color: rgba(253, 250, 245, 0.9); /* blanc cassé parchemin + translucide */
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
     h1 {
       font-size: 2.5em;
       margin-bottom: 0.3em;
@@ -34,24 +38,35 @@
       font-weight: normal;
       color: #555;
     }
+
+    .cv-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1em;
+      border: 3px solid #5a8bb0; /* contour bleu doux */
+    }
+
     .contact {
       margin: 1em 0;
     }
+
     .btn-cv {
-  display: inline-block;
-  background-color: #5a8bb0; /* bleu doux */
-  color: #fff;
-  padding: 12px 18px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-top: 1em;
-  transition: 0.3s;
-}
+      display: inline-block;
+      background-color: #5a8bb0; /* bleu doux */
+      color: #fff;
+      padding: 12px 18px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 1em;
+      transition: 0.3s;
+    }
     .btn-cv:hover {
-  background-color: #7aa6c6; /* bleu un peu plus clair */
-  cursor: pointer;
-}
+      background-color: #7aa6c6; /* bleu plus clair */
+      cursor: pointer;
+    }
 
     .section {
       margin-top: 2em;
@@ -62,9 +77,9 @@
   </style>
 </head>
 <body>
-    <!-- HERO -->
+  <!-- HERO -->
   <header class="cv-hero container">
-    <img class="cv-photo" src="photoprofil.png" alt="Photo de profil de Marie Dupont">
+    <img class="cv-photo" src="images/photoprofil.png" alt="Photo de profil de Marie Dupont">
     <h1>Marie Dupont</h1>
     <p class="cv-role">Cheffe de projet digital</p>
 
@@ -78,12 +93,13 @@
     <div class="cta-row">
       <a class="btn btn-wa" href="https://wa.me/33601020304" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn btn-primary" href="#contact">Me contacter</a>
-      <a class="btn" href="cv-marie-dupont.pdf" target="_blank" rel="noopener">Télécharger mon CV (PDF)</a>
+      <a class="btn-cv" href="cv-marie-dupont.pdf" target="_blank" rel="noopener">📄 Télécharger mon CV (PDF)</a>
     </div>
-  </header
-      <!-- CONTENU -->
-  <main class="container cv-grid">
+  </header>
 
+  <!-- CONTENU -->
+  <main class="container cv-grid">
+    <!-- ... ton contenu (profil, compétences, expériences, etc.) ... -->
     <!-- Profil -->
     <section aria-labelledby="cv-profil">
       <h2 id="cv-profil">Profil</h2>
