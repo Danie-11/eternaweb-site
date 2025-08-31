@@ -136,3 +136,15 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   width: 70%;          /* prend 90% de la largeur de l’écran */
   max-width: 260px;    /* mais jamais plus large qu’un cadre sympa */
 }
+.cv-gallery img {
+  max-width: 100%;    /* jamais plus large que le conteneur */
+  height: auto;       /* garde les proportions */
+  border-radius: 12px;
+  display: block;
+  margin: auto;
+}
+
+.cv-gallery .card {
+  max-width: 360px;   /* limite la largeur de chaque carte */
+  width: 90%;         /* prend 90% de l’écran */
+}
