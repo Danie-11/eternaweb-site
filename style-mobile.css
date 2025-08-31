@@ -127,12 +127,12 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
 .cv-gallery {
   display: flex;
-  flex-direction: column;   /* Les cartes s’empilent en colonne */
-  align-items: center;      /* Les cartes restent centrées */
-  gap: 1rem;                /* Espace entre les cartes */
+  flex-wrap: wrap;      /* permet de passer à la ligne quand l’écran est étroit */
+  justify-content: center;
+  gap: 1rem;
 }
 
 .cv-gallery .card {
-  width: 90%;              /* Largeur adaptée écran mobile */
-  max-width: 350px;
+  flex: 1 1 300px;      /* largeur minimale de 300px */
+  max-width: 90%;       /* évite de dépasser sur mobile */
 }
