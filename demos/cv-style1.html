@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Modèle CV – EternaWeb</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marie Dupont – CV en ligne</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('images.png'); /* image de fond */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #333;
+      padding: 40px;
+      backdrop-filter: blur(4px);
+    }
+    .container {
+  background-color: #fdfaf5; /* blanc cassé parchemin */
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+    
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.3em;
+    }
+    h2 {
+      font-size: 1.2em;
+      font-weight: normal;
+      color: #555;
+    }
+    .contact {
+      margin: 1em 0;
+    }
+    .btn-cv {
+  display: inline-block;
+  background-color: #5a8bb0; /* bleu doux */
+  color: #fff;
+  padding: 12px 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 1em;
+  transition: 0.3s;
+}
+    .btn-cv:hover {
+  background-color: #7aa6c6; /* bleu un peu plus clair */
+  cursor: pointer;
+}
 
-  <!-- Styles communs -->
-  <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
-  <link rel="stylesheet" href="style-mobile.css"  media="(max-width:600px)">
-
-  <!-- Style spécifique CV -->
-  <link rel="stylesheet" href="cv.css">
+    .section {
+      margin-top: 2em;
+    }
+    h3 {
+      margin-bottom: 0.5em;
+    }
+  </style>
 </head>
-<body class="tpl-cv">
-
-  <!-- HERO -->
+<body>
+    <!-- HERO -->
   <header class="cv-hero container">
     <img class="cv-photo" src="photoprofil.png" alt="Photo de profil de Marie Dupont">
     <h1>Marie Dupont</h1>
@@ -32,9 +80,8 @@
       <a class="btn btn-primary" href="#contact">Me contacter</a>
       <a class="btn" href="cv-marie-dupont.pdf" target="_blank" rel="noopener">Télécharger mon CV (PDF)</a>
     </div>
-  </header>
-
-  <!-- CONTENU -->
+  </header
+      <!-- CONTENU -->
   <main class="container cv-grid">
 
     <!-- Profil -->
@@ -61,7 +108,7 @@
         <li>CMS (WordPress)</li>
         <li>Intégrations (WhatsApp, PayPal)</li>
       </ul>
-    </section>
+       </section>
 
     <!-- Expériences -->
     <section aria-labelledby="cv-experiences">
@@ -86,7 +133,7 @@
         </header>
         <ul>
           <li>Refontes WordPress & tunnels d’acquisition pour 12 clients B2B.</li>
-          <li>Mise en place GA4, tableaux de bord KPI, suivi SEO technique.</li>
+            <li>Mise en place GA4, tableaux de bord KPI, suivi SEO technique.</li>
           <li>Coordination équipe (2 designers, 3 devs, 1 rédacteur).</li>
         </ul>
       </article>
@@ -110,7 +157,7 @@
         <li><strong>Portfolio « Studio Eterna »</strong> — galerie projets + CTAs WhatsApp/Devis.</li>
         <li><strong>Mini-site « Brun & Grains »</strong> — branding café, menu en ligne, commandes WA.</li>
         <li><strong>Vitrine « Évenosa »</strong> — évènementiel, catalogue services & prise de RDV.</li>
-      </ul>
+            </ul>
     </section>
 
     <!-- Outils -->
