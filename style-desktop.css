@@ -240,3 +240,16 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .model-card{max-width:290px;text-decoration:none;color:inherit}
 .model-card img{width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:10px;box-shadow:0 8px 18px #0001}
 .model-card .btn{display:inline-block;margin-top:8px}
+.cv-gallery {
+  display: flex;
+  justify-content: center;   /* centre les cartes */
+  gap: 2rem;                 /* espace entre elles */
+  margin: 2rem auto;         /* espace autour */
+  max-width: 900px;          /* largeur max de la galerie */
+}
+
+.cv-gallery .card {
+  flex: 1 1 300px;           /* largeur mini 300px */
+  max-width: 350px;          /* largeur max d’une carte */
+  text-align: center;
+}
