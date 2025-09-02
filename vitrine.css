@@ -15,3 +15,13 @@ body.tpl-vitrine::before{ display:none; }
 }
 .vit-proof blockquote{ text-align:center; margin:.8rem auto; font-size:1.05rem; }
 .vit-contact{ text-align:center; }
+.card a {
+  color: #5c4433;       /* marron doux */
+  text-decoration: none; /* enlève le soulignement */
+  font-weight: 500;      /* optionnel, donne un rendu lisible */
+}
+
+.card a:hover {
+  color: #a67c52;       /* doré doux au survol */
+  text-decoration: underline; /* si tu veux un effet au hover */
+}
