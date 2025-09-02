@@ -25,3 +25,16 @@ body.tpl-vitrine::before{ display:none; }
   color: #a67c52;       /* doré doux au survol */
   text-decoration: underline; /* si tu veux un effet au hover */
 }
+.vit-cards article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: all .2s ease-in-out;
+}
+.vit-cards article {
+  background:#fff;
+  border:1px solid #f0e6d8;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 8px 18px #0001;
+  text-align:center; /* ✅ centre le texte et l’image */
+}
