@@ -203,3 +203,12 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   width: 100%;
   height: auto;
 }
+.model-card a {
+  text-decoration: none;   /* Enlève le soulignement */
+  color: inherit;          /* Garde la couleur du texte parent */
+}
+
+.model-card a:hover {
+  color: #5a4634;          /* (optionnel) couleur hover plus foncée */
+  text-decoration: underline; /* ou pas de soulignement si tu veux rester clean */
+}
