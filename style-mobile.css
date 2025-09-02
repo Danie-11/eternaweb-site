@@ -212,3 +212,44 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   color: #5a4634;          /* (optionnel) couleur hover plus foncée */
   text-decoration: underline; /* ou pas de soulignement si tu veux rester clean */
 }
+/* ---- Ajustements mobile accueil ---- */
+
+/* Hero */
+.hero-gold .hero-logo {
+  max-width: 120px;   /* logo plus petit */
+}
+
+.hero-gold h1 {
+  font-size: 1.8rem;  /* titre plus petit */
+}
+
+.hero-gold h2 {
+  font-size: 1.2rem;
+}
+
+.hero-gold .cta-row {
+  gap: 0.5rem;        /* moins d’espace entre boutons */
+}
+
+.hero-gold .btn {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}
+
+/* Cartes modèles (CV / Portfolio / Vitrine) */
+.models-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;          /* espace raisonnable entre les cards */
+}
+
+.models-grid .model-card {
+  width: 85%;         /* pas toute la largeur de l’écran */
+  max-width: 280px;   /* limite la largeur */
+}
+
+.models-grid .model-card img {
+  width: 100%;
+  height: auto;
+}
