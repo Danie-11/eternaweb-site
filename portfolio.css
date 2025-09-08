@@ -34,7 +34,7 @@ body.tpl-portfolio::before{ display:none; }
 }
 
 /* Mobile : 1 carte par ligne, centrée */
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .port-grid {
     grid-template-columns: 1fr;
     justify-items: center;  /* centre les cartes */
