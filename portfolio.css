@@ -27,3 +27,20 @@ body.tpl-portfolio::before{ display:none; }
 }
 .work:hover img{ transform:scale(1.08); }
 .port-about{ text-align:center; }
+/* ✅ Corrige la taille des cartes */
+.port-grid .work {
+  max-width: 320px;   /* largeur max */
+  margin: 0 auto;     /* centrage */
+}
+
+/* Mobile : 1 carte par ligne, centrée */
+@media (max-width: 600px) {
+  .port-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;  /* centre les cartes */
+  }
+  .port-grid .work {
+    width: 90%;       /* pas plus large que 90% */
+    max-width: 300px; /* limite fixe */
+  }
+}
