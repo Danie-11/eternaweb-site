@@ -1,28 +1,89 @@
-<main id="works" class="port-grid container">
-  <!-- Mockup 1 -->
-  <a class="work" href="#img1">
-    <img src="images/folio1.png" alt="Branding Café">
-    <span>Branding Café</span>
-  </a>
-  <div id="img1" class="lightbox">
-    <img src="images/folio1.png" alt="Branding Café">
-  </div>
+/* ===============================
+   Fond & Hero
+================================= */
+body.tpl-portfolio {
+  background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
+}
+body.tpl-portfolio::before { display: none; }
 
-  <!-- Mockup 2 -->
-  <a class="work" href="#img2">
-    <img src="images/folio2.png" alt="Site artisan">
-    <span>Site artisan</span>
-  </a>
-  <div id="img2" class="lightbox">
-    <img src="images/folio2.png" alt="Site artisan">
-  </div>
+.port-hero {
+  padding: 60px 20px;
+  text-align: center;
+  color: #3b2a22;
+}
+.port-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #ffffffb3;
+  backdrop-filter: blur(6px);
+  border: 1px solid #fff4;
+  border-radius: 18px;
+  padding: 28px;
+}
 
-  <!-- Mockup 3 -->
-  <a class="work" href="#img3">
-    <img src="images/folio3.png" alt="Landing SaaS">
-    <span>Landing SaaS</span>
-  </a>
-  <div id="img3" class="lightbox">
-    <img src="images/folio3.png" alt="Landing SaaS">
-  </div>
-</main>
+/* ===============================
+   Grille Portfolio
+================================= */
+.port-grid {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center;   /* cartes centrées */
+  gap: 20px;
+}
+.work {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 24px #0001;
+  max-width: 320px;   /* limite de largeur */
+  margin: 0 auto;
+}
+.work img {
+  width: 100%;
+  height: 200px;      /* hauteur fixe */
+  object-fit: cover;  /* pas déformé */
+  display: block;
+  transform: scale(1.02);
+  transition: .35s transform ease;
+}
+.work span {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 12px;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.work:hover img {
+  transform: scale(1.08);
+}
+
+/* ===============================
+   À propos
+================================= */
+.port-about {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ===============================
+   Mobile (<600px)
+================================= */
+@media (max-width: 600px) {
+  .port-grid {
+    grid-template-columns: 1fr; /* une carte par ligne */
+    gap: 16px;
+  }
+  .work {
+    width: 90%;
+    max-width: 300px;
+  }
+  .work img {
+    height: 180px;
+  }
+}
