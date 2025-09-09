@@ -262,3 +262,9 @@ a:hover {
   color: #5a4634;        /* légèrement plus foncé au survol */
   text-decoration: underline; /* optionnel, si tu veux un effet hover */
 }
+.model-card .btn {
+  display: flex;
+  justify-content: center;
+  margin: 12px auto 0;
+  width: 180px;   /* exemple */
+}
