@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Demander un devis – EternaWeb</title>
+
+  <!-- CSS globaux -->
+  <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
+  <link rel="stylesheet" href="style-mobile.css" media="(max-width:600px)">
+</head>
+<body class="tpl-devis">
+
+  <!-- HERO -->
+  <header class="container">
+    <h1>Demander un devis</h1>
+    <p>Expliquez votre projet et recevez une estimation sous 24–48h.</p>
+  </header>
+
+  <!-- FORMULAIRE -->
+  <main class="container page-card">
+    <form action="mailto:contact@exemple.com" method="post" enctype="text/plain">
+
+      <label>
+        Nom & Prénom
+        <input type="text" name="nom" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Type de projet
+        <select name="projet">
+          <option value="cv">CV en ligne</option>
+          <option value="portfolio">Portfolio</option>
+          <option value="vitrine">Vitrine pro</option>
+          <option value="autre">Autre</option>
+        </select>
+      </label>
+
+      <label class="full">
+        Message
+        <textarea name="message" rows="5" placeholder="Décrivez votre besoin…"></textarea>
+      </label>
+
+      <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+    </form>
+  </main>
+
+  <!-- LIEN RETOUR -->
+  <section class="container" style="text-align:center; margin-top:20px;">
+    <a href="index.html">← Retour à l’accueil</a>
+  </section>
+
+</body>
+</html>
