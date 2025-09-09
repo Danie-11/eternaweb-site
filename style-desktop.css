@@ -253,4 +253,18 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   max-width: 350px;          /* largeur max d’une carte */
   text-align: center;
 }
+/* Boutons CTA - version desktop */
+@media (min-width: 601px) {
+  .cta-row .btn {
+    padding: 8px 14px;      /* réduit l’espace interne */
+    font-size: 0.9rem;      /* texte un peu plus petit */
+    min-width: 120px;       /* largeur mini (évite trop petit) */
+    max-width: 160px;       /* largeur max */
+  }
 
+  .cta-row .btn img, 
+  .cta-row .btn svg {
+    height: 18px;           /* réduit la taille des logos (WhatsApp, PayPal...) */
+    width: auto;
+  }
+}
