@@ -268,3 +268,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
     width: auto;
   }
 }
+#langBtn, #langMenu {
+  position: relative;
+  z-index: 9999;
+}
