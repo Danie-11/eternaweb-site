@@ -461,120 +461,75 @@ const I18N = {
   'testi.t1':'„Super schnell und professionell — meine Seite war noch am selben Tag online!“','testi.c1':'— Claire B.',
   'testi.t2':'„Elegantes, klares Design — Kunden schreiben mir direkt über WhatsApp!“','testi.c2':'— Malik T.',
   'testi.t3':'„Top Preis-Leistung. Absolute Empfehlung.“','testi.c3':'— Sofia M.',
+// ===== Config =====
+const WA_NUMBER = '33749723434';
+const MAIL_TO   = 'contact@eternaweb.fr';
 
-  // --- Footer
-  'footer.info':'Nützliche Infos','footer.contact':'Kontakt','footer.about':'Über uns','footer.security':'Sicherheit','footer.privacy':'Datenschutz','footer.code':'Verhaltenskodex','footer.faq':'FAQ',
+// ===== Helpers =====
+const $  = (s, r=document)=>r.querySelector(s);
+const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
+const isMobile = ()=>/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
 
-  // --- Vorlagen
-  'models.h2':'🎨 Fertige Vorlagen','models.sub':'Wählen Sie einen Stil, öffnen Sie die Demo und sagen Sie mir, welchen Sie möchten.','models.demo':'Vorlage ansehen',
-  'models.cv.title':'Lebenslauf — schlicht & professionell','models.cv.desc':'Ideal für Bewerbungen.',
-  'models.port.title':'Portfolio — kreativ','models.port.desc':'Perfekt für Künstler & Designer.',
-  'models.vit.title':'Schaufenster — Business','models.vit.desc':'Für Unternehmen & Freiberufler.',
+// ===== Menu mobile =====
+const menuBtn  = $('#menuBtn');
+const mainMenu = $('#mainMenu');
+menuBtn?.addEventListener('click', ()=>{
+  mainMenu?.classList.toggle('show');
+  menuBtn.setAttribute('aria-expanded', mainMenu?.classList.contains('show'));
+});
 
-  // --- Seiten
-  'cv.h1':'Danielle Kabongo','cv.role':'Digital-Projektleiterin','cv.profil':'Profil','cv.skills':'Kompetenzen','cv.exp':'Erfahrungen','cv.contact':'Kontakt',
-  'port.h1':'Studio Eterna','port.tag':'Visuelle Identitäten, UI, elegante Websites.','port.about':'Über uns',
-  'vit.h1':'Or & Co Consulting','vit.tag':'Beratung, Expertise, KMU-Support.','vit.services':'Unsere Leistungen','vit.testi':'Referenzen','vit.contact':'Kontakt'
+// ===== Langues =====
+const I18N = {
+  fr: {
+    'nav.menu':'Menu','nav.cv':'CV','nav.portfolio':'Portfolio','nav.vitrine':'Vitrine','nav.tarifs':'Tarifs','nav.devis':'Vos consignes','nav.temoignages':'Témoignages','nav.modeles':'Modèles',
+    'hero.title':'EternaWeb','hero.subtitle':'CV & vitrines express — en ligne en 48 heures','hero.lead':'✨ Un design premium, des intégrations rapides et un rendu clé en main.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
+    'brief.h2':'Votre site en 3 étapes','brief.li1':'Choisissez une formule.','brief.li2':'Indiquez vos préférences (couleurs, style, intégrations).','brief.li3':'Je lance la création et vous envoie une maquette.',
+    'btn.fill':'Vos consignes','btn.send':'Envoyer','btn.choose':'Je choisis cette formule',
+    'devis.h2':'📝 Vos consignes','devis.sub':'Choisissez, décrivez, envoyez — je reçois vos consignes.','devis.type':'Type de site','devis.colors':'Palette / couleurs','devis.style':'Style visuel',
+    'devis.style1':'Sobre & élégant','devis.style2':'Créatif & coloré','devis.style3':'Minimal & pro','devis.style4':'Nature & doux',
+    'devis.integrations':'Intégrations souhaitées','devis.int.form':'Formulaire contact','devis.int.social':'Réseaux sociaux','devis.int.gallery':'Galerie',
+    'devis.other':'Autres demandes','devis.name':'Prénom / Nom','devis.email':'Email','devis.note':'Aucun envoi serveur : votre logiciel e-mail s’ouvre avec le message prérempli.',
+    'devis.opt.cv':'CV','devis.opt.vitrine':'Vitrine','devis.opt.portfolio':'Portfolio','devis.opt.other':'Autre',
+    'models.h2':'🎨 Modèles prêts','models.sub':'Choisis un style, ouvre la démo, et dis-moi lequel tu veux.','models.demo':'Voir le modèle',
+    'models.cv.title':'CV — sobre & pro','models.cv.desc':'Idéal candidature ou profil pro.',
+    'models.port.title':'Portfolio — créatif','models.port.desc':'Parfait artistes & designers.',
+    'models.vit.title':'Vitrine — business','models.vit.desc':'Entreprises & indépendants.',
+    'pricing.h2':'🧾 Formules EternaWeb','pricing.sub':'CV & mini-sites vitrines express — hébergement inclus',
+    'pricing.card1.title':'🌿 Pack Essentiel – 49 €','pricing.card1.li1':'CV en ligne simple (1 page)','pricing.card1.li2':'Personnalisation avec infos + photo','pricing.card1.li3':'Design élégant & responsive','pricing.card1.li4':'Livraison sous 48h','pricing.card1.note':'Idéal pour : candidatures',
+    'pricing.card2.title':'✨ Pack Vitrine – 89 €','pricing.card2.li1':'Mini-site vitrine (2–3 pages)','pricing.card2.li2':'Accueil + présentation produits/services','pricing.card2.li3':'Boutons WhatsApp, PayPal, réseaux','pricing.card2.li4':'Design harmonieux & responsive','pricing.card2.note':'Idéal pour : artisans, freelances',
+    'pricing.card3.title':'💎 Pack Premium – 129 €','pricing.card3.li1':'Tout le Pack Vitrine','pricing.card3.li2':'Création/refonte logo','pricing.card3.li3':'Conseils branding','pricing.card3.li4':'SEO de base + Galerie/FAQ','pricing.card3.note':'Idéal pour : lancement complet',
+    'testi.h2':'💬 Témoignages','testi.t1':'“Super réactive et professionnelle, mon site a été en ligne le jour même !”','testi.c1':'— Claire B.','testi.t2':'“Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”','testi.c2':'— Malik T.','testi.t3':'“Excellent rapport qualité/prix. Je recommande à 100 %.”','testi.c3':'— Sofia M.',
+    'footer.info':'Infos utiles','footer.contact':'Contact','footer.about':'À propos','footer.security':'Sécurité','footer.privacy':'Confidentialité','footer.code':'Code de conduite','footer.faq':'FAQ',
+    'cv.h1':'Danielle Kabongo','cv.role':'Cheffe de projet digital','cv.profil':'Profil','cv.skills':'Compétences','cv.exp':'Expériences','cv.contact':'Contact',
+    'port.h1':'Studio Eterna','port.tag':'Identités visuelles, UI, sites élégants.','port.about':'À propos',
+    'vit.h1':'Cabinet Or & Co','vit.tag':'Conseil, expertise, accompagnement PME.','vit.services':'Nos services','vit.testi':'Témoignages','vit.contact':'Contact'
+  },
+
+  // ⚡ Ajoute ici tes autres langues (en, nl, ru, de, es, it)
 };
 
-  I18N.es = {
-  // --- Navegación
-  'nav.menu':'Menú','nav.cv':'CV','nav.portfolio':'Portafolio','nav.vitrine':'Escaparate','nav.tarifs':'Precios','nav.devis':'Sus indicaciones','nav.temoignages':'Testimonios','nav.modeles':'Plantillas',
+// ===== Lang switch (globe) =====
+const langBtn  = $('#langBtn');
+const langMenu = $('#langMenu');
 
-  // --- Hero
-  'hero.title':'EternaWeb','hero.subtitle':'CV y sitios escaparate — en línea en 48 horas','hero.lead':'✨ Diseño premium, integraciones rápidas y un resultado llave en mano.',
-  'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
+if (langBtn && langMenu){
+  langBtn.addEventListener('click', ()=>{
+    const open = langMenu.classList.toggle('show');
+    langBtn.setAttribute('aria-expanded', String(open));
+  });
+  document.addEventListener('click', (e)=>{
+    if (!langMenu.contains(e.target) && e.target !== langBtn){
+      langMenu.classList.remove('show');
+      langBtn.setAttribute('aria-expanded','false');
+    }
+  });
+  window.addEventListener('scroll', ()=>{
+    langMenu.classList.remove('show');
+    langBtn.setAttribute('aria-expanded','false');
+  });
+}
 
-  // --- Pasos
-  'brief.h2':'Tu sitio en 3 pasos',
-  'brief.li1':'Elige un plan.','brief.li2':'Indica tus preferencias (colores, estilo, integraciones).','brief.li3':'Creo y te envío un mockup rápido.',
-
-  // --- Botones
-  'btn.fill':'Sus indicaciones','btn.send':'Enviar','btn.choose':'Elegir este plan',
-
-  // --- Devis
-  'devis.h2':'📝 Sus indicaciones','devis.sub':'Elige, describe y envía — recibo tus instrucciones.',
-  'devis.type':'Tipo de sitio','devis.colors':'Paleta / colores','devis.style':'Estilo visual',
-  'devis.style1':'Sobrio y elegante','devis.style2':'Creativo y colorido','devis.style3':'Minimal y profesional','devis.style4':'Natural y suave',
-  'devis.integrations':'Integraciones deseadas','devis.int.form':'Formulario de contacto','devis.int.social':'Redes sociales','devis.int.gallery':'Galería',
-  'devis.other':'Otras solicitudes','devis.name':'Nombre y apellidos','devis.email':'Email','devis.note':'Sin servidor: tu app de correo se abrirá con un mensaje pre-relleno.',
-
-  // --- Precios
-  'pricing.h2':'🧾 Planes EternaWeb','pricing.sub':'CV y mini sitios escaparate — hosting incluido',
-  'pricing.card1.title':'🌿 Esencial – 49 €','pricing.card1.li1':'CV en línea simple (1 página)','pricing.card1.li2':'Personalización con datos + foto','pricing.card1.li3':'Diseño elegante y responsive','pricing.card1.li4':'Entrega en 48 h','pricing.card1.note':'Ideal para candidaturas',
-  'pricing.card2.title':'✨ Escaparate – 89 €','pricing.card2.li1':'Mini sitio (2–3 páginas)','pricing.card2.li2':'Inicio + productos/servicios','pricing.card2.li3':'Botones WhatsApp, PayPal, redes','pricing.card2.li4':'Diseño armonioso y responsive','pricing.card2.note':'Ideal para artesanos y freelancers',
-  'pricing.card3.title':'💎 Premium – 129 €','pricing.card3.li1':'Todo lo del plan Escaparate','pricing.card3.li2':'Creación/rediseño de logo','pricing.card3.li3':'Asesoría de branding','pricing.card3.li4':'SEO básico + Galería/FAQ','pricing.card3.note':'Ideal para un lanzamiento completo',
-
-  // --- Testimonios
-  'testi.h2':'💬 Testimonios',
-  'testi.t1':'“Súper rápida y profesional: ¡mi sitio estuvo online el mismo día!”','testi.c1':'— Claire B.',
-  'testi.t2':'“Diseño elegante y claro; ¡mis clientes me escriben por WhatsApp!”','testi.c2':'— Malik T.',
-  'testi.t3':'“Excelente relación calidad-precio. 100% recomendado.”','testi.c3':'— Sofia M.',
-
-  // --- Footer
-  'footer.info':'Información útil','footer.contact':'Contacto','footer.about':'Acerca de','footer.security':'Seguridad','footer.privacy':'Privacidad','footer.code':'Código de conducta','footer.faq':'FAQ',
-
-  // --- Plantillas
-  'models.h2':'🎨 Plantillas listas','models.sub':'Elige un estilo, abre la demo y dime cuál prefieres.','models.demo':'Ver plantilla',
-  'models.cv.title':'CV — sobrio & profesional','models.cv.desc':'Ideal para candidaturas o perfiles profesionales.',
-  'models.port.title':'Portafolio — creativo','models.port.desc':'Perfecto para artistas y diseñadores.',
-  'models.vit.title':'Escaparate — negocio','models.vit.desc':'Para empresas y freelancers.',
-
-  // --- Páginas
-  'cv.h1':'Danielle Kabongo','cv.role':'Jefa de proyectos digitales','cv.profil':'Perfil','cv.skills':'Competencias','cv.exp':'Experiencia','cv.contact':'Contacto',
-  'port.h1':'Studio Eterna','port.tag':'Identidades visuales, UI, sitios elegantes.','port.about':'Acerca de',
-  'vit.h1':'Or & Co Consulting','vit.tag':'Consultoría, experiencia, apoyo a pymes.','vit.services':'Nuestros servicios','vit.testi':'Testimonios','vit.contact':'Contacto'
-};
-  I18N.it = {
-  // --- Navigazione
-  'nav.menu':'Menù','nav.cv':'CV','nav.portfolio':'Portfolio','nav.vitrine':'Vetrina','nav.tarifs':'Prezzi','nav.devis':'Le tue indicazioni','nav.temoignages':'Testimonianze','nav.modeles':'Modelli',
-
-  // --- Hero
-  'hero.title':'EternaWeb','hero.subtitle':'CV e siti vetrina — online in 48 ore','hero.lead':'✨ Design premium, integrazioni rapide e un risultato chiavi in mano.',
-  'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
-
-  // --- Passaggi
-  'brief.h2':'Il tuo sito in 3 passi',
-  'brief.li1':'Scegli un pacchetto.','brief.li2':'Indica preferenze (colori, stile, integrazioni).','brief.li3':'Creo e invio una bozza rapida.',
-
-  // --- Bottoni
-  'btn.fill':'Le tue indicazioni','btn.send':'Invia','btn.choose':'Scegli questo piano',
-
-  // --- Devis
-  'devis.h2':'📝 Le tue indicazioni','devis.sub':'Scegli, descrivi, invia — ricevo le tue istruzioni.',
-  'devis.type':'Tipo di sito','devis.colors':'Palette / colori','devis.style':'Stile visivo',
-  'devis.style1':'Sobrio & elegante','devis.style2':'Creativo & colorato','devis.style3':'Minimal & professionale','devis.style4':'Naturale & delicato',
-  'devis.integrations':'Integrazioni desiderate','devis.int.form':'Modulo di contatto','devis.int.social':'Social media','devis.int.gallery':'Galleria',
-  'devis.other':'Altre richieste','devis.name':'Nome / Cognome','devis.email':'Email','devis.note':'Nessun server: si apre la tua app email con un messaggio pre-compilato.',
-
-  // --- Prezzi
-  'pricing.h2':'🧾 Piani EternaWeb','pricing.sub':'CV & mini siti vetrina — hosting incluso',
-  'pricing.card1.title':'🌿 Essenziale – 49 €','pricing.card1.li1':'CV online semplice (1 pagina)','pricing.card1.li2':'Personalizzazione con dati + foto','pricing.card1.li3':'Design elegante e responsive','pricing.card1.li4':'Consegna entro 48 h','pricing.card1.note':'Ideale per candidature',
-  'pricing.card2.title':'✨ Vetrina – 89 €','pricing.card2.li1':'Mini sito (2–3 pagine)','pricing.card2.li2':'Home + prodotti/servizi','pricing.card2.li3':'Pulsanti WhatsApp, PayPal, social','pricing.card2.li4':'Design armonioso e responsive','pricing.card2.note':'Ideale per artigiani e freelance',
-  'pricing.card3.title':'💎 Premium – 129 €','pricing.card3.li1':'Tutto del piano Vetrina','pricing.card3.li2':'Creazione/redo del logo','pricing.card3.li3':'Consulenza branding','pricing.card3.li4':'SEO base + Galleria/FAQ','pricing.card3.note':'Ideale per un lancio completo',
-
-  // --- Testimonianze
-  'testi.h2':'💬 Testimonianze',
-  'testi.t1':'“Super reattiva e professionale — il mio sito era online lo stesso giorno!”','testi.c1':'— Claire B.',
-  'testi.t2':'“Design elegante e chiaro; i clienti mi scrivono direttamente su WhatsApp!”','testi.c2':'— Malik T.',
-  'testi.t3':'“Ottimo rapporto qualità-prezzo. Consigliatissimo.”','testi.c3':'— Sofia M.',
-
-  // --- Footer
-  'footer.info':'Info utili','footer.contact':'Contatti','footer.about':'Chi siamo','footer.security':'Sicurezza','footer.privacy':'Privacy','footer.code':'Codice di condotta','footer.faq':'FAQ',
-
-  // --- Modelli
-  'models.h2':'🎨 Modelli pronti','models.sub':'Scegli uno stile, apri la demo e dimmi quale preferisci.','models.demo':'Vedi modello',
-  'models.cv.title':'CV — sobrio & professionale','models.cv.desc':'Ideale per candidature o profili professionali.',
-  'models.port.title':'Portfolio — creativo','models.port.desc':'Perfetto per artisti e designer.',
-  'models.vit.title':'Vetrina — business','models.vit.desc':'Per aziende e liberi professionisti.',
-
-  // --- Pagine
-  'cv.h1':'Danielle Kabongo','cv.role':'Project manager digitale','cv.profil':'Profilo','cv.skills':'Competenze','cv.exp':'Esperienze','cv.contact':'Contatto',
-  'port.h1':'Studio Eterna','port.tag':'Identità visive, UI, siti eleganti.','port.about':'Chi siamo',
-  'vit.h1':'Or & Co Consulting','vit.tag':'Consulenza, esperienza, supporto PMI.','vit.services':'I nostri servizi','vit.testi':'Testimonianze','vit.contact':'Contatti'
-};
-
-// Appliquer la langue
+// ===== Appliquer la langue =====
 function applyLang(lang){
   const d = I18N[lang] || I18N.fr;
   $$('[data-i18n]').forEach(el=>{
@@ -598,7 +553,7 @@ $$('#langMenu .lang-item').forEach(b=>{
   });
 });
 
-// Init (après avoir défini I18N)
+// Init
 applyLang(localStorage.getItem('lang') || 'fr');
 
 // ===== Scroll vers #devis =====
@@ -610,7 +565,6 @@ function openDevis(){
 }
 $('#goDevis')?.addEventListener('click', (e)=>{ e.preventDefault(); openDevis(); });
 $('#goBrief')?.addEventListener('click', (e)=>{ e.preventDefault(); openDevis(); });
-
 if (location.hash === '#devis') {
   openDevis();
   history.replaceState(null, '', location.pathname + location.search);
@@ -618,47 +572,12 @@ if (location.hash === '#devis') {
 
 // ===== Choix de plan =====
 const planInput = $('#planInput');
-// Ouvre le bloc devis pour n'importe quel lien vers #devis
 document.querySelectorAll('a[href="#devis"]').forEach(a=>{
   a.addEventListener('click', (e)=>{
     e.preventDefault();
     openDevis();
   });
 });
-
-// ===== Fermeture automatique du bloc devis quand on clique à l'extérieur =====
-document.addEventListener('click', (e)=>{
-  const devis = $('#devis');
-  if (!devis) return;
-
-  // si on clique dans #devis, ou sur un lien/bouton qui ouvre le devis → on ignore
-  if (
-    devis.contains(e.target) || 
-    e.target.closest('a[href="#devis"]') || 
-    e.target.closest('.choose-plan')
-  ) {
-    return;
-  }
-
-  // sinon on ferme
-  devis.classList.remove('show');
-});
-
-$$('.choose-plan').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const plan = btn.dataset.plan || '';
-    localStorage.setItem('ew_selected_plan', plan);
-    if (planInput) planInput.value = plan;
-
-    if (isMobile()){
-      const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
-      window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
-    }
-    openDevis();
-  });
-});
-const savedPlan = localStorage.getItem('ew_selected_plan');
-if (savedPlan && planInput) planInput.value = savedPlan;
 
 // ===== Envoi du formulaire (mailto) =====
 const devisForm = $('#devisForm');
@@ -695,13 +614,3 @@ if (devisForm && sendForm){
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
   });
 }
-(function(){
-  const keysInDOM = [...document.querySelectorAll('[data-i18n]')].map(el=>el.getAttribute('data-i18n'));
-  const uniq = [...new Set(keysInDOM)];
-  for (const lang of Object.keys(I18N)){
-    const missing = uniq.filter(k => I18N[lang][k] == null);
-    console.log(`[${lang}] manquants:`, missing);
-  }
-})();entità visive, UI, siti eleganti.','port.about':'Chi siamo',
-  'vit.h1':'Or & Co Consulting','vit.tag':'Consulenza, esperienza, supporto PMI.','vit.services':'I nostri servizi','vit.testi':'Testimonianze','vit.contact':'Contatti'
-};
