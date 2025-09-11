@@ -201,13 +201,14 @@ function openDevis(){
   d.classList.add('show');
   d.scrollIntoView({ behavior:'smooth', block:'start' });
 }
-$('#goDevis')?.addEventListener('click', e=>{ e.preventDefault(); openDevis(); });
-$('#goBrief')?.addEventListener('click', e=>{ e.preventDefault(); openDevis(); });
-if (location.hash === '#devis') {
-  openDevis();
-  history.replaceState(null, '', location.pathname + location.search);
-}
 
+// Clic sur tous les boutons/lien vers #devis
+document.querySelectorAll('a[href="#devis"], #goDevis, #goBrief').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    e.preventDefault();
+    openDevis();
+  });
+});
 // ===== Envoi du formulaire (mailto) =====
 const devisForm = $('#devisForm');
 const sendForm  = $('#sendForm');
