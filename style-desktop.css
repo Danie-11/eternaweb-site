@@ -272,3 +272,17 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   position: relative;
   z-index: 9999;
 }
+/* ----- Bloc devis caché par défaut ----- */
+#devis {
+  display: none;          /* invisible */
+  opacity: 0;             /* transparent */
+  transform: translateY(20px); /* décalé vers le bas */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ----- Quand on ajoute .show ----- */
+#devis.show {
+  display: block;         /* visible */
+  opacity: 1;             /* opaque */
+  transform: translateY(0); /* remonte en place */
+}
