@@ -195,13 +195,56 @@ $$('#langMenu .lang-item').forEach(b=>{
 applyLang(localStorage.getItem('lang') || 'fr');
 
 // ===== Scroll vers #devis =====
+// ===== Scroll vers #devis =====
 function openDevis(){
   const d = $('#devis');
   if (!d) return;
   d.classList.add('show');
   d.scrollIntoView({ behavior:'smooth', block:'start' });
 }
+$('#goDevis')?.addEventListener('click', (e)=>{ e.preventDefault(); openDevis(); });
+$('#goBrief')?.addEventListener('click', (e)=>{ e.preventDefault(); openDevis(); });
 
+if (location.hash === '#devis') {
+  openDevis();
+  history.replaceState(null, '', location.pathname + location.search);
+}
+
+// ===== Choix de plan =====
+const planInput = $('#planInput');
+
+function openDevis(plan = '') {
+  const d = $('#devis');
+  if (!d) return;
+
+  // Remplit le champ plan si fourni
+  if (plan && planInput) {
+    planInput.value = plan;
+    localStorage.setItem('ew_selected_plan', plan);
+  }
+
+  // Ouvre la section
+  d.classList.add('show');
+  d.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// Clic sur un bouton "choisir plan"
+$$('.choose-plan').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const plan = btn.dataset.plan || '';
+    openDevis(plan);
+
+    // Si mobile → aussi lancer WhatsApp
+    if (isMobile()){
+      const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
+      window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
+    }
+  });
+});
+
+// Si un plan a déjà été choisi avant → on pré-remplit
+const savedPlan = localStorage.getItem('ew_selected_plan');
+if (savedPlan && planInput) planInput.value = savedPlan;
 // Clic sur tous les boutons/lien vers #devis
 document.querySelectorAll('a[href="#devis"], #goDevis, #goBrief').forEach(a=>{
   a.addEventListener('click', (e)=>{
