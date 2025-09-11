@@ -268,3 +268,17 @@ a:hover {
   text-align: center;    /* texte centré */
   width: fit-content;    /* largeur qui s'adapte au texte */
 }
+/* ----- Bloc devis caché par défaut ----- */
+#devis {
+  display: none;          /* invisible */
+  opacity: 0;             /* transparent */
+  transform: translateY(20px); /* décalé vers le bas */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ----- Quand on ajoute .show ----- */
+#devis.show {
+  display: block;         /* visible */
+  opacity: 1;             /* opaque */
+  transform: translateY(0); /* remonte en place */
+}
