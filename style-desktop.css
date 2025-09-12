@@ -44,20 +44,35 @@ h2{ margin:0 0 12px; font-size:1.5rem; color:#5e4b3c }
 /* ===============================
    Outils flottants (langue)
 ================================= */
-.floating-tools{ position:fixed; top:10px; right:10px; display:flex; gap:8px; z-index:1200; }
-.fab{
-  width:42px; height:42px; border:none; cursor:pointer; border-radius:50%;
-  background:rgba(255,255,255,.9); box-shadow:0 4px 12px rgba(0,0,0,.15);
-  font-size:20px; line-height:42px; text-align:center;
+.lang-menu {
+  position: absolute;
+  right: 0;              /* colle le menu à droite */
+  top: 100%;
+  display: none;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
 }
-.lang-wrap{ position:relative }
-.lang-menu{
-  position:absolute; top:48px; right:0; min-width:170px; display:none;
-  background:#fff; border-radius:12px; box-shadow:0 14px 30px rgba(0,0,0,.18); overflow:hidden;
+.lang-menu.show {
+  display: grid; /* au lieu de block */
 }
-.lang-menu.show{ display:block }
-.lang{ width:100%; text-align:left; border:0; background:transparent; padding:10px 12px; cursor:pointer; }
-.lang:hover{ background:#f7f3ee }
+.lang-item {
+  padding: 6px 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.lang-item:hover {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
 
 /* ===============================
    Logo
