@@ -1,151 +1,100 @@
-// ===== Config =====
-const WA_NUMBER = '33749723434';
-const MAIL_TO   = 'contact@eternaweb.fr';
+// =========================
+// Config
+// =========================
+const WA_NUMBER = '33749723434';           // Numéro WhatsApp
+const MAIL_TO   = 'contact@eternaweb.fr'; // Email de réception
 
-// ===== Helpers =====
+// Helpers rapides
 const $  = (s, r=document)=>r.querySelector(s);
 const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
 const isMobile = ()=>/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
 
-// ===== Traductions =====
+// =========================
+// Traductions multilingues
+// =========================
+// =========================
+// Config
+// =========================
+const WA_NUMBER = '33749723434';           // Numéro WhatsApp
+const MAIL_TO   = 'contact@eternaweb.fr'; // Email de réception
+
+// Helpers rapides
+const $  = (s, r=document)=>r.querySelector(s);
+const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
+const isMobile = ()=>/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+// =========================
+// Traductions multilingues
+// =========================
 const I18N = {
   fr: {
-    // --- Navigation
     'nav.menu':'Menu','nav.cv':'CV','nav.portfolio':'Portfolio','nav.vitrine':'Vitrine',
     'nav.tarifs':'Tarifs','nav.devis':'Vos consignes','nav.temoignages':'Témoignages',
-
-    // --- Hero
-    'hero.title':'EternaWeb',
-    'hero.subtitle':'CV & vitrines express — en ligne en 48 heures',
+    'hero.title':'EternaWeb','hero.subtitle':'CV & vitrines express — en ligne en 48 heures',
     'hero.lead':'✨ Un design premium, des intégrations rapides et un rendu clé en main.',
     'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
-
-    // --- Modèles
-    'models.h2':'🎨 Modèles prêts',
-    'models.sub':'Choisis un style, ouvre la démo, et dis-moi lequel tu veux.',
-    'models.demo':'Voir le modèle',
-    'models.cv.desc':'Idéal candidature ou profil pro.',
-    'models.port.desc':'Parfait artistes & designers.',
-    'models.vit.desc':'Entreprises & indépendants.',
-
-    // --- Devis
-    'devis.h2':'📝 Vos consignes',
-    'devis.sub':'Choisissez, décrivez, envoyez — je reçois vos consignes.',
-    'devis.type':'Type de site',
-    'devis.opt.cv':'CV','devis.opt.vitrine':'Vitrine','devis.opt.portfolio':'Portfolio','devis.opt.other':'Autre',
-    'devis.colors':'Palette / couleurs',
-    'devis.style':'Style visuel',
+    'models.h2':'🎨 Modèles prêts','models.sub':'Choisis un style, ouvre la démo, et dis-moi lequel tu veux.',
+    'models.demo':'Voir le modèle','models.cv.desc':'Idéal candidature ou profil pro.',
+    'models.port.desc':'Parfait artistes & designers.','models.vit.desc':'Entreprises & indépendants.',
+    'devis.h2':'📝 Vos consignes','devis.sub':'Choisissez, décrivez, envoyez — je reçois vos consignes.',
+    'devis.type':'Type de site','devis.opt.cv':'CV','devis.opt.vitrine':'Vitrine','devis.opt.portfolio':'Portfolio','devis.opt.other':'Autre',
+    'devis.colors':'Palette / couleurs','devis.style':'Style visuel',
     'devis.style1':'Sobre & élégant','devis.style2':'Créatif & coloré','devis.style3':'Minimal & pro','devis.style4':'Nature & doux',
-    'devis.integrations':'Intégrations souhaitées',
-    'devis.int.form':'Formulaire contact','devis.int.social':'Réseaux sociaux','devis.int.gallery':'Galerie',
-    'devis.other':'Autres demandes',
-    'devis.name':'Prénom / Nom',
-    'devis.email':'Email',
+    'devis.integrations':'Intégrations souhaitées','devis.int.form':'Formulaire contact','devis.int.social':'Réseaux sociaux','devis.int.gallery':'Galerie',
+    'devis.other':'Autres demandes','devis.name':'Prénom / Nom','devis.email':'Email',
     'devis.note':'Aucun envoi serveur : votre logiciel e-mail s’ouvre avec le message prérempli.',
-
-    // --- Boutons généraux
     'btn.fill':'Vos consignes','btn.send':'Envoyer','btn.choose':'Je choisis cette formule',
-
-    // --- Tarifs
-    'pricing.h2':'🧾 Formules EternaWeb',
-    'pricing.sub':'CV & mini-sites vitrines express — hébergement inclus',
-    'pricing.card1.title':'🌿 Pack Essentiel – 49 €',
-    'pricing.card1.li1':'CV en ligne simple (1 page)',
-    'pricing.card1.li2':'Personnalisation avec infos + photo',
-    'pricing.card1.li3':'Design élégant & responsive',
-    'pricing.card1.li4':'Livraison sous 48h',
-    'pricing.card1.note':'Idéal pour : candidatures',
-
-    'pricing.card2.title':'✨ Pack Vitrine – 89 €',
-    'pricing.card2.li1':'Mini-site vitrine (2–3 pages)',
-    'pricing.card2.li2':'Accueil + présentation produits/services',
-    'pricing.card2.li3':'Boutons WhatsApp, PayPal, réseaux',
-    'pricing.card2.li4':'Design harmonieux & responsive',
-    'pricing.card2.note':'Idéal pour : artisans, freelances',
-
-    'pricing.card3.title':'💎 Pack Premium – 129 €',
-    'pricing.card3.li1':'Tout le Pack Vitrine',
-    'pricing.card3.li2':'Création/refonte logo',
-    'pricing.card3.li3':'Conseils branding',
-    'pricing.card3.li4':'SEO de base + Galerie/FAQ',
+    'pricing.h2':'🧾 Formules EternaWeb','pricing.sub':'CV & mini-sites vitrines express — hébergement inclus',
+    'pricing.card1.title':'🌿 Pack Essentiel – 49 €','pricing.card1.li1':'CV en ligne simple (1 page)',
+    'pricing.card1.li2':'Personnalisation avec infos + photo','pricing.card1.li3':'Design élégant & responsive',
+    'pricing.card1.li4':'Livraison sous 48h','pricing.card1.note':'Idéal pour : candidatures',
+    'pricing.card2.title':'✨ Pack Vitrine – 89 €','pricing.card2.li1':'Mini-site vitrine (2–3 pages)',
+    'pricing.card2.li2':'Accueil + présentation produits/services','pricing.card2.li3':'Boutons WhatsApp, PayPal, réseaux',
+    'pricing.card2.li4':'Design harmonieux & responsive','pricing.card2.note':'Idéal pour : artisans, freelances',
+    'pricing.card3.title':'💎 Pack Premium – 129 €','pricing.card3.li1':'Tout le Pack Vitrine',
+    'pricing.card3.li2':'Création/refonte logo','pricing.card3.li3':'Conseils branding','pricing.card3.li4':'SEO de base + Galerie/FAQ',
     'pricing.card3.note':'Idéal pour : lancement complet',
-
-    // --- Témoignages
-    'testi.h2':'💬 Témoignages',
-    'testi.t1':'“Super réactive et professionnelle, mon site a été en ligne le jour même !”','testi.c1':'— Claire B.',
+    'testi.h2':'💬 Témoignages','testi.t1':'“Super réactive et professionnelle, mon site a été en ligne le jour même !”','testi.c1':'— Claire B.',
     'testi.t2':'“Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”','testi.c2':'— Malik T.',
     'testi.t3':'“Excellent rapport qualité/prix. Je recommande à 100 %.”','testi.c3':'— Sofia M.',
-
-    // --- Footer
     'footer.info':'Infos utiles','footer.contact':'Contact','footer.about':'À propos',
     'footer.security':'Sécurité','footer.privacy':'Confidentialité','footer.code':'Code de conduite','footer.faq':'FAQ'
   },
-
   en: {
     'nav.menu':'Menu','nav.cv':'CV','nav.portfolio':'Portfolio','nav.vitrine':'Showcase',
     'nav.tarifs':'Pricing','nav.devis':'Your brief','nav.temoignages':'Testimonials',
-
-    'hero.title':'EternaWeb',
-    'hero.subtitle':'CV & showcase sites — online in 48 hours',
+    'hero.title':'EternaWeb','hero.subtitle':'CV & showcase sites — online in 48 hours',
     'hero.lead':'✨ Premium design, fast integrations, and a turnkey result.',
     'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
-
-    'models.h2':'🎨 Ready-made templates',
-    'models.sub':'Pick a style, open the demo, and tell me which you want.',
-    'models.demo':'View template',
-    'models.cv.desc':'Great for job applications.',
-    'models.port.desc':'Perfect for artists & designers.',
-    'models.vit.desc':'For businesses & freelancers.',
-
-    'devis.h2':'📝 Your brief',
-    'devis.sub':'Pick, describe, send — I receive your instructions.',
-    'devis.type':'Site type',
-    'devis.opt.cv':'CV','devis.opt.vitrine':'Showcase','devis.opt.portfolio':'Portfolio','devis.opt.other':'Other',
-    'devis.colors':'Palette / colors',
-    'devis.style':'Visual style',
+    'models.h2':'🎨 Ready-made templates','models.sub':'Pick a style, open the demo, and tell me which you want.',
+    'models.demo':'View template','models.cv.desc':'Great for job applications.',
+    'models.port.desc':'Perfect for artists & designers.','models.vit.desc':'For businesses & freelancers.',
+    'devis.h2':'📝 Your brief','devis.sub':'Pick, describe, send — I receive your instructions.',
+    'devis.type':'Site type','devis.opt.cv':'CV','devis.opt.vitrine':'Showcase','devis.opt.portfolio':'Portfolio','devis.opt.other':'Other',
+    'devis.colors':'Palette / colors','devis.style':'Visual style',
     'devis.style1':'Sober & elegant','devis.style2':'Creative & colorful','devis.style3':'Minimal & pro','devis.style4':'Nature & soft',
-    'devis.integrations':'Desired integrations',
-    'devis.int.form':'Contact form','devis.int.social':'Social media','devis.int.gallery':'Gallery',
-    'devis.other':'Other requests',
-    'devis.name':'First / Last name',
-    'devis.email':'Email',
+    'devis.integrations':'Desired integrations','devis.int.form':'Contact form','devis.int.social':'Social media','devis.int.gallery':'Gallery',
+    'devis.other':'Other requests','devis.name':'First / Last name','devis.email':'Email',
     'devis.note':'No server: your email app opens with a prefilled message.',
-
     'btn.fill':'Your brief','btn.send':'Send','btn.choose':'Choose this plan',
-
-    'pricing.h2':'🧾 EternaWeb plans',
-    'pricing.sub':'CV & mini showcase sites — hosting included',
-    'pricing.card1.title':'🌿 Essential – €49',
-    'pricing.card1.li1':'Simple online CV (1 page)',
-    'pricing.card1.li2':'Personalization with info + photo',
-    'pricing.card1.li3':'Elegant & responsive design',
-    'pricing.card1.li4':'Delivery within 48h',
-    'pricing.card1.note':'Ideal for job applications',
-
-    'pricing.card2.title':'✨ Showcase – €89',
-    'pricing.card2.li1':'Mini site (2–3 pages)',
-    'pricing.card2.li2':'Home + products/services',
-    'pricing.card2.li3':'WhatsApp, PayPal, social buttons',
-    'pricing.card2.li4':'Harmonious, responsive design',
-    'pricing.card2.note':'Ideal for artisans, freelancers',
-
-    'pricing.card3.title':'💎 Premium – €129',
-    'pricing.card3.li1':'Everything in Showcase',
-    'pricing.card3.li2':'Logo creation/redesign',
-    'pricing.card3.li3':'Branding advice',
-    'pricing.card3.li4':'Basic SEO + Gallery/FAQ',
+    'pricing.h2':'🧾 EternaWeb plans','pricing.sub':'CV & mini showcase sites — hosting included',
+    'pricing.card1.title':'🌿 Essential – €49','pricing.card1.li1':'Simple online CV (1 page)',
+    'pricing.card1.li2':'Personalization with info + photo','pricing.card1.li3':'Elegant & responsive design',
+    'pricing.card1.li4':'Delivery within 48h','pricing.card1.note':'Ideal for job applications',
+    'pricing.card2.title':'✨ Showcase – €89','pricing.card2.li1':'Mini site (2–3 pages)',
+    'pricing.card2.li2':'Home + products/services','pricing.card2.li3':'WhatsApp, PayPal, social buttons',
+    'pricing.card2.li4':'Harmonious, responsive design','pricing.card2.note':'Ideal for artisans, freelancers',
+    'pricing.card3.title':'💎 Premium – €129','pricing.card3.li1':'Everything in Showcase',
+    'pricing.card3.li2':'Logo creation/redesign','pricing.card3.li3':'Branding advice','pricing.card3.li4':'Basic SEO + Gallery/FAQ',
     'pricing.card3.note':'Ideal for a full launch',
-
-    'testi.h2':'💬 Testimonials',
-    'testi.t1':'“Super responsive and professional — my site was online the same day!”','testi.c1':'— Claire B.',
+    'testi.h2':'💬 Testimonials','testi.t1':'“Super responsive and professional — my site was online the same day!”','testi.c1':'— Claire B.',
     'testi.t2':'“Elegant, clear design — clients contact me directly via WhatsApp!”','testi.c2':'— Malik T.',
     'testi.t3':'“Excellent value for money. 100% recommended.”','testi.c3':'— Sofia M.',
-
     'footer.info':'Useful info','footer.contact':'Contact','footer.about':'About',
     'footer.security':'Security','footer.privacy':'Privacy','footer.code':'Code of conduct','footer.faq':'FAQ'
   },
-
-  nl: {
+  
+nl: {
     // --- Navigatie
     'nav.menu':'Menu','nav.cv':'CV','nav.portfolio':'Portfolio','nav.vitrine':'Vitrinesite',
     'nav.tarifs':'Prijzen','nav.devis':'Uw instructies','nav.temoignages':'Getuigenissen',
@@ -215,7 +164,7 @@ const I18N = {
     // --- Footer
     'footer.info':'Nuttige info','footer.contact':'Contact','footer.about':'Over',
     'footer.security':'Beveiliging','footer.privacy':'Privacy','footer.code':'Gedragscode','footer.faq':'FAQ'
-  }
+  },
 
   de: {
     // --- Navigation
@@ -287,8 +236,9 @@ const I18N = {
     // --- Footer
     'footer.info':'Nützliche Infos','footer.contact':'Kontakt','footer.about':'Über uns',
     'footer.security':'Sicherheit','footer.privacy':'Datenschutz','footer.code':'Verhaltenskodex','footer.faq':'FAQ'
-  }
- ru: {
+  },
+
+  ru: {
     // --- Навигация
     'nav.menu':'Меню','nav.cv':'Резюме','nav.portfolio':'Портфолио','nav.vitrine':'Витрина',
     'nav.tarifs':'Тарифы','nav.devis':'Ваши пожелания','nav.temoignages':'Отзывы',
@@ -358,7 +308,7 @@ const I18N = {
     // --- Подвал
     'footer.info':'Полезная информация','footer.contact':'Контакты','footer.about':'О нас',
     'footer.security':'Безопасность','footer.privacy':'Конфиденциальность','footer.code':'Кодекс поведения','footer.faq':'FAQ'
-  }
+  },
 
   es: {
     // --- Navegación
@@ -430,7 +380,7 @@ const I18N = {
     // --- Footer
     'footer.info':'Información útil','footer.contact':'Contacto','footer.about':'Acerca de',
     'footer.security':'Seguridad','footer.privacy':'Privacidad','footer.code':'Código de conducta','footer.faq':'FAQ'
-  }
+  },
 
   it: {
     // --- Navigazione
@@ -504,8 +454,9 @@ const I18N = {
     'footer.security':'Sicurezza','footer.privacy':'Privacy','footer.code':'Codice di condotta','footer.faq':'FAQ'
   }
 };
-
-// ===== Menu mobile =====
+// =========================
+// Menu mobile
+// =========================
 const menuBtn  = $('#menuBtn');
 const mainMenu = $('#mainMenu');
 menuBtn?.addEventListener('click', ()=>{
@@ -513,7 +464,9 @@ menuBtn?.addEventListener('click', ()=>{
   menuBtn.setAttribute('aria-expanded', mainMenu?.classList.contains('show'));
 });
 
-// ===== Globe langues =====
+// =========================
+// Globe langues
+// =========================
 const langBtn  = $('#langBtn');
 const langMenu = $('#langMenu');
 if (langBtn && langMenu){
@@ -533,7 +486,9 @@ if (langBtn && langMenu){
   });
 }
 
-// ===== Appliquer la langue =====
+// =========================
+// Application de la langue
+// =========================
 function applyLang(lang){
   const d = I18N[lang] || I18N.fr;
   $$('[data-i18n]').forEach(el=>{
@@ -556,47 +511,28 @@ $$('#langMenu .lang-item').forEach(b=>{
 });
 applyLang(localStorage.getItem('lang') || 'fr');
 
-// ===== Scroll vers #devis =====
-// ===== Scroll vers #devis =====
-function openDevis(){
-  const d = $('#devis');
-  if (!d) return;
-  d.classList.add('show');
-  d.scrollIntoView({ behavior:'smooth', block:'start' });
-}
-$('#goDevis')?.addEventListener('click', (e)=>{ e.preventDefault(); openDevis(); });
-$('#goBrief')?.addEventListener('click', (e)=>{ e.preventDefault(); openDevis(); });
-
-if (location.hash === '#devis') {
-  openDevis();
-  history.replaceState(null, '', location.pathname + location.search);
-}
-
-// ===== Choix de plan =====
+// =========================
+// Gestion du formulaire devis
+// =========================
 const planInput = $('#planInput');
 
-function openDevis(plan = '') {
+// Ouvre la section devis
+function openDevis(plan = ''){
   const d = $('#devis');
   if (!d) return;
-
-  // Remplit le champ plan si fourni
   if (plan && planInput) {
     planInput.value = plan;
     localStorage.setItem('ew_selected_plan', plan);
   }
-
-  // Ouvre la section
   d.classList.add('show');
   d.scrollIntoView({ behavior:'smooth', block:'start' });
 }
 
-// Clic sur un bouton "choisir plan"
+// Clic sur boutons "choisir un plan"
 $$('.choose-plan').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const plan = btn.dataset.plan || '';
     openDevis(plan);
-
-    // Si mobile → aussi lancer WhatsApp
     if (isMobile()){
       const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
       window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
@@ -604,17 +540,152 @@ $$('.choose-plan').forEach(btn=>{
   });
 });
 
-// Si un plan a déjà été choisi avant → on pré-remplit
+// Récupère plan sauvegardé
 const savedPlan = localStorage.getItem('ew_selected_plan');
 if (savedPlan && planInput) planInput.value = savedPlan;
-// Clic sur tous les boutons/lien vers #devis
+
+// Clic sur tout lien vers #devis
 document.querySelectorAll('a[href="#devis"], #goDevis, #goBrief').forEach(a=>{
   a.addEventListener('click', (e)=>{
     e.preventDefault();
     openDevis();
   });
 });
-// ===== Envoi du formulaire (mailto) =====
+
+// Envoi du formulaire
+const devisForm = $('#devisForm');
+const sendForm  = $('#sendForm');
+if (devisForm && sendForm){
+  sendForm.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const get = (n)=>devisForm.querySelector(`[name="${n}"]`)?.value?.trim() || '—';
+    const checks = [...devisForm.querySelectorAll('input[name="int"]:checked')].map(i=>i.value).join(', ') || '—';
+
+    const lignes = [
+      'Devis EternaWeb',
+      '---------------------------',
+      `Formule : ${get('plan')}`,
+      `Type de site : ${get('type')}`,
+      `Couleurs : ${get('couleurs')}`,
+      `Style : ${get('style')}`,
+      `Intégrations : ${checks}`,
+      `Autres demandes : ${get('contenu')}`,
+      `Nom : ${get('nom')}`,
+      `Email : ${get('email')}`,
+      `Raison sociale : ${get('raison_sociale')}`,
+    ];
+
+    const subject = `EternaWeb – Devis ${get('plan')}`;
+    const body    = encodeURIComponent(lignes.join('\n'));
+    window.location.href = `mailto:${MAIL_TO}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+    if (isMobile()){
+      const t2 = encodeURIComponent(`Devis complété – ${get('plan')} – ${get('nom')}`);
+      setTimeout(()=>window.open(`https://wa.me/${WA_NUMBER}?text=${t2}`,'_blank'),400);
+    }
+
+    alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
+  });
+}
+// =========================
+// Menu mobile
+// =========================
+const menuBtn  = $('#menuBtn');
+const mainMenu = $('#mainMenu');
+menuBtn?.addEventListener('click', ()=>{
+  mainMenu?.classList.toggle('show');
+  menuBtn.setAttribute('aria-expanded', mainMenu?.classList.contains('show'));
+});
+
+// =========================
+// Globe langues
+// =========================
+const langBtn  = $('#langBtn');
+const langMenu = $('#langMenu');
+if (langBtn && langMenu){
+  langBtn.addEventListener('click', ()=>{
+    const open = langMenu.classList.toggle('show');
+    langBtn.setAttribute('aria-expanded', String(open));
+  });
+  document.addEventListener('click', (e)=>{
+    if (!langMenu.contains(e.target) && e.target !== langBtn){
+      langMenu.classList.remove('show');
+      langBtn.setAttribute('aria-expanded','false');
+    }
+  });
+  window.addEventListener('scroll', ()=>{
+    langMenu.classList.remove('show');
+    langBtn.setAttribute('aria-expanded','false');
+  });
+}
+
+// =========================
+// Application de la langue
+// =========================
+function applyLang(lang){
+  const d = I18N[lang] || I18N.fr;
+  $$('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    const val = d[k];
+    if (!val) return;
+    if (/<[a-z][\s\S]*>/i.test(val)) el.innerHTML = val;
+    else el.textContent = val;
+  });
+  localStorage.setItem('lang', lang);
+  document.documentElement.setAttribute('lang', lang);
+}
+$$('#langMenu .lang-item').forEach(b=>{
+  b.addEventListener('click', e=>{
+    e.preventDefault();
+    applyLang(b.dataset.lang);
+    langMenu.classList.remove('show');
+    langBtn.setAttribute('aria-expanded','false');
+  });
+});
+applyLang(localStorage.getItem('lang') || 'fr');
+
+// =========================
+// Gestion du formulaire devis
+// =========================
+const planInput = $('#planInput');
+
+// Ouvre la section devis
+function openDevis(plan = ''){
+  const d = $('#devis');
+  if (!d) return;
+  if (plan && planInput) {
+    planInput.value = plan;
+    localStorage.setItem('ew_selected_plan', plan);
+  }
+  d.classList.add('show');
+  d.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// Clic sur boutons "choisir un plan"
+$$('.choose-plan').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const plan = btn.dataset.plan || '';
+    openDevis(plan);
+    if (isMobile()){
+      const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
+      window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
+    }
+  });
+});
+
+// Récupère plan sauvegardé
+const savedPlan = localStorage.getItem('ew_selected_plan');
+if (savedPlan && planInput) planInput.value = savedPlan;
+
+// Clic sur tout lien vers #devis
+document.querySelectorAll('a[href="#devis"], #goDevis, #goBrief').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    e.preventDefault();
+    openDevis();
+  });
+});
+
+// Envoi du formulaire
 const devisForm = $('#devisForm');
 const sendForm  = $('#sendForm');
 if (devisForm && sendForm){
