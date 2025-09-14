@@ -1,16 +1,14 @@
 // =========================
 // Config
 // =========================
-const WA_NUMBER = '33749723434';           // Numéro WhatsApp
-const MAIL_TO   = 'contact@eternaweb.fr'; // Email de réception
+const WA_NUMBER = '33749723434';
+const MAIL_TO   = 'contact@eternaweb.fr';
 
 // Helpers rapides
 const $  = (s, r=document)=>r.querySelector(s);
 const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
 const isMobile = ()=>/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
 
-// =========================
-// Traductions multilingues
 // =========================
 const I18N = {
   fr: {
@@ -440,7 +438,7 @@ nl: {
     'footer.security':'Sicurezza','footer.privacy':'Privacy','footer.code':'Codice di condotta','footer.faq':'FAQ'
   }
 };
-/ =========================
+// =========================
 // Menu mobile
 // =========================
 const menuBtn  = $('#menuBtn');
@@ -501,7 +499,6 @@ applyLang(localStorage.getItem('lang') || 'fr');
 // Gestion du formulaire devis
 // =========================
 const planInput = $('#planInput');
-
 function openDevis(plan = ''){
   const d = $('#devis');
   if (!d) return;
@@ -512,7 +509,6 @@ function openDevis(plan = ''){
   d.classList.add('show');
   d.scrollIntoView({ behavior:'smooth', block:'start' });
 }
-
 $$('.choose-plan').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const plan = btn.dataset.plan || '';
@@ -523,17 +519,14 @@ $$('.choose-plan').forEach(btn=>{
     }
   });
 });
-
 const savedPlan = localStorage.getItem('ew_selected_plan');
 if (savedPlan && planInput) planInput.value = savedPlan;
-
 document.querySelectorAll('a[href="#devis"], #goDevis, #goBrief').forEach(a=>{
   a.addEventListener('click', (e)=>{
     e.preventDefault();
     openDevis();
   });
 });
-
 const devisForm = $('#devisForm');
 const sendForm  = $('#sendForm');
 if (devisForm && sendForm){
