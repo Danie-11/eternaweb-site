@@ -285,3 +285,18 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   opacity: 1;             /* opaque */
   transform: translateY(0); /* remonte en place */
 }
+/* Amélioration du rendu du texte */
+.models-grid .card {
+  -webkit-font-smoothing: antialiased;   /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale;    /* Firefox */
+  text-rendering: optimizeLegibility;    /* Meilleure lisibilité */
+}
+
+/* Si tu veux aussi sur les titres */
+.models-grid .card h3,
+.models-grid .card p,
+.models-grid .card span {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
