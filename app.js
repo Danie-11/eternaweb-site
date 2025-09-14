@@ -12,20 +12,6 @@ const isMobile = ()=>/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.us
 // =========================
 // Traductions multilingues
 // =========================
-// =========================
-// Config
-// =========================
-const WA_NUMBER = '33749723434';           // Numéro WhatsApp
-const MAIL_TO   = 'contact@eternaweb.fr'; // Email de réception
-
-// Helpers rapides
-const $  = (s, r=document)=>r.querySelector(s);
-const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
-const isMobile = ()=>/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-
-// =========================
-// Traductions multilingues
-// =========================
 const I18N = {
   fr: {
     'nav.menu':'Menu','nav.cv':'CV','nav.portfolio':'Portfolio','nav.vitrine':'Vitrine',
@@ -454,65 +440,7 @@ nl: {
     'footer.security':'Sicurezza','footer.privacy':'Privacy','footer.code':'Codice di condotta','footer.faq':'FAQ'
   }
 };
-// =========================
-// Menu mobile
-// =========================
-const menuBtn  = $('#menuBtn');
-const mainMenu = $('#mainMenu');
-menuBtn?.addEventListener('click', ()=>{
-  mainMenu?.classList.toggle('show');
-  menuBtn.setAttribute('aria-expanded', mainMenu?.classList.contains('show'));
-});
-
-// =========================
-// Globe langues
-// =========================
-const langBtn  = $('#langBtn');
-const langMenu = $('#langMenu');
-if (langBtn && langMenu){
-  langBtn.addEventListener('click', ()=>{
-    const open = langMenu.classList.toggle('show');
-    langBtn.setAttribute('aria-expanded', String(open));
-  });
-  document.addEventListener('click', (e)=>{
-    if (!langMenu.contains(e.target) && e.target !== langBtn){
-      langMenu.classList.remove('show');
-      langBtn.setAttribute('aria-expanded','false');
-    }
-  });
-  window.addEventListener('scroll', ()=>{
-    langMenu.classList.remove('show');
-    langBtn.setAttribute('aria-expanded','false');
-  });
-}
-
-// =========================
-// Application de la langue
-// =========================
-function applyLang(lang){
-  const d = I18N[lang] || I18N.fr;
-  $$('[data-i18n]').forEach(el=>{
-    const k = el.getAttribute('data-i18n');
-    const val = d[k];
-    if (!val) return;
-    if (/<[a-z][\s\S]*>/i.test(val)) el.innerHTML = val;
-    else el.textContent = val;
-  });
-  localStorage.setItem('lang', lang);
-  document.documentElement.setAttribute('lang', lang);
-}
-$$('#langMenu .lang-item').forEach(b=>{
-  b.addEventListener('click', e=>{
-    e.preventDefault();
-    applyLang(b.dataset.lang);
-    langMenu.classList.remove('show');
-    langBtn.setAttribute('aria-expanded','false');
-  });
-});
-applyLang(localStorage.getItem('lang') || 'fr');
-
-  
-// =========================
+/ =========================
 // Menu mobile
 // =========================
 const menuBtn  = $('#menuBtn');
@@ -574,7 +502,6 @@ applyLang(localStorage.getItem('lang') || 'fr');
 // =========================
 const planInput = $('#planInput');
 
-// Ouvre la section devis
 function openDevis(plan = ''){
   const d = $('#devis');
   if (!d) return;
@@ -586,7 +513,6 @@ function openDevis(plan = ''){
   d.scrollIntoView({ behavior:'smooth', block:'start' });
 }
 
-// Clic sur boutons "choisir un plan"
 $$('.choose-plan').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const plan = btn.dataset.plan || '';
@@ -598,11 +524,9 @@ $$('.choose-plan').forEach(btn=>{
   });
 });
 
-// Récupère plan sauvegardé
 const savedPlan = localStorage.getItem('ew_selected_plan');
 if (savedPlan && planInput) planInput.value = savedPlan;
 
-// Clic sur tout lien vers #devis
 document.querySelectorAll('a[href="#devis"], #goDevis, #goBrief').forEach(a=>{
   a.addEventListener('click', (e)=>{
     e.preventDefault();
@@ -610,7 +534,6 @@ document.querySelectorAll('a[href="#devis"], #goDevis, #goBrief').forEach(a=>{
   });
 });
 
-// Envoi du formulaire
 const devisForm = $('#devisForm');
 const sendForm  = $('#sendForm');
 if (devisForm && sendForm){
