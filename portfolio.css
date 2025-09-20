@@ -112,3 +112,16 @@ body.tpl-portfolio::before { display: none; }
     line-height: 1.6;
   }
 }
+.work span {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0 1px 2px rgba(0,0,0,.4); /* léger relief */
+}
+.work img {
+  will-change: transform;
+  transform-origin: center;
+}
+.port-hero p {
+  max-width: 90%;
+  margin: 0 auto;
+}
