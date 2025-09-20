@@ -344,3 +344,28 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .model-card:hover {
   transform: translateY(-5px);
 }
+.models-grid .card {
+  position: relative;
+  overflow: hidden;
+}
+
+.models-grid .card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.models-grid .card p {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1rem;
+}
