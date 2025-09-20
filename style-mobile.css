@@ -309,3 +309,28 @@ a:hover {
   font-size: 22px;
   cursor: pointer;
 }
+/* Amélioration affichage galeries sans changer le HTML */
+.vitrine-gallery img,
+.port-grid img {
+  display: block;
+  width: 100%;
+  height: 220px;       /* même hauteur pour tout */
+  object-fit: cover;   /* rogne proprement */
+  border-radius: 12px; /* arrondis réguliers */
+}
+
+.vitrine-gallery a,
+.port-grid a.work {
+  margin: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vitrine-gallery a:hover,
+.port-grid a.work:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
