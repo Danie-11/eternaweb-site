@@ -330,7 +330,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .models-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: stretch;
 }
 
@@ -353,6 +353,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   display: block;
   width: 100%;
   height: auto;
+   max-width: 280px;
 }
 
 .models-grid .card p {
@@ -365,7 +366,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   background: rgba(0,0,0,0.6);
   color: #fff;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 8px;
   text-align: center;
   font-size: 1rem;
 }
