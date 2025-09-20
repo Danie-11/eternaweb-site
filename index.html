@@ -5,18 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Mini-sites vitrines & CV en 48h. Design premium, intégrations WhatsApp & PayPal. EternaWeb.">
   <title>EternaWeb – CV & vitrines express</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <!-- Favicons -->
   <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon-64x64.png" type="image/png" sizes="64x64">
 
   <!-- Styles -->
   <link rel="stylesheet" href="style-desktop.css" media="screen and (min-width: 601px)">
-  <link rel="stylesheet" href="style-mobile.css"  media="screen and (max-width: 600px)">
-  <link rel="stylesheet" href="modals.css">
+<link rel="stylesheet" href="style-mobile.css"  media="screen and (max-width: 600px)">
 </head>
 <body>
   <!-- Barre d’annonce -->
@@ -37,163 +34,278 @@
   </button>
 
   <!-- Menu principal -->
-  <nav id="mainMenu" class="menu" aria-label="Navigation principale">
-    <ul>
-      <li><a href="#produits">Services</a></li>
-      <li><a href="#devis">Vos consignes</a></li>
-      <li><a href="#temoignages">Témoignages</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero-gold" id="cv">
-    <div class="hero-wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;padding:2rem 1rem;">
-      <img src="images/logo-eternaweb.png" class="hero-logo" alt="EternaWeb logo" style="max-width:180px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));">
-
-      <h1 class="gold-title">EternaWeb</h1>
-      <h2 class="gold-sub">CV & vitrines express — en ligne en 48 heures</h2>
-      <p class="gold-lead">✨ Un design premium, des intégrations rapides et un rendu clé en main.</p>
-
-      <div class="cta-row">
-        <a href="https://wa.me/33749723434" target="_blank" class="btn btn-wa">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico">
-          WhatsApp
-        </a>
-        <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" target="_blank" class="btn btn-pp">
-          <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico">
-          PayPal
-        </a>
-        <a href="#devis" id="goDevis" class="btn btn-primary">Vos consignes</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Nouvelle section Produits -->
-  <section id="produits" class="container produits">
-    <h2>🚀 Nos services</h2>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Mini-sites vitrines & CV en 48h. Design premium, intégrations WhatsApp & PayPal. EternaWeb.">
-  <title>EternaWeb – CV & vitrines express</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Favicons -->
-  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="favicon-64x64.png" type="image/png" sizes="64x64">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style-desktop.css" media="screen and (min-width: 601px)">
-  <link rel="stylesheet" href="style-mobile.css"  media="screen and (max-width: 600px)">
-</head>
-<body>
-  <!-- Barre d’annonce -->
-  <div class="announce-bar" role="status" aria-label="Annonce">
-    🚀 Site livré en 48h • <strong>Paiement sécurisé</strong> • Support WhatsApp
-  </div>
-
-  <!-- Logo -->
-  <div class="logo-container">
-    <div class="logo-badge">
-      <img src="eternaweb-logo.png" alt="EternaWeb" class="logo-simple">
-    </div>
-  </div>
-
-  <!-- Bouton menu mobile -->
-  <button class="menu-toggle" id="menuBtn" aria-expanded="false">
-    ☰ <span data-i18n="nav.menu">Menu</span>
-  </button>
-
-  <!-- Menu principal -->
-  <nav id="mainMenu" class="menu" aria-label="Navigation principale">
-    <ul>
-      <li><a href="#modeles">Services</a></li>
-      <li><a href="#devis">Vos consignes</a></li>
-      <li><a href="#temoignages">Témoignages</a></li>
-    </ul>
-  </nav>
+<nav id="mainMenu" class="menu" aria-label="Navigation principale">
+  <ul>
+    <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+    <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+    <li><a href="vitrine.html" data-i18n="nav.vitrine">Vitrine</a></li>
+    <li><a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a></li>
+    <li><a href="#devis" id="goDevis" data-i18n="nav.devis">Vos consignes</a></li>
+    <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
+  </ul>
+</nav>
 
   <!-- Outils flottants (globe langues) -->
-  <div class="floating-tools" aria-label="Outils rapides">
-    <div class="lang-wrap">
-      <button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button>
-      <div class="lang-menu" id="langMenu" role="menu">
-        <button class="lang-item" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
-        <button class="lang-item" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
-        <button class="lang-item" data-lang="nl" role="menuitem" aria-label="Nederlands">🇳🇱 Nederlands</button>
-        <button class="lang-item" data-lang="ru" role="menuitem" aria-label="Русский">🇷🇺 Русский</button>
-        <button class="lang-item" data-lang="de" role="menuitem" aria-label="Deutsch">🇩🇪 Deutsch</button>
-        <button class="lang-item" data-lang="es" role="menuitem" aria-label="Español">🇪🇸 Español</button>
-        <button class="lang-item" data-lang="it" role="menuitem" aria-label="Italiano">🇮🇹 Italiano</button>
-      </div>
+<div class="floating-tools" aria-label="Outils rapides">
+  <div class="lang-wrap">
+    <button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button>
+    <div class="lang-menu" id="langMenu" role="menu">
+      <button class="lang-item" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
+      <button class="lang-item" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
+      <button class="lang-item" data-lang="nl" role="menuitem" aria-label="Nederlands">🇳🇱 Nederlands</button>
+      <button class="lang-item" data-lang="ru" role="menuitem" aria-label="Русский">🇷🇺 Русский</button>
+      <button class="lang-item" data-lang="de" role="menuitem" aria-label="Deutsch">🇩🇪 Deutsch</button>
+<button class="lang-item" data-lang="es" role="menuitem" aria-label="Español">🇪🇸 Español</button>
+<button class="lang-item" data-lang="it" role="menuitem" aria-label="Italiano">🇮🇹 Italiano</button>
     </div>
   </div>
+</div>
+<section class="hero-gold" id="cv">
+  <div class="hero-wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;padding:2rem 1rem;">
+    <img src="images/logo-eternaweb.png" class="hero-logo" alt="EternaWeb logo" style="max-width:180px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));">
 
-  <!-- Hero -->
-  <section class="hero-gold" id="cv">
-    <div class="hero-wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;padding:2rem 1rem;">
-      <img src="images/logo-eternaweb.png" class="hero-logo" alt="EternaWeb logo" style="max-width:180px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));">
+    <h1 class="gold-title" data-i18n="hero.title">EternaWeb</h1>
+    <h2 class="gold-sub"   data-i18n="hero.subtitle">CV & vitrines express — en ligne en 48 heures</h2>
+    <p  class="gold-lead"  data-i18n="hero.lead">✨ Un design premium, des intégrations rapides et un rendu clé en main.</p>
+     <div class="cta-row">
+      <a href="https://wa.me/33749723434" target="_blank" class="btn btn-wa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico">
+        <span data-i18n="cta.whatsapp">WhatsApp</span>
+      </a>
+      <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" target="_blank" class="btn btn-pp">
+        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico">
+        <span data-i18n="cta.paypal">PayPal</span>
+      </a>
+     <a href="#devis" id="goDevis" class="btn btn-primary" data-i18n="nav.devis">Vos consignes</a>
+ </div> <!-- fermeture du .cta-row -->
+</div>   <!-- fermeture du .hero-wrap -->
+</section>
 
-      <h1 class="gold-title">EternaWeb</h1>
-      <h2 class="gold-sub">CV & vitrines express — en ligne en 48 heures</h2>
-      <p class="gold-lead">✨ Un design premium, des intégrations rapides et un rendu clé en main.</p>
+<!-- Section Modèles + Tarifs -->
+<section id="modeles" class="container models">
+  <h2 data-i18n="models.h2">🎨 Modèles prêts</h2>
+  <p data-i18n="models.sub">Choisis un style, ouvre la démo, et découvre les packs disponibles.</p>
 
-      <div class="cta-row">
-        <a href="https://wa.me/33749723434" target="_blank" class="btn btn-wa">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico">
-          WhatsApp
-        </a>
-        <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" target="_blank" class="btn btn-pp">
-          <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico">
-          PayPal
-        </a>
-        <a href="#devis" id="goDevis" class="btn btn-primary">Vos consignes</a>
-      </div>
+  <div class="models-grid">
+    <!-- CV -->
+    <div class="card model-card">
+      <img src="images/thumb-cv.png" alt="">
+      <p data-i18n="models.cv.desc">Idéal candidature ou profil pro.</p>
+      <button class="btn btn-primary" onclick="openModal('modalCV')">Voir les packs</button>
     </div>
-  </section>
 
-  <!-- Section modèles -->
-  <section id="modeles" class="container models">
-    <h2 data-i18n="models.h2">🎨 Modèles prêts</h2>
-    <p data-i18n="models.sub">Choisissez un style, ouvrez la démo, et dites-moi lequel vous préférez.</p>
-
-    <div class="models-grid">
-      <a class="card model-card" href="cv.html">
-        <img src="images/thumb-cv.png" alt="">
-        <p data-i18n="models.cv.desc">Idéal candidature ou profil pro.</p>
-        <span class="btn btn-primary" data-i18n="models.demo">Voir le modèle</span>
-      </a>
-
-      <a class="card model-card" href="portfolio.html">
-        <img src="images/thumb-portfolio.png" alt="">
-        <p data-i18n="models.port.desc">Parfait artistes & designers.</p>
-        <span class="btn btn-primary" data-i18n="models.demo">Voir le modèle</span>
-      </a>
-
-      <a class="card model-card" href="vitrine.html">
-        <img src="images/thumb-vitrine.png" alt="">
-        <p data-i18n="models.vit.desc">Entreprises & indépendants.</p>
-        <span class="btn btn-primary" data-i18n="models.demo">Voir le modèle</span>
-      </a>
+    <!-- Portfolio -->
+    <div class="card model-card">
+      <img src="images/thumb-portfolio.png" alt="">
+      <p data-i18n="models.port.desc">Parfait artistes & designers.</p>
+      <button class="btn btn-primary" onclick="openModal('modalPortfolio')">Voir les packs</button>
     </div>
-  </section>
 
-  <!-- Vos consignes -->
+    <!-- Vitrine -->
+    <div class="card model-card">
+      <img src="images/thumb-vitrine.png" alt="">
+      <p data-i18n="models.vit.desc">Entreprises & indépendants.</p>
+      <button class="btn btn-primary" onclick="openModal('modalVitrine')">Voir les packs</button>
+    </div>
+  </div>
+</section>
+
+<!-- Modales -->
+<div id="modalCV" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalCV')">&times;</span>
+    <h2>Un CV en ligne sur-mesure</h2>
+    <p>✔ Présentation claire et professionnelle<br>
+       ✔ Orthographe et style irréprochables<br>
+       ✔ Mise en valeur de vos atouts</p>
+    <p><strong>👉 Pour vous démarquer auprès des recruteurs et multiplier vos opportunités.</strong></p>
+
+    <h3>📝 Pack Starter – 19 €</h3>
+    <ul>
+      <li>Correction orthographique et grammaticale</li>
+      <li>Mise en page simple et claire (Word/PDF)</li>
+    </ul>
+    <p><em>👉 Idéal pour un premier CV étudiant ou jeune diplômé</em></p>
+
+    <h3>🚀 Pack Boost – 39 €</h3>
+    <ul>
+      <li>Tout le Pack Starter</li>
+      <li>Optimisation du contenu</li>
+      <li>Ajout de mots-clés stratégiques</li>
+      <li>Mise en valeur des expériences</li>
+    </ul>
+
+    <h3>🌐 Pack Premium CV en ligne – 59 €</h3>
+    <ul>
+      <li>Tout le Pack Boost</li>
+      <li>Création d’un CV en ligne</li>
+      <li>Hébergement inclus 1 an</li>
+      <li>Design moderne (ordinateur & mobile)</li>
+      <li>QR code intégré</li>
+    </ul>
+  </div>
+</div>
+
+<div id="modalPortfolio" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalPortfolio')">&times;</span>
+    <h2>Portfolio en ligne</h2>
+    <p>🎨 Idéal pour artistes, créateurs et designers.</p>
+
+    <h3>📂 Pack Créatif – 89 €</h3>
+    <ul>
+      <li>Mini-site (2–3 pages)</li>
+      <li>Galerie photos/vidéos</li>
+      <li>Présentation créateur</li>
+    </ul>
+
+    <h3>🌟 Pack Premium – 149 €</h3>
+    <ul>
+      <li>Tout le Pack Créatif</li>
+      <li>Section blog</li>
+      <li>Optimisation SEO</li>
+      <li>Statistiques incluses</li>
+    </ul>
+  </div>
+</div>
+
+<div id="modalVitrine" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalVitrine')">&times;</span>
+    <h2>Vitrine en ligne</h2>
+    <p>🏪 Idéal pour artisans et petites entreprises.</p>
+
+    <h3>✨ Pack Vitrine – 89 €</h3>
+    <ul>
+      <li>Mini-site vitrine (2–3 pages)</li>
+      <li>Accueil + présentation services</li>
+      <li>Boutons WhatsApp, PayPal, réseaux</li>
+    </ul>
+
+    <h3>🌟 Pack Premium – 149 €</h3>
+    <ul>
+      <li>Tout le Pack Vitrine</li>
+      <li>Catalogue produits</li>
+      <li>Formulaire contact</li>
+      <li>Hébergement 1 an inclus</li>
+    </ul>
+  </div>
+</div>
+
+
+ <!-- Vos consignes (devis) -->
   <section id="devis" class="page-card">
     <h2 data-i18n="devis.h2">📝 Vos consignes</h2>
     <p class="sub" data-i18n="devis.sub">Choisissez, décrivez, envoyez — je reçois vos consignes.</p>
 
-    <!-- Ton formulaire devis reste inchangé -->
     <form id="devisForm" class="devis-grid">
       <input type="hidden" name="plan" id="planInput" value="">
-      <!-- ... tous tes champs du formulaire ... -->
+
+      <label>
+        <span data-i18n="devis.type">Type de site</span>
+        <select name="type" required>
+          <option value="CV" data-i18n="devis.opt.cv">CV</option>
+          <option value="Vitrine" data-i18n="devis.opt.vitrine">Vitrine</option>
+          <option value="Portfolio" data-i18n="devis.opt.portfolio">Portfolio</option>
+          <option value="Autre" data-i18n="devis.opt.other">Autre</option>
+        </select>
+      </label>
+
+      <label>
+        <span data-i18n="devis.colors">Palette / couleurs</span>
+        <input name="couleurs" type="text" placeholder="Ex. beige & doré, brun café…">
+      </label>
+
+      <label>
+        <span data-i18n="devis.style">Style visuel</span>
+        <select name="style">
+          <option data-i18n="devis.style1">Sobre & élégant</option>
+          <option data-i18n="devis.style2">Créatif & coloré</option>
+          <option data-i18n="devis.style3">Minimal & pro</option>
+          <option data-i18n="devis.style4">Nature & doux</option>
+        </select>
+      </label>
+
+      <fieldset class="full">
+        <legend data-i18n="devis.integrations">Intégrations souhaitées</legend>
+        <label><input type="checkbox" name="int" value="WhatsApp"> WhatsApp</label>
+        <label><input type="checkbox" name="int" value="PayPal"> PayPal</label>
+        <label><input type="checkbox" name="int" value="SumUp"> SumUp</label>
+        <label><input type="checkbox" name="int" value="Formulaire contact" data-i18n="devis.int.form"> Formulaire contact</label>
+        <label><input type="checkbox" name="int" value="Réseaux sociaux" data-i18n="devis.int.social"> Réseaux sociaux</label>
+        <label><input type="checkbox" name="int" value="Galerie" data-i18n="devis.int.gallery"> Galerie</label>
+      </fieldset>
+
+      <label class="full">
+        <span data-i18n="devis.other">Autres demandes</span>
+        <textarea name="contenu" rows="3" placeholder="Ce que vous avez déjà / liens drive / consignes…"></textarea>
+      </label>
+
+      <div class="grid-2">
+        <label>
+          <span data-i18n="devis.name">Prénom / Nom</span>
+          <input name="nom" type="text" placeholder="Votre nom">
+        </label>
+        <label>
+          <span data-i18n="devis.email">Email</span>
+          <input name="email" type="email" placeholder="vous@exemple.com">
+        </label>
+      </div>
+
+      <label><span>Raison sociale</span>
+  <input name="raison_sociale" placeholder="Nom de l'entreprise">
+      </label>
+      
+      <button type="button" id="sendForm" class="btn btn-primary" data-i18n="btn.send">Envoyer</button>
+      <p class="tiny" data-i18n="devis.note">Aucun envoi serveur : votre logiciel e‑mail s’ouvre avec le message prérempli.</p>
     </form>
   </section>
+  
+  <!-- Tarifs -->
+  <section class="pricing-section" id="tarifs">
+    <h2 data-i18n="pricing.h2">🧾 Formules EternaWeb</h2>
+    <p data-i18n="pricing.sub">CV & mini‑sites vitrines express — hébergement inclus</p>
 
+    <div class="pricing-cards">
+      <div class="card">
+        <h3 data-i18n="pricing.card1.title">🌿 Pack Essentiel – 49 €</h3>
+        <ul>
+          <li data-i18n="pricing.card1.li1">CV en ligne simple (1 page)</li>
+          <li data-i18n="pricing.card1.li2">Personnalisation avec infos + photo</li>
+          <li data-i18n="pricing.card1.li3">Design élégant & responsive</li>
+          <li data-i18n="pricing.card1.li4">Livraison sous 48h</li>
+        </ul>
+        <button class="btn choose-plan" data-plan="Essentiel" data-i18n="btn.choose">Je choisis cette formule</button>
+        <div class="tarif-note" data-i18n="pricing.card1.note">Idéal pour : candidatures</div>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="pricing.card2.title">✨ Pack Vitrine – 89 €</h3>
+        <ul>
+          <li data-i18n="pricing.card2.li1">Mini‑site vitrine (2–3 pages)</li>
+          <li data-i18n="pricing.card2.li2">Accueil + présentation produits/services</li>
+          <li data-i18n="pricing.card2.li3">Boutons WhatsApp, PayPal, réseaux</li>
+          <li data-i18n="pricing.card2.li4">Design harmonieux & responsive</li>
+        </ul>
+        <button class="btn choose-plan" data-plan="Vitrine" data-i18n="btn.choose">Je choisis cette formule</button>
+        <div class="tarif-note" data-i18n="pricing.card2.note">Idéal pour : artisans, freelances</div>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="pricing.card3.title">💎 Pack Premium – 129 €</h3>
+        <ul>
+          <li data-i18n="pricing.card3.li1">Tout le Pack Vitrine</li>
+          <li data-i18n="pricing.card3.li2">Création/refonte logo</li>
+          <li data-i18n="pricing.card3.li3">Conseils branding</li>
+          <li data-i18n="pricing.card3.li4">SEO de base + Galerie/FAQ</li>
+        </ul>
+        <button class="btn choose-plan" data-plan="Premium" data-i18n="btn.choose">Je choisis cette formule</button>
+        <div class="tarif-note" data-i18n="pricing.card3.note">Idéal pour : lancement complet</div>
+      </div>
+    </div>
+  </section>
+
+ 
   <!-- Témoignages -->
   <section id="temoignages" class="testimonials">
     <h2 data-i18n="testi.h2">💬 Témoignages</h2>
@@ -215,19 +327,22 @@
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
-    <div class="footer-columns">
-      <nav class="footer-info" aria-label="Liens légaux">
-        <a href="faq.html">FAQ</a>
-        <a href="a-propos.html">À propos</a>
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="confidentialite.html">Confidentialité</a>
-        <a href="code-de-conduite.html">Code de conduite</a>
-      </nav>
-      <p class="copyright">© 2025 EternaGlow — Tous droits réservés</p>
-    </div>
-  </footer>
+  <div class="footer-columns">
+    <nav class="footer-info" aria-label="Liens légaux">
+      <a href="faq.html">FAQ</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="code-de-conduite.html">Code de conduite</a>
+    </nav>
+
+    <p class="copyright">© 2025 EternaGlow — Tous droits réservés</p>
+  </div>
+</footer>
 
   <!-- JS -->
   <script src="app.js" defer></script>
+  
 </body>
 </html>
+
