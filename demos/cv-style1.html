@@ -93,129 +93,157 @@ h3 {
     <p class="cv-role">Cheffe de projet digital</p>
 
     <ul class="cv-infos" aria-label="Coordonnées">
-      <li>📍 Paris (hybride / télétravail)</li>
-      <li>✉️ <a href="mailto:marie.dupont@example.com">marie.dupont@example.com</a></li>
-      <li>🔗 <a href="https://www.linkedin.com/in/mariedupont" target="_blank" rel="noopener">linkedin.com/in/mariedupont</a></li>
-      <li>📞 <a href="tel:+33601020304">06 01 02 03 04</a></li>
-    </ul>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exemple CV – Modèle EternaWeb</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fdfaf5;
+      color: #3b2e2a;
+    }
 
-    <div class="cta-row">
-         <a href="cv-marie-dupont.pdf" download class="btn-cv">📄 Télécharger mon CV (PDF)</a>
+    .cv-wrapper {
+      display: flex;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fffdf9;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    /* Colonne gauche */
+    .cv-left {
+      background: #e9dfd2; /* beige doux */
+      padding: 25px 15px;
+      width: 30%;
+      text-align: center;
+    }
+    .cv-left img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #6b4a2b; /* contour marron */
+    }
+    .cv-left h2 {
+      font-size: 16px;
+      margin-top: 25px;
+      margin-bottom: 8px;
+      color: #4a3628;
+      border-bottom: 1px solid #bfa58a;
+      padding-bottom: 4px;
+    }
+    .cv-left p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    /* Colonne droite */
+    .cv-right {
+      background: #fffdf9;
+      padding: 30px;
+      width: 70%;
+    }
+    .cv-right h1 {
+      font-size: 28px;
+      margin: 0;
+      color: #4a3628;
+    }
+    .cv-right .role {
+      font-size: 16px;
+      color: #7a5c3f;
+      margin-bottom: 20px;
+    }
+    .cv-right h3 {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #3b2e2a;
+      border-left: 4px solid #b68d5a;
+      padding-left: 8px;
+    }
+    .cv-right ul {
+      margin: 0 0 15px 20px;
+    }
+    .cv-right li {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    /* Footer signature */
+    .cv-footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      background: #f0e6d8;
+      color: #4a3628;
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-wrapper">
+    <!-- Colonne gauche -->
+    <div class="cv-left">
+      <img src="photoprofil.png" alt="Photo de profil">
+      <h2>Contact</h2>
+      <p>📍 Lille, France</p>
+      <p>📧 contact@eternaweb.fr</p>
+      <p>📞 07 49 46 14 34</p>
+
+      <h2>Langues</h2>
+      <p>Français (natif)</p>
+      <p>Anglais (pro)</p>
+      <p>Espagnol (notions)</p>
+
+      <h2>Loisirs</h2>
+      <p>Design</p>
+      <p>Lecture</p>
+      <p>Voyage</p>
     </div>
-  </header>
 
-  <!-- CONTENU -->
-  <main class="container cv-grid">
-    <!-- ... ton contenu (profil, compétences, expériences, etc.) ... -->
-    <!-- Profil -->
-    <section aria-labelledby="cv-profil">
-      <h2 id="cv-profil">Profil</h2>
-      <p>
-        <li>8+ ans d’expérience en gestion de projets web et produits numériques</li>
-        <li>Pilotage de refontes (vitrines & e-commerce)</li>
-        <li>Amélioration des parcours clients et mise en place d’outils no-code</li> 
-        <li>Orientée résultats (KPI, conversion,SEO/UX)</li>
-        <li>Coordination d’équipes pluridisciplinaires (design, contenu, dev)</li>
-      </p>
-    </section>
+    <!-- Colonne droite -->
+    <div class="cv-right">
+      <h1>Danielle Kabongo</h1>
+      <p class="role">Fondatrice EternaWeb | Mini-sites vitrines express</p>
 
-    <!-- Compétences -->
-    <section aria-labelledby="cv-competences">
-      <h2 id="cv-competences">Compétences</h2>
-      <ul class="cv-tags">
-        <li>Gestion de projet</li>
-        <li>Product / UX</li>
-        <li>SEO on-page</li>
-        <li>No-code (Webflow, Notion)</li>
-        <li>Analytics (GA4)</li>
-        <li>Conversion (A/B test)</li>
-        <li>CMS (WordPress)</li>
-        <li>Intégrations (WhatsApp, PayPal)</li>
-      </ul>
-       </section>
-
-    <!-- Expériences -->
-    <section aria-labelledby="cv-experiences">
-      <h2 id="cv-experiences">Expériences</h2>
-
-      <article class="cv-job">
-        <header>
-          <h3>Cheffe de projet digital – Studio Eterna</h3>
-          <small>2022 – 2025 · Paris</small>
-        </header>
-        <ul>
-          <li>Gestion de 30+ mini-sites vitrines & portfolios (PME, freelances).</li>
-          <li>+35% de conversion moyenne via optimisation UX & leads WhatsApp.</li>
-          <li>Standardisation des modèles & process (time-to-deliver &lt; 48h).</li>
-        </ul>
-      </article>
-
-      <article class="cv-job">
-        <header>
-          <h3>Chef de projet – Agence Nova</h3>
-          <small>2019 – 2022 · Lille</small>
-        </header>
-        <ul>
-          <li>Refontes WordPress & tunnels d’acquisition pour 12 clients B2B.</li>
-            <li>Mise en place GA4, tableaux de bord KPI, suivi SEO technique.</li>
-          <li>Coordination équipe (2 designers, 3 devs, 1 rédacteur).</li>
-        </ul>
-      </article>
-
-      <article class="cv-job">
-        <header>
-          <h3>Assistante webmarketing – Startup SaaS</h3>
-          <small>2017 – 2019 · Remote</small>
-        </header>
-        <ul>
-          <li>Campagnes emailing, landing pages et tests A/B (inscriptions +22%).</li>
-          <li>Production de contenus & SEO on-page.</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- Réalisations -->
-    <section aria-labelledby="cv-realisations">
-      <h2 id="cv-realisations">Réalisations</h2>
+      <h3>Expériences</h3>
+      <p><strong>EternaWeb</strong> (2024–2025) – Fondatrice</p>
       <ul>
-        <li><strong>Portfolio « Studio Eterna »</strong> — galerie projets + CTAs WhatsApp/Devis.</li>
-        <li><strong>Mini-site « Brun & Grains »</strong> — branding café, menu en ligne, commandes WA.</li>
-        <li><strong>Vitrine « Évenosa »</strong> — évènementiel, catalogue services & prise de RDV.</li>
-            </ul>
-    </section>
-
-    <!-- Outils -->
-    <section aria-labelledby="cv-outils">
-      <h2 id="cv-outils">Outils</h2>
-      <p>Figma, Notion, Trello, Google Analytics 4, Google Tag Manager, Webflow, WordPress, MailerLite, Stripe/PayPal.</p>
-    </section>
-
-    <!-- Formation -->
-    <section aria-labelledby="cv-formation">
-      <h2 id="cv-formation">Formation</h2>
-      <ul>
-        <li>Master Marketing Digital – Université de Lille (2017)</li>
-        <li>Certifications : GA4 (Analytics), SEO on-page (OpenClassrooms)</li>
+        <li>Création de mini-sites vitrines et CV en ligne express</li>
+        <li>Optimisation visibilité digitale (WhatsApp, LinkedIn, Insta)</li>
+        <li>Livraison rapide (24h–48h) avec design élégant</li>
       </ul>
-    </section>
 
-    <!-- Langues -->
-    <section aria-labelledby="cv-langues">
-      <h2 id="cv-langues">Langues</h2>
-      <p>Français (natif), Anglais (professionnel), Espagnol (intermédiaire).</p>
-    </section>
+      <p><strong>Studio Créatif</strong> (2021–2024) – Web Designer</p>
+      <ul>
+        <li>Design de sites vitrine pour indépendants et PME</li>
+        <li>Personnalisation responsive & mobile first</li>
+      </ul>
 
-    <!-- Contact -->
-    <section id="contact" aria-labelledby="cv-contact">
-      <h2 id="cv-contact">Contact</h2>
-      <p>Disponible rapidement pour échange et démarrage de mission.</p>
-      <div class="cta-row">
-        <a href="cv-marie-dupont.pdf" download class="btn-cv">📄 Télécharger mon CV (PDF)</a>
-      </div>
-    </section>
+      <h3>Formations</h3>
+      <p><strong>BTS Assurance</strong> (en cours) – École Sup Lille</p>
+      <p><strong>Formations en ligne</strong> – UX, SEO, CMS</p>
 
-  </main>
+      <h3>Compétences</h3>
+      <ul>
+        <li>Création de sites (HTML/CSS, GitHub Pages)</li>
+        <li>Outils no-code (Canva, Notion, Webflow)</li>
+        <li>Réseaux sociaux (Instagram, LinkedIn, FB)</li>
+        <li>SEO & visibilité</li>
+      </ul>
+    </div>
+  </div>
 
-  <script defer src="app.js"></script>
+  <!-- Footer signature -->
+  <div class="cv-footer">
+    © 2025 EternaWeb – Mini-sites vitrines & CV express
+  </div>
 </body>
 </html>
