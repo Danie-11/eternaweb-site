@@ -2,32 +2,33 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Exemple CV – Modèle EternaWeb</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CV – Danielle Kabongo</title>
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #fdfaf5;
-      color: #3b2e2a;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f0e6, #eaddc8); /* ✅ beige doré doux */
+      color: #333;
     }
 
     .cv-wrapper {
       display: flex;
       max-width: 1000px;
-      margin: 40px auto;
-      background: #fffdf9;
+      margin: 20px auto;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      min-height: 95vh;
     }
 
     /* Colonne gauche */
     .cv-left {
-      background: #e9dfd2; /* beige doux */
+      background: #f2e6d9; /* ✅ beige plus soutenu */
       padding: 25px 15px;
       width: 30%;
       text-align: center;
+      border-radius: 10px 0 0 10px;
     }
     .cv-left img {
       width: 120px;
@@ -35,15 +36,15 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
-      border: 3px solid #6b4a2b; /* contour marron */
+      border: 3px solid #d4a373; /* ✅ contour doré doux */
     }
     .cv-left h2 {
       font-size: 16px;
       margin-top: 25px;
       margin-bottom: 8px;
-      color: #4a3628;
-      border-bottom: 1px solid #bfa58a;
+      border-bottom: 1px solid #c9b79c; /* ✅ séparateur doré clair */
       padding-bottom: 4px;
+      color: #6a4e2a;
     }
     .cv-left p {
       font-size: 14px;
@@ -52,26 +53,35 @@
 
     /* Colonne droite */
     .cv-right {
-      background: #fffdf9;
+      background: #fff;
       padding: 30px;
       width: 70%;
+      border-radius: 0 10px 10px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .cv-right h1 {
       font-size: 28px;
       margin: 0;
-      color: #4a3628;
+      color: #3e2c16;
     }
     .cv-right .role {
       font-size: 16px;
-      color: #7a5c3f;
+      color: #666;
       margin-bottom: 20px;
     }
     .cv-right h3 {
       font-size: 18px;
       margin-top: 20px;
       margin-bottom: 10px;
-      color: #3b2e2a;
-      border-left: 4px solid #b68d5a;
+      color: #6a4e2a;
+      border-left: 4px solid #d4a373;
       padding-left: 8px;
     }
     .cv-right ul {
@@ -82,13 +92,28 @@
       margin-bottom: 6px;
     }
 
-    /* Footer signature */
-    .cv-footer {
+    /* ✅ Bouton PDF */
+    .btn-cv {
+      display: inline-block;
+      background-color: #d4a373; /* doré doux */
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn-cv:hover {
+      background-color: #b38352; /* doré plus foncé */
+    }
+
+    footer {
       text-align: center;
-      padding: 10px;
       font-size: 12px;
-      background: #f0e6d8;
-      color: #4a3628;
+      padding: 10px;
+      color: #555;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -115,40 +140,47 @@
 
     <!-- Colonne droite -->
     <div class="cv-right">
-      <h1>Danielle Kabongo</h1>
-      <p class="role">Fondatrice EternaWeb | Mini-sites vitrines express</p>
+      <div>
+        <div class="cv-header">
+          <div>
+            <h1>Danielle Kabongo</h1>
+            <p class="role">Fondatrice EternaWeb | Mini-sites vitrines express</p>
+          </div>
+          <!-- ✅ Bouton PDF -->
+          <a href="cv-danielle.pdf" download class="btn-cv">📄 Télécharger PDF</a>
+        </div>
 
-      <h3>Expériences</h3>
-      <p><strong>EternaWeb</strong> (2024–2025) – Fondatrice</p>
-      <ul>
-        <li>Création de mini-sites vitrines et CV en ligne express</li>
-        <li>Optimisation visibilité digitale (WhatsApp, LinkedIn, Insta)</li>
-        <li>Livraison rapide (24h–48h) avec design élégant</li>
-      </ul>
+        <h3>Expériences</h3>
+        <p><strong>EternaWeb</strong> (2024–2025) – Fondatrice</p>
+        <ul>
+          <li>Création de mini-sites vitrines et CV en ligne express</li>
+          <li>Optimisation visibilité digitale (WhatsApp, LinkedIn, Insta)</li>
+          <li>Livraison rapide (24h–48h) avec design élégant</li>
+        </ul>
 
-      <p><strong>Studio Créatif</strong> (2021–2024) – Web Designer</p>
-      <ul>
-        <li>Design de sites vitrine pour indépendants et PME</li>
-        <li>Personnalisation responsive & mobile first</li>
-      </ul>
+        <p><strong>Studio Créatif</strong> (2021–2024) – Web Designer</p>
+        <ul>
+          <li>Design de sites vitrine pour indépendants et PME</li>
+          <li>Personnalisation responsive & mobile first</li>
+        </ul>
 
-      <h3>Formations</h3>
-      <p><strong>BTS Assurance</strong> (en cours) – École Sup Lille</p>
-      <p><strong>Formations en ligne</strong> – UX, SEO, CMS</p>
+        <h3>Formations</h3>
+        <p><strong>BTS Assurance</strong> (en cours) – École Sup Lille</p>
+        <p><strong>Formations en ligne</strong> – UX, SEO, CMS</p>
 
-      <h3>Compétences</h3>
-      <ul>
-        <li>Création de sites (HTML/CSS, GitHub Pages)</li>
-        <li>Outils no-code (Canva, Notion, Webflow)</li>
-        <li>Réseaux sociaux (Instagram, LinkedIn, FB)</li>
-        <li>SEO & visibilité</li>
-      </ul>
+        <h3>Compétences</h3>
+        <ul>
+          <li>Création de sites (HTML/CSS, GitHub Pages)</li>
+          <li>Outils no-code (Canva, Notion, Webflow)</li>
+          <li>Réseaux sociaux (Instagram, LinkedIn, FB)</li>
+          <li>SEO & visibilité</li>
+        </ul>
+      </div>
+
+      <footer>
+        © 2025 EternaWeb – Mini-sites vitrines & CV express
+      </footer>
     </div>
-  </div>
-
-  <!-- Footer signature -->
-  <div class="cv-footer">
-    © 2025 EternaWeb – Mini-sites vitrines & CV express
   </div>
 </body>
 </html>
