@@ -574,3 +574,18 @@ window.onclick = function(event) {
     }
   });
 }
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+// Fermer aussi en cliquant à l’extérieur
+window.onclick = function(e) {
+  const modal = document.getElementById("devisModal");
+  if (e.target === modal) {
+    closeModal("devisModal");
+  }
+};
