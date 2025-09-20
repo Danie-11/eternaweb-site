@@ -237,7 +237,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 }
 .models-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:12px}
 .model-card{max-width:290px;text-decoration:none;color:inherit}
-.model-card img{width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:10px;box-shadow:0 8px 18px #0001}
+.model-card img{width:90%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:10px;box-shadow:0 8px 18px #0001}
 .model-card .btn{display:inline-block;margin-top:8px}
 .cv-gallery {
   display: flex;
@@ -326,27 +326,4 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   right: 16px;
   font-size: 22px;
   cursor: pointer;
-}
-.vitrine-gallery a,
-.port-grid a.work {
-  display: block;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin: 12px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.vitrine-gallery img,
-.port-grid img {
-  width: 100%;
-  height: 220px; /* ✅ même hauteur pour toutes */
-  object-fit: cover;
-}
-
-.vitrine-gallery a:hover,
-.port-grid a.work:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
