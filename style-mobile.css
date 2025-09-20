@@ -309,3 +309,15 @@ a:hover {
   font-size: 22px;
   cursor: pointer;
 }
+.model-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0; /* s'assure que chaque carte est indépendante */
+}
+
+.model-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 5; /* carte survolée passe au-dessus */
+}
