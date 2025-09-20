@@ -561,31 +561,3 @@ if (devisForm && sendForm){
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
   });
 }
-function openModal(id) {
-  document.getElementById(id).style.display = "block";
-}
-function closeModal(id) {
-  document.getElementById(id).style.display = "none";
-}
-window.onclick = function(event) {
-  document.querySelectorAll('.modal').forEach(modal => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  });
-}
-function openModal(id) {
-  document.getElementById(id).style.display = "block";
-}
-
-function closeModal(id) {
-  document.getElementById(id).style.display = "none";
-}
-
-// Fermer aussi en cliquant à l’extérieur
-window.onclick = function(e) {
-  const modal = document.getElementById("devisModal");
-  if (e.target === modal) {
-    closeModal("devisModal");
-  }
-};
