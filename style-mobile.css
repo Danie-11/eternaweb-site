@@ -125,43 +125,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .footer-info{ display:flex; gap:22px; flex-wrap:wrap; justify-content:center }
 .footer-logo{ max-width:180px; width:78%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95 }
 .footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
-.cv-gallery {
-  display: flex;
-  flex-direction: column;   /* aligne verticalement sur mobile */
-  align-items: center;      /* centre horizontalement */
-  gap: 1rem;
-}
 
-.cv-gallery .card {
-  width: 70%;          /* prend 90% de la largeur de l’écran */
-  max-width: 260px;    /* mais jamais plus large qu’un cadre sympa */
-}
-.cv-gallery img {
-  max-width: 100%;    /* jamais plus large que le conteneur */
-  height: auto;       /* garde les proportions */
-  border-radius: 12px;
-  display: block;
-  margin: auto;
-}
-
-.cv-gallery .card {
-  max-width: 360px;   /* limite la largeur de chaque carte */
-  width: 90%;         /* prend 90% de l’écran */
-}
-.models-grid .model-card {
-  max-width: 360px;   /* largeur max de la carte */
-  width: 90%;         /* prend 90% de l’écran sur mobile */
-  margin: 1rem auto;  /* espace et centrage */
-}
-
-.models-grid img {
-  max-width: 240%; 
-   width:90%;
-  height: auto; 
-  display: block;
-  margin: auto;
-   border-radius:8px;
-}
 /* ---- Ajustements mobile accueil ---- */
 
 /* Hero */
@@ -186,88 +150,6 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   font-size: 0.9rem;
 }
 
-/* Cartes modèles (CV / Portfolio / Vitrine) */
-.models-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;          /* espace raisonnable entre les cards */
-}
-
-.models-grid .model-card {
-  width: 85%;         /* pas toute la largeur de l’écran */
-  max-width: 240px;   /* limite la largeur */
-}
-
-.models-grid .model-card img {
-  width: 100%;
-  height: auto;
-}
-.model-card a {
-  text-decoration: none;   /* Enlève le soulignement */
-  color: inherit;          /* Garde la couleur du texte parent */
-}
-
-.model-card a:hover {
-  color: #5a4634;          /* (optionnel) couleur hover plus foncée */
-  text-decoration: underline; /* ou pas de soulignement si tu veux rester clean */
-}
-/* ---- Ajustements mobile accueil ---- */
-
-/* Hero */
-.hero-gold .hero-logo {
-  max-width: 120px;   /* logo plus petit */
-}
-
-.hero-gold h1 {
-  font-size: 1.8rem;  /* titre plus petit */
-}
-
-.hero-gold h2 {
-  font-size: 1.2rem;
-}
-
-.hero-gold .cta-row {
-  gap: 0.5rem;        /* moins d’espace entre boutons */
-}
-
-.hero-gold .btn {
-  padding: 8px 14px;
-  font-size: 0.9rem;
-}
-
-/* Cartes modèles (CV / Portfolio / Vitrine) */
-.models-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;          /* espace raisonnable entre les cards */
-}
-
-.models-grid .model-card {
-  width: 70%;         /* pas toute la largeur de l’écran */
-  max-width: 220px;   /* limite la largeur */
-}
-
-.models-grid .model-card img {
-  width: 75%;
-  height: auto;
-}
-a {
-  color: #2b1f18;        /* noir/brun foncé élégant */
-  text-decoration: none; /* enlève le soulignement */
-}
-
-a:hover {
-  color: #5a4634;        /* légèrement plus foncé au survol */
-  text-decoration: underline; /* optionnel, si tu veux un effet hover */
-}
-.model-card .btn {
-  display: block;        /* le bouton prend toute la ligne */
-  margin: 12px auto 0;   /* espace haut + centrage horizontal */
-  text-align: center;    /* texte centré */
-  width: fit-content;    /* largeur qui s'adapte au texte */
-}
 /* ----- Bloc devis caché par défaut ----- */
 #devis {
   display: none;          /* invisible */
@@ -283,9 +165,6 @@ a:hover {
   transform: translateY(0); /* remonte en place */
 }
 
-.model-card {
-  position: relative;
-  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 0; /* s'assure que chaque carte est indépendante */
 }
