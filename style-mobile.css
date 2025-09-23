@@ -240,3 +240,6 @@ a:hover {
   margin: auto;
    border-radius:8px;
 }
+.model-card {
+  position: relative;
+  overflow: hidden;
