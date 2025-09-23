@@ -174,3 +174,55 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   z-index: 5; /* carte survolée passe au-dessus */
 }
+.models-grid .model-card {
+  width: 70%;         /* pas toute la largeur de l’écran */
+  max-width: 220px;   /* limite la largeur */
+}
+
+.models-grid .model-card img {
+  width: 75%;
+  height: auto;
+}
+a {
+  color: #2b1f18;        /* noir/brun foncé élégant */
+  text-decoration: none; /* enlève le soulignement */
+}
+
+a:hover {
+  color: #5a4634;        /* légèrement plus foncé au survol */
+  text-decoration: underline; /* optionnel, si tu veux un effet hover */
+}
+.model-card .btn {
+  display: block;        /* le bouton prend toute la ligne */
+  margin: 12px auto 0;   /* espace haut + centrage horizontal */
+  text-align: center;    /* texte centré */
+  width: fit-content;    /* largeur qui s'adapte au texte */
+}
+
+
+
+.models-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;          /* espace raisonnable entre les cards */
+}
+
+.models-grid .model-card {
+  width: 85%;         /* pas toute la largeur de l’écran */
+  max-width: 240px;   /* limite la largeur */
+}
+
+.models-grid .model-card img {
+  width: 100%;
+  height: auto;
+}
+.model-card a {
+  text-decoration: none;   /* Enlève le soulignement */
+  color: inherit;          /* Garde la couleur du texte parent */
+}
+
+.model-card a:hover {
+  color: #5a4634;          /* (optionnel) couleur hover plus foncée */
+  text-decoration: underline; /* ou pas de soulignement si tu veux rester clean */
+}
