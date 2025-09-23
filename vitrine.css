@@ -63,54 +63,20 @@ body.tpl-vitrine::before { display:none; }
 
 .vitrine-gallery a:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
 .vitrine-gallery img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 8px;
+  max-width: 120%;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .vitrine-gallery span {
   font-weight: 600;
   margin-top: 4px;
 }
-.vitrine-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  margin-top: 20px;
-}
 
-.vitrine-gallery a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #5c4433;
-  background: #fff;
-  padding: 14px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-  transition: all .2s ease-in-out;
-}
-
-.vitrine-gallery a:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.12);
-}
-
-.vitrine-gallery img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 8px;
-}
-
-.vitrine-gallery span {
-  font-weight: 600;
-  margin-top: 4px;
-}
 /* === STYLE ÉVÉNEMENTIEL === */
 
 /* Titres */
