@@ -1,0 +1,46 @@
+/* Look très minimal, fond clair et typographie sobre */
+body.tpl-cv {
+  background: #f7f6f4;   /* appliqué seulement à la page CV */
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body.tpl-cv::before { display:none; }
+
+.cv-hero { text-align:center; background:#fff; }
+
+.cv-photo {
+  width:120px; height:120px; border-radius:50%;
+  object-fit:cover; box-shadow:0 6px 16px #0001; margin:0 auto 10px;
+}
+
+.cv-role { opacity:.8; margin:.15rem 0 .6rem }
+
+.cv-infos {
+  list-style:none; padding:0; margin:.4rem 0;
+  display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+}
+
+.cv-grid { text-align:left; }
+.cv-grid h2 { color:#4b3a2f; margin-top:10px; }
+
+.cv-tags {
+  display:flex; gap:8px; flex-wrap:wrap; list-style:none; padding:0;
+}
+.cv-tags li {
+  background:#fff; border:1px solid #eee;
+  padding:6px 10px; border-radius:999px;
+}
+
+.cv-job small { opacity:.7; display:block; margin:.15rem 0 .35rem; }
+
+.cv-container {
+  background:#fff;
+  width: 100%;            /* prend toute la largeur dispo */
+  max-width:900px;        /* mais pas plus large */
+  margin: 40px auto;      /* centré */
+  padding:40px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
