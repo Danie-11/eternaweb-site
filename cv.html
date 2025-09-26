@@ -8,14 +8,53 @@
   <!-- CSS globaux -->
   <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
   <link rel="stylesheet" href="style-mobile.css"  media="(max-width:600px)">
-  
-  <!-- CSS spécifique CV -->
-  <link rel="stylesheet" href="cv.css">
+
+  <!-- CSS spécifique CV (intégré ici) -->
+  <style>
+  /* Look très minimal, fond clair et typographie sobre */
+  body.tpl-cv { background: #f7f6f4; }
+  body.tpl-cv::before { display:none; }
+
+  .cv-hero { text-align:center; background:#fff; }
+  .cv-photo{
+    width:120px; height:120px; border-radius:50%;
+    object-fit:cover; box-shadow:0 6px 16px #0001; margin:0 auto 10px;
+  }
+  .cv-role{ opacity:.8; margin:.15rem 0 .6rem }
+  .cv-infos{ list-style:none; padding:0; margin:.4rem 0; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .cv-grid{ text-align:left; }
+  .cv-grid h2{ color:#4b3a2f; margin-top:10px; }
+  .cv-tags{ display:flex; gap:8px; flex-wrap:wrap; list-style:none; padding:0; }
+  .cv-tags li{ background:#fff; border:1px solid #eee; padding:6px 10px; border-radius:999px; }
+  .cv-job small{ opacity:.7; display:block; margin:.15rem 0 .35rem; }
+
+  /* Mise en page principale */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background: #f5f3f0; /* fond doux */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* aligné en haut */
+    min-height: 100vh;
+  }
+
+  .cv-container {
+    background: #fff;
+    max-width: 900px; /* largeur max (responsive) */
+    width: 100%;
+    margin: 20px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  </style>
 </head>
 <body class="tpl-cv">
 
   <!-- Section modèles -->
-  <section class="container">
+  <section class="cv-container">
     <h2>📄 Modèles de CV</h2>
     <p>Choisissez un style qui correspond à votre profil.</p>
 
@@ -30,7 +69,7 @@
   </section>
 
   <!-- Tarifs CV -->
-  <section class="container pricing-cv">
+  <section class="cv-container pricing-cv">
     <h2>💼 Formules CV</h2>
     <p>Un CV en ligne sur-mesure, adapté à vos besoins.</p>
 
