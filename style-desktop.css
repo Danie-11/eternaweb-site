@@ -201,3 +201,22 @@ h2 { margin:0 0 12px; font-size:1.5rem; color:#5e4b3c; }
 .footer a { color:#fff0e6; text-decoration:none; }
 .footer a:hover { text-decoration:underline; }
 .copyright { text-align:center; font-size:14px; opacity:.8; margin-top:14px; }
+/* Pour améliorer le rendu du texte */
+body, .model-card p, .gold-title, .gold-sub {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* S'assurer que le badge de texte est bien lié à la carte */
+.model-card {
+  position: relative;
+  font-family: Inter, sans-serif; /* cohérence */
+}
+
+.model-card p {
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
