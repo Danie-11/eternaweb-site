@@ -1,53 +1,47 @@
-<section class="hero-portfolio">
-  <div class="hero-wrap">
-    <h1>Studio Eterna</h1>
-    <p>Identités visuelles, UI, sites élégants.</p>
-    <div class="cta-row">
-      <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-      <a href="https://wa.me/33749723434" target="_blank" class="btn btn-wa">WhatsApp</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Modèle Portfolio – EternaWeb</title>
+
+  <!-- CSS communs -->
+  <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
+  <link rel="stylesheet" href="style-mobile.css"  media="(max-width:600px)">
+  <!-- Spécifique au template portfolio -->
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body class="tpl-portfolio">
+  <!-- Hero -->
+  <header class="port-hero">
+    <div class="port-inner">
+      <h1 data-i18n="port.h1">Studio Eterna</h1>
+      <p data-i18n="port.tag">Identités visuelles, UI, sites élégants.</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../index.html#devis" data-i18n="port.cta.devis">Demander un devis</a>
+        <a class="btn btn-wa" href="https://wa.me/33749723434">WhatsApp</a>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="projects" class="portfolio-grid">
-  <div class="card">
-    <img src="images/projet-cafe.jpg" alt="Branding Café">
-    <h3>Branding Café</h3>
-    <p>Identité & site vitrine</p>
-  </div>
+  <!-- Grille projets -->
+  <main id="works" class="port-grid container">
+  <a class="work" href="demos/branding-cafe.html" target="_blank"><img src="images/folio1.png" alt=""><span>Branding Café</span></a>
+  <a class="work" href="demos/site-artisan.html"   target="_blank"><img src="images/folio2.png" alt=""><span>Site artisan</span></a>
+  <a class="work" href="demos/landing-saas.html"   target="_blank"><img src="images/folio3.png" alt=""><span>Landing SaaS</span></a>
+  <a class="work" href="demos/portfolio-photo.html" target="_blank"><img src="images/folio4.png" alt=""><span>Portfolio photo</span></a>
+  <a class="work" href="demos/evenementiel.html"   target="_blank"><img src="images/folio5.png" alt=""><span>Événementiel</span></a>
+  <a class="work" href="demos/restaurant-chic.html" target="_blank"><img src="images/folio6.png" alt=""><span>Restau chic</span></a>
+</main>
 
-  <div class="card">
-    <img src="images/projet-artisan.jpg" alt="Site artisan">
-    <h3>Site artisan</h3>
-    <p>Menuisier en ligne</p>
-  </div>
+  <!-- À propos -->
+  <section class="container port-about">
+    <h2 data-i18n="port.about.h2">À propos</h2>
+    <p data-i18n="port.about.p">Je crée des expériences web simples, raffinées et performantes. Disponible freelance.</p>
+  </section>
 
-  <div class="card">
-    <img src="images/projet-saas.jpg" alt="Landing SaaS">
-    <h3>Landing SaaS</h3>
-    <p>Gestion & intégrations</p>
-  </div>
-
-  <div class="card">
-    <img src="images/projet-photo.jpg" alt="Portfolio photo">
-    <h3>Portfolio photo</h3>
-    <p>Lumières & émotions</p>
-  </div>
-
-  <div class="card">
-    <img src="images/projet-event.jpg" alt="Événementiel">
-    <h3>Événementiel</h3>
-    <p>Mariages & réceptions</p>
-  </div>
-
-  <div class="card">
-    <img src="images/projet-resto.jpg" alt="Resto chic">
-    <h3>Resto chic</h3>
-    <p>Site gastronomique</p>
-  </div>
-</section>
-
-<section class="about">
-  <h2>À propos</h2>
-  <p>Je crée des expériences web simples, raffinées et performantes. Disponible freelance.</p>
-</section>
+  <!-- JS -->
+  <script src="app.js" defer></script>
+</body>
+</html>
