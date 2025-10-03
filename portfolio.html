@@ -8,57 +8,83 @@
   <!-- CSS communs -->
   <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
   <link rel="stylesheet" href="style-mobile.css"  media="(max-width:600px)">
-  <!-- Spécifique au template portfolio -->
   <link rel="stylesheet" href="portfolio.css">
 </head>
 <body class="tpl-portfolio">
-  <!-- Hero -->
-  <header class="port-hero">
-    <div class="port-inner">
-      <h1 data-i18n="port.h1">Studio Eterna</h1>
-      <p data-i18n="port.tag">Identités visuelles, UI, sites élégants.</p>
 
-      <div class="cta-row">
-        <a class="btn btn-primary" href="index.html#devis" data-i18n="port.cta.devis">Demander un devis</a>
-        <a class="btn btn-wa" href="https://wa.me/33749723434">WhatsApp</a>
+  <!-- Section modèles -->
+  <section class="container">
+    <h2>🎨 Modèles de Portfolio</h2>
+    <p>Idéal pour artistes, créateurs et designers.</p>
+
+    <div class="port-gallery">
+      <a class="card model-card" href="demos/branding-cafe.html">
+        <img src="images/folio1.png" alt="Branding Café">
+      </a>
+      <a class="card model-card" href="demos/site-artisan.html">
+        <img src="images/folio2.png" alt="Site artisan">
+      </a>
+      <a class="card model-card" href="demos/landing-saas.html">
+        <img src="images/folio3.png" alt="Landing SaaS">
+      </a>
+      <a class="card model-card" href="demos/portfolio-photo.html">
+        <img src="images/folio4.png" alt="Portfolio photo">
+      </a>
+      <a class="card model-card" href="demos/evenementiel.html">
+        <img src="images/folio5.png" alt="Événementiel">
+      </a>
+      <a class="card model-card" href="demos/restaurant-chic.html">
+        <img src="images/folio6.png" alt="Restaurant chic">
+      </a>
+    </div>
+  </section>
+
+  <!-- Tarifs Portfolio -->
+  <section class="container pricing-portfolio">
+    <h2>💼 Formules Portfolio</h2>
+    <p>Exposez vos créations avec élégance.</p>
+
+    <div class="pricing-cards">
+      <div class="card">
+        <h3>📂 Pack Créatif – 89 €</h3>
+        <ul>
+          <li>Mini-site (2–3 pages)</li>
+          <li>Galerie photos/vidéos</li>
+          <li>Présentation créateur</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🌟 Pack Premium – 149 €</h3>
+        <ul>
+          <li>Tout le Pack Créatif</li>
+          <li>Section blog</li>
+          <li>Optimisation SEO</li>
+          <li>Statistiques incluses</li>
+        </ul>
       </div>
     </div>
-  </header>
-
-  <!-- Grille projets -->
-  <main id="works" class="port-grid">
-    <a class="work" href="demos/branding-cafe.html">
-      <img src="images/folio1.png" alt="Branding Café">
-    </a>
-
-    <a class="work" href="demos/site-artisan.html">
-      <img src="images/folio2.png" alt="Site artisan">
-    </a>
-
-    <a class="work" href="demos/landing-saas.html">
-      <img src="images/folio3.png" alt="Landing SaaS">
-    </a>
-
-    <a class="work" href="demos/portfolio-photo.html">
-      <img src="images/folio4.png" alt="Portfolio photo">
-    </a>
-
-    <a class="work" href="demos/evenementiel.html">
-      <img src="images/folio5.png" alt="Événementiel">
-    </a>
-
-    <a class="work" href="demos/restaurant-chic.html">
-      <img src="images/folio6.png" alt="Restau chic">
-    </a>
-  </main>
-
-  <!-- À propos -->
-  <section class="container port-about">
-    <h2 data-i18n="port.about.h2">À propos</h2>
-    <p data-i18n="port.about.p">Je crée des expériences web simples, raffinées et performantes. Disponible freelance.</p>
   </section>
+
+  <p><a href="index.html" class="btn btn-primary">⬅ Retour à l’accueil</a></p>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-columns">
+      <nav class="footer-info" aria-label="Liens légaux">
+        <a href="faq.html">FAQ</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="code-de-conduite.html">Code de conduite</a>
+      </nav>
+      <p class="copyright">© 2025 EternaGlow — Tous droits réservés</p>
+    </div>
+  </footer>
 
   <!-- JS -->
   <script src="app.js" defer></script>
+
+    <p><a href="index.html" class="btn btn-primary">⬅ Retour à l’accueil</a></p>
 </body>
 </html>
