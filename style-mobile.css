@@ -34,7 +34,7 @@ body {
 /* Menu mobile */
 .menu-toggle {
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 0.75rem;
   background: #222;
   color: #fff;
@@ -130,7 +130,7 @@ body {
   background: #fff;
 }
 .model-card img {
-  max-width: 100%;
+  max-width: 90%;
   border-radius: 4px;
 }
 .model-card p {
@@ -175,25 +175,6 @@ body {
   padding: 0.75rem;
 }
 
-/* Tarifs */
-.pricing-section {
-  padding: 2rem 1rem;
-}
-.pricing-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.pricing-cards .card {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 1rem;
-  background: #fff;
-}
-.pricing-cards h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
 
 /* Témoignages */
 .testimonials {
