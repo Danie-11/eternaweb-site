@@ -83,3 +83,54 @@ body {
   margin-top: 0;
   color: #4b2e1f;
 }
+.cv-models {
+  display: flex;
+  gap: 1.5rem;         /* espace entre les cartes */
+  justify-content: center; /* centrer horizontalement */
+  flex-wrap: wrap;     /* pour que ça passe bien sur mobile */
+}
+
+.cv-models .card {
+  flex: 1 1 200px;     /* largeur flexible avec min 200px */
+  max-width: 300px;    /* tu peux ajuster selon ta mise en page */
+}
+.work {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 24px #0001;
+  max-width: 320px;   /* limite de largeur */
+  margin: 0 auto;
+}
+.work img {
+  width: 100%;
+  height: 200px;      /* hauteur fixe */
+  object-fit: cover;  /* pas déformé */
+  display: block;
+  transform: scale(1.02);
+  transition: .35s transform ease;
+}
+.work span {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 12px;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.work:hover img {
+  transform: scale(1.08);
+}
+.models {
+  display: flex;
+  gap: 1.5rem;              /* espace entre les cartes */
+  justify-content: center;  /* centrer horizontalement */
+  flex-wrap: wrap;          /* passe bien sur mobile */
+}
+
+.models .card {
+  flex: 1 1 200px;          /* largeur flexible min 200px */
+  max-width: 300px;         /* ajuste selon la mise en page */
+}
