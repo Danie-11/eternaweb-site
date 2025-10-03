@@ -561,3 +561,21 @@ if (devisForm && sendForm){
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
   });
 }
+// ===== Fermeture automatique du devis quand on clique ailleurs =====
+document.addEventListener('click', (e)=>{
+  const devis = $('#devis');
+  if (!devis) return;
+
+  // si on clique DANS le devis ou sur un bouton/lien qui l'ouvre → on ignore
+  if (
+    devis.contains(e.target) || 
+    e.target.closest('a[href="#devis"]') || 
+    e.target.closest('#goDevis') || 
+    e.target.closest('.choose-plan')
+  ) {
+    return;
+  }
+
+  // sinon → on ferme
+  devis.classList.remove('show');
+});
