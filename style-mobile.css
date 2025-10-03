@@ -1,222 +1,309 @@
-/* ================================
-   Style Mobile – EternaWeb
-   Pour écrans ≤ 600px
-   ================================ */
+/* ===============================
+   MOBILE (<=600px) — feuille autonome
+   =============================== */
 
-/* Reset rapide */
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.5;
-  background: #fff;
-  color: #222;
+/* ---- Variables / base ---- */
+:root{
+  --brown:#6b4b3e; --brown-dark:#3b2a22; --ink:#2d1e15;
+  --cream:#fffaf7; --paper:#FFF9F3; --gold:#CBB27A; --gold-600:#AE945E;
+  --choco:#4b332a;
 }
+*{ box-sizing:border-box }
+html,body{ margin:0; padding:0; overflow-x:hidden; }
 
-/* Barre d’annonce */
-.announce-bar {
-  font-size: 0.85rem;
-  padding: 0.5rem;
-  text-align: center;
-  background: #f4f4f4;
+body{
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(1200px 800px at 10% 10%, #f0e6d2 0%, #e6d2b0 35%, #e0c896 55%, #d3b076 75%, #b89257 100%) fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 58px 12px 0;   /* un peu moins que desktop */
 }
+body::before{
+  content:""; position:fixed; inset:0 0 auto 0; height:40vh; pointer-events:none;
+  background: linear-gradient(to bottom, rgba(0,0,0,.14), rgba(0,0,0,0));
+  z-index:0;
+}
+body > *{ position:relative; z-index:1; }
 
-/* Logo */
-.logo-container {
+h1,h2,h3,.gold-title,.gold-sub{ font-family:"Playfair Display", serif; letter-spacing:.2px; }
+h1{ margin:0 0 6px; font-size:1.9rem; color:#7a5c45 }
+h2{ margin:0 0 12px; font-size:1.3rem; color:#5e4b3c }
+
+/* ---- Annonce & globe langues ---- */
+.announce-bar{ position:fixed; top:6px; left:50%; transform:translateX(-50%);
+  z-index:1100; max-width:92%; padding:4px 8px; font-size:13px; line-height:1.35;
+  color:#2d1e15; background:rgba(255,255,255,.85); backdrop-filter:blur(4px);
+  border:1px solid var(--gold); border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
+.floating-tools{ position:fixed; top:10px; right:10px; display:flex; gap:8px; z-index:1200; }
+.fab{ width:40px; height:40px; border:none; border-radius:50%; cursor:pointer;
+  background:rgba(255,255,255,.9); box-shadow:0 4px 12px rgba(0,0,0,.15); font-size:19px; line-height:40px; }
+.lang-wrap{ position:relative }
+.lang-menu{ position:absolute; top:46px; right:0; min-width:170px; display:none;
+  background:#fff; border-radius:12px; box-shadow:0 14px 30px rgba(0,0,0,.18); overflow:hidden; }
+.lang-menu.show{ display:block }
+.lang{ width:100%; text-align:left; border:0; background:transparent; padding:10px 12px; cursor:pointer; }
+.lang:hover{ background:#f7f3ee }
+
+/* ---- Logo principal (en haut de page) ---- */
+.logo-container{ text-align:center; margin:4px 0 10px; }
+.logo-badge{ display:inline-block; padding:6px 10px; border-radius:10px; background:transparent; }
+.logo-simple{ max-width:280px; width:78%; height:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+
+/* ---- Menu ---- */
+.menu-toggle{
+  position:sticky; top:4px; z-index:4; width:100%; background:#5a3a2f; color:#fff; border:0;
+  cursor:pointer; padding:10px 12px; border-radius:12px; max-width:980px; margin:0 auto 8px; display:block;
+}
+.menu{ display:none; max-width:980px; margin:8px auto 0; background:linear-gradient(90deg,#f0e8da,var(--choco)); padding:10px 0; border-radius:14px; }
+.menu.show{ display:block }
+.menu ul{ margin:0; padding:0; list-style:none; display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
+.menu a{ color:#fff; text-decoration:none; padding:8px 12px; border-radius:12px; }
+.menu a:hover{ background:rgba(255,223,174,.3); color:#2b1f18 }
+
+/* ---- Hero ---- */
+.hero-gold{
+  max-width:100%; margin:18px auto; padding:18px 12px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(203,178,122,.35);
+  border-radius:18px; box-shadow:0 12px 40px rgba(0,0,0,.12); backdrop-filter:blur(2px);
+}
+.hero-wrap{ display:block; }
+.hero-copy{ padding:4px 6px; text-align:center; }
+.gold-title{ font-size: clamp(26px, 7vw, 34px); margin:6px 0 6px; color:#6b4b3e; }
+.gold-sub{   font-size: clamp(16px, 5vw, 20px); color:#5e4b3c; margin:0 0 8px; }
+.gold-lead{  font-size: clamp(14px, 4.2vw, 18px); opacity:.95; margin:0 0 12px; }
+
+/* petit globe au-dessus du titre (image dans .hero-gold) */
+.hero-gold img{ width:64px; height:auto; margin:6px auto 2px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-rotate(12deg); display:block; }
+
+/* ---- Conteneurs / cartes ---- */
+.container{ background:rgba(255,255,255,.92); max-width:100%; margin:18px auto; padding:24px 14px; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,.08); text-align:center; }
+.page-card{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:20px 14px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+.testimonials{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:18px 12px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+
+/* ---- CTA (WhatsApp / PayPal / Vos consignes) — taille contrôlée ---- */
+.cta-row{ margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:10px 14px; border-radius:12px; border:0; cursor:pointer; text-decoration:none; font-weight:700;
+  /* >>> limite stricte sur mobile <<< */
+  max-width:min(80vw, 260px);
+  width: 86vw;                 /* s’adapte à la largeur écran */
+  font-size:14px;
+}
+.btn-ico{ height:18px; width:auto; display:block; }
+
+/* normaliser les logos internes (certaines versions SVG sont grandes) */
+.btn img{ max-height:22px; width:auto; display:block; }
+
+/* couleurs */
+.btn-wa{ background:#25D366; color:#fff; filter:saturate(1.05) }
+.btn-pp{ background:#ffc439; color:#000; filter:contrast(1.05) }
+.btn-primary{
+  background: linear-gradient(180deg, #d9be85, #b9935a);
+  color:#2b1f18; font-weight:700; border:0; box-shadow:0 12px 24px rgba(0,0,0,.18);
+  transition: transform .18s ease, filter .2s;
+}
+.btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+
+/* ---- Formulaire / devis ---- */
+.devis-grid, .grid-2{ display:grid; grid-template-columns:1fr; gap:12px; }
+input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10px 12px; background:#fff; }
+#devis{ display:none } #devis.show{ display:block }
+
+/* ---- Pricing ---- */
+.pricing-section{ background:linear-gradient(90deg,#f5ede2,#e6d6c3); margin:24px auto 0; padding:22px 12px; text-align:center }
+.pricing-cards{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:12px }
+.card{ background:var(--paper); border-radius:16px; padding:18px; max-width:310px; text-align:left; box-shadow:0 6px 16px rgba(0,0,0,.1); outline:1px solid #0001 }
+
+/* ---- Footer ---- */
+.footer{ background:linear-gradient(to bottom,#4b332a 0 92%, rgba(75,51,42,0) 100%); color:#eee; text-align:center; padding:18px 12px; margin:26px auto; border-radius:16px; }
+.footer-columns{ max-width:100%; margin:0 auto; display:flex; gap:12px; flex-direction:column; align-items:center; }
+.footer-info{ display:flex; gap:22px; flex-wrap:wrap; justify-content:center }
+.footer-logo{ max-width:180px; width:78%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95 }
+.footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
+.cv-gallery {
   display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-}
-.logo-simple {
-  max-width: 120px;
-  height: auto;
+  flex-direction: column;   /* aligne verticalement sur mobile */
+  align-items: center;      /* centre horizontalement */
+  gap: 1rem;
 }
 
-/* Menu mobile */
-.menu-toggle {
+.cv-gallery .card {
+  width: 70%;          /* prend 90% de la largeur de l’écran */
+  max-width: 260px;    /* mais jamais plus large qu’un cadre sympa */
+}
+.cv-gallery img {
+  max-width: 100%;    /* jamais plus large que le conteneur */
+  height: auto;       /* garde les proportions */
+  border-radius: 12px;
   display: block;
-  width: 100%;
-  padding: 0.75rem;
-  background: #222;
-  color: #fff;
-  font-size: 1rem;
-  text-align: left;
-  border: none;
+  margin: auto;
 }
 
-.menu {
-  display: none;
-  flex-direction: column;
-  background: #fefefe;
-  padding: 0.5rem;
+.cv-gallery .card {
+  max-width: 360px;   /* limite la largeur de chaque carte */
+  width: 90%;         /* prend 90% de l’écran */
 }
-.menu.show {
-  display: flex;
-}
-.menu a {
-  padding: 0.75rem;
-  text-decoration: none;
-  color: #222;
-  font-weight: 600;
-  border-bottom: 1px solid #eee;
+.models-grid .model-card {
+  max-width: 360px;   /* largeur max de la carte */
+  width: 90%;         /* prend 90% de l’écran sur mobile */
+  margin: 1rem auto;  /* espace et centrage */
 }
 
-/* Section hero */
-.hero-gold {
-  padding: 2rem 1rem;
-  text-align: center;
+.models-grid img {
+  max-width: 280%; 
+   width:100%;
+  height: auto; 
+  display: block;
+  margin: auto;
+   border-radius:8px;
 }
-.hero-logo {
-  max-width: 140px;
-  margin: 0 auto 1rem;
+/* ---- Ajustements mobile accueil ---- */
+
+/* Hero */
+.hero-gold .hero-logo {
+  max-width: 120px;   /* logo plus petit */
 }
-.gold-title {
-  font-size: 1.6rem;
-  margin: 0.5rem 0;
-  font-family: 'Playfair Display', serif;
+
+.hero-gold h1 {
+  font-size: 1.8rem;  /* titre plus petit */
 }
-.gold-sub {
-  font-size: 1rem;
-  font-weight: 600;
+
+.hero-gold h2 {
+  font-size: 1.2rem;
 }
-.gold-lead {
+
+.hero-gold .cta-row {
+  gap: 0.5rem;        /* moins d’espace entre boutons */
+}
+
+.hero-gold .btn {
+  padding: 8px 14px;
   font-size: 0.9rem;
-  margin: 0.75rem 0 1.5rem;
-}
-.cta-row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.75rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-}
-.btn-wa {
-  background: #25d366;
-  color: #fff;
-}
-.btn-pp {
-  background: #0070ba;
-  color: #fff;
-}
-.btn-primary {
-  background: #222;
-  color: #fff;
 }
 
-/* Cartes modèles */
-.models {
-  padding: 2rem 1rem;
-}
+/* Cartes modèles (CV / Portfolio / Vitrine) */
 .models-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1rem;          /* espace raisonnable entre les cards */
 }
-.model-card {
+
+.models-grid .model-card {
+  width: 85%;         /* pas toute la largeur de l’écran */
+  max-width: 280px;   /* limite la largeur */
+}
+
+.models-grid .model-card img {
+  width: 100%;
+  height: auto;
+}
+.model-card a {
+  text-decoration: none;   /* Enlève le soulignement */
+  color: inherit;          /* Garde la couleur du texte parent */
+}
+
+.model-card a:hover {
+  color: #5a4634;          /* (optionnel) couleur hover plus foncée */
+  text-decoration: underline; /* ou pas de soulignement si tu veux rester clean */
+}
+/* ---- Ajustements mobile accueil ---- */
+
+/* Hero */
+.hero-gold .hero-logo {
+  max-width: 120px;   /* logo plus petit */
+}
+
+.hero-gold h1 {
+  font-size: 1.8rem;  /* titre plus petit */
+}
+
+.hero-gold h2 {
+  font-size: 1.2rem;
+}
+
+.hero-gold .cta-row {
+  gap: 0.5rem;        /* moins d’espace entre boutons */
+}
+
+.hero-gold .btn {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}
+
+/* Cartes modèles (CV / Portfolio / Vitrine) */
+.models-grid {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  padding: 1rem;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  background: #fff;
+  gap: 1rem;          /* espace raisonnable entre les cards */
 }
-.model-card img {
-  max-width: 100%;
-  border-radius: 4px;
+
+.models-grid .model-card {
+  width: 70%;         /* pas toute la largeur de l’écran */
+  max-width: 240px;   /* limite la largeur */
 }
-.model-card p {
-  font-size: 0.9rem;
-  margin: 0.75rem 0;
+
+.models-grid .model-card img {
+  width: 75%;
+  height: auto;
+}
+a {
+  color: #2b1f18;        /* noir/brun foncé élégant */
+  text-decoration: none; /* enlève le soulignement */
+}
+
+a:hover {
+  color: #5a4634;        /* légèrement plus foncé au survol */
+  text-decoration: underline; /* optionnel, si tu veux un effet hover */
 }
 .model-card .btn {
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
+  display: block;        /* le bouton prend toute la ligne */
+  margin: 12px auto 0;   /* espace haut + centrage horizontal */
+  text-align: center;    /* texte centré */
+  width: fit-content;    /* largeur qui s'adapte au texte */
 }
-
-/* Formulaire devis */
+/* ----- Bloc devis caché par défaut ----- */
 #devis {
-  padding: 2rem 1rem;
-}
-.devis-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.devis-grid label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  font-size: 0.9rem;
-}
-.devis-grid input,
-.devis-grid select,
-.devis-grid textarea {
-  padding: 0.6rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-.grid-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.btn.btn-primary {
-  font-size: 1rem;
-  padding: 0.75rem;
+  display: none;          /* invisible */
+  opacity: 0;             /* transparent */
+  transform: translateY(20px); /* décalé vers le bas */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-
-/* Témoignages */
-.testimonials {
-  padding: 2rem 1rem;
-}
-.t-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-blockquote {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  border-left: 4px solid #ddd;
-  padding-left: 1rem;
-  margin: 0;
-}
-
-/* Footer */
-.footer {
-  background: #222;
-  color: #fff;
-  padding: 1.5rem 1rem;
-  text-align: center;
-}
-.footer-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-.footer-info a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-.footer-info a:hover {
-  text-decoration: underline;
-}
-#devis {
-  display: none;
-}
+/* ----- Quand on ajoute .show ----- */
 #devis.show {
+  display: block;         /* visible */
+  opacity: 1;             /* opaque */
+  transform: translateY(0); /* remonte en place */
+}
+/* Amélioration affichage galeries sans changer le HTML */
+.vitrine-gallery img,
+.port-grid img {
   display: block;
+  width: 100%;
+  height: 220px;       /* même hauteur pour tout */
+  object-fit: cover;   /* rogne proprement */
+  border-radius: 12px; /* arrondis réguliers */
+}
+
+.vitrine-gallery a,
+.port-grid a.work {
+  margin: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vitrine-gallery a:hover,
+.port-grid a.work:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
