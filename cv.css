@@ -34,3 +34,52 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+.cv-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start; /* les deux blocs partent de la même hauteur */
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.cv-modeles, .cv-formules {
+  flex: 1 1 45%; /* chaque bloc prend environ la moitié */
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Pour les cartes modèles */
+.cv-modeles .card {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  background: #fbeee5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #4b2e1f;
+  margin: 0.5rem;
+  transition: transform 0.2s ease;
+}
+.cv-modeles .card:hover {
+  transform: scale(1.05);
+}
+
+/* Pour les formules */
+.cv-formules .pack {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.cv-formules .pack h3 {
+  margin-top: 0;
+  color: #4b2e1f;
+}
