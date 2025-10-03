@@ -1,55 +1,23 @@
-.hero-portfolio {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: linear-gradient(135deg,#f5d6eb,#f3e5d8);
-  border-radius: 1rem;
-  margin: 2rem auto;
-  max-width: 900px;
-}
-.hero-portfolio h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  margin-bottom: .5rem;
-  color: #4b2e2e;
-}
-.hero-portfolio p { opacity:.8; margin-bottom:1rem; }
+/* Fond dégradé plus punchy + tuiles */
+body.tpl-portfolio{ background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1); }
+body.tpl-portfolio::before{ display:none; }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+.port-hero{
+  padding:60px 20px; text-align:center; color:#3b2a22;
 }
-.portfolio-grid .card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 6px 16px rgba(0,0,0,.08);
-  overflow: hidden;
-  text-align: center;
-}
-.portfolio-grid img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  height: 160px;
-}
-.portfolio-grid h3 {
-  margin: .8rem 0 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-.portfolio-grid p {
-  margin: .4rem 0 1rem;
-  opacity: .7;
-}
+.port-inner{ max-width:980px; margin:0 auto; background:#ffffffb3; backdrop-filter: blur(6px);
+  border:1px solid #fff4; border-radius:18px; padding:28px; }
 
-.about {
-  max-width: 700px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,.05);
-  text-align: center;
+.port-grid{
+  max-width:1100px; margin:18px auto; padding:0 14px;
+  display:grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap:14px;
 }
-.about h2 { margin-bottom: .5rem; }
+.work{ position:relative; overflow:hidden; border-radius:14px; background:#fff; box-shadow:0 10px 24px #0001; }
+.work img{ width:100%; height:180px; object-fit:cover; display:block; transform:scale(1.02); transition:.35s transform ease; }
+.work span{
+  position:absolute; left:0; right:0; bottom:0; padding:10px 12px; color:#fff;
+  background: linear-gradient(180deg,transparent,rgba(0,0,0,.55));
+  font-weight:700; letter-spacing:.2px;
+}
+.work:hover img{ transform:scale(1.08); }
+.port-about{ text-align:center; }
