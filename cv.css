@@ -29,6 +29,7 @@ body {
   background: #fff;
   width: 900px; /* largeur fixe pour bon centrage */
   margin: 0 auto;
+  .cv-grid h2 { margin: 20px 0 10px; }
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
