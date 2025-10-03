@@ -1,23 +1,114 @@
-/* Fond dégradé plus punchy + tuiles */
-body.tpl-portfolio{ background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1); }
-body.tpl-portfolio::before{ display:none; }
+/* ===============================
+   Fond & Hero
+================================= */
+body.tpl-portfolio {
+  background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
+}
+body.tpl-portfolio::before { display: none; }
 
-.port-hero{
-  padding:60px 20px; text-align:center; color:#3b2a22;
+.port-hero {
+  padding: 60px 20px;
+  text-align: center;
+  color: #3b2a22;
 }
-.port-inner{ max-width:980px; margin:0 auto; background:#ffffffb3; backdrop-filter: blur(6px);
-  border:1px solid #fff4; border-radius:18px; padding:28px; }
+.port-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #ffffffb3;
+  backdrop-filter: blur(6px);
+  border: 1px solid #fff4;
+  border-radius: 18px;
+  padding: 28px;
+}
 
-.port-grid{
-  max-width:1100px; margin:18px auto; padding:0 14px;
-  display:grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap:14px;
+/* ===============================
+   Grille Portfolio
+================================= */
+.port-grid {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center;   /* cartes centrées */
+  gap: 20px;
 }
-.work{ position:relative; overflow:hidden; border-radius:14px; background:#fff; box-shadow:0 10px 24px #0001; }
-.work img{ width:100%; height:180px; object-fit:cover; display:block; transform:scale(1.02); transition:.35s transform ease; }
-.work span{
-  position:absolute; left:0; right:0; bottom:0; padding:10px 12px; color:#fff;
-  background: linear-gradient(180deg,transparent,rgba(0,0,0,.55));
-  font-weight:700; letter-spacing:.2px;
+.work {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 24px #0001;
+  max-width: 320px;   /* limite de largeur */
+  margin: 0 auto;
 }
-.work:hover img{ transform:scale(1.08); }
-.port-about{ text-align:center; }
+.work img {
+  width: 100%;
+  height: 200px;      /* hauteur fixe */
+  object-fit: cover;  /* pas déformé */
+  display: block;
+  transform: scale(1.02);
+  transition: .35s transform ease;
+}
+.work span {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 12px;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.work:hover img {
+  transform: scale(1.08);
+}
+
+/* ===============================
+   À propos
+================================= */
+.port-about {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ===============================
+   Mobile (<600px)
+================================= */
+@media (max-width: 600px) {
+  .port-grid {
+    grid-template-columns: 1fr; /* une carte par ligne */
+    gap: 16px;
+  }
+  .work {
+    width: 90%;
+    max-width: 300px;
+  }
+  .work img {
+    height: 180px;
+  }
+}
+/* ===============================
+   Desktop (≥601px)
+================================= */
+@media (min-width: 601px) {
+  .port-hero {
+    padding: 100px 40px;     /* plus d’air */
+    font-size: 1.1rem;       /* texte un peu plus large */
+  }
+
+  .port-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;               /* espacement plus large */
+  }
+
+  .work img {
+    height: 240px;           /* images plus grandes sur desktop */
+  }
+
+  .port-about {
+    max-width: 800px;
+    margin: 60px auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
