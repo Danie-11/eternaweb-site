@@ -141,3 +141,16 @@ body {
   flex: 1 1 200px;          /* largeur flexible min 200px */
   max-width: 300px;         /* ajuste selon la mise en page */
 }
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
