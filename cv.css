@@ -158,16 +158,3 @@ html {
   font-size: 100%;
 }
 
-@media (max-width: 1200px) {
-  body {
-    max-width: 85%;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    max-width: 90%;
-    font-size: 13px;
-  }
-}
