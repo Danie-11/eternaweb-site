@@ -155,11 +155,12 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 }
 
 .models-grid img {
-  max-width: 280%; 
+  max-width: 100%; 
    width:100%;
   height: auto; 
   display: block;
   margin: auto;
+   object-fit: cover;
    border-radius:8px;
 }
 /* ---- Ajustements mobile accueil ---- */
