@@ -25,7 +25,7 @@ body.tpl-portfolio::before { display: none; }
    Grille Portfolio
 ================================= */
 .port-grid {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 20px auto;
   padding: 0 14px;
   display: grid;
@@ -43,7 +43,7 @@ body.tpl-portfolio::before { display: none; }
   margin: 0 auto;
 }
 .work img {
-  width: 100%;
+  width: 55%;
   height: 200px;      /* hauteur fixe */
   object-fit: cover;  /* pas déformé */
   display: block;
