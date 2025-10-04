@@ -91,7 +91,7 @@ body {
   color: #4b2e1f;
 }
 .cv-models {
-  display: grid;
+  display: flex;
   gap: 1.5rem;         /* espace entre les cartes */
   justify-content: center; /* centrer horizontalement */
   flex-wrap: wrap;     /* pour que ça passe bien sur mobile */
@@ -106,7 +106,7 @@ body {
 }
 
 .models .card {
-  flex: 1 1 200px;          /* largeur flexible min 200px */
+  flex: 1 1 180px;          /* largeur flexible min 200px */
   max-width: 300px;         /* ajuste selon la mise en page */
 }
 html, body {
