@@ -31,7 +31,6 @@ body.demo{
 .demo-hero p{ margin:.25rem 0 1rem; opacity:.9 }
 
 .cta-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap }
-.btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:0; cursor:pointer; text-decoration:none; font-weight:700 }
 .btn-wa{ background:#25D366; color:#fff }
 .btn-primary{ background:linear-gradient(180deg,#d9be85,#b9935a); color:#2b1f18; box-shadow:0 10px 20px rgba(0,0,0,.12) }
 
@@ -65,3 +64,34 @@ body.demo{
   .bullets{ grid-template-columns: 1fr }
   .demo-hero{ margin: 16px auto; padding:16px 12px }
 }
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.model-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+@media (min-width: 900px) {
+  .btn { 
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+}
+body, .demo-hero, .model-card {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.btn { font-weight:500; }
