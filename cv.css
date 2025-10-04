@@ -160,14 +160,14 @@ html {
 
 @media (max-width: 1200px) {
   body {
-    max-width: 95%;
-    font-size: 15px;
+    max-width: 85%;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 768px) {
   body {
-    max-width: 100%;
-    font-size: 14px;
+    max-width: 90%;
+    font-size: 13px;
   }
 }
