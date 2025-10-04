@@ -579,3 +579,10 @@ document.addEventListener('click', (e)=>{
   // sinon → on ferme
   devis.classList.remove('show');
 });
+// --- Ouvrir le devis quand on clique sur "Demander ce modèle"
+$$('.open-devis').forEach(btn=>{
+  btn.addEventListener('click', e=>{
+    e.preventDefault();
+    openDevis(); // utilise ta fonction déjà définie plus haut
+  });
+});
