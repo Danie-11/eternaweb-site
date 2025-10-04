@@ -44,7 +44,7 @@ body {
 }
 
 .cv-modeles, .cv-formules {
-  flex: 1 1 45%; /* chaque bloc prend environ la moitié */
+  flex: 1 1 50%; /* chaque bloc prend environ la moitié */
   background: #fff;
   border-radius: 12px;
   padding: 1.5rem;
@@ -75,6 +75,8 @@ body {
 .cv-formules .pack {
   background: #fff;
   border-radius: 12px;
+  justify-content: center;
+    display: flex;
   padding: 1rem 1.2rem;
   margin-bottom: 1.2rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -92,7 +94,7 @@ body {
 
 .cv-models .card {
   flex: 1 1 200px;     /* largeur flexible avec min 200px */
-  max-width: 300px;    /* tu peux ajuster selon ta mise en page */
+  max-width: 260px;    /* tu peux ajuster selon ta mise en page */
 }
 .work {
   position: relative;
