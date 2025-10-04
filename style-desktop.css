@@ -314,3 +314,31 @@ body {
   margin: 0 auto;     /* centrer */
   font-size: 16px;    /* taille de base lisible */
 }
+/* Correction du zoom excessif sur les cartes */
+.models-grid, .pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.models-grid .card,
+.pricing-cards .card {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.models-grid .card:hover,
+.pricing-cards .card:hover {
+  transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+  .models-grid .card,
+  .pricing-cards .card {
+    transform: scale(1);
+    max-width: 90%;
+  }
+}
