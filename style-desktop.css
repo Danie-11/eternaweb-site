@@ -335,3 +335,9 @@ main {
 footer {
   margin-top: auto;
 }
+/* Conteneur principal sur desktop */
+body {
+  max-width: 1200px;  /* largeur max lisible */
+  margin: 0 auto;     /* centrer */
+  font-size: 16px;    /* taille de base lisible */
+}
