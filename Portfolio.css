@@ -46,7 +46,7 @@ body.tpl-portfolio::before { display: none; }
   width: 55%;
   height: 200px;      /* hauteur fixe */
   object-fit: cover;  /* pas déformé */
-  display: block;
+  display: grid;
   transform: scale(1.02);
   transition: .35s transform ease;
 }
@@ -73,14 +73,14 @@ body.tpl-portfolio::before { display: none; }
 ================================= */
 @media (max-width: 600px) {
   .port-grid {
-    gap: 16px;
+    gap: 14px;
   }
   .work {
-    width: 90%;
-    max-width: 300px;
+    width: 80%;
+    max-width: 250px;
   }
   .work img {
-    height: 180px;
+    height: 160px;
   }
 }
 /* ===============================
