@@ -447,131 +447,10 @@ fieldset.full legend {
   background: #fffdf9;
   text-align: center;
 }
-.pricing-section h2 {
-  font-family: "Playfair Display", serif;
-  color: #5a4023;
-  font-size: 1.5rem;
-  margin-bottom: .3rem;
-}
-.pricing-section p {
-  color: #555;
-  font-size: .95rem;
-  margin-bottom: 1.2rem;
-}
-.pricing-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-.pricing-cards .card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.2rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,.07);
-}
-.pricing-cards h3 {
-  color: #5a4023;
-  font-size: 1.1rem;
-}
-.pricing-cards ul {
-  list-style: none;
-  margin: .7rem 0;
-  padding: 0;
-}
-.pricing-cards li {
-  font-size: .9rem;
-  padding: .3rem 0;
-  border-bottom: 1px solid #f1eee8;
-}
-.tarif-note {
-  font-size: .85rem;
-  color: #777;
-  margin-top: .5rem;
-}
-
-/* ====== Témoignages ====== */
-.testimonials {
-  background: #f9f7f4;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-.testimonials h2 {
-  font-family: "Playfair Display", serif;
-  color: #5a4023;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-.t-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-blockquote {
-  background: #fff;
-  border-radius: 10px;
-  padding: 1rem;
-  font-style: italic;
-  box-shadow: 0 3px 10px rgba(0,0,0,.05);
-}
-blockquote cite {
-  display: block;
-  margin-top: .6rem;
-  font-weight: 600;
-  color: #7a5734;
-}
-
-/* ====== Footer ====== */
-.footer {
-  background: #5c3c1d;
-  color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-.footer-info a {
-  color: #f5e7d8;
-  text-decoration: none;
-  display: block;
-  margin: .3rem 0;
-  font-size: .9rem;
-}
-.footer-info a:hover {
-  text-decoration: underline;
-}
-.copyright {
-  margin-top: 1.2rem;
-  font-size: .8rem;
-  color: #f0e7da;
-}
-
-/* ====== Outils flottants ====== */
-.floating-tools {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 999;
-}
-.fab {
-  background: #5a4023;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 1.3rem;
 /* ===============================
    MOBILE (<=600px) — feuille autonome
    =============================== */
-/* Lissage des polices sur mobile */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-smooth: always;
-}
-p, li, span, a, h1, h2, h3 {
-  letter-spacing: 0.2px;
-  line-height: 1.5;
-}
+
 /* ---- Variables / base ---- */
 :root{
   --brown:#6b4b3e; --brown-dark:#3b2a22; --ink:#2d1e15;
@@ -725,12 +604,11 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 }
 
 .models-grid img {
-  max-width: 100%; 
+  max-width: 280%; 
    width:100%;
   height: auto; 
   display: block;
   margin: auto;
-   object-fit: cover;
    border-radius:8px;
 }
 /* ---- Ajustements mobile accueil ---- */
@@ -853,67 +731,3 @@ a:hover {
   opacity: 1;             /* opaque */
   transform: translateY(0); /* remonte en place */
 }
-/* Amélioration affichage galeries sans changer le HTML */
-.vitrine-gallery img,
-.port-grid img {
-  display: block;
-  width: 100%;
-  height: 220px;       /* même hauteur pour tout */
-  object-fit: cover;   /* rogne proprement */
-  border-radius: 12px; /* arrondis réguliers */
-}
-
-.vitrine-gallery a,
-.port-grid a.work {
-  margin: 12px;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.vitrine-gallery a:hover,
-.port-grid a.work:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-/* === Correctifs largeur mobile (overflow) === */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-.models-grid,
-.pricing-cards,
-.t-grid,
-.page-card,
-.container {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  box-sizing: border-box;
-}
-
-/* Images responsives */
-img, iframe, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Cartes plus souples */
-.card, .model-card {
-  width: 100%;
-  max-width: 380px;
-  margin: 0 auto 1.2rem;
-}
-
-/* Alignement texte centré sur mobile */
-.hero-wrap, .page-card, .testimonials {
-  text-align: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-   }
