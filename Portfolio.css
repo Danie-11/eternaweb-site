@@ -73,7 +73,6 @@ body.tpl-portfolio::before { display: none; }
 ================================= */
 @media (max-width: 600px) {
   .port-grid {
-    grid-template-columns: 1fr; /* une carte par ligne */
     gap: 16px;
   }
   .work {
@@ -94,7 +93,7 @@ body.tpl-portfolio::before { display: none; }
   }
 
   .port-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px));
     gap: 28px;               /* espacement plus large */
   }
 
