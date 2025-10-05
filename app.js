@@ -17,9 +17,12 @@ const I18N = {
     'hero.title':'EternaWeb','hero.subtitle':'CV & vitrines express — en ligne en 48 heures',
     'hero.lead':'✨ Un design premium, des intégrations rapides et un rendu clé en main.',
     'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
-    'models.h2':'🎨 Modèles prêts','models.sub':'Choisis un style, ouvre la démo, et dis-moi lequel tu veux.',
-    'models.demo':'Voir le modèle','models.cv.desc':'Idéal candidature ou profil pro.',
-    'models.port.desc':'Parfait artistes & designers.','models.vit.desc':'Entreprises & indépendants.',
+    'services.h2':'🚀 Nos services',
+'services.sub':'Choisissez un type de mini-site 👇',
+'services.demo':'Voir le service',
+'services.cv.desc':'Idéal pour les candidatures ou profils pros.',
+'services.port.desc':'Parfait pour artistes & designers.',
+'services.vit.desc':'Pour entreprises & indépendants.',
     'devis.h2':'📝 Vos consignes','devis.sub':'Choisissez, décrivez, envoyez — je reçois vos consignes.',
     'devis.type':'Type de site','devis.opt.cv':'CV','devis.opt.vitrine':'Vitrine','devis.opt.portfolio':'Portfolio','devis.opt.other':'Autre',
     'devis.colors':'Palette / couleurs','devis.style':'Style visuel',
@@ -50,9 +53,12 @@ const I18N = {
     'hero.title':'EternaWeb','hero.subtitle':'CV & showcase sites — online in 48 hours',
     'hero.lead':'✨ Premium design, fast integrations, and a turnkey result.',
     'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
-    'models.h2':'🎨 Ready-made templates','models.sub':'Pick a style, open the demo, and tell me which you want.',
-    'models.demo':'View template','models.cv.desc':'Great for job applications.',
-    'models.port.desc':'Perfect for artists & designers.','models.vit.desc':'For businesses & freelancers.',
+    'services.h2':'🚀 Our Services',
+    'services.sub':'Choose your mini-site type 👇',
+    'services.demo':'View service',
+    'services.cv.desc':'Ideal for professional resumes.',
+    'services.port.desc':'Perfect for artists & designers.',
+    'services.vit.desc':'For businesses & freelancers.',
     'devis.h2':'📝 Your brief','devis.sub':'Pick, describe, send — I receive your instructions.',
     'devis.type':'Site type','devis.opt.cv':'CV','devis.opt.vitrine':'Showcase','devis.opt.portfolio':'Portfolio','devis.opt.other':'Other',
     'devis.colors':'Palette / colors','devis.style':'Visual style',
@@ -90,12 +96,12 @@ nl: {
     'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
 
     // --- Modellen
-    'models.h2':'🎨 Kant-en-klare modellen',
-    'models.sub':'Kies een stijl, open de demo en zeg mij welke u wilt.',
-    'models.demo':'Bekijk het model',
-    'models.cv.desc':'Ideaal voor sollicitaties of professioneel profiel.',
-    'models.port.desc':'Perfect voor artiesten & ontwerpers.',
-    'models.vit.desc':'Voor bedrijven & freelancers.',
+    'services.h2':'🚀 Onze diensten',
+'services.sub':'Kies uw type mini-site 👇',
+'services.demo':'Bekijk dienst',
+'services.cv.desc':'Ideaal voor sollicitaties of professionele profielen.',
+'services.port.desc':'Perfect voor artiesten en ontwerpers.',
+'services.vit.desc':'Voor bedrijven en freelancers.',
 
     // --- Devis
     'devis.h2':'📝 Uw instructies',
@@ -162,12 +168,12 @@ nl: {
     'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
 
     // --- Modelle
-    'models.h2':'🎨 Fertige Vorlagen',
-    'models.sub':'Wähle einen Stil, öffne die Demo und sag mir, welchen du möchtest.',
-    'models.demo':'Vorlage ansehen',
-    'models.cv.desc':'Ideal für Bewerbungen oder Profile.',
-    'models.port.desc':'Perfekt für Künstler & Designer.',
-    'models.vit.desc':'Für Unternehmen & Freiberufler.',
+    'services.h2':'🚀 Unsere Leistungen',
+'services.sub':'Wählen Sie Ihren Mini-Website-Typ 👇',
+'services.demo':'Dienst ansehen',
+'services.cv.desc':'Ideal für Bewerbungen oder berufliche Profile.',
+'services.port.desc':'Perfekt für Künstler und Designer.',
+'services.vit.desc':'Für Unternehmen und Freiberufler.',
 
     // --- Devis
     'devis.h2':'📝 Ihr Briefing',
@@ -234,12 +240,12 @@ nl: {
     'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
 
     // --- Модели
-    'models.h2':'🎨 Готовые шаблоны',
-    'models.sub':'Выберите стиль, откройте демо и скажите, какой вам нужен.',
-    'models.demo':'Посмотреть шаблон',
-    'models.cv.desc':'Идеально для откликов на вакансии или профиля.',
-    'models.port.desc':'Отлично подходит для художников и дизайнеров.',
-    'models.vit.desc':'Для компаний и фрилансеров.',
+    'services.h2':'🚀 Наши услуги',
+'services.sub':'Выберите тип мини-сайта 👇',
+'services.demo':'Посмотреть услугу',
+'services.cv.desc':'Идеально для откликов на вакансии или профиля специалиста.',
+'services.port.desc':'Отлично подходит для художников и дизайнеров.',
+'services.vit.desc':'Для компаний и фрилансеров.',
 
     // --- Devis
     'devis.h2':'📝 Ваши пожелания',
@@ -306,13 +312,12 @@ nl: {
     'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
 
     // --- Modelos
-    'models.h2':'🎨 Modelos listos',
-    'models.sub':'Elige un estilo, abre la demo y dime cuál prefieres.',
-    'models.demo':'Ver modelo',
-    'models.cv.desc':'Ideal para candidaturas o perfiles profesionales.',
-    'models.port.desc':'Perfecto para artistas y diseñadores.',
-    'models.vit.desc':'Para empresas y freelancers.',
-
+    'services.h2':'🚀 Nuestros servicios',
+'services.sub':'Elige el tipo de mini-sitio 👇',
+'services.demo':'Ver servicio',
+'services.cv.desc':'Ideal para candidaturas o perfiles profesionales.',
+'services.port.desc':'Perfecto para artistas y diseñadores.',
+'services.vit.desc':'Para empresas y freelancers.',
     // --- Devis
     'devis.h2':'📝 Sus indicaciones',
     'devis.sub':'Elige, describe y envía — recibo tus instrucciones.',
@@ -378,13 +383,12 @@ nl: {
     'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal',
 
     // --- Modelli
-    'models.h2':'🎨 Modelli pronti',
-    'models.sub':'Scegli uno stile, apri la demo e dimmi quale preferisci.',
-    'models.demo':'Vedi modello',
-    'models.cv.desc':'Ideale per candidature o profili professionali.',
-    'models.port.desc':'Perfetto per artisti e designer.',
-    'models.vit.desc':'Per aziende e liberi professionisti.',
-
+    'services.h2':'🚀 I nostri servizi',
+'services.sub':'Scegli il tipo di mini-sito 👇',
+'services.demo':'Vedi servizio',
+'services.cv.desc':'Ideale per candidature o profili professionali.',
+'services.port.desc':'Perfetto per artisti e designer.',
+'services.vit.desc':'Per aziende e liberi professionisti.',
     // --- Devis
     'devis.h2':'📝 Le tue indicazioni',
     'devis.sub':'Scegli, descrivi e invia — ricevo le tue istruzioni.',
