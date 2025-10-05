@@ -44,8 +44,12 @@ const I18N = {
     'testi.h2':'💬 Témoignages','testi.t1':'“Super réactive et professionnelle, mon site a été en ligne le jour même !”','testi.c1':'— Claire B.',
     'testi.t2':'“Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”','testi.c2':'— Malik T.',
     'testi.t3':'“Excellent rapport qualité/prix. Je recommande à 100 %.”','testi.c3':'— Sofia M.',
-    'footer.info':'Infos utiles','footer.contact':'Contact','footer.about':'À propos',
-    'footer.security':'Sécurité','footer.privacy':'Confidentialité','footer.code':'Code de conduite','footer.faq':'FAQ'
+    'footer.faq':'FAQ',
+'footer.about':'À propos',
+'footer.legal':'Mentions légales',
+'footer.privacy':'Confidentialité',
+'footer.code':'Code de conduite',
+'footer.copy':'© 2025 EternaGlow — Tous droits réservés'
   },
   en: {
     'nav.menu':'Menu','nav.cv':'CV','nav.portfolio':'Portfolio','nav.vitrine':'Showcase',
@@ -80,8 +84,12 @@ const I18N = {
     'testi.h2':'💬 Testimonials','testi.t1':'“Super responsive and professional — my site was online the same day!”','testi.c1':'— Claire B.',
     'testi.t2':'“Elegant, clear design — clients contact me directly via WhatsApp!”','testi.c2':'— Malik T.',
     'testi.t3':'“Excellent value for money. 100% recommended.”','testi.c3':'— Sofia M.',
-    'footer.info':'Useful info','footer.contact':'Contact','footer.about':'About',
-    'footer.security':'Security','footer.privacy':'Privacy','footer.code':'Code of conduct','footer.faq':'FAQ'
+    'footer.faq':'FAQ',
+'footer.about':'About',
+'footer.legal':'Legal Notice',
+'footer.privacy':'Privacy',
+'footer.code':'Code of Conduct',
+'footer.copy':'© 2025 EternaGlow — All rights reserved' 
   },
   
 nl: {
@@ -152,8 +160,12 @@ nl: {
     'testi.t3':'“Uitstekende prijs-kwaliteitverhouding. 100% aanbevolen.”','testi.c3':'— Sofia M.',
 
     // --- Footer
-    'footer.info':'Nuttige info','footer.contact':'Contact','footer.about':'Over',
-    'footer.security':'Beveiliging','footer.privacy':'Privacy','footer.code':'Gedragscode','footer.faq':'FAQ'
+    'footer.faq':'FAQ',
+'footer.about':'Over ons',
+'footer.legal':'Wettelijke vermeldingen',
+'footer.privacy':'Privacy',
+'footer.code':'Gedragscode',
+'footer.copy':'© 2025 EternaGlow — Alle rechten voorbehouden'
   },
 
   de: {
@@ -224,8 +236,12 @@ nl: {
     'testi.t3':'„Top Preis-Leistung. Absolute Empfehlung.“','testi.c3':'— Sofia M.',
 
     // --- Footer
-    'footer.info':'Nützliche Infos','footer.contact':'Kontakt','footer.about':'Über uns',
-    'footer.security':'Sicherheit','footer.privacy':'Datenschutz','footer.code':'Verhaltenskodex','footer.faq':'FAQ'
+    'footer.faq':'FAQ',
+'footer.about':'Über uns',
+'footer.legal':'Impressum',
+'footer.privacy':'Datenschutz',
+'footer.code':'Verhaltenskodex',
+'footer.copy':'© 2025 EternaGlow — Alle Rechte vorbehalten'
   },
 
   ru: {
@@ -296,8 +312,15 @@ nl: {
     'testi.t3':'«Отличное соотношение цены и качества. Рекомендую!»','testi.c3':'— София М.',
 
     // --- Подвал
-    'footer.info':'Полезная информация','footer.contact':'Контакты','footer.about':'О нас',
-    'footer.security':'Безопасность','footer.privacy':'Конфиденциальность','footer.code':'Кодекс поведения','footer.faq':'FAQ'
+    // --- Подвал
+'footer.info':'Полезная информация',
+'footer.contact':'Контакты',
+'footer.about':'О нас',
+'footer.legal':'Юридическая информация',
+'footer.privacy':'Конфиденциальность',
+'footer.code':'Кодекс поведения',
+'footer.faq':'FAQ',
+'footer.copy':'© 2025 EternaGlow — Все права защищены'
   },
 
   es: {
@@ -367,8 +390,12 @@ nl: {
     'testi.t3':'“Excelente relación calidad-precio. 100% recomendado.”','testi.c3':'— Sofia M.',
 
     // --- Footer
-    'footer.info':'Información útil','footer.contact':'Contacto','footer.about':'Acerca de',
-    'footer.security':'Seguridad','footer.privacy':'Privacidad','footer.code':'Código de conducta','footer.faq':'FAQ'
+    'footer.faq':'FAQ',
+'footer.about':'Acerca de',
+'footer.legal':'Aviso legal',
+'footer.privacy':'Privacidad',
+'footer.code':'Código de conducta',
+'footer.copy':'© 2025 EternaGlow — Todos los derechos reservados'
   },
 
   it: {
@@ -438,8 +465,12 @@ nl: {
     'testi.t3':'“Ottimo rapporto qualità-prezzo. Consigliatissimo.”','testi.c3':'— Sofia M.',
 
     // --- Footer
-    'footer.info':'Info utili','footer.contact':'Contatti','footer.about':'Chi siamo',
-    'footer.security':'Sicurezza','footer.privacy':'Privacy','footer.code':'Codice di condotta','footer.faq':'FAQ'
+    'footer.faq':'FAQ',
+'footer.about':'Chi siamo',
+'footer.legal':'Note legali',
+'footer.privacy':'Privacy',
+'footer.code':'Codice di condotta',
+'footer.copy':'© 2025 EternaGlow — Tutti i diritti riservati'
   }
 };
 // =========================
