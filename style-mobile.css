@@ -596,3 +596,40 @@ img {
   image-rendering: -webkit-optimize-contrast;
 }
 a { color: inherit; }
+/* Ajustements finesse mobile EternaWeb */
+body {
+  zoom: 0.9; /* réduit légèrement le zoom global */
+  transform-origin: top center;
+}
+
+.hero-gold .gold-title {
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.hero-gold .gold-sub {
+  font-size: 1rem;
+}
+
+.hero-gold .gold-lead {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.announce-bar {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.6rem;
+}
+
+.menu-toggle {
+  font-size: 1rem;
+}
+
+.models .card p {
+  font-size: 0.9rem;
+}
+
+.btn {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+}
