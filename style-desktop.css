@@ -112,6 +112,23 @@ h2{ margin:0 0 12px; font-size:1.5rem; color:#5e4b3c }
 body.lite .announce-bar{ display:none }
 
 /* ===============================
+   Outils flottants (langue)
+================================= */
+.announce-bar{ position:fixed; top:6px; left:50%; transform:translateX(-50%);
+  z-index:1100; max-width:92%; padding:4px 8px; font-size:13px; line-height:1.35;
+  color:#2d1e15; background:rgba(255,255,255,.85); backdrop-filter:blur(4px);
+  border:1px solid var(--gold); border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
+.floating-tools{ position:fixed; top:10px; right:10px; display:flex; gap:8px; z-index:1200; }
+.fab{ width:40px; height:40px; border:none; border-radius:50%; cursor:pointer;
+  background:rgba(255,255,255,.9); box-shadow:0 4px 12px rgba(0,0,0,.15); font-size:19px; line-height:40px; }
+.lang-wrap{ position:relative }
+.lang-menu{ position:absolute; top:46px; right:0; min-width:170px; display:none;
+  background:#fff; border-radius:12px; box-shadow:0 14px 30px rgba(0,0,0,.18); overflow:hidden; }
+.lang-menu.show{ display:block }
+.lang{ width:100%; text-align:left; border:0; background:transparent; padding:10px 12px; cursor:pointer; }
+.lang:hover{ background:#f7f3ee }
+
+/* ===============================
    Brief / Devis
 ================================= */
 .brief-hero.compact{ max-width:920px; margin:24px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:18px 16px; box-shadow:0 10px 30px rgba(0,0,0,.08);}
@@ -221,7 +238,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 }
 
 .cv-gallery .card {
-  flex: 1 1 300px;           /* largeur mini 300px */
+  flex: 1 1 250px;           /* largeur mini 300px */
   max-width: 350px;          /* largeur max d’une carte */
   text-align: center;
 }
