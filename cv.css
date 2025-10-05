@@ -32,7 +32,7 @@ body {
 
 .cv-container {
   background: #fff;
-  width: 900px; /* largeur fixe pour bon centrage */
+  width: 800px; /* largeur fixe pour bon centrage */
   margin: 0 auto;
   padding: 40px;
   border-radius: 12px;
