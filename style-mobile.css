@@ -308,3 +308,42 @@ a:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
+/* === Correctifs largeur mobile (overflow) === */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.models-grid,
+.pricing-cards,
+.t-grid,
+.page-card,
+.container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* Images responsives */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Cartes plus souples */
+.card, .model-card {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto 1.2rem;
+}
+
+/* Alignement texte centré sur mobile */
+.hero-wrap, .page-card, .testimonials {
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
