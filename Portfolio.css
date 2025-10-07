@@ -2,17 +2,17 @@
    Fond & Hero
 ================================= */
 body.tpl-portfolio {
-  background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
+  background: radial-gradient(800px 600px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
 }
 body.tpl-portfolio::before { display: none; }
 
 .port-hero {
-  padding: 60px 20px;
+  padding: 50px 20px;
   text-align: center;
   color: #3b2a22;
 }
 .port-inner {
-  max-width: 980px;
+  max-width: 900px;
   margin: 0 auto;
   background: #ffffffb3;
   backdrop-filter: blur(6px);
@@ -25,7 +25,7 @@ body.tpl-portfolio::before { display: none; }
    Grille Portfolio
 ================================= */
 .port-grid {
-  max-width: 900px;
+  max-width: 800px;
   margin: 20px auto;
   padding: 0 14px;
   display: grid;
@@ -44,7 +44,7 @@ body.tpl-portfolio::before { display: none; }
 }
 .work img {
   width: 55%;
-  height: 200px;      /* hauteur fixe */
+  height: 150px;      /* hauteur fixe */
   object-fit: cover;  /* pas déformé */
   display: grid;
   transform: scale(1.02);
@@ -88,7 +88,7 @@ body.tpl-portfolio::before { display: none; }
 ================================= */
 @media (min-width: 601px) {
   .port-hero {
-    padding: 100px 40px;     /* plus d’air */
+    padding: 95px 30px;     /* plus d’air */
     font-size: 1.1rem;       /* texte un peu plus large */
   }
 
@@ -98,7 +98,7 @@ body.tpl-portfolio::before { display: none; }
   }
 
   .work img {
-    height: 240px;           /* images plus grandes sur desktop */
+    height: 200px;           /* images plus grandes sur desktop */
   }
 
   .port-about {
