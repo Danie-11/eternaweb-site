@@ -63,13 +63,29 @@ body.demo{
 @media (max-width: 680px){
   .bullets{ grid-template-columns: 1fr }
   .demo-hero{ margin: 16px auto; padding:16px 12px }
+
+  /* Correction responsive pour les cartes */
+  .models-grid {
+    grid-template-columns: 1fr;
+    max-width: 95vw;
+    gap: 1rem;
+    padding: 0 2vw;
+  }
+  .model-card {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
+
+/* CORRECTION pour les cartes trop larges */
 .models-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
   gap: 1.5rem;
   max-width: 900px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .model-card {
@@ -78,6 +94,9 @@ body.demo{
   box-shadow: 0 6px 18px rgba(0,0,0,.08);
   text-align: center;
   transition: transform .2s ease, box-shadow .2s ease;
+  max-width: 340px;
+  width: 100%;
+  margin: 0 auto;
 }
 .model-card:hover {
   transform: translateY(-4px);
