@@ -143,6 +143,151 @@ body.tpl-cv {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body.tpl-cv { background: #f7f6f4; }
+body.tpl-cv::before { display:none; }
+
+.cv-hero { text-align:center; background:#fff; }
+.cv-photo{
+  width:120px; height:120px; border-radius:50%;
+  object-fit:cover; box-shadow:0 6px 16px #0001; margin:0 auto 10px;
+}
+.cv-role{ opacity:.8; margin:.15rem 0 .6rem }
+.cv-infos{ list-style:none; padding:0; margin:.4rem 0; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.cv-grid{ text-align:left; }
+.cv-grid h2{ color:#4b3a2f; margin-top:10px; }
+.cv-tags{ display:flex; gap:8px; flex-wrap:wrap; list-style:none; padding:0; }
+.cv-tags li{ background:#fff; border:1px solid #eee; padding:6px 10px; border-radius:999px; }
+.cv-job small{ opacity:.7; display:block; margin:.15rem 0 .35rem; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: #f5f3f0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.cv-container {
+  background: #fff;
+  width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.cv-grid h2 { margin: 20px 0 10px; }
+
+/* CORRIGÉ: utilisation du grid pour la section */
+.cv-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.cv-modeles, .cv-formules {
+  flex: 1 1 50%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Pour les cartes modèles */
+.cv-modeles .card {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  background: #fbeee5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #4b2e1f;
+  margin: 0.5rem;
+  transition: transform 0.2s ease;
+}
+.cv-modeles .card:hover {
+  transform: scale(1.05);
+}
+
+/* Pour les formules */
+.cv-formules .pack {
+  background: #fff;
+  border-radius: 12px;
+  justify-content: center;
+  display: grid;
+  padding: 18px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.cv-formules .pack h3 {
+  margin-top: 0.5rem;
+  color: #4b2e1f;
+}
+.cv-models {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.models {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.models .card {
+  flex: 1 1 180px;
+  max-width: 300px;
+}
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+html {
+  font-size: 100%;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.pricing-cards .card {
+  background: #fffaf5;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+/* Lissage général */
+body.tpl-cv {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /* Images plus nettes */
 .cv-gallery img, 
@@ -164,4 +309,25 @@ h1, h2, h3, p, li {
 h1, h2, h3, p, li {
   color: #2b2b2b;
   letter-spacing: 0.01em;
+}
+
+/* ----------- AJOUT RESPONSIVE MOBILE ----------- */
+@media (max-width: 600px) {
+  .cv-container {
+    width: 100%;
+    padding: 12px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .cv-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+    max-width: 100%;
+  }
+  .cv-modeles, .cv-formules {
+    padding: 0.8rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
