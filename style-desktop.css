@@ -161,10 +161,15 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 /* ===============================
    Témoignages
 ================================= */
-.testimonials{ max-width:920px; margin:24px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:18px 16px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-.t-grid blockquote{ margin:.75rem 0; padding:.25rem 0; font-size:1.05rem; line-height:1.6; }
-.t-grid cite{ display:block; margin-top:.15rem; font-style:italic; opacity:.85; }
-
+@media (min-width: 992px) {
+  .testimonials {
+    max-width: 700px;
+    padding: 12px 20px;
+  }
+  .t-grid blockquote {
+    font-size: 0.98rem;
+  }
+}
 /* ===============================
    Footer
 ================================= */
