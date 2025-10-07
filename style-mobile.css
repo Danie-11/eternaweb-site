@@ -731,6 +731,18 @@ a:hover {
   opacity: 1;             /* opaque */
   transform: translateY(0); /* remonte en place */
 }
+.gallery-grid {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.gallery-card img {
+  height: 180px;
+}
+
+.card-info {
+  padding: 1rem;
+}
 body {
   font-size: 0.85rem;
 }
