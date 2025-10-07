@@ -213,7 +213,7 @@ body {
   font-weight: 600;
   text-align: center;
   padding: .5rem 1rem;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 /* ====== Logo ====== */
@@ -695,11 +695,11 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 
 .models-grid .model-card {
   width: 70%;         /* pas toute la largeur de l’écran */
-  max-width: 240px;   /* limite la largeur */
+  max-width: 200px;   /* limite la largeur */
 }
 
 .models-grid .model-card img {
-  width: 75%;
+  width: 70%;
   height: auto;
 }
 a {
@@ -730,4 +730,7 @@ a:hover {
   display: block;         /* visible */
   opacity: 1;             /* opaque */
   transform: translateY(0); /* remonte en place */
+}
+body {
+  font-size: 0.95rem;
 }
