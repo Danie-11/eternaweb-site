@@ -314,3 +314,43 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+.testimonials-cards {
+  background: #f9f7f5;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials-cards h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 2rem;
+  color: #6b4b2d;
+}
+
+.t-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.t-grid blockquote {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  font-style: italic;
+  color: #444;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.t-grid blockquote:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.t-grid cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  color: #9c7b4b;
+  font-weight: 600;
+}
