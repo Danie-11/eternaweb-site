@@ -314,13 +314,13 @@ h1, h2, h3, p, li {
 /* ----------- AJOUT RESPONSIVE MOBILE ----------- */
 @media (max-width: 600px) {
   .cv-container {
-    width: 100%;
+    width: 90%;
     padding: 12px;
     border-radius: 0;
     box-shadow: none;
   }
   .cv-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1;
     gap: 1rem;
     margin: 1rem 0;
     max-width: 100%;
