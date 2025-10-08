@@ -37,157 +37,113 @@ body.tpl-cv {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body.tpl-cv::before { display:none; }
-
-h1, h2, h3, p, li {
-  color: #2b2b2b;
-  letter-spacing: 0.01em;
+/* ===============================
+   Fond & Hero
+================================= */
+body.tpl-cv {
+  background: radial-gradient(800px 600px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
 }
+body.tpl-cv::before { display: none; }
 
-.cv-hero { text-align:center; background:#fff; }
-.cv-photo{
-  width:120px; height:120px; border-radius:50%;
-  object-fit:cover; box-shadow:0 6px 16px #0001; margin:0 auto 10px;
+.cv-hero {
+  padding: 50px 20px;
+  text-align: center;
+  color: #3b2a22;
 }
-.cv-role{ opacity:.8; margin:.15rem 0 .6rem }
-.cv-infos{ list-style:none; padding:0; margin:.4rem 0; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
-.cv-grid{ text-align:left; }
-.cv-grid h2{ color:#4b3a2f; margin-top:10px; }
-
-.cv-tags{ display:flex; gap:8px; flex-wrap:wrap; list-style:none; padding:0; }
-.cv-tags li{ background:#fff; border:1px solid #eee; padding:6px 10px; border-radius:999px; }
-
-.cv-job small{ opacity:.7; display:block; margin:.15rem 0 .35rem; }
-
-/* Images plus nettes */
-.cv-gallery img, 
-.model-card img {
-  image-rendering: auto;
-  -webkit-transform: translateZ(0);
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.15));
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.model-card:hover img {
-  transform: scale(1.02);
-  box-shadow: 0 6px 20px rgba(0,0,0,.2);
-}
-
-/* ============================= */
-/*         PARTIE DESKTOP        */
-/* ============================= */
-
-.cv-container {
-  width: 800px;
-  max-width: 100vw;
+.cv-inner {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  box-sizing: border-box;
+  background: #ffffffb3;
+  backdrop-filter: blur(6px);
+  border: 1px solid #fff4;
+  border-radius: 18px;
+  padding: 28px;
 }
 
-.cv-section {
+/* ===============================
+   Grille Cv
+================================= */
+.cv-grid {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 14px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: flex-start;
-  margin: 2rem auto;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center;   /* cartes centrées */
+  gap: 20px;
 }
-
-.cv-modeles, .cv-formules {
-  flex: 1 1 50%;
+.work {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
   background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 24px #0001;
+  max-width: 320px;   /* limite de largeur */
+  margin: 0 auto;
 }
-
-/* Pour les cartes modèles */
-.cv-modeles .card {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
-  background: #fbeee5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  color: #4b2e1f;
-  margin: 1.2rem;
-  transition: transform 0.2s ease;
-}
-.cv-modeles .card:hover {
-  transform: scale(1.05);
-}
-
-/* Pour les formules */
-.cv-formules .pack {
-  background: #fff;
-  border-radius: 12px;
-  justify-content: center;
+.work img {
+  width: 55%;
+  height: 150px;      /* hauteur fixe */
+  object-fit: cover;  /* pas déformé */
   display: grid;
-  padding: 18px;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transform: scale(1.02);
+  transition: .35s transform ease;
 }
-.cv-formules .pack h3 {
-  margin-top: 0.5rem;
-  color: #4b2e1f;
-}
-
-/* Modèles flex/groupements */
-.cv-models,
-.models {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
+.work span {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 12px;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
+  font-weight: 700;
+  letter-spacing: .2px;
 }
 
-.models .card {
-  flex: 1 1 180px;
-  max-width: 300px;
+/* ===============================
+   À propos
+================================= */
+.cv-about {
+  text-align: center;
+  margin-top: 30px;
 }
 
-/* Pricing cards */
-.pricing-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-.pricing-cards .card {
-  background: #fffaf5;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* ============================= */
-/*         PARTIE MOBILE         */
-/* ============================= */
-
+/* ===============================
+   Mobile (<600px)
+================================= */
 @media (max-width: 600px) {
-  .cv-container {
-    width: 100vw;
-    max-width: 100vw;
-    padding: 8px;
-    border-radius: 0;
-    box-shadow: none;
-    box-sizing: border-box;
+  .cv-grid {
+    gap: 14px;
   }
-  .cv-section {
-    grid-template-columns: 1;
-    gap: 1rem;
-    margin: 1rem 0;
-    max-width: 100vw;
+  .work {
+    width: 80%;
+    max-width: 250px;
   }
-  .cv-modeles, .cv-formules {
-    padding: 0.8rem;
-    border-radius: 0;
-    box-shadow: none;
+  .work img {
+    height: 160px;
+  }
+}
+/* ===============================
+   Desktop (≥601px)
+================================= */
+@media (min-width: 601px) {
+  .cv-hero {
+    padding: 95px 30px;     /* plus d’air */
+    font-size: 1.1rem;       /* texte un peu plus large */
+  }
+
+  .cv-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px));
+    gap: 28px;               /* espacement plus large */
+  }
+
+  .work img {
+    height: 200px;           /* images plus grandes sur desktop */
+  }
+
+  .cv-about {
+    max-width: 800px;
+    margin: 60px auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 }
