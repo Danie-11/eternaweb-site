@@ -144,10 +144,10 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 
 .cv-gallery .card {
   width: 70%;          /* prend 90% de la largeur de l’écran */
-  max-width: 260px;    /* mais jamais plus large qu’un cadre sympa */
+  max-width: 240px;    /* mais jamais plus large qu’un cadre sympa */
 }
 .cv-gallery img {
-  max-width: 100%;    /* jamais plus large que le conteneur */
+  max-width: 950%;    /* jamais plus large que le conteneur */
   height: auto;       /* garde les proportions */
   border-radius: 12px;
   display: block;
@@ -155,18 +155,18 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 }
 
 .cv-gallery .card {
-  max-width: 360px;   /* limite la largeur de chaque carte */
-  width: 90%;         /* prend 90% de l’écran */
+  max-width: 340px;   /* limite la largeur de chaque carte */
+  width: 85%;         /* prend 90% de l’écran */
 }
 .models-grid .model-card {
-  max-width: 360px;   /* largeur max de la carte */
+  max-width: 340px;   /* largeur max de la carte */
   width: 90%;         /* prend 90% de l’écran sur mobile */
   margin: 1rem auto;  /* espace et centrage */
 }
 
 .models-grid img {
   max-width: 100%; 
-   width:100%;
+   width:90%;
   height: auto; 
   display: block;
   margin: auto;
@@ -352,7 +352,7 @@ body {
   margin-bottom: .3rem;
 }
 .models p {
-  font-size: .95rem;
+  font-size: .90rem;
   color: #555;
   margin-bottom: 1.2rem;
 }
@@ -583,7 +583,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 
 .cv-gallery .card {
   width: 70%;          /* prend 90% de la largeur de l’écran */
-  max-width: 260px;    /* mais jamais plus large qu’un cadre sympa */
+  max-width: 240px;    /* mais jamais plus large qu’un cadre sympa */
 }
 .cv-gallery img {
   max-width: 100%;    /* jamais plus large que le conteneur */
@@ -594,11 +594,11 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 }
 
 .cv-gallery .card {
-  max-width: 360px;   /* limite la largeur de chaque carte */
+  max-width: 340px;   /* limite la largeur de chaque carte */
   width: 90%;         /* prend 90% de l’écran */
 }
 .models-grid .model-card {
-  max-width: 360px;   /* largeur max de la carte */
+  max-width: 340px;   /* largeur max de la carte */
   width: 90%;         /* prend 90% de l’écran sur mobile */
   margin: 1rem auto;  /* espace et centrage */
 }
