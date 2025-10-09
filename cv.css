@@ -64,7 +64,7 @@ body.tpl-cv::before { display: none; }
    Grille Cv
 ================================= */
 .cv-grid {
-  max-width: 800px;
+  max-width: 750px;
   margin: 20px auto;
   padding: 0 14px;
   display: grid;
@@ -104,7 +104,7 @@ body.tpl-cv::before { display: none; }
 ================================= */
 .cv-about {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 /* ===============================
@@ -116,10 +116,10 @@ body.tpl-cv::before { display: none; }
   }
   .work {
     width: 80%;
-    max-width: 250px;
+    max-width: 200px;
   }
   .work img {
-    height: 160px;
+    height: 140px;
   }
 }
 /* ===============================
@@ -132,7 +132,7 @@ body.tpl-cv::before { display: none; }
   }
 
   .cv-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px));
+    grid-template-columns: repeat(auto-fit, minmax(300px));
     gap: 28px;               /* espacement plus large */
   }
 
