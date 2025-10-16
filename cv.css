@@ -1,5 +1,5 @@
 /* Look très minimal, fond clair et typographie sobre */
-body.tpl-cv { background: #f7f6f4; }
+body.tpl-cv { background: #f5f3f0; }
 body.tpl-cv::before { display:none; }
 
 .cv-hero { text-align:center; background:#fff; }
@@ -14,3 +14,17 @@ body.tpl-cv::before { display:none; }
 .cv-tags{ display:flex; gap:8px; flex-wrap:wrap; list-style:none; padding:0; }
 .cv-tags li{ background:#fff; border:1px solid #eee; padding:6px 10px; border-radius:999px; }
 .cv-job small{ opacity:.7; display:block; margin:.15rem 0 .35rem; }
+.cv-gallery .card span {
+  color: #5a3e2b; /* marron foncé plus visible */
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7); /* ombre claire pour contraste */
+  font-weight: 700;
+}
+.cv-gallery .card {
+  background: transparent; /* ✅ fond supprimé */
+  box-shadow: none; /* ✅ pas d’ombre */
+  border: none; /* ✅ supprime les bordures */
+}
+.cv-gallery .card:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
