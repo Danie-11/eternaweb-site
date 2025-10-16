@@ -1,149 +1,16 @@
-/* ============================= */
-/*         PARTIE GENERALE       */
-/* ============================= */
+/* Look très minimal, fond clair et typographie sobre */
+body.tpl-cv { background: #f7f6f4; }
+body.tpl-cv::before { display:none; }
 
-html, body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  font-size: 100%;
+.cv-hero { text-align:center; background:#fff; }
+.cv-photo{
+  width:120px; height:120px; border-radius:50%;
+  object-fit:cover; box-shadow:0 6px 16px #0001; margin:0 auto 10px;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-  background: #f5f3f0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  font-size: 0.85rem;
-  overflow-x: hidden; /* Anti débordement horizontal */
-}
-
-main {
-  flex: 1;
-}
-footer {
-  margin-top: auto;
-}
-
-body.tpl-cv {
-  background: #f7f6f4;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-/* ===============================
-   Fond & Hero
-================================= */
-body.tpl-cv {
-  background: radial-gradient(800px 600px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
-}
-body.tpl-cv::before { display: none; }
-
-.cv-hero {
-  padding: 50px 20px;
-  text-align: center;
-  color: #3b2a22;
-}
-.cv-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #ffffffb3;
-  backdrop-filter: blur(6px);
-  border: 1px solid #fff4;
-  border-radius: 18px;
-  padding: 28px;
-}
-
-/* ===============================
-   Grille Cv
-================================= */
-.cv-grid {
-  max-width: 750px;
-  margin: 20px auto;
-  padding: 0 14px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
-  justify-content: center;   /* cartes centrées */
-  gap: 20px;
-}
-.work {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 10px 24px #0001;
-  max-width: 320px;   /* limite de largeur */
-  margin: 0 auto;
-}
-.work img {
-  width: 55%;
-  height: 150px;      /* hauteur fixe */
-  object-fit: cover;  /* pas déformé */
-  display: grid;
-  transform: scale(1.02);
-  transition: .35s transform ease;
-}
-.work span {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 10px 12px;
-  color: #fff;
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
-  font-weight: 700;
-  letter-spacing: .2px;
-}
-
-/* ===============================
-   À propos
-================================= */
-.cv-about {
-  text-align: center;
-  margin-top: 40px;
-}
-
-/* ===============================
-   Mobile (<600px)
-================================= */
-@media (max-width: 600px) {
-  .cv-grid {
-    gap: 14px;
-  }
-  .work {
-    width: 80%;
-    max-width: 200px;
-  }
-  .work img {
-    height: 140px;
-  }
-}
-/* ===============================
-   Desktop (≥601px)
-================================= */
-@media (min-width: 601px) {
-  .cv-hero {
-    padding: 95px 30px;     /* plus d’air */
-    font-size: 1.1rem;       /* texte un peu plus large */
-  }
-
-  .cv-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px));
-    gap: 28px;               /* espacement plus large */
-  }
-
-  .work img {
-    height: 200px;           /* images plus grandes sur desktop */
-  }
-
-  .cv-about {
-    max-width: 800px;
-    margin: 60px auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-}
+.cv-role{ opacity:.8; margin:.15rem 0 .6rem }
+.cv-infos{ list-style:none; padding:0; margin:.4rem 0; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.cv-grid{ text-align:left; }
+.cv-grid h2{ color:#4b3a2f; margin-top:10px; }
+.cv-tags{ display:flex; gap:8px; flex-wrap:wrap; list-style:none; padding:0; }
+.cv-tags li{ background:#fff; border:1px solid #eee; padding:6px 10px; border-radius:999px; }
+.cv-job small{ opacity:.7; display:block; margin:.15rem 0 .35rem; }
