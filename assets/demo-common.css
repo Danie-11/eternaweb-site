@@ -89,9 +89,9 @@ body.demo{
 }
 
 .model-card {
-  background: #fff;
+  background: transparent;
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  box-shadow: none;
   text-align: center;
   transition: transform .2s ease, box-shadow .2s ease;
   max-width: 340px;
