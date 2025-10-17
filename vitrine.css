@@ -107,3 +107,50 @@
 .vitrine-gallery a {
   border: 1px solid rgba(0,0,0,0.05);
 }
+/* ===== Neutraliser les styles globaux DEMO COMMON ===== */
+.tpl-portfolio .model-card,
+.tpl-portfolio .card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  filter: none !important;
+}
+.tpl-portfolio .model-card::before,
+.tpl-portfolio .model-card::after,
+.tpl-portfolio .card::before,
+.tpl-portfolio .card::after {
+  content: none !important;
+  display: none !important;
+}
+.tpl-portfolio .model-card:hover,
+.tpl-portfolio .card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+.tpl-portfolio .model-card img,
+.tpl-portfolio .card img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #fde9d6 !important; /* optionnel : beige doré */
+}
+
+/* idem pour la page Vitrine */
+.tpl-vitrine .model-card,
+.tpl-vitrine .card { 
+  background: transparent !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; padding:0 !important; 
+}
+.tpl-vitrine .model-card::before,
+.tpl-vitrine .model-card::after,
+.tpl-vitrine .card::before,
+.tpl-vitrine .card::after { content:none !important; }
+.tpl-vitrine .model-card:hover,
+.tpl-vitrine .card:hover { box-shadow:none !important; transform:none !important; }
+.tpl-vitrine .model-card img,
+.tpl-vitrine .card img { display:block !important; width:100% !important; height:auto !important; object-fit:contain !important; border-radius:0 !important; box-shadow:none !important; background:#fde9d6 !important; }
