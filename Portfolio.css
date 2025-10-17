@@ -1,102 +1,28 @@
-/* ====== STYLE PORTFOLIO ÉPURÉ ====== */
-body.tpl-portfolio {
-  background: linear-gradient(180deg, #fcf7f2, #f5e7d8);
-  font-family: "Inter", sans-serif;
-  color: #3b2a22;
-  margin: 0;
-  padding: 0;
-}
+<main id="works" class="port-grid container">
+  <!-- Mockup 1 -->
+  <a class="work" href="#img1">
+    <img src="images/folio1.png" alt="Branding Café">
+    <span>Branding Café</span>
+  </a>
+  <div id="img1" class="lightbox">
+    <img src="images/folio1.png" alt="Branding Café">
+  </div>
 
-/* --- HERO --- */
-.port-hero {
-  text-align: center;
-  padding: 60px 20px 40px;
-}
-.port-hero h1 {
-  font-size: 2rem;
-  color: #4b3a2f;
-  margin-bottom: 10px;
-}
-.port-hero p {
-  color: #5a473a;
-  font-size: 1rem;
-  opacity: 0.8;
-}
+  <!-- Mockup 2 -->
+  <a class="work" href="#img2">
+    <img src="images/folio2.png" alt="Site artisan">
+    <span>Site artisan</span>
+  </a>
+  <div id="img2" class="lightbox">
+    <img src="images/folio2.png" alt="Site artisan">
+  </div>
 
-/* --- GALERIE --- */
-.port-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto 60px;
-  padding: 0 16px;
-}
-.work {
-  text-align: center;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-}
-.work img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  background: #fde9d6;
-  border-radius: 8px;
-  transition: transform .2s ease-in-out;
-}
-.work:hover img {
-  transform: scale(1.03);
-}
-.work span {
-  display: block;
-  margin-top: 8px;
-  font-weight: 600;
-  color: #4b3a2f;
-}
-
-/* --- TARIFS --- */
-.portfolio-pricing {
-  background: #fff8f2;
-  padding: 60px 20px;
-  text-align: center;
-}
-.portfolio-pricing h2 {
-  color: #4b3a2f;
-  font-size: 1.6rem;
-  margin-bottom: 8px;
-}
-.portfolio-pricing .pricing-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 30px;
-}
-.portfolio-pricing .card {
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.05);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
-  transition: transform .2s ease;
-}
-.portfolio-pricing .card:hover {
-  transform: translateY(-3px);
-}
-.portfolio-pricing ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.portfolio-pricing li {
-  margin: 6px 0;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 600px) {
-  .port-hero { padding: 40px 15px; }
-  .portfolio-pricing { padding: 40px 15px; }
-}
+  <!-- Mockup 3 -->
+  <a class="work" href="#img3">
+    <img src="images/folio3.png" alt="Landing SaaS">
+    <span>Landing SaaS</span>
+  </a>
+  <div id="img3" class="lightbox">
+    <img src="images/folio3.png" alt="Landing SaaS">
+  </div>
+</main>
