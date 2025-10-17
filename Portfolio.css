@@ -166,3 +166,41 @@ body.tpl-portfolio::before { display: none; }
   border-radius: 0 !important;
   background: #fde9d6 !important;
 }
+/* ===== HARD RESET PORTFOLIO CARDS ===== */
+body.tpl-portfolio .port-grid .work,
+body.tpl-portfolio .port-grid .work:hover {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;      /* enlève l'effet "oreilles" liés au clipping */
+  padding: 0 !important;
+  margin: 0 auto !important;
+  max-width: none !important;
+  filter: none !important;
+}
+
+/* Supprime les pseudo-éléments décoratifs & le bandeau gradient */
+body.tpl-portfolio .port-grid .work::before,
+body.tpl-portfolio .port-grid .work::after {
+  content: none !important;
+}
+body.tpl-portfolio .port-grid .work span {
+  display: none !important;          /* enlève le rectangle gradient en bas */
+}
+
+/* Images non rognées, centrées, sans arrondi */
+body.tpl-portfolio .port-grid .work img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;    /* évite de couper le mot "Portfolio" / "CV" sur l'image */
+  object-position: center !important;
+  border-radius: 0 !important;
+  background: #fde9d6 !important;    /* beige doré doux autour si besoin */
+}
+
+/* (Option) Fine bordure très légère pour structurer sans ombre */
+body.tpl-portfolio .port-grid .work {
+  border: 1px solid rgba(0,0,0,0.05) !important;
+}
