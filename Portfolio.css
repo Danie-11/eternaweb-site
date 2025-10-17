@@ -108,29 +108,38 @@ body.tpl-portfolio::before { display: none; }
     line-height: 1.6;
   }
 }
-/* Supprime les ombres, les bordures et les coins arrondis */
-.model-card,
-.port-gallery .card {
+/* ==== Nettoyage Portfolio (supprime bords, ombres, oreilles) ==== */
+.port-grid .work {
   background: transparent !important;
-  box-shadow: none !important;
   border: none !important;
+  box-shadow: none !important;
   border-radius: 0 !important;
+  padding: 0 !important;
 }
 
-/* Ajuste l'image pour qu’elle colle sans arrondi */
-.model-card img,
-.port-gallery img {
-  border-radius: 0 !important;
+.port-grid .work::before,
+.port-grid .work::after {
+  content: none !important;
+}
+
+/* Image sans rognage ni ombre */
+.port-grid img {
   display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0 !important;
+  background: #fde9d6; /* beige doré doux autour */
 }
 
-/* Supprime l’effet d’ombre en hover */
-.model-card:hover,
-.port-gallery .card:hover {
+/* Pas d'effet hover avec ombre */
+.port-grid .work:hover {
   transform: none !important;
   box-shadow: none !important;
 }
-.model-card,
-.port-gallery .card {
+
+/* Optionnel : fine bordure douce pour la structure */
+.port-grid .work {
   border: 1px solid rgba(0,0,0,0.05);
 }
