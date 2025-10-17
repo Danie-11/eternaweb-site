@@ -110,7 +110,7 @@ body.tpl-portfolio::before { display: none; }
 }
 /* Supprime les ombres, les bordures et les coins arrondis */
 .model-card,
-.cv-gallery .card {
+.port-gallery .card {
   background: transparent !important;
   box-shadow: none !important;
   border: none !important;
@@ -119,18 +119,18 @@ body.tpl-portfolio::before { display: none; }
 
 /* Ajuste l'image pour qu’elle colle sans arrondi */
 .model-card img,
-.cv-gallery img {
+.port-gallery img {
   border-radius: 0 !important;
   display: block;
 }
 
 /* Supprime l’effet d’ombre en hover */
 .model-card:hover,
-.cv-gallery .card:hover {
+.port-gallery .card:hover {
   transform: none !important;
   box-shadow: none !important;
 }
 .model-card,
-.cv-gallery .card {
+.port-gallery .card {
   border: 1px solid rgba(0,0,0,0.05);
 }
