@@ -1,182 +1,102 @@
-/* ===============================
-   Fond & Hero
-================================= */
+/* ====== STYLE PORTFOLIO ÉPURÉ ====== */
 body.tpl-portfolio {
-  background: radial-gradient(800px 600px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
-}
-body.tpl-portfolio::before { display: none; }
-
-.port-hero {
-  padding: 50px 20px;
-  text-align: center;
+  background: linear-gradient(180deg, #fcf7f2, #f5e7d8);
+  font-family: "Inter", sans-serif;
   color: #3b2a22;
-}
-.port-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #ffffffb3;
-  backdrop-filter: blur(6px);
-  border: 1px solid #fff4;
-  border-radius: 18px;
-  padding: 28px;
+  margin: 0;
+  padding: 0;
 }
 
-/* ===============================
-   Grille Portfolio
-================================= */
+/* --- HERO --- */
+.port-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+.port-hero h1 {
+  font-size: 2rem;
+  color: #4b3a2f;
+  margin-bottom: 10px;
+}
+.port-hero p {
+  color: #5a473a;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* --- GALERIE --- */
 .port-grid {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 14px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
-  justify-content: center;   /* cartes centrées */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 0 16px;
 }
 .work {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
- 
-  max-width: 320px;   /* limite de largeur */
-  margin: 0 auto;
+  text-align: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 .work img {
-  width: 55%;
-  height: 150px;      /* hauteur fixe */
-  object-fit: cover;  /* pas déformé */
-  display: grid;
-  transform: scale(1.02);
-  transition: .35s transform ease;
-}
-.work span {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 10px 12px;
-  color: #fff;
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
-  font-weight: 700;
-  letter-spacing: .2px;
-}
-
-/* ===============================
-   À propos
-================================= */
-.port-about {
-  text-align: center;
-  margin-top: 30px;
-}
-
-/* ===============================
-   Mobile (<600px)
-================================= */
-@media (max-width: 600px) {
-  .port-grid {
-    gap: 14px;
-  }
-  .work {
-    width: 80%;
-    max-width: 250px;
-  }
-  .work img {
-    height: 160px;
-  }
-}
-/* ===============================
-   Desktop (≥601px)
-================================= */
-@media (min-width: 601px) {
-  .port-hero {
-    padding: 95px 30px;     /* plus d’air */
-    font-size: 1.1rem;       /* texte un peu plus large */
-  }
-
-  .port-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px));
-    gap: 28px;               /* espacement plus large */
-  }
-
-  .work img {
-    height: 200px;           /* images plus grandes sur desktop */
-  }
-
-  .port-about {
-    max-width: 800px;
-    margin: 60px auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-}
-/* ==== Nettoyage Portfolio (supprime bords, ombres, oreilles) ==== */
-.port-grid .work {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-}
-
-.port-grid .work::before,
-.port-grid .work::after {
-  content: none !important;
-}
-
-/* Image sans rognage ni ombre */
-.port-grid img {
-  display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
-  object-position: center;
-  border-radius: 0 !important;
-  background: #fde9d6; /* beige doré doux autour */
+  background: #fde9d6;
+  border-radius: 8px;
+  transition: transform .2s ease-in-out;
+}
+.work:hover img {
+  transform: scale(1.03);
+}
+.work span {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #4b3a2f;
 }
 
-/* Pas d'effet hover avec ombre */
-.port-grid .work:hover {
-  transform: none !important;
-  box-shadow: none !important;
+/* --- TARIFS --- */
+.portfolio-pricing {
+  background: #fff8f2;
+  padding: 60px 20px;
+  text-align: center;
 }
-
-/* Optionnel : fine bordure douce pour la structure */
-.port-grid .work {
+.portfolio-pricing h2 {
+  color: #4b3a2f;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+.portfolio-pricing .pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+.portfolio-pricing .card {
+  background: #fff;
   border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  transition: transform .2s ease;
+}
+.portfolio-pricing .card:hover {
+  transform: translateY(-3px);
+}
+.portfolio-pricing ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.portfolio-pricing li {
+  margin: 6px 0;
 }
 
-/* ===== HARD RESET PORTFOLIO CARDS ===== */
-body.tpl-portfolio .port-grid .work,
-body.tpl-portfolio .port-grid .work:hover {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  overflow: visible !important;      /* enlève l'effet "oreilles" liés au clipping */
-  padding: 0 !important;
-  margin: 0 auto !important;
-  max-width: none !important;
-  filter: none !important;
-}
-
-/* Supprime les pseudo-éléments décoratifs & le bandeau gradient */
-body.tpl-portfolio .port-grid .work::before,
-body.tpl-portfolio .port-grid .work::after {
-  content: none !important;
-}
-body.tpl-portfolio .port-grid .work span {
-  display: none !important;          /* enlève le rectangle gradient en bas */
-}
-
-/* Images non rognées, centrées, sans arrondi */
-body.tpl-portfolio .port-grid .work img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;    /* évite de couper le mot "Portfolio" / "CV" sur l'image */
-  object-position: center !important;
-  border-radius: 0 !important;
-  background: #fde9d6 !important;    /* beige doré doux autour si besoin */
-}
-
-/* (Option) Fine bordure très légère pour structurer sans ombre */
-body.tpl-portfolio .port-grid .work {
-  border: 1px solid rgba(0,0,0,0.05) !important;
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .port-hero { padding: 40px 15px; }
+  .portfolio-pricing { padding: 40px 15px; }
 }
