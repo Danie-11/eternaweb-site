@@ -84,3 +84,25 @@ body.tpl-cv::before { display:none; }
   box-shadow: none !important;
   transition: transform .15s ease;
 }
+/* ===============================
+   Fond & Hero
+================================= */
+body.tpl-cv {
+  background: radial-gradient(800px 600px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
+}
+body.tpl-cv::before { display: none; }
+
+.cv-hero {
+  padding: 50px 20px;
+  text-align: center;
+  color: #3b2a22;
+}
+.cv-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffffb3;
+  backdrop-filter: blur(6px);
+  border: 1px solid #fff4;
+  border-radius: 18px;
+  padding: 28px;
+}
