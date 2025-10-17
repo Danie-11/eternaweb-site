@@ -72,3 +72,38 @@
   margin-top: 2rem;
   text-align: center;
 }
+/* ==== Nettoyage Vitrine (supprime bords, ombres, oreilles) ==== */
+.vitrine-gallery a {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.vitrine-gallery a::before,
+.vitrine-gallery a::after {
+  content: none !important;
+}
+
+/* Image nette, non rognée */
+.vitrine-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0 !important;
+  background: #fde9d6; /* fond beige doré doux */
+}
+
+/* Pas d’effet hover fort */
+.vitrine-gallery a:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Option : fine bordure douce */
+.vitrine-gallery a {
+  border: 1px solid rgba(0,0,0,0.05);
+}
