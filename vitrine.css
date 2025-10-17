@@ -60,6 +60,8 @@
 }
 .vit-cards article:hover {
   transform: translateY(-3px);
+  
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 .vit-cards h3 {
   margin-bottom: 0.5rem;
