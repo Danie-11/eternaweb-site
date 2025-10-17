@@ -12,7 +12,7 @@
 .vit-hero p,
 .vit-sections p {
   color: #3b2a22;
-  font-size: 1rem;
+  font-size: 0.5rem;
 }
 
 /* Boutons */
@@ -55,12 +55,11 @@
   border-radius: 14px;
   padding: 18px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: transform .2s ease, 
   text-align: center;
 }
 .vit-cards article:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 .vit-cards h3 {
   margin-bottom: 0.5rem;
@@ -72,85 +71,3 @@
   margin-top: 2rem;
   text-align: center;
 }
-/* ==== Nettoyage Vitrine (supprime bords, ombres, oreilles) ==== */
-.vitrine-gallery a {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-}
-
-.vitrine-gallery a::before,
-.vitrine-gallery a::after {
-  content: none !important;
-}
-
-/* Image nette, non rognée */
-.vitrine-gallery img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 0 !important;
-  background: #fde9d6; /* fond beige doré doux */
-}
-
-/* Pas d’effet hover fort */
-.vitrine-gallery a:hover {
-  transform: none !important;
-  box-shadow: none !important;
-}
-
-/* Option : fine bordure douce */
-.vitrine-gallery a {
-  border: 1px solid rgba(0,0,0,0.05);
-}
-/* ===== Neutraliser les styles globaux DEMO COMMON ===== */
-.tpl-portfolio .model-card,
-.tpl-portfolio .card {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  transform: none !important;
-  filter: none !important;
-}
-.tpl-portfolio .model-card::before,
-.tpl-portfolio .model-card::after,
-.tpl-portfolio .card::before,
-.tpl-portfolio .card::after {
-  content: none !important;
-  display: none !important;
-}
-.tpl-portfolio .model-card:hover,
-.tpl-portfolio .card:hover {
-  box-shadow: none !important;
-  transform: none !important;
-}
-.tpl-portfolio .model-card img,
-.tpl-portfolio .card img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  background: #fde9d6 !important; /* optionnel : beige doré */
-}
-
-/* idem pour la page Vitrine */
-.tpl-vitrine .model-card,
-.tpl-vitrine .card { 
-  background: transparent !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; padding:0 !important; 
-}
-.tpl-vitrine .model-card::before,
-.tpl-vitrine .model-card::after,
-.tpl-vitrine .card::before,
-.tpl-vitrine .card::after { content:none !important; }
-.tpl-vitrine .model-card:hover,
-.tpl-vitrine .card:hover { box-shadow:none !important; transform:none !important; }
-.tpl-vitrine .model-card img,
-.tpl-vitrine .card img { display:block !important; width:100% !important; height:auto !important; object-fit:contain !important; border-radius:0 !important; box-shadow:none !important; background:#fde9d6 !important; }
