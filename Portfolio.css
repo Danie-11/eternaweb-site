@@ -143,3 +143,26 @@ body.tpl-portfolio::before { display: none; }
 .port-grid .work {
   border: 1px solid rgba(0,0,0,0.05);
 }
+/* OVERLAY/TABS OFF */
+.port-grid .work,
+.port-grid .work:hover {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  filter: none !important;
+}
+.port-grid .work::before,
+.port-grid .work::after { content: none !important; }
+
+/* Images non rognées */
+.port-grid .work img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 0 !important;
+  background: #fde9d6 !important;
+}
