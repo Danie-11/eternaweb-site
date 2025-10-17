@@ -26,3 +26,28 @@
     <img src="images/folio3.png" alt="Landing SaaS">
   </div>
 </main>
+/* Grille portfolio – propre et sans ombres */
+.port-gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+  max-width:900px;
+  margin:0 auto 60px;
+  padding:0 16px;
+}
+.port-gallery .model-card{
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+}
+.port-gallery .model-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  border-radius:8px;
+  background:#fde9d6; /* beige doré doux */
+  transition:transform .2s ease-in-out;
+}
+.port-gallery .model-card:hover img{ transform:scale(1.03); }
