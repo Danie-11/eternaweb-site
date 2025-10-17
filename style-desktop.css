@@ -383,9 +383,9 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .gallery-card {
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: transparent;
   border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  box-shadow: none;
   overflow: hidden;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -401,7 +401,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 
 .gallery-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  box-shadow: none;
 }
 
 .card-info {
@@ -425,5 +425,5 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 }
 
 .gallery-card .btn:hover {
-  background: #a38250;
+  background: none;
 }
