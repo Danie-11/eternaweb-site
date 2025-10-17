@@ -37,8 +37,7 @@ body.tpl-portfolio::before { display: none; }
   position: relative;
   overflow: hidden;
   border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 10px 24px #0001;
+ 
   max-width: 320px;   /* limite de largeur */
   margin: 0 auto;
 }
@@ -112,7 +111,6 @@ body.tpl-portfolio::before { display: none; }
 .port-grid .work {
   background: transparent !important;
   border: none !important;
-  box-shadow: none !important;
   border-radius: 0 !important;
   padding: 0 !important;
 }
@@ -143,29 +141,7 @@ body.tpl-portfolio::before { display: none; }
 .port-grid .work {
   border: 1px solid rgba(0,0,0,0.05);
 }
-/* OVERLAY/TABS OFF */
-.port-grid .work,
-.port-grid .work:hover {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  filter: none !important;
-}
-.port-grid .work::before,
-.port-grid .work::after { content: none !important; }
 
-/* Images non rognées */
-.port-grid .work img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  border-radius: 0 !important;
-  background: #fde9d6 !important;
-}
 /* ===== HARD RESET PORTFOLIO CARDS ===== */
 body.tpl-portfolio .port-grid .work,
 body.tpl-portfolio .port-grid .work:hover {
