@@ -49,3 +49,38 @@ body.tpl-cv::before { display:none; }
 .cv-gallery .card {
   border: 1px solid rgba(0,0,0,0.05);
 }
+/* --- Nettoyage cartes (enlève bords arrondis, ombres, "oreilles") --- */
+.cv-gallery .card,
+.model-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+.cv-gallery .card::before,
+.cv-gallery .card::after,
+.model-card::before,
+.model-card::after {
+  content: none !important;  /* supprime les "boutons" latéraux */
+}
+
+/* --- Miniatures : pas de rognage du texte "CV" --- */
+.cv-gallery img,
+.model-card img {
+  display: block;
+  width: 100%;
+  height: 220px;              /* hauteur uniforme */
+  object-fit: contain;        /* ⚠️ garde l'image entière (pas rognée) */
+  object-position: center;    /* centrée */
+  background: #fde9d6;        /* beige doux autour si besoin */
+  border-radius: 8px;         /* léger, optionnel */
+}
+
+/* Hover discret, sans ombre */
+.cv-gallery .card:hover,
+.model-card:hover {
+  transform: translateY(-2px);
+  box-shadow: none !important;
+  transition: transform .15s ease;
+}
