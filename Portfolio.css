@@ -98,3 +98,39 @@
 .tpl-vitrine .card:hover { box-shadow:none !important; transform:none !important; }
 .tpl-vitrine .model-card img,
 .tpl-vitrine .card img { display:block !important; width:100% !important; height:auto !important; object-fit:contain !important; border-radius:0 !important; box-shadow:none !important; background:#fde9d6 !important; }
+/* === Reset total des cartes portfolio === */
+.tpl-portfolio .port-gallery .model-card,
+.tpl-portfolio .port-gallery .card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+.tpl-portfolio .port-gallery .model-card::before,
+.tpl-portfolio .port-gallery .model-card::after,
+.tpl-portfolio .port-gallery .card::before,
+.tpl-portfolio .port-gallery .card::after {
+  content: none !important;
+}
+
+/* Images “propres”, sans arrondi ni rognage */
+.tpl-portfolio .port-gallery .model-card img,
+.tpl-portfolio .port-gallery .card img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Désactive l’ombre/hover des cartes */
+.tpl-portfolio .port-gallery .model-card:hover,
+.tpl-portfolio .port-gallery .card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
