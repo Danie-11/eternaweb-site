@@ -89,12 +89,12 @@ body.demo{
 }
 
 .model-card {
-  background: none;
-  border-radius: 10px;
-  box-shadow: none;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
   text-align: center;
   transition: transform .2s ease, box-shadow .2s ease;
-  max-width: 320px;
+  max-width: 340px;
   width: 100%;
   margin: 0 auto;
 }
@@ -114,41 +114,3 @@ body, .demo-hero, .model-card {
   text-rendering: optimizeLegibility;
 }
 .btn { font-weight:500; }
-/* 🧹 Désactivation des styles hérités de DEMO COMMON */
-.tpl-portfolio .demo-hero,
-.tpl-portfolio .preview-img,
-.tpl-portfolio .section,
-.tpl-portfolio .model-card,
-.tpl-portfolio .card,
-.tpl-portfolio .work {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  outline: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Nettoyage total des images */
-.tpl-portfolio img,
-.tpl-portfolio .preview-img img {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  object-position: center !important;
-}
-
-/* Pas d’effet hover “ombre” */
-.tpl-portfolio .model-card:hover,
-.tpl-portfolio .work:hover,
-.tpl-portfolio .card:hover {
-  transform: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-}
