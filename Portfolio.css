@@ -1,105 +1,42 @@
-<main id="works" class="port-grid container">
-  <!-- Mockup 1 -->
-  <a class="work" href="#img1">
-    <img src="images/folio1.png" alt="Branding Café">
-    <span>Branding Café</span>
-  </a>
-  <div id="img1" class="lightbox">
-    <img src="images/folio1.png" alt="Branding Café">
-  </div>
+/* Fond dégradé plus punchy + tuiles */
+body.tpl-portfolio{ background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1); }
+body.tpl-portfolio::before{ display:none; }
 
-  <!-- Mockup 2 -->
-  <a class="work" href="#img2">
-    <img src="images/folio2.png" alt="Site artisan">
-    <span>Site artisan</span>
-  </a>
-  <div id="img2" class="lightbox">
-    <img src="images/folio2.png" alt="Site artisan">
-  </div>
+.port-hero{
+  padding:60px 20px; text-align:center; color:#3b2a22;
+}
+.port-inner{ max-width:980px; margin:0 auto; background:#ffffffb3; backdrop-filter: blur(6px);
+  border:1px solid #fff4; border-radius:18px; padding:28px; }
 
-  <!-- Mockup 3 -->
-  <a class="work" href="#img3">
-    <img src="images/folio3.png" alt="Landing SaaS">
-    <span>Landing SaaS</span>
-  </a>
-  <div id="img3" class="lightbox">
-    <img src="images/folio3.png" alt="Landing SaaS">
-  </div>
-</main>
-/* Grille portfolio – propre et sans ombres */
-.port-gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-  max-width:900px;
-  margin:0 auto 60px;
-  padding:0 16px;
+.port-grid{
+  max-width:1100px; margin:18px auto; padding:0 14px;
+  display:grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap:14px;
 }
-.port-gallery .model-card img{
-  display:block;
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  border-radius:8px;
-  background:#fde9d6; /* beige doré doux */
-  transition:transform .2s ease-in-out;
+.work{ position:relative; overflow:hidden; border-radius:14px; background:#fff; box-shadow:0 10px 24px #0001; }
+.work img{ width:100%; height:180px; object-fit:cover; display:block; transform:scale(1.02); transition:.35s transform ease; }
+.work span{
+  position:absolute; left:0; right:0; bottom:0; padding:10px 12px; color:#fff;
+  background: linear-gradient(180deg,transparent,rgba(0,0,0,.55));
+  font-weight:700; letter-spacing:.2px;
 }
-.port-gallery .model-card:hover img{ transform:scale(1.03); }
-/* ===== Neutraliser les styles globaux DEMO COMMON ===== */
-.tpl-portfolio .model-card,
-
-.tpl-portfolio .model-card::before,
-.tpl-portfolio .model-card::after,
-.tpl-portfolio .card::before,
-.tpl-portfolio .card::after {
-  content: none !important;
-  display: none !important;
+.work:hover img{ transform:scale(1.08); }
+.port-about{ text-align:center; }
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
 }
-.tpl-portfolio .model-card:hover,
-.tpl-portfolio .card:hover {
-  box-shadow: none !important;
-  transform: none !important;
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
-.tpl-portfolio .model-card img,
-
-/* idem pour la page Vitrine */
-.tpl-vitrine .model-card,
-.tpl-vitrine .card { 
-  background: transparent !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; padding:0 !important; 
-}
-.tpl-vitrine .model-card::before,
-.tpl-vitrine .model-card::after,
-.tpl-vitrine .card::before,
-.tpl-vitrine .card::after { content:none !important; }
-.tpl-vitrine .model-card:hover,
-.tpl-vitrine .card:hover { box-shadow:none !important; transform:none !important; }
-.tpl-vitrine .model-card img,
-.tpl-vitrine .card img { display:block !important; width:100% !important; height:auto !important; object-fit:contain !important; border-radius:0 !important; box-shadow:none !important; background:#fde9d6 !important; }
-/* === Reset total des cartes portfolio === */
-.tpl-portfolio .port-gallery .model-card,
-.tpl-portfolio .port-gallery .card {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  overflow: visible !important;
-}
-
-
-/* Images “propres”, sans arrondi ni rognage */
-.tpl-portfolio .port-gallery .model-card img,
-.tpl-portfolio .port-gallery .card img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  border-radius: 0 !important;
-}
-
-/* Désactive l’ombre/hover des cartes */
-.tpl-portfolio .port-gallery .model-card:hover,
-.tpl-portfolio .port-gallery .card:hover {
-  transform: none !important;
-  filter: none !important;
+.lightbox:target {
+  display: flex;
 }
