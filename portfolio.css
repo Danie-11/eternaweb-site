@@ -1,144 +1,119 @@
 /* ===============================
-   Fond & Hero
+   🎨 STYLE PORTFOLIO ÉPURÉ
 ================================= */
+
+/* --- Fond général --- */
 body.tpl-portfolio {
-  background: radial-gradient(800px 600px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
-}
-body.tpl-portfolio::before { display: none; }
-
-.port-hero {
-  padding: 50px 20px;
-  text-align: center;
+  background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
   color: #3b2a22;
-}
-.port-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #ffffffb3;
-  backdrop-filter: blur(6px);
-  border: 1px solid #fff4;
-  border-radius: 18px;
-  padding: 28px;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* ===============================
-   Grille Portfolio
-================================= */
-.port-grid {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 14px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
-  justify-content: center;   /* cartes centrées */
-  gap: 20px;
-}
-.work {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 10px 24px #0001;
-  max-width: 320px;   /* limite de largeur */
-  margin: 0 auto;
-}
-.work img {
-  width: 55%;
-  height: 150px;      /* hauteur fixe */
-  object-fit: cover;  /* pas déformé */
-  display: grid;
-  transform: scale(1.02);
-  transition: .35s transform ease;
-}
-.work span {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 10px 12px;
-  color: #fff;
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
-  font-weight: 700;
-  letter-spacing: .2px;
+body.tpl-portfolio::before {
+  display: none;
 }
 
-/* ===============================
-   À propos
-================================= */
-.port-about {
+/* --- En-tête --- */
+.port-hero {
   text-align: center;
-  margin-top: 30px;
+  padding: 60px 20px 20px;
 }
 
-/* ===============================
-   Mobile (<600px)
-================================= */
-@media (max-width: 600px) {
-  .port-grid {
-    gap: 14px;
-  }
-  .work {
-    width: 80%;
-    max-width: 250px;
-  }
-  .work img {
-    height: 160px;
-  }
+.port-hero h2 {
+  font-family: "Playfair Display", serif;
+  color: #4b3a2f;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
 }
-/* ===============================
-   Desktop (≥601px)
-================================= */
-@media (min-width: 601px) {
-  .port-hero {
-    padding: 95px 30px;     /* plus d’air */
-    font-size: 1.1rem;       /* texte un peu plus large */
-  }
 
-  .port-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px));
-    gap: 28px;               /* espacement plus large */
-  }
-
-  .work img {
-    height: 200px;           /* images plus grandes sur desktop */
-  }
-
-  .port-about {
-    max-width: 800px;
-    margin: 60px auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
+.port-hero p {
+  opacity: 0.8;
+  margin: 0 auto 2rem;
+  max-width: 600px;
 }
-/* === RESET TOTAL DES MOCKUPS DANS LE PORTFOLIO === */
-.tpl-portfolio .port-grid .work {
+
+/* --- Grille des maquettes --- */
+.port-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding: 0 16px;
+}
+
+/* --- Carte (mockup) --- */
+.port-gallery .model-card {
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   overflow: visible !important;
   padding: 0 !important;
-}
-
-/* supprime les "oreilles" générées par des pseudo-éléments */
-.tpl-portfolio .port-grid .work::before,
-.tpl-portfolio .port-grid .work::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* nettoie les images internes */
-.tpl-portfolio .port-grid .work img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  background: transparent !important;  /* enlève tout fond beige/blanc */
-  object-fit: contain !important;
-}
-
-/* empêche tout effet de hover ou d’ombre */
-.tpl-portfolio .port-grid .work:hover {
   transform: none !important;
-  box-shadow: none !important;
   filter: none !important;
+}
+
+.port-gallery .model-card::before,
+.port-gallery .model-card::after {
+  content: none !important;
+}
+
+/* --- Image --- */
+.port-gallery .model-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent; /* ✅ plus de fond beige/blanc */
+  transition: transform 0.25s ease;
+}
+
+/* --- Hover doux --- */
+.port-gallery .model-card:hover img {
+  transform: scale(1.02);
+}
+
+/* --- Titres sous les maquettes --- */
+.port-gallery .model-card span {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #5a3e2b;
+  font-weight: 600;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .port-hero {
+    padding: 40px 14px;
+  }
+  .port-gallery {
+    gap: 14px;
+  }
+}
+
+/* --- Lightbox (zoom image) --- */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.lightbox:target {
+  display: flex;
 }
