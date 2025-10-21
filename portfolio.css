@@ -64,7 +64,7 @@ body.tpl-portfolio::before {
 /* --- Image --- */
 .port-gallery .model-card img {
   display: block;
-  width: 100%;
+  width: 90%;
   height: auto;
   object-fit: contain;
   border-radius: 0;
