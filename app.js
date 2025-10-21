@@ -548,15 +548,15 @@ function openDevis(plan = ''){
   d.classList.add('show');
   d.scrollIntoView({ behavior:'smooth', block:'start' });
 }
-$$('.choose-plan').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const plan = btn.dataset.plan || '';
-    openDevis(plan);
-    if (isMobile()){
-      const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
-      window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
-    }
-  });
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.choose-plan');
+  if (!btn) return;
+  const plan = btn.dataset.plan || '';
+  openDevis(plan);
+  if (isMobile()){
+    const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
+    window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
+  }
 });
 const savedPlan = localStorage.getItem('ew_selected_plan');
 if (savedPlan && planInput) planInput.value = savedPlan;
