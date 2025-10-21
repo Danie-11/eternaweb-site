@@ -1,3 +1,6 @@
+.port-grid, .work, .work img {
+  background: transparent !important;
+}
 /* Fond dégradé plus punchy + tuiles */
 body.tpl-portfolio{ background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1); }
 body.tpl-portfolio::before{ display:none; }
@@ -67,6 +70,40 @@ body.tpl-portfolio::before{ display:none; }
 }
 
 /* Pas d’effet hover “ombre” */
+.tpl-portfolio .port-grid .work:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+/* === RESET TOTAL DES MOCKUPS DANS LE PORTFOLIO === */
+.tpl-portfolio .port-grid .work {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+/* supprime les "oreilles" générées par des pseudo-éléments */
+.tpl-portfolio .port-grid .work::before,
+.tpl-portfolio .port-grid .work::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* nettoie les images internes */
+.tpl-portfolio .port-grid .work img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;  /* enlève tout fond beige/blanc */
+  object-fit: contain !important;
+}
+
+/* empêche tout effet de hover ou d’ombre */
 .tpl-portfolio .port-grid .work:hover {
   transform: none !important;
   box-shadow: none !important;
