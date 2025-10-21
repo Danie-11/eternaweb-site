@@ -99,7 +99,7 @@ body.tpl-portfolio::before{ display:none; }
   height: auto !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  background: transparent !important;  /* enlève tout fond beige/blanc */
+  background: none !important;  /* enlève tout fond beige/blanc */
   object-fit: contain !important;
 }
 
