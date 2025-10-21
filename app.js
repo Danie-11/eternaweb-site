@@ -529,7 +529,11 @@ $$('#langMenu .lang-item').forEach(b=>{
   });
 });
 applyLang(localStorage.getItem('lang') || 'fr');
-
+// 🧩 Correction universelle : retraduire aussi les éléments ajoutés dynamiquement
+document.addEventListener("DOMContentLoaded", () => {
+  const currentLang = localStorage.getItem('lang') || 'fr';
+  applyLang(currentLang);
+});
 // =========================
 // Gestion du formulaire devis
 // =========================
