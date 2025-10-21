@@ -1,79 +1,112 @@
-.port-grid, .work, .work img {
-  background: transparent !important;
+/* ===============================
+   Fond & Hero
+================================= */
+body.tpl-portfolio {
+  background: radial-gradient(800px 600px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
 }
-/* Fond dégradé plus punchy + tuiles */
-body.tpl-portfolio{ background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1); }
-body.tpl-portfolio::before{ display:none; }
+body.tpl-portfolio::before { display: none; }
 
-.port-hero{
-  padding:60px 20px; text-align:center; color:#3b2a22;
+.port-hero {
+  padding: 50px 20px;
+  text-align: center;
+  color: #3b2a22;
 }
-.port-inner{ max-width:980px; margin:0 auto; background:#ffffffb3; backdrop-filter: blur(6px);
-  border:1px solid #fff4; border-radius:18px; padding:28px; }
-
-.port-grid{
-  max-width:1100px; margin:18px auto; padding:0 14px;
-  display:grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap:14px;
-}
-.work{ position:relative; overflow:hidden; border-radius:14px; background:#fff; box-shadow:0 10px 24px #0001; }
-.work img{ width:100%; height:180px; object-fit:cover; display:block; transform:scale(1.02); transition:.35s transform ease; }
-.work span{
-  position:absolute; left:0; right:0; bottom:0; padding:10px 12px; color:#fff;
-  background: linear-gradient(180deg,transparent,rgba(0,0,0,.55));
-  font-weight:700; letter-spacing:.2px;
-}
-.work:hover img{ transform:scale(1.08); }
-.port-about{ text-align:center; }
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-.lightbox:target {
-  display: flex;
-}
-/* RESET total des cartes du portfolio (markup: .port-grid > .work) */
-.tpl-portfolio .port-grid .work {
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  position: static !important;
-  overflow: visible !important;
-  padding: 0 !important;
-  transform: none !important;
-  filter: none !important;
-}
-.tpl-portfolio .port-grid .work::before,
-.tpl-portfolio .port-grid .work::after { content: none !important; }
-
-/* Images propres, sans rognage ni arrondi */
-.tpl-portfolio .port-grid .work img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  background: transparent !important;
+.port-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffffb3;
+  backdrop-filter: blur(6px);
+  border: 1px solid #fff4;
+  border-radius: 18px;
+  padding: 28px;
 }
 
-/* Pas d’effet hover “ombre” */
-.tpl-portfolio .port-grid .work:hover {
-  transform: none !important;
-  box-shadow: none !important;
-  filter: none !important;
+/* ===============================
+   Grille Portfolio
+================================= */
+.port-grid {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center;   /* cartes centrées */
+  gap: 20px;
+}
+.work {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 24px #0001;
+  max-width: 320px;   /* limite de largeur */
+  margin: 0 auto;
+}
+.work img {
+  width: 55%;
+  height: 150px;      /* hauteur fixe */
+  object-fit: cover;  /* pas déformé */
+  display: grid;
+  transform: scale(1.02);
+  transition: .35s transform ease;
+}
+.work span {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 12px;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+/* ===============================
+   À propos
+================================= */
+.port-about {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ===============================
+   Mobile (<600px)
+================================= */
+@media (max-width: 600px) {
+  .port-grid {
+    gap: 14px;
+  }
+  .work {
+    width: 80%;
+    max-width: 250px;
+  }
+  .work img {
+    height: 160px;
+  }
+}
+/* ===============================
+   Desktop (≥601px)
+================================= */
+@media (min-width: 601px) {
+  .port-hero {
+    padding: 95px 30px;     /* plus d’air */
+    font-size: 1.1rem;       /* texte un peu plus large */
+  }
+
+  .port-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px));
+    gap: 28px;               /* espacement plus large */
+  }
+
+  .work img {
+    height: 200px;           /* images plus grandes sur desktop */
+  }
+
+  .port-about {
+    max-width: 800px;
+    margin: 60px auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
 }
 /* === RESET TOTAL DES MOCKUPS DANS LE PORTFOLIO === */
 .tpl-portfolio .port-grid .work {
@@ -99,7 +132,7 @@ body.tpl-portfolio::before{ display:none; }
   height: auto !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  background: none !important;  /* enlève tout fond beige/blanc */
+  background: transparent !important;  /* enlève tout fond beige/blanc */
   object-fit: contain !important;
 }
 
