@@ -178,7 +178,19 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,.08);
   text-align: center;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    gap: 8px; /* espace entre l’icône et le texte */
+  font-size: 1.8rem; /* optionnel : agrandir un peu */
+  margin-bottom: 1rem; /* espace sous le titre */
 }
+/* Centrer aussi l'icône si elle est avant le texte */
+.temoignages h2::before,
+.temoignages h2::after {
+  margin: 0 auto;
+}
+
 /* ===============================
    Footer
 ================================= */
