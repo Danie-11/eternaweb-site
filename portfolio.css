@@ -46,7 +46,7 @@ body.tpl-portfolio::before {
 
 /* --- Carte (mockup) --- */
 .port-gallery .model-card {
-  background: transparent !important;
+  background: none !important;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
@@ -64,7 +64,7 @@ body.tpl-portfolio::before {
 /* --- Image --- */
 .port-gallery .model-card img {
   display: block;
-  width: 90%;
+  width: 95%;
   height: auto;
   object-fit: contain;
   border-radius: 0;
@@ -88,7 +88,7 @@ body.tpl-portfolio::before {
 }
 
 /* --- Responsive --- */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .port-hero {
     padding: 40px 14px;
   }
