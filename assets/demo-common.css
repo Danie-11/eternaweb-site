@@ -89,12 +89,12 @@ body.demo{
 }
 
 .model-card {
-  background: transparent;
-  border-radius: 14px;
+  background: none;
+  border-radius: 10px;
   box-shadow: none;
   text-align: center;
   transition: transform .2s ease, box-shadow .2s ease;
-  max-width: 340px;
+  max-width: 320px;
   width: 100%;
   margin: 0 auto;
 }
