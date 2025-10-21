@@ -35,12 +35,6 @@
   margin:0 auto 60px;
   padding:0 16px;
 }
-.port-gallery .model-card{
-  background:transparent !important;
-  border:none !important;
-  box-shadow:none !important;
-  border-radius:0 !important;
-}
 .port-gallery .model-card img{
   display:block;
   width:100%;
@@ -53,15 +47,7 @@
 .port-gallery .model-card:hover img{ transform:scale(1.03); }
 /* ===== Neutraliser les styles globaux DEMO COMMON ===== */
 .tpl-portfolio .model-card,
-.tpl-portfolio .card {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  transform: none !important;
-  filter: none !important;
-}
+
 .tpl-portfolio .model-card::before,
 .tpl-portfolio .model-card::after,
 .tpl-portfolio .card::before,
@@ -75,15 +61,6 @@
   transform: none !important;
 }
 .tpl-portfolio .model-card img,
-.tpl-portfolio .card img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  background: #fde9d6 !important; /* optionnel : beige doré */
-}
 
 /* idem pour la page Vitrine */
 .tpl-vitrine .model-card,
@@ -108,12 +85,7 @@
   padding: 0 !important;
   overflow: visible !important;
 }
-.tpl-portfolio .port-gallery .model-card::before,
-.tpl-portfolio .port-gallery .model-card::after,
-.tpl-portfolio .port-gallery .card::before,
-.tpl-portfolio .port-gallery .card::after {
-  content: none !important;
-}
+
 
 /* Images “propres”, sans arrondi ni rognage */
 .tpl-portfolio .port-gallery .model-card img,
@@ -123,14 +95,11 @@
   height: auto !important;
   object-fit: contain !important;
   border-radius: 0 !important;
-  box-shadow: none !important;
-  background: transparent !important;
 }
 
 /* Désactive l’ombre/hover des cartes */
 .tpl-portfolio .port-gallery .model-card:hover,
 .tpl-portfolio .port-gallery .card:hover {
   transform: none !important;
-  box-shadow: none !important;
   filter: none !important;
 }
