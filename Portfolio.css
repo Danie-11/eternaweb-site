@@ -40,3 +40,35 @@ body.tpl-portfolio::before{ display:none; }
 .lightbox:target {
   display: flex;
 }
+/* RESET total des cartes du portfolio (markup: .port-grid > .work) */
+.tpl-portfolio .port-grid .work {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  position: static !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  transform: none !important;
+  filter: none !important;
+}
+.tpl-portfolio .port-grid .work::before,
+.tpl-portfolio .port-grid .work::after { content: none !important; }
+
+/* Images propres, sans rognage ni arrondi */
+.tpl-portfolio .port-grid .work img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Pas d’effet hover “ombre” */
+.tpl-portfolio .port-grid .work:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
