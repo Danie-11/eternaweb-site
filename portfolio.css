@@ -1,119 +1,39 @@
 /* ===============================
-   🎨 STYLE PORTFOLIO ÉPURÉ
+   PORTFOLIO SPÉCIFIQUE
 ================================= */
-
-/* --- Fond général --- */
-body.tpl-portfolio {
-  background: radial-gradient(900px 700px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
-  color: #3b2a22;
-  font-family: "Inter", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-body.tpl-portfolio::before {
-  display: none;
-}
-
-/* --- En-tête --- */
-.port-hero {
-  text-align: center;
-  padding: 60px 20px 20px;
-}
-
-.port-hero h2 {
-  font-family: "Playfair Display", serif;
-  color: #4b3a2f;
-  font-size: 2rem;
-  margin-bottom: 0.4rem;
-}
-
-.port-hero p {
-  opacity: 0.8;
-  margin: 0 auto 2rem;
-  max-width: 600px;
-}
-
-/* --- Grille des maquettes --- */
 .port-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  max-width: 900px;
-  margin: 0 auto 60px;
-  padding: 0 16px;
+  gap: 1.5rem;
+  justify-items: center;
+  margin-top: 2rem;
 }
 
-/* --- Carte (mockup) --- */
 .port-gallery .model-card {
-  background: none !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  overflow: visible !important;
-  padding: 0 !important;
-  transform: none !important;
-  filter: none !important;
+  background: var(--paper);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  transition: transform .25s ease;
 }
 
-.port-gallery .model-card::before,
-.port-gallery .model-card::after {
-  content: none !important;
+.port-gallery .model-card:hover {
+  transform: translateY(-6px);
 }
 
-/* --- Image --- */
-.port-gallery .model-card img {
-  display: block;
-  width: 95%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 0;
-  box-shadow: none;
-  background: transparent; /* ✅ plus de fond beige/blanc */
-  transition: transform 0.25s ease;
+.port-gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0,0,0,.05);
 }
 
-/* --- Hover doux --- */
-.port-gallery .model-card:hover img {
-  transform: scale(1.02);
-}
-
-/* --- Titres sous les maquettes --- */
-.port-gallery .model-card span {
-  display: block;
-  text-align: center;
-  margin-top: 10px;
-  color: #5a3e2b;
-  font-weight: 600;
-}
-
-/* --- Responsive --- */
-@media (max-width: 650px) {
-  .port-hero {
-    padding: 40px 14px;
-  }
-  .port-gallery {
-    gap: 14px;
-  }
-}
-
-/* --- Lightbox (zoom image) --- */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-.lightbox:target {
-  display: flex;
+/* Tarifs spécifiques au portfolio */
+.pricing-portfolio .card {
+  background: #fffaf7;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.1);
+  padding: 24px;
+  text-align: left;
+  max-width: 280px;
 }
