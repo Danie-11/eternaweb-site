@@ -1,3 +1,6 @@
+body.demo {
+  overflow-x: hidden;
+}
 /* ====== DEMO COMMON (toutes les mini-démos) ====== */
 :root{
   --brand:#6b4b3e;     /* marron Eterna */
@@ -80,12 +83,14 @@ body.demo{
 
 /* CORRECTION pour les cartes trop larges */
 .models-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
-  gap: 1.5rem;
   max-width: 900px;
+}
+.model-card {
+  max-width: 340px;
+  width: 100%;
   margin: 0 auto;
-  justify-content: center;
+}
 }
 
 .model-card {
