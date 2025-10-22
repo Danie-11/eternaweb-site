@@ -1,3 +1,4 @@
+console.log("✅ app.js chargé");
 // =========================
 // Config
 // =========================
@@ -74,7 +75,7 @@ const I18N = {
   'about.li2': '• Aux professionnels du bien-être en quête d’un espace simple et accueillant',
   'about.li3': '• Aux personnes en reconversion ou en recherche d’emploi, qui veulent un CV valorisant',
   'about.contact': '💌 Pour en savoir plus, discuter de votre projet ou demander un devis : <a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a>',
-  'about.back': '← Retour à l’accueil'
+  'about.back': '← Retour à l’accueil',
       'footer.legal':'Mentions légales',
   'legal.title': 'Mentions légales - EternaWeb',
 'legal.h1': 'Mentions légales',
@@ -184,7 +185,7 @@ const I18N = {
   'about.li2': '• For wellness professionals seeking a simple, welcoming space',
   'about.li3': '• For career changers or job seekers who want a standout CV',
   'about.contact': '💌 To learn more, discuss your project or request a quote: <a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a>',
-  'about.back': '← Back to home'
+  'about.back': '← Back to home',
        'footer.legal':'Legal Notice',
   'legal.title': 'Legal Notice - EternaWeb',
 'legal.h1': 'Legal Notice',
@@ -330,7 +331,7 @@ nl: {
 'about.li2': '• Wellnessprofessionals die op zoek zijn naar een eenvoudige en gastvrije ruimte',
 'about.li3': '• Mensen die zich omscholen of op zoek zijn naar een baan en een waardevol cv willen',
 'about.contact': '💌 Voor meer informatie, om uw project te bespreken of een offerte aan te vragen: <a href="mailto:contact@eternaweb.fr">contact@eternaweb.fr</a>',
-'about.back': '← Terug naar home'
+'about.back': '← Terug naar home',
         'footer.legal':'Wettelijke vermeldingen',
   'legal.title': 'Wettelijke vermeldingen - EternaWeb',
 'legal.h1': 'Wettelijke vermeldingen',
