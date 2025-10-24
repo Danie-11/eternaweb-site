@@ -137,3 +137,20 @@ body.tpl-cv::before { display: none; }
   background-image: none !important;
   box-shadow: none !important;
 }
+/* 🌾 Éradication totale des pseudo-éléments fantômes */
+.card::before,
+.card::after,
+.model-card::before,
+.model-card::after,
+.models-grid .card::before,
+.models-grid .card::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: static !important;
+  opacity: 0 !important;
+}
