@@ -1,233 +1,156 @@
-/* ===============================
-   ETERNAWEB – STYLE MOBILE (<=600px)
-   Version nettoyée & unifiée
-   =============================== */
+/* Look très minimal, fond clair et typographie sobre */
+body.tpl-cv { background: transparent; }
+body.tpl-cv::before { display:none; }
 
-/* --- Lissage & typographie --- */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-smooth: always;
-  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
-  color: #2d1e15;
-  background: radial-gradient(1200px 800px at 10% 10%, #f0e6d2 0%, #e6d2b0 35%, #e0c896 55%, #d3b076 75%, #b89257 100%) fixed;
-  background-size: cover;
-  margin: 0;
-  padding: 58px 12px 0;
-  overflow-x: hidden;
+.cv-hero { text-align:center; background:rgba(255,255,255,.9); }
+.cv-photo{
+  width:120px; height:120px;
+  object-fit:cover; margin:0 auto 10px;
 }
-
-/* --- Variables globales --- */
-:root {
-  --brown: #6b4b3e;
-  --brown-dark: #3b2a22;
-  --ink: #2d1e15;
-  --cream: #fffaf7;
-  --paper: #fff9f3;
-  --gold: #cbb27a;
-  --gold-600: #ae945e;
-  --choco: #4b332a;
-}
-
-* { box-sizing: border-box; }
-h1,h2,h3,.gold-title,.gold-sub { font-family: "Playfair Display", serif; }
-
-/* --- Annonce & langues --- */
-.announce-bar {
-  position: fixed;
-  top: 6px; left: 50%; transform: translateX(-50%);
-  z-index: 1100;
-  max-width: 92%;
-  padding: 4px 8px;
-  font-size: 13px;
-  color: var(--ink);
-  background: rgba(255,255,255,.85);
-  border: 1px solid var(--gold);
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
-  backdrop-filter: blur(4px);
-}
-
-/* --- Menu --- */
-.menu-toggle {
-  display: block;
-  background: var(--brown-dark);
-  color: #fff;
-  border: 0;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto 8px;
-  padding: 10px 12px;
-  cursor: pointer;
-}
-.menu {
-  display: none;
-  max-width: 980px;
-  margin: 8px auto;
-  background: linear-gradient(90deg, #f0e8da, var(--choco));
-  padding: 10px 0;
-  border-radius: 14px;
-}
-.menu.show { display: block; }
-.menu ul {
-  margin: 0; padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-}
-.menu a {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 12px;
-}
-.menu a:hover { background: rgba(255,223,174,.3); color: #2b1f18; }
-
-/* --- Hero --- */
-.hero-gold {
-  max-width: 100%;
-  margin: 18px auto;
-  padding: 18px 12px;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(203,178,122,.35);
-  border-radius: 18px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.12);
-  text-align: center;
-}
-.hero-gold img {
-  width: 64px;
-  margin: 6px auto;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,.25));
-}
-.gold-title {
-  font-size: clamp(26px, 7vw, 34px);
-  color: var(--brown);
-  margin: 6px 0;
-}
-.gold-sub {
-  font-size: clamp(16px, 5vw, 20px);
-  color: #5e4b3c;
-}
-.gold-lead {
-  font-size: clamp(14px, 4.2vw, 18px);
-  opacity: .95;
-}
-
-/* --- Conteneurs / cartes génériques --- */
-.container, .page-card, .testimonials {
-  background: rgba(255,255,255,.92);
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  padding: 20px 14px;
-  margin: 22px auto;
-  text-align: center;
-}
-
-/* --- Boutons CTA --- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 0;
-  cursor: pointer;
-  text-decoration: none;
+.cv-role{ opacity:.8; margin:.15rem 0 .6rem }
+.cv-infos{ list-style:none; padding:0; margin:.4rem 0; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.cv-grid{ text-align:left; }
+.cv-grid h2{ color:#4b3a2f; margin-top:10px; }
+.cv-tags{ display:flex; gap:8px; flex-wrap:wrap; list-style:none; padding:0; }
+.cv-tags li{ background:#fff; border:1px solid #eee; padding:6px 10px; }
+.cv-job small{ opacity:.7; display:block; margin:.15rem 0 .35rem; }
+.cv-gallery .card span {
+  color: #5a3e2b; /* marron foncé plus visible */
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7); /* ombre claire pour contraste */
   font-weight: 700;
-  font-size: 14px;
-  max-width: min(80vw, 260px);
 }
-.btn-wa { background: #25D366; color: #fff; }
-.btn-pp { background: #ffc439; color: #000; }
-.btn-primary {
-  background: linear-gradient(180deg, #d9be85, #b9935a);
-  color: #2b1f18;
-  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+.cv-gallery .card:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
 }
-.btn-primary:hover { filter: brightness(1.05); }
+/* Supprime les ombres, les bordures et les coins arrondis */
+.model-card,
+.cv-gallery .card {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
 
-/* --- Modèles CV / Portfolio --- */
+/* Ajuste l'image pour qu’elle colle sans arrondi */
+.model-card img,
+.cv-gallery img {
+  border-radius: 0 !important;
+  display: block;
+}
+
+/* --- Miniatures : pas de rognage du texte "CV" --- */
+.cv-gallery img,
+.model-card img {
+  display: block;
+  width: 100%;
+  height: 220px;              /* hauteur uniforme */
+  object-fit: contain;        /* ⚠️ garde l'image entière (pas rognée) */
+  object-position: center;    /* centrée */
+  background: #fde9d6;        /* beige doux autour si besoin */
+  border-radius: 8px;         /* léger, optionnel */
+}
+
+/* Hover discret, sans ombre */
+.cv-gallery .card:hover,
+.model-card:hover {
+  transform: translateY(-2px);
+  box-shadow: none !important;
+  transition: transform .15s ease;
+}
+/* ===============================
+   Fond & Hero
+================================= */
+body.tpl-cv {
+  background: radial-gradient(800px 600px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
+}
+body.tpl-cv::before { display: none; }
+
+.cv-hero {
+  padding: 50px 20px;
+  text-align: center;
+  color: #3b2a22;
+}
+.cv-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffffb3;
+  backdrop-filter: blur(6px);
+  border: 1px solid #fff4;
+  border-radius: 18px;
+  padding: 28px;
+}
+/* === Section modèles CV === */
 .models-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
 }
+
+/* Chaque carte */
 .model-card {
   background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
-  border: 1px solid rgba(210,180,140,0.25);
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  padding: 1rem;
+  border: 1px solid rgba(210, 180, 140, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
   text-align: center;
-  width: 85%;
-  max-width: 300px;
-  transition: transform .25s ease;
+  width: 280px;            /* 🔸 largeur fixe élégante */
+  max-width: 90vw;         /* pour s'adapter sur mobile */
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-.model-card:hover { transform: translateY(-3px); }
-.model-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
-  margin: auto;
-  object-fit: contain;
+
+.model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
+
 .model-card h3 {
-  font-size: 1.1rem;
-  color: var(--brown);
-  margin: 0.5rem 0;
+  font-family: "Playfair Display", serif;
+  color: #6b4b3e;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
 }
+
 .model-card p {
+  color: #7a6b5a;
   font-size: 0.9rem;
-  color: #555;
+  opacity: 0.9;
 }
 
-/* --- Galerie CV --- */
-.cv-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .models-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .model-card {
+    width: 85%;
+  }
 }
-.cv-gallery .card {
-  width: 80%;
-  max-width: 280px;
-  border-radius: 12px;
-  background: #fff;
-  padding: 0;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+.model-card *,
+.model-card::before,
+.model-card::after {
+  background-image: none !important;
+  box-shadow: none !important;
 }
-.cv-gallery img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: contain;
+/* 🌾 Éradication totale des pseudo-éléments fantômes */
+.card::before,
+.card::after,
+.model-card::before,
+.model-card::after,
+.models-grid .card::before,
+.models-grid .card::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: static !important;
+  opacity: 0 !important;
 }
-
-/* --- Témoignages --- */
-.testimonials blockquote {
-  background: #fffaf7;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  font-style: italic;
-  padding: 1rem;
-  margin: .5rem 0;
-}
-.testimonials cite {
-  display: block;
-  margin-top: .5rem;
-  color: var(--brown);
-  font-weight: 600;
-  font-style: normal;
-}
-
-/* --- Footer --- */
-.footer {
-  background: linear-gradient(to bottom,#4b332a 0 92%, rgba(75,51,42,0) 100
