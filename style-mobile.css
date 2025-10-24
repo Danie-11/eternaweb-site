@@ -770,4 +770,62 @@ object-fit: cover;
 max-width: 90vw;     / ✅ prend max 90% de la largeur écran */
 border-radius: 10px;
 }
+}* --- Modèles CV / Portfolio --- */
+.models-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.model-card {
+  background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
+  border: 1px solid rgba(210,180,140,0.25);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 1rem;
+  text-align: center;
+  width: 85%;
+  max-width: 300px;
+  transition: transform .25s ease;
+}
+.model-card:hover { transform: translateY(-3px); }
+.model-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  object-fit: contain;
+}
+.model-card h3 {
+  font-size: 1.1rem;
+  color: var(--brown);
+  margin: 0.5rem 0;
+}
+.model-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* --- Galerie CV --- */
+.cv-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.cv-gallery .card {
+  width: 80%;
+  max-width: 280px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+.cv-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
 }
