@@ -39,32 +39,6 @@ body.tpl-cv::before { display:none; }
   display: block;
 }
 
-/* Supprime l’effet d’ombre en hover */
-.model-card:hover,
-.cv-gallery .card:hover {
-  transform: none !important;
-  box-shadow: none !important;
-}
-.model-card,
-.cv-gallery .card {
-  border: 1px solid rgba(0,0,0,0.05);
-}
-/* --- Nettoyage cartes (enlève bords arrondis, ombres, "oreilles") --- */
-.cv-gallery .card,
-.model-card {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-}
-.cv-gallery .card::before,
-.cv-gallery .card::after,
-.model-card::before,
-.model-card::after {
-  content: none !important;  /* supprime les "boutons" latéraux */
-}
-
 /* --- Miniatures : pas de rognage du texte "CV" --- */
 .cv-gallery img,
 .model-card img {
