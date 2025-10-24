@@ -137,18 +137,3 @@ body.tpl-cv::before { display: none; }
   background-image: none !important;
   box-shadow: none !important;
 }
-/* Nettoyage total des résidus graphiques sur les modèles de CV */
-.models-grid .model-card::before,
-.models-grid .model-card::after,
-.cv-gallery .card::before,
-.cv-gallery .card::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  position: static !important;
-  width: 0 !important;
-  height: 0 !important;
-  opacity: 0 !important;
-}
