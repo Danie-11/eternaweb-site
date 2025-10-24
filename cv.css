@@ -139,3 +139,9 @@ body.tpl-cv::before { display: none; }
   content: none !important;
   display: none !important;
 }
+.model-card *,
+.model-card::before,
+.model-card::after {
+  background-image: none !important;
+  box-shadow: none !important;
+}
