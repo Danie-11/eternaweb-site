@@ -131,3 +131,11 @@ body.tpl-cv::before { display: none; }
     width: 85%;
   }
 }
+/* Nettoyage complet des pseudo-éléments fantômes */
+.model-card::before,
+.model-card::after,
+.cv-gallery .card::before,
+.cv-gallery .card::after {
+  content: none !important;
+  display: none !important;
+}
