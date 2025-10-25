@@ -1,8 +1,18 @@
-/ ===============================
+/* ===============================
 MOBILE (<=600px) — feuille autonome
-=============================== */
-
-/* ---- Variables / base ---- */
+=============================== /
+/ Lissage des polices sur mobile /
+body {
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+font-smooth: always;
+}
+p, li, span, a, h1, h2, h3 {
+letter-spacing: 0.2px;
+line-height: 1.5;
+}
+/ ---- Variables / base ---- */
 :root{
 --brown:#6b4b3e; --brown-dark:#3b2a22; --ink:#2d1e15;
 --cream:#fffaf7; --paper:#FFF9F3; --gold:#CBB27A; --gold-600:#AE945E;
@@ -119,6 +129,12 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .pricing-cards{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:12px }
 .card{ background:var(--paper); border-radius:16px; padding:18px; max-width:310px; text-align:left; box-shadow:0 6px 16px rgba(0,0,0,.1); outline:1px solid #0001 }
 
+/* ---- Footer ---- /
+.footer{ background:linear-gradient(to bottom,#4b332a 0 92%, rgba(75,51,42,0) 100%); color:#eee; text-align:center; padding:18px 12px; margin:26px auto; border-radius:16px; }
+.footer-columns{ max-width:100%; margin:0 auto; display:flex; gap:12px; flex-direction:column; align-items:center; }
+.footer-info{ display:flex; gap:22px; flex-wrap:wrap; justify-content:center }
+.footer-logo{ max-width:180px; width:78%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95 }
+.footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
 .cv-gallery {
 display: flex;
 flex-direction: column;   / aligne verticalement sur mobile /
@@ -131,7 +147,7 @@ width: 70%;          /* prend 90% de la largeur de l’écran /
 max-width: 240px;    / mais jamais plus large qu’un cadre sympa /
 }
 .cv-gallery img {
-max-width: 100%;    / jamais plus large que le conteneur /
+max-width: 950%;    / jamais plus large que le conteneur /
 height: auto;       / garde les proportions */
 border-radius: 12px;
 display: block;
@@ -140,7 +156,7 @@ margin: auto;
 
 .cv-gallery .card {
 max-width: 340px;   /* limite la largeur de chaque carte /
-width: 90%;         / prend 90% de l’écran /
+width: 85%;         / prend 90% de l’écran /
 }
 .models-grid .model-card {
 max-width: 340px;   / largeur max de la carte /
@@ -149,11 +165,12 @@ margin: 1rem auto;  / espace et centrage */
 }
 
 .models-grid img {
-max-width: 280%;
-width:100%;
+max-width: 100%;
+width:90%;
 height: auto;
 display: block;
 margin: auto;
+object-fit: cover;
 border-radius:8px;
 }
 /* ---- Ajustements mobile accueil ---- */
@@ -175,169 +192,3 @@ font-size: 1.2rem;
 gap: 0.5rem;        /* moins d’espace entre boutons */
 }
 
-.hero-gold .btn {
-padding: 8px 14px;
-font-size: 0.9rem;
-}
-
-/* Cartes modèles (CV / Portfolio / Vitrine) /
-.models-grid {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 1rem;          / espace raisonnable entre les cards */
-}
-
-.models-grid .model-card {
-width: 85%;         /* pas toute la largeur de l’écran /
-max-width: 280px;   / limite la largeur */
-}
-
-.models-grid .model-card img {
-width: 100%;
-height: auto;
-}
-.model-card a {
-text-decoration: none;   /* Enlève le soulignement /
-color: inherit;          / Garde la couleur du texte parent */
-}
-
-.model-card a:hover {
-color: #5a4634;          /* (optionnel) couleur hover plus foncée /
-text-decoration: underline; / ou pas de soulignement si tu veux rester clean /
-}
-/ ---- Ajustements mobile accueil ---- */
-
-/* Hero /
-.hero-gold .hero-logo {
-max-width: 120px;   / logo plus petit */
-}
-
-.hero-gold h1 {
-font-size: 1.8rem;  /* titre plus petit */
-}
-
-.hero-gold h2 {
-font-size: 1.2rem;
-}
-
-.hero-gold .cta-row {
-gap: 0.5rem;        /* moins d’espace entre boutons */
-}
-
-.hero-gold .btn {
-padding: 8px 14px;
-font-size: 0.9rem;
-}
-
-/* Cartes modèles (CV / Portfolio / Vitrine) /
-.models-grid {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 1rem;          / espace raisonnable entre les cards */
-}
-
-.models-grid .model-card {
-width: 70%;         /* pas toute la largeur de l’écran /
-max-width: 200px;   / limite la largeur */
-}
-
-.models-grid .model-card img {
-width: 70%;
-height: auto;
-}
-a {
-color: #2b1f18;        /* noir/brun foncé élégant /
-text-decoration: none; / enlève le soulignement */
-}
-
-a:hover {
-color: #5a4634;        /* légèrement plus foncé au survol /
-text-decoration: underline; / optionnel, si tu veux un effet hover /
-}
-.model-card .btn {
-display: block;        / le bouton prend toute la ligne /
-margin: 12px auto 0;   / espace haut + centrage horizontal /
-text-align: center;    / texte centré /
-width: fit-content;    / largeur qui s'adapte au texte /
-}
-/ ----- Bloc devis caché par défaut ----- /
-#devis {
-display: none;          / invisible /
-opacity: 0;             / transparent /
-transform: translateY(20px); / décalé vers le bas */
-transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* ----- Quand on ajoute .show ----- /
-#devis.show {
-display: block;         / visible /
-opacity: 1;             / opaque /
-transform: translateY(0); / remonte en place */
-}
-.gallery-grid {
-grid-template-columns: 1fr;
-gap: 1.5rem;
-}
-
-.gallery-card img {
-height: 180px;
-}
-
-.card-info {
-padding: 1rem;
-}
-body {
-font-size: 0.85rem;
-}
-/* === Correction images démos (évite débordement total) === /
-.demo-preview img,
-.preview-img,
-.model-card img,
-.gallery-card img {
-display: block;
-width: 100%;
-max-width: 750px;      / ✅ limite sur desktop /
-height: auto;
-margin: 0 auto;        / centre */
-border-radius: 14px;
-object-fit: cover;
-box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
-
-/* === Ajustement mobile === /
-@media (max-width: 600px) {
-.demo-preview img,
-.preview-img,
-.model-card img,
-.gallery-card img {
-max-width: 90vw;     / ✅ prend max 90% de la largeur écran */
-border-radius: 10px;
-}
-}
-/* === Correction images démos (évite débordement total) === */
-.demo-preview img,
-.preview-img,
-.model-card img,
-.gallery-card img {
-  display: block;
-  width: 100%;
-  max-width: 750px;      /* ✅ limite sur desktop */
-  height: auto;
-  margin: 0 auto;        /* centre */
-  border-radius: 14px;
-  object-fit: cover;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
-
-/* === Ajustement mobile === */
-@media (max-width: 600px) {
-  .demo-preview img,
-  .preview-img,
-  .model-card img,
-  .gallery-card img {
-    max-width: 90vw;     /* ✅ prend max 90% de la largeur écran */
-    border-radius: 10px;
-  }
-}
