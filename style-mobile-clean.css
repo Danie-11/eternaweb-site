@@ -1,0 +1,90 @@
+/* ===============================
+   ETERNAWEB — STYLE MOBILE CLEAN
+   =============================== */
+
+/* Variables */
+:root {
+  --brown:#6b4b3e; --ink:#2d1e15;
+  --paper:#fffaf7; --gold:#CBB27A;
+  --choco:#4b332a;
+}
+
+/* Reset */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+/* Corps */
+body {
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(1200px 800px at 10% 10%, #f0e6d2 0%, #e6d2b0 35%, #d3b076 75%, #b89257 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  padding: 58px 12px 0;
+}
+
+/* Hero */
+.hero-gold {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to bottom, #fff9f0, #fefbf6);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.hero-gold img { width: 70px; margin-bottom: 10px; }
+.hero-gold h1 {
+  font-family: "Playfair Display", serif;
+  color: #6b4b3e;
+  font-size: 1.8rem;
+  margin: 0;
+}
+.hero-gold h2 {
+  color: #5e4b3c;
+  font-size: 1.1rem;
+  margin: .5rem 0 1rem;
+}
+
+/* Cartes Modèles */
+.models-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.model-card {
+  background: #fffaf7;
+  border: 1px solid rgba(210, 180, 140, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 1.2rem;
+  text-align: center;
+  width: 85%;
+  max-width: 250px;
+  transition: transform .25s ease;
+}
+.model-card:hover { transform: translateY(-3px); }
+.model-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: .5rem;
+}
+.model-card h3 {
+  color: #5a3a2f;
+  font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(to bottom, #4b332a 0%, #3a261b 100%);
+  color: #eee;
+  text-align: center;
+  padding: 18px 12px;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+.footer a {
+  color: #fff0e6;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
