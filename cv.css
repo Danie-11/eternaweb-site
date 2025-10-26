@@ -1,6 +1,5 @@
 /* Look très minimal, fond clair et typographie sobre */
-body.tpl-cv { background: transparent; }
-body.tpl-cv::before { display:none; }
+body.tpl-cv { background: none; }
 
 .cv-hero { text-align:center; background:rgba(255,255,255,.9); }
 .cv-photo{
@@ -26,7 +25,7 @@ transition: transform 0.2s ease;
 / Supprime les ombres, les bordures et les coins arrondis */
 .model-card,
 .cv-gallery .card {
-background: transparent !important;
+background: none;
 box-shadow: none !important;
 border: none !important;
 border-radius: 0 !important;
@@ -35,7 +34,7 @@ border-radius: 0 !important;
 /* Ajuste l'image pour qu’elle colle sans arrondi */
 .model-card img,
 .cv-gallery img {
-border-radius: 0 !important;
+border-radius: none !important;
 display: block;
 }
 
@@ -45,7 +44,6 @@ Fond & Hero
 body.tpl-cv {
 background: radial-gradient(800px 600px at 10% 20%, #fde7d8, #f3d1c5, #eac6e1);
 }
-body.tpl-cv::before { display: none; }
 
 .cv-hero {
 padding: 50px 20px;
@@ -110,7 +108,7 @@ flex-direction: column;
 align-items: center;
 }
 .model-card {
-width: 85%;
+width: 80%;
 }
 }
 .model-card {
