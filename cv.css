@@ -22,14 +22,6 @@ font-weight: 700;
 transform: scale(1.02);
 transition: transform 0.2s ease;
 }
-/ Supprime les ombres, les bordures et les coins arrondis */
-.model-card,
-.cv-gallery .card {
-background: none;
-box-shadow: none !important;
-border: none !important;
-border-radius: 0 !important;
-}
 
 / ===============================
 Fond & Hero
@@ -51,29 +43,6 @@ backdrop-filter: blur(6px);
 border: 1px solid #fff4;
 border-radius: 18px;
 padding: 28px;
-}
-/* === Section modèles CV === */
-.models-grid {
-display: grid;
-flex-wrap: wrap;
-justify-content: center;
-gap: 1.5rem;
-margin-top: 1rem;
-padding: 0 1rem;
-}
-   
-/* Chaque carte /
-.model-card {
-background: linear-gradient (180deg, #fffaf7 0%, #fdf6ec 100%);
-border: 1px solid rgba(210, 180, 140, 0.25);
-border-radius: 16px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-padding: 1.5rem;
-text-align: center;
-width: 280px;            / 🔸 largeur fixe élégante /
-max-width: 90vw;         / pour s'adapter sur mobile */
-
-transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .model-card:hover {
