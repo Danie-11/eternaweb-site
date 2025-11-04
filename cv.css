@@ -111,4 +111,25 @@ width: 60%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   ...
 }
-grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+/* === Section modèles CV === */
+.models-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+/* Chaque carte */
+.model-card {
+  background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
+  border: 1px solid rgba(210, 180, 140, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  text-align: center;
+  width: 280px;
+  max-width: 90vw;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
