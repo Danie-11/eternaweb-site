@@ -1,409 +1,209 @@
 /* ===============================
-   MOBILE (<=600px) — feuille autonome
+   ETERNAWEB — STYLE MOBILE + GLOBAL CLEAN
    =============================== */
-/* Lissage des polices sur mobile */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-smooth: always;
-}
-p, li, span, a, h1, h2, h3 {
-  letter-spacing: 0.2px;
-  line-height: 1.5;
-}
-/* ---- Variables / base ---- */
-:root{
-  --brown:#6b4b3e; --brown-dark:#3b2a22; --ink:#2d1e15;
-  --cream:#fffaf7; --paper:#FFF9F3; --gold:#CBB27A; --gold-600:#AE945E;
-  --choco:#4b332a;
-}
-*{ box-sizing:border-box }
-html,body{ margin:0; padding:0; overflow-x:hidden; }
 
-body{
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+/* ---- VARIABLES & RESET ---- */
+:root {
+  --brown: #6b4b3e;
+  --brown-dark: #3b2a22;
+  --ink: #2d1e15;
+  --cream: #fffaf7;
+  --paper: #FFF9F3;
+  --gold: #CBB27A;
+  --gold-600: #AE945E;
+  --choco: #4b332a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
   color: var(--ink);
   background: radial-gradient(1200px 800px at 10% 10%, #f0e6d2 0%, #e6d2b0 35%, #e0c896 55%, #d3b076 75%, #b89257 100%) fixed;
-  background-attachment: fixed;
   background-size: cover;
-  padding: 58px 12px 0;   /* un peu moins que desktop */
-}
-body::before{
-  content:""; position:fixed; inset:0 0 auto 0; height:40vh; pointer-events:none;
-  background: linear-gradient(to bottom, rgba(0,0,0,.14), rgba(0,0,0,0));
-  z-index:0;
-}
-body > *{ position:relative; z-index:1; }
-
-h1,h2,h3,.gold-title,.gold-sub{ font-family:"Playfair Display", serif; letter-spacing:.2px; }
-h1{ margin:0 0 6px; font-size:1.9rem; color:#7a5c45 }
-h2{ margin:0 0 12px; font-size:1.3rem; color:#5e4b3c }
-
-/* ---- Annonce & globe langues ---- */
-.announce-bar{ position:fixed; top:6px; left:50%; transform:translateX(-50%);
-  z-index:1100; max-width:92%; padding:4px 8px; font-size:13px; line-height:1.35;
-  color:#2d1e15; background:rgba(255,255,255,.85); backdrop-filter:blur(4px);
-  border:1px solid var(--gold); border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
-.floating-tools{ position:fixed; top:10px; right:10px; display:flex; gap:8px; z-index:1200; }
-.fab{ width:40px; height:40px; border:none; border-radius:50%; cursor:pointer;
-  background:rgba(255,255,255,.9); box-shadow:0 4px 12px rgba(0,0,0,.15); font-size:19px; line-height:40px; }
-.lang-wrap{ position:relative }
-.lang-menu{ position:absolute; top:46px; right:0; min-width:170px; display:none;
-  background:#fff; border-radius:12px; box-shadow:0 14px 30px rgba(0,0,0,.18); overflow:hidden; }
-.lang-menu.show{ display:block }
-.lang{ width:100%; text-align:left; border:0; background:transparent; padding:10px 12px; cursor:pointer; }
-.lang:hover{ background:#f7f3ee }
-
-/* ---- Logo principal (en haut de page) ---- */
-.logo-container{ text-align:center; margin:4px 0 10px; }
-.logo-badge{ display:inline-block; padding:6px 10px; border-radius:10px; background:transparent; }
-.logo-simple{ max-width:280px; width:78%; height:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
-
-/* ---- Menu ---- */
-.menu-toggle{
-  position:sticky; top:4px; z-index:4; width:100%; background:#5a3a2f; color:#fff; border:0;
-  cursor:pointer; padding:10px 12px; border-radius:12px; max-width:980px; margin:0 auto 8px; display:block;
-}
-.menu{ display:none; max-width:980px; margin:8px auto 0; background:linear-gradient(90deg,#f0e8da,var(--choco)); padding:10px 0; border-radius:14px; }
-.menu.show{ display:block }
-.menu ul{ margin:0; padding:0; list-style:none; display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
-.menu a{ color:#fff; text-decoration:none; padding:8px 12px; border-radius:12px; }
-.menu a:hover{ background:rgba(255,223,174,.3); color:#2b1f18 }
-
-/* ---- Hero ---- */
-.hero-gold{
-  max-width:100%; margin:18px auto; padding:18px 12px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(203,178,122,.35);
-  border-radius:18px; box-shadow:0 12px 40px rgba(0,0,0,.12); backdrop-filter:blur(2px);
-}
-.hero-wrap{ display:block; }
-.hero-copy{ padding:4px 6px; text-align:center; }
-.gold-title{ font-size: clamp(26px, 7vw, 34px); margin:6px 0 6px; color:#6b4b3e; }
-.gold-sub{   font-size: clamp(16px, 5vw, 20px); color:#5e4b3c; margin:0 0 8px; }
-.gold-lead{  font-size: clamp(14px, 4.2vw, 18px); opacity:.95; margin:0 0 12px; }
-
-/* petit globe au-dessus du titre (image dans .hero-gold) */
-.hero-gold img{ width:64px; height:auto; margin:6px auto 2px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-rotate(12deg); display:block; }
-
-/* ---- Conteneurs / cartes ---- */
-.container{ background:rgba(255,255,255,.92); max-width:100%; margin:18px auto; padding:24px 14px; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,.08); text-align:center; }
-.page-card{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:20px 14px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-.testimonials{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:18px 12px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-
-/* ---- CTA (WhatsApp / PayPal / Vos consignes) — taille contrôlée ---- */
-.cta-row{ margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  padding:10px 14px; border-radius:12px; border:0; cursor:pointer; text-decoration:none; font-weight:700;
-  /* >>> limite stricte sur mobile <<< */
-  max-width:min(80vw, 260px);
-  width: 86vw;                 /* s’adapte à la largeur écran */
-  font-size:14px;
-}
-.btn-ico{ height:18px; width:auto; display:block; }
-
-/* normaliser les logos internes (certaines versions SVG sont grandes) */
-.btn img{ max-height:22px; width:auto; display:block; }
-
-/* couleurs */
-.btn-wa{ background:#25D366; color:#fff; filter:saturate(1.05) }
-.btn-pp{ background:#ffc439; color:#000; filter:contrast(1.05) }
-.btn-primary{
-  background: linear-gradient(180deg, #d9be85, #b9935a);
-  color:#2b1f18; font-weight:700; border:0; box-shadow:0 12px 24px rgba(0,0,0,.18);
-  transition: transform .18s ease, filter .2s;
-}
-.btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.05); }
-
-/* ---- Formulaire / devis ---- */
-.devis-grid, .grid-2{ display:grid; grid-template-columns:1fr; gap:12px; }
-input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10px 12px; background:#fff; }
-#devis{ display:none } #devis.show{ display:block }
-
-/* ---- Pricing ---- */
-.pricing-section{ background:linear-gradient(90deg,#f5ede2,#e6d6c3); margin:24px auto 0; padding:22px 12px; text-align:center }
-.pricing-cards{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:12px }
-.card{ background:var(--paper); border-radius:16px; padding:18px; max-width:310px; text-align:left; box-shadow:0 6px 16px rgba(0,0,0,.1); outline:1px solid #0001 }
-
-/* ---- Footer ---- */
-.footer{ background:linear-gradient(to bottom,#4b332a 0 92%, rgba(75,51,42,0) 100%); color:#eee; text-align:center; padding:18px 12px; margin:26px auto; border-radius:16px; }
-.footer-columns{ max-width:100%; margin:0 auto; display:flex; gap:12px; flex-direction:column; align-items:center; }
-.footer-info{ display:flex; gap:22px; flex-wrap:wrap; justify-content:center }
-.footer-logo{ max-width:180px; width:78%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95 }
-.footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
-.cv-gallery {
-  display: flex;
-  flex-direction: column;   /* aligne verticalement sur mobile */
-  align-items: center;      /* centre horizontalement */
-  gap: 1rem;
-}
-
-.cv-gallery .card {
-  width: 70%;          /* prend 90% de la largeur de l’écran */
-  max-width: 240px;    /* mais jamais plus large qu’un cadre sympa */
-}
-.cv-gallery img {
-  max-width: 950%;    /* jamais plus large que le conteneur */
-  height: auto;       /* garde les proportions */
-  border-radius: 12px;
-  display: block;
-  margin: auto;
-}
-
-.cv-gallery .card {
-  max-width: 340px;   /* limite la largeur de chaque carte */
-  width: 85%;         /* prend 90% de l’écran */
-}
-.models-grid .model-card {
-  max-width: 340px;   /* largeur max de la carte */
-  width: 90%;         /* prend 90% de l’écran sur mobile */
-  margin: 1rem auto;  /* espace et centrage */
-}
-
-.models-grid img {
-  max-width: 100%; 
-   width:90%;
-  height: auto; 
-  display: block;
-  margin: auto;
-   object-fit: cover;
-   border-radius:8px;
-}
-/* ---- Ajustements mobile accueil ---- */
-
-/* Hero */
-.hero-gold .hero-logo {
-  max-width: 120px;   /* logo plus petit */
-}
-
-.hero-gold h1 {
-  font-size: 1.8rem;  /* titre plus petit */
-}
-
-.hero-gold h2 {
-  font-size: 1.2rem;
-}
-
-.hero-gold .cta-row {
-  gap: 0.5rem;        /* moins d’espace entre boutons */
-}
-
-/* ===============================
-   ETERNAWEB – STYLE MOBILE
-   (max-width: 600px)
-   =============================== */
-
-body {
-  font-family: "Inter", sans-serif;
-  margin: 0;
-  background: #faf9f7;
-  color: #222;
   line-height: 1.6;
   overflow-x: hidden;
+  padding: 58px 12px 0;
 }
 
-/* ====== Barre annonce ====== */
+h1, h2, h3, .gold-title, .gold-sub {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.2px;
+}
+
+/* ---- ANNONCE & OUTILS FLOTTANTS ---- */
 .announce-bar {
-  background: #f8f1e6;
-  color: #6a4c2a;
-  font-weight: 600;
-  text-align: center;
-  padding: .5rem 1rem;
-  font-size: .8rem;
+  position: fixed;
+  top: 6px; left: 50%; transform: translateX(-50%);
+  z-index: 1100;
+  padding: 4px 8px;
+  font-size: 13px;
+  color: var(--ink);
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* ====== Logo ====== */
-.logo-container {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
+.floating-tools {
+  position: fixed;
+  top: 10px; right: 10px;
+  display: flex; gap: 8px;
+  z-index: 1200;
 }
-.logo-badge img {
-  width: 120px;
-  height: auto;
+.fab {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 19px;
+  line-height: 40px;
+  cursor: pointer;
 }
 
-/* ====== Menu mobile ====== */
+/* ---- LOGO ---- */
+.logo-container { text-align: center; margin: 10px 0; }
+.logo-simple {
+  max-width: 280px; width: 78%; height: auto;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+}
+
+/* ---- MENU ---- */
 .menu-toggle {
   display: block;
-  background: none;
-  border: none;
-  color: #4a3a2b;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: .5rem 1rem;
-  cursor: pointer;
-  text-align: center;
   width: 100%;
+  background: #5a3a2f;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin: 0 auto 8px;
+  font-weight: 600;
 }
-
 .menu {
   display: none;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,.1);
-  margin: 0;
-  padding: .5rem 0;
+  background: linear-gradient(90deg,#f0e8da,var(--choco));
+  padding: 10px 0;
+  border-radius: 14px;
 }
-.menu.show {
-  display: block;
-}
+.menu.show { display: block; }
 .menu ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.menu li {
-  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
 }
 .menu a {
-  display: block;
+  color: #fff;
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: .8rem 1rem;
-  text-align: center;
+  padding: 8px 12px;
+  border-radius: 12px;
 }
-.menu a:hover {
-  background: #f5f3f0;
-}
+.menu a:hover { background: rgba(255,223,174,0.3); }
 
-/* ====== Hero section ====== */
+/* ---- HERO ---- */
 .hero-gold {
   text-align: center;
-  padding: 2rem 1rem;
-  background: linear-gradient(to bottom, #fff9f0, #fefbf6);
+  margin: 20px auto;
+  padding: 18px 12px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(203,178,122,0.35);
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
-.hero-logo {
-  max-width: 160px;
-  margin-bottom: 1rem;
+.hero-gold img {
+  width: 64px; margin-bottom: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25))
+          brightness(1.05) sepia(0.25) hue-rotate(12deg);
 }
-.gold-title {
-  font-family: "Playfair Display", serif;
-  color: #5c3c1d;
-  font-size: 1.8rem;
-  margin: 0;
-}
-.gold-sub {
-  font-weight: 600;
-  color: #7c5b36;
-  margin: .5rem 0 1rem;
-  font-size: 1.1rem;
-}
-.gold-lead {
-  font-size: .95rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
+.gold-title { color: var(--brown); font-size: 1.8rem; margin: 6px 0; }
+.gold-sub { color: #5e4b3c; font-size: 1.1rem; margin-bottom: 8px; }
+.gold-lead { font-size: 0.95rem; opacity: 0.95; }
 
-/* ====== Boutons ====== */
+/* ---- BOUTONS ---- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: .4rem;
   padding: .6rem 1.1rem;
-  border-radius: 6px;
-  font-size: .95rem;
+  border-radius: 8px;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 600;
-  transition: all .25s ease;
+  transition: all 0.25s ease;
   cursor: pointer;
 }
 .btn-primary {
-  background: #7d5c3b;
-  color: #fff;
+  background: linear-gradient(180deg, #d9be85, #b9935a);
+  color: #2b1f18;
 }
 .btn-primary:hover {
-  background: #8e6c47;
+  background: linear-gradient(180deg, #e3cc9a, #cba669);
+  transform: translateY(-2px);
 }
-.btn-wa {
-  background: #25d366;
-  color: #fff;
-}
-.btn-pp {
-  background: #0070ba;
-  color: #fff;
-}
-.btn-wa img,
-.btn-pp img {
-  width: 20px;
-  height: 20px;
-}
+.btn-wa { background: #25D366; color: #fff; }
+.btn-pp { background: #ffc439; color: #000; }
 .cta-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; flex-wrap: wrap;
+  justify-content: center;
   gap: .6rem;
 }
 
-/* ====== Modèles ====== */
+/* ---- SECTION MODÈLES ---- */
 .models {
-  padding: 2rem 1rem;
   text-align: center;
+  padding: 2rem 1rem;
 }
 .models h2 {
-  font-family: "Playfair Display", serif;
-  color: #5a4023;
+  color: var(--brown-dark);
   font-size: 1.5rem;
   margin-bottom: .3rem;
 }
 .models p {
-  font-size: .90rem;
   color: #555;
   margin-bottom: 1.2rem;
+  font-size: .9rem;
 }
 .models-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255,255,255,0.92);
+  padding: 1.2rem 0;
+  border-radius: 16px;
 }
 .model-card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,.08);
-  padding: 1rem;
-  transition: transform .25s ease;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  width: 85%;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .model-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 .model-card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: .7rem;
+  width: 100%; height: auto;
+  border-radius: 10px;
+  margin-bottom: .8rem;
 }
-.model-card p {
-  font-size: .9rem;
-  color: #444;
-  margin-bottom: .7rem;
-}
-.model-card .btn {
-  font-size: .85rem;
-  padding: .5rem 1rem;
+.model-card h3 {
+  font-size: 1.1rem;
+  color: #5a4023;
+  margin-bottom: .4rem;
 }
 
-/* ====== Section Devis ====== */
+/* ---- FORMULAIRE / DEVIS ---- */
 .page-card {
   padding: 2rem 1rem;
   background: #fdfbf8;
   border-top: 1px solid #f0e7da;
-}
-.page-card h2 {
-  color: #5a4023;
-  font-family: "Playfair Display", serif;
-  font-size: 1.4rem;
-  margin-bottom: .4rem;
-  text-align: center;
-}
-.page-card p.sub {
-  color: #555;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: .95rem;
+  border-radius: 12px;
 }
 .devis-grid {
   display: flex;
@@ -411,8 +211,6 @@ body {
   gap: 1rem;
 }
 .devis-grid label {
-  display: flex;
-  flex-direction: column;
   font-weight: 600;
   color: #3b2a19;
   font-size: .9rem;
@@ -420,354 +218,27 @@ body {
 .devis-grid input,
 .devis-grid select,
 .devis-grid textarea {
-  margin-top: .3rem;
   padding: .6rem .8rem;
   border-radius: 6px;
   border: 1px solid #ddd;
   font-size: .9rem;
   font-family: "Inter", sans-serif;
 }
-fieldset.full {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 1rem;
-}
-fieldset.full legend {
-  font-weight: 700;
-  color: #5a4023;
-}
-.btn-primary {
-  align-self: center;
-  margin-top: .8rem;
-}
 
-/* ====== Tarifs ====== */
-.pricing-section {
-  padding: 2rem 1rem;
-  background: #fffdf9;
+/* ---- FOOTER ---- */
+.footer {
+  background: linear-gradient(to bottom,#4b332a 0 92%, rgba(75,51,42,0) 100%);
+  color: #eee;
   text-align: center;
+  padding: 18px 12px;
+  margin: 26px auto;
+  border-radius: 16px;
 }
-/* ===============================
-   MOBILE (<=600px) — feuille autonome
-   =============================== */
-
-/* ---- Variables / base ---- */
-:root{
-  --brown:#6b4b3e; --brown-dark:#3b2a22; --ink:#2d1e15;
-  --cream:#fffaf7; --paper:#FFF9F3; --gold:#CBB27A; --gold-600:#AE945E;
-  --choco:#4b332a;
-}
-*{ box-sizing:border-box }
-html,body{ margin:0; padding:0; overflow-x:hidden; }
-
-body{
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  color: var(--ink);
-  background: radial-gradient(1200px 800px at 10% 10%, #f0e6d2 0%, #e6d2b0 35%, #e0c896 55%, #d3b076 75%, #b89257 100%) fixed;
-  background-attachment: fixed;
-  background-size: cover;
-  padding: 58px 12px 0;   /* un peu moins que desktop */
-}
-body::before{
-  content:""; position:fixed; inset:0 0 auto 0; height:40vh; pointer-events:none;
-  background: linear-gradient(to bottom, rgba(0,0,0,.14), rgba(0,0,0,0));
-  z-index:0;
-}
-body > *{ position:relative; z-index:1; }
-
-h1,h2,h3,.gold-title,.gold-sub{ font-family:"Playfair Display", serif; letter-spacing:.2px; }
-h1{ margin:0 0 6px; font-size:1.9rem; color:#7a5c45 }
-h2{ margin:0 0 12px; font-size:1.3rem; color:#5e4b3c }
-
-/* ---- Annonce & globe langues ---- */
-.announce-bar{ position:fixed; top:6px; left:50%; transform:translateX(-50%);
-  z-index:1100; max-width:92%; padding:4px 8px; font-size:13px; line-height:1.35;
-  color:#2d1e15; background:rgba(255,255,255,.85); backdrop-filter:blur(4px);
-  border:1px solid var(--gold); border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
-.floating-tools{ position:fixed; top:10px; right:10px; display:flex; gap:8px; z-index:1200; }
-.fab{ width:40px; height:40px; border:none; border-radius:50%; cursor:pointer;
-  background:rgba(255,255,255,.9); box-shadow:0 4px 12px rgba(0,0,0,.15); font-size:19px; line-height:40px; }
-.lang-wrap{ position:relative }
-.lang-menu{ position:absolute; top:46px; right:0; min-width:170px; display:none;
-  background:#fff; border-radius:12px; box-shadow:0 14px 30px rgba(0,0,0,.18); overflow:hidden; }
-.lang-menu.show{ display:block }
-.lang{ width:100%; text-align:left; border:0; background:transparent; padding:10px 12px; cursor:pointer; }
-.lang:hover{ background:#f7f3ee }
-
-/* ---- Logo principal (en haut de page) ---- */
-.logo-container{ text-align:center; margin:4px 0 10px; }
-.logo-badge{ display:inline-block; padding:6px 10px; border-radius:10px; background:transparent; }
-.logo-simple{ max-width:280px; width:78%; height:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
-
-/* ---- Menu ---- */
-.menu-toggle{
-  position:sticky; top:4px; z-index:4; width:100%; background:#5a3a2f; color:#fff; border:0;
-  cursor:pointer; padding:10px 12px; border-radius:12px; max-width:980px; margin:0 auto 8px; display:block;
-}
-.menu{ display:none; max-width:980px; margin:8px auto 0; background:linear-gradient(90deg,#f0e8da,var(--choco)); padding:10px 0; border-radius:14px; }
-.menu.show{ display:block }
-.menu ul{ margin:0; padding:0; list-style:none; display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
-.menu a{ color:#fff; text-decoration:none; padding:8px 12px; border-radius:12px; }
-.menu a:hover{ background:rgba(255,223,174,.3); color:#2b1f18 }
-
-/* ---- Hero ---- */
-.hero-gold{
-  max-width:100%; margin:18px auto; padding:18px 12px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(203,178,122,.35);
-  border-radius:18px; box-shadow:0 12px 40px rgba(0,0,0,.12); backdrop-filter:blur(2px);
-}
-.hero-wrap{ display:block; }
-.hero-copy{ padding:4px 6px; text-align:center; }
-.gold-title{ font-size: clamp(26px, 7vw, 34px); margin:6px 0 6px; color:#6b4b3e; }
-.gold-sub{   font-size: clamp(16px, 5vw, 20px); color:#5e4b3c; margin:0 0 8px; }
-.gold-lead{  font-size: clamp(14px, 4.2vw, 18px); opacity:.95; margin:0 0 12px; }
-
-/* petit globe au-dessus du titre (image dans .hero-gold) */
-.hero-gold img{ width:64px; height:auto; margin:6px auto 2px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-rotate(12deg); display:block; }
-
-/* ---- Conteneurs / cartes ---- */
-.container{ background:rgba(255,255,255,.92); max-width:100%; margin:18px auto; padding:24px 14px; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,.08); text-align:center; }
-.page-card{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:20px 14px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-.testimonials{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:18px 12px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-
-/* ---- CTA (WhatsApp / PayPal / Vos consignes) — taille contrôlée ---- */
-.cta-row{ margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  padding:10px 14px; border-radius:12px; border:0; cursor:pointer; text-decoration:none; font-weight:700;
-  /* >>> limite stricte sur mobile <<< */
-  max-width:min(80vw, 260px);
-  width: 86vw;                 /* s’adapte à la largeur écran */
-  font-size:14px;
-}
-.btn-ico{ height:18px; width:auto; display:block; }
-
-/* normaliser les logos internes (certaines versions SVG sont grandes) */
-.btn img{ max-height:22px; width:auto; display:block; }
-
-/* couleurs */
-.btn-wa{ background:#25D366; color:#fff; filter:saturate(1.05) }
-.btn-pp{ background:#ffc439; color:#000; filter:contrast(1.05) }
-.btn-primary{
-  background: linear-gradient(180deg, #d9be85, #b9935a);
-  color:#2b1f18; font-weight:700; border:0; box-shadow:0 12px 24px rgba(0,0,0,.18);
-  transition: transform .18s ease, filter .2s;
-}
-.btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.05); }
-
-/* ---- Formulaire / devis ---- */
-.devis-grid, .grid-2{ display:grid; grid-template-columns:1fr; gap:12px; }
-input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10px 12px; background:#fff; }
-#devis{ display:none } #devis.show{ display:block }
-
-/* ---- Pricing ---- */
-.pricing-section{ background:linear-gradient(90deg,#f5ede2,#e6d6c3); margin:24px auto 0; padding:22px 12px; text-align:center }
-.pricing-cards{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:12px }
-.card{ background:var(--paper); border-radius:16px; padding:18px; max-width:310px; text-align:left; box-shadow:0 6px 16px rgba(0,0,0,.1); outline:1px solid #0001 }
-
-/* ---- Footer ---- */
-.footer{ background:linear-gradient(to bottom,#4b332a 0 92%, rgba(75,51,42,0) 100%); color:#eee; text-align:center; padding:18px 12px; margin:26px auto; border-radius:16px; }
-.footer-columns{ max-width:100%; margin:0 auto; display:flex; gap:12px; flex-direction:column; align-items:center; }
-.footer-info{ display:flex; gap:22px; flex-wrap:wrap; justify-content:center }
-.footer-logo{ max-width:180px; width:78%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95 }
-.footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
-.cv-gallery {
-  display: flex;
-  flex-direction: column;   /* aligne verticalement sur mobile */
-  align-items: center;      /* centre horizontalement */
-  gap: 1rem;
-}
-
-.cv-gallery .card {
-  width: 70%;          /* prend 90% de la largeur de l’écran */
-  max-width: 240px;    /* mais jamais plus large qu’un cadre sympa */
-}
-.cv-gallery img {
-  max-width: 100%;    /* jamais plus large que le conteneur */
-  height: auto;       /* garde les proportions */
-  border-radius: 12px;
-  display: block;
-  margin: auto;
-}
-
-.cv-gallery .card {
-  max-width: 340px;   /* limite la largeur de chaque carte */
-  width: 90%;         /* prend 90% de l’écran */
-}
-.models-grid .model-card {
-  max-width: 340px;   /* largeur max de la carte */
-  width: 90%;         /* prend 90% de l’écran sur mobile */
-  margin: 1rem auto;  /* espace et centrage */
-}
-
-.models-grid img {
-  max-width: 280%; 
-   width:100%;
-  height: auto; 
-  display: block;
-  margin: auto;
-   border-radius:8px;
-}
-/* ---- Ajustements mobile accueil ---- */
-
-/* Hero */
-.hero-gold .hero-logo {
-  max-width: 120px;   /* logo plus petit */
-}
-
-.hero-gold h1 {
-  font-size: 1.8rem;  /* titre plus petit */
-}
-
-.hero-gold h2 {
-  font-size: 1.2rem;
-}
-
-.hero-gold .cta-row {
-  gap: 0.5rem;        /* moins d’espace entre boutons */
-}
-
-.hero-gold .btn {
-  padding: 8px 14px;
-  font-size: 0.9rem;
-}
-
-/* Cartes modèles (CV / Portfolio / Vitrine) */
-.models-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;          /* espace raisonnable entre les cards */
-}
-
-.models-grid .model-card {
-  width: 85%;         /* pas toute la largeur de l’écran */
-  max-width: 280px;   /* limite la largeur */
-}
-
-.models-grid .model-card img {
-  width: 100%;
-  height: auto;
-}
-.model-card a {
-  text-decoration: none;   /* Enlève le soulignement */
-  color: inherit;          /* Garde la couleur du texte parent */
-}
-
-.model-card a:hover {
-  color: #5a4634;          /* (optionnel) couleur hover plus foncée */
-  text-decoration: underline; /* ou pas de soulignement si tu veux rester clean */
-}
-/* ---- Ajustements mobile accueil ---- */
-
-/* Hero */
-.hero-gold .hero-logo {
-  max-width: 120px;   /* logo plus petit */
-}
-
-.hero-gold h1 {
-  font-size: 1.8rem;  /* titre plus petit */
-}
-
-.hero-gold h2 {
-  font-size: 1.2rem;
-}
-
-.hero-gold .cta-row {
-  gap: 0.5rem;        /* moins d’espace entre boutons */
-}
-
-.hero-gold .btn {
-  padding: 8px 14px;
-  font-size: 0.9rem;
-}
-
-/* Cartes modèles (CV / Portfolio / Vitrine) */
-.models-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;          /* espace raisonnable entre les cards */
-}
-
-.models-grid .model-card {
-  width: 70%;         /* pas toute la largeur de l’écran */
-  max-width: 200px;   /* limite la largeur */
-}
-
-.models-grid .model-card img {
-  width: 70%;
-  height: auto;
-}
-a {
-  color: #2b1f18;        /* noir/brun foncé élégant */
-  text-decoration: none; /* enlève le soulignement */
-}
-
-a:hover {
-  color: #5a4634;        /* légèrement plus foncé au survol */
-  text-decoration: underline; /* optionnel, si tu veux un effet hover */
-}
-.model-card .btn {
-  display: block;        /* le bouton prend toute la ligne */
-  margin: 12px auto 0;   /* espace haut + centrage horizontal */
-  text-align: center;    /* texte centré */
-  width: fit-content;    /* largeur qui s'adapte au texte */
-}
-/* ----- Bloc devis caché par défaut ----- */
-#devis {
-  display: none;          /* invisible */
-  opacity: 0;             /* transparent */
-  transform: translateY(20px); /* décalé vers le bas */
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* ----- Quand on ajoute .show ----- */
-#devis.show {
-  display: block;         /* visible */
-  opacity: 1;             /* opaque */
-  transform: translateY(0); /* remonte en place */
-}
-.gallery-grid {
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.gallery-card img {
-  height: 180px;
-}
-
-.card-info {
-  padding: 1rem;
-}
-body {
-  font-size: 0.85rem;
-}
-/* === Correction images démos (évite débordement total) === */
-.demo-preview img,
-.preview-img,
-.model-card img,
-.gallery-card img {
-  display: block;
-  width: 100%;
-  max-width: 750px;      /* ✅ limite sur desktop */
-  height: auto;
-  margin: 0 auto;        /* centre */
-  border-radius: 14px;
-  object-fit: cover;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
-
-/* === Ajustement mobile === */
-@media (max-width: 600px) {
-  .demo-preview img,
-  .preview-img,
-  .model-card img,
-  .gallery-card img {
-    max-width: 90vw;     /* ✅ prend max 90% de la largeur écran */
-    border-radius: 10px;
-  }
+.footer a { color: #fff0e6; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.footer-logo {
+  max-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: .95;
 }
