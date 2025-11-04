@@ -102,3 +102,38 @@ width: 60%;
   max-width: 90vw;
   transition: transform .25s ease, box-shadow .25s ease;
 }
+.model-card {
+  background: #fff; /* fond blanc net */
+  border: 1px solid rgba(210, 180, 140, 0.25); /* bordure subtile dorée/beige */
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.model-card h3 {
+  font-family: "Playfair Display", serif;
+  color: #6b4b3e;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.model-card p {
+  color: #7a6b5a;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  margin-top: 1rem;
+}
