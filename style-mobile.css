@@ -172,7 +172,7 @@ margin: auto;
 }
 
 .cv-gallery .card {
-max-width: 340px;   /* limite la largeur de chaque carte /
+max-width: 340px;   /* limite la largeur de chaque carte */
 width: 90%;         / prend 90% de l’écran /
 }
 .models-grid .model-card {
@@ -191,7 +191,7 @@ border-radius:8px;
 }
 /* ---- Ajustements mobile accueil ---- */
 
-/* Hero /
+/* Hero */
 .hero-gold .hero-logo {
 max-width: 120px;   / logo plus petit */
 }
@@ -213,7 +213,7 @@ padding: 8px 14px;
 font-size: 0.9rem;
 }
 
-/* Cartes modèles (CV / Portfolio / Vitrine) /
+/* Cartes modèles (CV / Portfolio / Vitrine) */
 .models-grid {
 display: flex;
 flex-direction: column;
@@ -231,17 +231,17 @@ width: 100%;
 height: auto;
 }
 .model-card a {
-text-decoration: none;   /* Enlève le soulignement /
-color: inherit;          / Garde la couleur du texte parent */
+text-decoration: none;   /* Enlève le soulignement */
+color: inherit;          /* Garde la couleur du texte parent */
 }
 
 .model-card a:hover {
-color: #5a4634;          /* (optionnel) couleur hover plus foncée /
+color: #5a4634;          /* (optionnel) couleur hover plus foncée */
 text-decoration: underline; / ou pas de soulignement si tu veux rester clean /
 }
-/ ---- Ajustements mobile accueil ---- */
+/* ---- Ajustements mobile accueil ---- */
 
-/* Hero /
+/* Hero */
 .hero-gold .hero-logo {
 max-width: 120px;   / logo plus petit */
 }
@@ -263,7 +263,7 @@ padding: 8px 14px;
 font-size: 0.9rem;
 }
 
-/* Cartes modèles (CV / Portfolio / Vitrine) /
+/* Cartes modèles (CV / Portfolio / Vitrine) */
 .models-grid {
 display: flex;
 flex-direction: column;
@@ -272,7 +272,7 @@ gap: 1rem;          / espace raisonnable entre les cards */
 }
 
 .models-grid .model-card {
-width: 70%;         /* pas toute la largeur de l’écran /
+width: 70%;         /* pas toute la largeur de l’écran */
 max-width: 200px;   / limite la largeur */
 }
 
@@ -281,12 +281,12 @@ width: 70%;
 height: auto;
 }
 a {
-color: #2b1f18;        /* noir/brun foncé élégant /
-text-decoration: none; / enlève le soulignement */
+color: #2b1f18;        /* noir/brun foncé élégant */
+text-decoration: none; /* enlève le soulignement */
 }
 
 a:hover {
-color: #5a4634;        /* légèrement plus foncé au survol /
+color: #5a4634;        /* légèrement plus foncé au survol */
 text-decoration: underline; / optionnel, si tu veux un effet hover /
 }
 .model-card .btn {
@@ -295,7 +295,7 @@ margin: 12px auto 0;   / espace haut + centrage horizontal /
 text-align: center;    / texte centré /
 width: fit-content;    / largeur qui s'adapte au texte /
 }
-/ ----- Bloc devis caché par défaut ----- /
+/ ----- Bloc devis caché par défaut ----- */
 #devis {
 display: none;          / invisible /
 opacity: 0;             / transparent /
@@ -303,7 +303,7 @@ transform: translateY(20px); / décalé vers le bas */
 transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* ----- Quand on ajoute .show ----- /
+/* ----- Quand on ajoute .show ----- */
 #devis.show {
 display: block;         / visible /
 opacity: 1;             / opaque /
@@ -324,7 +324,7 @@ padding: 1rem;
 body {
 font-size: 0.85rem;
 }
-/* === Correction images démos (évite débordement total) === /
+/* === Correction images démos (évite débordement total) === */
 .demo-preview img,
 .preview-img,
 .model-card img,
@@ -491,13 +491,13 @@ align-self: center;
 margin-top: .8rem;
 }
 
-/* ====== Tarifs ====== /
+/ ====== Tarifs ====== /
 .pricing-section {
 padding: 2rem 1rem;
 background: #fffdf9;
 text-align: center;
 }
-/* === Correction images démos (évite débordement total) === /
+/ === Correction images démos (évite débordement total) === /
 .demo-preview img,
 .preview-img,
 .model-card img,
@@ -512,7 +512,7 @@ object-fit: cover;
 box-shadow: 0 10px 28px rgba(0,0,0,0.18);
 }
 
-/* === Ajustement mobile === /
+/ajustement mobile/
 @media (max-width: 600px) {
 .demo-preview img,
 .preview-img,
@@ -522,87 +522,10 @@ max-width: 90vw;     / ✅ prend max 90% de la largeur écran */
 border-radius: 10px;
 }
 }
-/* --- Correction images trop grandes dans les démos --- */
-.demo-preview img,
-.preview-img,
-.demo-hero img,
-.port-gallery img,
-.model-card img {
-  display: block;
-  width: 100%;
-  max-width: 900px;   /* limite sur desktop */
-  height: auto;
-  margin: 0 auto;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
-}
-
-/* Pour les écrans étroits */
-@media (max-width: 600px) {
-  .demo-preview img,
-  .preview-img {
-    max-width: 95vw;
-    border-radius: 10px;
-  }
-}
-/* === Correction images démos (évite débordement total) === */
-.demo-preview img,
-.preview-img,
-.model-card img,
-.gallery-card img {
-  display: block;
-  width: 100%;
-  max-width: 750px;      /* ✅ limite sur desktop */
-  height: auto;
-  margin: 0 auto;        /* centre */
-  border-radius: 14px;
-  object-fit: cover;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
-
-/* === Ajustement mobile === */
-@media (max-width: 600px) {
-  .demo-preview img,
-  .preview-img,
-  .model-card img,
-  .gallery-card img {
-    max-width: 90vw;     /* ✅ prend max 90% de la largeur écran */
-    border-radius: 10px;
-  }
-}
-.demo-preview,
-.section,
-.container {
-  max-width: 900px;      /* ✅ largeur max */
-  margin: 0 auto;
-  padding: 0 1rem;       /* ✅ espace sur les bords */
-  overflow: hidden;      /* empêche débordement visuel */
-}
-/* === Correctif total modèles CV === */
-.models-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: 1rem;
-}
-
 .model-card {
-  width: 85%;
-  max-width: 260px; /* ✅ largeur fixe propre */
   background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
   border: 1px solid rgba(210, 180, 140, 0.25);
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  padding: 1.2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden; /* ✅ cache tout dépassement */
-}
-
-/* Supprime les pseudo-éléments fantômes */
-.model-card::before,
-.model-card::after {
-  content: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  ...
 }
