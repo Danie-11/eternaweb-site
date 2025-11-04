@@ -61,7 +61,7 @@ padding: 28px;
 }
 /* === Section modèles CV === */
 .models-grid {
-display: flex;
+display: grid;
 flex-wrap: wrap;
 justify-content: center;
 gap: 1.5rem;
@@ -108,7 +108,7 @@ flex-direction: column;
 align-items: center;
 }
 .model-card {
-width: 80%;
+width: 60%;
 }
 }
 .model-card {
