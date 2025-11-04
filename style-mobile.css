@@ -571,3 +571,11 @@ border-radius: 10px;
     border-radius: 10px;
   }
 }
+.demo-preview,
+.section,
+.container {
+  max-width: 900px;      /* ✅ largeur max */
+  margin: 0 auto;
+  padding: 0 1rem;       /* ✅ espace sur les bords */
+  overflow: hidden;      /* empêche débordement visuel */
+}
