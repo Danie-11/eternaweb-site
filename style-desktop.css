@@ -489,3 +489,27 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
     border-radius: 10px;
   }
 }
+/* --- Correction images trop grandes dans les démos --- */
+.demo-preview img,
+.preview-img,
+.demo-hero img,
+.port-gallery img,
+.model-card img {
+  display: block;
+  width: 100%;
+  max-width: 900px;   /* limite sur desktop */
+  height: auto;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+
+/* Pour les écrans étroits */
+@media (max-width: 600px) {
+  .demo-preview img,
+  .preview-img {
+    max-width: 95vw;
+    border-radius: 10px;
+  }
+}
