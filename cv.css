@@ -11,7 +11,7 @@ object-fit:cover; margin:0 auto 10px;
 .cv-grid{ text-align:left; }
 .cv-grid h2{ color:#4b3a2f; margin-top:10px; }
 .cv-tags{ display:flex; gap:8px; flex-wrap:wrap; list-style:none; padding:0; }
-.cv-tags li{ background:#fff; border:1px solid #eee; padding:6px 10px; }
+.cv-tags li{ background:#fff;  solid #eee; padding:6px 10px; }
 .cv-job small{ opacity:.7; display:block; margin:.15rem 0 .35rem; }
 .cv-gallery .card span {
 color: #5a3e2b; /* marron foncé plus visible /
@@ -29,13 +29,6 @@ background: none;
 box-shadow: none !important;
 border: none !important;
 border-radius: 0 !important;
-}
-
-/* Ajuste l'image pour qu’elle colle sans arrondi */
-.model-card img,
-.cv-gallery img {
-border-radius: none !important;
-display: block;
 }
 
 / ===============================
