@@ -80,7 +80,7 @@ filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-r
 
 /* ---- Conteneurs / cartes ---- */
 .container{ background:rgba(255,255,255,.92); max-width:100%; margin:18px auto; padding:24px 14px; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,.08); text-align:center; }
-.page-card{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:20px 14px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+.page-card{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:14px; padding:20px 14px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
 .testimonials{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:18px 12px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
 
 /* ---- CTA (WhatsApp / PayPal / Vos consignes) — taille contrôlée ---- */
@@ -89,7 +89,7 @@ filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-r
 .btn{
 display:inline-flex; align-items:center; justify-content:center; gap:10px;
 padding:10px 14px; border-radius:12px; border:0; cursor:pointer; text-decoration:none; font-weight:700;
-/* >>> limite stricte sur mobile <<< /
+
 max-width:min(80vw, 260px);
 width: 86vw;                 / s’adapte à la largeur écran */
 font-size:14px;
@@ -166,7 +166,7 @@ max-width: 240px;    / mais jamais plus large qu’un cadre sympa /
 .cv-gallery img {
 max-width: 100%;    / jamais plus large que le conteneur /
 height: auto;       / garde les proportions */
-border-radius: 12px;
+border-radius: 8px;
 display: block;
 margin: auto;
 }
@@ -579,35 +579,30 @@ border-radius: 10px;
   padding: 0 1rem;       /* ✅ espace sur les bords */
   overflow: hidden;      /* empêche débordement visuel */
 }
-/* === Section Modèles (CV / Portfolio) === */
+/* === Correctif total modèles CV === */
 .models-grid {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   margin-top: 1rem;
 }
 
 .model-card {
+  width: 85%;
+  max-width: 260px; /* ✅ largeur fixe propre */
   background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
   border: 1px solid rgba(210, 180, 140, 0.25);
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   padding: 1.2rem;
   text-align: center;
-  width: 85%;
-  max-width: 280px;
-  transition: transform .25s ease, box-shadow .25s ease;
+  position: relative;
+  overflow: hidden; /* ✅ cache tout dépassement */
 }
 
-.model-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-.model-card h3 {
-  font-family: "Playfair Display", serif;
-  color: #6b4b3e;
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
+/* Supprime les pseudo-éléments fantômes */
+.model-card::before,
+.model-card::after {
+  content: none !important;
 }
