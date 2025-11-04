@@ -579,3 +579,35 @@ border-radius: 10px;
   padding: 0 1rem;       /* ✅ espace sur les bords */
   overflow: hidden;      /* empêche débordement visuel */
 }
+/* === Section Modèles (CV / Portfolio) === */
+.models-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.model-card {
+  background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
+  border: 1px solid rgba(210, 180, 140, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 1.2rem;
+  text-align: center;
+  width: 85%;
+  max-width: 280px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.model-card h3 {
+  font-family: "Playfair Display", serif;
+  color: #6b4b3e;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
