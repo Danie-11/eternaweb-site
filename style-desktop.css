@@ -530,3 +530,46 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
     border-radius: 10px;
   }
 }
+/* ===== Témoignages ===== */
+.testimonials {
+  max-width: 900px;
+  margin: 40px auto;
+  background: var(--cream, #fffaf7);
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 40px 30px;
+  text-align: left;
+  position: relative;
+}
+
+.testimonials h2 {
+  color: var(--brown, #5e4b3c);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.testimonials-content p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  color: var(--ink, #2d1e15);
+}
+
+.testimonials-content em {
+  color: #6b4b3e;
+  font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .testimonials {
+    padding: 28px 18px;
+    border-radius: 14px;
+  }
+  .testimonials-content p {
+    font-size: 1rem;
+  }
+}
