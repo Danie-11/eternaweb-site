@@ -150,54 +150,6 @@ h1, h2, h3, .gold-title, .gold-sub {
   gap: .6rem;
 }
 
-/* ---- SECTION MODÈLES ---- */
-.models {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-.models h2 {
-  color: var(--brown-dark);
-  font-size: 1.5rem;
-  margin-bottom: .3rem;
-}
-.models p {
-  color: #555;
-  margin-bottom: 1.2rem;
-  font-size: .9rem;
-}
-.models-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  background: rgba(255,255,255,0.92);
-  padding: 1.2rem 0;
-  border-radius: 16px;
-}
-.model-card {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  width: 85%;
-  max-width: 280px;
-  text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.model-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-}
-.model-card img {
-  width: 100%; height: auto;
-  border-radius: 10px;
-  margin-bottom: .8rem;
-}
-.model-card h3 {
-  font-size: 1.1rem;
-  color: #5a4023;
-  margin-bottom: .4rem;
-}
-
 /* ---- FORMULAIRE / DEVIS ---- */
 .page-card {
   padding: 2rem 1rem;
