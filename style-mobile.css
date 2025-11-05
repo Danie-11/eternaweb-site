@@ -529,3 +529,15 @@ border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   ...
 }
+@media (max-width: 600px) {
+  .models-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .model-card {
+    width: 85%;
+    max-width: 280px;
+  }
+}
