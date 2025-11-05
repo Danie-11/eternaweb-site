@@ -1285,3 +1285,36 @@ border-radius: 10px;
     border-radius: 10px;
   }
 }
+/* === Section Modèles de CV (version stable EternaWeb) === */
+.models-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.model-card {
+  background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
+  border: none; /* ✅ enlève la bordure */
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  padding: 3rem 1rem;
+  text-align: center;
+  width: 240px;        /* ✅ taille équilibrée */
+  max-width: 90vw;     /* s’adapte sur mobile */
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.model-card h3 {
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  margin: 0;
+}
