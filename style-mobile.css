@@ -143,7 +143,7 @@ gap: 1rem;
 }
 
 .cv-gallery .card {
-width: 70%;          /* prend 90% de la largeur de l’écran /
+width: 70%;          /* prend 90% de la largeur de l’écran */
 max-width: 240px;    / mais jamais plus large qu’un cadre sympa /
 }
 .cv-gallery img {
@@ -155,7 +155,7 @@ margin: auto;
 }
 
 .cv-gallery .card {
-max-width: 340px;   /* limite la largeur de chaque carte /
+max-width: 340px;   /* limite la largeur de chaque carte */
 width: 85%;         / prend 90% de l’écran /
 }
 .models-grid .model-card {
@@ -165,10 +165,10 @@ margin: 1rem auto;  / espace et centrage */
 }
 
 .models-grid img {
-max-width: 100%;
-width:90%;
+max-width: 90%;
+width:70%;
 height: auto;
-display: block;
+display: grid, ;
 margin: auto;
 object-fit: cover;
 border-radius:8px;
@@ -468,10 +468,6 @@ background-attachment: fixed;
 background-size: cover;
 padding: 58px 12px 0;   /* un peu moins que desktop */
 }
-body::before{
-content:""; position:fixed; inset:0 0 auto 0; height:40vh; pointer-events:none;
-background: linear-gradient(to bottom, rgba(0,0,0,.14), rgba(0,0,0,0));
-z-index:0;
 }
 body > *{ position:relative; z-index:1; }
 
@@ -616,7 +612,7 @@ max-width: 240px;    / mais jamais plus large qu’un cadre sympa /
 max-width: 100%;    / jamais plus large que le conteneur /
 height: auto;       / garde les proportions */
 border-radius: 12px;
-display: block;
+display: grid;
 margin: auto;
 }
 
@@ -634,7 +630,7 @@ margin: 1rem auto;  / espace et centrage */
 max-width: 280%;
 width:100%;
 height: auto;
-display: block;
+display: grid;
 margin: auto;
 border-radius:8px;
 }
