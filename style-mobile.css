@@ -280,3 +280,19 @@ a:hover {
   color: var(--gold-600);
   text-decoration: underline;
 }
+/* ---- Correction FAQ sur mobile ---- */
+.faq-section {
+  padding-bottom: 100px !important; /* espace sous le formulaire */
+  overflow: visible !important; /* autorise le formulaire à dépasser */
+}
+
+.faq-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+textarea, input {
+  max-width: 100%;
+  box-sizing: border-box;
+}
