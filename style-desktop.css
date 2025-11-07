@@ -646,3 +646,25 @@ h1 {
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
+/* ---- Espacement harmonisé sur desktop ---- */
+
+/* Espace entre les sections */
+.section {
+  margin-bottom: 3rem !important;
+}
+
+/* Section CV spécifique */
+.cv-section {
+  margin-bottom: 4rem !important; /* espace avant les formules */
+}
+
+/* Empêche le grand vide en bas */
+body, main {
+  min-height: auto !important;
+  height: auto !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+main {
+  background: linear-gradient(to bottom, transparent 90%, var(--paper) 100%);
+}
