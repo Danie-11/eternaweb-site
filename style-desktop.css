@@ -439,129 +439,6 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .gallery-card .btn:hover {
   background: none;
 }
-/* === Correction images démos (évite débordement total) === */
-.demo-preview img,
-.preview-img,
-.model-card img,
-.gallery-card img {
-  display: block;
-  width: 100%;
-  max-width: 750px;      /* ✅ limite sur desktop */
-  height: auto;
-  margin: 0 auto;        /* centre */
-  border-radius: 14px;
-  object-fit: cover;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
-
-/* === Ajustement mobile === */
-@media (max-width: 600px) {
-  .demo-preview img,
-  .preview-img,
-  .model-card img,
-  .gallery-card img {
-    max-width: 90vw;     /* ✅ prend max 90% de la largeur écran */
-    border-radius: 10px;
-  }
-}
-/* === Correction images démos (évite débordement total) === */
-.demo-preview img,
-.preview-img,
-.model-card img,
-.gallery-card img {
-  display: block;
-  width: 100%;
-  max-width: 750px;      /* ✅ limite sur desktop */
-  height: auto;
-  margin: 0 auto;        /* centre */
-  border-radius: 14px;
-  object-fit: cover;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
-
-/* === Ajustement mobile === */
-@media (max-width: 600px) {
-  .demo-preview img,
-  .preview-img,
-  .model-card img,
-  .gallery-card img {
-    max-width: 90vw;     /* ✅ prend max 90% de la largeur écran */
-    border-radius: 10px;
-  }
-}
-/* --- Correction images trop grandes dans les démos --- */
-.demo-preview img,
-.preview-img,
-.demo-hero img,
-.port-gallery img,
-.model-card img {
-  display: block;
-  width: 100%;
-  max-width: 900px;   /* limite sur desktop */
-  height: auto;
-  margin: 0 auto;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
-}
-
-/* === Correction images démos (évite débordement total) === */
-.demo-preview img,
-.preview-img,
-.model-card img,
-.gallery-card img {
-  display: block;
-  width: 100%;
-  max-width: 750px;      /* ✅ limite sur desktop */
-  height: auto;
-  margin: 0 auto;        /* centre */
-  border-radius: 14px;
-  object-fit: cover;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
-
-/* === Ajustement mobile === */
-@media (max-width: 600px) {
-  .demo-preview img,
-  .preview-img,
-  .model-card img,
-  .gallery-card img {
-    max-width: 90vw;     /* ✅ prend max 90% de la largeur écran */
-    border-radius: 10px;
-  }
-}
-/* ===== Témoignages ===== */
-.testimonials {
-  max-width: 900px;
-  margin: 40px auto;
-  background: var(--cream, #fffaf7);
-  border-radius: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  padding: 40px 30px;
-  text-align: left;
-  position: relative;
-}
-
-.testimonials h2 {
-  color: var(--brown, #5e4b3c);
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.testimonials-content p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
-  color: var(--ink, #2d1e15);
-}
-
-.testimonials-content em {
-  color: #6b4b3e;
-  font-style: italic;
-}
 
 /* ===============================
    Témoignages unifiés (bloc unique)
@@ -648,4 +525,12 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
     max-width: 90vw;     /* ✅ prend max 90% de la largeur écran */
     border-radius: 10px;
   }
+}
+.demo-preview,
+.section,
+.container {
+  max-width: 900px;      /* ✅ largeur max */
+  margin: 0 auto;
+  padding: 0 1rem;       /* ✅ espace sur les bords */
+  overflow: hidden;      /* empêche débordement visuel */
 }
