@@ -216,7 +216,43 @@ font-size: 1.8rem;  /* titre plus petit */
 .hero-gold h2 {
 font-size: 1.2rem;
 }
+/* ---- Portfolio (mise en grille des cartes démo) ---- */
+.portfolio-grid,
+.gallery-cards,
+.demo-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
 
+.gallery-card,
+.demo-card {
+  background: #fffaf7;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1rem;
+  width: calc(50% - 1rem); /* deux cartes côte à côte */
+  max-width: 260px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-card:hover,
+.demo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.gallery-card img,
+.demo-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 0.6rem;
+}
 .hero-gold .cta-row {
 gap: 0.5rem;        /* moins d’espace entre boutons */
 }
