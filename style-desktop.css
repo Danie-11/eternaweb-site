@@ -668,3 +668,14 @@ body, main {
 main {
   background: linear-gradient(to bottom, transparent 90%, var(--paper) 100%);
 }
+.services-section {
+  padding: 2.5rem 2rem !important; /* augmente l’espace interne */
+}
+
+.service-buttons {
+  gap: 1rem; /* espace entre les deux boutons */
+}
+
+.service-buttons button {
+  margin: 0 auto; /* les garde bien centrés */
+}
