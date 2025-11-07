@@ -194,3 +194,80 @@ h1, h2, h3, .gold-title, .gold-sub {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   opacity: .95;
 }
+/* === SECTION CV — Mise en page principale === */
+
+.cv-section {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #fffaf7;
+}
+
+.cv-section h1 {
+  color: #064420;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cv-section .intro {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Grille propre et fluide */
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* Carte individuelle */
+.model-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  padding: 1.5rem 1rem;
+  max-width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.model-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.model-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+/* Bouton simple */
+.btn-view {
+  display: inline-block;
+  background: #064420;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-view:hover {
+  background: #0a6335;
+}
+
+/* Mobile : centrage propre */
+@media (max-width: 768px) {
+  .cv-section {
+    padding: 2rem 1rem;
+  }
+
+  .model-card {
+    max-width: 90%;
+  }
+}
