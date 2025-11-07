@@ -136,68 +136,71 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .footer-logo{ max-width:180px; width:78%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95 }
 .footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
 
-/* === SECTION MODÈLES (corrigée & épurée) === */
-
+/* ---- Modèles (CV / Portfolio / Vitrine) ---- */
 .models-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;                       /* + d’espace entre les cartes */
-  background: rgba(255, 255, 255, 0.92); /* fond doux et uniforme */
-  padding: 1.2rem 0;
-  border-radius: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
 }
 
 .model-card {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* ombre plus légère et propre */
-  width: 85%;
-  max-width: 280px;
-  margin: 0 auto;                    /* centrage parfait */
+  background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  padding: 2rem 1rem;
   text-align: center;
+  width: 230px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
 .model-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.model-card h3 {
+  font-size: 1.1rem;
+  color: var(--brown);
+  margin: 0.5rem 0 0.2rem;
+}
+
+.model-card p {
+  font-size: 0.9rem;
+  color: #444;
 }
 
 .model-card img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  display: block;
-  margin: 0 auto 0.8rem;
+  margin-bottom: 0.8rem;
   object-fit: cover;
 }
 
-/* Titre sous l’image */
-.model-card h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.1rem;
-  color: #5a4023;
-  margin-bottom: 0.4rem;
-}
-
-/* Bouton sous la carte */
-.model-card .btn {
-  display: inline-block;
-  background: linear-gradient(180deg, #d9be85, #b9935a);
-  color: #2b1f18;
-  font-weight: 600;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
+/* Rendre toute la carte cliquable */
+.model-card a {
+  color: inherit;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.25s ease, transform 0.2s ease;
+  display: block;
 }
 
-.model-card .btn:hover {
-  background: linear-gradient(180deg, #e3cc9a, #cba669);
-  transform: translateY(-2px);
+/* ---- Images démos ---- */
+.demo-preview img,
+.preview-img,
+.gallery-card img {
+  display: block;
+  width: 100%;
+  max-width: 90vw;
+  border-radius: 10px;
+  margin: 0 auto;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
 
 /* ---- Ajustements mobile accueil ---- */
 
