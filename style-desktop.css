@@ -534,3 +534,66 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   padding: 0 1rem;       /* ✅ espace sur les bords */
   overflow: hidden;      /* empêche débordement visuel */
 }
+/* ---- Modèles (CV / Portfolio / Vitrine) ---- */
+.models-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.model-card {
+  background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 280px; /* un peu plus large sur desktop */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.model-card h3 {
+  font-size: 1.2rem;
+  color: var(--brown);
+  margin: 0.5rem 0 0.2rem;
+}
+
+.model-card p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.model-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+  object-fit: cover;
+}
+
+/* Rendre toute la carte cliquable */
+.model-card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+/* ---- Images démos ---- */
+.demo-preview img,
+.preview-img,
+.gallery-card img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  margin: 0 auto;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
