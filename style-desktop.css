@@ -633,10 +633,16 @@ section {
   --gold-brown: #b28b5e; /* doux doré brun, lisible sur fond clair */
 }
 
-/* ---- Titres harmonisés sur desktop ---- */
-h1, h2, h3, p .section-title {
-  color: var(--gold-brown) !important;
+/* ---- Titres de section centrés ---- */
+.section-title, h1, h2 {
   text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {
+  color: var(--brown-dark);
+  font-size: 1.9rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
 }
