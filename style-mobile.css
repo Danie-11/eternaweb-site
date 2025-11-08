@@ -296,3 +296,6 @@ textarea, input {
   max-width: 100%;
   box-sizing: border-box;
 }
+.services-section {
+  border-radius: 16px;
+}
