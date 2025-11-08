@@ -691,3 +691,35 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
+/* ===== Correction espacement Portfolio ===== */
+.portfolio-section {
+  max-width: 1200px;          /* largeur plus généreuse */
+  margin: 0 auto 4rem auto;   /* centre + espace en dessous */
+  padding: 0 2rem;            /* respire sur les côtés */
+}
+
+/* Espace entre la galerie et la section suivante */
+.port-gallery {
+  margin-bottom: 3rem;
+}
+
+/* Ajuste la grille */
+.port-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Harmonise la taille des cartes */
+.port-gallery .model-card {
+  max-width: 100%;
+  background: var(--paper);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+  transition: transform .25s ease;
+}
+
+.port-gallery .model-card:hover {
+  transform: translateY(-6px);
+}
