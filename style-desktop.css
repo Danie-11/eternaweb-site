@@ -679,3 +679,15 @@ main {
 .service-buttons button {
   margin: 0 auto; /* les garde bien centrés */
 }
+.cv-section {
+  margin-bottom: 4rem;
+}
+body {
+  min-height: auto;
+  padding-bottom: 2rem;
+}
+.port-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
