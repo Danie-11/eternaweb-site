@@ -271,3 +271,11 @@ h1, h2, h3, .gold-title, .gold-sub {
     max-width: 90%;
   }
 }
+.services-section {
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  background: var(--paper);
+}
+.services-section button {
+  margin: 0 1rem;
+}
