@@ -312,3 +312,6 @@ textarea, input {
 .port-gallery .model-card {
   max-width: 100%;
 }
+.cv-section {
+  margin-bottom: 4rem;
+}
