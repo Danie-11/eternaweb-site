@@ -289,15 +289,12 @@ a:hover {
 .faq-section form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 textarea, input {
   max-width: 100%;
   box-sizing: border-box;
-}
-.services-section {
-  border-radius: 16px;
 }
 .port-gallery {
   width: 100%;
@@ -311,7 +308,4 @@ textarea, input {
 
 .port-gallery .model-card {
   max-width: 100%;
-}
-.cv-section {
-  margin-bottom: 4rem;
 }
