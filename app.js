@@ -974,7 +974,7 @@ nl: {
   'cv.pack3.li2': 'Creación de CV en línea (mini sitio personal)',
   'cv.pack3.li3': 'Alojamiento incluido por 1 año',
   'cv.pack3.li4': 'Diseño moderno (ordenador y móvil)',
-  'cv.pack3.li5': 'Código QR integrado'
+  'cv.pack3.li5': 'Código QR integrado',
   'cv.pack3.li6': 'Para destacar entre otros candidatos', 
 
 
