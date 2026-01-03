@@ -79,7 +79,7 @@ const I18N = {
   'cv.pack2.li1': 'Tout le Pack Starter',
   'cv.pack2.li2': 'Optimisation du contenu (ATS friendly)',
   'cv.pack2.li3': 'Ajout de mots-clés stratégiques',
-  'cv.pack2.li4': 'Pour une meilleure répétabilitépar les recruteurs',
+  'cv.pack2.li4': 'Pour une meilleure répétabilité par les recruteurs',
   'cv.pack3.title': '🌐 Pack Premium – 19,99 €',
   'cv.pack3.li1': 'Tout le Pack Boost',
   'cv.pack3.li2': 'Création d’un CV en ligne (mini-site personnel)',
@@ -1152,7 +1152,7 @@ nl: {
   'cv.pack3.li3': 'Hosting incluso per 1 anno',
   'cv.pack3.li4': 'Design moderno (desktop e mobile)',
   'cv.pack3.li5': 'Codice QR integrato',
-  'cv.pack3.li5': 'Per distinguerti dagli altri candidati',   
+  'cv.pack3.li6': 'Per distinguerti dagli altri candidati',   
 
     // --- Testimonianze
     'testi.h2':'💬 Testimonianze',
