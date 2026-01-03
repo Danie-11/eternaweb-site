@@ -55,11 +55,11 @@ const I18N = {
   'portfolio.pricing.title': '💼 Formules Portfolio',
   'portfolio.pricing.desc': 'Exposez vos créations avec élégance.',
 
-    'portfolio.pack1.title': '📂 Pack Créatif – 89 €',
+    'portfolio.pack1.title': '📂 Pack Créatif – 29,99 €',
   'portfolio.pack1.li1': 'Mini-site (2–3 pages)',
   'portfolio.pack1.li2': 'Galerie photos/vidéos',
   'portfolio.pack1.li3': 'Présentation créateur',
-  'portfolio.pack2.title': '🌟 Pack Premium – 149 €',
+  'portfolio.pack2.title': '🌟 Pack Premium – 59,99 €',
   'portfolio.pack2.li1': 'Tout le Pack Créatif',
   'portfolio.pack2.li2': 'Section blog',
   'portfolio.pack2.li3': 'Optimisation SEO',
@@ -211,11 +211,11 @@ en: {
   'portfolio.pricing.title': '💼 Portfolio Plans',
   'portfolio.pricing.desc': 'Showcase your work with style and elegance.',
 
-     'portfolio.pack1.title': '📂 Creative Pack – €89',
+     'portfolio.pack1.title': '📂 Creative Pack – €29,99',
   'portfolio.pack1.li1': 'Mini-site (2–3 pages)',
   'portfolio.pack1.li2': 'Photo/video gallery',
   'portfolio.pack1.li3': 'Creator presentation',
-  'portfolio.pack2.title': '🌟 Premium Pack – €149',
+  'portfolio.pack2.title': '🌟 Premium Pack – €59,99',
   'portfolio.pack2.li1': 'Everything in Creative Pack',
   'portfolio.pack2.li2': 'Blog section',
   'portfolio.pack2.li3': 'SEO optimization',
@@ -325,6 +325,36 @@ en: {
 'code.back': '← Back to home',
 'footer.copy':'© 2025 EternaGlow — All rights reserved' 
   },
+
+  et: {
+  'nav.menu':'Menüü',
+  'nav.cv':'CV',
+  'nav.portfolio':'Portfoolio',
+  'nav.vitrine':'Veebileht',
+  'nav.tarifs':'Hinnad',
+  'nav.devis':'Juhised',
+
+  'hero.title':'EternaWeb',
+  'hero.subtitle':'CV ja veebilehed — valmis 48 tunniga',
+  'hero.lead':'Premium disain, kiire teostus ja valmis lahendus.',
+
+  'services.h2':'Meie teenused',
+  'services.sub':'Vali sobiv mini-veebileht',
+  'services.cv.desc':'Sobib tööle kandideerimiseks',
+  'services.port.desc':'Kunstnikele ja disaineritele',
+  'services.vit.desc':'Ettevõtetele ja iseseisvatele',
+
+  'portfolio.pricing.title':'Portfoolio paketid',
+  'portfolio.pack1.title':'Loovpakett – 29,99 €',
+  'portfolio.pack2.title':'Premium-pakett – 59,99 €',
+
+  'cv.pricing.title':'CV paketid',
+  'cv.pack1.title':'Starter – 4,99 €',
+  'cv.pack2.title':'Boost – 9,99 €',
+  'cv.pack3.title':'Premium – 19,99 €',
+
+  'footer.copy':'© 2025 EternaWeb — Kõik õigused kaitstud'
+}
   
 nl: {
     // --- Navigatie
@@ -380,11 +410,11 @@ nl: {
   'portfolio.pricing.title': '💼 Portfolio-pakketten',
   'portfolio.pricing.desc': 'Toon je creaties met stijl en elegantie.',
 
-    'portfolio.pack1.title': '📂 Creatief Pakket – 89 €',
+    'portfolio.pack1.title': '📂 Creatief Pakket – 29,99 €',
   'portfolio.pack1.li1': 'Mini-site (2–3 pagina’s)',
   'portfolio.pack1.li2': 'Foto-/videogalerij',
   'portfolio.pack1.li3': 'Presentatie van de maker',
-  'portfolio.pack2.title': '🌟 Premium Pakket – 149 €',
+  'portfolio.pack2.title': '🌟 Premium Pakket – 59,99 €',
   'portfolio.pack2.li1': 'Alles in het Creatief Pakket',
   'portfolio.pack2.li2': 'Blogsectie',
   'portfolio.pack2.li3': 'SEO-optimalisatie',
@@ -559,11 +589,11 @@ nl: {
   'portfolio.pricing.desc': 'Präsentieren Sie Ihre Arbeiten mit Eleganz.',
 
     
-    'portfolio.pack1.title': '📂 Kreativ-Paket – 89 €',
+    'portfolio.pack1.title': '📂 Kreativ-Paket – 29,99 €',
   'portfolio.pack1.li1': 'Mini-Website (2–3 Seiten)',
   'portfolio.pack1.li2': 'Foto-/Video-Galerie',
   'portfolio.pack1.li3': 'Ersteller-Präsentation',
-  'portfolio.pack2.title': '🌟 Premium-Paket – 149 €',
+  'portfolio.pack2.title': '🌟 Premium-Paket – 59,99 €',
   'portfolio.pack2.li1': 'Alles im Kreativ-Paket',
   'portfolio.pack2.li2': 'Blog-Sektion',
   'portfolio.pack2.li3': 'SEO-Optimierung',
@@ -737,11 +767,11 @@ nl: {
   'portfolio.pricing.title': '💼 Тарифы портфолио',
   'portfolio.pricing.desc': 'Покажите свои работы с элегантностью.',
 
-     'portfolio.pack1.title': '📂 Креативный пакет – 89 €',
+     'portfolio.pack1.title': '📂 Креативный пакет – 29,99 €',
   'portfolio.pack1.li1': 'Мини-сайт (2–3 страницы)',
   'portfolio.pack1.li2': 'Галерея фото/видео',
   'portfolio.pack1.li3': 'Презентация автора',
-  'portfolio.pack2.title': '🌟 Премиум пакет – 149 €',
+  'portfolio.pack2.title': '🌟 Премиум пакет – 59,99 €',
   'portfolio.pack2.li1': 'Всё из Креативного пакета',
   'portfolio.pack2.li2': 'Раздел блог',
   'portfolio.pack2.li3': 'SEO-оптимизация',
@@ -914,11 +944,11 @@ nl: {
   'portfolio.pricing.title': '💼 Planes de Portafolio',
   'portfolio.pricing.desc': 'Muestra tus creaciones con elegancia.',
 
-     'portfolio.pack1.title': '📂 Paquete Creativo – 89 €',
+     'portfolio.pack1.title': '📂 Paquete Creativo – 29,99 €',
   'portfolio.pack1.li1': 'Mini sitio (2–3 páginas)',
   'portfolio.pack1.li2': 'Galería de fotos/vídeos',
   'portfolio.pack1.li3': 'Presentación del creador',
-  'portfolio.pack2.title': '🌟 Paquete Premium – 149 €',
+  'portfolio.pack2.title': '🌟 Paquete Premium – 59,99 €',
   'portfolio.pack2.li1': 'Todo el Paquete Creativo',
   'portfolio.pack2.li2': 'Sección de blog',
   'portfolio.pack2.li3': 'Optimización SEO',
@@ -1091,11 +1121,11 @@ nl: {
   'portfolio.pricing.title': '💼 Pacchetti Portfolio',
   'portfolio.pricing.desc': 'Mostra le tue creazioni con eleganza.',
 
-    'portfolio.pack1.title': '📂 Pacchetto Creativo – 89 €',
+    'portfolio.pack1.title': '📂 Pacchetto Creativo – 29,99 €',
   'portfolio.pack1.li1': 'Mini-sito (2–3 pagine)',
   'portfolio.pack1.li2': 'Galleria foto/video',
   'portfolio.pack1.li3': 'Presentazione del creatore',
-  'portfolio.pack2.title': '🌟 Pacchetto Premium – 149 €',
+  'portfolio.pack2.title': '🌟 Pacchetto Premium – 59,99 €',
   'portfolio.pack2.li1': 'Tutto il Pacchetto Creativo',
   'portfolio.pack2.li2': 'Sezione blog',
   'portfolio.pack2.li3': 'Ottimizzazione SEO',
