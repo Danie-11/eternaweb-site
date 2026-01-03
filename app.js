@@ -354,7 +354,7 @@ en: {
   'cv.pack3.title':'Premium – 19,99 €',
 
   'footer.copy':'© 2025 EternaWeb — Kõik õigused kaitstud'
-}
+},
   
 nl: {
     // --- Navigatie
