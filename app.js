@@ -294,6 +294,7 @@ en: {
     'testi.h2':'💬 Testimonials','testi.t1':'“Super responsive and professional — my site was online the same day!”','testi.c1':'— Claire B.',
     'testi.t2':'“Elegant, clear design — clients contact me directly via WhatsApp!”','testi.c2':'— Malik T.',
     'testi.t3':'“Excellent value for money. 100% recommended.”','testi.c3':'— Sofia M.',
+  
            'footer.faq':'FAQ',
       'faq.title': 'FAQ - EternaWeb',
 'faq.h1': 'FAQ - EternaWeb',
@@ -446,9 +447,8 @@ en: {
 
     // FAQ pour les CV
     faqCv: {
-      title: 'FAQ – CV & mini-site CV - EternaWeb',
+      title: 'KKK – CV ja CV mini-sait - EternaWeb',
       h1: 'FAQ – CV & mini-site CV - EternaWeb',   
-      'faq.title': 'KKK – CV ja CV mini-sait - EternaWeb',
 'faqCv.q1': '✨ Kui kiiresti minu CV valmis saab?',
 'faqCv.a1': 'Tavaliselt 24–48 tunni jooksul, sõltuvalt valitud paketist ja info edastamise kiirusest.',
 'faqCv.q2': '📄 Kellele CV teenus on mõeldud?',
@@ -469,7 +469,6 @@ en: {
 'faqCv.a9': 'Võta minuga otse ühendust allpool 👇',
 'faqCv.back': '← Tagasi avalehele'
     },
-
     
 'portfolio.title': 'KKK – Portfoolio / Loojad & Vabakutselised - EternaWeb',
 'portfolio.h1': 'KKK – Portfoolio / Loojad & Vabakutselised',
@@ -836,7 +835,7 @@ nl: {
     // FAQ pour les CV
     faqCv: {
       title: 'FAQ – Lebenslauf & CV Mini-Website - EternaWeb',
-    h1': 'FAQ – Lebenslauf & CV Mini-Website - EternaWeb',
+    h1: 'FAQ – Lebenslauf & CV Mini-Website - EternaWeb',
 'faqCv.q1': '✨ Wie schnell ist mein Lebenslauf fertig?',
 'faqCv.a1': 'In der Regel innerhalb von 24 bis 48 Stunden, je nach gewähltem Paket und Verfügbarkeit der Informationen.',
 'faqCv.q2': '📄 Für wen ist der CV-Service gedacht?',
@@ -1078,8 +1077,8 @@ nl: {
 
     // FAQ pour les CV
     faqCv: {
-    'faq.title': 'FAQ – Резюме и CV мини-сайт - EternaWeb',
-h1': 'FAQ – Резюме и CV мини-сайт - EternaWeb',
+    title: 'FAQ – Резюме и CV мини-сайт - EternaWeb',
+h1: 'FAQ – Резюме и CV мини-сайт - EternaWeb',
 'faqCv.q1': '✨ За какое время будет готово моё резюме?',
 'faqCv.a1': 'Обычно в течение 24–48 часов, в зависимости от выбранного тарифа и скорости предоставления информации.',
 'faqCv.q2': '📄 Для кого предназначена услуга CV?',
@@ -1280,8 +1279,8 @@ h1': 'FAQ – Резюме и CV мини-сайт - EternaWeb',
 
     // FAQ pour les CV
     faqCv: {
-    'faq.title': 'FAQ – CV y mini-sitio CV - EternaWeb',
-'faqCv.h1': 'FAQ – CV y mini-sitio CV - EternaWeb',
+    title: 'FAQ – CV y mini-sitio CV - EternaWeb',
+    h1: 'FAQ – CV y mini-sitio CV - EternaWeb',
 'faqCv.q1': '✨ ¿Cuánto tiempo tarda en estar listo mi CV?',
 'faqCv.a1': 'Generalmente entre 24 y 48 horas, según el paquete elegido y la rapidez en el envío de la información.',
 'faqCv.q2': '📄 ¿A quién va dirigido el servicio de CV?',
@@ -1501,8 +1500,8 @@ h1': 'FAQ – Резюме и CV мини-сайт - EternaWeb',
     
  // FAQ pour les CV
     faqCv: { 
-title': 'FAQ – CV e mini-sito CV - EternaWeb',
-h1': 'FAQ – CV e mini-sito CV - EternaWeb',
+title: 'FAQ – CV e mini-sito CV - EternaWeb',
+h1: 'FAQ – CV e mini-sito CV - EternaWeb',
 'faqCv.q1': '✨ In quanto tempo è pronto il mio CV?',
 'faqCv.a1': 'Generalmente entro 24–48 ore, in base al pacchetto scelto e alla rapidità di invio delle informazioni.',
 'faqCv.q2': '📄 A chi è rivolto il servizio CV?',
