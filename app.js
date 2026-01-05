@@ -1568,8 +1568,6 @@ if (langBtn && langMenu){
 // =========================
 // Application de la langue
 // =========================
-// Application de la langue
-// =========================
 function applyLang(lang){
   const d = I18N[lang] || I18N.fr;
   $$('[data-i18n]').forEach(el=>{
@@ -1598,6 +1596,9 @@ applyLang(localStorage.getItem('lang') || 'fr');
 // Gestion du formulaire devis
 // =========================
 const planInput = $('#planInput');
+// Store escape handler reference to prevent accumulation
+let devisEscapeHandler = null;
+
 function openDevis(plan = ''){
   const d = $('#devis');
   if (!d) return;
@@ -1614,14 +1615,20 @@ function openDevis(plan = ''){
     setTimeout(() => firstFocusable.focus(), 100);
   }
   
+  // Remove previous escape handler if exists to prevent accumulation
+  if (devisEscapeHandler) {
+    document.removeEventListener('keydown', devisEscapeHandler);
+  }
+  
   // Add Escape key handler to close modal
-  const escapeHandler = (e) => {
+  devisEscapeHandler = (e) => {
     if (e.key === 'Escape' || e.keyCode === 27) {
       d.classList.remove('show');
-      document.removeEventListener('keydown', escapeHandler);
+      document.removeEventListener('keydown', devisEscapeHandler);
+      devisEscapeHandler = null;
     }
   };
-  document.addEventListener('keydown', escapeHandler);
+  document.addEventListener('keydown', devisEscapeHandler);
 }
 // =========================
 // Unified .choose-plan handler (delegated to document)
@@ -1642,10 +1649,12 @@ document.addEventListener('click', (e) => {
     openDevis(plan);
   }
   
-  // Open WhatsApp with message
-  const text = `Devis – plan sélectionné : ${plan}`;
-  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
-  try { window.open(waUrl, '_blank'); } catch(err) { window.location.href = waUrl; }
+  // Open WhatsApp with message (only on mobile)
+  if (isMobile()) {
+    const text = `Devis – plan sélectionné : ${plan}`;
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+    try { window.open(waUrl, '_blank'); } catch(err) { window.location.href = waUrl; }
+  }
   
   // If #devis is not present on current page, redirect to index.html#devis after a small delay
   if (!devis) {
