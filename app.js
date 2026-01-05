@@ -5,6 +5,13 @@ console.log("✅ app.js chargé");
 const WA_NUMBER = '33749723434';
 const MAIL_TO   = 'contact@eternaweb.fr';
 
+// Timing constants for UI interactions
+const TIMING = {
+  FOCUS_DELAY: 300,      // Delay before focusing element (allows modal animation to complete)
+  WHATSAPP_DELAY: 100,   // Small delay before opening WhatsApp (allows localStorage to write)
+  REDIRECT_DELAY: 250    // Delay before redirecting (allows popup to open first)
+};
+
 // Helpers rapides
 const $  = (s, r=document)=>r.querySelector(s);
 const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
@@ -1467,7 +1474,7 @@ nl: {
 'portfolio.a7': 'Testi o idee<br>Foto / video<br>Link social (se disponibili)',
 'portfolio.q8': '❓ Preventivo su misura?',
 'portfolio.a8': 'È possibile richiedere un preventivo personalizzato.',
-'portfolio.back': '← Torna alla home'
+'portfolio.back': '← Torna alla home',
     
   'footer.about':'Chi siamo',
   'about.title': 'Chi siamo - EternaWeb',
@@ -1552,16 +1559,18 @@ if (langBtn && langMenu){
     const open = langMenu.classList.toggle('show');
     langBtn.setAttribute('aria-expanded', String(open));
   });
+  // Fixed: Close menu when clicking outside, but NOT when clicking langBtn or its children
   document.addEventListener('click', (e)=>{
-    if (!langMenu.contains(e.target) && e.target !== langBtn){
+    if (!langMenu.contains(e.target) && !langBtn.contains(e.target)){
       langMenu.classList.remove('show');
       langBtn.setAttribute('aria-expanded','false');
     }
   });
+  // Passive scroll listener for better performance
   window.addEventListener('scroll', ()=>{
     langMenu.classList.remove('show');
     langBtn.setAttribute('aria-expanded','false');
-  });
+  }, { passive: true });
 }
 
 // =========================
@@ -1573,6 +1582,9 @@ function applyLang(lang){
     const k = el.getAttribute('data-i18n');
     const val = d[k];
     if (!val) return;
+    // WARNING: Using innerHTML for I18N strings that may contain HTML.
+    // If translations are loaded from external/untrusted sources, sanitize before using innerHTML
+    // to prevent XSS vulnerabilities. Current implementation uses hardcoded translations (safe).
     if (/<[a-z][\s\S]*>/i.test(val)) el.innerHTML = val;
     else el.textContent = val;
   });
@@ -1593,28 +1605,79 @@ applyLang(localStorage.getItem('lang') || 'fr');
 // Gestion du formulaire devis
 // =========================
 const planInput = $('#planInput');
+
+// Store Escape key handler reference for cleanup
+let devisEscapeHandler = null;
+
+/**
+ * Opens the devis modal/form with enhanced accessibility
+ * @param {string} plan - The selected plan name
+ * 
+ * Accessibility improvements:
+ * - Focuses first focusable element inside modal
+ * - Traps Escape key to close modal
+ * - Future enhancement: Full focus trapping (tab key) could be added
+ *   to prevent focus from leaving modal while open
+ */
 function openDevis(plan = ''){
   const d = $('#devis');
   if (!d) return;
+  
   if (plan && planInput) {
     planInput.value = plan;
-    localStorage.setItem('ew_selected_plan', plan);
+    try {
+      localStorage.setItem('ew_selected_plan', plan);
+    } catch(e) {
+      // localStorage may fail in private browsing mode
+    }
   }
+  
   d.classList.add('show');
   d.scrollIntoView({ behavior:'smooth', block:'start' });
-}
-$$('.choose-plan').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const plan = btn.dataset.plan || '';
-    openDevis(plan);
-    if (isMobile()){
-      const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
-      window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
+  
+  // Focus first focusable element for accessibility
+  setTimeout(() => {
+    const focusable = d.querySelector('input, textarea, select, button, a[href]');
+    if (focusable) focusable.focus();
+  }, TIMING.FOCUS_DELAY);
+  
+  // Remove any existing Escape handler to avoid duplicates
+  if (devisEscapeHandler) {
+    document.removeEventListener('keydown', devisEscapeHandler);
+  }
+  
+  // Add Escape key handler to close modal
+  devisEscapeHandler = (e) => {
+    if (e.key === 'Escape') {
+      closeDevis();
     }
-  });
-});
+  };
+  document.addEventListener('keydown', devisEscapeHandler);
+}
+
+/**
+ * Closes the devis modal and cleans up event handlers
+ */
+function closeDevis(){
+  const d = $('#devis');
+  if (d) {
+    d.classList.remove('show');
+    // Update aria state if applicable
+    const opener = document.querySelector('[aria-controls="devis"]');
+    if (opener) opener.setAttribute('aria-expanded', 'false');
+  }
+  
+  // Clean up Escape key handler
+  if (devisEscapeHandler) {
+    document.removeEventListener('keydown', devisEscapeHandler);
+    devisEscapeHandler = null;
+  }
+}
+// Restore saved plan value on page load
 const savedPlan = localStorage.getItem('ew_selected_plan');
 if (savedPlan && planInput) planInput.value = savedPlan;
+
+// Open devis when clicking links/buttons that point to #devis
 document.querySelectorAll('a[href="#devis"], #goDevis, #goBrief').forEach(a=>{
   a.addEventListener('click', (e)=>{
     e.preventDefault();
@@ -1655,96 +1718,107 @@ if (devisForm && sendForm){
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
   });
 }
-// ===== Fermeture automatique du devis quand on clique ailleurs =====
+// ===== Click-outside to close devis modal =====
+// Enhanced with closest() to properly detect clicks on opener elements and their children
 document.addEventListener('click', (e)=>{
   const devis = $('#devis');
-  if (!devis) return;
+  if (!devis || !devis.classList.contains('show')) return;
 
-  // si on clique DANS le devis ou sur un bouton/lien qui l'ouvre → on ignore
+  // Check if click is inside the modal or on any opener element
   if (
     devis.contains(e.target) || 
     e.target.closest('a[href="#devis"]') || 
     e.target.closest('#goDevis') || 
+    e.target.closest('#goBrief') ||
     e.target.closest('.choose-plan')
   ) {
     return;
   }
 
-  // sinon → on ferme
-  devis.classList.remove('show');
+  // Click is outside modal and not on an opener → close the modal
+  closeDevis();
 });
-// --- Ouvrir le devis quand on clique sur "Demander ce modèle"
+// --- Open devis when clicking "Demander ce modèle" buttons
 $$('.open-devis').forEach(btn=>{
   btn.addEventListener('click', e=>{
     e.preventDefault();
-    openDevis(); // utilise ta fonction déjà définie plus haut
+    openDevis();
   });
 });
 // =========================
-// Correction Portfolio : bouton "Je choisis cette formule"
+// Unified .choose-plan handler (event delegation)
 // =========================
-document.querySelectorAll('.choose-plan').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const plan = btn.dataset.plan || 'Portfolio';
+/**
+ * Single delegated event listener for all .choose-plan buttons
+ * Handles:
+ * - Saving selected plan to localStorage
+ * - Opening devis modal with selected plan
+ * - Opening WhatsApp with prefilled message containing plan + page URL
+ * - Redirecting to index.html#devis if current page has no #devis element
+ * 
+ * WhatsApp Auto-Reply Limitation:
+ * This implementation opens wa.me with a prefilled message TO the owner (business).
+ * The owner receives the client's plan selection and page context.
+ * 
+ * IMPORTANT: Sending an automatic WhatsApp reply FROM the owner TO the client
+ * cannot be done with client-side code alone. This requires:
+ * 1. WhatsApp Business API integration (server-side)
+ * 2. OR using WhatsApp Business app's built-in auto-reply feature
+ * 
+ * To implement auto-reply with WhatsApp Business API:
+ * - Set up a WhatsApp Business account
+ * - Use a service like Twilio, MessageBird, or official WhatsApp Business API
+ * - Create a webhook endpoint on your server to receive incoming messages
+ * - Send automated response messages via the API when a plan selection is received
+ * 
+ * Alternative (simpler): Use WhatsApp Business app's auto-reply feature:
+ * - Install WhatsApp Business app on your phone
+ * - Go to Settings → Business tools → Away message or Quick replies
+ * - Set up automatic responses for when customers message you
+ */
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.choose-plan');
+  if (!btn) return;
+  
+  e.preventDefault();
+  
+  const plan = btn.dataset.plan || 'Portfolio';
+  
+  // Save selected plan to localStorage
+  try {
     localStorage.setItem('ew_selected_plan', plan);
-
-    // Si la page a un #devis, on l'ouvre
-    const devis = document.querySelector('#devis');
-    if (devis) {
-      devis.classList.add('show');
-      return;
-    }
-
-    // Sinon on redirige vers la page d'accueil et on ouvrira le devis automatiquement
-    window.location.href = 'index.html#devis';
-  });
-});
-// --- Unified handler for ".choose-plan" buttons (saves plan, opens devis, opens WhatsApp)
-(function(){
-  // wait until DOM and openDevis are available
-  function bindChoosePlan(){
-    if (typeof openDevis !== 'function' || typeof WA_NUMBER === 'undefined'){
-      // try again later
-      if (window._choosePlanRetryCount === undefined) window._choosePlanRetryCount = 0;
-      if (window._choosePlanRetryCount < 20){ window._choosePlanRetryCount++; setTimeout(bindChoosePlan, 200); }
-      return;
-    }
-
-    // remove previously attached handlers (best-effort)
-    document.querySelectorAll('.choose-plan').forEach(btn=>{
-      const clone = btn.cloneNode(true);
-      btn.parentNode.replaceChild(clone, btn);
-    });
-
-    // attach unified handler
-    document.querySelectorAll('.choose-plan').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const plan = btn.dataset.plan || 'Portfolio';
-
-        // Save selected plan
-        try{ localStorage.setItem('ew_selected_plan', plan); }catch(e){}
-
-        // Open the devis modal/form if available
-        try{ openDevis(plan); }catch(e){}
-
-        // Prepare WhatsApp message
-        const text = `Devis – plan sélectionné : ${plan}`;
-        const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
-
-        // Open WhatsApp in a new tab/window. On mobile this will open the app.
-        try{ window.open(waUrl, '_blank'); }catch(err){ window.location.href = waUrl; }
-
-        // If there is no #devis element on this page, redirect to index with anchor
-        const devis = document.querySelector('#devis');
-        if (!devis){
-          // small delay to allow localStorage write / popup
-          setTimeout(()=>{ window.location.href = 'index.html#devis'; }, 250);
-        }
-      });
-    });
+  } catch(err) {
+    console.warn('Could not save plan to localStorage:', err);
   }
-
-  if (document.readyState === 'complete' || document.readyState === 'interactive') bindChoosePlan();
-  else document.addEventListener('DOMContentLoaded', bindChoosePlan);
-})();
+  
+  // Open devis modal/form with selected plan
+  try {
+    openDevis(plan);
+  } catch(err) {
+    console.warn('Could not open devis:', err);
+  }
+  
+  // Prepare WhatsApp message with plan + page context for owner
+  const pageUrl = location.href;
+  const text = `Devis – plan sélectionné : ${plan} — page: ${pageUrl}`;
+  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+  
+  // Open WhatsApp in new tab/window (opens app on mobile)
+  // Small delay allows localStorage write to complete
+  setTimeout(() => {
+    try {
+      window.open(waUrl, '_blank');
+    } catch(err) {
+      // Fallback if popup blocked
+      window.location.href = waUrl;
+    }
+  }, TIMING.WHATSAPP_DELAY);
+  
+  // If current page has no #devis element, redirect to index.html#devis
+  const devisEl = document.querySelector('#devis');
+  if (!devisEl) {
+    setTimeout(() => {
+      window.location.href = 'index.html#devis';
+    }, TIMING.REDIRECT_DELAY);
+  }
+});
