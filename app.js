@@ -478,6 +478,8 @@ nl: {
   'faq.back': '← Terug naar startpagina',
 
   'footer.about':'Over ons',
+  'about.title': 'Over EternaWeb',
+  'about.p1': 'EternaWeb is ontstaan uit een simpele behoefte: iedereen de mogelijkheid bieden om zijn of haar project, talent of aanbod helder en professioneel te presenteren, zelfs zonder technische kennis.',
   'about.p2': '✨ Binnen 2 dagen kan je online showcase of cv klaar zijn, met een heldere, menselijke en intuïtieve stijl. Of je nu een ambachtsman, coach, kunstenaar, therapeut of werkzoekende bent, je verdient een online aanwezigheid die jou weerspiegelt.',
   'about.missionTitle': 'Onze missie',
   'about.mission': 'Eenvoudige, mooie en functionele websites creëren om jouw unieke karakter aan de wereld te laten zien. Bij EternaWeb geloven we in de kracht van minimalisme gecombineerd met vriendelijkheid.',
