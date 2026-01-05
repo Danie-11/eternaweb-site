@@ -5,6 +5,13 @@ console.log("✅ app.js chargé");
 const WA_NUMBER = '33749723434';
 const MAIL_TO   = 'contact@eternaweb.fr';
 
+// Timing constants for UI interactions
+const TIMING = {
+  FOCUS_DELAY: 300,      // Delay before focusing element (allows modal animation to complete)
+  WHATSAPP_DELAY: 100,   // Small delay before opening WhatsApp (allows localStorage to write)
+  REDIRECT_DELAY: 250    // Delay before redirecting (allows popup to open first)
+};
+
 // Helpers rapides
 const $  = (s, r=document)=>r.querySelector(s);
 const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
@@ -1632,7 +1639,7 @@ function openDevis(plan = ''){
   setTimeout(() => {
     const focusable = d.querySelector('input, textarea, select, button, a[href]');
     if (focusable) focusable.focus();
-  }, 300);
+  }, TIMING.FOCUS_DELAY);
   
   // Remove any existing Escape handler to avoid duplicates
   if (devisEscapeHandler) {
@@ -1641,7 +1648,7 @@ function openDevis(plan = ''){
   
   // Add Escape key handler to close modal
   devisEscapeHandler = (e) => {
-    if (e.key === 'Escape' || e.keyCode === 27) {
+    if (e.key === 'Escape') {
       closeDevis();
     }
   };
@@ -1805,13 +1812,13 @@ document.addEventListener('click', (e) => {
       // Fallback if popup blocked
       window.location.href = waUrl;
     }
-  }, 100);
+  }, TIMING.WHATSAPP_DELAY);
   
   // If current page has no #devis element, redirect to index.html#devis
   const devisEl = document.querySelector('#devis');
   if (!devisEl) {
     setTimeout(() => {
       window.location.href = 'index.html#devis';
-    }, 250);
+    }, TIMING.REDIRECT_DELAY);
   }
 });
