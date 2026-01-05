@@ -794,6 +794,7 @@ nl: {
 'faq.q9': '💡 Eine spezielle Frage?',
 'faq.a9': 'Du kannst mich unten direkt kontaktieren 👇',
 'faq.back': '← Zurück zur Startseite',
+    
 'portfolio.title': 'FAQ – Portfolio / Kreative & Freelancer - EternaWeb',
 'portfolio.h1': 'FAQ – Portfolio / Kreative & Freelancer',
 'portfolio.q1': '✨ Für wen ist das Portfolio gedacht?',
@@ -1232,6 +1233,7 @@ nl: {
 'faq.q9': '💡 ¿Una pregunta específica?',
 'faq.a9': 'Puedes contactarme directamente abajo 👇',
 'faq.back': '← Volver al inicio',
+    
 'portfolio.title': 'FAQ – Portafolio / Creadores y Freelancers - EternaWeb',
 'portfolio.h1': 'FAQ – Portafolio / Creadores y Freelancers',
 'portfolio.q1': '✨ ¿Para quién es el portafolio?',
@@ -1449,6 +1451,7 @@ nl: {
 'faq.q9': '💡 Una domanda specifica?',
 'faq.a9': 'Puoi contattarmi direttamente qui sotto 👇',
 'faq.back': '← Torna alla home',
+    
 'portfolio.title': 'FAQ – Portfolio / Creativi & Freelance - EternaWeb',
 'portfolio.h1': 'FAQ – Portfolio / Creativi & Freelance',
 'portfolio.q1': '✨ A chi è rivolto il portfolio?',
@@ -1467,7 +1470,7 @@ nl: {
 'portfolio.a7': 'Testi o idee<br>Foto / video<br>Link social (se disponibili)',
 'portfolio.q8': '❓ Preventivo su misura?',
 'portfolio.a8': 'È possibile richiedere un preventivo personalizzato.',
-'portfolio.back': '← Torna alla home'
+'portfolio.back': '← Torna alla home',
     
   'footer.about':'Chi siamo',
   'about.title': 'Chi siamo - EternaWeb',
