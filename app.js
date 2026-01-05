@@ -1611,7 +1611,7 @@ function openDevis(plan = ''){
   
   // Set focus to first focusable element for accessibility
   // Timeout allows modal to finish rendering/animating before focus
-  const firstFocusable = d.querySelector('input, textarea, select, button');
+  const firstFocusable = d.querySelector('input, textarea, select, button, a[href], [tabindex]:not([tabindex="-1"])');
   if (firstFocusable) {
     setTimeout(() => firstFocusable.focus(), 100);
   }
@@ -1644,23 +1644,21 @@ document.addEventListener('click', (e) => {
   // Save selected plan
   try { localStorage.setItem('ew_selected_plan', plan); } catch(err) {}
   
-  // Open the devis modal if present
+  // Open the devis modal if present on this page
   const devis = $('#devis');
   if (devis) {
     openDevis(plan);
+    // Open WhatsApp on mobile after showing modal
+    if (isMobile()) {
+      const text = `Devis – plan sélectionné : ${plan}`;
+      const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+      try { window.open(waUrl, '_blank'); } catch(err) { window.location.href = waUrl; }
+    }
+    return;
   }
   
-  // Open WhatsApp with message (only on mobile)
-  if (isMobile()) {
-    const text = `Devis – plan sélectionné : ${plan}`;
-    const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
-    try { window.open(waUrl, '_blank'); } catch(err) { window.location.href = waUrl; }
-  }
-  
-  // If #devis is not present on current page, redirect to index.html#devis after a small delay
-  if (!devis) {
-    setTimeout(() => { window.location.href = 'index.html#devis'; }, 250);
-  }
+  // If #devis is not present, redirect to index.html#devis after a small delay
+  setTimeout(() => { window.location.href = 'index.html#devis'; }, 250);
 });
 
 const savedPlan = localStorage.getItem('ew_selected_plan');
