@@ -1467,7 +1467,7 @@ nl: {
 'portfolio.a7': 'Testi o idee<br>Foto / video<br>Link social (se disponibili)',
 'portfolio.q8': '❓ Preventivo su misura?',
 'portfolio.a8': 'È possibile richiedere un preventivo personalizzato.',
-'portfolio.back': '← Torna alla home'
+'portfolio.back': '← Torna alla home',
     
   'footer.about':'Chi siamo',
   'about.title': 'Chi siamo - EternaWeb',
@@ -1552,16 +1552,18 @@ if (langBtn && langMenu){
     const open = langMenu.classList.toggle('show');
     langBtn.setAttribute('aria-expanded', String(open));
   });
+  // Close language menu when clicking outside (but not inside langBtn or its children)
   document.addEventListener('click', (e)=>{
-    if (!langMenu.contains(e.target) && e.target !== langBtn){
+    if (!langMenu.contains(e.target) && !langBtn.contains(e.target)){
       langMenu.classList.remove('show');
       langBtn.setAttribute('aria-expanded','false');
     }
   });
+  // Passive scroll listener for better performance
   window.addEventListener('scroll', ()=>{
     langMenu.classList.remove('show');
     langBtn.setAttribute('aria-expanded','false');
-  });
+  }, { passive: true });
 }
 
 // =========================
@@ -1573,10 +1575,13 @@ function applyLang(lang){
     const k = el.getAttribute('data-i18n');
     const val = d[k];
     if (!val) return;
+    // Using innerHTML for controlled I18N strings that may contain HTML markup
+    // WARNING: If translations are ever loaded from external sources or user input,
+    // sanitize the value before using innerHTML to prevent XSS vulnerabilities
     if (/<[a-z][\s\S]*>/i.test(val)) el.innerHTML = val;
     else el.textContent = val;
   });
-  localStorage.setItem('lang', lang);
+  try { localStorage.setItem('lang', lang); } catch(e){}
   document.documentElement.setAttribute('lang', lang);
 }
 $$('#langMenu .lang-item').forEach(b=>{
@@ -1598,21 +1603,89 @@ function openDevis(plan = ''){
   if (!d) return;
   if (plan && planInput) {
     planInput.value = plan;
-    localStorage.setItem('ew_selected_plan', plan);
+    try { localStorage.setItem('ew_selected_plan', plan); } catch(e){}
   }
   d.classList.add('show');
   d.scrollIntoView({ behavior:'smooth', block:'start' });
-}
-$$('.choose-plan').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const plan = btn.dataset.plan || '';
-    openDevis(plan);
-    if (isMobile()){
-      const t = encodeURIComponent(`Devis – plan sélectionné : ${plan}`);
-      window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, '_blank');
+  
+  // Accessibility: set focus to first focusable element in modal
+  setTimeout(() => {
+    const focusable = d.querySelector('input, textarea, select, button, a[href]');
+    if (focusable) focusable.focus();
+  }, 300);
+  
+  // Accessibility: add Escape key handler to close modal
+  const escHandler = (e) => {
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      closeDevis();
     }
-  });
+  };
+  // Store reference on modal element for cleanup from other close paths
+  d._escHandler = escHandler;
+  document.addEventListener('keydown', escHandler);
+}
+
+// Helper function to close devis modal and clean up
+function closeDevis(){
+  const d = $('#devis');
+  if (!d) return;
+  d.classList.remove('show');
+  // Remove Escape handler if present
+  if (d._escHandler) {
+    document.removeEventListener('keydown', d._escHandler);
+    d._escHandler = null;
+  }
+}
+// =========================
+// Unified delegated handler for ".choose-plan" buttons
+// This replaces multiple duplicate handlers throughout the code
+// =========================
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.choose-plan');
+  if (!btn) return;
+  
+  e.preventDefault();
+  const plan = btn.dataset.plan || 'Portfolio';
+  const currentPage = window.location.href;
+  
+  // Save selected plan to localStorage (with try/catch for safety)
+  try { 
+    localStorage.setItem('ew_selected_plan', plan); 
+  } catch(err) {
+    console.warn('localStorage not available:', err);
+  }
+  
+  // Open devis modal if available on current page
+  const devisEl = document.querySelector('#devis');
+  if (devisEl && typeof openDevis === 'function') {
+    openDevis(plan);
+  }
+  
+  // Open WhatsApp with pre-filled message including plan and current page URL
+  // NOTE: Sending an automatic WhatsApp reply TO the client cannot be implemented
+  // from client-side code alone. It requires a server backend with WhatsApp Business API
+  // (or third-party services like Twilio, MessageBird, etc.) to send automated messages.
+  // This opens WhatsApp FOR the user to send their inquiry to the business owner.
+  const text = `Devis – plan sélectionné : ${plan}\nPage: ${currentPage}`;
+  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+  
+  // Open WhatsApp in new tab (will open app on mobile)
+  try { 
+    window.open(waUrl, '_blank'); 
+  } catch(err) { 
+    window.location.href = waUrl; 
+  }
+  
+  // If #devis not present on current page, redirect to index.html#devis after delay
+  if (!devisEl) {
+    setTimeout(() => { 
+      window.location.href = 'index.html#devis'; 
+    }, 300);
+  }
 });
+
+// Remove old duplicate handlers
+// (The old implementations at lines ~1606-1615, 1686-1701, 1702-1750 are replaced above)
 const savedPlan = localStorage.getItem('ew_selected_plan');
 if (savedPlan && planInput) planInput.value = savedPlan;
 document.querySelectorAll('a[href="#devis"], #goDevis, #goBrief').forEach(a=>{
@@ -1655,23 +1728,24 @@ if (devisForm && sendForm){
     alert("✅ Presque terminé !\n\n1) Vérifie et ENVOIE l'email qui s'ouvre.\n2) Tu recevras ma réponse avec la checklist (textes, images, logo, accès...).");
   });
 }
-// ===== Fermeture automatique du devis quand on clique ailleurs =====
+// ===== Robust click-outside to close devis modal =====
 document.addEventListener('click', (e)=>{
   const devis = $('#devis');
   if (!devis) return;
 
-  // si on clique DANS le devis ou sur un bouton/lien qui l'ouvre → on ignore
+  // Use e.target.closest() to detect clicks on openers (including their children)
   if (
     devis.contains(e.target) || 
     e.target.closest('a[href="#devis"]') || 
     e.target.closest('#goDevis') || 
+    e.target.closest('#goBrief') ||
     e.target.closest('.choose-plan')
   ) {
     return;
   }
 
-  // sinon → on ferme
-  devis.classList.remove('show');
+  // Close modal and clean up
+  closeDevis();
 });
 // --- Ouvrir le devis quand on clique sur "Demander ce modèle"
 $$('.open-devis').forEach(btn=>{
@@ -1680,71 +1754,5 @@ $$('.open-devis').forEach(btn=>{
     openDevis(); // utilise ta fonction déjà définie plus haut
   });
 });
-// =========================
-// Correction Portfolio : bouton "Je choisis cette formule"
-// =========================
-document.querySelectorAll('.choose-plan').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const plan = btn.dataset.plan || 'Portfolio';
-    localStorage.setItem('ew_selected_plan', plan);
-
-    // Si la page a un #devis, on l'ouvre
-    const devis = document.querySelector('#devis');
-    if (devis) {
-      devis.classList.add('show');
-      return;
-    }
-
-    // Sinon on redirige vers la page d'accueil et on ouvrira le devis automatiquement
-    window.location.href = 'index.html#devis';
-  });
-});
-// --- Unified handler for ".choose-plan" buttons (saves plan, opens devis, opens WhatsApp)
-(function(){
-  // wait until DOM and openDevis are available
-  function bindChoosePlan(){
-    if (typeof openDevis !== 'function' || typeof WA_NUMBER === 'undefined'){
-      // try again later
-      if (window._choosePlanRetryCount === undefined) window._choosePlanRetryCount = 0;
-      if (window._choosePlanRetryCount < 20){ window._choosePlanRetryCount++; setTimeout(bindChoosePlan, 200); }
-      return;
-    }
-
-    // remove previously attached handlers (best-effort)
-    document.querySelectorAll('.choose-plan').forEach(btn=>{
-      const clone = btn.cloneNode(true);
-      btn.parentNode.replaceChild(clone, btn);
-    });
-
-    // attach unified handler
-    document.querySelectorAll('.choose-plan').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const plan = btn.dataset.plan || 'Portfolio';
-
-        // Save selected plan
-        try{ localStorage.setItem('ew_selected_plan', plan); }catch(e){}
-
-        // Open the devis modal/form if available
-        try{ openDevis(plan); }catch(e){}
-
-        // Prepare WhatsApp message
-        const text = `Devis – plan sélectionné : ${plan}`;
-        const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
-
-        // Open WhatsApp in a new tab/window. On mobile this will open the app.
-        try{ window.open(waUrl, '_blank'); }catch(err){ window.location.href = waUrl; }
-
-        // If there is no #devis element on this page, redirect to index with anchor
-        const devis = document.querySelector('#devis');
-        if (!devis){
-          // small delay to allow localStorage write / popup
-          setTimeout(()=>{ window.location.href = 'index.html#devis'; }, 250);
-        }
-      });
-    });
-  }
-
-  if (document.readyState === 'complete' || document.readyState === 'interactive') bindChoosePlan();
-  else document.addEventListener('DOMContentLoaded', bindChoosePlan);
-})();
+// Note: ".choose-plan" buttons are now handled by the unified delegated handler above
+// Note: ".choose-plan" buttons are now handled by the unified delegated handler defined earlier in this file
