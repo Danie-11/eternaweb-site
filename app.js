@@ -1610,6 +1610,7 @@ function openDevis(plan = ''){
   d.scrollIntoView({ behavior:'smooth', block:'start' });
   
   // Set focus to first focusable element for accessibility
+  // Timeout allows modal to finish rendering/animating before focus
   const firstFocusable = d.querySelector('input, textarea, select, button');
   if (firstFocusable) {
     setTimeout(() => firstFocusable.focus(), 100);
@@ -1622,7 +1623,7 @@ function openDevis(plan = ''){
   
   // Add Escape key handler to close modal
   devisEscapeHandler = (e) => {
-    if (e.key === 'Escape' || e.keyCode === 27) {
+    if (e.key === 'Escape') {
       d.classList.remove('show');
       document.removeEventListener('keydown', devisEscapeHandler);
       devisEscapeHandler = null;
