@@ -268,7 +268,48 @@ en: {
 'faq.btn': 'Send your question',
 'faq.back': '← Back to home',
          'footer.about':'About',
+  'faq.title': 'FAQ – CV & CV mini-site - EternaWeb',
+'faq.h1': 'FAQ – CV & CV mini-site - EternaWeb',
+'faq.q1': '✨ How long does it take to receive my CV?',
+'faq.a1': 'Usually within 24 to 48 hours, depending on the selected package and how quickly the information is provided.',
+'faq.q2': '📄 Who is the CV service for?',
+'faq.a2': 'Students & student jobs<br>Internships<br>First job<br>Career change<br>Returning to work<br>👉 All sectors.',
+'faq.q3': '📄 Who is EternaWeb for?',
+'faq.a3': 'Students, job seekers, creators, freelancers, and entrepreneurs looking for a modern and professional online presence.',
+'faq.q4': '⏱️ How long does it take to receive my CV or website?',
+'faq.a4': 'CV: 24 to 48 hours depending on the package.<br>Mini-site / portfolio: around 48 hours if content is provided.',
+'faq.q5': '🤖 Why do you talk about ATS optimization?',
+'faq.a5': 'Recruiters use Applicant Tracking Systems (ATS). I integrate strategic keywords to improve your CV visibility for recruiters and automated systems.',
+'faq.q6': '📦 What CV packages are available?',
+'faq.a6': '<strong>Starter – €4.99</strong>: proofreading + structured layout<br><strong>Boost – €9.99</strong>: ATS optimization + keywords<br><strong>Premium – €19.99</strong>: CV + mini-site + QR code',
+'faq.q7': '🌐 Is hosting included?',
+'faq.a7': 'Yes, hosting is included for 1 year. Migration is possible if needed.',
+'faq.q8': '💬 Can I request revisions?',
+'faq.a8': 'Yes, revisions are included depending on the chosen package.',
+'faq.q9': '💡 A specific question?',
+'faq.a9': 'You can contact me directly below 👇',
+'faq.back': '← Back to home',
      'about.title': 'About EternaWeb',
+'portfolio.title': 'FAQ – Portfolio / Creators & Freelancers - EternaWeb',
+'portfolio.h1': 'FAQ – Portfolio / Creators & Freelancers',
+'portfolio.q1': '✨ Who is the portfolio for?',
+'portfolio.a1': 'Creators<br>Freelancers<br>Photographers<br>Artisans<br>Entrepreneurs<br>Personal brands',
+'portfolio.q2': '⏱️ How long does it take to build my portfolio?',
+'portfolio.a2': 'On average 48 hours, if all content is provided.',
+'portfolio.q3': '📦 What portfolio packages are available?',
+'portfolio.a3': '<strong>Creative Pack – €29.99</strong><br>✔ Mini-site (2–3 pages)<br>✔ Photo / video gallery<br>✔ Creator presentation<br><br><strong>Premium Pack – €59.99</strong><br>✔ Everything in Creative Pack<br>✔ Blog<br>✔ SEO optimization<br>✔ Visitor statistics included',
+'portfolio.q4': '📊 Can I see how many people visit my site?',
+'portfolio.a4': 'Yes. Visitor statistics are included in the Premium Pack.',
+'portfolio.q5': '🎨 Can I customize the design?',
+'portfolio.a5': 'Yes:<br>colors<br>style<br>structure<br>The site is adapted to your creative universe.',
+'portfolio.q6': '🌍 Is hosting included?',
+'portfolio.a6': 'Yes, hosting is included for 1 year. Migration possible if needed.',
+'portfolio.q7': '📎 What do I need to provide?',
+'portfolio.a7': 'Texts or ideas<br>Photos / videos<br>Social links (if available)',
+'portfolio.q8': '❓ Need a custom quote?',
+'portfolio.a8': 'A personalized quote is available on request.',
+'portfolio.back': '← Back to home',
+  
   'about.p1': 'EternaWeb was born from a simple need: allowing anyone to present their project, talent or offer clearly and professionally, even without technical skills.',
   'about.p2': '✨ In just 2 days, your showcase or online CV can come to life — clean, human and intuitive. Whether you are a craftsman, coach, artist, therapist or job seeker, you deserve an online presence that reflects who you are.',
   'about.missionTitle': 'Our mission',
@@ -353,6 +394,47 @@ en: {
   'cv.pack2.title':'Boost – 9,99 €',
   'cv.pack3.title':'Premium – 19,99 €',
 
+    'faq.title': 'KKK – CV ja CV mini-sait - EternaWeb',
+'faq.h1': 'KKK – CV ja CV mini-sait - EternaWeb',
+'faq.q1': '✨ Kui kiiresti minu CV valmis saab?',
+'faq.a1': 'Tavaliselt 24–48 tunni jooksul, sõltuvalt valitud paketist ja info edastamise kiirusest.',
+'faq.q2': '📄 Kellele CV teenus on mõeldud?',
+'faq.a2': 'Üliõpilased ja tudengitööd<br>Praktikad<br>Esimene töökoht<br>Karjäärimuutus<br>Tööle naasmine<br>👉 Kõik sektorid.',
+'faq.q3': '📄 Kellele EternaWeb on mõeldud?',
+'faq.a3': 'Üliõpilastele, tööotsijatele, loojatele, vabakutselistele ja ettevõtjatele, kes soovivad professionaalset ja kaasaegset nähtavust.',
+'faq.q4': '⏱️ Kui kiiresti on valmis minu CV või veebileht?',
+'faq.a4': 'CV: 24–48 tundi vastavalt paketile.<br>Mini-sait / portfoolio: keskmiselt 48 tundi, kui sisu on esitatud.',
+'faq.q5': '🤖 Miks räägite ATS optimeerimisest?',
+'faq.a5': 'Tööandjad kasutavad ATS-süsteeme. Lisan strateegilised märksõnad, et parandada sinu CV nähtavust värbajate ja süsteemide jaoks.',
+'faq.q6': '📦 Millised CV paketid on saadaval?',
+'faq.a6': '<strong>Starter – 4,99 €</strong>: keelekorrektuur + struktureeritud kujundus<br><strong>Boost – 9,99 €</strong>: ATS optimeerimine + märksõnad<br><strong>Premium – 19,99 €</strong>: CV + mini-sait + QR-kood',
+'faq.q7': '🌐 Kas majutus on hinna sees?',
+'faq.a7': 'Jah, majutus on hinna sees 1 aastaks. Vajadusel on võimalik migratsioon.',
+'faq.q8': '💬 Kas saan muudatusi küsida?',
+'faq.a8': 'Jah, muudatused on paketist sõltuvalt kaasas.',
+'faq.q9': '💡 Spetsiifiline küsimus?',
+'faq.a9': 'Võta minuga otse ühendust allpool 👇',
+'faq.back': '← Tagasi avalehele',
+'portfolio.title': 'KKK – Portfoolio / Loojad & Vabakutselised - EternaWeb',
+'portfolio.h1': 'KKK – Portfoolio / Loojad & Vabakutselised',
+'portfolio.q1': '✨ Kellele portfoolio on mõeldud?',
+'portfolio.a1': 'Loojad<br>Vabakutselised<br>Fotograafid<br>Käsitöölised<br>Ettevõtjad<br>Isiklikud brändid',
+'portfolio.q2': '⏱️ Kui kiiresti portfoolio valmib?',
+'portfolio.a2': 'Keskmiselt 48 tundi, kui kogu sisu on esitatud.',
+'portfolio.q3': '📦 Millised portfoolio paketid on saadaval?',
+'portfolio.a3': '<strong>Loovpakett – 29,99 €</strong><br>✔ Mini-sait (2–3 lehekülge)<br>✔ Foto-/videogalerii<br>✔ Looja tutvustus<br><br><strong>Premium pakett – 59,99 €</strong><br>✔ Kõik loovpaketi elemendid<br>✔ Blogi<br>✔ SEO optimeerimine<br>✔ Külastuste statistika',
+'portfolio.q4': '📊 Kas ma näen külastajate arvu?',
+'portfolio.a4': 'Jah. Külastuste statistika on kaasatud Premium paketis.',
+'portfolio.q5': '🎨 Kas disaini saab kohandada?',
+'portfolio.a5': 'Jah:<br>värvid<br>stiil<br>struktuur<br>Veebileht kohandatakse sinu loomingulise maailmaga.',
+'portfolio.q6': '🌍 Kas majutus on hinna sees?',
+'portfolio.a6': 'Jah, majutus on hinna sees 1 aastaks. Migratsioon on võimalik.',
+'portfolio.q7': '📎 Mida pean esitama?',
+'portfolio.a7': 'Tekstid või ideed<br>Fotod / videod<br>Sotsiaalvõrgustike lingid (kui olemas)',
+'portfolio.q8': '❓ Vajad kohandatud pakkumist?',
+'portfolio.a8': 'Kohandatud hinnapakkumine on võimalik soovi korral.',
+'portfolio.back': '← Tagasi avalehele',
+    
   'footer.copy':'© 2025 EternaWeb — Kõik õigused kaitstud'
 },
   
@@ -471,6 +553,47 @@ nl: {
   'faq.btn': 'Verstuur je vraag',
   'faq.back': '← Terug naar startpagina',
 
+  'faq.title': 'FAQ – CV & CV mini-site - EternaWeb',
+'faq.h1': 'FAQ – CV & CV mini-site - EternaWeb',
+'faq.q1': '✨ Hoe snel is mijn CV klaar?',
+'faq.a1': 'Meestal binnen 24 tot 48 uur, afhankelijk van het gekozen pakket en hoe snel de informatie wordt aangeleverd.',
+'faq.q2': '📄 Voor wie is de CV-service bedoeld?',
+'faq.a2': 'Studenten & studentenjobs<br>Stages<br>Eerste baan<br>Carrièreswitch<br>Terugkeer naar werk<br>👉 Alle sectoren.',
+'faq.q3': '📄 Voor wie is EternaWeb?',
+'faq.a3': 'Studenten, werkzoekenden, makers, freelancers en ondernemers die een moderne en professionele online aanwezigheid willen.',
+'faq.q4': '⏱️ Hoe snel is mijn CV of website klaar?',
+'faq.a4': 'CV: 24 tot 48 uur afhankelijk van het pakket.<br>Mini-site / portfolio: gemiddeld 48 uur als de inhoud is aangeleverd.',
+'faq.q5': '🤖 Waarom spreken jullie over ATS-optimalisatie?',
+'faq.a5': 'Recruiters gebruiken ATS-systemen. Ik voeg strategische zoekwoorden toe om de zichtbaarheid van je CV te verbeteren.',
+'faq.q6': '📦 Welke CV-pakketten zijn er?',
+'faq.a6': '<strong>Starter – €4,99</strong>: correctie + gestructureerde lay-out<br><strong>Boost – €9,99</strong>: ATS-optimalisatie + zoekwoorden<br><strong>Premium – €19,99</strong>: CV + mini-site + QR-code',
+'faq.q7': '🌐 Is hosting inbegrepen?',
+'faq.a7': 'Ja, hosting is inbegrepen voor 1 jaar. Migratie mogelijk indien nodig.',
+'faq.q8': '💬 Kan ik wijzigingen aanvragen?',
+'faq.a8': 'Ja, aanpassingen zijn inbegrepen afhankelijk van het gekozen pakket.',
+'faq.q9': '💡 Een specifieke vraag?',
+'faq.a9': 'Je kunt me hieronder rechtstreeks contacteren 👇',
+'faq.back': '← Terug naar home',
+'portfolio.title': 'FAQ – Portfolio / Creators & Freelancers - EternaWeb',
+'portfolio.h1': 'FAQ – Portfolio / Creators & Freelancers',
+'portfolio.q1': '✨ Voor wie is het portfolio bedoeld?',
+'portfolio.a1': 'Creators<br>Freelancers<br>Fotografen<br>Ambachtslieden<br>Ondernemers<br>Persoonlijke merken',
+'portfolio.q2': '⏱️ Hoe snel is mijn portfolio klaar?',
+'portfolio.a2': 'Gemiddeld binnen 48 uur, mits alle content is aangeleverd.',
+'portfolio.q3': '📦 Welke portfolio-pakketten zijn er?',
+'portfolio.a3': '<strong>Creatief Pakket – €29,99</strong><br>✔ Mini-site (2–3 pagina’s)<br>✔ Foto-/videogalerij<br>✔ Creatorpresentatie<br><br><strong>Premium Pakket – €59,99</strong><br>✔ Alles uit het Creatief Pakket<br>✔ Blog<br>✔ SEO-optimalisatie<br>✔ Bezoekersstatistieken',
+'portfolio.q4': '📊 Kan ik bezoekersstatistieken bekijken?',
+'portfolio.a4': 'Ja. Statistieken zijn inbegrepen in het Premium Pakket.',
+'portfolio.q5': '🎨 Kan ik het design aanpassen?',
+'portfolio.a5': 'Ja:<br>kleuren<br>stijl<br>structuur<br>De website wordt aangepast aan jouw creatieve wereld.',
+'portfolio.q6': '🌍 Is hosting inbegrepen?',
+'portfolio.a6': 'Ja, hosting is inbegrepen voor 1 jaar. Migratie mogelijk.',
+'portfolio.q7': '📎 Wat moet ik aanleveren?',
+'portfolio.a7': 'Teksten of ideeën<br>Foto’s / video’s<br>Social links (indien beschikbaar)',
+'portfolio.q8': '❓ Een offerte op maat?',
+'portfolio.a8': 'Een gepersonaliseerde offerte is mogelijk op aanvraag.',
+'portfolio.back': '← Terug naar home',
+  
   'footer.about':'Over ons',
   'about.title': 'Over EternaWeb',
   'about.p1': 'EternaWeb is ontstaan uit een simpele behoefte: iedereen de mogelijkheid bieden om zijn of haar project, talent of aanbod helder en professioneel te presenteren, zelfs zonder technische kennis.',
@@ -649,7 +772,48 @@ nl: {
   'faq.labelMsg': 'Deine Frage:',
   'faq.btn': 'Frage senden',
   'faq.back': '← Zurück zur Startseite',
-
+    
+'faq.title': 'FAQ – Lebenslauf & CV Mini-Website - EternaWeb',
+'faq.h1': 'FAQ – Lebenslauf & CV Mini-Website - EternaWeb',
+'faq.q1': '✨ Wie schnell ist mein Lebenslauf fertig?',
+'faq.a1': 'In der Regel innerhalb von 24 bis 48 Stunden, je nach gewähltem Paket und Verfügbarkeit der Informationen.',
+'faq.q2': '📄 Für wen ist der CV-Service gedacht?',
+'faq.a2': 'Studierende & Nebenjobs<br>Praktika<br>Erster Job<br>Beruflicher Neustart<br>Wiedereinstieg<br>👉 Alle Branchen.',
+'faq.q3': '📄 Für wen ist EternaWeb?',
+'faq.a3': 'Für Studierende, Arbeitssuchende, Kreative, Freelancer und Unternehmer mit Wunsch nach moderner Online-Präsenz.',
+'faq.q4': '⏱️ Wie lange dauert es, bis mein CV oder meine Website fertig ist?',
+'faq.a4': 'CV: 24–48 Stunden je nach Paket.<br>Mini-Website / Portfolio: ca. 48 Stunden bei gelieferten Inhalten.',
+'faq.q5': '🤖 Warum sprechen Sie von ATS-Optimierung?',
+'faq.a5': 'Recruiter nutzen ATS-Systeme. Ich integriere strategische Keywords zur besseren Sichtbarkeit Ihres Lebenslaufs.',
+'faq.q6': '📦 Welche CV-Pakete gibt es?',
+'faq.a6': '<strong>Starter – 4,99 €</strong>: Korrektur + strukturierte Gestaltung<br><strong>Boost – 9,99 €</strong>: ATS-Optimierung + Keywords<br><strong>Premium – 19,99 €</strong>: CV + Mini-Website + QR-Code',
+'faq.q7': '🌐 Ist Hosting inklusive?',
+'faq.a7': 'Ja, Hosting ist für 1 Jahr inklusive. Migration möglich.',
+'faq.q8': '💬 Kann ich Änderungen anfordern?',
+'faq.a8': 'Ja, Anpassungen sind je nach Paket enthalten.',
+'faq.q9': '💡 Eine spezielle Frage?',
+'faq.a9': 'Du kannst mich unten direkt kontaktieren 👇',
+'faq.back': '← Zurück zur Startseite',
+'portfolio.title': 'FAQ – Portfolio / Kreative & Freelancer - EternaWeb',
+'portfolio.h1': 'FAQ – Portfolio / Kreative & Freelancer',
+'portfolio.q1': '✨ Für wen ist das Portfolio gedacht?',
+'portfolio.a1': 'Kreative<br>Freelancer<br>Fotografen<br>Handwerker<br>Unternehmer<br>Persönliche Marken',
+'portfolio.q2': '⏱️ Wie schnell ist das Portfolio fertig?',
+'portfolio.a2': 'Im Durchschnitt 48 Stunden, sofern alle Inhalte bereitgestellt werden.',
+'portfolio.q3': '📦 Welche Portfolio-Pakete gibt es?',
+'portfolio.a3': '<strong>Creativ-Paket – 29,99 €</strong><br>✔ Mini-Website (2–3 Seiten)<br>✔ Foto-/Videogalerie<br>✔ Präsentation des Kreativen<br><br><strong>Premium-Paket – 59,99 €</strong><br>✔ Alles aus dem Creativ-Paket<br>✔ Blog<br>✔ SEO-Optimierung<br>✔ Besucherstatistiken',
+'portfolio.q4': '📊 Kann ich Besucherzahlen sehen?',
+'portfolio.a4': 'Ja. Statistiken sind im Premium-Paket enthalten.',
+'portfolio.q5': '🎨 Kann ich das Design anpassen?',
+'portfolio.a5': 'Ja:<br>Farben<br>Stil<br>Struktur<br>Die Website wird an deine kreative Welt angepasst.',
+'portfolio.q6': '🌍 Ist Hosting inklusive?',
+'portfolio.a6': 'Ja, Hosting ist für 1 Jahr inklusive. Migration möglich.',
+'portfolio.q7': '📎 Was muss ich liefern?',
+'portfolio.a7': 'Texte oder Ideen<br>Fotos / Videos<br>Social Links (falls vorhanden)',
+'portfolio.q8': '❓ Individuelles Angebot?',
+'portfolio.a8': 'Ein individuelles Angebot ist auf Anfrage möglich.',
+'portfolio.back': '← Zurück zur Startseite',
+    
   'footer.about':'Über uns',
   'about.title': 'Über EternaWeb',
   'about.p1': 'EternaWeb entstand aus dem einfachen Wunsch, jedem zu ermöglichen, sein Projekt, Talent oder Angebot klar und professionell zu präsentieren — auch ohne technische Kenntnisse.',
@@ -827,6 +991,48 @@ nl: {
   'faq.labelMsg': 'Ваш вопрос:',
   'faq.btn': 'Отправить вопрос',
   'faq.back': '← Вернуться на главную',
+    
+'portfolio.title': 'FAQ – Портфолио / Творцы и фрилансеры - EternaWeb',
+'portfolio.h1': 'FAQ – Портфолио / Творцы и фрилансеры',
+'portfolio.q1': '✨ Для кого предназначено портфолио?',
+'portfolio.a1': 'Творцы<br>Фрилансеры<br>Фотографы<br>Ремесленники<br>Предприниматели<br>Личные бренды',
+'portfolio.q2': '⏱️ За какое время создаётся портфолио?',
+'portfolio.a2': 'В среднем 48 часов при наличии всех материалов.',
+'portfolio.q3': '📦 Какие пакеты портфолио доступны?',
+'portfolio.a3': '<strong>Креативный пакет – 29,99 €</strong><br>✔ Мини-сайт (2–3 страницы)<br>✔ Фото/видео галерея<br>✔ Презентация автора<br><br><strong>Премиум пакет – 59,99 €</strong><br>✔ Всё из креативного пакета<br>✔ Блог<br>✔ SEO-оптимизация<br>✔ Статистика посещений',
+'portfolio.q4': '📊 Можно ли отслеживать посещаемость?',
+'portfolio.a4': 'Да. Статистика включена в Премиум пакете.',
+'portfolio.q5': '🎨 Можно ли персонализировать дизайн?',
+'portfolio.a5': 'Да:<br>цвета<br>стиль<br>структура<br>Сайт адаптируется под ваш творческий стиль.',
+'portfolio.q6': '🌍 Включён ли хостинг?',
+'portfolio.a6': 'Да, хостинг включён на 1 год. Возможна миграция.',
+'portfolio.q7': '📎 Что нужно предоставить?',
+'portfolio.a7': 'Тексты или идеи<br>Фото / видео<br>Ссылки на соцсети (если есть)',
+'portfolio.q8': '❓ Нужна индивидуальная смета?',
+'portfolio.a8': 'Индивидуальное предложение возможно по запросу.',
+'portfolio.back': '← На главную',
+    
+    'faq.title': 'FAQ – Резюме и CV мини-сайт - EternaWeb',
+'faq.h1': 'FAQ – Резюме и CV мини-сайт - EternaWeb',
+'faq.q1': '✨ За какое время будет готово моё резюме?',
+'faq.a1': 'Обычно в течение 24–48 часов, в зависимости от выбранного тарифа и скорости предоставления информации.',
+'faq.q2': '📄 Для кого предназначена услуга CV?',
+'faq.a2': 'Студенты и подработки<br>Стажировки<br>Первая работа<br>Смена профессии<br>Возвращение к работе<br>👉 Все сферы.',
+'faq.q3': '📄 Для кого предназначен EternaWeb?',
+'faq.a3': 'Для студентов, соискателей, творцов, фрилансеров и предпринимателей, которым нужна современная профессиональная видимость.',
+'faq.q4': '⏱️ За какое время будет готово моё резюме или сайт?',
+'faq.a4': 'CV: 24–48 часов в зависимости от тарифа.<br>Мини-сайт / портфолио: в среднем 48 часов при наличии контента.',
+'faq.q5': '🤖 Почему вы говорите об ATS-оптимизации?',
+'faq.a5': 'Рекрутеры используют системы ATS. Я добавляю стратегические ключевые слова для повышения видимости резюме.',
+'faq.q6': '📦 Какие тарифы CV доступны?',
+'faq.a6': '<strong>Starter – 4,99 €</strong>: корректура + структурированное оформление<br><strong>Boost – 9,99 €</strong>: ATS-оптимизация + ключевые слова<br><strong>Premium – 19,99 €</strong>: CV + мини-сайт + QR-код',
+'faq.q7': '🌐 Включён ли хостинг?',
+'faq.a7': 'Да, хостинг включён на 1 год. Возможна миграция.',
+'faq.q8': '💬 Могу ли я запросить правки?',
+'faq.a8': 'Да, правки включены в зависимости от выбранного тарифа.',
+'faq.q9': '💡 Есть конкретный вопрос?',
+'faq.a9': 'Вы можете связаться со мной напрямую ниже 👇',
+'faq.back': '← На главную',
 
   'footer.about': 'О нас',
   'about.title': 'О EternaWeb',
@@ -1005,6 +1211,47 @@ nl: {
   'faq.btn': 'Enviar pregunta',
   'faq.back': '← Volver al inicio',
 
+    'faq.title': 'FAQ – CV y mini-sitio CV - EternaWeb',
+'faq.h1': 'FAQ – CV y mini-sitio CV - EternaWeb',
+'faq.q1': '✨ ¿Cuánto tiempo tarda en estar listo mi CV?',
+'faq.a1': 'Generalmente entre 24 y 48 horas, según el paquete elegido y la rapidez en el envío de la información.',
+'faq.q2': '📄 ¿A quién va dirigido el servicio de CV?',
+'faq.a2': 'Estudiantes y trabajos estudiantiles<br>Prácticas<br>Primer empleo<br>Cambio de carrera<br>Reincorporación laboral<br>👉 Todos los sectores.',
+'faq.q3': '📄 ¿A quién va dirigido EternaWeb?',
+'faq.a3': 'Estudiantes, personas en búsqueda de empleo, creadores, freelancers y emprendedores que desean una presencia profesional moderna.',
+'faq.q4': '⏱️ ¿Cuánto tarda mi CV o sitio web?',
+'faq.a4': 'CV: 24 a 48 horas según el paquete.<br>Mini-sitio / portafolio: alrededor de 48 horas si el contenido está listo.',
+'faq.q5': '🤖 ¿Por qué habláis de optimización ATS?',
+'faq.a5': 'Los reclutadores usan sistemas ATS. Integro palabras clave estratégicas para mejorar la visibilidad de tu CV.',
+'faq.q6': '📦 ¿Qué planes de CV existen?',
+'faq.a6': '<strong>Starter – 4,99 €</strong>: corrección + diseño estructurado<br><strong>Boost – 9,99 €</strong>: optimización ATS + palabras clave<br><strong>Premium – 19,99 €</strong>: CV + mini-sitio + código QR',
+'faq.q7': '🌐 ¿El alojamiento está incluido?',
+'faq.a7': 'Sí, alojamiento incluido por 1 año. Migración posible si es necesario.',
+'faq.q8': '💬 ¿Puedo solicitar modificaciones?',
+'faq.a8': 'Sí, se incluyen ajustes según el plan elegido.',
+'faq.q9': '💡 ¿Una pregunta específica?',
+'faq.a9': 'Puedes contactarme directamente abajo 👇',
+'faq.back': '← Volver al inicio',
+'portfolio.title': 'FAQ – Portafolio / Creadores y Freelancers - EternaWeb',
+'portfolio.h1': 'FAQ – Portafolio / Creadores y Freelancers',
+'portfolio.q1': '✨ ¿Para quién es el portafolio?',
+'portfolio.a1': 'Creadores<br>Freelancers<br>Fotógrafos<br>Artesanos<br>Emprendedores<br>Marcas personales',
+'portfolio.q2': '⏱️ ¿Cuánto tiempo tarda en estar listo el portafolio?',
+'portfolio.a2': 'En promedio 48 horas, si todo el contenido está disponible.',
+'portfolio.q3': '📦 ¿Qué planes de portafolio existen?',
+'portfolio.a3': '<strong>Pack Creativo – 29,99 €</strong><br>✔ Mini-sitio (2–3 páginas)<br>✔ Galería de fotos / videos<br>✔ Presentación del creador<br><br><strong>Pack Premium – 59,99 €</strong><br>✔ Todo el Pack Creativo<br>✔ Blog<br>✔ Optimización SEO<br>✔ Estadísticas de visitas',
+'portfolio.q4': '📊 ¿Puedo ver las visitas del sitio?',
+'portfolio.a4': 'Sí. Las estadísticas están incluidas en el Pack Premium.',
+'portfolio.q5': '🎨 ¿Puedo personalizar el diseño?',
+'portfolio.a5': 'Sí:<br>colores<br>estilo<br>estructura<br>El sitio se adapta a tu universo creativo.',
+'portfolio.q6': '🌍 ¿El alojamiento está incluido?',
+'portfolio.a6': 'Sí, alojamiento incluido por 1 año. Migración posible.',
+'portfolio.q7': '📎 ¿Qué debo proporcionar?',
+'portfolio.a7': 'Textos o ideas<br>Fotos / videos<br>Enlaces a redes sociales (si existen)',
+'portfolio.q8': '❓ ¿Presupuesto personalizado?',
+'portfolio.a8': 'Se puede solicitar un presupuesto a medida.',
+'portfolio.back': '← Volver al inicio',
+    
   'footer.about':'Acerca de',
   'about.title': 'Acerca de EternaWeb',
   'about.p1': 'EternaWeb nació de una idea sencilla: ayudar a todos a presentar su proyecto, talento u oferta con claridad y profesionalismo, incluso sin conocimientos técnicos.',
@@ -1180,7 +1427,48 @@ nl: {
   'faq.labelMsg': 'La tua domanda:',
   'faq.btn': 'Invia la domanda',
   'faq.back': '← Torna alla home',
-
+    
+'faq.title': 'FAQ – CV e mini-sito CV - EternaWeb',
+'faq.h1': 'FAQ – CV e mini-sito CV - EternaWeb',
+'faq.q1': '✨ In quanto tempo è pronto il mio CV?',
+'faq.a1': 'Generalmente entro 24–48 ore, in base al pacchetto scelto e alla rapidità di invio delle informazioni.',
+'faq.q2': '📄 A chi è rivolto il servizio CV?',
+'faq.a2': 'Studenti e lavori studenteschi<br>Tirocini<br>Primo impiego<br>Cambio di carriera<br>Rientro nel mondo del lavoro<br>👉 Tutti i settori.',
+'faq.q3': '📄 A chi si rivolge EternaWeb?',
+'faq.a3': 'Studenti, persone in cerca di lavoro, creativi, freelance e imprenditori che desiderano una presenza professionale moderna.',
+'faq.q4': '⏱️ In quanto tempo è pronto il mio CV o sito?',
+'faq.a4': 'CV: 24–48 ore a seconda del pacchetto.<br>Mini-sito / portfolio: in media 48 ore se i contenuti sono forniti.',
+'faq.q5': '🤖 Perché parlate di ottimizzazione ATS?',
+'faq.a5': 'I recruiter utilizzano sistemi ATS. Inserisco parole chiave strategiche per migliorare la visibilità del CV.',
+'faq.q6': '📦 Quali pacchetti CV sono disponibili?',
+'faq.a6': '<strong>Starter – 4,99 €</strong>: correzione + impaginazione strutturata<br><strong>Boost – 9,99 €</strong>: ottimizzazione ATS + parole chiave<br><strong>Premium – 19,99 €</strong>: CV + mini-sito + QR code',
+'faq.q7': '🌐 L’hosting è incluso?',
+'faq.a7': 'Sì, hosting incluso per 1 anno. Migrazione possibile se necessario.',
+'faq.q8': '💬 Posso richiedere modifiche?',
+'faq.a8': 'Sì, le modifiche sono incluse in base al pacchetto scelto.',
+'faq.q9': '💡 Una domanda specifica?',
+'faq.a9': 'Puoi contattarmi direttamente qui sotto 👇',
+'faq.back': '← Torna alla home',
+'portfolio.title': 'FAQ – Portfolio / Creativi & Freelance - EternaWeb',
+'portfolio.h1': 'FAQ – Portfolio / Creativi & Freelance',
+'portfolio.q1': '✨ A chi è rivolto il portfolio?',
+'portfolio.a1': 'Creativi<br>Freelance<br>Fotografi<br>Artigiani<br>Imprenditori<br>Brand personali',
+'portfolio.q2': '⏱️ In quanto tempo è pronto il portfolio?',
+'portfolio.a2': 'In media 48 ore, se tutti i contenuti sono forniti.',
+'portfolio.q3': '📦 Quali pacchetti portfolio sono disponibili?',
+'portfolio.a3': '<strong>Pacchetto Creativo – 29,99 €</strong><br>✔ Mini-sito (2–3 pagine)<br>✔ Galleria foto / video<br>✔ Presentazione del creatore<br><br><strong>Pacchetto Premium – 59,99 €</strong><br>✔ Tutto il Pacchetto Creativo<br>✔ Blog<br>✔ Ottimizzazione SEO<br>✔ Statistiche visite',
+'portfolio.q4': '📊 Posso vedere le statistiche delle visite?',
+'portfolio.a4': 'Sì. Le statistiche sono incluse nel Pacchetto Premium.',
+'portfolio.q5': '🎨 Posso personalizzare il design?',
+'portfolio.a5': 'Sì:<br>colori<br>stile<br>struttura<br>Il sito viene adattato al tuo universo creativo.',
+'portfolio.q6': '🌍 L’hosting è incluso?',
+'portfolio.a6': 'Sì, hosting incluso per 1 anno. Migrazione possibile.',
+'portfolio.q7': '📎 Cosa devo fornire?',
+'portfolio.a7': 'Testi o idee<br>Foto / video<br>Link social (se disponibili)',
+'portfolio.q8': '❓ Preventivo su misura?',
+'portfolio.a8': 'È possibile richiedere un preventivo personalizzato.',
+'portfolio.back': '← Torna alla home'
+    
   'footer.about':'Chi siamo',
   'about.title': 'Chi siamo - EternaWeb',
   'about.p1': 'EternaWeb nasce da un bisogno semplice: permettere a chiunque di presentare il proprio progetto, talento o offerta con chiarezza e professionalità, anche senza competenze tecniche.',
@@ -1411,3 +1699,52 @@ document.querySelectorAll('.choose-plan').forEach(btn => {
     window.location.href = 'index.html#devis';
   });
 });
+// --- Unified handler for ".choose-plan" buttons (saves plan, opens devis, opens WhatsApp)
+(function(){
+  // wait until DOM and openDevis are available
+  function bindChoosePlan(){
+    if (typeof openDevis !== 'function' || typeof WA_NUMBER === 'undefined'){
+      // try again later
+      if (window._choosePlanRetryCount === undefined) window._choosePlanRetryCount = 0;
+      if (window._choosePlanRetryCount < 20){ window._choosePlanRetryCount++; setTimeout(bindChoosePlan, 200); }
+      return;
+    }
+
+    // remove previously attached handlers (best-effort)
+    document.querySelectorAll('.choose-plan').forEach(btn=>{
+      const clone = btn.cloneNode(true);
+      btn.parentNode.replaceChild(clone, btn);
+    });
+
+    // attach unified handler
+    document.querySelectorAll('.choose-plan').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const plan = btn.dataset.plan || 'Portfolio';
+
+        // Save selected plan
+        try{ localStorage.setItem('ew_selected_plan', plan); }catch(e){}
+
+        // Open the devis modal/form if available
+        try{ openDevis(plan); }catch(e){}
+
+        // Prepare WhatsApp message
+        const text = `Devis – plan sélectionné : ${plan}`;
+        const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+
+        // Open WhatsApp in a new tab/window. On mobile this will open the app.
+        try{ window.open(waUrl, '_blank'); }catch(err){ window.location.href = waUrl; }
+
+        // If there is no #devis element on this page, redirect to index with anchor
+        const devis = document.querySelector('#devis');
+        if (!devis){
+          // small delay to allow localStorage write / popup
+          setTimeout(()=>{ window.location.href = 'index.html#devis'; }, 250);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'complete' || document.readyState === 'interactive') bindChoosePlan();
+  else document.addEventListener('DOMContentLoaded', bindChoosePlan);
+})();
