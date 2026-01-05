@@ -1754,5 +1754,4 @@ $$('.open-devis').forEach(btn=>{
     openDevis(); // utilise ta fonction déjà définie plus haut
   });
 });
-// Note: ".choose-plan" buttons are now handled by the unified delegated handler above
 // Note: ".choose-plan" buttons are now handled by the unified delegated handler defined earlier in this file
