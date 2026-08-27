@@ -212,7 +212,7 @@ const I18N = {
 'code.engagement2': 'Nous encourageons chacun·e à faire preuve de courtoisie et à contribuer à une atmosphère de travail harmonieuse.',
 'code.thanks': 'Merci d\'incarner l\'esprit EternaWeb : humain, éthique et inspiré ✨',
 'code.back': '← Retour à l’accueil',
-'footer.copy':'© 2025 EternaGlow — Tous droits réservés'
+'footer.copy':'© 2025 EternaWeb — Tous droits réservés'
   },
 en: {
     'nav.menu':'Menu','nav.cv':'CV','nav.portfolio':'Portfolio','nav.vitrine':'Showcase',
@@ -415,7 +415,7 @@ en: {
 'code.engagement2': 'We encourage everyone to act with courtesy and contribute to a harmonious work atmosphere.',
 'code.thanks': 'Thank you for embodying the EternaWeb spirit: human, ethical, and inspired ✨',
 'code.back': '← Back to home',
-'footer.copy':'© 2025 EternaGlow — All rights reserved' 
+'footer.copy':'© 2025 EternaWeb — All rights reserved' 
   },
 
   et: {
@@ -713,7 +713,7 @@ nl: {
   'code.thanks': 'Dank dat je de geest van EternaWeb belichaamt: menselijk, ethisch en inspirerend ✨',
   'code.back': '← Terug naar startpagina',
 
-  'footer.copy':'© 2025 EternaGlow — Alle rechten voorbehouden'
+  'footer.copy':'© 2025 EternaWeb — Alle rechten voorbehouden'
 },
 
   de: {
@@ -937,7 +937,7 @@ nl: {
   'code.thanks': 'Danke, dass Sie den EternaWeb-Geist verkörpern: menschlich, ethisch und inspiriert ✨',
   'code.back': '← Zurück zur Startseite',
 
-  'footer.copy':'© 2025 EternaGlow — Alle Rechte vorbehalten'
+  'footer.copy':'© 2025 EternaWeb — Alle Rechte vorbehalten'
 },
 
   ru: {
@@ -1382,7 +1382,7 @@ h1: 'FAQ – Резюме и CV мини-сайт - EternaWeb',
   'code.thanks': 'Gracias por encarnar el espíritu de EternaWeb: humano, ético e inspirador ✨',
   'code.back': '← Volver al inicio',
 
-  'footer.copy':'© 2025 EternaGlow — Todos los derechos reservados'
+  'footer.copy':'© 2025 EternaWeb — Todos los derechos reservados'
 },
 
   it: {
@@ -1603,7 +1603,7 @@ h1: 'FAQ – CV e mini-sito CV - EternaWeb',
   'code.thanks': 'Grazie per incarnare lo spirito di EternaWeb: umano, etico e ispirato ✨',
   'code.back': '← Torna alla home',
 
-  'footer.copy':'© 2025 EternaGlow — Tutti i diritti riservati'
+  'footer.copy':'© 2025 EternaWeb — Tutti i diritti riservati'
 },
 };
 // =========================
