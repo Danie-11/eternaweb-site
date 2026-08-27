@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Modèle Portfolio – EternaWeb</title>
 
+  <!-- Redirect to homepage to remove portfolio from public site -->
+  <meta http-equiv="refresh" content="0;url=/index.html">
+
   <!-- CSS communs -->
   <link rel="stylesheet" href="style-desktop.css" media="(min-width:601px)">
   <link rel="stylesheet" href="style-mobile.css"  media="(max-width:600px)">
@@ -13,7 +16,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JZJ12VTGE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date());
 
   gtag('config', 'G-7JZJ12VTGE');
