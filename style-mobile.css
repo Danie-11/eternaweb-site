@@ -1,38 +1,38 @@
 /* ===============================
 MOBILE (<=600px) — feuille autonome
 =============================== */
-/ Lissage des polices sur mobile /
+/* Lissage des polices sur mobile */
 body {
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-text-rendering: optimizeLegibility;
-font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
 }
 p, li, span, a, h1, h2, h3 {
-letter-spacing: 0.2px;
-line-height: 1.5;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
 }
-/ ---- Variables / base ---- */
+/* ---- Variables / base ---- */
 :root{
---brown:#6b4b3e; --brown-dark:#3b2a22; --ink:#2d1e15;
---cream:#fffaf7; --paper:#FFF9F3; --gold:#CBB27A; --gold-600:#AE945E;
---choco:#4b332a;
+  --brown:#6b4b3e; --brown-dark:#3b2a22; --ink:#2d1e15;
+  --cream:#fffaf7; --paper:#FFF9F3; --gold:#CBB27A; --gold-600:#AE945E;
+  --choco:#4b332a;
 }
 *{ box-sizing:border-box }
 html,body{ margin:0; padding:0; overflow-x:hidden; }
 
 body{
-font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-color: var(--ink);
-background: radial-gradient(1200px 800px at 10% 10%, #f0e6d2 0%, #e6d2b0 35%, #e0c896 55%, #d3b076 75%, #b89257 100%) fixed;
-background-attachment: fixed;
-background-size: cover;
-padding: 58px 12px 0;   /* un peu moins que desktop */
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(1200px 800px at 10% 10%, #f0e6d2 0%, #e6d2b0 35%, #e0c896 55%, #d3b076 75%, #b89257 100%) fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 58px 12px 0;   /* un peu moins que desktop */
 }
 body::before{
-content:""; position:fixed; inset:0 0 auto 0; height:40vh; pointer-events:none;
-background: linear-gradient(to bottom, rgba(0,0,0,.14), rgba(0,0,0,0));
-z-index:0;
+  content:""; position:fixed; inset:0 0 auto 0; height:40vh; pointer-events:none;
+  background: linear-gradient(to bottom, rgba(0,0,0,.14), rgba(0,0,0,0));
+  z-index:0;
 }
 body > *{ position:relative; z-index:1; }
 
@@ -110,12 +110,12 @@ filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-r
 .cta-row{ margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
 .btn{
-display:inline-flex; align-items:center; justify-content:center; gap:10px;
-padding:10px 14px; border-radius:12px; border:0; cursor:pointer; text-decoration:none; font-weight:700;
-/* >>> limite stricte sur mobile <<< */
-max-width:min(80vw, 260px);
-width: 86vw;                 / s’adapte à la largeur écran */
-font-size:14px;
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:10px 14px; border-radius:12px; border:0; cursor:pointer; text-decoration:none; font-weight:700;
+  /* >>> limite stricte sur mobile <<< */
+  max-width:min(80vw, 260px);
+  width: 86vw; /* s’adapte à la largeur écran */
+  font-size:14px;
 }
 .btn-ico{ height:18px; width:auto; display:block; }
 
@@ -126,9 +126,9 @@ font-size:14px;
 .btn-wa{ background:#25D366; color:#fff; filter:saturate(1.05) }
 .btn-pp{ background:#ffc439; color:#000; filter:contrast(1.05) }
 .btn-primary{
-background: linear-gradient(180deg, #d9be85, #b9935a);
-color:#2b1f18; font-weight:700; border:0; box-shadow:0 12px 24px rgba(0,0,0,.18);
-transition: transform .18s ease, filter .2s;
+  background: linear-gradient(180deg, #d9be85, #b9935a);
+  color:#2b1f18; font-weight:700; border:0; box-shadow:0 12px 24px rgba(0,0,0,.18);
+  transition: transform .18s ease, filter .2s;
 }
 .btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.05); }
 
@@ -147,165 +147,4 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .footer-columns{ max-width:100%; margin:0 auto; display:flex; gap:12px; flex-direction:column; align-items:center; }
 .footer-info{ display:flex; gap:22px; flex-wrap:wrap; justify-content:center }
 .footer-logo{ max-width:180px; width:78%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,.2); opacity:.95 }
-.footer a{ color:#fff0e6; text-decoration:none } .footer a:hover{ text-decoration:underline }
 
-/* ---- Modèles (CV / Portfolio / Vitrine) ---- */
-.models-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-top: 1rem;
-  padding: 0 0.5rem;
-}
-
-.model-card {
-  background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
-  border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-  padding: 2rem 1rem;
-  text-align: center;
-  width: 230px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
-}
-
-.model-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-.model-card h3 {
-  font-size: 1.1rem;
-  color: var(--brown);
-  margin: 0.5rem 0 0.2rem;
-}
-
-.model-card p {
-  font-size: 0.9rem;
-  color: #444;
-}
-
-.model-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 0.8rem;
-  object-fit: cover;
-}
-
-/* Rendre toute la carte cliquable */
-.model-card a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-}
-
-/* ---- Images démos ---- */
-.demo-preview img,
-.preview-img,
-.gallery-card img {
-  display: block;
-  width: 100%;
-  max-width: 90vw;
-  border-radius: 10px;
-  margin: 0 auto;
-  object-fit: cover;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-
-/* ---- Ajustements mobile accueil ---- */
-
-/* Hero */
-.hero-gold .hero-logo {
-max-width: 120px;   / logo plus petit */
-}
-
-.hero-gold h1 {
-font-size: 1.8rem;  /* titre plus petit */
-}
-
-.hero-gold h2 {
-font-size: 1.2rem;
-}
-/* ---- Portfolio (mise en grille des cartes démo) ---- */
-.portfolio-grid,
-.gallery-cards,
-.demo-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-top: 1rem;
-}
-
-.gallery-card,
-.demo-card {
-  background: #fffaf7;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 1rem;
-  width: calc(50% - 1rem); /* deux cartes côte à côte */
-  max-width: 260px;
-  text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.gallery-card:hover,
-.demo-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-.gallery-card img,
-.demo-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-bottom: 0.6rem;
-}
-.hero-gold .cta-row {
-gap: 0.5rem;        /* moins d’espace entre boutons */
-}
-
-/* ---- Liens cohérents avec la palette dorée ---- */
-a {
-  color: var(--brown);
-  text-decoration: none;
-  font-weight: 600;
-}
-a:hover {
-  color: var(--gold-600);
-  text-decoration: underline;
-}
-/* ---- Correction FAQ sur mobile ---- */
-.faq-section {
-  padding-bottom: 100px !important; /* espace sous le formulaire */
-  overflow: visible !important; /* autorise le formulaire à dépasser */
-}
-
-.faq-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-textarea, input {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-.port-gallery {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-}
-
-.port-gallery .model-card {
-  max-width: 100%;
-}
