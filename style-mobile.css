@@ -106,7 +106,7 @@ filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-r
 .page-card{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:20px 14px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
 .testimonials{ max-width:100%; margin:22px auto; background:rgba(255,255,255,.92); border-radius:18px; padding:18px 12px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
 
-/* ---- CTA (WhatsApp / PayPal / Vos consignes) — taille contrôlée ---- */
+/* ---- CTA (WhatsApp / PayPal / Vos informations) — taille contrôlée ---- */
 .cta-row{ margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
 .btn{
@@ -132,10 +132,10 @@ filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)) brightness(1.05) sepia(.25) hue-r
 }
 .btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.05); }
 
-/* ---- Formulaire / devis ---- */
+/* ---- Formulaire / informations ---- */
 .devis-grid, .grid-2{ display:grid; grid-template-columns:1fr; gap:12px; }
 input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10px 12px; background:#fff; }
-#devis{ display:none } #devis.show{ display:block }
+#informations{ display:none } #informations.show{ display:block }
 
 /* ---- Pricing ---- */
 .pricing-section{ background:linear-gradient(90deg,#f5ede2,#e6d6c3); margin:24px auto 0; padding:22px 12px; text-align:center }
