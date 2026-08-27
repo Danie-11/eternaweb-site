@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Mini-sites vitrines & CV en 48h. Design premium, intégrations WhatsApp & PayPal. EternaWeb.">
-  <title>EternaWeb – CV & vitrines express</title>
+  <meta name="description" content="Création de CV professionnels personnalisés, modernes et prêts à l'emploi. EternaWeb.">
+<title>EternaWeb – CV professionnels personnalisés</title>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <!-- Favicons -->
@@ -46,9 +46,8 @@
 <nav id="mainMenu" class="menu" aria-label="Navigation principale">
   <ul>
     <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
-    <li><a href="#portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
-    <li><a href="#devis" id="goDevis" data-i18n="nav.devis">Vos consignes</a></li>
-    <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
+    <li><a href="#informations" id="goInformations" data-i18n="nav.informations">Vos informations</a></li>
+     <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
   </ul>
 </nav>
 
@@ -60,7 +59,7 @@
       <button class="lang-item" data-lang="fr" role="menuitem" aria-label="Français">🇫🇷 Français</button>
       <button class="lang-item" data-lang="en" role="menuitem" aria-label="English">🇬🇧 English</button>
       <button class="lang-item" data-lang="nl" role="menuitem" aria-label="Nederlands">🇳🇱 Nederlands</button>
-      <button class="lang-item" data-lang="it" role="menuitem" aria-label="Italiano">🇪🇪 Estonie</button>
+      <button class="lang-item" data-lang="et" role="menuitem" aria-label="Italiano">🇪🇪 Estonie</button>
       <button class="lang-item" data-lang="ru" role="menuitem" aria-label="Русский">🇷🇺 Русский</button>
       <button class="lang-item" data-lang="de" role="menuitem" aria-label="Deutsch">🇩🇪 Deutsch</button>
       <button class="lang-item" data-lang="es" role="menuitem" aria-label="Español">🇪🇸 Español</button>
@@ -73,7 +72,7 @@
     <img src="images/logo-eternaweb.png" class="hero-logo" alt="EternaWeb logo" style="max-width:180px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));">
 
     <h1 class="gold-title" data-i18n="hero.title">EternaWeb</h1>
-    <h2 class="gold-sub"   data-i18n="hero.subtitle">CV express — en ligne en 48 heures</h2>
+    <h2 class="gold-sub"   data-i18n="hero.subtitle">CV professionnel — prêt en 48h</h2>
     <p  class="gold-lead"  data-i18n="hero.lead">✨ Un design premium, des intégrations rapides et un rendu clé en main.</p>
      <div class="cta-row">
       <a href="https://wa.me/33749723434" target="_blank" class="btn btn-wa">
@@ -84,8 +83,9 @@
         <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico">
         <span data-i18n="cta.paypal">PayPal</span>
       </a>
-        <a href="#devis" id="goDevis" class="btn btn-primary">Vos consignes</a> </div>
- </div> <!-- fermeture du .cta-row -->
+        <a href="#informations" class="btn btn-primary">
+     </div> 
+    <!-- fermeture du .cta-row -->
 </div>   <!-- fermeture du .hero-wrap -->
 </section>
 
@@ -100,8 +100,8 @@
 
 
 <!-- Vos consignes (modale) -->
-<div id="devis" class="page-card">
-    <h2 data-i18n="devis.h2">📝 Vos consignes</h2>
+<div id="informations" class="page-card">
+    <h2 data-i18n="devis.h2">📝 Vos informations</h2>
     <p class="sub" data-i18n="devis.sub">Choisissez, décrivez, envoyez — je reçois vos consignes.</p>
 
     <form id="devisForm" class="devis-grid">
@@ -111,8 +111,6 @@
         <span data-i18n="devis.type">Type de site</span>
         <select name="type" required>
           <option value="CV" data-i18n="devis.opt.cv">CV</option>
-          <option value="Vitrine" data-i18n="devis.opt.vitrine">Vitrine</option>
-          <option value="Autre" data-i18n="devis.opt.other">Autre</option>
         </select>
       </label>
 
