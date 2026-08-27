@@ -18,7 +18,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JZJ12VTGE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date());
 
   gtag('config', 'G-7JZJ12VTGE');
@@ -46,7 +46,7 @@
 <nav id="mainMenu" class="menu" aria-label="Navigation principale">
   <ul>
     <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
-    <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+    <!-- Portfolio link removed per request (kept file in repo) -->
     <li><a href="#devis" id="goDevis" data-i18n="nav.devis">Vos consignes</a></li>
     <li><a href="#temoignages" data-i18n="nav.temoignages">Témoignages</a></li>
   </ul>
@@ -77,11 +77,11 @@
     <p  class="gold-lead"  data-i18n="hero.lead">✨ Un design premium, des intégrations rapides et un rendu clé en main.</p>
      <div class="cta-row">
       <a href="https://wa.me/33749723434" target="_blank" class="btn btn-wa">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" class="btn-ico">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="btn-ico">
         <span data-i18n="cta.whatsapp">WhatsApp</span>
       </a>
       <a href="https://paypal.me/DanielleTKab?country.x=FR&locale.x=fr_FR" target="_blank" class="btn btn-pp">
-        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="" class="btn-ico">
+        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal" class="btn-ico">
         <span data-i18n="cta.paypal">PayPal</span>
       </a>
         <a href="#devis" id="goDevis" class="btn btn-primary">Vos consignes</a> </div>
@@ -95,7 +95,7 @@
   <p data-i18n="services.sub">👇</p>
   <div class="cta-row">
     <a href="cv.html" class="btn btn-primary" data-i18n="services.cv">📄 CV</a>
-    <a href="portfolio.html" class="btn btn-primary" data-i18n="services.portfolio">🎨 Portfolio</a>
+    <!-- Portfolio CTA removed per request (file preserved) -->
   </div>
 </section>
 
@@ -113,7 +113,6 @@
         <select name="type" required>
           <option value="CV" data-i18n="devis.opt.cv">CV</option>
           <option value="Vitrine" data-i18n="devis.opt.vitrine">Vitrine</option>
-          <option value="Portfolio" data-i18n="devis.opt.portfolio">Portfolio</option>
           <option value="Autre" data-i18n="devis.opt.other">Autre</option>
         </select>
       </label>
@@ -212,4 +211,3 @@
   
 </body>
 </html>
-
