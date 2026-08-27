@@ -160,9 +160,9 @@ body.lite .announce-bar{ display:none }
 input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10px 12px; background:#fff }
 .tiny{ opacity:.8; font-size:.9rem; margin:8px 0 0 }
 
-/* Devis fermé par défaut */
-#devis{ display:none }
-#devis.show{ display:block }
+/* Informations fermé par défaut */
+#informations{ display:none }
+#informations.show{ display:block }
 
 /* ===============================
    Pricing
@@ -313,8 +313,8 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
   position: relative;
   z-index: 9999;
 }
-/* ----- Bloc devis caché par défaut ----- */
-#devis {
+/* ----- Bloc informations caché par défaut ----- */
+#informations {
   display: none;          /* invisible */
   opacity: 0;             /* transparent */
   transform: translateY(20px); /* décalé vers le bas */
@@ -322,7 +322,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 }
 
 /* ----- Quand on ajoute .show ----- */
-#devis.show {
+#informations.show {
   display: block;         /* visible */
   opacity: 1;             /* opaque */
   transform: translateY(0); /* remonte en place */
@@ -331,7 +331,7 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .models-grid .card {
   -webkit-font-smoothing: antialiased;   /* Chrome, Safari */
   -moz-osx-font-smoothing: grayscale;    /* Firefox */
-  text-rendering: optimizeLegibility;    /* Meilleure lisibilité */
+  text-rendering: optimizeLegibility;
 }
 
 /* Si tu veux aussi sur les titres */
@@ -716,7 +716,7 @@ body {
   max-width: 100%;
   background: var(--paper);
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
   transition: transform .25s ease;
 }
 
