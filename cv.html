@@ -19,7 +19,7 @@
       <h2 data-i18n="cv.model1.title">CV Structuré</h2>
       <p data-i18n="cv.model1.text">Une présentation professionnelle, claire et organisée, pensée pour les candidatures administratives, techniques et généralistes.</p>
       <div class="showcase-actions">
-        <button class="cv-action" type="button" data-preview="demos/cv-style1.html" data-preview-title="CV Structuré">👁️ <span data-i18n="cv.preview">Voir l’aperçu</span></button>
+        <button class="cv-action" type="button" data-preview="demos/cv-structure-apercu.jpg" data-preview-title="CV Structuré">👁️ <span data-i18n="cv.preview">Voir l’aperçu</span></button>
         <a class="cv-action secondary" href="demos/cv-style1.html" target="_blank" rel="noopener" data-i18n="cv.open">Ouvrir la démo</a>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <h2 data-i18n="cv.model2.title">CV Moderne</h2>
       <p data-i18n="cv.model2.text">Un CV présenté comme une véritable page professionnelle en ligne, accessible sur ordinateur comme sur mobile.</p>
       <div class="showcase-actions">
-        <button class="cv-action" type="button" data-preview="demos/cv-style2.html" data-preview-title="CV en ligne">👁️ <span data-i18n="cv.preview">Voir l’aperçu</span></button>
+        <button class="cv-action" type="button" data-preview="demos/cv-moderne-apercu.jpg" data-preview-title="CV Moderne">👁️ <span data-i18n="cv.preview">Voir l’aperçu</span></button>
         <a class="cv-action secondary" href="demos/cv-style2.html" target="_blank" rel="noopener" data-i18n="cv.open">Ouvrir la démo</a>
       </div>
     </div>
@@ -43,7 +43,7 @@
       <h2 data-i18n="cv.letter.title">Lettre de motivation</h2>
       <p data-i18n="cv.letter.text">Une lettre personnalisée, cohérente avec votre CV et adaptée au poste visé.</p>
       <div class="showcase-actions">
-        <button class="cv-action" type="button" data-preview="demos/lettre-motivation.html" data-preview-title="Lettre de motivation">👁️ <span data-i18n="cv.preview">Voir l’exemple</span></button>
+        <button class="cv-action" type="button" data-preview="demos/lettre-motivation-apercu.jpg" data-preview-title="Lettre de motivation">👁️ <span data-i18n="cv.preview">Voir l’exemple</span></button>
       </div>
     </div>
   </section>
@@ -62,9 +62,9 @@
 <p style="text-align:center"><a href="index.html" class="btn btn-primary" data-i18n="cv.back">⬅ Retour à l’accueil</a></p>
 <footer class="footer" role="contentinfo"><div class="footer-columns"><nav class="footer-info" aria-label="Liens légaux"><a href="faq-cv.html" data-i18n="footer.faq">FAQ-cv</a><a href="a-propos.html" data-i18n="footer.about">À propos</a><a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a><a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a><a href="code-de-conduite.html" data-i18n="footer.code">Code de conduite</a></nav><p class="copyright" data-i18n="footer.copy">© 2025 EternaWeb — Tous droits réservés</p></div></footer>
 
-<div class="cv-modal" id="cvModal" aria-hidden="true"><div class="cv-modal-dialog" role="dialog" aria-modal="true" aria-label="Aperçu"><button class="cv-modal-close" id="cvModalClose" type="button" aria-label="Fermer">×</button><iframe id="cvModalFrame" title="Aperçu"></iframe></div></div>
+<div class="cv-modal" id="cvModal" aria-hidden="true"><div class="cv-modal-dialog" role="dialog" aria-modal="true" aria-label="Aperçu"><button class="cv-modal-close" id="cvModalClose" type="button" aria-label="Fermer">×</button><div class="cv-preview-wrap"><img id="cvModalImage" alt="Aperçu du modèle"></div></div></div>
 <script src="app.js" defer></script><script src="cv-i18n.js" defer></script><script>
-document.addEventListener('DOMContentLoaded',()=>{const modal=document.getElementById('cvModal'),frame=document.getElementById('cvModalFrame'),close=document.getElementById('cvModalClose');const open=(url,title)=>{frame.title=title||'Aperçu';frame.src=url;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('cv-modal-lock')};const shut=()=>{modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');frame.src='about:blank';document.body.classList.remove('cv-modal-lock')};document.querySelectorAll('[data-preview]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.preview,b.dataset.previewTitle)));close.addEventListener('click',shut);modal.addEventListener('click',e=>{if(e.target===modal)shut()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))shut()})});
+document.addEventListener('DOMContentLoaded',()=>{const modal=document.getElementById('cvModal'),img=document.getElementById('cvModalImage'),close=document.getElementById('cvModalClose');const open=(url,title)=>{img.alt=title||'Aperçu';img.src=url;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('cv-modal-lock')};const shut=()=>{modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');img.removeAttribute('src');document.body.classList.remove('cv-modal-lock')};document.querySelectorAll('[data-preview]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.preview,b.dataset.previewTitle)));close.addEventListener('click',shut);modal.addEventListener('click',e=>{if(e.target===modal)shut()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))shut()})});
 </script>
 </body>
 </html>
