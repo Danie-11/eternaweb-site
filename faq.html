@@ -2,69 +2,50 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="faq.title">FAQ - EternaWeb</title>
   <link rel="stylesheet" href="style-desktop.css" media="screen and (min-width: 601px)">
-  <link rel="stylesheet" href="style-mobile.css"  media="screen and (max-width: 600px)">
+  <link rel="stylesheet" href="style-mobile.css" media="screen and (max-width: 600px)">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-ew-32x32.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JZJ12VTGE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7JZJ12VTGE');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JZJ12VTGE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-7JZJ12VTGE');</script>
 </head>
 <body>
   <div class="container">
     <h1 data-i18n="faq.h1">FAQ - EternaWeb</h1>
+    <div class="faq"><h2 data-i18n="faq.q1">✨ En combien de temps mon site est-il prêt ?</h2><p data-i18n="faq.a1">En général, en 1 heure maximum si toutes les infos sont prêtes !</p></div>
+    <div class="faq"><h2 data-i18n="faq.q2">📲 Peut-on intégrer WhatsApp et PayPal ?</h2><p data-i18n="faq.a2">Oui, ton mini-site peut contenir des boutons directs pour commander.</p></div>
+    <div class="faq"><h2 data-i18n="faq.q3">📄 Que dois-je fournir pour démarrer ?</h2><p data-i18n="faq.a3">Textes (ou points clés), 3–5 photos/logo, palette de couleurs, liens utiles (réseaux, Drive).</p></div>
+    <div class="faq"><h2 data-i18n="faq.q4">🎨 Puis-je changer les couleurs et la mise en page ?</h2><p data-i18n="faq.a4">Oui, plusieurs allers-retours inclus pour ajuster style, couleurs et sections.</p></div>
+    <div class="faq"><h2 data-i18n="faq.q5">🌐 Proposez-vous l’hébergement ?</h2><p data-i18n="faq.a5">Oui, hébergement inclus dans les formules (vitrine & premium). Migration possible.</p></div>
+    <div class="faq"><h2 data-i18n="faq.q6">💡 Et si j’ai d’autres questions ?</h2><p data-i18n="faq.a6">Tu peux me les poser ci-dessous 👇</p></div>
 
-    <div class="faq">
-      <h2 data-i18n="faq.q1">✨ En combien de temps mon site est-il prêt ?</h2>
-      <p data-i18n="faq.a1">En général, en 1 heure maximum si toutes les infos sont prêtes !</p>
-    </div>
-
-    <div class="faq">
-      <h2 data-i18n="faq.q2">📲 Peut-on intégrer WhatsApp et PayPal ?</h2>
-      <p data-i18n="faq.a2">Oui, ton mini-site peut contenir des boutons directs pour commander.</p>
-    </div>
-    
-    <div class="faq">
-      <h2 data-i18n="faq.q3">📄 Que dois-je fournir pour démarrer ?</h2>
-      <p data-i18n="faq.a3">Textes (ou points clés), 3–5 photos/logo, palette de couleurs, liens utiles (réseaux, Drive).</p>
-    </div>
-
-    <div class="faq">
-      <h2 data-i18n="faq.q4">🎨 Puis-je changer les couleurs et la mise en page ?</h2>
-      <p data-i18n="faq.a4">Oui, plusieurs allers-retours inclus pour ajuster style, couleurs et sections.</p>
-    </div>
-
-    <div class="faq">
-      <h2 data-i18n="faq.q5">🌐 Proposez-vous l’hébergement ?</h2>
-      <p data-i18n="faq.a5">Oui, hébergement inclus dans les formules (vitrine & premium). Migration possible.</p>
-    </div>
-    
-    <div class="faq">
-      <h2 data-i18n="faq.q6">💡 Et si j’ai d’autres questions ?</h2>
-      <p data-i18n="faq.a6">Tu peux me les poser ci-dessous 👇</p>
-    </div>
-
-    <form action="https://formspree.io/f/xxxxxxxx" method="POST">
+    <form id="faqForm">
       <label for="email" data-i18n="faq.labelEmail">Ton adresse e-mail :</label>
-      <input type="email" name="email" id="email" required />
-
-      <label for="message" data-i18n="faq.labelMsg"> Ta question :</label>
+      <input type="email" name="email" id="email" required>
+      <label for="message" data-i18n="faq.labelMsg">Ta question :</label>
       <textarea name="message" id="message" rows="6" required></textarea>
-
-      <button type="submit" data-i18n="faq.btn" "mailto:eternaweb.contact@gmail.com">eternaweb.contact@gmail.com</a>
-    >Envoyer la question</button>
+      <button type="submit" class="btn btn-primary" data-i18n="faq.btn">Envoyer la question</button>
     </form>
   </div>
 
   <a class="back-link" href="index.html" data-i18n="faq.back">← Retour à l’accueil</a>
 
   <script src="app.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var form=document.getElementById('faqForm');
+      if(!form)return;
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        var email=document.getElementById('email').value.trim();
+        var message=document.getElementById('message').value.trim();
+        if(!email||!message){form.reportValidity();return;}
+        var subject=encodeURIComponent('Question FAQ — EternaWeb');
+        var body=encodeURIComponent('Adresse e-mail : '+email+'\n\nQuestion :\n'+message);
+        window.location.href='mailto:contact@eternaweb.fr?subject='+subject+'&body='+body;
+      });
+    });
+  </script>
 </body>
 </html>
