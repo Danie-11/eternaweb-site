@@ -3,7 +3,7 @@ console.log("✅ app.js chargé");
 // Config
 // =========================
 const WA_NUMBER = '33749723434';
-const MAIL_TO   = 'contact@eternaweb.fr';
+const MAIL_TO = 'eternaweb.contact@gmail.com';
 
 // Helpers rapides
 const $  = (s, r=document)=>r.querySelector(s);
@@ -836,7 +836,7 @@ nl: {
     // FAQ pour les CV
     faqCv: {
       title: 'FAQ – Lebenslauf & CV Mini-Website - EternaWeb',
-    h1': 'FAQ – Lebenslauf & CV Mini-Website - EternaWeb',
+    'h1': 'FAQ – Lebenslauf & CV Mini-Website - EternaWeb',
 'faqCv.q1': '✨ Wie schnell ist mein Lebenslauf fertig?',
 'faqCv.a1': 'In der Regel innerhalb von 24 bis 48 Stunden, je nach gewähltem Paket und Verfügbarkeit der Informationen.',
 'faqCv.q2': '📄 Für wen ist der CV-Service gedacht?',
