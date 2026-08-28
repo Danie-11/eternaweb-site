@@ -49,21 +49,6 @@ const I18N = {
   'btn.send': 'Envoyer',
   'btn.choose': 'Je choisis cette formule',
 
-     // PORTFOLIO
-  'portfolio.section.title': '🎨 Modèles de Portfolio',
-  'portfolio.section.desc': 'Idéal pour artistes, créateurs et designers.',
-  'portfolio.pricing.title': '💼 Formules Portfolio',
-  'portfolio.pricing.desc': 'Exposez vos créations avec élégance.',
-
-    'portfolio.pack1.title': '📂 Pack Créatif – 29,99 €',
-  'portfolio.pack1.li1': 'Mini-site (2–3 pages)',
-  'portfolio.pack1.li2': 'Galerie photos/vidéos',
-  'portfolio.pack1.li3': 'Présentation créateur',
-  'portfolio.pack2.title': '🌟 Pack Premium – 59,99 €',
-  'portfolio.pack2.li1': 'Tout le Pack Créatif',
-  'portfolio.pack2.li2': 'Section blog',
-  'portfolio.pack2.li3': 'Optimisation SEO',
-  'portfolio.pack2.li4': 'Statistiques incluses',
 
      // CV
   'cv.section.title': '🚀 Nos formules CV',
@@ -136,26 +121,7 @@ const I18N = {
 'faqCv.a9': 'Tu peux me contacter directement ci-dessous 👇',
 'faqCv.back': '← Retour à l’accueil'
     },
-    
-  "portfolio.title": "FAQ – Portfolio / Créateurs & Freelances - EternaWeb",
-  "portfolio.h1": "FAQ – Portfolio / Créateurs & Freelances",
-  "portfolio.q1": "✨ À qui s'adresse le portfolio ?",
-  "portfolio.a1": "Créateurs<br>Freelances<br>Photographes<br>Artisans<br>Entrepreneurs<br>Marques personnelles",
-  "portfolio.q2": "⏱️ En combien de temps mon portfolio est-il prêt ?",
-  "portfolio.a2": "En moyenne 48 h, si tous les contenus sont fournis.",
-  "portfolio.q3": "📦 Quelles sont les formules Portfolio ?",
-  "portfolio.a3": "<strong>Pack Créatif – 29,99 €</strong><br>✔ Mini-site (2–3 pages)<br>✔ Galerie photos / vidéos<br>✔ Présentation du créateur<br><br><strong>Pack Premium – 59,99 €</strong><br>✔ Tout le Pack Créatif<br>✔ Blog<br>✔ Optimisation SEO<br>✔ Statistiques de visites incluses",
-  "portfolio.q4": "📊 Puis-je voir combien de personnes visitent mon site ?",
-  "portfolio.a4": "Oui. Les statistiques de visites sont incluses dans le Pack Premium.",
-  "portfolio.q5": "🎨 Puis-je personnaliser le design ?",
-  "portfolio.a5": "Oui :<br>couleurs<br>style<br>structure<br>Le site est adapté à ton univers créatif.",
-  "portfolio.q6": "🌍 L'hébergement est-il inclus ?",
-  "portfolio.a6": "Oui, l'hébergement est inclus pendant 1 an. Migration possible si besoin.",
-  "portfolio.q7": "📎 Que dois-je fournir ?",
-  "portfolio.a7": "Textes ou idées<br>Photos / vidéos<br>Liens réseaux (si existants)",
-  "portfolio.q8": "❓ Besoin d'un devis sur mesure ?",
-  "portfolio.a8": "Un devis personnalisé est possible sur demande.",
-  "portfolio.back": "← Retour à l’accueil",
+
     
      'about.title': 'À propos de EternaWeb',
   'about.p1': 'EternaWeb est né d’un besoin simple : permettre à chacun de présenter son projet, son talent ou son offre avec clarté et professionnalisme, même sans compétences techniques.',
@@ -251,21 +217,6 @@ en: {
   'btn.send': 'Send',
   'btn.choose': 'I choose this plan',
     
-    // PORTFOLIO
-  'portfolio.section.title': '🎨 Portfolio Templates',
-  'portfolio.section.desc': 'Perfect for artists, creators and designers.',
-  'portfolio.pricing.title': '💼 Portfolio Plans',
-  'portfolio.pricing.desc': 'Showcase your work with style and elegance.',
-
-     'portfolio.pack1.title': '📂 Creative Pack – €29,99',
-  'portfolio.pack1.li1': 'Mini-site (2–3 pages)',
-  'portfolio.pack1.li2': 'Photo/video gallery',
-  'portfolio.pack1.li3': 'Creator presentation',
-  'portfolio.pack2.title': '🌟 Premium Pack – €59,99',
-  'portfolio.pack2.li1': 'Everything in Creative Pack',
-  'portfolio.pack2.li2': 'Blog section',
-  'portfolio.pack2.li3': 'SEO optimization',
-  'portfolio.pack2.li4': 'Included statistics',
 
     // CV
    'cv.h2': '📄 CV Templates',
@@ -339,26 +290,7 @@ en: {
 'faqCv.back': '← Back to home',
      'about.title': 'About EternaWeb'
     },
-  
-'portfolio.title': 'FAQ – Portfolio / Creators & Freelancers - EternaWeb',
-'portfolio.h1': 'FAQ – Portfolio / Creators & Freelancers',
-'portfolio.q1': '✨ Who is the portfolio for?',
-'portfolio.a1': 'Creators<br>Freelancers<br>Photographers<br>Artisans<br>Entrepreneurs<br>Personal brands',
-'portfolio.q2': '⏱️ How long does it take to build my portfolio?',
-'portfolio.a2': 'On average 48 hours, if all content is provided.',
-'portfolio.q3': '📦 What portfolio packages are available?',
-'portfolio.a3': '<strong>Creative Pack – €29.99</strong><br>✔ Mini-site (2–3 pages)<br>✔ Photo / video gallery<br>✔ Creator presentation<br><br><strong>Premium Pack – €59.99</strong><br>✔ Everything in Creative Pack<br>✔ Blog<br>✔ SEO optimization<br>✔ Visitor statistics included',
-'portfolio.q4': '📊 Can I see how many people visit my site?',
-'portfolio.a4': 'Yes. Visitor statistics are included in the Premium Pack.',
-'portfolio.q5': '🎨 Can I customize the design?',
-'portfolio.a5': 'Yes:<br>colors<br>style<br>structure<br>The site is adapted to your creative universe.',
-'portfolio.q6': '🌍 Is hosting included?',
-'portfolio.a6': 'Yes, hosting is included for 1 year. Migration possible if needed.',
-'portfolio.q7': '📎 What do I need to provide?',
-'portfolio.a7': 'Texts or ideas<br>Photos / videos<br>Social links (if available)',
-'portfolio.q8': '❓ Need a custom quote?',
-'portfolio.a8': 'A personalized quote is available on request.',
-'portfolio.back': '← Back to home',
+
   
   'about.p1': 'EternaWeb was born from a simple need: allowing anyone to present their project, talent or offer clearly and professionally, even without technical skills.',
   'about.p2': '✨ In just 2 days, your showcase or online CV can come to life — clean, human and intuitive. Whether you are a craftsman, coach, artist, therapist or job seeker, you deserve an online presence that reflects who you are.',
@@ -383,7 +315,7 @@ en: {
 'legal.ipText': 'The content (texts, images, logos) created by EternaWeb is protected. Any reproduction without authorization is prohibited.',
 'legal.back': '← Back to home',
       'footer.privacy':'Privacy',
-  'privacy.title': 'Privacy Policy - EternaWeb',
+'privacy.title': 'Privacy Policy - EternaWeb',
 'privacy.h1': 'Privacy Policy',
 'privacy.intro': 'This policy explains which data is collected when using the <strong>EternaWeb</strong> website.',
 'privacy.dataTitle': 'Collected data',
@@ -435,10 +367,6 @@ en: {
   'services.port.desc':'Kunstnikele ja disaineritele',
   'services.vit.desc':'Ettevõtetele ja iseseisvatele',
 
-  'portfolio.pricing.title':'Portfoolio paketid',
-  'portfolio.pack1.title':'Loovpakett – 29,99 €',
-  'portfolio.pack2.title':'Premium-pakett – 59,99 €',
-
   'cv.pricing.title':'CV paketid',
   'cv.pack1.title':'Starter – 4,99 €',
   'cv.pack2.title':'Boost – 9,99 €',
@@ -470,26 +398,6 @@ en: {
 'faqCv.back': '← Tagasi avalehele'
     },
 
-    
-'portfolio.title': 'KKK – Portfoolio / Loojad & Vabakutselised - EternaWeb',
-'portfolio.h1': 'KKK – Portfoolio / Loojad & Vabakutselised',
-'portfolio.q1': '✨ Kellele portfoolio on mõeldud?',
-'portfolio.a1': 'Loojad<br>Vabakutselised<br>Fotograafid<br>Käsitöölised<br>Ettevõtjad<br>Isiklikud brändid',
-'portfolio.q2': '⏱️ Kui kiiresti portfoolio valmib?',
-'portfolio.a2': 'Keskmiselt 48 tundi, kui kogu sisu on esitatud.',
-'portfolio.q3': '📦 Millised portfoolio paketid on saadaval?',
-'portfolio.a3': '<strong>Loovpakett – 29,99 €</strong><br>✔ Mini-sait (2–3 lehekülge)<br>✔ Foto-/videogalerii<br>✔ Looja tutvustus<br><br><strong>Premium pakett – 59,99 €</strong><br>✔ Kõik loovpaketi elemendid<br>✔ Blogi<br>✔ SEO optimeerimine<br>✔ Külastuste statistika',
-'portfolio.q4': '📊 Kas ma näen külastajate arvu?',
-'portfolio.a4': 'Jah. Külastuste statistika on kaasatud Premium paketis.',
-'portfolio.q5': '🎨 Kas disaini saab kohandada?',
-'portfolio.a5': 'Jah:<br>värvid<br>stiil<br>struktuur<br>Veebileht kohandatakse sinu loomingulise maailmaga.',
-'portfolio.q6': '🌍 Kas majutus on hinna sees?',
-'portfolio.a6': 'Jah, majutus on hinna sees 1 aastaks. Migratsioon on võimalik.',
-'portfolio.q7': '📎 Mida pean esitama?',
-'portfolio.a7': 'Tekstid või ideed<br>Fotod / videod<br>Sotsiaalvõrgustike lingid (kui olemas)',
-'portfolio.q8': '❓ Vajad kohandatud pakkumist?',
-'portfolio.a8': 'Kohandatud hinnapakkumine on võimalik soovi korral.',
-'portfolio.back': '← Tagasi avalehele',
     
   'footer.copy':'© 2025 EternaWeb — Kõik õigused kaitstud'
 },
@@ -542,21 +450,6 @@ nl: {
     // --- Buttons
     'btn.fill':'Uw instructies','btn.send':'Verzenden','btn.choose':'Deze formule kiezen',
 
-   // PORTFOLIO
-  'portfolio.section.title': '🎨 Portfolio-modellen',
-  'portfolio.section.desc': 'Ideaal voor kunstenaars, makers en ontwerpers.',
-  'portfolio.pricing.title': '💼 Portfolio-pakketten',
-  'portfolio.pricing.desc': 'Toon je creaties met stijl en elegantie.',
-
-    'portfolio.pack1.title': '📂 Creatief Pakket – 29,99 €',
-  'portfolio.pack1.li1': 'Mini-site (2–3 pagina’s)',
-  'portfolio.pack1.li2': 'Foto-/videogalerij',
-  'portfolio.pack1.li3': 'Presentatie van de maker',
-  'portfolio.pack2.title': '🌟 Premium Pakket – 59,99 €',
-  'portfolio.pack2.li1': 'Alles in het Creatief Pakket',
-  'portfolio.pack2.li2': 'Blogsectie',
-  'portfolio.pack2.li3': 'SEO-optimalisatie',
-  'portfolio.pack2.li4': 'Statistieken inbegrepen',
 
   // CV
   'cv.h2': '📄 CV-modellen',
@@ -634,25 +527,6 @@ nl: {
 'faqCv.back': '← Terug naar home'
     },
   
-'portfolio.title': 'FAQ – Portfolio / Creators & Freelancers - EternaWeb',
-'portfolio.h1': 'FAQ – Portfolio / Creators & Freelancers',
-'portfolio.q1': '✨ Voor wie is het portfolio bedoeld?',
-'portfolio.a1': 'Creators<br>Freelancers<br>Fotografen<br>Ambachtslieden<br>Ondernemers<br>Persoonlijke merken',
-'portfolio.q2': '⏱️ Hoe snel is mijn portfolio klaar?',
-'portfolio.a2': 'Gemiddeld binnen 48 uur, mits alle content is aangeleverd.',
-'portfolio.q3': '📦 Welke portfolio-pakketten zijn er?',
-'portfolio.a3': '<strong>Creatief Pakket – €29,99</strong><br>✔ Mini-site (2–3 pagina’s)<br>✔ Foto-/videogalerij<br>✔ Creatorpresentatie<br><br><strong>Premium Pakket – €59,99</strong><br>✔ Alles uit het Creatief Pakket<br>✔ Blog<br>✔ SEO-optimalisatie<br>✔ Bezoekersstatistieken',
-'portfolio.q4': '📊 Kan ik bezoekersstatistieken bekijken?',
-'portfolio.a4': 'Ja. Statistieken zijn inbegrepen in het Premium Pakket.',
-'portfolio.q5': '🎨 Kan ik het design aanpassen?',
-'portfolio.a5': 'Ja:<br>kleuren<br>stijl<br>structuur<br>De website wordt aangepast aan jouw creatieve wereld.',
-'portfolio.q6': '🌍 Is hosting inbegrepen?',
-'portfolio.a6': 'Ja, hosting is inbegrepen voor 1 jaar. Migratie mogelijk.',
-'portfolio.q7': '📎 Wat moet ik aanleveren?',
-'portfolio.a7': 'Teksten of ideeën<br>Foto’s / video’s<br>Social links (indien beschikbaar)',
-'portfolio.q8': '❓ Een offerte op maat?',
-'portfolio.a8': 'Een gepersonaliseerde offerte is mogelijk op aanvraag.',
-'portfolio.back': '← Terug naar home',
   
   'footer.about':'Over ons',
   'about.title': 'Over EternaWeb',
@@ -765,22 +639,7 @@ nl: {
     // --- Buttons
     'btn.fill':'Ihr Briefing','btn.send':'Senden','btn.choose':'Diesen Tarif wählen',
 
-    // PORTFOLIO
-  'portfolio.section.title': '🎨 Portfolio-Vorlagen',
-  'portfolio.section.desc': 'Ideal für Künstler, Kreative und Designer.',
-  'portfolio.pricing.title': '💼 Portfolio-Tarife',
-  'portfolio.pricing.desc': 'Präsentieren Sie Ihre Arbeiten mit Eleganz.',
-
-    
-    'portfolio.pack1.title': '📂 Kreativ-Paket – 29,99 €',
-  'portfolio.pack1.li1': 'Mini-Website (2–3 Seiten)',
-  'portfolio.pack1.li2': 'Foto-/Video-Galerie',
-  'portfolio.pack1.li3': 'Ersteller-Präsentation',
-  'portfolio.pack2.title': '🌟 Premium-Paket – 59,99 €',
-  'portfolio.pack2.li1': 'Alles im Kreativ-Paket',
-  'portfolio.pack2.li2': 'Blog-Sektion',
-  'portfolio.pack2.li3': 'SEO-Optimierung',
-  'portfolio.pack2.li4': 'Inklusive Statistiken',
+  
 
     // CV
   'cv.h2': '📄 Lebenslauf-Vorlagen',
@@ -857,26 +716,6 @@ nl: {
 'faqCv.a9': 'Du kannst mich unten direkt kontaktieren 👇',
 'faqCv.back': '← Zurück zur Startseite'
     },
-    
-'portfolio.title': 'FAQ – Portfolio / Kreative & Freelancer - EternaWeb',
-'portfolio.h1': 'FAQ – Portfolio / Kreative & Freelancer',
-'portfolio.q1': '✨ Für wen ist das Portfolio gedacht?',
-'portfolio.a1': 'Kreative<br>Freelancer<br>Fotografen<br>Handwerker<br>Unternehmer<br>Persönliche Marken',
-'portfolio.q2': '⏱️ Wie schnell ist das Portfolio fertig?',
-'portfolio.a2': 'Im Durchschnitt 48 Stunden, sofern alle Inhalte bereitgestellt werden.',
-'portfolio.q3': '📦 Welche Portfolio-Pakete gibt es?',
-'portfolio.a3': '<strong>Creativ-Paket – 29,99 €</strong><br>✔ Mini-Website (2–3 Seiten)<br>✔ Foto-/Videogalerie<br>✔ Präsentation des Kreativen<br><br><strong>Premium-Paket – 59,99 €</strong><br>✔ Alles aus dem Creativ-Paket<br>✔ Blog<br>✔ SEO-Optimierung<br>✔ Besucherstatistiken',
-'portfolio.q4': '📊 Kann ich Besucherzahlen sehen?',
-'portfolio.a4': 'Ja. Statistiken sind im Premium-Paket enthalten.',
-'portfolio.q5': '🎨 Kann ich das Design anpassen?',
-'portfolio.a5': 'Ja:<br>Farben<br>Stil<br>Struktur<br>Die Website wird an deine kreative Welt angepasst.',
-'portfolio.q6': '🌍 Ist Hosting inklusive?',
-'portfolio.a6': 'Ja, Hosting ist für 1 Jahr inklusive. Migration möglich.',
-'portfolio.q7': '📎 Was muss ich liefern?',
-'portfolio.a7': 'Texte oder Ideen<br>Fotos / Videos<br>Social Links (falls vorhanden)',
-'portfolio.q8': '❓ Individuelles Angebot?',
-'portfolio.a8': 'Ein individuelles Angebot ist auf Anfrage möglich.',
-'portfolio.back': '← Zurück zur Startseite',
     
   'footer.about':'Über uns',
   'about.title': 'Über EternaWeb',
@@ -989,22 +828,6 @@ nl: {
     // --- Кнопки
     'btn.fill':'Ваши пожелания','btn.send':'Отправить','btn.choose':'Выбрать этот пакет',
 
-    // PORTFOLIO
-  'portfolio.section.title': '🎨 Шаблоны портфолио',
-  'portfolio.section.desc': 'Идеально для художников, создателей и дизайнеров.',
-  'portfolio.pricing.title': '💼 Тарифы портфолио',
-  'portfolio.pricing.desc': 'Покажите свои работы с элегантностью.',
-
-     'portfolio.pack1.title': '📂 Креативный пакет – 29,99 €',
-  'portfolio.pack1.li1': 'Мини-сайт (2–3 страницы)',
-  'portfolio.pack1.li2': 'Галерея фото/видео',
-  'portfolio.pack1.li3': 'Презентация автора',
-  'portfolio.pack2.title': '🌟 Премиум пакет – 59,99 €',
-  'portfolio.pack2.li1': 'Всё из Креативного пакета',
-  'portfolio.pack2.li2': 'Раздел блог',
-  'portfolio.pack2.li3': 'SEO-оптимизация',
-  'portfolio.pack2.li4': 'Включена статистика',
-    
  // CV
   'cv.h2': '📄 Шаблоны резюме',
   'cv.sub': 'Выберите стиль, который соответствует вашему профилю.',
@@ -1055,26 +878,7 @@ nl: {
   'faq.labelMsg': 'Ваш вопрос:',
   'faq.btn': 'Отправить вопрос',
   'faq.back': '← Вернуться на главную',
-    
-'portfolio.title': 'FAQ – Портфолио / Творцы и фрилансеры - EternaWeb',
-'portfolio.h1': 'FAQ – Портфолио / Творцы и фрилансеры',
-'portfolio.q1': '✨ Для кого предназначено портфолио?',
-'portfolio.a1': 'Творцы<br>Фрилансеры<br>Фотографы<br>Ремесленники<br>Предприниматели<br>Личные бренды',
-'portfolio.q2': '⏱️ За какое время создаётся портфолио?',
-'portfolio.a2': 'В среднем 48 часов при наличии всех материалов.',
-'portfolio.q3': '📦 Какие пакеты портфолио доступны?',
-'portfolio.a3': '<strong>Креативный пакет – 29,99 €</strong><br>✔ Мини-сайт (2–3 страницы)<br>✔ Фото/видео галерея<br>✔ Презентация автора<br><br><strong>Премиум пакет – 59,99 €</strong><br>✔ Всё из креативного пакета<br>✔ Блог<br>✔ SEO-оптимизация<br>✔ Статистика посещений',
-'portfolio.q4': '📊 Можно ли отслеживать посещаемость?',
-'portfolio.a4': 'Да. Статистика включена в Премиум пакете.',
-'portfolio.q5': '🎨 Можно ли персонализировать дизайн?',
-'portfolio.a5': 'Да:<br>цвета<br>стиль<br>структура<br>Сайт адаптируется под ваш творческий стиль.',
-'portfolio.q6': '🌍 Включён ли хостинг?',
-'portfolio.a6': 'Да, хостинг включён на 1 год. Возможна миграция.',
-'portfolio.q7': '📎 Что нужно предоставить?',
-'portfolio.a7': 'Тексты или идеи<br>Фото / видео<br>Ссылки на соцсети (если есть)',
-'portfolio.q8': '❓ Нужна индивидуальная смета?',
-'portfolio.a8': 'Индивидуальное предложение возможно по запросу.',
-'portfolio.back': '← На главную',
+  
 
     // FAQ pour les CV
     faqCv: {
@@ -1211,21 +1015,6 @@ h1': 'FAQ – Резюме и CV мини-сайт - EternaWeb',
     // --- Botones
     'btn.fill':'Sus indicaciones','btn.send':'Enviar','btn.choose':'Elegir este plan',
 
-    // PORTFOLIO
-  'portfolio.section.title': '🎨 Plantillas de Portafolio',
-  'portfolio.section.desc': 'Ideal para artistas, creadores y diseñadores.',
-  'portfolio.pricing.title': '💼 Planes de Portafolio',
-  'portfolio.pricing.desc': 'Muestra tus creaciones con elegancia.',
-
-     'portfolio.pack1.title': '📂 Paquete Creativo – 29,99 €',
-  'portfolio.pack1.li1': 'Mini sitio (2–3 páginas)',
-  'portfolio.pack1.li2': 'Galería de fotos/vídeos',
-  'portfolio.pack1.li3': 'Presentación del creador',
-  'portfolio.pack2.title': '🌟 Paquete Premium – 59,99 €',
-  'portfolio.pack2.li1': 'Todo el Paquete Creativo',
-  'portfolio.pack2.li2': 'Sección de blog',
-  'portfolio.pack2.li3': 'Optimización SEO',
-  'portfolio.pack2.li4': 'Estadísticas incluidas',
 
     // CV
   'cv.h2': '📄 Modelos de CV',
@@ -1302,26 +1091,6 @@ h1': 'FAQ – Резюме и CV мини-сайт - EternaWeb',
 'faqCv.a9': 'Puedes contactarme directamente abajo 👇',
 'faqCv.back': '← Volver al inicio'
     },
-    
-'portfolio.title': 'FAQ – Portafolio / Creadores y Freelancers - EternaWeb',
-'portfolio.h1': 'FAQ – Portafolio / Creadores y Freelancers',
-'portfolio.q1': '✨ ¿Para quién es el portafolio?',
-'portfolio.a1': 'Creadores<br>Freelancers<br>Fotógrafos<br>Artesanos<br>Emprendedores<br>Marcas personales',
-'portfolio.q2': '⏱️ ¿Cuánto tiempo tarda en estar listo el portafolio?',
-'portfolio.a2': 'En promedio 48 horas, si todo el contenido está disponible.',
-'portfolio.q3': '📦 ¿Qué planes de portafolio existen?',
-'portfolio.a3': '<strong>Pack Creativo – 29,99 €</strong><br>✔ Mini-sitio (2–3 páginas)<br>✔ Galería de fotos / videos<br>✔ Presentación del creador<br><br><strong>Pack Premium – 59,99 €</strong><br>✔ Todo el Pack Creativo<br>✔ Blog<br>✔ Optimización SEO<br>✔ Estadísticas de visitas',
-'portfolio.q4': '📊 ¿Puedo ver las visitas del sitio?',
-'portfolio.a4': 'Sí. Las estadísticas están incluidas en el Pack Premium.',
-'portfolio.q5': '🎨 ¿Puedo personalizar el diseño?',
-'portfolio.a5': 'Sí:<br>colores<br>estilo<br>estructura<br>El sitio se adapta a tu universo creativo.',
-'portfolio.q6': '🌍 ¿El alojamiento está incluido?',
-'portfolio.a6': 'Sí, alojamiento incluido por 1 año. Migración posible.',
-'portfolio.q7': '📎 ¿Qué debo proporcionar?',
-'portfolio.a7': 'Textos o ideas<br>Fotos / videos<br>Enlaces a redes sociales (si existen)',
-'portfolio.q8': '❓ ¿Presupuesto personalizado?',
-'portfolio.a8': 'Se puede solicitar un presupuesto a medida.',
-'portfolio.back': '← Volver al inicio',
     
   'footer.about':'Acerca de',
   'about.title': 'Acerca de EternaWeb',
@@ -1433,22 +1202,7 @@ h1': 'FAQ – Резюме и CV мини-сайт - EternaWeb',
     // --- Pulsanti
     'btn.fill':'Le tue indicazioni','btn.send':'Invia','btn.choose':'Scegli questo piano',
 
-    // PORTFOLIO
-  'portfolio.section.title': '🎨 Modelli di Portfolio',
-  'portfolio.section.desc': 'Ideale per artisti, creatori e designer.',
-  'portfolio.pricing.title': '💼 Pacchetti Portfolio',
-  'portfolio.pricing.desc': 'Mostra le tue creazioni con eleganza.',
-
-    'portfolio.pack1.title': '📂 Pacchetto Creativo – 29,99 €',
-  'portfolio.pack1.li1': 'Mini-sito (2–3 pagine)',
-  'portfolio.pack1.li2': 'Galleria foto/video',
-  'portfolio.pack1.li3': 'Presentazione del creatore',
-  'portfolio.pack2.title': '🌟 Pacchetto Premium – 59,99 €',
-  'portfolio.pack2.li1': 'Tutto il Pacchetto Creativo',
-  'portfolio.pack2.li2': 'Sezione blog',
-  'portfolio.pack2.li3': 'Ottimizzazione SEO',
-  'portfolio.pack2.li4': 'Statistiche incluse',
-
+    
      // CV
   'cv.h2': '📄 Modelli di CV',
   'cv.sub': 'Scegli uno stile che si adatta al tuo profilo.',
@@ -1523,26 +1277,6 @@ h1': 'FAQ – CV e mini-sito CV - EternaWeb',
 'faqCv.a9': 'Puoi contattarmi direttamente qui sotto 👇',
 'faqCv.back': '← Torna alla home'
     },
-    
-'portfolio.title': 'FAQ – Portfolio / Creativi & Freelance - EternaWeb',
-'portfolio.h1': 'FAQ – Portfolio / Creativi & Freelance',
-'portfolio.q1': '✨ A chi è rivolto il portfolio?',
-'portfolio.a1': 'Creativi<br>Freelance<br>Fotografi<br>Artigiani<br>Imprenditori<br>Brand personali',
-'portfolio.q2': '⏱️ In quanto tempo è pronto il portfolio?',
-'portfolio.a2': 'In media 48 ore, se tutti i contenuti sono forniti.',
-'portfolio.q3': '📦 Quali pacchetti portfolio sono disponibili?',
-'portfolio.a3': '<strong>Pacchetto Creativo – 29,99 €</strong><br>✔ Mini-sito (2–3 pagine)<br>✔ Galleria foto / video<br>✔ Presentazione del creatore<br><br><strong>Pacchetto Premium – 59,99 €</strong><br>✔ Tutto il Pacchetto Creativo<br>✔ Blog<br>✔ Ottimizzazione SEO<br>✔ Statistiche visite',
-'portfolio.q4': '📊 Posso vedere le statistiche delle visite?',
-'portfolio.a4': 'Sì. Le statistiche sono incluse nel Pacchetto Premium.',
-'portfolio.q5': '🎨 Posso personalizzare il design?',
-'portfolio.a5': 'Sì:<br>colori<br>stile<br>struttura<br>Il sito viene adattato al tuo universo creativo.',
-'portfolio.q6': '🌍 L’hosting è incluso?',
-'portfolio.a6': 'Sì, hosting incluso per 1 anno. Migrazione possibile.',
-'portfolio.q7': '📎 Cosa devo fornire?',
-'portfolio.a7': 'Testi o idee<br>Foto / video<br>Link social (se disponibili)',
-'portfolio.q8': '❓ Preventivo su misura?',
-'portfolio.a8': 'È possibile richiedere un preventivo personalizzato.',
-'portfolio.back': '← Torna alla home',
     
   'footer.about':'Chi siamo',
   'about.title': 'Chi siamo - EternaWeb',
