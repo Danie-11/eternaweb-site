@@ -1,79 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV Structuré – EternaWeb</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; background: #eeeae5; color: #5e534a; font-family: Arial, Helvetica, sans-serif; }
-    .cv { width: min(900px, 96vw); margin: 18px auto; background: #fff; box-shadow: 0 12px 35px rgba(0,0,0,.02); }
-    .hero { display:grid; grid-template-columns:34% 66%; background:#fbf4ec; min-height:270px; padding:55px 50px 45px; }
-    .hero-name { font:700 43px Georgia,serif; letter-spacing:2px; color:#756657; line-height:1.15; }
-    .hero-role { font:700 39px Georgia,serif; letter-spacing:2px; color:#756657; line-height:1.1; }
-    .hero p { font-size:16px; line-height:1.55; margin:28px 0 0; }
-    .main { display:grid; grid-template-columns:34% 66%; }
-    .side { background:#e4d4c3; padding:38px; }
-    .side h2,.content h2 { font-size:19px; letter-spacing:4px; margin:0 0 25px; color:#6e6053; }
-    .side section { margin-bottom:48px; }
-    .side p,.side li { font-size:15px; line-height:1.7; }
-    .side ul { padding-left:20px; margin:0; }
-    .content { padding:38px 48px; }
-    .content section { margin-bottom:48px; }
-    .timeline { border-left:2px solid #8a7765; padding-left:25px; }
-    .job,.edu { position:relative; margin-bottom:32px; }
-    .job::before,.edu::before { content:''; position:absolute; left:-33px; top:2px; width:9px; height:9px; border:2px solid #806e5d; border-radius:50%; background:#fff; }
-    .job h3,.edu h3 { margin:0 0 5px; font-size:17px; color:#51483f; }
-    .meta { font-style:italic; margin:0 0 9px; color:#70675f; }
-    .job p,.edu p { font-size:15px; line-height:1.55; margin:0; color:#777; }
-    .note { text-align:center; padding:12px; font-size:11px; color:#999; background:#f6f2ed; border-top:1px solid #ddd3c9; }
-    .demo-preview { width:min(900px,96vw); margin:30px auto 40px; padding:28px; background:#fff; text-align:center; }
-    .demo-preview h2 { margin:0 0 20px; color:#6e6053; }
-    .preview-img { display:block; width:min(520px,100%); height:auto; margin:0 auto; border:1px solid #ddd3c9; box-shadow:0 8px 24px rgba(0,0,0,.08); }
-    @media (max-width:650px) {
-      .hero { grid-template-columns:1fr; padding:32px 25px; }
-      .hero-role { font-size:28px; margin-top:20px; }
-      .hero-name { font-size:34px; }
-      .main { grid-template-columns:1fr; }
-      .side { padding:28px 25px; }
-      .content { padding:28px 25px; }
-      .side section,.content section { margin-bottom:30px; }
-      .demo-preview { padding:20px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CV Structuré – EternaWeb</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:24px 14px;background:#eeeae5;color:#5e534a;font-family:Arial,Helvetica,sans-serif}
+.demo{width:min(620px,100%);margin:0 auto;background:#fffaf7;border-radius:14px;padding:24px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
+h1{margin:0 0 8px;color:#6e6053;font:700 28px Georgia,serif}
+p{margin:0 auto 20px;max-width:520px;line-height:1.55;color:#6b625a}
+.preview{display:block;width:min(420px,100%);height:auto;margin:0 auto;border:1px solid #ddd3c9;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.10)}
+.back{display:inline-block;margin-top:20px;padding:10px 16px;border-radius:9px;background:#8c6239;color:#fff;text-decoration:none;font-weight:700}
+</style>
 </head>
 <body>
-  <main class="cv">
-    <header class="hero">
-      <div class="hero-name">NOM<br>PRÉNOM</div>
-      <div>
-        <div class="hero-role">CHARGÉE DE<br>COMMUNICATION</div>
-        <p>Je suis Olivia Wilson, XX ans, chargée de communication, passionnée par l'innovation stratégique et l'engagement des audiences. Mon objectif est d'aider les organisations à améliorer leur image et à étendre leur portée avec des conseils et solutions personnalisés.</p>
-      </div>
-    </header>
-    <div class="main">
-      <aside class="side">
-        <section><h2>CONTACT</h2><p>▣ &nbsp; 06XXXXXXXX</p><p>✉ &nbsp; hello@xxxxxx.com</p><p>➤ &nbsp; www.xxxxxx.com</p><p>⌖ &nbsp; Villedel'emploi</p></section>
-        <section><h2>COMPÉTENCES</h2><ul><li>Création de stratégies de communication</li><li>Gestion des relations publiques</li><li>Marketing digital</li><li>Rédaction et production de contenu</li><li>Analyse de données et mesure de performance</li></ul></section>
-        <section><h2>QUALITÉS</h2><ul><li>Créativité</li><li>Capacité d'adaptation</li><li>Excellentes compétences relationnelles</li><li>Esprit d'équipe</li><li>Orientation résultats</li></ul></section>
-      </aside>
-      <section class="content">
-        <section><h2>EXPÉRIENCE PROFESSIONNELLE</h2><div class="timeline">
-          <article class="job"><h3>Chargée de Communication</h3><p class="meta">Communication Excellence | Any City | Oct. 2023 - Aujourd'hui</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim turpis, feugiat vitae elit vitae, aliquet dignissim ex.</p></article>
-          <article class="job"><h3>Assistante de Communication</h3><p class="meta">Communication Géniale | Any City | Janv. 2021 - Sept. 2023</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim turpis, feugiat vitae elit vitae, aliquet dignissim ex.</p></article>
-          <article class="job"><h3>Apprentie Assistante en Communication</h3><p class="meta">Communication Super | Any City | Juin 2019 - Déc. 2021</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim turpis, feugiat vitae elit vitae, aliquet dignissim ex.</p></article>
-        </div></section>
-        <section><h2>FORMATIONS</h2><div class="timeline">
-          <article class="edu"><h3>Master en Communication et Stratégie Média</h3><p>Université de Communication<br>Any City<br>2019-2021</p></article>
-          <article class="edu"><h3>Licence en Relations Publiques et Marketing</h3><p>Université de Communication<br>Any City<br>2018-2019</p></article>
-        </div></section>
-      </section>
-    </div>
-    <div class="note">Exemple de présentation d'un CV structuré EternaWeb</div>
-  </main>
-  <section class="demo-preview">
-    <h2>Aperçu du modèle</h2>
-    <img class="preview-img" src="../images/thumb-cv1.png" alt="Aperçu du CV Structuré EternaWeb">
-  </section>
+<main class="demo">
+<h1>CV Structuré</h1>
+<p>Un modèle professionnel, clair et organisé, pensé pour présenter efficacement votre parcours et vos compétences.</p>
+<img class="preview" src="../images/thumb-cv1.png" alt="Aperçu du CV Structuré EternaWeb">
+<a class="back" href="../cv.html">← Retour aux modèles CV</a>
+</main>
 </body>
 </html>
