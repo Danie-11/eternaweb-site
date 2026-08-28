@@ -19,7 +19,6 @@
     <div class="faq"><h2 data-i18n="faq.q4">🎨 Puis-je changer les couleurs et la mise en page ?</h2><p data-i18n="faq.a4">Oui, plusieurs allers-retours inclus pour ajuster style, couleurs et sections.</p></div>
     <div class="faq"><h2 data-i18n="faq.q5">🌐 Proposez-vous l’hébergement ?</h2><p data-i18n="faq.a5">Oui, hébergement inclus dans les formules (vitrine & premium). Migration possible.</p></div>
     <div class="faq"><h2 data-i18n="faq.q6">💡 Et si j’ai d’autres questions ?</h2><p data-i18n="faq.a6">Tu peux me les poser ci-dessous 👇</p></div>
-
     <form id="faqForm">
       <label for="email" data-i18n="faq.labelEmail">Ton adresse e-mail :</label>
       <input type="email" name="email" id="email" required>
@@ -28,24 +27,8 @@
       <button type="submit" class="btn btn-primary" data-i18n="faq.btn">Envoyer la question</button>
     </form>
   </div>
-
   <a class="back-link" href="index.html" data-i18n="faq.back">← Retour à l’accueil</a>
-
   <script src="app.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      var form=document.getElementById('faqForm');
-      if(!form)return;
-      form.addEventListener('submit',function(e){
-        e.preventDefault();
-        var email=document.getElementById('email').value.trim();
-        var message=document.getElementById('message').value.trim();
-        if(!email||!message){form.reportValidity();return;}
-        var subject=encodeURIComponent('Question FAQ — EternaWeb');
-        var body=encodeURIComponent('Adresse e-mail : '+email+'\n\nQuestion :\n'+message);
-        window.location.href='mailto:contact@eternaweb.fr?subject='+subject+'&body='+body;
-      });
-    });
-  </script>
+  <script src="direct-send.js" defer></script>
 </body>
 </html>
