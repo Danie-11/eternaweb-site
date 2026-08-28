@@ -161,8 +161,8 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .tiny{ opacity:.8; font-size:.9rem; margin:8px 0 0 }
 
 /* Devis fermé par défaut */
-#devis{ display:none }
-#devis.show{ display:block }
+#Vos informations{ display:none }
+#Vos informations.show{ display:block }
 
 /* ===============================
    Pricing
@@ -264,6 +264,465 @@ input,select,textarea{ border:1px solid #e7ded6; border-radius:10px; padding:10p
 .cta-buttons button,
 .cta-buttons a {
   max-width: 220px;
+  width: 90%;
+  margin: 8px auto;
+  font-size: 16px;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+/* desktop.css */
+.hero-logo{
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.25));
+  opacity: .95;
+}
+.models-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.model-card{max-width:290px;text-decoration:none;color:inherit}
+.model-card img{width:90%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:10px;box-shadow:0 8px 18px #0001}
+.model-card .btn{display:inline-block;margin-top:8px}
+.cv-gallery {
+  display: flex;
+  justify-content: center;   /* centre les cartes */
+  gap: 2rem;                 /* espace entre elles */
+  margin: 2rem auto;         /* espace autour */
+  max-width: 900px;          /* largeur max de la galerie */
+}
+
+.cv-gallery .card {
+  flex: 1 1 20px;           /* largeur mini 300px */
+  max-width: 300px;          /* largeur max d’une carte */
+  text-align: center;
+}
+/* Boutons CTA - version desktop */
+@media (min-width: 601px) {
+  .cta-row .btn {
+    padding: 8px 14px;      /* réduit l’espace interne */
+    font-size: 0.9rem;      /* texte un peu plus petit */
+    min-width: 120px;       /* largeur mini (évite trop petit) */
+    max-width: 160px;       /* largeur max */
+  }
+
+  .cta-row .btn img, 
+  .cta-row .btn svg {
+    height: 18px;           /* réduit la taille des logos (WhatsApp, PayPal...) */
+    width: auto;
+  }
+}
+#langBtn, #langMenu {
+  position: relative;
+  z-index: 9999;
+}
+/* ----- Bloc devis caché par défaut ----- */
+#Vos informations {
+  display: none;          /* invisible */
+  opacity: 0;             /* transparent */
+  transform: translateY(20px); /* décalé vers le bas */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ----- Quand on ajoute .show ----- */
+#Vos informations.show {
+  display: block;         /* visible */
+  opacity: 1;             /* opaque */
+  transform: translateY(0); /* remonte en place */
+}
+/* Amélioration du rendu du texte */
+.models-grid .card {
+  -webkit-font-smoothing: antialiased;   /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale;    /* Firefox */
+  text-rendering: optimizeLegibility;    /* Meilleure lisibilité */
+}
+
+/* Si tu veux aussi sur les titres */
+.models-grid .card h3,
+.models-grid .card p,
+.models-grid .card span {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.testimonials-cards {
+  background: #f9f7f5;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials-cards h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 2rem;
+  color: #6b4b2d;
+}
+
+.t-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.t-grid blockquote {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  font-style: italic;
+  color: #444;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.t-grid blockquote:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.t-grid cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  color: #9c7b4b;
+  font-weight: 600;
+}
+/* === Galerie & Modèles Unifiés === */
+.gallery-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #faf9f7;
+}
+
+.gallery-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-section p {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 20px;
+  box-shadow: none;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 330px;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: none;
+}
+
+.card-info {
+  padding: 1.2rem 1rem;
+}
+
+.card-info p {
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-card .btn {
+  background: #b89863;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.gallery-card .btn:hover {
+  background: none;
+}
+
+/* ===============================
+   Témoignages unifiés (bloc unique)
+================================= */
+.testimonials {
+  max-width: 900px;
+  margin: 40px auto;
+  background: var(--cream, #fffaf7);
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 40px 32px;
+  text-align: left;
+  color: var(--ink, #2d1e15);
+  line-height: 1.6;
+}
+
+.testimonials h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--brown, #5e4b3c);
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.testimonials h2::before {
+  content: "💬";
+  font-size: 1.4rem;
+}
+
+.testimonials blockquote {
+  margin: 0 0 1.2rem;
+  font-style: italic;
+  font-size: 1.05rem;
+  background: transparent;
+  border: none;
+}
+
+.testimonials cite {
+  display: block;
+  margin-top: 6px;
+  color: var(--brown-dark, #6b4b3e);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .testimonials {
+    padding: 26px 20px;
+    border-radius: 16px;
+  }
+  .testimonials h2 {
+    font-size: 1.5rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .testimonials blockquote {
+    text-align: center;
+  }
+}
+/* === Correction images démos (évite débordement total) === */
+.demo-preview img,
+.preview-img,
+.model-card img,
+.gallery-card img {
+  display: block;
+  width: 100%;
+  max-width: 750px;      /* ✅ limite sur desktop */
+  height: auto;
+  margin: 0 auto;        /* centre */
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+
+/* === Ajustement mobile === */
+@media (max-width: 600px) {
+  .demo-preview img,
+  .preview-img,
+  .model-card img,
+  .gallery-card img {
+    max-width: 90vw;     /* ✅ prend max 90% de la largeur écran */
+    border-radius: 10px;
+  }
+}
+.demo-preview,
+.section,
+.container {
+  max-width: 900px;      /* ✅ largeur max */
+  margin: 0 auto;
+  padding: 0 1rem;       /* ✅ espace sur les bords */
+  overflow: hidden;      /* empêche débordement visuel */
+}
+/* ---- Modèles (CV / Portfolio / Vitrine) ---- */
+.models-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.model-card {
+  background: linear-gradient(180deg, #fffaf7 0%, #fdf6ec 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 280px; /* un peu plus large sur desktop */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.model-card h3 {
+  font-size: 1.2rem;
+  color: var(--brown);
+  margin: 0.5rem 0 0.2rem;
+}
+
+.model-card p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.model-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+  object-fit: cover;
+}
+
+/* Rendre toute la carte cliquable */
+.model-card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+/* ---- Images démos ---- */
+.demo-preview img,
+.preview-img,
+.gallery-card img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  margin: 0 auto;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ---- Espacement général entre les sections ---- */
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* ---- Ajustement spécifique pour Nos services ---- */
+.services-section {
+  background: var(--paper);
+  padding: 80px 0; /* un peu plus d’air */
+  border-radius: 20px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+:root {
+  --gold-brown: #b28b5e; /* doux doré brun, lisible sur fond clair */
+}
+
+/* ---- Titres de section centrés ---- */
+.section-title, h1, h2 {
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {
+  color: var(--brown-dark);
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+/* ---- Espacement harmonisé sur desktop ---- */
+
+/* Espace entre les sections */
+.section {
+  margin-bottom: 3rem !important;
+}
+
+/* Section CV spécifique */
+.cv-section {
+  margin-bottom: 4rem !important; /* espace avant les formules */
+}
+
+/* Empêche le grand vide en bas */
+body, main {
+  min-height: auto !important;
+  height: auto !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+main {
+  background: linear-gradient(to bottom, transparent 90%, var(--paper) 100%);
+}
+.services-section {
+  padding: 2.5rem 2rem !important; /* augmente l’espace interne */
+}
+
+.service-buttons {
+  gap: 1rem; /* espace entre les deux boutons */
+}
+
+.service-buttons button {
+  margin: 0 auto; /* les garde bien centrés */
+}
+.cv-section {
+  margin-bottom: 4rem;
+}
+body {
+  min-height: auto;
+  padding-bottom: 2rem;
+}
+.port-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+/* ===== Correction espacement Portfolio ===== */
+.portfolio-section {
+  max-width: 1200px;          /* largeur plus généreuse */
+  margin: 0 auto 4rem auto;   /* centre + espace en dessous */
+  padding: 0 2rem;            /* respire sur les côtés */
+}
+
+/* Espace entre la galerie et la section suivante */
+.port-gallery {
+  margin-bottom: 3rem;
+}
+
+/* Ajuste la grille */
+.port-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Harmonise la taille des cartes */
+.port-gallery .model-card {
+  max-width: 100%;
+  background: var(--paper);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+  transition: transform .25s ease;
+}
+
+.port-gallery .model-card:hover {
+  transform: translateY(-6px);
+}
   width: 90%;
   margin: 8px auto;
   font-size: 16px;
