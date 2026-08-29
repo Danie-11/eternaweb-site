@@ -46,8 +46,8 @@
     </div>
   </section>
   <section id="services" class="container models"><h2 data-i18n="services.h2">🚀 Nos services</h2><p data-i18n="services.sub">Découvrez nos solutions CV</p><div class="cta-row"><a href="cv.html" class="btn btn-primary" data-i18n="services.cv">📄 CV</a></div></section>
-  <div id="devis" class="page-card">
-    <button type="button" id="closeDevis" class="devis-close" aria-label="Fermer">×</button>
+  <div id="devis" class="page-card" aria-hidden="true">
+    <button type="button" id="closeDevis" class="devis-close" aria-label="Fermer" onclick="closeDevis(); return false;">×</button>
     <h2 data-i18n="devis.h2">📝 Vos informations</h2>
     <p class="sub" data-i18n="devis.sub">Choisissez, décrivez, envoyez — je reçois vos consignes.</p>
     <form id="devisForm" class="devis-grid">
