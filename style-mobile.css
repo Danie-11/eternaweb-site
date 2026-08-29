@@ -196,6 +196,9 @@ p,li,span,a{ letter-spacing:.2px; }
 .container{ padding:24px 14px; text-align:center; }
 .page-card{ padding:20px 14px; }
 .testimonials{ padding:18px 12px; }
+/* Le formulaire « Vos informations » est fermé par défaut. JS ajoute .show à l'ouverture. */
+#devis{ display:none; }
+#devis.show{ display:block; }
 
 /* ---------- Boutons ---------- */
 .cta-row{
@@ -245,10 +248,6 @@ input,select,textarea{
 fieldset.full{ border:1px solid #eee; border-radius:8px; padding:1rem; }
 fieldset.full label{ display:block; margin:.4rem 0; }
 .tiny{ opacity:.8; font-size:.85rem; }
-
-/* Le panneau est fermé par défaut. JS ajoute .show. */
-#informations{ display:none; }
-#informations.show{ display:block; }
 
 /* ---------- Tarifs ---------- */
 .pricing-section{
