@@ -37,6 +37,14 @@
       }
       window.history.replaceState({}, document.title, './index.html#devis');
     }
+
+    /* Accueil : utiliser le même envoi direct que la FAQ, sans ouvrir une boîte mail. */
+    if(document.getElementById('devisForm')){
+      var script = document.createElement('script');
+      script.src = './direct-send.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   }
 
   if(document.readyState === 'loading'){
