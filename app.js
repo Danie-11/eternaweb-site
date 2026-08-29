@@ -1,177 +1,55 @@
 console.log("✅ app.js chargé");
+const WA_NUMBER='33749723434';
+const MAIL_TO='contact@eternaweb.fr';
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 
-const WA_NUMBER = '33749723434';
-const MAIL_TO = 'eternaweb.contact@gmail.com';
-const $ = (s, r=document) => r.querySelector(s);
-const $$ = (s, r=document) => [...r.querySelectorAll(s)];
-
-/* =========================
-   EternaWeb — moteur unique
-   Navigation + langues + formulaire
-   ========================= */
-
-const I18N = {
-  fr: {
-    'nav.menu':'Menu','nav.cv':'CV','nav.devis':'Vos informations','nav.temoignages':'Témoignages',
-    'hero.subtitle':'CV professionnel — prêt en 48h','hero.lead':'✨ Un design premium, des intégrations rapides et un rendu clé en main.',
-    'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Nos services','services.sub':'Découvrez nos solutions CV',
-    'devis.h2':'📝 Vos informations','devis.sub':'Choisissez, décrivez, envoyez — je reçois vos consignes.','devis.type':'Type de CV',
-    'devis.colors':'Palette / couleurs','devis.style':'Style visuel','devis.style1':'Sobre & élégant','devis.style2':'Créatif & coloré','devis.style3':'Minimal & pro','devis.style4':'Nature & doux',
-    'devis.integrations':'Options souhaitées','devis.other':'Autres demandes','devis.name':'Prénom / Nom','devis.email':'Email','devis.note':'Votre message est envoyé directement à EternaWeb','btn.send':'Envoyer',
-    'testi.h2':'💬 Témoignages','testi.t1':'“Super réactive et professionnelle, mon site a été en ligne le jour même !”','testi.c1':'— Claire B.',
-    'testi.t2':'“Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”','testi.c2':'— Malik T.','testi.t3':'“Excellent rapport qualité/prix. Je recommande à 100 %.”','testi.c3':'— Sofia M.',
-    'footer.faq':'FAQ','footer.about':'À propos','footer.legal':'Mentions légales','footer.privacy':'Confidentialité','footer.code':'Code de conduite','footer.copy':'© 2025 EternaWeb — Tous droits réservés',
-    'faq.back':'← Retour à l’accueil','about.back':'← Retour à l’accueil','legal.back':'← Retour à l’accueil','privacy.back':'← Retour à l’accueil','code.back':'← Retour à l’accueil'
-  },
-  en: {
-    'nav.menu':'Menu','nav.cv':'CV','nav.devis':'Your information','nav.temoignages':'Testimonials',
-    'hero.subtitle':'Professional CV — ready in 48h','hero.lead':'✨ Premium design, fast integration and a turnkey result.',
-    'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Our services','services.sub':'Discover our CV solutions',
-    'devis.h2':'📝 Your information','devis.sub':'Choose, describe and send — I receive your instructions.','devis.type':'CV type',
-    'devis.colors':'Palette / colours','devis.style':'Visual style','devis.style1':'Simple & elegant','devis.style2':'Creative & colourful','devis.style3':'Minimal & professional','devis.style4':'Natural & soft',
-    'devis.integrations':'Desired options','devis.other':'Other requests','devis.name':'First / Last name','devis.email':'Email','devis.note':'Your message is sent directly to EternaWeb','btn.send':'Send',
-    'testi.h2':'💬 Testimonials','testi.t1':'“Super responsive and professional — my site was online the same day!”','testi.c1':'— Claire B.',
-    'testi.t2':'“Elegant, clear design — and my clients can contact me directly via WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Excellent value for money. 100% recommended.”','testi.c3':'— Sofia M.',
-    'footer.faq':'FAQ','footer.about':'About','footer.legal':'Legal notice','footer.privacy':'Privacy','footer.code':'Code of Conduct','footer.copy':'© 2025 EternaWeb — All rights reserved',
-    'faq.back':'← Back to home','about.back':'← Back to home','legal.back':'← Back to home','privacy.back':'← Back to home','code.back':'← Back to home'
-  },
-  nl: {
-    'nav.menu':'Menu','nav.cv':'CV','nav.devis':'Uw informatie','nav.temoignages':'Getuigenissen',
-    'hero.subtitle':'Professioneel cv — klaar binnen 48 uur','hero.lead':'✨ Premium ontwerp, snelle integratie en een kant-en-klaar resultaat.',
-    'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Onze diensten','services.sub':'Ontdek onze CV-oplossingen',
-    'devis.h2':'📝 Uw informatie','devis.sub':'Kies, beschrijf en verstuur — ik ontvang uw instructies.','devis.type':'Type CV',
-    'devis.colors':'Palet / kleuren','devis.style':'Visuele stijl','devis.style1':'Eenvoudig & elegant','devis.style2':'Creatief & kleurrijk','devis.style3':'Minimalistisch & professioneel','devis.style4':'Natuurlijk & zacht',
-    'devis.integrations':'Gewenste opties','devis.other':'Andere verzoeken','devis.name':'Voornaam / achternaam','devis.email':'E-mail','devis.note':'Uw bericht wordt rechtstreeks naar EternaWeb gestuurd','btn.send':'Verzenden',
-    'testi.h2':'💬 Getuigenissen','testi.t1':'“Super snel en professioneel — mijn site stond dezelfde dag online!”','testi.c1':'— Claire B.','testi.t2':'“Elegant en duidelijk ontwerp — mijn klanten kunnen me rechtstreeks via WhatsApp berichten!”','testi.c2':'— Malik T.','testi.t3':'“Uitstekende prijs-kwaliteitverhouding. 100% aanbevolen.”','testi.c3':'— Sofia M.',
-    'footer.faq':'FAQ','footer.about':'Over ons','footer.legal':'Juridische informatie','footer.privacy':'Privacy','footer.code':'Gedragscode','footer.copy':'© 2025 EternaWeb — Alle rechten voorbehouden',
-    'faq.back':'← Terug naar home','about.back':'← Terug naar home','legal.back':'← Terug naar home','privacy.back':'← Terug naar home','code.back':'← Terug naar home'
-  },
-  et: {
-    'nav.menu':'Menüü','nav.cv':'CV','nav.devis':'Teie teave','nav.temoignages':'Iseloomustused',
-    'hero.subtitle':'Professionaalne CV – valmis 48 tunniga','hero.lead':'✨ Premium disain, kiire teostus ja valmis lahendus.',
-    'cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Meie teenused','services.sub':'Avastage meie CV-lahendused',
-    'devis.h2':'📝 Teie teave','devis.sub':'Valige, kirjeldage ja saatke — saan teie juhised kätte.','devis.type':'CV tüüp','devis.colors':'Värvipalett','devis.style':'Visuaalne stiil','devis.style1':'Lihtne ja elegantne','devis.style2':'Loominguline ja värviline','devis.style3':'Minimalistlik ja professionaalne','devis.style4':'Looduslik ja pehme','devis.integrations':'Soovitud valikud','devis.other':'Muud soovid','devis.name':'Ees- ja perekonnanimi','devis.email':'E-post','devis.note':'Teie sõnum saadetakse otse EternaWebile','btn.send':'Saada',
-    'testi.h2':'💬 Iseloomustused','testi.t1':'“Väga kiire ja professionaalne — minu sait oli samal päeval veebis!”','testi.c1':'— Claire B.','testi.t2':'“Elegantne ja selge disain — kliendid saavad minuga otse WhatsAppis ühendust võtta!”','testi.c2':'— Malik T.','testi.t3':'“Suurepärane hinna ja kvaliteedi suhe. Soovitan 100%.”','testi.c3':'— Sofia M.',
-    'footer.faq':'KKK','footer.about':'Meist','footer.legal':'Õiguslik teave','footer.privacy':'Privaatsus','footer.code':'Käitumiskoodeks','footer.copy':'© 2025 EternaWeb — Kõik õigused kaitstud','faq.back':'← Tagasi avalehele','about.back':'← Tagasi avalehele','legal.back':'← Tagasi avalehele','privacy.back':'← Tagasi avalehele','code.back':'← Tagasi avalehele'
-  },
-  ru: {
-    'nav.menu':'Меню','nav.cv':'Резюме','nav.devis':'Ваша информация','nav.temoignages':'Отзывы','hero.subtitle':'Профессиональное резюме — готово за 48 часов','hero.lead':'✨ Премиальный дизайн, быстрая интеграция и готовое решение.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Наши услуги','services.sub':'Откройте наши решения для резюме','devis.h2':'📝 Ваша информация','devis.sub':'Выберите, опишите и отправьте — я получу ваши инструкции.','devis.type':'Тип резюме','devis.colors':'Палитра / цвета','devis.style':'Визуальный стиль','devis.style1':'Сдержанный и элегантный','devis.style2':'Креативный и яркий','devis.style3':'Минималистичный и профессиональный','devis.style4':'Натуральный и мягкий','devis.integrations':'Желаемые опции','devis.other':'Другие пожелания','devis.name':'Имя / Фамилия','devis.email':'Email','devis.note':'Ваше сообщение отправляется напрямую в EternaWeb','btn.send':'Отправить','testi.h2':'💬 Отзывы','testi.t1':'“Очень быстро и профессионально — мой сайт был готов в тот же день!”','testi.c1':'— Claire B.','testi.t2':'“Элегантный и понятный дизайн — клиенты сразу пишут мне в WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Отличное соотношение цены и качества. Рекомендую на 100%.”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'О нас','footer.legal':'Юридическая информация','footer.privacy':'Конфиденциальность','footer.code':'Кодекс поведения','footer.copy':'© 2025 EternaWeb — Все права защищены','faq.back':'← На главную','about.back':'← На главную','legal.back':'← На главную','privacy.back':'← На главную','code.back':'← На главную'
-  },
-  de: {
-    'nav.menu':'Menü','nav.cv':'Lebenslauf','nav.devis':'Ihre Informationen','nav.temoignages':'Bewertungen','hero.subtitle':'Professioneller Lebenslauf — fertig in 48 Std.','hero.lead':'✨ Premium-Design, schnelle Integration und eine fertige Lösung.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Unsere Leistungen','services.sub':'Entdecken Sie unsere CV-Lösungen','devis.h2':'📝 Ihre Informationen','devis.sub':'Auswählen, beschreiben und senden — ich erhalte Ihre Vorgaben.','devis.type':'CV-Typ','devis.colors':'Farbpalette','devis.style':'Visueller Stil','devis.style1':'Schlicht & elegant','devis.style2':'Kreativ & farbenfroh','devis.style3':'Minimalistisch & professionell','devis.style4':'Natürlich & sanft','devis.integrations':'Gewünschte Optionen','devis.other':'Weitere Wünsche','devis.name':'Vor- / Nachname','devis.email':'E-Mail','devis.note':'Ihre Nachricht wird direkt an EternaWeb gesendet','btn.send':'Senden','testi.h2':'💬 Bewertungen','testi.t1':'“Sehr schnell und professionell — meine Website war noch am selben Tag online!”','testi.c1':'— Claire B.','testi.t2':'“Elegantes, klares Design — meine Kunden schreiben mir direkt über WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Hervorragendes Preis-Leistungs-Verhältnis. 100 % empfehlenswert.”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'Über uns','footer.legal':'Impressum','footer.privacy':'Datenschutz','footer.code':'Verhaltenskodex','footer.copy':'© 2025 EternaWeb — Alle Rechte vorbehalten','faq.back':'← Zur Startseite','about.back':'← Zur Startseite','legal.back':'← Zur Startseite','privacy.back':'← Zur Startseite','code.back':'← Zur Startseite'
-  },
-  es: {
-    'nav.menu':'Menú','nav.cv':'CV','nav.devis':'Tus datos','nav.temoignages':'Testimonios','hero.subtitle':'CV profesional — listo en 48 h','hero.lead':'✨ Diseño premium, integración rápida y resultado listo para usar.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Nuestros servicios','services.sub':'Descubre nuestras soluciones CV','devis.h2':'📝 Tus datos','devis.sub':'Elige, describe y envía — recibo tus indicaciones.','devis.type':'Tipo de CV','devis.colors':'Paleta / colores','devis.style':'Estilo visual','devis.style1':'Sencillo y elegante','devis.style2':'Creativo y colorido','devis.style3':'Minimalista y profesional','devis.style4':'Natural y suave','devis.integrations':'Opciones deseadas','devis.other':'Otras solicitudes','devis.name':'Nombre / Apellido','devis.email':'Correo electrónico','devis.note':'Tu mensaje se envía directamente a EternaWeb','btn.send':'Enviar','testi.h2':'💬 Testimonios','testi.t1':'“¡Súper rápida y profesional, mi sitio estuvo en línea el mismo día!”','testi.c1':'— Claire B.','testi.t2':'“Diseño elegante y claro; mis clientes me escriben directamente por WhatsApp.”','testi.c2':'— Malik T.','testi.t3':'“Excelente relación calidad-precio. ¡Recomiendo al 100 %!”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'Sobre nosotros','footer.legal':'Aviso legal','footer.privacy':'Privacidad','footer.code':'Código de conducta','footer.copy':'© 2025 EternaWeb — Todos los derechos reservados','faq.back':'← Volver al inicio','about.back':'← Volver al inicio','legal.back':'← Volver al inicio','privacy.back':'← Volver al inicio','code.back':'← Volver al inicio'
-  },
-  it: {
-    'nav.menu':'Menu','nav.cv':'CV','nav.devis':'Le tue informazioni','nav.temoignages':'Testimonianze','hero.subtitle':'CV professionale — pronto in 48 ore','hero.lead':'✨ Design premium, integrazione rapida e risultato chiavi in mano.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 I nostri servizi','services.sub':'Scopri le nostre soluzioni CV','devis.h2':'📝 Le tue informazioni','devis.sub':'Scegli, descrivi e invia — ricevo le tue indicazioni.','devis.type':'Tipo di CV','devis.colors':'Palette / colori','devis.style':'Stile visivo','devis.style1':'Semplice ed elegante','devis.style2':'Creativo e colorato','devis.style3':'Minimal e professionale','devis.style4':'Naturale e delicato','devis.integrations':'Opzioni desiderate','devis.other':'Altre richieste','devis.name':'Nome / Cognome','devis.email':'Email','devis.note':'Il tuo messaggio viene inviato direttamente a EternaWeb','btn.send':'Invia','testi.h2':'💬 Testimonianze','testi.t1':'“Super veloce e professionale — il mio sito era online lo stesso giorno!”','testi.c1':'— Claire B.','testi.t2':'“Design elegante e chiaro — i miei clienti mi scrivono direttamente su WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Ottimo rapporto qualità/prezzo. Consigliato al 100%.”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'Chi siamo','footer.legal':'Note legali','footer.privacy':'Privacy','footer.code':'Codice di condotta','footer.copy':'© 2025 EternaWeb — Tutti i diritti riservati','faq.back':'← Torna alla home','about.back':'← Torna alla home','legal.back':'← Torna alla home','privacy.back':'← Torna alla home','code.back':'← Torna alla home'
-  }
+const I18N={
+fr:{'nav.menu':'Menu','nav.cv':'CV','nav.devis':'Vos informations','nav.temoignages':'Témoignages','hero.subtitle':'CV professionnel — prêt en 48h','hero.lead':'✨ Un design premium, des intégrations rapides et un rendu clé en main.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Nos services','services.sub':'Découvrez nos solutions CV.','services.cv':'📄 CV','devis.h2':'📝 Vos informations','devis.sub':'Choisissez, décrivez, envoyez — je reçois vos consignes.','devis.type':'Type de CV','devis.opt.cv':'CV','devis.colors':'Palette / couleurs','devis.style':'Style visuel','devis.style1':'Sobre & élégant','devis.style2':'Créatif & coloré','devis.style3':'Minimal & pro','devis.style4':'Nature & doux','devis.integrations':'Options souhaitées','devis.other':'Autres demandes','devis.name':'Prénom / Nom','devis.email':'Email','devis.note':'Votre message est envoyé directement à EternaWeb','btn.send':'Envoyer','btn.choose':'Je choisis cette formule','testi.h2':'💬 Témoignages','testi.t1':'“Super réactive et professionnelle, mon site a été en ligne le jour même !”','testi.c1':'— Claire B.','testi.t2':'“Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”','testi.c2':'— Malik T.','testi.t3':'“Excellent rapport qualité/prix. Je recommande à 100 %.”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'À propos','footer.legal':'Mentions légales','footer.privacy':'Confidentialité','footer.code':'Code de conduite','footer.copy':'© 2025 EternaWeb — Tous droits réservés','cv.title':'Mes Modèles de CV','cv.intro':'Découvrez nos modèles : clairs, modernes et prêts à l’emploi.','cv.model1.title':'CV Structuré','cv.model1.text':'Une présentation professionnelle, claire et organisée, pensée pour les candidatures administratives, techniques et généralistes.','cv.model2.title':'CV Moderne','cv.model2.text':'Un CV présenté comme une véritable page professionnelle en ligne, accessible sur ordinateur comme sur mobile.','cv.preview':'Voir l’aperçu','cv.letter.title':'Lettre de motivation personnalisée','cv.letter.text':'Une lettre personnalisée, cohérente avec votre CV et adaptée au poste visé.','cv.pricing.h2':'💼 Formules CV','cv.pricing.sub':'Un CV en ligne sur-mesure, adapté à vos besoins.','cv.pack1.title':'📝 Pack Starter – 14,99 €','cv.pack1.li1':'Correction orthographique et grammaticale','cv.pack1.li2':'Mise en page simple et structurée (Word/PDF)','cv.pack1.note':'👉 Idéal pour stage, job étudiant ou premier emploi','cv.pack2.title':'🚀 Pack Boost – 29,99 €','cv.pack2.li1':'Inclus toutes les fonctionnalités du Pack Starter','cv.pack2.li2':'Optimisation du contenu (ATS friendly)','cv.pack2.li3':'Ajout de mots-clés stratégiques','cv.pack2.li4':'Pour une meilleure visibilité auprès des recruteurs','cv.pack3.title':'🌐 Pack Premium – 59,99 €','cv.pack3.li1':'Inclus toutes les fonctionnalités du Pack Boost','cv.pack3.li2':'Création d’un CV en ligne (mini-site personnel)','cv.pack3.li3':'Hébergement inclus 1 an','cv.pack3.li4':'Design moderne (ordinateur & mobile)','cv.pack3.li5':'QR code intégré','cv.pack3.li6':'Pour vous démarquer face aux autres candidats','cv.pack4.title':'📄 Lettre de motivation personnalisée – 7,99 €','cv.pack4.li1':'Structure professionnelle','cv.pack4.li2':'Argumentation claire et convaincante','cv.pack4.li3':'Adaptation à l’offre d’emploi','cv.pack4.li4':'Correction orthographique et grammaticale','cv.pack4.li5':'Livraison en Word/PDF','cv.back':'⬅ Retour à l’accueil'},
+en:{'nav.menu':'Menu','nav.cv':'CV','nav.devis':'Your information','nav.temoignages':'Testimonials','hero.subtitle':'Professional CV — ready in 48h','hero.lead':'✨ Premium design, fast integration and a turnkey result.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Our services','services.sub':'Discover our CV solutions.','services.cv':'📄 CV','devis.h2':'📝 Your information','devis.sub':'Choose, describe and send — I receive your instructions.','devis.type':'CV type','devis.opt.cv':'CV','devis.colors':'Palette / colours','devis.style':'Visual style','devis.style1':'Simple & elegant','devis.style2':'Creative & colourful','devis.style3':'Minimal & professional','devis.style4':'Natural & soft','devis.integrations':'Desired options','devis.other':'Other requests','devis.name':'First / Last name','devis.email':'Email','devis.note':'Your message is sent directly to EternaWeb','btn.send':'Send','btn.choose':'Choose this package','testi.h2':'💬 Testimonials','testi.t1':'“Super responsive and professional — my site was online the same day!”','testi.c1':'— Claire B.','testi.t2':'“Elegant, clear design — and my clients can contact me directly via WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Excellent value for money. 100% recommended.”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'About','footer.legal':'Legal notice','footer.privacy':'Privacy','footer.code':'Code of Conduct','footer.copy':'© 2025 EternaWeb — All rights reserved','cv.title':'My CV Templates','cv.intro':'Discover our templates: clear, modern and ready to use.','cv.model1.title':'Structured CV','cv.model1.text':'A clear and organized professional layout for administrative, technical and general applications.','cv.model2.title':'Modern CV','cv.model2.text':'A CV presented as a professional online page, accessible on desktop and mobile.','cv.preview':'View preview','cv.letter.title':'Personalized cover letter','cv.letter.text':'A personalized cover letter, consistent with your CV and tailored to the position.','cv.pricing.h2':'💼 CV Packages','cv.pricing.sub':'A tailor-made CV adapted to your needs.','cv.pack1.title':'📝 Starter Package – €14.99','cv.pack1.li1':'Spelling and grammar correction','cv.pack1.li2':'Simple, structured layout (Word/PDF)','cv.pack1.note':'👉 Ideal for internships, student jobs or first employment','cv.pack2.title':'🚀 Boost Package – €29.99','cv.pack2.li1':'All Starter features included','cv.pack2.li2':'Content optimization (ATS friendly)','cv.pack2.li3':'Strategic keywords','cv.pack2.li4':'Better visibility with recruiters','cv.pack3.title':'🌐 Premium Package – €59.99','cv.pack3.li1':'All Boost features included','cv.pack3.li2':'Online CV creation (personal mini-site)','cv.pack3.li3':'1 year hosting included','cv.pack3.li4':'Modern desktop & mobile design','cv.pack3.li5':'Integrated QR code','cv.pack3.li6':'Stand out from other candidates','cv.pack4.title':'📄 Personalized cover letter – €7.99','cv.pack4.li1':'Professional structure','cv.pack4.li2':'Clear and convincing argumentation','cv.pack4.li3':'Adaptation to the job offer','cv.pack4.li4':'Spelling and grammar correction','cv.pack4.li5':'Delivery in Word/PDF','cv.back':'⬅ Back to home'},
+nl:{'nav.menu':'Menu','nav.cv':'CV','nav.devis':'Uw informatie','nav.temoignages':'Getuigenissen','hero.subtitle':'Professioneel cv — klaar binnen 48 uur','hero.lead':'✨ Premium ontwerp, snelle integratie en een kant-en-klaar resultaat.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Onze diensten','services.sub':'Ontdek onze CV-oplossingen.','services.cv':'📄 CV','devis.h2':'📝 Uw informatie','devis.sub':'Kies, beschrijf en verstuur — ik ontvang uw instructies.','devis.type':'Type CV','devis.opt.cv':'CV','devis.colors':'Palet / kleuren','devis.style':'Visuele stijl','devis.style1':'Eenvoudig & elegant','devis.style2':'Creatief & kleurrijk','devis.style3':'Minimalistisch & professioneel','devis.style4':'Natuurlijk & zacht','devis.integrations':'Gewenste opties','devis.other':'Andere verzoeken','devis.name':'Voornaam / achternaam','devis.email':'E-mail','devis.note':'Uw bericht wordt rechtstreeks naar EternaWeb gestuurd','btn.send':'Verzenden','btn.choose':'Ik kies dit pakket','testi.h2':'💬 Getuigenissen','testi.t1':'“Super snel en professioneel — mijn site stond dezelfde dag online!”','testi.c1':'— Claire B.','testi.t2':'“Elegant en duidelijk ontwerp — mijn klanten kunnen me rechtstreeks via WhatsApp berichten!”','testi.c2':'— Malik T.','testi.t3':'“Uitstekende prijs-kwaliteitverhouding. 100% aanbevolen.”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'Over ons','footer.legal':'Juridische informatie','footer.privacy':'Privacy','footer.code':'Gedragscode','footer.copy':'© 2025 EternaWeb — Alle rechten voorbehouden','cv.title':'Mijn CV-modellen','cv.intro':'Ontdek onze modellen: helder, modern en klaar voor gebruik.','cv.model1.title':'Gestructureerd CV','cv.model1.text':'Een heldere en georganiseerde professionele presentatie voor administratieve, technische en algemene sollicitaties.','cv.model2.title':'Modern CV','cv.model2.text':'Een CV als professionele online pagina, toegankelijk op desktop en mobiel.','cv.preview':'Voorbeeld bekijken','cv.letter.title':'Gepersonaliseerde motivatiebrief','cv.letter.text':'Een persoonlijke motivatiebrief, afgestemd op je CV en de gewenste functie.','cv.pricing.h2':'💼 CV-pakketten','cv.pricing.sub':'Een CV op maat, aangepast aan jouw behoeften.','cv.pack1.title':'📝 Starterpakket – €14,99','cv.pack1.li1':'Spelling- en grammaticacorrectie','cv.pack1.li2':'Eenvoudige, gestructureerde opmaak (Word/PDF)','cv.pack1.note':'👉 Ideaal voor stage, studentenjob of eerste baan','cv.pack2.title':'🚀 Boostpakket – €29,99','cv.pack2.li1':'Alle functies van het Starterpakket','cv.pack2.li2':'Contentoptimalisatie (ATS-vriendelijk)','cv.pack2.li3':'Strategische trefwoorden','cv.pack2.li4':'Betere zichtbaarheid bij recruiters','cv.pack3.title':'🌐 Premiumpakket – €59,99','cv.pack3.li1':'Alle functies van het Boostpakket','cv.pack3.li2':'Online CV (persoonlijke minisite)','cv.pack3.li3':'1 jaar hosting inbegrepen','cv.pack3.li4':'Modern ontwerp voor desktop en mobiel','cv.pack3.li5':'QR-code geïntegreerd','cv.pack3.li6':'Val meer op bij kandidaten','cv.pack4.title':'📄 Gepersonaliseerde motivatiebrief – €7,99','cv.pack4.li1':'Professionele structuur','cv.pack4.li2':'Duidelijke en overtuigende argumentatie','cv.pack4.li3':'Aanpassing aan de vacature','cv.pack4.li4':'Spelling- en grammaticacorrectie','cv.pack4.li5':'Levering in Word/PDF','cv.back':'⬅ Terug naar home'},
+et:{'nav.menu':'Menüü','nav.cv':'CV','nav.devis':'Teie teave','nav.temoignages':'Iseloomustused','hero.subtitle':'Professionaalne CV – valmis 48 tunniga','hero.lead':'✨ Premium disain, kiire teostus ja valmis lahendus.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Meie teenused','services.sub':'Avastage meie CV-lahendused.','services.cv':'📄 CV','devis.h2':'📝 Teie teave','devis.sub':'Valige, kirjeldage ja saatke — saan teie juhised kätte.','devis.type':'CV tüüp','devis.opt.cv':'CV','devis.colors':'Värvipalett','devis.style':'Visuaalne stiil','devis.style1':'Lihtne ja elegantne','devis.style2':'Loominguline ja värviline','devis.style3':'Minimalistlik ja professionaalne','devis.style4':'Looduslik ja pehme','devis.integrations':'Soovitud valikud','devis.other':'Muud soovid','devis.name':'Ees- ja perekonnanimi','devis.email':'E-post','devis.note':'Teie sõnum saadetakse otse EternaWebile','btn.send':'Saada','btn.choose':'Valin selle paketi','testi.h2':'💬 Iseloomustused','testi.t1':'“Väga kiire ja professionaalne — minu sait oli samal päeval veebis!”','testi.c1':'— Claire B.','testi.t2':'“Elegantne ja selge disain — kliendid saavad minuga otse WhatsAppis ühendust võtta!”','testi.c2':'— Malik T.','testi.t3':'“Suurepärane hinna ja kvaliteedi suhe. Soovitan 100%.”','testi.c3':'— Sofia M.','footer.faq':'KKK','footer.about':'Meist','footer.legal':'Õiguslik teave','footer.privacy':'Privaatsus','footer.code':'Käitumiskoodeks','footer.copy':'© 2025 EternaWeb — Kõik õigused kaitstud','cv.title':'Minu CV-mallid','cv.intro':'Tutvu meie selgete, kaasaegsete ja kasutusvalmis mallidega.','cv.model1.title':'Struktureeritud CV','cv.model1.text':'Selge ja korrastatud professionaalne vorm administratiivsetele, tehnilistele ja üldistele kandideerimistele.','cv.model2.title':'Moodne CV','cv.model2.text':'CV kui professionaalne veebileht, mida saab vaadata arvutis ja mobiilis.','cv.preview':'Vaata eelvaadet','cv.letter.title':'Isikupärastatud motivatsioonikiri','cv.letter.text':'Isikupärastatud motivatsioonikiri, mis sobib kokku CV-ga ja sihitud ametikohaga.','cv.back':'← Tagasi avalehele'},
+ru:{'nav.menu':'Меню','nav.cv':'Резюме','nav.devis':'Ваша информация','nav.temoignages':'Отзывы','hero.subtitle':'Профессиональное резюме — готово за 48 часов','hero.lead':'✨ Премиальный дизайн, быстрая интеграция и готовое решение.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Наши услуги','services.sub':'Откройте наши решения для резюме.','services.cv':'📄 Резюме','devis.h2':'📝 Ваша информация','devis.sub':'Выберите, опишите и отправьте — я получу ваши инструкции.','devis.type':'Тип резюме','devis.opt.cv':'Резюме','devis.colors':'Палитра / цвета','devis.style':'Визуальный стиль','devis.style1':'Сдержанный и элегантный','devis.style2':'Креативный и яркий','devis.style3':'Минималистичный и профессиональный','devis.style4':'Натуральный и мягкий','devis.integrations':'Желаемые опции','devis.other':'Другие пожелания','devis.name':'Имя / Фамилия','devis.email':'Email','devis.note':'Ваше сообщение отправляется напрямую в EternaWeb','btn.send':'Отправить','btn.choose':'Выбираю этот пакет','testi.h2':'💬 Отзывы','testi.t1':'“Очень быстро и профессионально — мой сайт был готов в тот же день!”','testi.c1':'— Claire B.','testi.t2':'“Элегантный и понятный дизайн — клиенты сразу пишут мне в WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Отличное соотношение цены и качества. Рекомендую на 100%.”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'О нас','footer.legal':'Юридическая информация','footer.privacy':'Конфиденциальность','footer.code':'Кодекс поведения','footer.copy':'© 2025 EternaWeb — Все права защищены','cv.title':'Мои шаблоны резюме','cv.intro':'Посмотрите наши шаблоны: понятные, современные и готовые к использованию.','cv.model1.title':'Структурированное резюме','cv.model1.text':'Чёткое и организованное профессиональное оформление для административных, технических и общих вакансий.','cv.model2.title':'Современное резюме','cv.model2.text':'Резюме в формате профессиональной онлайн-страницы для компьютера и мобильных устройств.','cv.preview':'Посмотреть','cv.letter.title':'Персонализированное сопроводительное письмо','cv.letter.text':'Персонализированное письмо, согласованное с резюме и адаптированное под вакансию.','cv.back':'⬅ На главную'},
+de:{'nav.menu':'Menü','nav.cv':'Lebenslauf','nav.devis':'Ihre Informationen','nav.temoignages':'Bewertungen','hero.subtitle':'Professioneller Lebenslauf — fertig in 48 Std.','hero.lead':'✨ Premium-Design, schnelle Integration und eine fertige Lösung.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Unsere Leistungen','services.sub':'Entdecken Sie unsere CV-Lösungen.','services.cv':'📄 Lebenslauf','devis.h2':'📝 Ihre Informationen','devis.sub':'Auswählen, beschreiben und senden — ich erhalte Ihre Vorgaben.','devis.type':'CV-Typ','devis.opt.cv':'Lebenslauf','devis.colors':'Farbpalette','devis.style':'Visueller Stil','devis.style1':'Schlicht & elegant','devis.style2':'Kreativ & farbenfroh','devis.style3':'Minimalistisch & professionell','devis.style4':'Natürlich & sanft','devis.integrations':'Gewünschte Optionen','devis.other':'Weitere Wünsche','devis.name':'Vor- / Nachname','devis.email':'E-Mail','devis.note':'Ihre Nachricht wird direkt an EternaWeb gesendet','btn.send':'Senden','btn.choose':'Dieses Paket wählen','testi.h2':'💬 Bewertungen','testi.t1':'“Sehr schnell und professionell — meine Website war noch am selben Tag online!”','testi.c1':'— Claire B.','testi.t2':'“Elegantes, klares Design — meine Kunden schreiben mir direkt über WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Hervorragendes Preis-Leistungs-Verhältnis. 100 % empfehlenswert.”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'Über uns','footer.legal':'Impressum','footer.privacy':'Datenschutz','footer.code':'Verhaltenskodex','footer.copy':'© 2025 EternaWeb — Alle Rechte vorbehalten','cv.title':'Meine Lebenslauf-Vorlagen','cv.intro':'Entdecken Sie unsere klaren, modernen und einsatzbereiten Vorlagen.','cv.model1.title':'Strukturierter Lebenslauf','cv.model1.text':'Eine klare und geordnete professionelle Gestaltung für administrative, technische und allgemeine Bewerbungen.','cv.model2.title':'Moderner Lebenslauf','cv.model2.text':'Ein Lebenslauf als professionelle Online-Seite für Desktop und Mobilgeräte.','cv.preview':'Vorschau ansehen','cv.letter.title':'Persönliches Motivationsschreiben','cv.letter.text':'Ein persönliches Motivationsschreiben, passend zu Ihrem Lebenslauf und zur gewünschten Stelle.','cv.back':'⬅ Zur Startseite'},
+es:{'nav.menu':'Menú','nav.cv':'CV','nav.devis':'Tus datos','nav.temoignages':'Testimonios','hero.subtitle':'CV profesional — listo en 48 h','hero.lead':'✨ Diseño premium, integración rápida y resultado listo para usar.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 Nuestros servicios','services.sub':'Descubre nuestras soluciones CV.','services.cv':'📄 CV','devis.h2':'📝 Tus datos','devis.sub':'Elige, describe y envía — recibo tus indicaciones.','devis.type':'Tipo de CV','devis.opt.cv':'CV','devis.colors':'Paleta / colores','devis.style':'Estilo visual','devis.style1':'Sencillo y elegante','devis.style2':'Creativo y colorido','devis.style3':'Minimalista y profesional','devis.style4':'Natural y suave','devis.integrations':'Opciones deseadas','devis.other':'Otras solicitudes','devis.name':'Nombre / Apellido','devis.email':'Correo electrónico','devis.note':'Tu mensaje se envía directamente a EternaWeb','btn.send':'Enviar','btn.choose':'Elijo este paquete','testi.h2':'💬 Testimonios','testi.t1':'“¡Súper rápida y profesional, mi sitio estuvo en línea el mismo día!”','testi.c1':'— Claire B.','testi.t2':'“Diseño elegante y claro; mis clientes me escriben directamente por WhatsApp.”','testi.c2':'— Malik T.','testi.t3':'“Excelente relación calidad-precio. ¡Recomiendo al 100 %!”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'Sobre nosotros','footer.legal':'Aviso legal','footer.privacy':'Privacidad','footer.code':'Código de conducta','footer.copy':'© 2025 EternaWeb — Todos los derechos reservados','cv.title':'Mis modelos de CV','cv.intro':'Descubre nuestros modelos: claros, modernos y listos para usar.','cv.model1.title':'CV estructurado','cv.model1.text':'Una presentación profesional, clara y organizada para candidaturas administrativas, técnicas y generales.','cv.model2.title':'CV moderno','cv.model2.text':'Un CV presentado como una página profesional en línea, accesible desde ordenador y móvil.','cv.preview':'Ver vista previa','cv.letter.title':'Carta de motivación personalizada','cv.letter.text':'Una carta personalizada, coherente con tu CV y adaptada al puesto.','cv.back':'⬅ Volver al inicio'},
+it:{'nav.menu':'Menu','nav.cv':'CV','nav.devis':'Le tue informazioni','nav.temoignages':'Testimonianze','hero.subtitle':'CV professionale — pronto in 48 ore','hero.lead':'✨ Design premium, integrazione rapida e risultato chiavi in mano.','cta.whatsapp':'WhatsApp','cta.paypal':'PayPal','services.h2':'🚀 I nostri servizi','services.sub':'Scopri le nostre soluzioni CV.','services.cv':'📄 CV','devis.h2':'📝 Le tue informazioni','devis.sub':'Scegli, descrivi e invia — ricevo le tue indicazioni.','devis.type':'Tipo di CV','devis.opt.cv':'CV','devis.colors':'Palette / colori','devis.style':'Stile visivo','devis.style1':'Semplice ed elegante','devis.style2':'Creativo e colorato','devis.style3':'Minimal e professionale','devis.style4':'Naturale e delicato','devis.integrations':'Opzioni desiderate','devis.other':'Altre richieste','devis.name':'Nome / Cognome','devis.email':'Email','devis.note':'Il tuo messaggio viene inviato direttamente a EternaWeb','btn.send':'Invia','btn.choose':'Scelgo questo pacchetto','testi.h2':'💬 Testimonianze','testi.t1':'“Super veloce e professionale — il mio sito era online lo stesso giorno!”','testi.c1':'— Claire B.','testi.t2':'“Design elegante e chiaro — i miei clienti mi scrivono direttamente su WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Ottimo rapporto qualità/prezzo. Consigliato al 100%.”','testi.c3':'— Sofia M.','testi.h2':'💬 Testimonianze','testi.t1':'“Super veloce e professionale — il mio sito era online lo stesso giorno!”','testi.c1':'— Claire B.','testi.t2':'“Design elegante e chiaro — i miei clienti mi scrivono direttamente su WhatsApp!”','testi.c2':'— Malik T.','testi.t3':'“Ottimo rapporto qualità/prezzo. Consigliato al 100%.”','testi.c3':'— Sofia M.','footer.faq':'FAQ','footer.about':'Chi siamo','footer.legal':'Note legali','footer.privacy':'Privacy','footer.code':'Codice di condotta','footer.copy':'© 2025 EternaWeb — Tutti i diritti riservati','cv.title':'I miei modelli di CV','cv.intro':'Scopri i nostri modelli: chiari, moderni e pronti all’uso.','cv.model1.title':'CV strutturato','cv.model1.text':'Una presentazione professionale, chiara e organizzata per candidature amministrative, tecniche e generali.','cv.model2.title':'CV moderno','cv.model2.text':'Un CV presentato come una vera pagina professionale online, accessibile da computer e mobile.','cv.preview':'Visualizza anteprima','cv.letter.title':'Lettera di motivazione personalizzata','cv.letter.text':'Una lettera personalizzata, coerente con il CV e adatta alla posizione desiderata.','cv.back':'⬅ Torna alla home'}
 };
 
 function applyLanguage(lang){
-  const dict = I18N[lang] || I18N.fr;
-  document.documentElement.lang = lang;
-  $$('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    if (dict[key] !== undefined) el.innerHTML = dict[key];
-  });
-  localStorage.setItem('eternaweb-lang', lang);
-  const menu = $('#langMenu');
-  if(menu){ menu.classList.remove('open'); }
-  const btn = $('#langBtn');
-  if(btn) btn.setAttribute('aria-expanded','false');
+ const dict=I18N[lang]||I18N.fr;
+ document.documentElement.lang=lang;
+ $$('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(dict[k]!==undefined)el.textContent=dict[k];});
+ localStorage.setItem('eternaweb-lang',lang);
+ const lm=$('#langMenu'),lb=$('#langBtn');
+ if(lm)lm.classList.remove('show');
+ if(lb)lb.setAttribute('aria-expanded','false');
 }
-
 function initLanguage(){
-  const saved = localStorage.getItem('eternaweb-lang') || 'fr';
-  applyLanguage(saved);
-  $$('.lang-item').forEach(item => item.addEventListener('click', () => applyLanguage(item.dataset.lang)));
+ const saved=localStorage.getItem('eternaweb-lang')||'fr';
+ applyLanguage(saved);
+ $$('.lang-item').forEach(item=>item.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();applyLanguage(item.dataset.lang);}));
 }
-
-function scrollToId(id){
-  const el = document.getElementById(id);
-  if(!el) return false;
-  el.scrollIntoView({behavior:'smooth', block:'start'});
-  return true;
-}
-
+function scrollToId(id){const el=document.getElementById(id);if(!el)return false;el.scrollIntoView({behavior:'smooth',block:'start'});return true;}
 function initNavigation(){
-  const menuBtn = $('#menuBtn');
-  const mainMenu = $('#mainMenu');
-  if(menuBtn && mainMenu){
-    menuBtn.addEventListener('click', e => {
-      e.stopPropagation();
-      const open = mainMenu.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-  }
-
-  const langBtn = $('#langBtn');
-  const langMenu = $('#langMenu');
-  if(langBtn && langMenu){
-    langBtn.addEventListener('click', e => {
-      e.stopPropagation();
-      const open = langMenu.classList.toggle('open');
-      langBtn.setAttribute('aria-expanded', String(open));
-    });
-  }
-
-  document.addEventListener('click', e => {
-    if(mainMenu && !mainMenu.contains(e.target) && e.target !== menuBtn){
-      mainMenu.classList.remove('open');
-      if(menuBtn) menuBtn.setAttribute('aria-expanded','false');
-    }
-    if(langMenu && !langMenu.contains(e.target) && e.target !== langBtn){
-      langMenu.classList.remove('open');
-      if(langBtn) langBtn.setAttribute('aria-expanded','false');
-    }
-  });
-
-  const goDevis = $('#goDevis');
-  if(goDevis){
-    goDevis.addEventListener('click', e => {
-      if(scrollToId('devis')) e.preventDefault();
-      if(mainMenu){ mainMenu.classList.remove('open'); }
-    });
-  }
-
-  $$('a[href="#temoignages"]').forEach(a => a.addEventListener('click', e => {
-    if(scrollToId('temoignages')) e.preventDefault();
-    if(mainMenu) mainMenu.classList.remove('open');
-  }));
-
-  $$('a[href="#devis"]').forEach(a => a.addEventListener('click', e => {
-    if(scrollToId('devis')) e.preventDefault();
-  }));
+ const menuBtn=$('#menuBtn'),mainMenu=$('#mainMenu');
+ if(menuBtn&&mainMenu)menuBtn.addEventListener('click',e=>{e.stopPropagation();const open=mainMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+ const langBtn=$('#langBtn'),langMenu=$('#langMenu');
+ if(langBtn&&langMenu)langBtn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const open=langMenu.classList.toggle('show');langBtn.setAttribute('aria-expanded',String(open));});
+ document.addEventListener('click',e=>{
+  if(mainMenu&&!mainMenu.contains(e.target)&&e.target!==menuBtn){mainMenu.classList.remove('open');if(menuBtn)menuBtn.setAttribute('aria-expanded','false');}
+  if(langMenu&&!langMenu.contains(e.target)&&e.target!==langBtn){langMenu.classList.remove('show');if(langBtn)langBtn.setAttribute('aria-expanded','false');}
+ });
+ const goDevis=$('#goDevis');
+ if(goDevis)goDevis.addEventListener('click',e=>{if(scrollToId('devis'))e.preventDefault();if(mainMenu)mainMenu.classList.remove('open');});
+ $$('a[href="#temoignages"]').forEach(a=>a.addEventListener('click',e=>{if(scrollToId('temoignages'))e.preventDefault();if(mainMenu)mainMenu.classList.remove('open');}));
+ $$('a[href="#devis"]').forEach(a=>a.addEventListener('click',e=>{if(scrollToId('devis'))e.preventDefault();}));
 }
-
 function initForm(){
-  const send = $('#sendForm');
-  const form = $('#devisForm');
-  if(!send || !form) return;
-  send.addEventListener('click', () => {
-    if(!form.reportValidity()) return;
-    const fd = new FormData(form);
-    const options = fd.getAll('int').join(', ') || 'Aucune';
-    const body = [
-      'Bonjour EternaWeb,','',
-      `Type : ${fd.get('type') || 'CV'}`,
-      `Couleurs : ${fd.get('couleurs') || 'Non précisé'}`,
-      `Style : ${fd.get('style') || 'Non précisé'}`,
-      `Options : ${options}`,
-      `Autres demandes : ${fd.get('contenu') || 'Aucune'}`,
-      `Nom : ${fd.get('nom') || ''}`,
-      `Email : ${fd.get('email') || ''}`,'','Merci.'
-    ].join('\n');
-    window.location.href = `mailto:${MAIL_TO}?subject=${encodeURIComponent('Demande EternaWeb')}&body=${encodeURIComponent(body)}`;
-  });
+ const send=$('#sendForm'),form=$('#devisForm');if(!send||!form)return;
+ send.addEventListener('click',()=>{if(!form.reportValidity())return;const fd=new FormData(form);const options=fd.getAll('int').join(', ')||'Aucune';const body=['Bonjour EternaWeb,','',`Type : ${fd.get('type')||'CV'}`,`Couleurs : ${fd.get('couleurs')||'Non précisé'}`,`Style : ${fd.get('style')||'Non précisé'}`,`Options : ${options}`,`Autres demandes : ${fd.get('contenu')||'Aucune'}`,`Nom : ${fd.get('nom')||''}`,`Email : ${fd.get('email')||''}`,'','Merci.'].join('\n');window.location.href=`mailto:${MAIL_TO}?subject=${encodeURIComponent('Demande EternaWeb')}&body=${encodeURIComponent(body)}`;});
 }
-
-function init(){
-  initLanguage();
-  initNavigation();
-  initForm();
-  console.log('🚀 EternaWeb : navigation, langues et formulaire initialisés');
+function initPlans(){
+ $$('.choose-plan').forEach(btn=>btn.addEventListener('click',()=>{const plan=btn.dataset.plan||'';const input=$('#planInput');if(input)input.value=plan;scrollToId('devis');const type=$('[name="type"]');if(type)type.focus();}));
 }
-
-document.addEventListener('DOMContentLoaded', init);
+function init(){initLanguage();initNavigation();initForm();initPlans();console.log('🚀 EternaWeb : moteur unique initialisé');}
+document.addEventListener('DOMContentLoaded',init);
