@@ -27,14 +27,14 @@
 
   function init() {
     // Vos informations : navigation directe vers la section réelle.
-    var info = document.getElementById('goInformations');
-    var target = document.getElementById('informations');
+    var info = document.getElementById('godevis');
+    var target = document.getElementById('devis');
     if (info && target) {
       info.onclick = function (e) {
         e.preventDefault();
         e.stopImmediatePropagation();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.replaceState(null, '', '#informations');
+        history.replaceState(null, '', '#devis');
         return false;
       };
     }
