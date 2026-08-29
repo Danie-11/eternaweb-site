@@ -10,11 +10,9 @@
   <link rel="icon" href="favicon-64x64.png" type="image/png" sizes="64x64">
   <link rel="stylesheet" href="style-desktop.css" media="screen and (min-width: 601px)">
   <link rel="stylesheet" href="style-mobile.css" media="screen and (max-width: 600px)">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JZJ12VTGE"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-7JZJ12VTGE');</script>
 </head>
 <body>
-  <div class="announce-bar" role="status" aria-label="Annonce">🚀 Site livré en 48h • <strong>Paiement sécurisé</strong> • Support WhatsApp</div>
+  <div class="announce-bar" role="status" aria-label="Annonce" data-i18n="announce">🚀 Site livré en 48h • Paiement sécurisé • Support WhatsApp</div>
   <div class="logo-container"><div class="logo-badge"><img src="eternaweb-logo.png" alt="EternaWeb" class="logo-simple"></div></div>
   <button class="menu-toggle" id="menuBtn" aria-expanded="false">☰ <span data-i18n="nav.menu">Menu</span></button>
   <nav id="mainMenu" class="menu" aria-label="Navigation principale">
@@ -25,15 +23,53 @@
     </ul>
   </nav>
   <div class="floating-tools" aria-label="Outils rapides">
-    <div class="lang-wrap"><button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button>
+    <div class="lang-wrap">
+      <button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button>
       <div class="lang-menu" id="langMenu" role="menu">
-        <button class="lang-item" data-lang="fr" role="menuitem">🇫🇷 Français</button><button class="lang-item" data-lang="en" role="menuitem">🇬🇧 English</button><button class="lang-item" data-lang="nl" role="menuitem">🇳🇱 Nederlands</button><button class="lang-item" data-lang="et" role="menuitem">🇪🇪 Estonie</button><button class="lang-item" data-lang="ru" role="menuitem">🇷🇺 Русский</button><button class="lang-item" data-lang="de" role="menuitem">🇩🇪 Deutsch</button><button class="lang-item" data-lang="es" role="menuitem">🇪🇸 Español</button><button class="lang-item" data-lang="it" role="menuitem">🇮🇹 Italiano</button>
+        <button class="lang-item" data-lang="fr" role="menuitem">🇫🇷 Français</button>
+        <button class="lang-item" data-lang="en" role="menuitem">🇬🇧 English</button>
+        <button class="lang-item" data-lang="nl" role="menuitem">🇳🇱 Nederlands</button>
+        <button class="lang-item" data-lang="et" role="menuitem">🇪🇪 Eesti</button>
+        <button class="lang-item" data-lang="ru" role="menuitem">🇷🇺 Русский</button>
+        <button class="lang-item" data-lang="de" role="menuitem">🇩🇪 Deutsch</button>
+        <button class="lang-item" data-lang="es" role="menuitem">🇪🇸 Español</button>
+        <button class="lang-item" data-lang="it" role="menuitem">🇮🇹 Italiano</button>
       </div>
     </div>
   </div>
-  <section class="hero-gold" id="cv"><div class="hero-wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;padding:2rem 1rem;"><img src="images/logo-eternaweb.png" class="hero-logo" alt="EternaWeb logo" style="max-width:180px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));"><h1 class="gold-sub" data-i18n="hero.subtitle">CV professionnel — prêt en 48h</h1><p class="gold-lead" data-i18n="hero.lead">✨ Un design premium, des intégrations rapides et un rendu clé en main.</p><div class="cta-row"><a href="https://wa.me/33749723434" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta.whatsapp">WhatsApp</span></a><a href="https://paypal.me/DanielleTKab?country.x=FR&amp;locale.x=fr_FR" target="_blank" rel="noopener" class="btn btn-pp"><span data-i18n="cta.paypal">PayPal</span></a></div></div></section>
-  <section id="services" class="container models"><h2 data-i18n="services.h2">🚀 Nos services</h2><p data-i18n="services.sub">Découvrez nos solutions CV.</p><div class="cta-row"><a href="cv.html" class="btn btn-primary" data-i18n="services.cv">📄 CV</a></div></section>
-  <div id="devis" class="page-card"><h2 data-i18n="devis.h2">📝 Vos informations</h2><p class="sub" data-i18n="devis.sub">Choisissez, décrivez, envoyez — je reçois vos consignes.</p><form id="devisForm" class="devis-grid"><input type="hidden" name="plan" id="planInput" value=""><label><span data-i18n="devis.type">Type de CV</span><select name="type" required><option value="CV" data-i18n="devis.opt.cv">CV</option></select></label><label><span data-i18n="devis.colors">Palette / couleurs</span><input name="couleurs" type="text" placeholder="Ex. beige & doré, brun café…"></label><label><span data-i18n="devis.style">Style visuel</span><select name="style"><option data-i18n="devis.style1">Sobre & élégant</option><option data-i18n="devis.style2">Créatif & coloré</option><option data-i18n="devis.style3">Minimal & pro</option><option data-i18n="devis.style4">Nature & doux</option></select></label><fieldset class="full"><legend data-i18n="devis.integrations">Options souhaitées</legend><label><input type="checkbox" name="int" value="CV PDF"> CV PDF</label><label><input type="checkbox" name="int" value="CV en ligne"> CV en ligne</label><label><input type="checkbox" name="int" value="QR code"> QR code</label><label><input type="checkbox" name="int" value="Lettre de motivation"> Lettre de motivation</label></fieldset><label class="full"><span data-i18n="devis.other">Autres demandes</span><textarea name="contenu" rows="3" placeholder="Ce que vous avez déjà / liens drive / consignes…"></textarea></label><div class="grid-2"><label><span data-i18n="devis.name">Prénom / Nom</span><input name="nom" type="text" placeholder="Votre nom"></label><label><span data-i18n="devis.email">Email</span><input name="email" type="email" placeholder="vous@exemple.com"></label></div><button type="button" id="sendForm" class="btn btn-primary" data-i18n="btn.send">Envoyer</button><p class="tiny" data-i18n="devis.note">Votre message est envoyé directement à EternaWeb</p></form></div>
+  <section class="hero-gold" id="cv">
+    <div class="hero-wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;padding:2rem 1rem;">
+      <img src="images/logo-eternaweb.png" class="hero-logo" alt="EternaWeb logo" style="max-width:180px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));">
+      <h1 class="gold-sub" data-i18n="hero.subtitle">CV professionnel — prêt en 48h</h1>
+      <p class="gold-lead" data-i18n="hero.lead">✨ Un design premium, des intégrations rapides et un rendu clé en main.</p>
+      <div class="cta-row"><a href="https://wa.me/33749723434" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta.whatsapp">WhatsApp</span></a><a href="https://paypal.me/DanielleTKab?country.x=FR&amp;locale.x=fr_FR" target="_blank" rel="noopener" class="btn btn-pp"><span data-i18n="cta.paypal">PayPal</span></a></div>
+    </div>
+  </section>
+  <section id="services" class="container models"><h2 data-i18n="services.h2">🚀 Nos services</h2><p data-i18n="services.sub">Découvrez nos solutions CV</p><div class="cta-row"><a href="cv.html" class="btn btn-primary" data-i18n="services.cv">📄 CV</a></div></section>
+  <div id="devis" class="page-card devis-open">
+    <button type="button" id="closeDevis" class="devis-close" aria-label="Fermer">×</button>
+    <h2 data-i18n="devis.h2">📝 Vos informations</h2>
+    <p class="sub" data-i18n="devis.sub">Choisissez, décrivez, envoyez — je reçois vos consignes.</p>
+    <form id="devisForm" class="devis-grid">
+      <input type="hidden" name="plan" id="planInput" value="">
+      <label><span data-i18n="devis.type">Type de site</span><select name="type" required><option value="CV" data-i18n="devis.opt.cv">CV</option></select></label>
+      <label><span data-i18n="devis.colors">Palette / couleurs</span><input name="couleurs" type="text" data-i18n-placeholder="devis.colorsPlaceholder" placeholder="Ex. beige & doré, brun café…"></label>
+      <label><span data-i18n="devis.style">Style visuel</span><select name="style"><option data-i18n="devis.style1">Sobre & élégant</option><option data-i18n="devis.style2">Créatif & coloré</option><option data-i18n="devis.style3">Minimal & pro</option><option data-i18n="devis.style4">Nature & doux</option></select></label>
+      <label class="full"><span data-i18n="devis.plan">Formule choisie</span><input id="planDisplay" type="text" readonly data-i18n-placeholder="devis.planPlaceholder" placeholder="Choisissez une formule depuis la page CV…"></label>
+      <fieldset class="full"><legend data-i18n="devis.integrations">Options souhaitées</legend>
+        <label><input type="checkbox" name="int" value="CV PDF"><span data-i18n="devis.int.pdf">CV PDF</span></label>
+        <label><input type="checkbox" name="int" value="CV en ligne"><span data-i18n="devis.int.online">CV en ligne</span></label>
+        <label><input type="checkbox" name="int" value="QR code"><span data-i18n="devis.int.qr">QR code</span></label>
+        <label><input type="checkbox" name="int" value="Lettre de motivation"><span data-i18n="devis.int.letter">Lettre de motivation</span></label>
+      </fieldset>
+      <label class="full"><span data-i18n="devis.file">Ajouter un CV, une lettre ou un ancien document</span><input id="devisFile" name="document" type="file" accept=".pdf,.doc,.docx"><small id="fileName" data-i18n="devis.fileHint">Sélectionnez un fichier PDF, Word ou DOCX.</small></label>
+      <label class="full"><span data-i18n="devis.drive">Lien Drive / document déjà partagé</span><input name="drive" type="url" data-i18n-placeholder="devis.drivePlaceholder" placeholder="Collez votre lien Drive ici…"></label>
+      <label class="full"><span data-i18n="devis.other">Autres demandes</span><textarea name="contenu" rows="3" data-i18n-placeholder="devis.otherPlaceholder" placeholder="Ce que vous avez déjà / liens / consignes…"></textarea></label>
+      <div class="grid-2"><label><span data-i18n="devis.name">Prénom / Nom</span><input name="nom" type="text" placeholder="Votre nom"></label><label><span data-i18n="devis.email">Email</span><input name="email" type="email" placeholder="vous@exemple.com"></label></div>
+      <button type="button" id="sendForm" class="btn btn-primary" data-i18n="btn.send">Envoyer</button>
+      <p class="tiny" data-i18n="devis.note">Votre message est envoyé directement à EternaWeb</p>
+    </form>
+  </div>
   <section id="temoignages" class="testimonials"><h2 data-i18n="testi.h2">💬 Témoignages</h2><div class="t-grid"><blockquote><span data-i18n="testi.t1">“Super réactive et professionnelle, mon site a été en ligne le jour même !”</span><cite data-i18n="testi.c1">— Claire B.</cite></blockquote><blockquote><span data-i18n="testi.t2">“Design élégant, clair, et surtout… mes clients m’écrivent directement via WhatsApp !”</span><cite data-i18n="testi.c2">— Malik T.</cite></blockquote><blockquote><span data-i18n="testi.t3">“Excellent rapport qualité/prix. Je recommande à 100 %.”</span><cite data-i18n="testi.c3">— Sofia M.</cite></blockquote></div></section>
   <footer class="footer" role="contentinfo"><div class="footer-columns"><nav class="footer-info" aria-label="Liens légaux"><a href="faq.html" data-i18n="footer.faq">FAQ</a><a href="faq.html" class="footer-contact">💬 Me contacter</a><a href="a-propos.html" data-i18n="footer.about">À propos</a><a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a><a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a><a href="code-de-conduite.html" data-i18n="footer.code">Code de conduite</a></nav><p class="copyright" data-i18n="footer.copy">© 2025 EternaWeb — Tous droits réservés</p></div></footer>
   <script src="app.js" defer></script>
