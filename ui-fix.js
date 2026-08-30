@@ -1,4 +1,4 @@
-/* EternaWeb — sécurité UI + compactage accueil */
+/* EternaWeb — sécurité UI + compactage accueil + avis */
 (function(){
   'use strict';
   function ready(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn,{once:true});else fn();}
@@ -51,9 +51,29 @@
     '}';
     document.head.appendChild(s);
   }
+  function setupAvis(){
+    if(document.getElementById('eternaweb-avis-ui'))return;
+    var section=document.getElementById('temoignages');
+    if(!section)return;
+    var style=document.createElement('style');style.id='eternaweb-avis-ui';
+    style.textContent='#temoignages.avis-section{width:min(760px,92%);margin:18px auto 24px;padding:18px 16px;text-align:center;background:rgba(255,255,255,.94);border-radius:18px;box-shadow:0 8px 24px rgba(73,50,38,.08)}#temoignages.avis-section h2{margin:0 0 6px;color:#243d58}#temoignages .avis-sub{margin:0 auto 12px;color:#596879;font-size:.92rem}.avis-open-btn{border:0;cursor:pointer;padding:11px 18px;border-radius:10px;font-weight:700;font-size:.9rem;background:linear-gradient(180deg,#d7c39a,#c2a875);color:#fff;box-shadow:0 5px 12px rgba(80,60,35,.12)}.avis-open-btn:active{transform:translateY(1px)}#eternaweb-avis-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(25,28,34,.58)}#eternaweb-avis-modal.show{display:flex}.avis-modal-card{width:min(720px,96vw);max-height:90vh;overflow:auto;background:#fff;border-radius:20px;padding:22px 18px;box-shadow:0 18px 55px rgba(0,0,0,.25);position:relative}.avis-modal-card h3{margin:0 42px 5px;color:#243d58;font-size:1.45rem}.avis-modal-sub{margin:0 42px 16px;color:#5b6875;font-size:.9rem}.avis-close{position:absolute;right:12px;top:10px;width:40px;height:40px;border:1px solid #bbb;border-radius:9px;background:#fff;font-size:28px;line-height:36px;cursor:pointer;color:#333}.avis-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}.avis-item{margin:0;padding:13px;border-radius:13px;background:#faf9f6;border:1px solid rgba(80,60,35,.10);font-size:.86rem;line-height:1.4;color:#3f4c58}.avis-item cite{display:block;margin-top:8px;font-style:normal;font-weight:700;color:#263f59}.avis-form{border-top:1px solid #e6e1d8;padding-top:16px}.avis-form h4{margin:0 0 10px;color:#243d58}.avis-fields{display:grid;grid-template-columns:1fr 1fr;gap:9px}.avis-form input,.avis-form textarea,.avis-form select{width:100%;box-sizing:border-box;border:1px solid #d8d5cf;border-radius:9px;padding:10px;font:inherit;background:#fff}.avis-form textarea{min-height:90px;resize:vertical;grid-column:1/-1}.avis-form .avis-submit{margin-top:10px;border:0;border-radius:10px;padding:10px 16px;background:#243d58;color:#fff;font-weight:700;cursor:pointer}.avis-note{margin:8px 0 0;font-size:.75rem;color:#707070}@media(max-width:600px){#temoignages.avis-section{width:88%;padding:12px 10px}.avis-list{grid-template-columns:1fr;gap:7px}.avis-modal-card{padding:18px 12px;border-radius:16px}.avis-fields{grid-template-columns:1fr}.avis-form textarea{grid-column:auto}.avis-modal-card h3{font-size:1.25rem}}';
+    document.head.appendChild(style);
+    section.classList.add('avis-section');
+    section.innerHTML='<h2>⭐ Avis</h2><p class="avis-sub">Découvrez les retours et partagez votre expérience avec EternaWeb.</p><button type="button" class="avis-open-btn" id="openAvis">⭐ Voir les avis / laisser un avis</button>';
+    var modal=document.createElement('div');modal.id='eternaweb-avis-modal';modal.setAttribute('aria-hidden','true');
+    modal.innerHTML='<div class="avis-modal-card" role="dialog" aria-modal="true" aria-labelledby="avisModalTitle"><button type="button" class="avis-close" id="closeAvis" aria-label="Fermer">×</button><h3 id="avisModalTitle">⭐ Avis EternaWeb</h3><p class="avis-modal-sub">Quelques retours et la possibilité de laisser votre propre avis.</p><div class="avis-list"><blockquote class="avis-item">“Super réactive et professionnelle, mon site a été en ligne le jour même !”<cite>— Claire B.</cite></blockquote><blockquote class="avis-item">“Mon CV est beaucoup plus clair et professionnel. Je sais enfin comment présenter mon parcours !”<cite>— Malik T.</cite></blockquote><blockquote class="avis-item">“Excellent rapport qualité/prix. Je recommande à 100 %.”<cite>— Sofia M.</cite></blockquote></div><form class="avis-form" id="avisForm"><h4>💬 Laisser un avis</h4><div class="avis-fields"><input name="nom" type="text" required placeholder="Votre prénom ou nom"><select name="note" required><option value="">Votre note</option><option value="5/5">⭐⭐⭐⭐⭐ 5/5</option><option value="4/5">⭐⭐⭐⭐ 4/5</option><option value="3/5">⭐⭐⭐ 3/5</option><option value="2/5">⭐⭐ 2/5</option><option value="1/5">⭐ 1/5</option></select><textarea name="message" required placeholder="Votre avis sur EternaWeb…"></textarea></div><button type="submit" class="avis-submit">Envoyer mon avis</button><p class="avis-note">Votre avis sera préparé dans WhatsApp pour validation avant envoi.</p></form></div>';
+    document.body.appendChild(modal);
+    var open=document.getElementById('openAvis'),close=document.getElementById('closeAvis');
+    function show(){modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+    function hide(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    if(open)open.addEventListener('click',show);if(close)close.addEventListener('click',hide);modal.addEventListener('click',function(e){if(e.target===modal)hide();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('show'))hide();});
+    var form=document.getElementById('avisForm');
+    if(form)form.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(form);var nom=(fd.get('nom')||'').toString().trim();var note=(fd.get('note')||'').toString();var message=(fd.get('message')||'').toString().trim();if(!nom||!note||!message)return;var text='Bonjour EternaWeb, je souhaite laisser un avis.%0A%0APrénom/Nom : '+encodeURIComponent(nom)+'%0ANote : '+encodeURIComponent(note)+'%0AAvis : '+encodeURIComponent(message);window.open('https://wa.me/33749723434?text='+text,'_blank','noopener');});
+    var navAvis=document.querySelector('#mainMenu a[href="#temoignages"]');if(navAvis)navAvis.textContent='Avis';
+  }
   function loadHomeFix(){if(document.getElementById('homeFixScript'))return;var s=document.createElement('script');s.id='homeFixScript';s.src='./home-fix.js';s.defer=true;document.body.appendChild(s);}
   function init(){
-    compactHome();
+    compactHome();setupAvis();
     var menuBtn=document.getElementById('menuBtn'),mainMenu=document.getElementById('mainMenu'),langBtn=document.getElementById('langBtn'),langMenu=document.getElementById('langMenu'),goDevis=document.getElementById('goDevis');
     if(document.getElementById('services'))loadHomeFix();
     if(menuBtn&&mainMenu&&!menuBtn.dataset.uiFixBound){menuBtn.dataset.uiFixBound='1';menuBtn.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var open=mainMenu.classList.toggle('show');menuBtn.setAttribute('aria-expanded',String(open));});}
