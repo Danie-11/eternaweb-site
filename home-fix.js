@@ -1,4 +1,4 @@
-/* EternaWeb — accueil : navigation des formules */
+/* EternaWeb — accueil : navigation des formules + menu */
 (function(){
 'use strict';
 function setFormulaLinks(){
@@ -14,6 +14,13 @@ function setFormulaLinks(){
    window.location.href='./cv.html?plan='+encodeURIComponent(plan)+'#formules';
   });
  });
+}
+function setAboutMenu(){
+ var link=document.querySelector('#mainMenu a[data-i18n="nav.temoignages"]');
+ if(!link)return;
+ link.textContent='À propos';
+ link.setAttribute('data-i18n','nav.about');
+ link.href='./about.html';
 }
 function openFormFromCv(){
  var params=new URLSearchParams(window.location.search);
@@ -33,6 +40,6 @@ function openFormFromCv(){
  }
  setTimeout(go,120);
 }
-function start(){setFormulaLinks();openFormFromCv();}
+function start(){setFormulaLinks();setAboutMenu();openFormFromCv();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
