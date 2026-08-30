@@ -18,12 +18,25 @@
     try { devis.scrollIntoView({behavior:'smooth', block:'start'}); } catch(e) { devis.scrollIntoView(); }
   }
 
+  function loadHomeFix(){
+    if(document.getElementById('homeFixScript')) return;
+    var s=document.createElement('script'); s.id='homeFixScript'; s.src='./home-fix.js'; s.defer=true; document.body.appendChild(s);
+  }
+
   function init(){
     var menuBtn = document.getElementById('menuBtn');
     var mainMenu = document.getElementById('mainMenu');
     var langBtn = document.getElementById('langBtn');
     var langMenu = document.getElementById('langMenu');
     var goDevis = document.getElementById('goDevis');
+
+    /* Accueil : le bouton CV reste visible, le titre « Nos services » est masqué. */
+    if(document.getElementById('services')){
+      var st=document.createElement('style');
+      st.textContent='#services h2,#services p{display:none!important} #services{padding-top:12px;padding-bottom:12px;margin-top:12px;margin-bottom:12px}';
+      document.head.appendChild(st);
+      loadHomeFix();
+    }
 
     /* Menu mobile : indépendant du moteur de traduction. */
     if(menuBtn && mainMenu && !menuBtn.dataset.uiFixBound){
