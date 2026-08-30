@@ -1,11 +1,22 @@
-/* EternaWeb — accueil : mode d'emploi + aperçu compact des formules */
+/* EternaWeb — accueil : navigation des formules */
 (function(){
 'use strict';
-var T={fr:{modeTitle:'✨ Mode d’emploi ✨',modeSub:'4 étapes simples pour obtenir votre document professionnel',s1:'Choisissez votre formule',d1:'Sélectionnez le pack qui correspond à vos besoins : Starter, Boost, Premium ou Lettre de motivation.',s2:'La page d’informations s’ouvre',d2:'Après votre choix, la page d’informations s’ouvre automatiquement. Vous pouvez alors remplir vos informations et ajouter vos documents.',s3:'Validez et payez en ligne',d3:'Effectuez le paiement sécurisé pour confirmer votre commande en toute simplicité.',s4:'Recevez votre document',d4:'Nous traitons votre demande et vous recevez votre document professionnel prêt à l’emploi.',ph:'Nos formules',ps:'Des solutions CV professionnelles, adaptées à vos besoins.'},en:{modeTitle:'✨ How it works ✨',modeSub:'4 simple steps to get your professional document',s1:'Choose your package',d1:'Select the package that matches your needs: Starter, Boost, Premium or Cover Letter.',s2:'The information page opens',d2:'After your choice, the information page opens automatically. You can then fill in your details and add your documents.',s3:'Confirm and pay online',d3:'Make the secure payment to confirm your order quickly and easily.',s4:'Receive your document',d4:'We process your request and you receive your professional document ready to use.',ph:'Our packages',ps:'Professional CV solutions tailored to your needs.'}};
-function compactPricing(){document.querySelectorAll('.pricing-home .card').forEach(function(card,i){if(card.dataset.compactDone)return;card.dataset.compactDone='1';var h=card.querySelector('h3'),btn=card.querySelector('.choose-plan');if(!h||!btn)return;var text=h.textContent.trim();var m=text.match(/(.+?)\s*[–-]\s*(\d+[,.]\d{2}\s*€|€\s*\d+[,.]\d{2})/);var name=(m?m[1]:text).trim();var price=m?m[2].trim():['14,99 €','29,99 €','59,99 €','7,99 €'][i];h.textContent=name;card.querySelectorAll('ul, p').forEach(function(el){el.remove()});btn.textContent=price;btn.setAttribute('aria-label',name+' — '+price);btn.title=name+' — '+price;btn.dataset.formula=name});}
-function setFormulaLinks(){document.querySelectorAll('.pricing-home .choose-plan').forEach(function(btn){if(btn.dataset.formulaLinked)return;btn.dataset.formulaLinked='1';btn.type='button';btn.textContent=(document.documentElement.lang||'fr').toLowerCase().startsWith('en')?'View package':'Voir la formule';btn.addEventListener('click',function(e){e.preventDefault();var plan=encodeURIComponent(btn.dataset.formula||'');window.location.href='./cv.html?plan='+plan+'#formules'});});}
-function applyHome(lang){var t=T[lang]||T.fr,title=document.getElementById('mode-title');if(title){title.textContent=t.modeTitle;var sub=document.querySelector('.mode-sub');if(sub)sub.textContent=t.modeSub;var hs=document.querySelectorAll('.mode-step h3'),ps=document.querySelectorAll('.mode-step p');[t.s1,t.s2,t.s3,t.s4].forEach(function(v,i){if(hs[i])hs[i].textContent=v;if(ps[i])ps[i].textContent=[t.d1,t.d2,t.d3,t.d4][i]});var ph=document.querySelector('.pricing-home h2');if(ph)ph.textContent=t.ph;var psub=document.querySelector('.pricing-home>p');if(psub)psub.textContent=t.ps;}compactPricing();setFormulaLinks();}
-function hook(){if(typeof window.applyLang==='function'&&!window.applyLang.__homeWrapped){var original=window.applyLang;function wrapped(lang){original(lang);applyHome(lang)}wrapped.__homeWrapped=true;window.applyLang=wrapped;}var lang='fr';try{lang=localStorage.getItem('eternaweb-lang')||'fr'}catch(e){}applyHome(lang);return typeof window.applyLang==='function'&&window.applyLang.__homeWrapped;}
-function start(){if(hook())return;var n=0,t=setInterval(function(){if(hook()||++n>40)clearInterval(t)},50)}
+function setFormulaLinks(){
+ document.querySelectorAll('.pricing-home .card .choose-plan').forEach(function(btn,i){
+  if(btn.dataset.formulaLinkDone)return;
+  btn.dataset.formulaLinkDone='1';
+  var card=btn.closest('.card');
+  var title=card&&card.querySelector('h3')?card.querySelector('h3').textContent.trim():'';
+  var plan=['starter','boost','premium','letter'][i]||'starter';
+  btn.textContent='Voir la formule';
+  btn.setAttribute('aria-label','Voir la formule');
+  btn.type='button';
+  btn.addEventListener('click',function(e){
+   e.preventDefault();
+   window.location.href='./cv.html?plan='+encodeURIComponent(plan)+'#formules';
+  });
+ });
+}
+function start(){setFormulaLinks();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
