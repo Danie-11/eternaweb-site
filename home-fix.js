@@ -12,24 +12,17 @@
     it:{modeTitle:'✨ Come funziona ✨',modeSub:'4 semplici passaggi per ottenere il tuo documento professionale',s1:'Scegli il tuo pacchetto',d1:'Seleziona il pacchetto più adatto alle tue esigenze: Starter, Boost, Premium o Lettera di motivazione.',s2:'Si apre la pagina delle informazioni',d2:'Dopo la scelta, la pagina delle informazioni si apre automaticamente. Puoi inserire i tuoi dati e aggiungere i documenti.',s3:'Conferma e paga online',d3:'Effettua il pagamento sicuro per confermare il tuo ordine in modo semplice.',s4:'Ricevi il tuo documento',d4:'Elaboriamo la tua richiesta e ricevi il tuo documento professionale pronto all’uso.',ph:'I nostri pacchetti',ps:'Soluzioni professionali per il CV, adattate alle tue esigenze.'}
   };
   function applyHome(lang){
-    var t=T[lang]||T.fr;
-    var title=document.getElementById('mode-title');
-    if(!title)return;
-    title.textContent=t.modeTitle;
-    var sub=document.querySelector('.mode-sub');if(sub)sub.textContent=t.modeSub;
-    var hs=document.querySelectorAll('.mode-step h3'), ps=document.querySelectorAll('.mode-step p');
+    var t=T[lang]||T.fr,title=document.getElementById('mode-title');if(!title)return;
+    title.textContent=t.modeTitle;var sub=document.querySelector('.mode-sub');if(sub)sub.textContent=t.modeSub;
+    var hs=document.querySelectorAll('.mode-step h3'),ps=document.querySelectorAll('.mode-step p');
     [t.s1,t.s2,t.s3,t.s4].forEach(function(v,i){if(hs[i])hs[i].textContent=v;if(ps[i])ps[i].textContent=[t.d1,t.d2,t.d3,t.d4][i]});
-    var ph=document.querySelector('.pricing-home h2');if(ph)ph.textContent=t.ph;
-    var psub=document.querySelector('.pricing-home>p');if(psub)psub.textContent=t.ps;
+    var ph=document.querySelector('.pricing-home h2');if(ph)ph.textContent=t.ph;var psub=document.querySelector('.pricing-home>p');if(psub)psub.textContent=t.ps;
   }
   function hook(){
-    var original=window.applyLang;
-    if(typeof original==='function'&&!original.__homeWrapped){
-      function wrapped(lang){original(lang);applyHome(lang);}
-      wrapped.__homeWrapped=true;window.applyLang=wrapped;
-    }
-    var lang='fr';try{lang=localStorage.getItem('eternaweb-lang')||'fr';}catch(e){}
-    applyHome(lang);
+    if(typeof window.applyLang==='function'&&!window.applyLang.__homeWrapped){var original=window.applyLang;function wrapped(lang){original(lang);applyHome(lang)}wrapped.__homeWrapped=true;window.applyLang=wrapped;}
+    var lang='fr';try{lang=localStorage.getItem('eternaweb-lang')||'fr'}catch(e){}applyHome(lang);
+    return typeof window.applyLang==='function'&&window.applyLang.__homeWrapped;
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',hook,{once:true});else hook();
+  function start(){if(hook())return;var n=0,t=setInterval(function(){if(hook()||++n>40)clearInterval(t)},50)}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
