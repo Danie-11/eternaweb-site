@@ -1,4 +1,4 @@
-/* EternaWeb — accueil : traduction du mode d'emploi et des formules */
+/* EternaWeb — accueil : mode d'emploi + aperçu compact des formules */
 (function(){
   'use strict';
   var T={
@@ -11,12 +11,30 @@
     es:{modeTitle:'✨ Cómo funciona ✨',modeSub:'4 pasos sencillos para obtener tu documento profesional',s1:'Elige tu plan',d1:'Selecciona el plan que corresponde a tus necesidades: Starter, Boost, Premium o Carta de motivación.',s2:'Se abre la página de información',d2:'Después de elegir, la página de información se abre automáticamente. Puedes completar tus datos y añadir tus documentos.',s3:'Confirma y paga en línea',d3:'Realiza el pago seguro para confirmar tu pedido de forma sencilla.',s4:'Recibe tu documento',d4:'Procesamos tu solicitud y recibes tu documento profesional listo para usar.',ph:'Nuestros planes',ps:'Soluciones profesionales de CV adaptadas a tus necesidades.'},
     it:{modeTitle:'✨ Come funziona ✨',modeSub:'4 semplici passaggi per ottenere il tuo documento professionale',s1:'Scegli il tuo pacchetto',d1:'Seleziona il pacchetto più adatto alle tue esigenze: Starter, Boost, Premium o Lettera di motivazione.',s2:'Si apre la pagina delle informazioni',d2:'Dopo la scelta, la pagina delle informazioni si apre automaticamente. Puoi inserire i tuoi dati e aggiungere i documenti.',s3:'Conferma e paga online',d3:'Effettua il pagamento sicuro per confermare il tuo ordine in modo semplice.',s4:'Ricevi il tuo documento',d4:'Elaboriamo la tua richiesta e ricevi il tuo documento professionale pronto all’uso.',ph:'I nostri pacchetti',ps:'Soluzioni professionali per il CV, adattate alle tue esigenze.'}
   };
+  function compactPricing(){
+    document.querySelectorAll('.pricing-home .card').forEach(function(card,i){
+      if(card.dataset.compactDone)return;
+      card.dataset.compactDone='1';
+      var h=card.querySelector('h3'),btn=card.querySelector('.choose-plan');
+      if(!h||!btn)return;
+      var text=h.textContent.trim();
+      var m=text.match(/(.+?)\s*[–-]\s*(\d+[,.]\d{2}\s*€|€\s*\d+[,.]\d{2})/);
+      var name=(m?m[1]:text).trim();
+      var price=m?m[2].trim():['14,99 €','29,99 €','59,99 €','7,99 €'][i];
+      h.textContent=name;
+      card.querySelectorAll('ul, p').forEach(function(el){el.remove();});
+      btn.textContent=price;
+      btn.setAttribute('aria-label',name+' — '+price);
+      btn.title=name+' — '+price;
+    });
+  }
   function applyHome(lang){
     var t=T[lang]||T.fr,title=document.getElementById('mode-title');if(!title)return;
     title.textContent=t.modeTitle;var sub=document.querySelector('.mode-sub');if(sub)sub.textContent=t.modeSub;
     var hs=document.querySelectorAll('.mode-step h3'),ps=document.querySelectorAll('.mode-step p');
     [t.s1,t.s2,t.s3,t.s4].forEach(function(v,i){if(hs[i])hs[i].textContent=v;if(ps[i])ps[i].textContent=[t.d1,t.d2,t.d3,t.d4][i]});
     var ph=document.querySelector('.pricing-home h2');if(ph)ph.textContent=t.ph;var psub=document.querySelector('.pricing-home>p');if(psub)psub.textContent=t.ps;
+    compactPricing();
   }
   function hook(){
     if(typeof window.applyLang==='function'&&!window.applyLang.__homeWrapped){var original=window.applyLang;function wrapped(lang){original(lang);applyHome(lang)}wrapped.__homeWrapped=true;window.applyLang=wrapped;}
