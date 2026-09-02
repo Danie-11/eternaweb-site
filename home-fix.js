@@ -15,6 +15,14 @@ function setFormulaLinks(){
   });
  });
 }
+function fixPrimaryButtonText(){
+ var style=document.getElementById('ew-home-button-fix');
+ if(style)return;
+ style=document.createElement('style');
+ style.id='ew-home-button-fix';
+ style.textContent='.models .btn-primary,.models .btn-primary:visited,.models .btn-primary:hover,.models .btn-primary:focus{color:#fff!important;text-decoration:none!important;}';
+ document.head.appendChild(style);
+}
 function setAboutMenu(){
  var link=document.querySelector('#mainMenu a[data-i18n="nav.temoignages"]');
  if(!link)return;
@@ -40,6 +48,6 @@ function openFormFromCv(){
  }
  setTimeout(go,120);
 }
-function start(){setFormulaLinks();setAboutMenu();openFormFromCv();}
+function start(){setFormulaLinks();fixPrimaryButtonText();setAboutMenu();openFormFromCv();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
