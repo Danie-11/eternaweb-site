@@ -1,0 +1,1 @@
+NOTE: Le bouton du formulaire doit être « Envoyer ». Il ouvre ensuite la page de paiement ; le paiement réel sera branché côté serveur avant production.
