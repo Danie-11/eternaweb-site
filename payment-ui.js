@@ -33,13 +33,13 @@
     if (!summary) { summary = document.createElement('div'); summary.id = 'orderSummary'; summary.setAttribute('aria-live', 'polite'); summary.innerHTML = '<strong>Commande</strong><div id="orderSummaryText"></div>'; }
     var reassurance = document.getElementById('paymentReassurance');
     if (!reassurance) { reassurance = document.createElement('p'); reassurance.id = 'paymentReassurance'; reassurance.className = 'tiny payment-reassurance'; }
-    reassurance.textContent = '🔒 Votre demande sera transmise après confirmation du paiement. Paiement sécurisé par carte bancaire ou PayPal.';
+    reassurance.textContent = '🔒 Vous pouvez régler votre commande ici. Merci de régler votre commande avant sa prise en charge. Après confirmation du paiement, nous recevrons votre dossier.';
     var methods = document.getElementById('ewPaymentMethods');
     if (!methods) {
       methods = document.createElement('div'); methods.id = 'ewPaymentMethods'; methods.setAttribute('aria-label', 'Moyens de paiement acceptés');
       methods.innerHTML = '<span class="ew-payment-title">🔒 Moyens de paiement acceptés</span><div class="ew-payment-logos"><span class="ew-pay-logo ew-cb">CB</span><span class="ew-pay-logo ew-visa">VISA</span><span class="ew-pay-logo ew-mastercard">Mastercard</span><span class="ew-pay-logo ew-paypal">PayPal</span></div>';
     }
-    sendBtn.textContent = 'Payer'; sendBtn.setAttribute('data-i18n', 'btn.pay');
+    sendBtn.textContent = 'Envoyer'; sendBtn.setAttribute('data-i18n', 'btn.send');
     sendBtn.insertAdjacentElement('afterend', reassurance);
     reassurance.insertAdjacentElement('afterend', methods);
     methods.insertAdjacentElement('afterend', summary);
