@@ -37,6 +37,23 @@ function loadPaymentUI(){
  if(document.getElementById('eternawebPaymentScript'))return;
  var script=document.createElement('script'); script.id='eternawebPaymentScript'; script.src='./payment-ui.js'; script.defer=true; document.body.appendChild(script);
 }
+function addFooterPaymentMethods(){
+ var footer=document.querySelector('footer.footer');
+ if(!footer||footer.querySelector('#ewFooterPaymentMethods'))return;
+ var box=document.createElement('div');
+ box.id='ewFooterPaymentMethods';
+ box.setAttribute('aria-label','Moyens de paiement acceptés');
+ box.innerHTML='<p class="ew-footer-payment-title">🔒 Moyens de paiement acceptés</p><img src="images/payment-methods-eternaweb.svg" class="ew-footer-payment-image" alt="Moyens de paiement acceptés : CB, Visa, Mastercard et PayPal">';
+ footer.appendChild(box);
+ var style=document.getElementById('ew-footer-payment-style');
+ if(!style){
+  style=document.createElement('style');
+  style.id='ew-footer-payment-style';
+  style.textContent='#ewFooterPaymentMethods{width:min(100%,560px);margin:18px auto 4px;text-align:center}#ewFooterPaymentMethods .ew-footer-payment-title{margin:0 0 8px;font-weight:700;font-size:.9rem}#ewFooterPaymentMethods .ew-footer-payment-image{display:block;width:100%;max-width:560px;height:auto;margin:0 auto;border-radius:14px;box-shadow:0 4px 14px rgba(80,60,35,.08)}@media(max-width:600px){#ewFooterPaymentMethods{margin-top:14px}#ewFooterPaymentMethods .ew-footer-payment-image{border-radius:11px}}
+';
+  document.head.appendChild(style);
+ }
+}
 function openFormFromCv(){
  var params=new URLSearchParams(window.location.search), plan=params.get('plan');
  if(!plan||!document.getElementById('devis'))return;
@@ -49,6 +66,6 @@ function openFormFromCv(){
  }
  setTimeout(go,120);
 }
-function start(){setFormulaLinks();fixPrimaryButtonText();simplifyHome();setAboutMenu();loadPaymentUI();openFormFromCv();}
+function start(){setFormulaLinks();fixPrimaryButtonText();simplifyHome();setAboutMenu();loadPaymentUI();addFooterPaymentMethods();openFormFromCv();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
