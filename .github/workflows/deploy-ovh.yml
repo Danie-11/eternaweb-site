@@ -21,7 +21,7 @@ jobs:
           server: ftp.cluster029.hosting.ovh.net
           username: eternag
           password: ${{ secrets.OVH_FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
           port: 21
           server-dir: ./www/
           exclude: |
