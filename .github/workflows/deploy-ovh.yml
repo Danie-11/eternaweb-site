@@ -18,7 +18,7 @@ jobs:
       - name: 🚀 Synchroniser avec OVH
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ftp.cluster129.hosting.ovh.net
+          server: ftp.cluster029.hosting.ovh.net
           username: eternag
           password: ${{ secrets.OVH_FTP_PASSWORD }}
           protocol: ftps
