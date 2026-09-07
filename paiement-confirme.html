@@ -11,11 +11,25 @@
 <body>
   <main class="container" style="max-width:720px;margin:70px auto;text-align:center;">
     <section class="page-card" style="padding:40px 24px;">
-      <h1>✅ Paiement confirmé !</h1>
-      <p style="font-size:1.1rem;line-height:1.7;">Votre commande a bien été enregistrée.</p>
-      <p style="line-height:1.7;">Vous recevrez votre document ou votre lien par e-mail sous 24 à 48 h.</p>
+      <div id="paymentStatus">
+        <h1>💳 Vérification du paiement…</h1>
+        <p style="font-size:1.05rem;line-height:1.7;">Nous vérifions votre règlement avant de transmettre votre dossier à EternaWeb.</p>
+      </div>
       <a class="btn btn-primary" href="index.html">← Retour à l’accueil</a>
     </section>
   </main>
+  <script>
+  (async function(){
+    var box=document.getElementById('paymentStatus');
+    var session=new URLSearchParams(location.search).get('session_id');
+    if(!session){box.innerHTML='<h1>⚠️ Commande introuvable</h1><p style="line-height:1.7;">Aucune référence de paiement n’a été trouvée.</p>';return;}
+    try{
+      var r=await fetch('./api/confirm-payment.php?session_id='+encodeURIComponent(session),{headers:{Accept:'application/json'}});
+      var data=await r.json().catch(function(){return{};});
+      if(!r.ok||!data.paid)throw new Error(data.error||'Paiement non confirmé.');
+      box.innerHTML='<h1>✅ Paiement confirmé !</h1><p style="font-size:1.1rem;line-height:1.7;">Votre commande a bien été enregistrée et votre dossier sera transmis à EternaWeb.</p><p style="line-height:1.7;">Vous recevrez votre document ou votre lien par e-mail sous 24 à 48 h.</p>';
+    }catch(e){box.innerHTML='<h1>⚠️ Paiement en cours de vérification</h1><p style="line-height:1.7;">Votre retour de paiement a bien été reçu. La confirmation finale peut prendre quelques instants. Si le paiement est confirmé, votre dossier sera transmis automatiquement.</p>';}
+  })();
+  </script>
 </body>
 </html>
