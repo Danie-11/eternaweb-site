@@ -1,0 +1,40 @@
+name: 🚀 Déployer EternaWeb sur OVH
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Publier sur OVH
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Récupérer le site
+        uses: actions/checkout@v4
+
+      - name: 🚀 Synchroniser avec OVH
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ftp.cluster129.hosting.ovh.net
+          username: eternag
+          password: ${{ secrets.OVH_FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          server-dir: ./www/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            netlify/**
+            netlify.toml
+            package.json
+            package-lock.json
+            README.md
+            MERGE.md
+            .ftp-deploy-sync-state.json
+            .env
+            .env.*
