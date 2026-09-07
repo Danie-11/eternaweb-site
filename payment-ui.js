@@ -49,7 +49,7 @@
     if (!methods) {
       methods = document.createElement('div');
       methods.id = 'ewPaymentMethods';
-      methods.innerHTML = '<span class="ew-payment-title">🔒 Moyens de paiement acceptés</span><div class="ew-payment-logos"><span class="ew-pay-logo">CB</span><span class="ew-pay-logo">VISA</span><span class="ew-pay-logo">Mastercard</span><span class="ew-pay-logo">PayPal</span></div>';
+      methods.innerHTML = '<img class="ew-payment-image" src="images/payment-methods-eternaweb.svg" alt="Moyens de paiement acceptés : CB, Visa, Mastercard et PayPal">';
       reassurance ? reassurance.insertAdjacentElement('afterend', methods) : sendBtn.insertAdjacentElement('beforebegin', methods);
     }
 
@@ -57,7 +57,7 @@
     if (!style) {
       style = document.createElement('style');
       style.id = 'eternaweb-payment-ui-style';
-      style.textContent = '#ewPlanCarousel{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;margin:0 0 12px;scroll-snap-type:x mandatory}#ewPlanCarousel button{flex:0 0 180px;min-height:68px;padding:10px 12px;border:1px solid rgba(139,111,75,.22);border-radius:13px;background:#fffaf2;color:#4a382b;cursor:pointer;text-align:left;scroll-snap-align:start;box-shadow:0 4px 10px rgba(80,60,35,.07)}#ewPlanCarousel button strong{display:block;font-size:.9rem}.#ewPlanCarousel button span{display:block;margin-top:5px;font-weight:700}.#ewPlanCarousel button.is-selected{border:2px solid #c2a875;background:linear-gradient(180deg,#f9f0df,#fffaf2)}#orderSummary{margin:8px 0 14px;padding:14px 16px;border:1px solid rgba(139,111,75,.18);border-radius:14px;background:rgba(255,250,242,.78);text-align:center;color:#4a382b}#orderSummary strong{display:block;margin-bottom:5px}.payment-reassurance{text-align:center;line-height:1.5}.ew-payment-title{display:block;text-align:center;font-weight:700;color:#4a382b;margin:7px 0}.ew-payment-logos{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 0 12px}.ew-pay-logo{display:inline-flex;align-items:center;justify-content:center;min-width:58px;height:31px;padding:0 7px;border-radius:7px;background:#fff;border:1px solid rgba(80,60,35,.12);font-weight:800;font-size:.7rem}.ew-loading{opacity:.65;pointer-events:none}';
+      style.textContent = '#ewPlanCarousel{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;margin:0 0 12px;scroll-snap-type:x mandatory}#ewPlanCarousel button{flex:0 0 180px;min-height:68px;padding:10px 12px;border:1px solid rgba(139,111,75,.22);border-radius:13px;background:#fffaf2;color:#4a382b;cursor:pointer;text-align:left;scroll-snap-align:start;box-shadow:0 4px 10px rgba(80,60,35,.07)}#ewPlanCarousel button strong{display:block;font-size:.9rem}#ewPlanCarousel button span{display:block;margin-top:5px;font-weight:700}#ewPlanCarousel button.is-selected{border:2px solid #c2a875;background:linear-gradient(180deg,#f9f0df,#fffaf2)}#orderSummary{margin:8px 0 14px;padding:14px 16px;border:1px solid rgba(139,111,75,.18);border-radius:14px;background:rgba(255,250,242,.78);text-align:center;color:#4a382b}#orderSummary strong{display:block;margin-bottom:5px}.payment-reassurance{text-align:center;line-height:1.5}#ewPaymentMethods{margin:8px 0 14px;text-align:center}#ewPaymentMethods .ew-payment-image{display:block;width:100%;max-width:760px;height:auto;margin:0 auto;border-radius:18px;box-shadow:0 5px 16px rgba(80,60,35,.08)}.ew-loading{opacity:.65;pointer-events:none}@media(max-width:600px){#ewPaymentMethods .ew-payment-image{border-radius:14px}}';
       document.head.appendChild(style);
     }
 
