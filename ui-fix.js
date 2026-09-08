@@ -1,8 +1,28 @@
-/* EternaWeb — sécurité UI + compactage accueil + avis */
+/* EternaWeb — sécurité UI + compactage accueil + avis + accueil live */
 (function(){
   'use strict';
   function ready(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn,{once:true});else fn();}
   function openDevisFallback(){var devis=document.getElementById('devis');if(!devis)return;devis.classList.add('show','devis-open');devis.setAttribute('aria-hidden','false');try{devis.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){devis.scrollIntoView();}}
+  function applyHomeDirect(){
+    var hero=document.querySelector('.hero-gold');
+    if(hero){
+      var cta=hero.querySelector('.cta-row');
+      if(cta)cta.remove();
+    }
+    var services=document.getElementById('services');
+    if(services){
+      var title=services.querySelector('h2');
+      var sub=services.querySelector('p');
+      var btn=services.querySelector('.btn');
+      if(title)title.textContent='📄 Nos exemples CV';
+      if(sub)sub.textContent='Découvrez quelques modèles de CV EternaWeb';
+      if(btn){btn.textContent='📄';btn.setAttribute('aria-label','Voir les exemples de CV');btn.setAttribute('title','Voir les exemples de CV');}
+    }
+    var pricing=document.getElementById('formules');
+    if(pricing)pricing.style.display='none';
+    var copy=document.querySelector('.copyright');
+    if(copy)copy.textContent='© 2026 EternaWeb — Tous droits réservés';
+  }
   function compactHome(){
     if(document.getElementById('eternaweb-compact-home'))return;
     var s=document.createElement('style');s.id='eternaweb-compact-home';
@@ -13,9 +33,9 @@
       '.hero-gold img.hero-logo{width:62px!important;max-width:62px!important}'+
       '.hero-gold .gold-sub{font-size:18px!important;line-height:1.25!important;margin:0 0 2px!important}'+
       '.hero-gold .gold-lead{font-size:13px!important;line-height:1.35!important;margin:0!important;max-width:340px}'+
-      '.hero-gold .cta-row{margin-top:7px!important}'+
       '#services.models{width:max-content!important;max-width:92%!important;padding:8px 14px!important;margin:8px auto!important;border-radius:13px!important}'+
-      '#services.models h2,#services.models p{display:none!important}'+
+      '#services.models h2{display:block!important;font-size:1rem!important;margin:0 0 3px!important}'+
+      '#services.models p{display:block!important;font-size:.72rem!important;margin:0 0 5px!important}'+
       '#services.models .cta-row{margin:0!important}'+
       '#services.models .btn{padding:7px 14px!important;font-size:12px!important}'+
       '.pricing-home{width:96%!important;margin:12px auto 16px!important;padding:14px 8px!important;border-radius:16px!important}'+
@@ -73,6 +93,7 @@
   }
   function loadHomeFix(){if(document.getElementById('homeFixScript'))return;var s=document.createElement('script');s.id='homeFixScript';s.src='./home-fix.js';s.defer=true;document.body.appendChild(s);}
   function init(){
+    applyHomeDirect();
     compactHome();setupAvis();
     var menuBtn=document.getElementById('menuBtn'),mainMenu=document.getElementById('mainMenu'),langBtn=document.getElementById('langBtn'),langMenu=document.getElementById('langMenu'),goDevis=document.getElementById('goDevis');
     if(document.getElementById('services'))loadHomeFix();
