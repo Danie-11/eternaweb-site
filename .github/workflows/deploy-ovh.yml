@@ -29,6 +29,10 @@ jobs:
           sed -i "s|__STRIPE_SECRET_KEY__|$STRIPE_SECRET_KEY|" api/config.php
           sed -i "s|__STRIPE_WEBHOOK_SECRET__|$STRIPE_WEBHOOK_SECRET|" api/config.php
 
+      - name: 🔄 Actualiser les scripts EternaWeb
+        run: |
+          sed -i "s#s.src='./home-fix.js';#s.src='./home-fix.js?v=20260908footer';#" ui-fix.js
+
       - name: 🚀 Synchroniser avec OVH
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
