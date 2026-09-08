@@ -1,4 +1,4 @@
-/* EternaWeb — accueil : navigation + présentation + commande */
+/* EternaWeb — accueil : navigation + présentation + commande + footer */
 (function(){
 'use strict';
 function setFormulaLinks(){
@@ -37,22 +37,51 @@ function loadPaymentUI(){
  if(document.getElementById('eternawebPaymentScript'))return;
  var script=document.createElement('script'); script.id='eternawebPaymentScript'; script.src='./payment-ui.js'; script.defer=true; document.body.appendChild(script);
 }
-function addFooterPaymentMethods(){
+function addFooter(){
  var footer=document.querySelector('footer.footer');
- if(!footer||footer.querySelector('#ewFooterPaymentMethods'))return;
- var box=document.createElement('div');
- box.id='ewFooterPaymentMethods';
- box.setAttribute('aria-label','Moyens de paiement acceptés');
- box.innerHTML='<p class="ew-footer-payment-title">🔒 Moyens de paiement acceptés</p><img src="images/payment-methods-eternaweb.svg" class="ew-footer-payment-image" alt="Moyens de paiement acceptés : CB, Visa, Mastercard et PayPal">';
- footer.appendChild(box);
- var style=document.getElementById('ew-footer-payment-style');
+ if(!footer||footer.dataset.ewFooterDone)return;
+ footer.dataset.ewFooterDone='1';
+ footer.innerHTML=''+
+ '<div class="ew-footer-inner">'+
+   '<div class="ew-footer-brand">'+
+     '<div class="ew-footer-globe" aria-hidden="true">🌐</div>'+\
+     '<div><div class="ew-footer-name">EternaWeb</div><p>Votre réussite en ligne, sans attendre.</p><p class="ew-footer-focus">CV professionnels · modernes · prêts à l’emploi</p></div>'+\
+   '</div>'+\
+   '<div class="ew-footer-grid">'+\
+     '<div class="ew-footer-col"><h3>Navigation</h3><a href="./index.html">Accueil</a><a href="./cv.html">CV</a><a href="#devis" id="ewFooterDevis">Vos informations</a><a href="./a-propos.html">À propos</a></div>'+\
+     '<div class="ew-footer-col"><h3>Services</h3><a href="./cv.html#formules">CV Starter</a><a href="./cv.html#formules">CV Boost</a><a href="./cv.html#formules">CV Premium</a><a href="./cv.html#formules">Lettre de motivation</a></div>'+\
+     '<div class="ew-footer-col"><h3>Contact</h3><a href="mailto:contact@eternaweb.fr">✉ contact@eternaweb.fr</a><a href="https://wa.me/33749723434" target="_blank" rel="noopener">💬 WhatsApp</a><a href="./faq.html">FAQ</a></div>'+\
+   '</div>'+\
+   '<div class="ew-footer-payment" aria-label="Moyens de paiement acceptés"><h3>🔒 Paiement sécurisé</h3><img src="images/payment-methods-eternaweb.svg" alt="Moyens de paiement acceptés : CB, Visa, Mastercard et PayPal"></div>'+\
+   '<div class="ew-footer-bottom"><div class="ew-footer-legal"><a href="./mentions-legales.html">Mentions légales</a><a href="./confidentialite.html">Confidentialité</a><a href="./code-de-conduite.html">Code de conduite</a></div><p class="copyright">© 2026 EternaWeb — Tous droits réservés</p></div>'+\
+ '</div>';
+ var style=document.getElementById('ew-footer-style');
  if(!style){
-  style=document.createElement('style');
-  style.id='ew-footer-payment-style';
-  style.textContent='#ewFooterPaymentMethods{width:min(100%,560px);margin:18px auto 4px;text-align:center}#ewFooterPaymentMethods .ew-footer-payment-title{margin:0 0 8px;font-weight:700;font-size:.9rem}#ewFooterPaymentMethods .ew-footer-payment-image{display:block;width:100%;max-width:560px;height:auto;margin:0 auto;border-radius:14px;box-shadow:0 4px 14px rgba(80,60,35,.08)}@media(max-width:600px){#ewFooterPaymentMethods{margin-top:14px}#ewFooterPaymentMethods .ew-footer-payment-image{border-radius:11px}}
-';
+  style=document.createElement('style'); style.id='ew-footer-style';
+  style.textContent=''+
+  '.footer{width:100%!important;margin:28px 0 0!important;padding:0!important;background:#4b3028!important;color:#fff0e6!important;border-radius:0!important;overflow:hidden!important}'+
+  '.ew-footer-inner{width:min(1120px,92%);margin:0 auto;padding:42px 0 20px}'+
+  '.ew-footer-brand{display:flex;align-items:center;justify-content:center;gap:16px;text-align:left;margin-bottom:30px}'+
+  '.ew-footer-globe{width:58px;height:58px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(235,215,181,.45);border-radius:50%;background:rgba(235,215,181,.10);font-size:30px;flex:none}'+
+  '.ew-footer-name{font-family:"Playfair Display",serif;font-size:1.65rem;font-weight:700;color:#f0d9ad;letter-spacing:.02em}'+
+  '.ew-footer-brand p{margin:3px 0 0;color:#fff0e6;font-size:.92rem}'+
+  '.ew-footer-brand .ew-footer-focus{color:#e2cda9;font-size:.78rem}'+
+  '.ew-footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:26px 0;border-top:1px solid rgba(235,215,181,.20);border-bottom:1px solid rgba(235,215,181,.20)}'+
+  '.ew-footer-col{display:flex;flex-direction:column;gap:8px}'+
+  '.ew-footer-col h3,.ew-footer-payment h3{margin:0 0 7px;color:#f0d9ad;font-size:.95rem}'+
+  '.ew-footer-col a,.ew-footer-legal a{color:#fff0e6!important;text-decoration:none;font-size:.84rem}'+
+  '.ew-footer-col a:hover,.ew-footer-legal a:hover{text-decoration:underline;color:#f0d9ad!important}'+
+  '.ew-footer-payment{text-align:center;padding:25px 0 20px}'+
+  '.ew-footer-payment img{display:block;width:min(100%,560px);height:auto;margin:0 auto;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.12)}'+
+  '.ew-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:16px}'+
+  '.ew-footer-legal{display:flex;flex-wrap:wrap;gap:12px 18px}'+
+  '.ew-footer-bottom .copyright{margin:0;color:#dfccb0;font-size:.75rem;text-align:right}'+
+  '@media(max-width:700px){.ew-footer-inner{width:90%;padding:30px 0 16px}.ew-footer-brand{justify-content:flex-start;gap:12px;margin-bottom:22px}.ew-footer-globe{width:48px;height:48px;font-size:24px}.ew-footer-name{font-size:1.35rem}.ew-footer-brand p{font-size:.8rem}.ew-footer-brand .ew-footer-focus{font-size:.68rem}.ew-footer-grid{grid-template-columns:1fr 1fr;gap:22px 16px;padding:20px 0}.ew-footer-col h3,.ew-footer-payment h3{font-size:.86rem}.ew-footer-col a,.ew-footer-legal a{font-size:.74rem}.ew-footer-payment{padding:20px 0 14px}.ew-footer-payment img{border-radius:11px}.ew-footer-bottom{flex-direction:column;align-items:flex-start;gap:10px}.ew-footer-bottom .copyright{text-align:left;font-size:.68rem}}'+
+  '@media(max-width:380px){.ew-footer-grid{grid-template-columns:1fr}.ew-footer-brand{align-items:flex-start}.ew-footer-legal{gap:8px 12px}}';
   document.head.appendChild(style);
  }
+ var devisLink=document.getElementById('ewFooterDevis');
+ if(devisLink)devisLink.addEventListener('click',function(e){e.preventDefault();if(typeof window.openDevis==='function')window.openDevis();else{var d=document.getElementById('devis');if(d){d.classList.add('show','devis-open');d.setAttribute('aria-hidden','false');d.scrollIntoView({behavior:'smooth',block:'start');}}}});
 }
 function openFormFromCv(){
  var params=new URLSearchParams(window.location.search), plan=params.get('plan');
@@ -66,6 +95,6 @@ function openFormFromCv(){
  }
  setTimeout(go,120);
 }
-function start(){setFormulaLinks();fixPrimaryButtonText();simplifyHome();setAboutMenu();loadPaymentUI();addFooterPaymentMethods();openFormFromCv();}
+function start(){setFormulaLinks();fixPrimaryButtonText();simplifyHome();setAboutMenu();loadPaymentUI();addFooter();openFormFromCv();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
