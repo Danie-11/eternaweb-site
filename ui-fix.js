@@ -91,7 +91,7 @@
     if(form)form.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(form);var nom=(fd.get('nom')||'').toString().trim();var note=(fd.get('note')||'').toString();var message=(fd.get('message')||'').toString().trim();if(!nom||!note||!message)return;var text='Bonjour EternaWeb, je souhaite laisser un avis.%0A%0APrénom/Nom : '+encodeURIComponent(nom)+'%0ANote : '+encodeURIComponent(note)+'%0AAvis : '+encodeURIComponent(message);window.open('https://wa.me/33749723434?text='+text,'_blank','noopener');});
     var navAvis=document.querySelector('#mainMenu a[href="#temoignages"]');if(navAvis)navAvis.textContent='Avis';
   }
-  function loadHomeFix(){if(document.getElementById('homeFixScript'))return;var s=document.createElement('script');s.id='homeFixScript';s.src='./home-fix.js';s.defer=true;document.body.appendChild(s);}
+  function loadHomeFix(){if(document.getElementById('homeFixScript'))return;var s=document.createElement('script');s.id='homeFixScript';s.src='./home-fix.js?v=20260908footer2';s.defer=true;document.body.appendChild(s);}
   function init(){
     applyHomeDirect();
     compactHome();setupAvis();
