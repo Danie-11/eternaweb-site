@@ -15,19 +15,25 @@ jobs:
       - name: 📥 Récupérer le site
         uses: actions/checkout@v4
 
-      - name: 🔐 Préparer la configuration Stripe OVH
+      - name: 🔐 Préparer la configuration Stripe et SMTP OVH
         env:
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
           STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+          OVH_SMTP_PASSWORD: ${{ secrets.OVH_SMTP_PASSWORD }}
         run: |
           mkdir -p api
           cat > api/config.php <<'PHP'
           <?php
           const STRIPE_SECRET_KEY = '__STRIPE_SECRET_KEY__';
           const STRIPE_WEBHOOK_SECRET = '__STRIPE_WEBHOOK_SECRET__';
+          const OVH_SMTP_HOST = 'smtp.mail.ovh.net';
+          const OVH_SMTP_PORT = 465;
+          const OVH_SMTP_USER = 'contact@eternaweb.fr';
+          const OVH_SMTP_PASSWORD = '__OVH_SMTP_PASSWORD__';
           PHP
           sed -i "s|__STRIPE_SECRET_KEY__|$STRIPE_SECRET_KEY|" api/config.php
           sed -i "s|__STRIPE_WEBHOOK_SECRET__|$STRIPE_WEBHOOK_SECRET|" api/config.php
+          sed -i "s|__OVH_SMTP_PASSWORD__|$OVH_SMTP_PASSWORD|" api/config.php
 
       - name: 🔄 Actualiser les scripts EternaWeb
         run: |
