@@ -137,17 +137,12 @@ $order['paid'] = true;
 $order['paid_at'] = gmdate('c');
 $order['stripe_payment_intent'] = $session['payment_intent'] ?? null;
 
-$boundary = '=_EternaWeb_' . bin2hex(random_bytes(12));
+$boundary = '=_EternaWeb';
 $to = 'contact@eternaweb.fr';
 $subject = 'Nouvelle commande EternaWeb — ' . ($order['plan_label'] ?? 'Commande');
 $customer = $order['email'] ?? '';
 
-$headers = [
-    'MIME-Version: 1.0',
-    'Content-Type: multipart/mixed; boundary="' . $boundary . '"'
-];
-$body = implode("\r\n", $headers) . "\r\n\r\n";
-$body .= "--$boundary\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n";
+$body = "--$boundary\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n";
 $body .= "PAIEMENT CONFIRMÉ — EternaWeb\n\nCommande : " . ($order['plan_label'] ?? '') . "\nMontant : " . number_format(($order['amount'] ?? 0) / 100, 2, ',', ' ') . " €\nClient : " . ($order['nom'] ?? '') . "\nEmail : $customer\nType : " . ($order['type'] ?? '') . "\nCouleurs : " . ($order['couleurs'] ?? '') . "\nStyle : " . ($order['style'] ?? '') . "\nOptions : " . implode(', ', (array)($order['integrations'] ?? [])) . "\nLien Drive : " . ($order['drive'] ?? '') . "\n\nDemandes :\n" . ($order['contenu'] ?? '') . "\n\nIdentifiant commande : $orderId\n";
 
 if (!empty($order['file']['path']) && is_file($order['file']['path'])) {
