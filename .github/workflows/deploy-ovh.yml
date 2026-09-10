@@ -32,7 +32,9 @@ jobs:
       - name: 🔄 Actualiser les scripts EternaWeb
         run: |
           sed -i "s#s.src='./home-fix.js';#s.src='./home-fix-v2.js';#" ui-fix.js
-          sed -i "s#<script src=\"app.js\" defer></script>#<script src=\"app.js\" defer></script><script src=\"site-fix.js\" defer></script>#" a-propos.html
+          for f in $(grep -rl 'script src="app.js"' --include='*.html' .); do
+            sed -i "s#<script src=\"app.js\" defer></script>#<script src=\"app.js\" defer></script><script src=\"site-fix.js\" defer></script>#" "$f"
+          done
 
       - name: 🚀 Synchroniser avec OVH
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
