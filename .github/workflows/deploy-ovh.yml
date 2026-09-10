@@ -31,9 +31,17 @@ jobs:
 
       - name: 🔄 Actualiser les scripts EternaWeb
         run: |
-          sed -i "s#s.src='./home-fix.js';#s.src='./home-fix-v2.js';#" ui-fix.js
           for f in $(grep -rl 'script src="app.js"' --include='*.html' .); do
-            sed -i "s#<script src=\"app.js\" defer></script>#<script src=\"app.js\" defer></script><script src=\"site-fix.js\" defer></script>#" "$f"
+            if grep -q 'cgv-menu-fix.js' "$f"; then
+              sed -i 's#cgv-menu-fix.js[^\"]*#cgv-menu-fix.js?v=20260910#g' "$f"
+            else
+              sed -i "s#<script src=\"app.js\" defer></script>#<script src=\"app.js\" defer></script><script src=\"cgv-menu-fix.js?v=20260910\" defer></script>#" "$f"
+            fi
+            if grep -q 'site-fix.js' "$f"; then
+              sed -i 's#site-fix.js[^\"]*#site-fix.js?v=20260910#g' "$f"
+            else
+              sed -i "s#<script src=\"app.js\" defer></script>#<script src=\"app.js\" defer></script><script src=\"site-fix.js?v=20260910\" defer></script>#" "$f"
+            fi
           done
 
       - name: 🚀 Synchroniser avec OVH
