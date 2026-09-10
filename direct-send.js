@@ -1,7 +1,7 @@
 // EternaWeb — envoi direct des formulaires sans ouvrir une boîte mail
 (function () {
   'use strict';
-  var ENDPOINT = 'https://formsubmit.co/ajax/eternaweb.contact@gmail.com';
+  var ENDPOINT = 'https://formsubmit.co/ajax/contact@eternaweb.fr';
 
   function send(data, successText) {
     data.append('_subject', data.get('_subject') || 'Message EternaWeb');
