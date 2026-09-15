@@ -41,7 +41,7 @@ function smtp_command($fp, $command, $codes) {
     return smtp_expect($fp, $codes);
 }
 
-function smtp_send($to, $subject, $body, $replyTo = '') {
+function smtp_send($to, $subject, $body, $replyTo = '', $attachment = null) {
     if (!defined('OVH_SMTP_HOST') || !defined('OVH_SMTP_PORT') || !defined('OVH_SMTP_USER') || !defined('OVH_SMTP_PASSWORD')) return false;
     if (!filter_var($to, FILTER_VALIDATE_EMAIL)) return false;
     if ($replyTo !== '' && !filter_var($replyTo, FILTER_VALIDATE_EMAIL)) $replyTo = '';
@@ -69,17 +69,39 @@ function smtp_send($to, $subject, $body, $replyTo = '') {
 
     $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
     $headers = [
+        'Date: ' . gmdate('D, d M Y H:i:s') . ' +0000',
         'From: EternaWeb <' . OVH_SMTP_USER . '>',
         'To: ' . $to,
         'Subject: ' . $encodedSubject,
-        'MIME-Version: 1.0',
-        'Content-Type: multipart/mixed; boundary="=_EternaWeb"'
+        'MIME-Version: 1.0'
     ];
     if ($replyTo !== '') $headers[] = 'Reply-To: ' . $replyTo;
 
-    $message = implode("\r\n", $headers) . "\r\n\r\n" . $body;
-    $message = preg_replace("/(\r\n|\n|\r)\.([\r\n])", '$1..$2', $message);
-    fwrite($fp, $message . "\r\n.\r\n");
+    if ($attachment && !empty($attachment['path']) && is_file($attachment['path'])) {
+        $boundary = '=_EternaWeb_' . bin2hex(random_bytes(8));
+        $headers[] = 'Content-Type: multipart/mixed; boundary="' . $boundary . '"';
+        $message = implode("\r\n", $headers) . "\r\n\r\n";
+        $message .= '--' . $boundary . "\r\n";
+        $message .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        $message .= "Content-Transfer-Encoding: 8bit\r\n\r\n";
+        $message .= $body . "\r\n\r\n";
+        $name = $attachment['name'] ?? basename($attachment['path']);
+        $safeName = addslashes($name);
+        $message .= '--' . $boundary . "\r\n";
+        $message .= 'Content-Type: application/octet-stream; name="' . $safeName . "\"\r\n";
+        $message .= "Content-Transfer-Encoding: base64\r\n";
+        $message .= 'Content-Disposition: attachment; filename="' . $safeName . "\"\r\n\r\n";
+        $message .= chunk_split(base64_encode(file_get_contents($attachment['path']))) . "\r\n";
+        $message .= '--' . $boundary . "--\r\n";
+    } else {
+        $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+        $headers[] = 'Content-Transfer-Encoding: 8bit';
+        $message = implode("\r\n", $headers) . "\r\n\r\n" . $body . "\r\n";
+    }
+
+    // SMTP DATA: une ligne commençant par un point doit être échappée.
+    $message = preg_replace('/(^|\r\n)\./', '$1..', $message);
+    fwrite($fp, $message . ".\r\n");
     if (!smtp_expect($fp, [250])) { fclose($fp); return false; }
     smtp_command($fp, 'QUIT', [221, 250]);
     fclose($fp);
@@ -127,35 +149,57 @@ if (!is_array($order)) {
     echo 'Commande invalide';
     exit;
 }
-if (!empty($order['sent'])) {
-    http_response_code(200);
-    echo 'Déjà traitée';
-    exit;
-}
 
 $order['paid'] = true;
-$order['paid_at'] = gmdate('c');
+$order['paid_at'] = $order['paid_at'] ?? gmdate('c');
 $order['stripe_payment_intent'] = $session['payment_intent'] ?? null;
 
-$boundary = '=_EternaWeb';
-$to = 'contact@eternaweb.fr';
-$subject = 'Nouvelle commande EternaWeb — ' . ($order['plan_label'] ?? 'Commande');
+$toInternal = 'contact@eternaweb.fr';
 $customer = $order['email'] ?? '';
+$subjectInternal = 'Nouvelle commande EternaWeb — ' . ($order['plan_label'] ?? 'Commande');
 
-$body = "--$boundary\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n";
-$body .= "PAIEMENT CONFIRMÉ — EternaWeb\n\nCommande : " . ($order['plan_label'] ?? '') . "\nMontant : " . number_format(($order['amount'] ?? 0) / 100, 2, ',', ' ') . " €\nClient : " . ($order['nom'] ?? '') . "\nEmail : $customer\nType : " . ($order['type'] ?? '') . "\nCouleurs : " . ($order['couleurs'] ?? '') . "\nStyle : " . ($order['style'] ?? '') . "\nOptions : " . implode(', ', (array)($order['integrations'] ?? [])) . "\nLien Drive : " . ($order['drive'] ?? '') . "\n\nDemandes :\n" . ($order['contenu'] ?? '') . "\n\nIdentifiant commande : $orderId\n";
+$internalBody = "PAIEMENT CONFIRMÉ — EternaWeb\n\n";
+$internalBody .= "Commande : " . ($order['plan_label'] ?? '') . "\n";
+$internalBody .= "Montant : " . number_format(($order['amount'] ?? 0) / 100, 2, ',', ' ') . " €\n";
+$internalBody .= "Client : " . ($order['nom'] ?? '') . "\n";
+$internalBody .= "Email : $customer\n";
+$internalBody .= "Type : " . ($order['type'] ?? '') . "\n";
+$internalBody .= "Couleurs : " . ($order['couleurs'] ?? '') . "\n";
+$internalBody .= "Style : " . ($order['style'] ?? '') . "\n";
+$internalBody .= "Options : " . implode(', ', (array)($order['integrations'] ?? [])) . "\n";
+$internalBody .= "Lien Drive : " . ($order['drive'] ?? '') . "\n\n";
+$internalBody .= "Demandes :\n" . ($order['contenu'] ?? '') . "\n\n";
+$internalBody .= "Identifiant commande : $orderId\n";
 
+$attachment = null;
 if (!empty($order['file']['path']) && is_file($order['file']['path'])) {
-    $path = $order['file']['path'];
-    $name = $order['file']['name'] ?? basename($path);
-    $body .= "--$boundary\r\nContent-Type: application/octet-stream; name=\"" . addslashes($name) . "\"\r\nContent-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename=\"" . addslashes($name) . "\"\r\n\r\n" . chunk_split(base64_encode(file_get_contents($path))) . "\r\n";
+    $attachment = [
+        'path' => $order['file']['path'],
+        'name' => $order['file']['name'] ?? basename($order['file']['path'])
+    ];
 }
-$body .= "--$boundary--\r\n";
 
-$sent = smtp_send($to, $subject, $body, $customer);
-$order['sent'] = $sent;
-$order['sent_at'] = $sent ? gmdate('c') : null;
-file_put_contents($orderFile, json_encode($order, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+// 1) EternaWeb reçoit la commande complète avec la pièce jointe.
+if (empty($order['internal_sent'])) {
+    $order['internal_sent'] = smtp_send($toInternal, $subjectInternal, $internalBody, $customer, $attachment);
+    $order['internal_sent_at'] = $order['internal_sent'] ? gmdate('c') : null;
+}
 
-http_response_code($sent ? 200 : 500);
-echo $sent ? 'OK' : 'Envoi SMTP impossible';
+// 2) Le client reçoit automatiquement une confirmation après paiement.
+if ($customer && empty($order['customer_sent'])) {
+    $customerBody = "Bonjour " . ($order['nom'] ?: '') . ",\n\n";
+    $customerBody .= "Votre paiement EternaWeb a bien été confirmé.\n\n";
+    $customerBody .= "Commande : " . ($order['plan_label'] ?? 'Commande EternaWeb') . "\n";
+    $customerBody .= "Montant : " . number_format(($order['amount'] ?? 0) / 100, 2, ',', ' ') . " €\n\n";
+    $customerBody .= "Votre dossier a bien été transmis à EternaWeb. Vous recevrez votre document ou votre lien par e-mail sous 24 à 48 h.\n\n";
+    $customerBody .= "Merci pour votre confiance,\nEternaWeb\ncontact@eternaweb.fr\nhttps://eternaweb.fr";
+    $order['customer_sent'] = smtp_send($customer, 'EternaWeb — Paiement confirmé', $customerBody, $toInternal);
+    $order['customer_sent_at'] = $order['customer_sent'] ? gmdate('c') : null;
+}
+
+$order['sent'] = !empty($order['internal_sent']) && !empty($order['customer_sent']);
+$order['sent_at'] = $order['sent'] ? ($order['sent_at'] ?? gmdate('c')) : null;
+file_put_contents($orderFile, json_encode($order, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), LOCK_EX);
+
+http_response_code(($order['internal_sent'] || $order['customer_sent']) ? 200 : 500);
+echo ($order['sent'] ? 'OK' : 'Commande traitée, envoi incomplet');
