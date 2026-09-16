@@ -3,84 +3,177 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Modèles de CV professionnels EternaWeb.">
-  <title>Mes Modèles de CV – EternaWeb</title>
+  <meta name="description" content="Créez un CV professionnel, clair et personnalisé avec EternaWeb. Choisissez votre façon de créer votre CV et passez à l'action.">
+  <title>Créer son CV professionnel – EternaWeb</title>
   <link rel="stylesheet" href="style-desktop.css" media="screen and (min-width: 601px)">
   <link rel="stylesheet" href="style-mobile.css" media="screen and (max-width: 600px)">
   <link rel="stylesheet" href="cv.css?v=20260831-7">
   <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon-64x64.png" type="image/png" sizes="64x64">
+  <style>
+    .sales-hero{max-width:1080px;margin:0 auto 28px;padding:42px 22px 34px;text-align:center;background:linear-gradient(135deg,#fffaf4,#f7f1e9);border:1px solid rgba(92,65,48,.12);border-radius:24px;box-shadow:0 12px 30px rgba(73,50,38,.08)}
+    .sales-hero .eyebrow{margin:0 0 9px;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a7745}
+    .sales-hero h1{margin:0 auto 12px;max-width:760px;font-size:clamp(2rem,5vw,3.25rem);line-height:1.08;color:#3f2b21}
+    .sales-hero .lead{max-width:720px;margin:0 auto 20px;font-size:clamp(1rem,2vw,1.2rem);line-height:1.6;color:#59483e}
+    .sales-points{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto 24px}
+    .sales-point{padding:8px 13px;border-radius:999px;background:#fff;border:1px solid rgba(92,65,48,.1);font-size:.88rem;color:#4d4038}
+    .sales-hero .main-cta{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:13px 25px;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none}
+    .choice-section{max-width:1080px;margin:0 auto 30px;text-align:center}
+    .choice-section h2{margin-bottom:7px}
+    .choice-section>.choice-intro{max-width:700px;margin:0 auto 20px;color:#5e5149}
+    .choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .choice-card{padding:25px 20px;background:#fff;border:1px solid rgba(92,65,48,.12);border-radius:20px;box-shadow:0 8px 22px rgba(73,50,38,.07);text-align:left}
+    .choice-card.featured{border-color:rgba(194,168,117,.65);box-shadow:0 10px 26px rgba(73,50,38,.1)}
+    .choice-card .choice-icon{font-size:2rem}
+    .choice-card h3{margin:8px 0 8px;color:#3f2b21;font-size:1.3rem}
+    .choice-card p{margin:0 0 14px;line-height:1.55;color:#5b4e46}
+    .choice-card ul{margin:0 0 18px;padding-left:19px;color:#4e433d;line-height:1.65}
+    .choice-card .btn{width:100%;text-align:center;box-sizing:border-box}
+    .sales-note{margin:10px 0 0;font-size:.82rem;color:#74675f;text-align:center}
+    .benefits{max-width:1080px;margin:0 auto 30px;padding:26px 20px;background:#fff;border-radius:20px;box-shadow:0 8px 22px rgba(73,50,38,.06);text-align:center}
+    .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+    .benefit{padding:15px 10px}
+    .benefit strong{display:block;margin-bottom:5px;color:#3f2b21}
+    .benefit span{font-size:.9rem;line-height:1.45;color:#62564f}
+    .examples-intro{max-width:700px;margin:0 auto 20px;text-align:center}
+    .cv-footer{margin-top:35px!important;padding:22px 16px!important}
+    .cv-footer .legal-links{margin:8px 0 0;font-size:.82rem}
+    .cv-footer .legal-links a{margin:0 7px}
+    @media(max-width:800px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.sales-hero{padding:30px 16px 25px;border-radius:18px;margin-bottom:22px}.sales-hero h1{font-size:2rem}.sales-hero .lead{font-size:.98rem}.sales-points{gap:7px}.sales-point{font-size:.8rem;padding:7px 10px}.choice-grid{grid-template-columns:1fr}.choice-card{padding:21px 17px}.benefits{padding:22px 13px;border-radius:18px}.benefit-grid{grid-template-columns:1fr 1fr;gap:6px}.benefit{padding:12px 6px}.benefit span{font-size:.82rem}}
+  </style>
 </head>
 <body class="tpl-cv">
 <main class="cv-section">
   <div class="cv-brand"><img src="images/logo-eternaweb.png" alt="EternaWeb"></div>
-  <h1 data-i18n="cv.title">Mes Modèles de CV</h1>
-  <p class="intro" data-i18n="cv.intro">Découvrez nos modèles : clairs, modernes et prêts à l’emploi.</p>
 
-  <section class="cv-showcase">
-    <div class="showcase-copy">
-      <p class="showcase-kicker" data-i18n="cv.model1.kicker">CV professionnel</p>
-      <h2 data-i18n="cv.model1.title">CV Structuré</h2>
-      <p data-i18n="cv.model1.text">Une présentation professionnelle, claire et organisée, pensée pour les candidatures administratives, techniques et généralistes.</p>
-      <div class="showcase-actions">
-        <button class="cv-action" type="button" data-preview="images/thumb-cv1.png">👁️ <span data-i18n="cv.preview">Voir l’aperçu</span></button>
-      </div>
+  <section class="sales-hero" aria-labelledby="sales-title">
+    <p class="eyebrow">Votre candidature commence ici</p>
+    <h1 id="sales-title">Un CV qui donne envie d’en savoir plus.</h1>
+    <p class="lead">Créez un CV professionnel, clair et personnalisé — même si vous ne savez pas par où commencer.</p>
+    <div class="sales-points" aria-label="Avantages">
+      <span class="sales-point">⚡ Simple</span>
+      <span class="sales-point">✨ Personnalisé</span>
+      <span class="sales-point">📱 Pensé pour mobile</span>
+      <span class="sales-point">🔒 Paiement sécurisé</span>
+    </div>
+    <a href="#choisir" class="btn btn-primary main-cta">✨ Commencer mon CV</a>
+  </section>
+
+  <section class="choice-section" id="choisir" aria-labelledby="choice-title">
+    <h2 id="choice-title">Comment voulez-vous créer votre CV ?</h2>
+    <p class="choice-intro">Choisissez la solution qui vous correspond. Vous pouvez être accompagné ou créer votre CV vous-même avec les outils EternaWeb.</p>
+    <div class="choice-grid">
+      <article class="choice-card featured">
+        <div class="choice-icon">🤝</div>
+        <h3>Je veux que mon CV soit fait pour moi</h3>
+        <p>Vous nous transmettez vos informations et votre ancien CV si vous en avez un. EternaWeb s’occupe de la présentation et de la mise en forme.</p>
+        <ul>
+          <li>Vous gagnez du temps</li>
+          <li>Présentation professionnelle</li>
+          <li>Livraison sous 24 à 48 h</li>
+        </ul>
+        <a class="btn btn-primary" href="#formules">Voir les formules</a>
+      </article>
+      <article class="choice-card">
+        <div class="choice-icon">🪄</div>
+        <h3>Je veux créer mon CV moi-même</h3>
+        <p>Un créateur EternaWeb pourra vous guider étape par étape et vous aider à mieux présenter votre parcours.</p>
+        <ul>
+          <li>Création guidée</li>
+          <li>Aide à la rédaction</li>
+          <li>Modèles professionnels</li>
+        </ul>
+        <a class="btn btn-primary" href="#formules">Découvrir les modèles</a>
+        <p class="sales-note">✨ Fonctionnalité créateur EternaWeb en préparation.</p>
+      </article>
     </div>
   </section>
 
-  <section class="cv-showcase">
-    <div class="showcase-copy">
-      <p class="showcase-kicker" data-i18n="cv.model2.kicker">CV en ligne</p>
-      <h2 data-i18n="cv.model2.title">CV Moderne</h2>
-      <p data-i18n="cv.model2.text">Un CV présenté comme une véritable page professionnelle en ligne, accessible sur ordinateur comme sur mobile.</p>
-      <div class="showcase-actions">
-        <button class="cv-action" type="button" data-preview="images/thumb-cv2.jpg">👁️ <span data-i18n="cv.preview">Voir l’aperçu</span></button>
-      </div>
+  <section class="benefits" aria-labelledby="benefits-title">
+    <h2 id="benefits-title">Pourquoi EternaWeb ?</h2>
+    <div class="benefit-grid">
+      <div class="benefit"><strong>🎯 Clair</strong><span>Votre parcours est présenté pour que l’essentiel soit rapidement visible.</span></div>
+      <div class="benefit"><strong>✨ Personnalisé</strong><span>Votre CV est adapté à votre profil et à votre objectif.</span></div>
+      <div class="benefit"><strong>⚡ Rapide</strong><span>Pour les commandes accompagnées, livraison sous 24 à 48 h.</span></div>
+      <div class="benefit"><strong>💳 Sécurisé</strong><span>Paiement en ligne sécurisé et commande confirmée avant traitement.</span></div>
     </div>
   </section>
 
-  <section class="cv-showcase">
-    <div class="showcase-copy">
-      <p class="showcase-kicker" data-i18n="cv.letter.kicker">Candidature</p>
-      <h2 data-i18n="cv.letter.title">Lettre de motivation personnalisée</h2>
-      <p data-i18n="cv.letter.text">Une lettre personnalisée, cohérente avec votre CV et adaptée au poste visé.</p>
-      <div class="showcase-actions">
-        <button class="cv-action" type="button" data-preview="images/thumb-lettredemotivation.png">👁️ <span data-i18n="cv.example">Voir l’exemple</span></button>
+  <section class="cv-section-inner" aria-labelledby="models-title">
+    <h2 id="models-title">👀 Découvrez nos modèles</h2>
+    <p class="examples-intro">Avant de choisir, regardez le rendu. L’objectif : un CV professionnel, lisible et agréable à consulter.</p>
+
+    <section class="cv-showcase">
+      <div class="showcase-copy">
+        <p class="showcase-kicker">CV professionnel</p>
+        <h2>CV Structuré</h2>
+        <p>Une présentation professionnelle, claire et organisée, pensée pour les candidatures administratives, techniques et généralistes.</p>
+        <div class="showcase-actions"><button class="cv-action" type="button" data-preview="images/thumb-cv1.png">👁️ Voir l’aperçu</button></div>
       </div>
-    </div>
+    </section>
+
+    <section class="cv-showcase">
+      <div class="showcase-copy">
+        <p class="showcase-kicker">CV en ligne</p>
+        <h2>CV Moderne</h2>
+        <p>Un CV présenté comme une véritable page professionnelle en ligne, accessible sur ordinateur comme sur mobile.</p>
+        <div class="showcase-actions"><button class="cv-action" type="button" data-preview="images/thumb-cv2.jpg">👁️ Voir l’aperçu</button></div>
+      </div>
+    </section>
+
+    <section class="cv-showcase">
+      <div class="showcase-copy">
+        <p class="showcase-kicker">Candidature</p>
+        <h2>Lettre de motivation personnalisée</h2>
+        <p>Une lettre personnalisée, cohérente avec votre CV et adaptée au poste visé.</p>
+        <div class="showcase-actions"><button class="cv-action" type="button" data-preview="images/thumb-lettredemotivation.png">👁️ Voir l’exemple</button></div>
+      </div>
+    </section>
   </section>
 
   <section class="cv-pricing" id="formules">
-    <h2 data-i18n="cv.pricing.title">💼 Formules CV</h2>
-    <p data-i18n="cv.pricing.desc">Un CV sur-mesure, adapté à vos besoins.</p>
+    <h2>💼 Choisissez votre accompagnement</h2>
+    <p>Des solutions adaptées à votre niveau de besoin.</p>
     <div class="cv-pricing-grid">
       <article class="cv-pack">
-        <h3 data-i18n="cv.pack1.title">📝 Pack Starter – 14,99 €</h3>
-        <ul><li data-i18n="cv.pack1.li1">Correction orthographique et grammaticale</li><li data-i18n="cv.pack1.li2">Mise en page simple et structurée (Word/PDF)</li></ul>
-        <p data-i18n="cv.pack1.note">👉 Idéal pour stage, job étudiant ou premier emploi</p>
-        <a class="btn btn-primary cv-choose" href="./index.html?plan=starter#devis" data-plan="CV Starter" data-i18n="btn.choose">Je choisis cette formule</a>
+        <h3>📝 Pack Starter</h3>
+        <p><strong>Pour un CV propre et professionnel.</strong></p>
+        <ul><li>Correction orthographique et grammaticale</li><li>Mise en page simple et structurée</li><li>Livraison Word/PDF</li></ul>
+        <p>👉 Idéal pour stage, job étudiant ou premier emploi.</p>
+        <a class="btn btn-primary cv-choose" href="./index.html?plan=starter#devis" data-plan="CV Starter">Commencer</a>
       </article>
       <article class="cv-pack">
-        <h3 data-i18n="cv.pack2.title">🚀 Pack Boost – 29,99 €</h3>
-        <ul><li data-i18n="cv.pack2.li1">Inclus toutes les fonctionnalités du Pack Starter</li><li data-i18n="cv.pack2.li2">Optimisation du contenu (ATS friendly)</li><li data-i18n="cv.pack2.li3">Ajout de mots-clés stratégiques</li><li data-i18n="cv.pack2.li4">Pour une meilleure visibilité auprès des recruteurs</li></ul>
-        <a class="btn btn-primary cv-choose" href="./index.html?plan=boost#devis" data-plan="CV Boost" data-i18n="btn.choose">Je choisis cette formule</a>
+        <h3>🚀 Pack Boost</h3>
+        <p><strong>Pour mieux valoriser votre profil.</strong></p>
+        <ul><li>Tout le Pack Starter</li><li>Optimisation du contenu</li><li>Optimisation ATS</li><li>Mots-clés stratégiques</li><li>Meilleure lisibilité pour les recruteurs</li></ul>
+        <p>👉 Pour les candidatures où chaque détail compte.</p>
+        <a class="btn btn-primary cv-choose" href="./index.html?plan=boost#devis" data-plan="CV Boost">Commencer</a>
       </article>
       <article class="cv-pack">
-        <h3 data-i18n="cv.pack3.title">🌐 Pack Premium – 59,99 €</h3>
-        <ul><li data-i18n="cv.pack3.li1">Inclus toutes les fonctionnalités du Pack Boost</li><li data-i18n="cv.pack3.li2">Création d’un CV en ligne (mini-site personnel)</li><li data-i18n="cv.pack3.li3">Hébergement inclus 1 an</li><li data-i18n="cv.pack3.li4">Design moderne (ordinateur &amp; mobile)</li><li data-i18n="cv.pack3.li5">QR code intégré</li><li data-i18n="cv.pack3.li6">Pour vous démarquer face aux autres candidats</li></ul>
-        <a class="btn btn-primary cv-choose" href="./index.html?plan=premium#devis" data-plan="CV Premium" data-i18n="btn.choose">Je choisis cette formule</a>
+        <h3>🌐 Pack Premium</h3>
+        <p><strong>Pour une présence professionnelle plus complète.</strong></p>
+        <ul><li>Tout le Pack Boost</li><li>CV en ligne (mini-site personnel)</li><li>Hébergement inclus 1 an</li><li>Design ordinateur &amp; mobile</li><li>QR code intégré</li></ul>
+        <p>👉 Pour présenter votre profil au-delà du PDF.</p>
+        <a class="btn btn-primary cv-choose" href="./index.html?plan=premium#devis" data-plan="CV Premium">Commencer</a>
       </article>
       <article class="cv-pack">
-        <h3 data-i18n="cv.pack4.title">📄 Lettre de motivation personnalisée – 7,99 €</h3>
-        <ul><li data-i18n="cv.pack4.li1">Structure professionnelle</li><li data-i18n="cv.pack4.li2">Argumentation claire et convaincante</li><li data-i18n="cv.pack4.li3">Adaptation à l’offre d’emploi</li><li data-i18n="cv.pack4.li4">Correction orthographique et grammaticale</li><li data-i18n="cv.pack4.li5">Livraison en Word/PDF</li></ul>
-        <a class="btn btn-primary cv-choose" href="./index.html?plan=letter#devis" data-plan="Lettre de motivation – 7,99 €" data-i18n="btn.choose">Je choisis cette formule</a>
+        <h3>📄 Lettre de motivation</h3>
+        <p><strong>Pour accompagner votre candidature.</strong></p>
+        <ul><li>Structure professionnelle</li><li>Argumentation claire</li><li>Adaptation à l’offre d’emploi</li><li>Correction orthographique et grammaticale</li><li>Livraison Word/PDF</li></ul>
+        <p>👉 Peut compléter votre CV.</p>
+        <a class="btn btn-primary cv-choose" href="./index.html?plan=letter#devis" data-plan="Lettre de motivation">Commencer</a>
       </article>
     </div>
+    <p class="sales-note" style="margin-top:18px">Les tarifs et modalités de commande sont indiqués avant paiement. Aucun abonnement récurrent n’est ajouté sans information claire et consentement du client.</p>
   </section>
 </main>
 
-<p style="text-align:center"><a href="./index.html" class="btn btn-primary" data-i18n="cv.back">⬅ Retour à l’accueil</a></p>
-<footer class="cv-footer"><p class="copyright" data-i18n="footer.copy">© 2025 EternaWeb — Tous droits réservés</p></footer>
+<p style="text-align:center"><a href="./index.html" class="btn btn-primary">⬅ Retour à l’accueil</a></p>
+<footer class="cv-footer">
+  <p class="copyright">© 2025 EternaWeb — Tous droits réservés</p>
+  <p class="legal-links"><a href="./cgv.html">Conditions générales</a> · <a href="./mentions-legales.html">Mentions légales</a> · <a href="./confidentialite.html">Confidentialité</a></p>
+</footer>
 
 <div class="cv-modal" id="cvModal" aria-hidden="true">
   <div class="cv-modal-dialog">
