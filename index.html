@@ -34,30 +34,35 @@
     .footer-socials a{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:112px;padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:#fff0e6!important;text-decoration:none;font-weight:600;font-size:.88rem;transition:transform .2s ease,background .2s ease}
     .footer-socials a:hover{transform:translateY(-2px);background:rgba(255,255,255,.20)}
     /* Réseaux sociaux flottants : colonne verticale à gauche. La bulle de langue reste à droite, inchangée. */
-    .home-socials{position:fixed;top:92px;left:8px;right:auto;z-index:1190;display:flex;align-items:center;gap:0}
+    /* Réseaux sociaux : trois vraies bulles, verticales à gauche. La bulle de langue reste à droite. */
+    .home-socials{position:fixed;top:92px;left:8px;right:auto;z-index:1190;display:flex;align-items:center}
     .home-socials p{display:none}
     .home-social-links{display:flex;flex-direction:column;align-items:center;gap:9px}
-    .home-social-links a{width:54px;height:54px;min-width:54px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:3px solid #fff;box-shadow:0 7px 18px rgba(55,43,35,.18);text-decoration:none;font-weight:800;font-size:0;transition:transform .22s ease,box-shadow .22s ease}
+    .home-social-links a{width:54px;height:54px;min-width:54px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 7px 18px rgba(55,43,35,.18);text-decoration:none;transition:transform .22s ease,box-shadow .22s ease}
     .home-social-links a:hover{transform:translateX(3px) scale(1.04);box-shadow:0 10px 22px rgba(55,43,35,.24)}
-    .home-social-links a:nth-child(1){background:#e1306c}
-    .home-social-links a:nth-child(2){background:#1877f2}
+    .home-social-links a:nth-child(1){background:#1877f2}
+    .home-social-links a:nth-child(2){background:linear-gradient(135deg,#405de6 0%,#833ab4 35%,#e1306c 68%,#f77737 84%,#fcaf45 100%)}
     .home-social-links a:nth-child(3){background:#25d366}
-    .home-social-links a::before{font-size:30px;line-height:1;color:#fff}
-    .home-social-links a:nth-child(1)::before{content:'◎'}
-    .home-social-links a:nth-child(2)::before{content:'f';font-family:Arial,sans-serif;font-size:37px}
-    .home-social-links a:nth-child(3)::before{content:'☎';font-size:26px}
+    .home-social-links svg{width:31px;height:31px;fill:#fff;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .home-social-links a:nth-child(1) svg{width:34px;height:34px}
+    .home-social-links a:nth-child(2) svg{fill:none}
+    .home-social-links a:nth-child(2) .social-dot{fill:#fff;stroke:none}
+    .home-social-links a:nth-child(3) svg{fill:none;stroke:#fff;stroke-width:1.7}
+    .home-social-links a:nth-child(3) .wa-phone{fill:#fff;stroke:none}
     @media(max-width:700px){
       .home-socials{top:82px;left:6px;right:auto}
       .home-social-links{gap:7px}
       .home-social-links a{width:46px;height:46px;min-width:46px;border-width:2px}
-      .home-social-links a::before{font-size:25px}
-      .home-social-links a:nth-child(2)::before{font-size:31px}
-      .home-social-links a:nth-child(3)::before{font-size:22px}
+      .home-social-links svg{width:25px;height:25px}
+      .home-social-links a:nth-child(1) svg{width:29px;height:29px}
     }
-    /* Annonce centrée en haut, sans modifier la bulle de langue à droite. */
-    .announce-bar{left:50%!important;right:auto!important;transform:translateX(-50%)!important;top:8px!important;max-width:calc(100vw - 110px)!important;text-align:center!important;white-space:nowrap}
+    /* Annonce centrée, avec retour à la ligne sur mobile pour garder toute l'information lisible. */
+    .announce-bar{left:50%!important;right:auto!important;transform:translateX(-50%)!important;top:8px!important;width:min(430px,calc(100vw - 120px))!important;max-width:none!important;text-align:center!important;white-space:normal!important}
+    .announce-break{display:none}
     @media(max-width:600px){
-      .announce-bar{top:6px!important;left:50%!important;max-width:calc(100vw - 78px)!important;font-size:12px!important}
+      .announce-bar{top:6px!important;width:calc(100vw - 82px)!important;font-size:12px!important;line-height:1.35!important;padding:5px 8px!important}
+      .announce-break{display:inline}
+      .announce-support{display:inline}
     }
     .pricing-home{width:min(1100px,100%);margin:22px auto 26px;padding:28px 20px;background:rgba(255,255,255,.94);border-radius:22px;box-shadow:0 8px 24px rgba(73,50,38,.08);text-align:center}
     .pricing-home h2{margin:0 0 5px;font-size:clamp(1.5rem,3vw,2rem)}
@@ -73,9 +78,13 @@
   </style>
 </head>
 <body>
-  <div class="announce-bar" role="status" aria-label="Annonce" data-i18n="announce">📄 CV livré sous 24 à 48 h • Paiement sécurisé • Support WhatsApp</div>
+  <div class="announce-bar" role="status" aria-label="Annonce" data-i18n="announce">🚀 CV livré sous 48 à 72 h • Paiement sécurisé<span class="announce-break"><br></span><span class="announce-support">• Support WhatsApp</span></div>
   <div class="logo-container"><div class="logo-badge"><img src="eternaweb-logo.png" alt="EternaWeb" class="logo-simple"></div></div>
-  <section class="home-socials" aria-label="Réseaux sociaux EternaWeb"><p>Suivez EternaWeb et contactez-nous</p><div class="home-social-links"><a href="https://www.instagram.com/eternaweb__cv_professionnel/" target="_blank" rel="noopener" aria-label="Instagram EternaWeb">📸 Instagram</a><a href="https://www.facebook.com/share/1C5Weate9K/" target="_blank" rel="noopener" aria-label="Facebook EternaWeb">f Facebook</a><a href="https://wa.me/33749723434" target="_blank" rel="noopener" aria-label="WhatsApp EternaWeb">💬 WhatsApp</a></div></section>
+  <section class="home-socials" aria-label="Réseaux sociaux EternaWeb"><p>Suivez EternaWeb et contactez-nous</p><div class="home-social-links">
+    <a href="https://www.facebook.com/share/1C5Weate9K/" target="_blank" rel="noopener" aria-label="Facebook EternaWeb" title="Facebook EternaWeb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v3H6v4h3v6h4v-6h3.2l.8-4H13V9c0-.7.3-1 1-1Z"/></svg></a>
+    <a href="https://www.instagram.com/eternaweb__cv_professionnel/" target="_blank" rel="noopener" aria-label="Instagram EternaWeb" title="Instagram EternaWeb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.7" cy="6.6" r="1.1" class="social-dot"/></svg></a>
+    <a href="https://wa.me/33749723434" target="_blank" rel="noopener" aria-label="WhatsApp EternaWeb" title="WhatsApp EternaWeb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.4L3 21l4.6-1.4A8.8 8.8 0 1 0 12 3.2Z"/><path d="M8.6 8.5c.2-.5.4-.6.8-.6h.7c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c.8 1.4 1.9 2.4 3.4 3.1l.6-.7c.2-.2.4-.3.7-.2l1.8.8c.3.1.4.3.4.6v.7c0 .4-.1.6-.6.8-.5.2-1.2.2-1.8 0-2.4-.8-4.2-2.2-5.7-4.1-1.1-1.4-1.7-2.7-1.8-3.5-.1-.5 0-1 .1-1.5Z" class="wa-phone"/></svg></a>
+  </div></section>
   <button class="menu-toggle" id="menuBtn" aria-expanded="false">☰ <span data-i18n="nav.menu">Menu</span></button>
   <nav id="mainMenu" class="menu" aria-label="Navigation principale"><ul><li><a href="cv.html" data-i18n="nav.cv">CV</a></li><li><a href="#devis" id="goDevis" data-i18n="nav.devis">Vos informations</a></li><li><a href="a-propos.html" data-i18n="nav.a-propos">À propos</a></li></ul></nav>
   <div class="floating-tools" aria-label="Outils rapides"><div class="lang-wrap"><button class="fab" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">🌎</button><div class="lang-menu" id="langMenu" role="menu"><button class="lang-item" data-lang="fr" role="menuitem">🇫🇷 Français</button><button class="lang-item" data-lang="en" role="menuitem">🇬🇧 English</button><button class="lang-item" data-lang="nl" role="menuitem">🇳🇱 Nederlands</button><button class="lang-item" data-lang="et" role="menuitem">🇪🇪 Eesti</button><button class="lang-item" data-lang="ru" role="menuitem">🇷🇺 Русский</button><button class="lang-item" data-lang="de" role="menuitem">🇩🇪 Deutsch</button><button class="lang-item" data-lang="es" role="menuitem">🇪🇸 Español</button><button class="lang-item" data-lang="it" role="menuitem">🇮🇹 Italiano</button></div></div></div>
