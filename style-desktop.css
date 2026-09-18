@@ -37,7 +37,7 @@ h2{ color:#5e4b3c; margin:0 0 12px; }
 p,li,span,a{ letter-spacing:.2px; }
 .section-title,h1,h2{ text-align:center; }
 
-.announce-bar{ position:fixed; top:8px; left:50%; transform:translateX(-50%); z-index:1100; max-width:90%; padding:6px 10px; font-size:14px; line-height:1.35; color:#2d1e15; background:rgba(255,255,255,.90); backdrop-filter:blur(4px); border:1px solid var(--gold); border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
+.announce-bar{ position:fixed; top:8px; left:14px; transform:none; z-index:1100; max-width:360px; padding:6px 10px; font-size:14px; line-height:1.35; color:#2d1e15; background:rgba(255,255,255,.90); backdrop-filter:blur(4px); border:1px solid var(--gold); border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
 .floating-tools{ position:fixed; top:10px; right:10px; display:flex; gap:8px; z-index:1200; }
 .fab{ width:40px; height:40px; border:0; border-radius:50%; cursor:pointer; background:rgba(255,255,255,.94); box-shadow:0 4px 12px rgba(0,0,0,.15); font-size:19px; }
 .lang-wrap{ position:relative; }
