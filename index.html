@@ -33,23 +33,32 @@
     .footer-socials{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 8px}
     .footer-socials a{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:112px;padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:#fff0e6!important;text-decoration:none;font-weight:600;font-size:.88rem;transition:transform .2s ease,background .2s ease}
     .footer-socials a:hover{transform:translateY(-2px);background:rgba(255,255,255,.20)}
-    .home-socials{position:absolute;top:18px;right:88px;z-index:25;display:flex;align-items:center;gap:12px}
+    /* Réseaux sociaux flottants : colonne verticale à gauche. La bulle de langue reste à droite, inchangée. */
+    .home-socials{position:fixed;top:92px;left:8px;right:auto;z-index:1190;display:flex;align-items:center;gap:0}
     .home-socials p{display:none}
-    .home-social-links{display:flex;align-items:center;gap:12px}
-    .home-social-links a{width:58px;height:58px;min-width:58px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:3px solid #fff;box-shadow:0 7px 18px rgba(55,43,35,.18);text-decoration:none;font-weight:800;font-size:0;transition:transform .22s ease,box-shadow .22s ease}
-    .home-social-links a:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 10px 22px rgba(55,43,35,.24)}
+    .home-social-links{display:flex;flex-direction:column;align-items:center;gap:9px}
+    .home-social-links a{width:54px;height:54px;min-width:54px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:3px solid #fff;box-shadow:0 7px 18px rgba(55,43,35,.18);text-decoration:none;font-weight:800;font-size:0;transition:transform .22s ease,box-shadow .22s ease}
+    .home-social-links a:hover{transform:translateX(3px) scale(1.04);box-shadow:0 10px 22px rgba(55,43,35,.24)}
     .home-social-links a:nth-child(1){background:#e1306c}
     .home-social-links a:nth-child(2){background:#1877f2}
     .home-social-links a:nth-child(3){background:#25d366}
-    .home-social-links a::before{font-size:31px;line-height:1;color:#fff}
+    .home-social-links a::before{font-size:30px;line-height:1;color:#fff}
     .home-social-links a:nth-child(1)::before{content:'◎'}
-    .home-social-links a:nth-child(2)::before{content:'f';font-family:Arial,sans-serif;font-size:38px}
-    .home-social-links a:nth-child(3)::before{content:'☎';font-size:27px}
-    @keyframes ewSocialFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-    .home-social-links a{animation:ewSocialFloat 3.2s ease-in-out infinite}
-    .home-social-links a:nth-child(2){animation-delay:.35s}
-    .home-social-links a:nth-child(3){animation-delay:.7s}
-    @media(max-width:700px){.home-socials{top:14px;right:68px}.home-social-links{gap:7px}.home-social-links a{width:46px;height:46px;min-width:46px;border-width:2px}.home-social-links a::before{font-size:25px}.home-social-links a:nth-child(2)::before{font-size:31px}.home-social-links a:nth-child(3)::before{font-size:22px}}
+    .home-social-links a:nth-child(2)::before{content:'f';font-family:Arial,sans-serif;font-size:37px}
+    .home-social-links a:nth-child(3)::before{content:'☎';font-size:26px}
+    @media(max-width:700px){
+      .home-socials{top:82px;left:6px;right:auto}
+      .home-social-links{gap:7px}
+      .home-social-links a{width:46px;height:46px;min-width:46px;border-width:2px}
+      .home-social-links a::before{font-size:25px}
+      .home-social-links a:nth-child(2)::before{font-size:31px}
+      .home-social-links a:nth-child(3)::before{font-size:22px}
+    }
+    /* Annonce centrée en haut, sans modifier la bulle de langue à droite. */
+    .announce-bar{left:50%!important;right:auto!important;transform:translateX(-50%)!important;top:8px!important;max-width:calc(100vw - 110px)!important;text-align:center!important;white-space:nowrap}
+    @media(max-width:600px){
+      .announce-bar{top:6px!important;left:50%!important;max-width:calc(100vw - 78px)!important;font-size:12px!important}
+    }
     .pricing-home{width:min(1100px,100%);margin:22px auto 26px;padding:28px 20px;background:rgba(255,255,255,.94);border-radius:22px;box-shadow:0 8px 24px rgba(73,50,38,.08);text-align:center}
     .pricing-home h2{margin:0 0 5px;font-size:clamp(1.5rem,3vw,2rem)}
     .pricing-home>p{margin:0 auto 20px}
@@ -64,7 +73,7 @@
   </style>
 </head>
 <body>
-  <div class="announce-bar" role="status" aria-label="Annonce" data-i18n="announce">🚀 Site livré en 48h • Paiement sécurisé • Support WhatsApp</div>
+  <div class="announce-bar" role="status" aria-label="Annonce" data-i18n="announce">📄 CV livré sous 24 à 48 h • Paiement sécurisé • Support WhatsApp</div>
   <div class="logo-container"><div class="logo-badge"><img src="eternaweb-logo.png" alt="EternaWeb" class="logo-simple"></div></div>
   <section class="home-socials" aria-label="Réseaux sociaux EternaWeb"><p>Suivez EternaWeb et contactez-nous</p><div class="home-social-links"><a href="https://www.instagram.com/eternaweb__cv_professionnel/" target="_blank" rel="noopener" aria-label="Instagram EternaWeb">📸 Instagram</a><a href="https://www.facebook.com/share/1C5Weate9K/" target="_blank" rel="noopener" aria-label="Facebook EternaWeb">f Facebook</a><a href="https://wa.me/33749723434" target="_blank" rel="noopener" aria-label="WhatsApp EternaWeb">💬 WhatsApp</a></div></section>
   <button class="menu-toggle" id="menuBtn" aria-expanded="false">☰ <span data-i18n="nav.menu">Menu</span></button>
