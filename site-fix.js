@@ -26,8 +26,8 @@
   }
 
   function addHomeBenefits(){
-    var path=window.location.pathname.replace(/\\/+$/,'');
-    var isHome=(path===''||path==='/'||/\\/index\\.html$/i.test(path));
+    var path=window.location.pathname.replace(/\/+$/,'');
+    var isHome=(path===''||path==='/'||/\/index\.html$/i.test(path));
     if(!isHome || document.getElementById('home-benefits'))return;
     var hero=document.querySelector('.hero-gold');
     if(!hero)return;
@@ -58,9 +58,28 @@
     hero.insertAdjacentElement('afterend',section);
   }
 
+  function updateModeEmploi(){
+    var steps=document.querySelectorAll('.mode-emploi .mode-step');
+    if(steps.length<4)return;
+    var data=[
+      ['Choisissez votre formule','Starter, Boost, Premium ou Lettre de motivation.'],
+      ['Remplissez vos informations','Après avoir choisi votre formule, renseignez vos informations et ajoutez votre CV ou vos documents si nécessaire.'],
+      ['Validez et payez en ligne','Votre commande est confirmée après le paiement sécurisé.'],
+      ['Recevez votre document','EternaWeb traite votre demande et vous recevez votre document sous 24 à 48 h.']
+    ];
+    steps.forEach(function(step,index){
+      if(!data[index])return;
+      var title=step.querySelector('h3');
+      var text=step.querySelector('p');
+      if(title)title.textContent=data[index][0];
+      if(text)text.textContent=data[index][1];
+    });
+  }
+
   function init(){
     clean();
     addHomeBenefits();
+    updateModeEmploi();
   }
 
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
