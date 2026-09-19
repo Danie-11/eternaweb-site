@@ -84,13 +84,7 @@
     </div>
   </section>
 
-  <section class="cv-section-inner" aria-labelledby="models-title">
-    <h2 id="models-title">👀 Découvrez nos modèles</h2>
-    <p class="examples-intro">Avant de choisir, regardez le rendu. L’objectif : un CV professionnel, lisible et agréable à consulter.</p>
-    <section class="cv-showcase"><div class="showcase-copy"><p class="showcase-kicker">CV professionnel</p><h2>CV Structuré</h2><p>Une présentation professionnelle, claire et organisée, pensée pour les candidatures administratives, techniques et généralistes.</p><div class="showcase-actions"><button class="cv-action" type="button" data-preview="images/thumb-cv1.png">👁️ Voir l’aperçu</button></div></div></section>
-    <section class="cv-showcase"><div class="showcase-copy"><p class="showcase-kicker">CV en ligne</p><h2>CV Moderne</h2><p>Un CV présenté comme une véritable page professionnelle en ligne, accessible sur ordinateur comme sur mobile.</p><div class="showcase-actions"><button class="cv-action" type="button" data-preview="images/thumb-cv2.jpg">👁️ Voir l’aperçu</button></div></div></section>
-    <section class="cv-showcase"><div class="showcase-copy"><p class="showcase-kicker">Candidature</p><h2>Lettre de motivation personnalisée</h2><p>Une lettre personnalisée, cohérente avec votre CV et adaptée au poste visé.</p><div class="showcase-actions"><button class="cv-action" type="button" data-preview="images/thumb-lettredemotivation.png">👁️ Voir l’exemple</button></div></div></section>
-  </section>
+
 
   <section class="cv-pricing" id="formules">
     <h2>💼 Choisissez votre accompagnement</h2>
@@ -106,8 +100,8 @@
 </main>
 <p style="text-align:center"><a href="./index.html" class="btn btn-primary">⬅ Retour à l’accueil</a></p>
 <footer class="cv-footer"><p class="copyright">© 2025 EternaWeb — Tous droits réservés</p><p class="legal-links"><a href="./cgv.html">Conditions générales</a> · <a href="./mentions-legales.html">Mentions légales</a> · <a href="./confidentialite.html">Confidentialité</a></p></footer>
-<div class="cv-modal" id="cvModal" aria-hidden="true"><div class="cv-modal-dialog"><button class="cv-modal-close" id="cvModalClose" type="button">×</button><div class="cv-preview-wrap"><img id="cvModalImage" alt="Aperçu du modèle"></div></div></div>
+<div class="cv-modal" id="cvModal" aria-hidden="true"><div class="cv-modal-dialog"><button class="cv-modal-close" id="cvModalClose" type="button">×</button><div class="cv-preview-info"><p id="cvModalKicker"></p><h2 id="cvModalTitle"></h2><p id="cvModalDescription"></p></div><div class="cv-preview-wrap"><img id="cvModalImage" alt="Aperçu du modèle"></div></div></div>
 <script src="./app.js" defer></script><script src="./nl-fix.js" defer></script><script src="./cv-fix.js" defer></script>
-<script>document.addEventListener('DOMContentLoaded',function(){var m=document.getElementById('cvModal'),i=document.getElementById('cvModalImage'),c=document.getElementById('cvModalClose');if(!m||!i||!c)return;function s(){m.classList.remove('is-open');m.setAttribute('aria-hidden','true');i.removeAttribute('src');document.body.classList.remove('cv-modal-lock')}document.querySelectorAll('[data-preview]').forEach(function(b){b.addEventListener('click',function(){i.src=b.dataset.preview;m.classList.add('is-open');m.setAttribute('aria-hidden','false');document.body.classList.add('cv-modal-lock')})});c.addEventListener('click',s);m.addEventListener('click',function(e){if(e.target===m)s()});document.addEventListener('keydown',function(e){if(e.key==='Escape')s()});document.querySelectorAll('.cv-choose').forEach(function(btn){btn.addEventListener('click',function(){try{localStorage.setItem('ew_selected_plan',btn.dataset.plan||'')}catch(e){}})});});</script>
+<script>document.addEventListener('DOMContentLoaded',function(){var m=document.getElementById('cvModal'),i=document.getElementById('cvModalImage'),c=document.getElementById('cvModalClose'),k=document.getElementById('cvModalKicker'),t=document.getElementById('cvModalTitle'),d=document.getElementById('cvModalDescription');if(!m||!i||!c)return;function s(){m.classList.remove('is-open');m.setAttribute('aria-hidden','true');i.removeAttribute('src');document.body.classList.remove('cv-modal-lock')}document.querySelectorAll('[data-preview]').forEach(function(b){b.addEventListener('click',function(){i.src=b.dataset.preview;i.alt='Aperçu — '+(b.dataset.previewTitle||'modèle');if(k)k.textContent=b.dataset.previewKicker||'';if(t)t.textContent=b.dataset.previewTitle||'';if(d)d.textContent=b.dataset.previewDescription||'';m.classList.add('is-open');m.setAttribute('aria-hidden','false');document.body.classList.add('cv-modal-lock')})});c.addEventListener('click',s);m.addEventListener('click',function(e){if(e.target===m)s()});document.addEventListener('keydown',function(e){if(e.key==='Escape')s()});document.querySelectorAll('.cv-choose').forEach(function(btn){btn.addEventListener('click',function(){try{localStorage.setItem('ew_selected_plan',btn.dataset.plan||'')}catch(e){}})});});</script>
 </body>
 </html>
