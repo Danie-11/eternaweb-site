@@ -1,7 +1,7 @@
 // EternaWeb — commande + paiement Stripe sur OVH
 (function () {
   'use strict';
-  var PRICES = { starter: 14.99, boost: 29.99, premium: 59.99, letter: 7.99 };
+  var PRICES = { starter: 9.99, boost: 29.99, premium: 59.99, letter: 7.99 };
   var LABELS = { starter: 'Pack Starter', boost: 'Pack Boost', premium: 'Pack Premium', letter: 'Lettre de motivation' };
   function money(v) { return v.toFixed(2).replace('.', ',') + ' €'; }
   function keyFromValue(value) {
@@ -43,7 +43,7 @@
       sendBtn.insertAdjacentElement('beforebegin', summary);
     }
     var reassurance = document.getElementById('paymentReassurance');
-    if (reassurance) reassurance.textContent = '🔒 Merci de régler votre commande avant sa prise en charge. Après confirmation du paiement, votre dossier sera transmis à EternaWeb.';
+    if (reassurance) reassurance.textContent = '🔒 Paiement unique — aucun abonnement. EternaWeb commence le traitement après confirmation du paiement.';
 
     var methods = document.getElementById('ewPaymentMethods');
     if (!methods) {
@@ -64,8 +64,13 @@
     function refresh() {
       var key = keyFromValue(planInput.value);
       var hasLetter = !!letterBox.checked;
-      var parts = [], total = 0;
-      if (key && key !== 'letter') { parts.push(LABELS[key]); total += PRICES[key]; }
+      var parts = [], total = 0, included = [];
+      if (key && key !== 'letter') {
+        parts.push(LABELS[key]); total += PRICES[key];
+        if (key === 'starter') included = ['CV PDF'];
+        if (key === 'boost') included = ['CV PDF','QR code'];
+        if (key === 'premium') included = ['CV PDF','QR code','CV en ligne'];
+      }
       if (key === 'letter') { letterBox.checked = true; hasLetter = true; }
       if (hasLetter) { parts.push(LABELS.letter); total += PRICES.letter; }
       carousel.querySelectorAll('button[data-plan-key]').forEach(function (b) {
@@ -73,11 +78,13 @@
         b.classList.toggle('is-selected', selected);
         b.setAttribute('aria-checked', String(selected));
       });
+      var includedBox=document.getElementById('ewIncludedText');
+      if(includedBox) includedBox.innerHTML = included.length ? included.map(function(x){return '<span class="included-item">✓ '+x+'</span>';}).join('') : 'Choisissez un pack pour voir ce qui est inclus.';
       if (!parts.length) { summary.style.display = 'none'; sendBtn.disabled = true; return; }
       summary.style.display = 'block';
-      summary.querySelector('#orderSummaryText').textContent = parts.join(' + ') + ' = ' + money(total);
+      summary.querySelector('#orderSummaryText').textContent = parts.join(' + ') + ' — Paiement unique = ' + money(total);
       sendBtn.disabled = false;
-      sendBtn.textContent = 'Envoyer';
+      sendBtn.textContent = 'Commander et payer';
     }
 
     function selectPlan(key) {
@@ -105,10 +112,13 @@
       var key = keyFromValue(planInput.value);
       if (!key) { alert('Veuillez choisir une formule.'); return; }
       var email = form.querySelector('input[name="email"]');
+      var confirmBox = document.getElementById('clientConfirm');
+      if (!confirmBox || !confirmBox.checked) { alert('Veuillez confirmer que vous avez vérifié toutes les informations.'); return; }
       if (!email || !email.value.trim()) { alert('Veuillez renseigner votre e-mail.'); email && email.focus(); return; }
       var data = new FormData(form);
       data.set('plan', key);
       data.set('letter', letterBox.checked ? '1' : '0');
+      data.set('client_confirm', '1');
       sendBtn.classList.add('ew-loading');
       sendBtn.textContent = 'Préparation du paiement…';
       try {
@@ -119,7 +129,7 @@
       } catch (error) {
         alert(error.message || 'Impossible de préparer le paiement.');
         sendBtn.classList.remove('ew-loading');
-        sendBtn.textContent = 'Envoyer';
+        sendBtn.textContent = 'Commander et payer';
       }
     });
 
