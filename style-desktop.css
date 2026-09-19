@@ -65,7 +65,7 @@ p,li,span,a{ letter-spacing:.2px; }
 .gold-lead{ font-size:clamp(15px,1.6vw,18px); opacity:.95; margin:0 0 1rem; }
 .hero-gold img.hero-logo{ width:100px; max-width:100px; }
 
-.container{ width:100%; max-width:800px; margin:18px auto; padding:36px 26px; background:rgba(255,255,255,.92); border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,.08); text-align:center; }
+.container{ width:100%; max-width:800px; margin:18px auto; padding:36px 26px; background:#fff; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,.08); text-align:center; }
 .page-card{ width:100%; max-width:920px; margin:24px auto; padding:28px 20px; background:rgba(255,255,255,.92); border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
 #devis{ display:none; }
 #devis.show{ display:block; }
