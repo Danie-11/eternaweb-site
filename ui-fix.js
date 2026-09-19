@@ -11,12 +11,12 @@
     }
     var services=document.getElementById('services');
     if(services){
-      var title=services.querySelector('h2');
-      var sub=services.querySelector('p');
-      var btn=services.querySelector('.btn');
-      if(title)title.textContent='📄 Nos exemples CV';
-      if(sub)sub.textContent='Découvrez quelques modèles de CV EternaWeb';
-      if(btn){btn.textContent='📄';btn.setAttribute('aria-label','Voir les exemples de CV');btn.setAttribute('title','Voir les exemples de CV');}
+      var btn=services.querySelector('.home-create-button');
+      if(btn){
+        btn.textContent='✨ Créer mon CV';
+        btn.setAttribute('aria-label','Créer mon CV');
+        btn.setAttribute('title','Créer mon CV');
+      }
     }
     var pricing=document.getElementById('formules');
     if(pricing)pricing.style.display='none';
