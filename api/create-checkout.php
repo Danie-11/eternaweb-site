@@ -8,7 +8,9 @@ $plan=strtolower(trim((string)($_POST['plan']??'')));
 $email=trim((string)($_POST['email']??''));
 $wantsLetter=!empty($_POST['letter']);
 $confirm=($_POST['client_confirm']??'')==='1';
-if(!isset($prices[$plan]) || !filter_var($email,FILTER_VALIDATE_EMAIL) || !$confirm){http_response_code(400);echo json_encode(['error'=>'Commande invalide. Vérifiez la formule et votre e-mail.']);exit;}
+$required=['nom','poste','profil','experiences','formation','competences'];
+$missing=false; foreach($required as $field){ if(trim((string)($_POST[$field]??''))===''){ $missing=true; break; } }
+if(!isset($prices[$plan]) || !filter_var($email,FILTER_VALIDATE_EMAIL) || !$confirm || $missing){http_response_code(400);echo json_encode(['error'=>'Commande invalide. Vérifiez la formule et votre e-mail.']);exit;}
 if($plan==='letter')$wantsLetter=false;
 $amount=$prices[$plan]+($wantsLetter?$prices['letter']:0);
 $description=$wantsLetter?$labels[$plan].' + '.$labels['letter']:$labels[$plan];
@@ -25,7 +27,7 @@ if(isset($_FILES['document'])&&$_FILES['document']['error']!==UPLOAD_ERR_NO_FILE
  if(!move_uploaded_file($file['tmp_name'],$stored)){http_response_code(500);echo json_encode(['error'=>'Impossible d’enregistrer votre fichier.']);exit;}
  $fileMeta=['path'=>$stored,'name'=>basename($file['name'])];
 }
-$order=['id'=>$orderId,'plan'=>$plan,'plan_label'=>$description,'amount'=>$amount,'email'=>$email,'nom'=>trim((string)($_POST['nom']??'')),'couleurs'=>trim((string)($_POST['couleurs']??'')),'integrations'=>isset($_POST['int'])?(array)$_POST['int']:[],'poste'=>trim((string)($_POST['poste']??'')),'profil'=>trim((string)($_POST['profil']??'')),'experiences'=>trim((string)($_POST['experiences']??'')),'formation'=>trim((string)($_POST['formation']??'')),'competences'=>trim((string)($_POST['competences']??'')),'langues'=>trim((string)($_POST['langues']??'')),'contenu'=>trim((string)($_POST['contenu']??'')),'client_confirm'=>$confirm,'file'=>$fileMeta,'created_at'=>gmdate('c'),'paid'=>false,'sent'=>false];
+$order=['id'=>$orderId,'plan'=>$plan,'plan_label'=>$description,'amount'=>$amount,'email'=>$email,'nom'=>trim((string)($_POST['nom']??'')),'couleurs'=>trim((string)($_POST['couleurs']??'')),'integrations'=>($plan==='starter'?['CV PDF']:($plan==='boost'?['CV PDF','QR code']:['CV PDF','QR code','CV en ligne'])),'poste'=>trim((string)($_POST['poste']??'')),'profil'=>trim((string)($_POST['profil']??'')),'experiences'=>trim((string)($_POST['experiences']??'')),'formation'=>trim((string)($_POST['formation']??'')),'competences'=>trim((string)($_POST['competences']??'')),'langues'=>trim((string)($_POST['langues']??'')),'contenu'=>trim((string)($_POST['contenu']??'')),'client_confirm'=>$confirm,'file'=>$fileMeta,'created_at'=>gmdate('c'),'paid'=>false,'sent'=>false];
 file_put_contents($orderDir.'/'.$orderId.'.json',json_encode($order,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE),LOCK_EX);
 $params=['mode'=>'payment','success_url'=>'https://eternaweb.fr/paiement-confirme.html?session_id={CHECKOUT_SESSION_ID}','cancel_url'=>'https://eternaweb.fr/cv.html#formules','customer_email'=>$email,'line_items[0][price_data][currency]'=>'eur','line_items[0][price_data][product_data][name]'=>$description,'line_items[0][price_data][unit_amount]'=>$amount,'line_items[0][quantity]'=>1,'metadata[order_id]'=>$orderId,'metadata[plan]'=>$plan,'metadata[letter]'=>$wantsLetter?'1':'0'];
 $ch=curl_init('https://api.stripe.com/v1/checkout/sessions');
